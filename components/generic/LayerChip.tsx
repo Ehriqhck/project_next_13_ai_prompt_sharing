@@ -44,26 +44,7 @@ export default function LayerChip(props) {
         })
     }
 
-    const fetchDeviceProfiles = async () => {
-        // console.log("FETCHED DEVICEPROFILES BEFORE: ");
-
-        const response = await fetch("/api/deviceProfiles", {
-            method: "POST",
-            body: JSON.stringify({
-                userId: session?.user.id
-            })
-        });
-
-        const data = await response.json();
-        // console.log("INPUT VIEWER !!!!!!!!!!!" + JSON.stringify(data[0].deviceProfiles.deviceProfiles.saved["VKB_GLADIATOR_EVO"].buttons["circleSwitch"]?.["top"]));
-        // console.log("FETCHED RESPONSE: " + JSON.stringify(data));
-        // console.log("!!!!!!!!!!!! FETCHED RESPONSE: " + JSON.stringify(data.deviceProfiles));
-
-        // console.log("PARSED & STRINGED RESPONSE: " + JSON.parse(JSON.stringify(data[0].deviceProfiles.deviceProfiles)));
-        // console.log("RAW RESPONSE: " + JSON.stringify(data[0].deviceProfiles.deviceProfiles.saved["VKB_GLADIATOR_EVO"].buttons[selectedButton]?.["top"]));
-        // console.log("FETCHED DEVICEPROFILES: " + data);
-
-    };
+  
 
     const chipTemplate =
         <div
