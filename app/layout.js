@@ -4,19 +4,20 @@ import 'primereact-sass-theme-9.6.2/themes/mytheme/theme.scss';
 
 import Nav from "@components/Nav";
 import Provider from "@components/Provider";
+import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 
 export const metadata = {
   title: "Control Mapper",
   description: "",
 };
 
-const RootLayout = ({ children }: { children: React.ReactNode }) => (
+const RootLayout = ({ children }) => (
   <html lang='en' className="dark">
 
 
     <body>
 
-      <Provider>
+      <Provider >
         <div className='main'>
           <div className='gradient' />
         </div>
