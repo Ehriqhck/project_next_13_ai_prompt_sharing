@@ -23,7 +23,7 @@ import { DeviceInputs } from './DeviceInputs';
 import { Context, SelectContext } from '@components/Provider';
 import SearchIcon from '@components/generic/Icons/SearchIcon.jsx';
 import { get } from 'mongoose';
-import GameAction from '@components/GameAction.tsx'
+import GameAction from '@components/GameAction.jsx'
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 import LayerTag from '@components/generic/LayerTag';
 export default function CustomersDemo({ onInputSelect }) {
