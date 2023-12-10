@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react'
-import LayerChip from 'components/generic/LayerChip.tsx'
+import LayerChip from 'components/generic/LayerChip.jsx'
 import { get } from 'mongoose'
 import { useState } from 'react'
 
