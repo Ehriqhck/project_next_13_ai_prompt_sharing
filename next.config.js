@@ -7,6 +7,10 @@ const nextConfig = {
   images: {
     domains: ['lh3.googleusercontent.com'],
   },
+  env: {
+    NEXTAUTH_SECRET:"say_lalisa_love_me_lalisa_love_me_hey"
+
+  },
   webpack(config) {
     config.experiments = {
       ...config.experiments,
