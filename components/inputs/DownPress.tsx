@@ -1,7 +1,8 @@
 import React from 'react'
 import DownIcon from 'public/assets/icons/actions/input_down.svg';
 import ActionList from '@components/ActionList';
-
+import LayerTag from 'components/generic/LayerTag.jsx';
+import PressIcon from 'public/assets/icons/actions/input_press.svg';
 const DownPress = ({layers, name}) => {
 
   return (
