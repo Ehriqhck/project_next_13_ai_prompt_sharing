@@ -3,7 +3,6 @@ import PressIcon from 'public/assets/icons/actions/input_press.svg';
 import ActionList from '@components/ActionList';
 
 const Press = ({ layers, name }) => {
-  console.log("HELLOOOOOOOOOOOOOOOOOOOOOO");
   
   return (
 
