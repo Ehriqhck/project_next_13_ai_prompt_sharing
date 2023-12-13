@@ -45,10 +45,10 @@ const Editor = ({show}) => {
       <div className='flex flex-col gap-[7px]'>
         <p className='text-base self-start'>// MODIFIER LAYERS</p>
         <div className='flex flex-row gap-[10px]'>
-        <LayerChip layer="0" />
+        <LayerChip layer={0} />
 
-          <LayerChip layer="1" />
-          <LayerChip layer="2" />
+          <LayerChip layer= {1} />
+          <LayerChip layer={2} />
         </div>
 
 

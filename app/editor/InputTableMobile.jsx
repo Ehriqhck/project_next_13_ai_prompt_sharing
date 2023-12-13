@@ -94,17 +94,7 @@ export default function CustomersDemo({ onInputSelect }) {
             });
 
             const data = await response.json();
-            // console.log("INPUT VIEWER !!!!!!!!!!!" + JSON.stringify(data[0].deviceProfiles.deviceProfiles.saved["VKB_GLADIATOR_EVO"].buttons["circleSwitch"]?.["top"]));
-            // console.log("FETCHED RESPONSE: " + JSON.stringify(data));
-            // console.log("!!!!!!!!!!!! FETCHED RESPONSE: " + JSON.stringify(data.deviceProfiles));
-
-            // console.log("PARSED & STRINGED RESPONSE: " + JSON.parse(JSON.stringify(data[0].deviceProfiles.deviceProfiles)));
-            // console.log("RAW RESPONSE: " + JSON.stringify(data[0].deviceProfiles.deviceProfiles.saved["VKB_GLADIATOR_EVO"].buttons[selectedButton]?.["top"]));
-            // console.log("FETCHED DEVICEPROFILES: " + data);
-            // setTop(data?.deviceProfiles?.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedButton]?.["top"]);
-            // setbottom(data?.deviceProfiles?.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedButton]?.["bottom"]);
-            // setLeft(data?.deviceProfiles?.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedButton]?.["left"]);
-            // setRight(data?.deviceProfiles?.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedButton]?.["right"]);
+          
             setTest(data?.deviceProfiles?.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons["circleSwitch"]?.["top"].layers);
         };
 
@@ -115,7 +105,7 @@ export default function CustomersDemo({ onInputSelect }) {
         // setInputs(test);
     }, [selectedViewerInput]); // eslint-disable-line react-hooks/exhaustive-deps
 
-    console.log(inputs);
+    // console.log(inputs);
 
     const getInputs = (data) => {
         return [...(data || [])].map((d) => {
@@ -322,7 +312,7 @@ export default function CustomersDemo({ onInputSelect }) {
     // const onRowSelectInput = () => {
     //     setSelectedViewerInput(selectedInputs.name);
     // }
-    console.log("SELECTED INPUT:" + selectedInputs.name)
+    // console.log("SELECTED INPUT:" + selectedInputs.name)
 
 
     // useEffect(() => {
@@ -348,7 +338,7 @@ export default function CustomersDemo({ onInputSelect }) {
                     // console.log("E  KEY: " + e.value.key);
                     setSelectedViewerInput(e.value.button);
 
-                    console.log(e.value);
+                    // console.log(e.value);
                 }}
                 filters={filters} filterDisplay="" globalFilterFields={['name', 'country.name', 'representative.name', 'balance', 'status']}
                 emptyMessage="No customers found." currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">

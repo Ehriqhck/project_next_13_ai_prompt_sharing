@@ -41,7 +41,9 @@ export const PATCH = async (request, { params }) => {
     query[selectQuery] = selectedAction
 
     await User.findOneAndUpdate({ _id: userId }, query)
-    return new Response('JSON.stringify(data)', { status: 200 })
+    const updatedData = await User.findOne({ _id: userId })
+
+    return new Response(JSON.stringify(updatedData), { status: 200 })
   } catch (error) {
     console.log(error)
     log(error)

@@ -115,7 +115,7 @@ export default function CustomersDemo({ onInputSelect }) {
         // setInputs(test);
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-    console.log(inputs);
+    // console.log(inputs);
 
     const getInputs = (data) => {
         return [...(data || [])].map((d) => {
@@ -322,7 +322,7 @@ export default function CustomersDemo({ onInputSelect }) {
     // const onRowSelectInput = () => {
     //     setSelectedViewerInput(selectedInputs.name);
     // }
-    console.log("SELECTED INPUT:" + selectedInputs.name)
+    // console.log("SELECTED INPUT:" + selectedInputs.name)
 
 
     // useEffect(() => {
@@ -348,7 +348,7 @@ export default function CustomersDemo({ onInputSelect }) {
                     // console.log("E  KEY: " + e.value.key);
                     setSelectedEditorInput(e.value);
 
-                    console.log(e.value);
+                    // console.log(e.value);
                 }}
                 filters={filters} filterDisplay="" globalFilterFields={['name', 'country.name', 'representative.name', 'balance', 'status']}
                 emptyMessage="No customers found." currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">

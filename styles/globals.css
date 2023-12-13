@@ -102,7 +102,12 @@ width: 100%;
   outline-offset: -0.15rem;
   box-shadow: 0px 0px 30px 0px #00ffbb33, inset -13px -15px 30px 0px #00ffbb33;
 }
-
+td {
+  max-width: 100% !important;
+}
+table.p-datatable-table {
+  width: 100% !important;
+}
 .p-datatable .p-datatable-tbody > tr.p-highlight {
   background: rgba(255, 255, 255, 0) !important;
   color: #00000000 !important;
