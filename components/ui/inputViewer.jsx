@@ -6,7 +6,7 @@ import Up from '@components/inputs/Up';
 import Left from '@components/inputs/Left';
 import Right from '@components/inputs/Right';
 import { useContext, useState, useEffect } from 'react';
-import { Context, SelectContext, SelectedLayerContext } from '@components/Provider.jsx'
+import { Context, SelectContext, SelectedEditorActionContext } from '@components/Provider.jsx'
 import CircleSwitch from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/CircleSwitch.jsx';
 import Press from '@components/inputs/Press';
 import Down from '@components/inputs/Down';
@@ -16,8 +16,9 @@ const InputViewer = ({ selectedButton }) => {
     const { data: session } = useSession();
     const userId = { id: session?.user.id };
     console.log("USER ID: " + userId.id);
-    const profileContext = useContext(Context);
+    const { profileContext, setprofileContext } = useContext(Context);
     const { selectedViewerInput, setSelectedViewerInput } = useContext(SelectContext);
+    const {selectedEditorInput, setSelectedEditorInput} = useContext(SelectedEditorActionContext)
 
 
     const [top, setTop] = useState();
@@ -57,7 +58,7 @@ const InputViewer = ({ selectedButton }) => {
 
         fetchDeviceProfiles();
         //rehydrate when another input is selected
-    }, [selectedButton])
+    }, [selectedButton, profileContext])
 
 
     // const ButtonName = profileContext.deviceProfiles.saved["VKB_GLADIATOR_EVO"].profileName;

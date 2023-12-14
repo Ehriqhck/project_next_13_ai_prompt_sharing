@@ -3,16 +3,15 @@ import React from "react";
 
 import clsx from "clsx";
 import { SelectedLayerContext } from "@components/Provider";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 
 export default function LayerChip(props) {
     const { selectedLayer, setSelectedLayer } = useContext(SelectedLayerContext)
-
     const { data: session } = useSession();
     // console.log(props);
     const layerNumber = props.layer;
-    // console.log(layerNumber);
+    console.log(props.layer);
 
 
     const modifierKey = "// SHIFT + P";
@@ -20,12 +19,12 @@ export default function LayerChip(props) {
     const isButton = props.isButton;
 
     const classNames = clsx({
-        'modifier-chip-0 flex gap-[6px]': layerNumber === "0",
-        'modifier-chip-2 flex gap-[6px]': layerNumber === "1",
-        'modifier-chip-3 flex gap-[6px]': layerNumber === "2",
-        'modifier-chip-2 button-chip flex gap-[6px]': (props.isButton === 'true') && (layerNumber === "1"),
-        'modifier-chip-3 button-chip flex gap-[6px]': (props.isButton === 'true') && (layerNumber === "2"),
-        'modifier-chip-0 button-chip flex gap-[6px]': (props.isButton === 'true') && (layerNumber === "0"),
+        'modifier-chip-0 flex gap-[6px]': layerNumber === 0,
+        'modifier-chip-2 flex gap-[6px]': layerNumber === 1,
+        'modifier-chip-3 flex gap-[6px]': layerNumber === 2,
+        'modifier-chip-2 button-chip flex gap-[6px]': (props.isButton === 'true') && (layerNumber === 1),
+        'modifier-chip-3 button-chip flex gap-[6px]': (props.isButton === 'true') && (layerNumber === 2),
+        'modifier-chip-0 button-chip flex gap-[6px]': (props.isButton === 'true') && (layerNumber === 0),
 
     })
 
@@ -44,12 +43,11 @@ export default function LayerChip(props) {
         })
     }
 
-  
+
 
     const chipTemplate =
         <div
-            className={classNames} onClick={setSelectedLayer(props.layer)
-            }
+            className={classNames} 
         >
             <div className="flex flex-row gap-[4px]">
                 <div className="self-center ">
@@ -70,7 +68,7 @@ export default function LayerChip(props) {
                         </defs>
                     </svg>
                 </div>
-                <p className={layerTagTextClassNames}> LAYER {Number(layerNumber) + 1} </p>
+                <p className={layerTagTextClassNames}> LAYER {Number(layerNumber) } </p>
 
             </div>
             {/* <p className="text-modifier-chip-layer-2"> {modifierKey}</p> */}
@@ -90,9 +88,8 @@ export default function LayerChip(props) {
                             // value="1"
                             type="checkbox"
                             onClick={() => {
-                                selectModLayer(layerNumber);
-                                console.log(layerNumber);
-
+                                setSelectedLayer(props.layer);
+                                console.log(props.layer);
                             }}
                         >
                         </input>

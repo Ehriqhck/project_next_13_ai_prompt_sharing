@@ -2,16 +2,18 @@
 
 import React from 'react'
 import { Button } from 'primereact/button';
-import { SelectedEditorActionContext, SelectedActionContext, SelectedLayerContext } from '@components/Provider';
-import { useContext, useState } from 'react';
+import { SelectedEditorActionContext, SelectedActionContext, SelectedLayerContext, Context } from '@components/Provider';
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
-import { ShowEditorPanelContext, ShowViewerPanelContext } from '@components/Provider';
+import { ShowEditorPanelContext, ShowViewerPanelContext, SelectContext } from '@components/Provider';
+import { createContext, useContext, useState } from 'react';
 
 // import {fetchMappings} from '@app/editor/utils.js'
 const BindButton = (props) => {
     const { selectedAction, setSelectedAction } = useContext(SelectedActionContext);
     const { selectedEditorInput, setSelectedEditorInput } = useContext(SelectedEditorActionContext);
     const { selectedLayer, setSelectedLayer } = useContext(SelectedLayerContext)
+    const { selectedViewerInput, setSelectedViewerInput } = useContext(SelectContext);
+    const { profileContext, setprofileContext } = useContext(Context);
 
     const [fetcthed, setfetcthed] = useState();
     const { data: session } = useSession();
@@ -24,7 +26,7 @@ const BindButton = (props) => {
     }
     const selectedLayerNum = Number(selectedLayer) - 2;
     const fetchDeviceProfiles = async () => {
-        console.log(selectedAction);
+        // console.log(selectedAction);
 
         const response = await fetch("/api/deviceProfiles/bindButton", {
             method: "PATCH",
@@ -32,14 +34,17 @@ const BindButton = (props) => {
                 userId: session?.user.id,
                 selectedInput: selectedEditorInput,
                 selectedAction: selectedAction,
-                selectedLayer: selectedLayerNum
-
+                selectedLayer: selectedLayer 
             })
-        });
+        }
+
+
+        );
 
         const data = await response.json();
-        console.log(JSON.stringify(data));
 
+        setprofileContext(data);
+        // console.log(JSON.stringify(data));
         // setTop(data?.deviceProfiles?.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedButton]?.["top"]);
         // setbottom(data?.deviceProfiles?.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedButton]?.["bottom"]);
         // setLeft(data?.deviceProfiles?.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedButton]?.["left"]);
@@ -71,6 +76,8 @@ const BindButton = (props) => {
                 id="bindButton"
                 onClick={async () => {
                     await fetchDeviceProfiles();
+                    // setSelectedViewerInput(selectedViewerInput);
+                    console.log(selectedLayerNum);
                     // console.log(selectedEditorInput);
                 }}>
                 {/* {JSON.stringify(fetcthed)} */}
