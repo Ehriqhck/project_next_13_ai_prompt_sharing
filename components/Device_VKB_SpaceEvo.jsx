@@ -2,7 +2,7 @@
 
 import { useContext } from 'react';
 import { SelectContext } from '@components/Provider.jsx'
-
+import { Tooltip } from 'primereact/tooltip';
 import React from 'react'
 
 const Device_VKB_SpaceEvo = (props) => {
@@ -15,6 +15,8 @@ const Device_VKB_SpaceEvo = (props) => {
   }
 
   return (
+    <> 
+    <Tooltip target=".chipSwitchPopOverTarget"/>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -743,7 +745,10 @@ const Device_VKB_SpaceEvo = (props) => {
             />
           </g>
         </g>
-        <g id="input4">
+        <g id="input4" className="selected-input corner-test" onClick={() => {
+          setSelectedViewerInput('redButton');
+          console.log("redButton")
+        }} >
           <path
             d="M232.14 137.48c-.06-14.62-18.8-19.83-27.32-9.58-9.6 11.55 2.16 26.97 15.01 24.36 6.7-1.37 12.29-7.29 12.31-14.77Z"
             className="cls-8"
@@ -960,51 +965,58 @@ const Device_VKB_SpaceEvo = (props) => {
             </g>
           </g>
         </g>
-        <g id="input5">
-          <path
-            d="m198.674 290.437 8.161-11.742 7.71 5.359-8.16 11.742z"
-            className="cls-16"
-          />
-          <path
-            d="M199.46 282.53h14.3v9.39h-14.3z"
-            style={{
-              fill: "url(#linear-gradient-18)",
-            }}
-            transform="rotate(-55.2 206.63 287.236)"
-          />
-          <path
-            d="M216.61 303.14c-.65-.48-.81-1.4-.35-2.07l1.49-2.18c.47-.69.29-1.63-.39-2.1l-13.02-8.98-10.78-6.94c-.7-.45-1.63-.26-2.09.44l-1.45 2.2c-.06.09-.12.17-.19.24-.45.45-.45 1.17.08 1.52l26.7 17.86Z"
-            className="cls-11"
-          />
-          <path
-            d="M216.61 303.14c-.65-.48-.81-1.4-.35-2.07l1.49-2.18c.47-.69.29-1.63-.39-2.1l-13.02-8.98-10.78-6.94c-.7-.45-1.63-.26-2.09.44l-1.45 2.2c-.06.09-.12.17-.19.24-.45.45-.45 1.17.08 1.52l26.7 17.86Z"
-            style={{
-              fill: "url(#linear-gradient-19)",
-            }}
-          />
-          <rect
-            width={11.73}
-            height={27.88}
-            x={205.37}
-            y={266.73}
-            className="cls-16"
-            rx={2.21}
-            ry={2.21}
-            transform="rotate(-57.08 211.223 280.667)"
-          />
-          <rect
-            width={11.73}
-            height={27.88}
-            x={205.37}
-            y={266.73}
-            rx={2.21}
-            ry={2.21}
-            style={{
-              fill: "url(#linear-gradient-20)",
-            }}
-            transform="rotate(-57.08 211.223 280.667)"
-          />
-        </g>
+          <g id="input5" 
+          className="chipSwitchPopOverTarget selected-input corner-test" 
+          data-pr-tooltip="No notifications"
+
+          onClick={() => {
+            setSelectedViewerInput('chipSwitch');
+            console.log("chipSwitch")
+          }}>
+            <path
+              d="m198.674 290.437 8.161-11.742 7.71 5.359-8.16 11.742z"
+              className="cls-16"
+            />
+            <path
+              d="M199.46 282.53h14.3v9.39h-14.3z"
+              style={{
+                fill: "url(#linear-gradient-18)",
+              }}
+              transform="rotate(-55.2 206.63 287.236)"
+            />
+            <path
+              d="M216.61 303.14c-.65-.48-.81-1.4-.35-2.07l1.49-2.18c.47-.69.29-1.63-.39-2.1l-13.02-8.98-10.78-6.94c-.7-.45-1.63-.26-2.09.44l-1.45 2.2c-.06.09-.12.17-.19.24-.45.45-.45 1.17.08 1.52l26.7 17.86Z"
+              className="cls-11"
+            />
+            <path
+              d="M216.61 303.14c-.65-.48-.81-1.4-.35-2.07l1.49-2.18c.47-.69.29-1.63-.39-2.1l-13.02-8.98-10.78-6.94c-.7-.45-1.63-.26-2.09.44l-1.45 2.2c-.06.09-.12.17-.19.24-.45.45-.45 1.17.08 1.52l26.7 17.86Z"
+              style={{
+                fill: "url(#linear-gradient-19)",
+              }}
+            />
+            <rect
+              width={11.73}
+              height={27.88}
+              x={205.37}
+              y={266.73}
+              className="cls-16"
+              rx={2.21}
+              ry={2.21}
+              transform="rotate(-57.08 211.223 280.667)"
+            />
+            <rect
+              width={11.73}
+              height={27.88}
+              x={205.37}
+              y={266.73}
+              rx={2.21}
+              ry={2.21}
+              style={{
+                fill: "url(#linear-gradient-20)",
+              }}
+              transform="rotate(-57.08 211.223 280.667)"
+            />
+          </g>
         <g id="input2" className="selected-input corner-test" onClick={() => {
           setSelectedViewerInput('hatSwitch');
           console.log("setSelectedViewerInput Input 1")
@@ -1204,6 +1216,7 @@ const Device_VKB_SpaceEvo = (props) => {
         </g>
       </g>
     </svg>
+    </>
   )
 }
 

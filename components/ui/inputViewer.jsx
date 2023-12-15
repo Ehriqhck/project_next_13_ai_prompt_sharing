@@ -11,6 +11,10 @@ import CircleSwitch from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/Circ
 import Press from '@components/inputs/Press';
 import Down from '@components/inputs/Down';
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
+import PillSwitch from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/PillSwitch.jsx'
+import RedButton from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/RedButton.jsx'
+import ChipSwitch from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/ChipSwitch.jsx'
+
 import PanelSwitchButtonMobile from '@app/editor/PanelSwitchButtonMobile';
 const InputViewer = ({ selectedButton }) => {
     const { data: session } = useSession();
@@ -18,7 +22,7 @@ const InputViewer = ({ selectedButton }) => {
     console.log("USER ID: " + userId.id);
     const { profileContext, setprofileContext } = useContext(Context);
     const { selectedViewerInput, setSelectedViewerInput } = useContext(SelectContext);
-    const {selectedEditorInput, setSelectedEditorInput} = useContext(SelectedEditorActionContext)
+    const { selectedEditorInput, setSelectedEditorInput } = useContext(SelectedEditorActionContext)
 
 
     const [top, setTop] = useState();
@@ -86,6 +90,17 @@ const InputViewer = ({ selectedButton }) => {
             case ('hatSwitch'):
                 return (<Hat className="testCircle p-[10px]" />)
                 break;
+
+            case ('pillSwitch'):
+                return (<PillSwitch className="testCircle p-[10px]" />)
+                break;
+
+                case ('redButton'):
+                    return (<RedButton className="testCircle p-[10px]" />)
+                    break;
+                    case ('chipSwitch'):
+                        return (<ChipSwitch className="testCircle p-[10px]" />)
+                        break;
 
             default:
                 return (<Hat></Hat>)
