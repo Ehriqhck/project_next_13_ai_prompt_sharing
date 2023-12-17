@@ -4,8 +4,8 @@ const Spacer = () => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            width={48}
-            height={81}
+            width="1px"
+            height="100%"
             fill="none"
             // {...props}
         >
