@@ -20,6 +20,15 @@ html{
   display: none;
  }
 
+ .popover-select {
+  background: rgba(255, 255, 255, 0) !important;
+  color: #00000000 !important;
+  outline: 1.5px solid #00ffdab3 !important;
+  outline-offset: -0.15rem !important;
+  box-shadow: 0px 0px 30px 0px #00ffbb33, inset -13px -15px 30px 0px #00ffbb33 !important;
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+ }
 .InputTableMobile {
   display:none;
 }
@@ -75,15 +84,74 @@ width: 100%;
 }
 
 .input-tooltip {
-  background: radial-gradient(
+  /* background: radial-gradient(
     644.7% 114.87% at 22.25% 28.07%,
     rgb(10 24 39 / 53%) 0%,
     rgba(73, 162, 214, 0.26) 100%
-  ) !important   ;
-  box-shadow: 0px -11px 30px 0px #045c68 inset !important;
-  box-shadow: -2px -2px 25px 0px #031b19 !important;
-  backdrop-filter: blur(5px);
+  ) !important   ; */
+  background: radial-gradient(
+    644.7% 114.87% at 22.25% 28.07%,
+    rgb(10 24 39 / 83%) 0%,
+    rgb(73 162 214 / 59%) 100%
+  ) !important;
+  box-shadow: 0px -20px 20px 0px #011016 inset, -2px -2px 25px 0px #031b19 !important;
+
   padding: unset !important;
+  border-radius: 30px !important;
+  background-blend-mode: multiply !important;
+  backdrop-filter: saturate(1%), blur(10px);
+}
+
+.input-tooltip:before {
+  background: black !important;
+}
+
+.input-tooltip-select-left:hover {
+  outline: 1.5px solid #00ffdab3 !important;
+  box-shadow: 0px 0px 30px 0px #00ffbb33, inset -13px -15px 30px 0px #00ffbb33 !important;
+  color: #ffffff !important;
+  background: rgba(3, 19, 34, 0.6);
+  border-radius: 30px 0px 0px 30px !important;
+  transition: box-shadow 0.3s;
+}
+.input-tooltip-select-left:hover > p {
+  color: #5bffe6 !important;
+  transition: color 0.3s;
+
+}
+
+.input-tooltip-select-left:hover  path {
+  fill: #5bffe6 !important;
+  color: #5bffe6 !important;
+  box-shadow: 0px 0px 30px 0px #00ffbb33, inset -13px -15px 30px 0px #00ffbb33 !important;
+  transition: all 0.3s;
+
+}
+
+.input-tooltip-select-right:hover  path {
+  fill: #5bffe6 !important;
+  color: #5bffe6 !important;
+  box-shadow: 0px 0px 30px 0px #00ffbb33, inset -13px -15px 30px 0px #00ffbb33 !important;
+  transition: all 0.3s;
+
+}
+
+.input-tooltip-select-right:hover  p {
+  color: #5bffe6 !important;
+  transition: all 0.3s;
+
+}
+
+.input-tooltip-select-right:hover {
+  background: rgba(3, 19, 34, 0.6) !important;
+  color: #00000000 !important;
+  outline: 1.5px solid #00ffdab3 !important;
+  box-shadow: 0px 0px 30px 0px #00ffbb33, inset -13px -15px 30px 0px #00ffbb33 !important;
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  border-radius: 0px 30px 30px 0px !important;
+  transition: box-shadow 0.3s;
+
 }
 /* .react-tooltip-arrow {
   background: rgb(0, 255, 170) !important;
@@ -1193,12 +1261,12 @@ gap: 60px;
 .flex-between {
   @apply flex justify-between items-center;
 }
-
+#InputEditorPanel {
+  display: unset !important;
+  width: fit-content
+}
 @media (min-width: 1421px) {
-  #InputEditorPanel {
-    display: unset !important;
-    width: fit-content
-  }
+ 
   
 }
 /* 

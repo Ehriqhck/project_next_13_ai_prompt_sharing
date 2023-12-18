@@ -1,6 +1,6 @@
 "use client";
 import { Tooltip } from 'react-tooltip'
-
+import InputPopover from '@components/generic/InputPopover.jsx'
 
 import { OverlayPanel } from 'primereact/overlaypanel';
 import ChipSwitch from './generic/Icons/VKB/GLADIATOR_SPACE_EVO/ChipSwitch';
@@ -22,43 +22,13 @@ const Device_VKB_SpaceEvo = (props) => {
 
   return (
     <>
-      <Tooltip
-        className='panel-default input-tooltip'
 
-        anchorSelect="#input5"
-        clickable={true}
-      // mouseTrackLeft={0}
-      // position="top"
-      >
+      <InputPopover InputId={"chipSwitch"} InputName={"CHIP STICK"} TargetId={"#input5"}/>
+      <InputPopover InputId={"pillSwitch"} InputName={"PILL STICK"} TargetId={"#input1"}/>
+      <InputPopover InputId={"hatSwitch"} InputName={"HAT STICK"} TargetId={"#input2"}/>
+      <InputPopover InputId={"circleSwitch"} InputName={"CIRCLE STICK"} TargetId={"#input3"}/>
+      <InputPopover InputId={"redButton"} InputName={"RED BUTTON"} TargetId={"#input4"}/>
 
-        <div className='flex flex-col  '>
-          {/* <ChipSwitch className="w-[80px] h-[80px]" /> */}
-          {/* <p className='text-list-default text-modifier-chip self-center'>
-            CHIP STICK
-          </p> */}
-          <div className=' flex flex-row'>
-        
-            <div className='flex flex-col justify-center align-middle pb-[16px] pt-[16px] w-[75px]'>
-              <EditIcon className="w-[40px] h-[40px] p-[5px] self-center" />
-              <p className='text-list-default text-modifier-chip self-center'>
-                EDIT
-              </p>
-            </div>
-            <div className='spacer '/>
-            <div className='flex flex-col justify-center align-middle pb-[16px] pt-[16px]  w-[75px]'>
-              <div className='h-[40px] w-[40px] p-[5px] flex self-center '> 
-
-              <ViewIcon className=" self-center" />
-
-              </div>
-              <p className='text-list-default text-modifier-chip self-center'>
-                VIEW
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </Tooltip>
       <div>
 
         <svg
@@ -1012,7 +982,6 @@ const Device_VKB_SpaceEvo = (props) => {
 
             <g id="input5"
               className=" selected-input corner-test"
-              data-tooltip-delay-hide={3000000}
 
               // data-pr-position="top"
               // data-pr-autoHide={false}
