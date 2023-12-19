@@ -2,9 +2,14 @@ import React, { useContext } from 'react'
 import { Tooltip } from 'react-tooltip'
 import EditIcon from '@components/generic/Icons/EditIcon.svg'
 import { SelectContext } from '@components/Provider.jsx'
+import { SelectedEditorActionContext, EditorPanelTitleContext, ViewerPanelTitleContext } from '@components/Provider'
 
 const InputPopover = ({ InputName, InputId, TargetId }) => {
     const { selectedViewerInput, setSelectedViewerInput } = useContext(SelectContext)
+    const { selectedEditorInput, setSelectedEditorInput } = useContext(SelectedEditorActionContext)
+    const { editorPanelTitle, setEditorPanelTitle } = useContext(EditorPanelTitleContext)
+    const { viewerPanelTitle, setViewerPanelTitle } = useContext(ViewerPanelTitleContext)
+
     return (
         <Tooltip
             className='panel-default input-tooltip'
@@ -20,6 +25,7 @@ const InputPopover = ({ InputName, InputId, TargetId }) => {
                 <div className=' flex flex-row'>
                     <button onClick={() => {
                         setSelectedViewerInput(InputId)
+                        setViewerPanelTitle(InputName)
                     }}>
                         <div className='input-tooltip-select-left flex flex-col justify-center align-middle pb-[16px] pt-[16px]  w-[75px]'>
                             <div className='h-[40px] w-[40px] p-[5px] flex self-center '>
@@ -43,7 +49,10 @@ const InputPopover = ({ InputName, InputId, TargetId }) => {
                     </button>
                     <div className='spacer ' />
                     <button onClick={() => {
-                        setSelectedViewerInput(InputId)
+                        setSelectedEditorInput(InputId)
+                        setEditorPanelTitle(InputName);
+
+                        console.log(InputId);
                     }}>
                         <div className=' input-tooltip-select-right flex flex-col justify-center align-middle pb-[16px] pt-[16px] w-[75px]'>
                             <EditIcon className="w-[40px] h-[40px] p-[5px] self-center" />

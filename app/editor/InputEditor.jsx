@@ -4,11 +4,12 @@ import IconLegend from '@components/generic/IconLegend';
 import React from 'react'
 import ActionTable from '@app/editor/ActionTable'
 import InputTable from '@app/editor/InputTable'
-import { SelectContext, SelectedEditorActionContext } from '@components/Provider';
+import { SelectContext, SelectedEditorActionContext, EditorPanelTitleContext } from '@components/Provider';
 import LayerChip from '@components/generic/LayerChip';
 import ModLayerSelector from '@components/actionSelector/ModLayerSelector.js';
 import BindButton from '@app/editor/BindButton.jsx'
 import PanelSwitchButtonMobile from './PanelSwitchButtonMobile.js';
+import { Utils } from '@app/editor/utils.js'
 
 
 import { createContext, useContext, useState } from 'react';
@@ -20,6 +21,7 @@ const Editor = ({ show }) => {
   const [selectedAction, setSelectedAction] = useState("CONTEXT ACTION: DEFAULT")
   const { selectedViewerInput, setSelectedViewerInput } = useContext(SelectContext)
   const { selectedEditorInput, setSelectedEditorInput } = useContext(SelectedEditorActionContext)
+  const { editorPanelTitle, setEditorPanelTitle } = useContext(EditorPanelTitleContext)
 
 
 
@@ -30,7 +32,7 @@ const Editor = ({ show }) => {
   // }, [selectedInput, selectedAction])
   const getInputTitle = () => {
     try {
-      var name = (selectedEditorInput?.name).toUpperCase();
+      var name = (editorPanelTitle).toUpperCase();
       return (name)
     } catch (error) {
       return ("SELECT A BUTTON");
@@ -52,10 +54,19 @@ const Editor = ({ show }) => {
       </div>
       <PanelSwitchButtonMobile whatPanel="editor" />
 
+      <div className='text-input-title flex flex-row'>
+        <div className='corner-test w-[70px] h-[100%]'>
+          {Utils.getInputIcon(selectedEditorInput)}
+        </div>
 
-      <div className='text-input-title'>
-        <p className='text-input-title corner-test '> {getInputTitle()}</p>
+        {/* <p className='text-base ml-[0px]'></p> */}
+        <p className='title-colon '> :</p>
+        <p className='text-input-title corner-test '>{editorPanelTitle.toUpperCase()}</p>
       </div>
+
+      {/* <div className='text-input-title'>
+        <p className='text-input-title corner-test '> {getInputTitle()}</p>
+      </div> */}
       {/* <div className='flex flex-col gap-[7px]'>
         <p className='text-base self-start'>// MODIFIER LAYERS</p>
         <div className='flex flex-row gap-[10px]'>

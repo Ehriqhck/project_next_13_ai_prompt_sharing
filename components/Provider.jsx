@@ -8,6 +8,8 @@ export const SelectContext = createContext();
 export const SelectedEditorActionContext = createContext();
 export const SelectedInputContext = createContext();
 export const SelectedLayerContext = createContext();
+export const EditorPanelTitleContext = createContext();
+export const ViewerPanelTitleContext = createContext();
 
 export const SelectedActionContext = createContext();
 export const ShowViewerPanelContext = createContext();
@@ -195,7 +197,7 @@ const globalContex1t = {
 }
 
 
-SelectedActionContext
+// SelectedActionContext
 const Provider = ({ children, session }) => {
 
   const [selectedLayer, setSelectedLayer] = useState(0);
@@ -204,6 +206,8 @@ const Provider = ({ children, session }) => {
   const [selectedEditorInput, setSelectedEditorInput] = useState("No Input Selected");
   const [showEditorPanel, setshowEditorPanel] = useState(false);
   const [showViewerPanel, setshowViewerPanel] = useState(true);
+  const [editorPanelTitle, setEditorPanelTitle] = useState("SELECT A BUTTON");
+  const [viewerPanelTitle, setViewerPanelTitle] = useState("SELECT A BUTTON");
 
   const [profileContext, setprofileContext] = useState(globalContext);
 
@@ -248,10 +252,13 @@ const Provider = ({ children, session }) => {
                 <SelectedEditorActionContext.Provider value={{ selectedEditorInput, setSelectedEditorInput }}>
                   <ShowEditorPanelContext.Provider value={{ showEditorPanel, setshowEditorPanel }}>
                     <ShowViewerPanelContext.Provider value={{ showViewerPanel, setshowViewerPanel }}>
+                      <EditorPanelTitleContext.Provider value={{ editorPanelTitle, setEditorPanelTitle }}>
+                        <ViewerPanelTitleContext.Provider value={{ viewerPanelTitle, setViewerPanelTitle }}>
 
-                      {children}
+                          {children}
 
-
+                        </ViewerPanelTitleContext.Provider>
+                      </EditorPanelTitleContext.Provider>
                     </ShowViewerPanelContext.Provider>
                   </ShowEditorPanelContext.Provider>
                 </SelectedEditorActionContext.Provider>

@@ -219,6 +219,7 @@ table.p-datatable-table {
   height:auto;
   min-width: 330px;
   margin: 10px 10px 10px 10px;
+  align-self: center;
 }
 
 .p-selectable-row:focus {
@@ -256,13 +257,13 @@ body > main > section > div.panel-default > div.panel-inset > div > div > div.p-
   --b: 1px; /* thickness of the border */
   --c: rgba(0, 247, 255, 0.4); /* color of the border */
   --w: 12px; /* width of border */
-  --r: 4px; /* radius */
+  --r: 2px; /* radius */
 
   padding: var(--b); /* space for the border */
   position: relative;
   /*Irrelevant code*/
   height: 65px;
-  padding: 0px 15px 0px 15px;
+  padding: 0px 10px 0px 10px;
   box-sizing: border-box;
   margin: 5px;
   display: inline-flex;
@@ -324,6 +325,9 @@ body > main > section > div.panel-default > div.panel-inset > div > div > div.p-
   font-weight: 400;
   letter-spacing: 0.01em;
   text-align: left;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
 }
 .spacer {
   
@@ -370,7 +374,7 @@ border-radius: 8px !important;
   filter: drop-shadow(0px 4px 20px #00f0ff);
 }
 .testCircle {
-  width: 70px;
+  width: 100%;
   height: 74.45px;
 
 }
@@ -541,7 +545,15 @@ margin-top:4.45px;
   line-height: 20px;
   white-space: nowrap;
 }
-
+.title-colon {
+  font-style: normal;
+  font-size: 30px;
+  color: #00ffda;
+  height: 30px;
+  align-self: center;
+  line-height: 25px;
+  text-align: center;
+}
 .ui-corners {
   background: url(/assets/icons/actions/frame.svg);
   background-repeat: no-repeat;

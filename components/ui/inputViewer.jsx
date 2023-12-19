@@ -14,6 +14,7 @@ import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 import PillSwitch from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/PillSwitch.jsx'
 import RedButton from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/RedButton.jsx'
 import ChipSwitch from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/ChipSwitch.jsx'
+import { Utils } from '@app/editor/utils.js'
 
 import PanelSwitchButtonMobile from '@app/editor/PanelSwitchButtonMobile';
 const InputViewer = ({ selectedButton }) => {
@@ -199,7 +200,7 @@ const InputViewer = ({ selectedButton }) => {
                     {/* <Left inputName_id={inputName} action_id={action} /> */}
                     {getInputLeft(left)}
 
-                    {getSelectedInputIcon(selectedButton)}
+                  <div className='w-[70px]'>{Utils.getInputIcon(selectedButton)} </div>  
                     {/* <CircleSwitch className="" /> */}
                     {/* <Hat></Hat> */}
                     {getInputRight(right)}

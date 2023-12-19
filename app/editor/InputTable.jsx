@@ -20,21 +20,23 @@ import { Slider } from 'primereact/slider';
 import { Tag } from 'primereact/tag';
 // import { CustomerService } from './CustomerService';
 import { DeviceInputs } from './DeviceInputs';
-import { Context, SelectedEditorActionContext, SelectedLayerContext } from '@components/Provider';
+import { Context, SelectedEditorActionContext, SelectedLayerContext,SelectContext } from '@components/Provider';
 import SearchIcon from '@components/generic/Icons/SearchIcon.jsx';
 import { get } from 'mongoose';
 import GameAction from '@components/GameAction.jsx'
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 import LayerTag from '@components/generic/LayerTag';
+
+
 export default function CustomersDemo({ onInputSelect }) {
     const { data: session } = useSession();
+    const { selectedViewerInput, setSelectedViewerInput } = useContext(SelectContext)
 
     const { selectedEditorInput, setSelectedEditorInput } = useContext(SelectedEditorActionContext)
     const profileContext = useContext(Context)
 
     const [inputs, setInputs] = useState([]);
     const [selectedInputs, setSelectedInputs] = useState([]);
-    const [test, setTest] = useState([]);
 
 
     const [filters, setFilters] = useState({
@@ -84,36 +86,26 @@ export default function CustomersDemo({ onInputSelect }) {
     useEffect(() => {
 
 
-        const fetchDeviceProfiles = async () => {
+        // const fetchDeviceProfiles = async () => {
 
-            const response = await fetch("/api/deviceProfiles", {
-                method: "POST",
-                body: JSON.stringify({
-                    userId: session?.user.id,
-                })
-            });
+        //     const response = await fetch("/api/deviceProfiles", {
+        //         method: "POST",
+        //         body: JSON.stringify({
+        //             userId: session?.user.id,
+        //         })
+        //     });
 
-            const data = await response.json();
-            // console.log("INPUT VIEWER !!!!!!!!!!!" + JSON.stringify(data[0].deviceProfiles.deviceProfiles.saved["VKB_GLADIATOR_EVO"].buttons["circleSwitch"]?.["top"]));
-            // console.log("FETCHED RESPONSE: " + JSON.stringify(data));
-            // console.log("!!!!!!!!!!!! FETCHED RESPONSE: " + JSON.stringify(data.deviceProfiles));
+        //     const data = await response.json();
+            
+        //     setTest(data?.deviceProfiles?.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons["circleSwitch"]?.["top"].layers);
+        // };
 
-            // console.log("PARSED & STRINGED RESPONSE: " + JSON.parse(JSON.stringify(data[0].deviceProfiles.deviceProfiles)));
-            // console.log("RAW RESPONSE: " + JSON.stringify(data[0].deviceProfiles.deviceProfiles.saved["VKB_GLADIATOR_EVO"].buttons[selectedButton]?.["top"]));
-            // console.log("FETCHED DEVICEPROFILES: " + data);
-            // setTop(data?.deviceProfiles?.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedButton]?.["top"]);
-            // setbottom(data?.deviceProfiles?.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedButton]?.["bottom"]);
-            // setLeft(data?.deviceProfiles?.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedButton]?.["left"]);
-            // setRight(data?.deviceProfiles?.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedButton]?.["right"]);
-            setTest(data?.deviceProfiles?.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons["circleSwitch"]?.["top"].layers);
-        };
+        // fetchDeviceProfiles();
 
-        fetchDeviceProfiles();
-
-        DeviceInputs.getCustomersLarge().then((data) => setInputs(getInputs(data)));
+        DeviceInputs.getCustomersLarge(selectedEditorInput).then((data) => setInputs(getInputs(data)));
 
         // setInputs(test);
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, [selectedEditorInput]); // eslint-disable-line react-hooks/exhaustive-deps
 
     // console.log(inputs);
 
@@ -346,7 +338,6 @@ export default function CustomersDemo({ onInputSelect }) {
                 onSelectionChange={(e) => {
                     setSelectedInputs(e.value)
                     // console.log("E  KEY: " + e.value.key);
-                    setSelectedEditorInput(e.value);
 
                     // console.log(e.value);
                 }}

@@ -5,7 +5,7 @@ import InputPopover from '@components/generic/InputPopover.jsx'
 import { OverlayPanel } from 'primereact/overlaypanel';
 import ChipSwitch from './generic/Icons/VKB/GLADIATOR_SPACE_EVO/ChipSwitch';
 import { useContext } from 'react';
-import { SelectContext } from '@components/Provider.jsx'
+import { SelectContext, EditorPanelTitleContext } from '@components/Provider.jsx'
 import React from 'react'
 import { Button } from 'primereact/button';
 import EditIcon from '@components/generic/Icons/EditIcon.svg'
@@ -13,12 +13,9 @@ import ViewIcon from '@components/generic/Icons/ViewIcon.svg'
 import Spacer from '@components/generic/Spacer.jsx'
 const Device_VKB_SpaceEvo = (props) => {
   const { selectedViewerInput, setSelectedViewerInput } = useContext(SelectContext)
-  // console.log("CURRENT SELECTED SVG: " + se);
-
-  const userSelected = (input) => {
+  const { editorPanelTitle, setEditorPanelTitle } = useContext(EditorPanelTitleContext)
 
 
-  }
 
   return (
     <>
@@ -761,6 +758,7 @@ const Device_VKB_SpaceEvo = (props) => {
             </g>
             <g id="input4" className=" selected-input corner-test" onClick={() => {
               setSelectedViewerInput('redButton');
+              setEditorPanelTitle('Red Button');
               console.log("redButton")
             }} >
               <path
@@ -776,6 +774,8 @@ const Device_VKB_SpaceEvo = (props) => {
             </g>
             <g id="input3" className="selected-input corner-test" onClick={() => {
               setSelectedViewerInput('circleSwitch');
+              setEditorPanelTitle('Circle Stick');
+
               console.log("setSelectedViewerInput")
             }}>
               <path
@@ -988,6 +988,8 @@ const Device_VKB_SpaceEvo = (props) => {
               // data-pr-tooltipOptions={{ hideDelay: 1000 }}
               onClick={() => {
                 setSelectedViewerInput('chipSwitch');
+                setEditorPanelTitle('Chip Stick');
+
                 console.log("chipSwitch")
               }}>
               <path
@@ -1036,6 +1038,8 @@ const Device_VKB_SpaceEvo = (props) => {
             </g>
             <g id="input2" className="selected-input corner-test" onClick={() => {
               setSelectedViewerInput('hatSwitch');
+              setEditorPanelTitle('Hat Stick');
+
               console.log("setSelectedViewerInput Input 1")
             }}>
               <path
@@ -1072,6 +1076,8 @@ const Device_VKB_SpaceEvo = (props) => {
             </g>
             <g id="input1" className="selected-input corner-test" onClick={() => {
               setSelectedViewerInput('pillSwitch');
+              setEditorPanelTitle('Pill Stick');
+
               console.log("setSelectedViewerInput Input 1")
             }}>
               <path
