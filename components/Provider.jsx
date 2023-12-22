@@ -6,6 +6,8 @@ import "primereact-sass-theme-9.6.2/themes/mytheme/theme.scss";
 
 export const SelectContext = createContext();
 export const SelectedEditorActionContext = createContext();
+export const SelectedEditorActionTableTargetContext = createContext();
+
 export const SelectedInputContext = createContext();
 export const SelectedLayerContext = createContext();
 export const EditorPanelTitleContext = createContext();
@@ -204,6 +206,8 @@ const Provider = ({ children, session }) => {
   const [selectedViewerInput, setSelectedViewerInput] = useState("Circle Switch");
   const [selectedAction, setSelectedAction] = useState("No Action Selected");
   const [selectedEditorInput, setSelectedEditorInput] = useState("No Input Selected");
+  const [selectedEditorInputActions, setSelectedEditorInputActions] = useState();
+
   const [showEditorPanel, setshowEditorPanel] = useState(false);
   const [showViewerPanel, setshowViewerPanel] = useState(true);
   const [editorPanelTitle, setEditorPanelTitle] = useState("SELECT A BUTTON");
@@ -254,9 +258,10 @@ const Provider = ({ children, session }) => {
                     <ShowViewerPanelContext.Provider value={{ showViewerPanel, setshowViewerPanel }}>
                       <EditorPanelTitleContext.Provider value={{ editorPanelTitle, setEditorPanelTitle }}>
                         <ViewerPanelTitleContext.Provider value={{ viewerPanelTitle, setViewerPanelTitle }}>
+                          <SelectedEditorActionTableTargetContext.Provider value={{ selectedEditorInputActions, setSelectedEditorInputActions }}>
 
-                          {children}
-
+                            {children}
+                          </SelectedEditorActionTableTargetContext.Provider>
                         </ViewerPanelTitleContext.Provider>
                       </EditorPanelTitleContext.Provider>
                     </ShowViewerPanelContext.Provider>

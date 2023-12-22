@@ -4,7 +4,7 @@ import Down from '@public/assets/icons/actions/input_down.svg';
 import Up from '@public/assets/icons/actions/input_up.svg';
 import Left from '@public/assets/icons/actions/input_left.svg';
 import Right from '@public/assets/icons/actions/input_right.svg';
-
+import ActionList from '@components/ActionList';
 
 import React, { useState, useEffect, useContext } from 'react';
 import { FilterMatchMode, FilterOperator } from 'primereact/api';
@@ -20,7 +20,7 @@ import { Slider } from 'primereact/slider';
 import { Tag } from 'primereact/tag';
 // import { CustomerService } from './CustomerService';
 import { DeviceInputs } from './DeviceInputs';
-import { Context, SelectedEditorActionContext, SelectedLayerContext,SelectContext } from '@components/Provider';
+import { Context, SelectedEditorActionContext, SelectedLayerContext, SelectContext, SelectedEditorActionTableTargetContext } from '@components/Provider';
 import SearchIcon from '@components/generic/Icons/SearchIcon.jsx';
 import { get } from 'mongoose';
 import GameAction from '@components/GameAction.jsx'
@@ -30,13 +30,15 @@ import LayerTag from '@components/generic/LayerTag';
 
 export default function CustomersDemo({ onInputSelect }) {
     const { data: session } = useSession();
-    const { selectedViewerInput, setSelectedViewerInput } = useContext(SelectContext)
+    const { selectedViewerInput, setSelectedViewerInput } = useContext(SelectContext);
+    const { selectedEditorInputActions, setSelectedEditorInputActions } = useContext(SelectedEditorActionTableTargetContext)
 
-    const { selectedEditorInput, setSelectedEditorInput } = useContext(SelectedEditorActionContext)
+    const { selectedEditorInput, setSelectedEditorInput } = useContext(SelectedEditorActionContext);
     const profileContext = useContext(Context)
 
     const [inputs, setInputs] = useState([]);
     const [selectedInputs, setSelectedInputs] = useState([]);
+    const [inputActions, setInputActions] = useState(["DEFAULT"]);
 
 
     const [filters, setFilters] = useState({
@@ -83,31 +85,46 @@ export default function CustomersDemo({ onInputSelect }) {
         }
     };
 
+
+
     useEffect(() => {
+        console.log("selectedEditorInput  " + selectedEditorInput);
+        const fetchInputActions = async ({ buttonId, inputSlot }) => {
+            console.log("selectedEditorInput  " + selectedEditorInput);
+            const response = await fetch("/api/deviceProfiles", {
+                method: "POST",
+                body: JSON.stringify({
+                    userId: session?.user.id,
+                })
+            });
 
+            const data = await response.json();
+            // console.log("ASLKDJALKSDJLKASDJLKASJD  " + data);
+            setInputActions(data?.deviceProfiles?.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedEditorInput]?.["top"].layers);
+        };
+        fetchInputActions({ buttonId: selectedEditorInput.button, inputSlot: selectedEditorInput.slot })
 
-        // const fetchDeviceProfiles = async () => {
+        console.log(JSON.stringify(inputActions));
 
-        //     const response = await fetch("/api/deviceProfiles", {
-        //         method: "POST",
-        //         body: JSON.stringify({
-        //             userId: session?.user.id,
-        //         })
-        //     });
-
-        //     const data = await response.json();
-            
-        //     setTest(data?.deviceProfiles?.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons["circleSwitch"]?.["top"].layers);
-        // };
-
-        // fetchDeviceProfiles();
-
-        DeviceInputs.getCustomersLarge(selectedEditorInput).then((data) => setInputs(getInputs(data)));
+        DeviceInputs.getCustomersLarge(selectedEditorInputActions).then((data) => setInputs(getInputs(data)));
 
         // setInputs(test);
-    }, [selectedEditorInput]); // eslint-disable-line react-hooks/exhaustive-deps
+    }, [selectedEditorInput, selectedEditorInputActions]); // eslint-disable-line react-hooks/exhaustive-deps
 
     // console.log(inputs);
+    const fetchInputActions = async ({ buttonId, inputSlot }) => {
+        console.log("BUTTON ID " + buttonId);
+        const response = await fetch("/api/deviceProfiles", {
+            method: "POST",
+            body: JSON.stringify({
+                userId: session?.user.id,
+            })
+        });
+
+        const data = await response.json();
+        // console.log("ASLKDJALKSDJLKASDJLKASJD  " + data);
+        setInputActions(data?.deviceProfiles?.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedEditorInput]?.["top"].layers);
+    };
 
     const getInputs = (data) => {
         return [...(data || [])].map((d) => {
@@ -195,13 +212,11 @@ export default function CustomersDemo({ onInputSelect }) {
         }
     }
 
-    // const getInputActions = () => {
-
-    //     return (<GameAction action_id={"asd"} input_direction={""}>);
-    // }
     const nameBodyTemplate = (rowData) => {
-        return (
 
+
+        console.log("ROW DATA + + " + rowData.button);
+        return (
             <div className='flex flex=row gap-[12px] ml-[4px] '>
                 <div className="ui-corners square_contain">
                     <div className='square_contain'>
@@ -210,7 +225,15 @@ export default function CustomersDemo({ onInputSelect }) {
                 </div>
                 <div className="flex flex-col   self-center  ">
                     <span className="text-list-default align-middle justify-center">{rowData.name.toUpperCase()}</span>
-                  {/* <LayerTag layerNumber={rowData.layer} input_direction={'left'} /> */}
+                    <LayerTag layerNumber={rowData.layer} input_direction={'left'} />
+                    <ActionList
+                        layers={inputActions} input_direction={rowData.slot}
+
+                    />
+                    {/* <ActionList
+                        layers={async () => {
+                            await fetchInputActions(rowData.button);
+                        }} /> */}
                     {/* <span className="text-list-sub">{rowData.status}</span> */}
                     {/* <GameAction action_id={rowData.action} input_direction={rowData.slot} layer={rowData.layer} /> */}
 
@@ -338,7 +361,7 @@ export default function CustomersDemo({ onInputSelect }) {
                 onSelectionChange={(e) => {
                     setSelectedInputs(e.value)
                     // console.log("E  KEY: " + e.value.key);
-
+                    setSelectedEditorInput(e.value)
                     // console.log(e.value);
                 }}
                 filters={filters} filterDisplay="" globalFilterFields={['name', 'country.name', 'representative.name', 'balance', 'status']}

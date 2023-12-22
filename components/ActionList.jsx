@@ -19,6 +19,7 @@ const ActionList = ({ layers, input_direction }) => {
  
 
   const getSelectedInput = (array) => {
+    
     return (
       array?.map((component, index) => {
         // console.log("INDEX:  " + index + " |   CURRENT COMPONENT: " + component);

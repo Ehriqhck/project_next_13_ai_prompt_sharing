@@ -4,7 +4,7 @@ import React from 'react'
 import { Button } from 'primereact/button';
 import { SelectedEditorActionContext, SelectedActionContext, SelectedLayerContext, Context } from '@components/Provider';
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
-import { ShowEditorPanelContext, ShowViewerPanelContext, SelectContext } from '@components/Provider';
+import { ShowEditorPanelContext, ShowViewerPanelContext, SelectContext, SelectedEditorActionTableTargetContext } from '@components/Provider';
 import { createContext, useContext, useState } from 'react';
 
 // import {fetchMappings} from '@app/editor/utils.js'
