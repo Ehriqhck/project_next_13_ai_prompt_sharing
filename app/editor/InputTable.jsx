@@ -34,7 +34,7 @@ export default function CustomersDemo({ onInputSelect }) {
     const { selectedEditorInputActions, setSelectedEditorInputActions } = useContext(SelectedEditorActionTableTargetContext)
 
     const { selectedEditorInput, setSelectedEditorInput } = useContext(SelectedEditorActionContext);
-    const profileContext = useContext(Context)
+    const { profileContext, setprofileContext } = useContext(Context);
 
     const [inputs, setInputs] = useState([]);
     const [selectedInputs, setSelectedInputs] = useState([]);
@@ -88,23 +88,23 @@ export default function CustomersDemo({ onInputSelect }) {
 
 
     useEffect(() => {
-        console.log("selectedEditorInput  " + selectedEditorInput);
-        const fetchInputActions = async ({ buttonId, inputSlot }) => {
-            console.log("selectedEditorInput  " + selectedEditorInput);
-            const response = await fetch("/api/deviceProfiles", {
-                method: "POST",
-                body: JSON.stringify({
-                    userId: session?.user.id,
-                })
-            });
+        // console.log("selectedEditorInput  " + selectedEditorInputActions);
+        // const fetchInputActions = async ({ buttonId, inputSlot }) => {
+        //     console.log("selectedEditorInput  " + selectedEditorInput);
+        //     const response = await fetch("/api/deviceProfiles", {
+        //         method: "POST",
+        //         body: JSON.stringify({
+        //             userId: session?.user.id,
+        //         })
+        //     });
 
-            const data = await response.json();
-            // console.log("ASLKDJALKSDJLKASDJLKASJD  " + data);
-            setInputActions(data?.deviceProfiles?.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedEditorInput]?.["top"].layers);
-        };
-        fetchInputActions({ buttonId: selectedEditorInput.button, inputSlot: selectedEditorInput.slot })
+        //     const data = await response.json();
+        //     // console.log("ASLKDJALKSDJLKASDJLKASJD  " + data);
+        //     setInputActions(data?.deviceProfiles?.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedEditorInput]?.["top"].layers);
+        // };
+        // fetchInputActions({ buttonId: selectedEditorInput.button, inputSlot: selectedEditorInput.slot })
 
-        console.log(JSON.stringify(inputActions));
+        // console.log(JSON.stringify(inputActions));
 
         DeviceInputs.getCustomersLarge(selectedEditorInputActions).then((data) => setInputs(getInputs(data)));
 
@@ -213,7 +213,27 @@ export default function CustomersDemo({ onInputSelect }) {
     }
 
     const nameBodyTemplate = (rowData) => {
+        useEffect(() => {
+          
+          const fetchInputActions = async ( buttonId ) => {
+            console.log("selectedEditorInput  " + selectedEditorInput);
+            const response = await fetch("/api/deviceProfiles", {
+                method: "POST",
+                body: JSON.stringify({
+                    userId: session?.user.id,
+                })
+            });
 
+            const data = await response.json();
+            // console.log("ASLKDJALKSDJLKASDJLKASJD  " + data);
+            setInputActions(data?.deviceProfiles?.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedEditorInputActions]?.["top"].layers);
+        };
+        fetchInputActions()
+
+          
+        }, [])
+        
+    
 
         console.log("ROW DATA + + " + rowData.button);
         return (
@@ -225,9 +245,10 @@ export default function CustomersDemo({ onInputSelect }) {
                 </div>
                 <div className="flex flex-col   self-center  ">
                     <span className="text-list-default align-middle justify-center">{rowData.name.toUpperCase()}</span>
-                    <LayerTag layerNumber={rowData.layer} input_direction={'left'} />
+                    {/* <LayerTag layerNumber={rowData.layer} input_direction={'left'} /> */}
                     <ActionList
-                        layers={inputActions} input_direction={rowData.slot}
+                    layers={profileContext?.deviceProfiles?.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedEditorInputActions]?.["top"].layers}
+                        // layers={selectedEditorInputActions} input_direction={rowData.slot}
 
                     />
                     {/* <ActionList

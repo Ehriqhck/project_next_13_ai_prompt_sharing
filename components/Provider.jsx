@@ -206,7 +206,7 @@ const Provider = ({ children, session }) => {
   const [selectedViewerInput, setSelectedViewerInput] = useState("Circle Switch");
   const [selectedAction, setSelectedAction] = useState("No Action Selected");
   const [selectedEditorInput, setSelectedEditorInput] = useState("No Input Selected");
-  const [selectedEditorInputActions, setSelectedEditorInputActions] = useState();
+  const [selectedEditorInputActions, setSelectedEditorInputActions] = useState("circleSwitch");
 
   const [showEditorPanel, setshowEditorPanel] = useState(false);
   const [showViewerPanel, setshowViewerPanel] = useState(true);
