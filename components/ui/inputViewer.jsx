@@ -6,7 +6,7 @@ import Up from '@components/inputs/Up';
 import Left from '@components/inputs/Left';
 import Right from '@components/inputs/Right';
 import { useContext, useState, useEffect } from 'react';
-import { Context, SelectContext, SelectedEditorActionContext } from '@components/Provider.jsx'
+import { Context, SelectContext, SelectedEditorActionContext, ActionUpdateContext } from '@components/Provider.jsx'
 import CircleSwitch from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/CircleSwitch.jsx';
 import Press from '@components/inputs/Press';
 import Down from '@components/inputs/Down';
@@ -24,6 +24,7 @@ const InputViewer = ({ selectedButton }) => {
     const { profileContext, setprofileContext } = useContext(Context);
     const { selectedViewerInput, setSelectedViewerInput } = useContext(SelectContext);
     const { selectedEditorInput, setSelectedEditorInput } = useContext(SelectedEditorActionContext)
+    const { actionUpdate, setActionUpdate } = useContext(ActionUpdateContext)
 
 
     const [top, setTop] = useState();
@@ -49,21 +50,21 @@ const InputViewer = ({ selectedButton }) => {
             // console.log("INPUT VIEWER !!!!!!!!!!!" + JSON.stringify(data[0].deviceProfiles.deviceProfiles.saved["VKB_GLADIATOR_EVO"].buttons["circleSwitch"]?.["top"]));
             // console.log("FETCHED RESPONSE: " + JSON.stringify(data));
             // console.log("!!!!!!!!!!!! FETCHED RESPONSE: " + JSON.stringify(data.deviceProfiles));
-setprofileContext(data);
+            setprofileContext(data);
             // console.log("PARSED & STRINGED RESPONSE: " + JSON.parse(JSON.stringify(data[0].deviceProfiles.deviceProfiles)));
             // console.log("RAW RESPONSE: " + JSON.stringify(data[0].deviceProfiles.deviceProfiles.saved["VKB_GLADIATOR_EVO"].buttons[selectedButton]?.["top"]));
             // console.log("FETCHED DEVICEPROFILES: " + data);
-            setTop(profileContext?.deviceProfiles?.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["top"]);
-            setbottom(profileContext?.deviceProfiles?.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["bottom"]);
-            setLeft(profileContext?.deviceProfiles?.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["left"]);
-            setRight(profileContext?.deviceProfiles?.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["right"]);
-            setPress(profileContext?.deviceProfiles?.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["press"]);
+            setTop(profileContext?.deviceProfiles?.deviceProfiles?.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["top"]);
+            setbottom(profileContext?.deviceProfiles?.deviceProfiles?.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["bottom"]);
+            setLeft(profileContext?.deviceProfiles?.deviceProfiles?.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["left"]);
+            setRight(profileContext?.deviceProfiles?.deviceProfiles?.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["right"]);
+            setPress(profileContext?.deviceProfiles?.deviceProfiles?.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["press"]);
 
         };
-console.log("profile context:  " + JSON.stringify(profileContext));
+        console.log("profile context:  " + JSON.stringify(profileContext));
         fetchDeviceProfiles();
         //rehydrate when another input is selected
-    }, [selectedButton, selectedViewerInput])
+    }, [selectedButton, selectedViewerInput, actionUpdate])
 
 
     // const ButtonName = profileContext.deviceProfiles.saved["VKB_GLADIATOR_EVO"].profileName;
@@ -96,12 +97,12 @@ console.log("profile context:  " + JSON.stringify(profileContext));
                 return (<PillSwitch className="testCircle p-[10px]" />)
                 break;
 
-                case ('redButton'):
-                    return (<RedButton className="testCircle p-[10px]" />)
-                    break;
-                    case ('chipSwitch'):
-                        return (<ChipSwitch className="testCircle p-[10px]" />)
-                        break;
+            case ('redButton'):
+                return (<RedButton className="testCircle p-[10px]" />)
+                break;
+            case ('chipSwitch'):
+                return (<ChipSwitch className="testCircle p-[10px]" />)
+                break;
 
             default:
                 return (<Hat></Hat>)
@@ -200,7 +201,7 @@ console.log("profile context:  " + JSON.stringify(profileContext));
                     {/* <Left inputName_id={inputName} action_id={action} /> */}
                     {getInputLeft(left)}
 
-                  <div className='w-[70px]'>{Utils.getInputIcon(selectedButton)} </div>  
+                    <div className='w-[70px]'>{Utils.getInputIcon(selectedViewerInput)} </div>
                     {/* <CircleSwitch className="" /> */}
                     {/* <Hat></Hat> */}
                     {getInputRight(right)}

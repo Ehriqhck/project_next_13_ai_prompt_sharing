@@ -247,7 +247,7 @@ export default function CustomersDemo({ onInputSelect }) {
                     <span className="text-list-default align-middle justify-center">{rowData.name.toUpperCase()}</span>
                     {/* <LayerTag layerNumber={rowData.layer} input_direction={'left'} /> */}
                     <ActionList
-                    layers={profileContext?.deviceProfiles?.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedEditorInputActions]?.["top"].layers}
+                    layers={profileContext?.deviceProfiles?.deviceProfiles?.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedEditorInputActions]?.[rowData.slot].layers}
                         // layers={selectedEditorInputActions} input_direction={rowData.slot}
 
                     />

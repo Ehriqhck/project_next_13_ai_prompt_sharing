@@ -39,7 +39,7 @@ const Editor = ({ show }) => {
 
       <div className='text-input-title flex flex-row'>
         <div className='corner-test w-[70px] h-[100%]'>
-          {Utils.getInputIcon(selectedViewerInput)}
+          {Utils.getInputIconTitle(selectedViewerInput)}
         </div>
 
         {/* <p className='text-base ml-[0px]'></p> */}

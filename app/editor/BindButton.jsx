@@ -4,7 +4,7 @@ import React from 'react'
 import { Button } from 'primereact/button';
 import { SelectedEditorActionContext, SelectedActionContext, SelectedLayerContext, Context } from '@components/Provider';
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
-import { ShowEditorPanelContext, ShowViewerPanelContext, SelectContext, SelectedEditorActionTableTargetContext } from '@components/Provider';
+import { SelectContext, ActionUpdateContext } from '@components/Provider';
 import { createContext, useContext, useState } from 'react';
 
 // import {fetchMappings} from '@app/editor/utils.js'
@@ -14,6 +14,7 @@ const BindButton = (props) => {
     const { selectedLayer, setSelectedLayer } = useContext(SelectedLayerContext)
     const { selectedViewerInput, setSelectedViewerInput } = useContext(SelectContext);
     const { profileContext, setprofileContext } = useContext(Context);
+    const { actionUpdate, setActionUpdate } = useContext(ActionUpdateContext)
 
     const [fetcthed, setfetcthed] = useState();
     const { data: session } = useSession();
@@ -34,7 +35,7 @@ const BindButton = (props) => {
                 userId: session?.user.id,
                 selectedInput: selectedEditorInput,
                 selectedAction: selectedAction,
-                selectedLayer: selectedLayer 
+                selectedLayer: selectedLayer
             })
         }
 
@@ -52,10 +53,9 @@ const BindButton = (props) => {
         // setPress(data?.deviceProfiles?.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedButton]?.["press"]);
         // setfetcthed(data?.deviceProfiles?.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons["circleSwitch"]?.["top"]);
         // setfetcthed(data?.deviceProfiles?.deviceProfiles.);
-
+        setActionUpdate(!actionUpdate);
     };
 
-    //rehydrate when another input is selected
 
     return (
         <div className='flex flex-col items-center justify-center self-center'>
@@ -80,8 +80,7 @@ const BindButton = (props) => {
                     console.log(selectedLayerNum);
                     // console.log(selectedEditorInput);
                 }}>
-                {/* {JSON.stringify(fetcthed)} */}
-                <p className='bindBtn-input bind-text '>{" ' " + selectedAction + " ' "} </p>
+                \                <p className='bindBtn-input bind-text '>{" ' " + selectedAction + " ' "} </p>
 
                 <p className=''> &nbsp;  Bind to: &nbsp; </p>
                 <p className='bindBtn-input bind-text '>

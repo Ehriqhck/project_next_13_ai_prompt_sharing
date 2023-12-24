@@ -4,7 +4,7 @@ import IconLegend from '@components/generic/IconLegend';
 import React from 'react'
 import ActionTable from '@app/editor/ActionTable'
 import InputTable from '@app/editor/InputTable'
-import { SelectContext, SelectedEditorActionContext, EditorPanelTitleContext } from '@components/Provider';
+import {SelectedEditorActionTableTargetContext ,SelectContext, SelectedEditorActionContext, EditorPanelTitleContext } from '@components/Provider';
 import LayerChip from '@components/generic/LayerChip';
 import ModLayerSelector from '@components/actionSelector/ModLayerSelector.js';
 import BindButton from '@app/editor/BindButton.jsx'
@@ -22,6 +22,7 @@ const Editor = ({ show }) => {
   const { selectedViewerInput, setSelectedViewerInput } = useContext(SelectContext)
   const { selectedEditorInput, setSelectedEditorInput } = useContext(SelectedEditorActionContext)
   const { editorPanelTitle, setEditorPanelTitle } = useContext(EditorPanelTitleContext)
+  const { selectedEditorInputActions, setSelectedEditorInputActions } = useContext(SelectedEditorActionTableTargetContext)
 
 
 
@@ -56,7 +57,7 @@ const Editor = ({ show }) => {
 
       <div className='text-input-title flex flex-row'>
         <div className='corner-test w-[70px] h-[100%]'>
-          {Utils.getInputIcon(selectedEditorInput)}
+          {Utils.getInputIconTitle(selectedEditorInputActions)}
         </div>
 
         {/* <p className='text-base ml-[0px]'></p> */}

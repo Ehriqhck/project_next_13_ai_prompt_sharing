@@ -18,6 +18,7 @@ export const ShowViewerPanelContext = createContext();
 export const ShowEditorPanelContext = createContext();
 
 export const Context = createContext(null);
+export const ActionUpdateContext = createContext();
 
 
 
@@ -212,8 +213,9 @@ const Provider = ({ children, session }) => {
   const [showViewerPanel, setshowViewerPanel] = useState(true);
   const [editorPanelTitle, setEditorPanelTitle] = useState("SELECT A BUTTON");
   const [viewerPanelTitle, setViewerPanelTitle] = useState("SELECT A BUTTON");
+  const [actionUpdate, setActionUpdate] = useState(false);
 
-  const [profileContext, setprofileContext] = useState(globalContext);
+  const [profileContext, setprofileContext] = useState(false);
 
 
   useEffect(() => {
@@ -259,8 +261,9 @@ const Provider = ({ children, session }) => {
                       <EditorPanelTitleContext.Provider value={{ editorPanelTitle, setEditorPanelTitle }}>
                         <ViewerPanelTitleContext.Provider value={{ viewerPanelTitle, setViewerPanelTitle }}>
                           <SelectedEditorActionTableTargetContext.Provider value={{ selectedEditorInputActions, setSelectedEditorInputActions }}>
-
-                            {children}
+                            <ActionUpdateContext.Provider value={{actionUpdate, setActionUpdate}}>
+                              {children}
+                            </ActionUpdateContext.Provider>
                           </SelectedEditorActionTableTargetContext.Provider>
                         </ViewerPanelTitleContext.Provider>
                       </EditorPanelTitleContext.Provider>
