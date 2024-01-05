@@ -271,13 +271,13 @@ export default function ActionTable({ onActionSelect }) {
                 value={actions} paginator header={header} rows={3}
                 rowClassName={"list-bg"}
                 className="w-full"
-                paginatorTemplate=""
+                paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
                 dataKey="id" selectionMode="single" selection={selectedActions} onSelectionChange={(e) => {
                     setSelectedActions(e.value);
                     // setSelectedActions(selectedActions.name)
                     setSelectedAction(e.value.name);
                 }}
-                filters={filters} filterDisplay="" globalFilterFields={['name', 'country.name', 'representative.name', 'balance', 'status']}
+                filters={filters} filterDisplay="menu" globalFilterFields={['name', 'country.name', 'representative.name', 'balance', 'status']}
                 emptyMessage="No customers found." currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
                 {/* <Column selectionMode="single" headerStyle={{ width: '1rem' }}> </Column> */}
                 <Column field="name" header="Name" sortable filter filterPlaceholder="Search by name" style={{ maxWidth: '100px' }} body={nameBodyTemplate} />
