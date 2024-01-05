@@ -1466,171 +1466,275 @@ export const GameActions = {
         name: 'Change Turret Position',
         category: 'Turret Advanced',
         inputType: 'Press'
-      },{
+      },
+      {
         actionmapName: 'turret_advanced',
         id: 'turret_esp_hold',
         name: 'Turret ESP - Enable Temporarily (Hold)',
         category: 'Turret Advanced',
         inputType: 'Hold'
-      },{
+      },
+      {
         actionmapName: 'turret_advanced',
         id: 'turret_esp_toggle',
         name: 'Turret ESP Toggle On / Off',
         category: 'Turret Advanced',
         inputType: 'Toggle'
-      },{
+      },
+      {
         actionmapName: 'turret_advanced',
         id: 'turret_instant_zoom',
         name: 'Turret Instant Zoom',
         category: 'Turret Advanced',
         inputType: 'Toggle'
-      },{
+      },
+      {
         actionmapName: 'turret_advanced',
         id: 'turret_limiter_abs',
         name: 'Turret - Speed Limiter (Absolute)',
         category: 'Turret Advanced',
         inputType: 'Axis'
-      },{
+      },
+      {
         actionmapName: 'turret_advanced',
         id: 'turret_limiter_rel',
         name: 'Turret - Speed Limiter (Relative)',
         category: 'Turret Advanced',
         inputType: 'Axis'
-      },{
+      },
+      {
         actionmapName: 'turret_advanced',
         id: 'turret_limiter_rel_decrease',
         name: 'Turret - Decrease Speed Limiter (Relative)',
         category: 'Turret Advanced',
         inputType: 'Axis'
-      },{
+      },
+      {
         actionmapName: 'turret_advanced',
         id: 'turret_limiter_rel_increase',
         name: 'Turret - Increase Speed Limiter (Relative)',
         category: 'Turret Advanced',
         inputType: 'Axis'
-      },{
+      },
+      {
         actionmapName: 'turret_advanced',
         id: 'turret_limiter_toggle',
         name: 'Turret - Toggle Speed Limiter On / Off (Hold/Toggle)',
         category: 'Turret Advanced',
         inputType: 'Toggle'
-      },{
+      },
+      {
         actionmapName: 'turret_advanced',
         id: 'turret_recenter',
         name: 'Recenter Turret (Hold)',
         category: 'Turret Advanced',
         inputType: 'Hold'
       },
-            // spaceship_weapons / Vehicles - Weapons
-            {
-                actionmapName: 'spaceship_weapons',
-                id: 'v_attack_all',
-                name: 'Fire Weapon All',
-                category: 'Vehicles / Weapons',
-                inputType: 'Press'
-              },{
-                actionmapName: 'spaceship_weapons',
-                id: 'v_attack_group1',
-                name: 'Fire Weapon Group 1',
-                category: 'Vehicles / Weapons',
-                inputType: 'Press'
-              },{
-                actionmapName: 'spaceship_weapons',
-                id: 'v_attack_group2',
-                name: 'Fire Weapon Group 2',
-                category: 'Vehicles / Weapons',
-                inputType: 'Press'
-              },{
-                actionmapName: 'spaceship_weapons',
-                id: 'v_weapon_change_firemode',
-                name: 'Cycle Fire Mode (Staggered <-> Combined)',
-                category: 'Vehicles / Weapons',
-                inputType: 'Press'
-              },{
-                actionmapName: 'spaceship_weapons',
-                id: 'v_weapon_convergence_distance_abs',
-                name: 'Manual Convergence Distance (Absolute)',
-                category: 'Vehicles / Weapons',
-                inputType: 'Axis'
-              },{
-                actionmapName: 'spaceship_weapons',
-                id: 'v_weapon_convergence_distance_rel',
-                name: 'Manual Convergence Distance (Relative)',
-                category: 'Vehicles / Weapons',
-                inputType: 'Axis'
-              },{
-                actionmapName: 'spaceship_weapons',
-                id: 'v_weapon_convergence_distance_rel_decrease',
-                name: 'Manual Convergence Distance - Decrease (Relative)',
-                category: 'Vehicles / Weapons',
-                inputType: 'Axis'
-              },{
-                actionmapName: 'spaceship_weapons',
-                id: 'v_weapon_convergence_distance_rel_increase',
-                name: 'Manual Convergence Distance - Increase (Relative)',
-                category: 'Vehicles / Weapons',
-                inputType: 'Axis'
-              },{
-                actionmapName: 'spaceship_weapons',
-                id: 'v_weapon_convergence_distance_set_default',
-                name: 'Manual Convergence Distance - Reset (Relative)',
-                category: 'Vehicles / Weapons',
-                inputType: 'Press'
-              },{
-                actionmapName: 'spaceship_weapons',
-                id: 'v_weapon_gimbal_mode_cycle_all',
-                name: 'Cycle Gimbal Assist / Standard Gimbal / Gimbal Lock Modes',
-                category: 'Vehicles / Weapons',
-                inputType: 'Press'
-              },{
-                actionmapName: 'spaceship_weapons',
-                id: 'v_weapon_gimbal_mode_cycle_fixed_auto',
-                name: 'Cycle Fixed / Auto Gimbal Modes',
-                category: 'Vehicles / Weapons',
-                inputType: 'Press'
-              },{
-                actionmapName: 'spaceship_weapons',
-                id: 'v_weapon_gimbal_mode_set_auto',
-                name: 'Set Auto Gimbal Mode (Short Press)',
-                category: 'Vehicles / Weapons',
-                inputType: 'Press'
-              },{
-                actionmapName: 'spaceship_weapons',
-                id: 'v_weapon_gimbal_mode_set_auto_long',
-                name: 'Set Auto Gimbal Mode (Long Press)',
-                category: 'Vehicles / Weapons',
-                inputType: 'Press'
-              },{
-                actionmapName: 'spaceship_weapons',
-                id: 'v_weapon_gimbal_mode_set_fixed',
-                name: 'Set Fixed Gimbal Mode (Short Press)',
-                category: 'Vehicles / Weapons',
-                inputType: 'Press'
-              },{
-                actionmapName: 'spaceship_weapons',
-                id: 'v_weapon_gimbal_mode_set_fixed_long',
-                name: 'Set Fixed Gimbal Mode (Long Press)',
-                category: 'Vehicles / Weapons',
-                inputType: 'Press'
-              },{
-                actionmapName: 'spaceship_weapons',
-                id: 'v_weapon_gimbal_mode_set_manual',
-                name: 'Set Manual Gimbal Mode (Short Press)',
-                category: 'Vehicles / Weapons',
-                inputType: 'Press'
-              },{
-                actionmapName: 'spaceship_weapons',
-                id: 'v_weapon_gimbal_mode_set_manual_long',
-                name: 'Set Manual Gimbal Mode (Long Press)',
-                category: 'Vehicles / Weapons',
-                inputType: 'Press'
-              },{
-                actionmapName: 'spaceship_weapons',
-                id: 'v_weapon_manual_gimbal_cycle_source',
-                name: '???????????????????????',
-                category: 'Vehicles / Weapons',
-                inputType: 'Press'
-              },
+      // spaceship_weapons / Vehicles - Weapons
+      {
+        actionmapName: 'spaceship_weapons',
+        id: 'v_attack_all',
+        name: 'Fire Weapon All',
+        category: 'Vehicles / Weapons',
+        inputType: 'Press'
+      },
+      {
+        actionmapName: 'spaceship_weapons',
+        id: 'v_attack_group1',
+        name: 'Fire Weapon Group 1',
+        category: 'Vehicles / Weapons',
+        inputType: 'Press'
+      },
+      {
+        actionmapName: 'spaceship_weapons',
+        id: 'v_attack_group2',
+        name: 'Fire Weapon Group 2',
+        category: 'Vehicles / Weapons',
+        inputType: 'Press'
+      },
+      {
+        actionmapName: 'spaceship_weapons',
+        id: 'v_weapon_change_firemode',
+        name: 'Cycle Fire Mode (Staggered <-> Combined)',
+        category: 'Vehicles / Weapons',
+        inputType: 'Press'
+      },
+      {
+        actionmapName: 'spaceship_weapons',
+        id: 'v_weapon_convergence_distance_abs',
+        name: 'Manual Convergence Distance (Absolute)',
+        category: 'Vehicles / Weapons',
+        inputType: 'Axis'
+      },
+      {
+        actionmapName: 'spaceship_weapons',
+        id: 'v_weapon_convergence_distance_rel',
+        name: 'Manual Convergence Distance (Relative)',
+        category: 'Vehicles / Weapons',
+        inputType: 'Axis'
+      },
+      {
+        actionmapName: 'spaceship_weapons',
+        id: 'v_weapon_convergence_distance_rel_decrease',
+        name: 'Manual Convergence Distance - Decrease (Relative)',
+        category: 'Vehicles / Weapons',
+        inputType: 'Axis'
+      },
+      {
+        actionmapName: 'spaceship_weapons',
+        id: 'v_weapon_convergence_distance_rel_increase',
+        name: 'Manual Convergence Distance - Increase (Relative)',
+        category: 'Vehicles / Weapons',
+        inputType: 'Axis'
+      },
+      {
+        actionmapName: 'spaceship_weapons',
+        id: 'v_weapon_convergence_distance_set_default',
+        name: 'Manual Convergence Distance - Reset (Relative)',
+        category: 'Vehicles / Weapons',
+        inputType: 'Press'
+      },
+      {
+        actionmapName: 'spaceship_weapons',
+        id: 'v_weapon_gimbal_mode_cycle_all',
+        name: 'Cycle Gimbal Assist / Standard Gimbal / Gimbal Lock Modes',
+        category: 'Vehicles / Weapons',
+        inputType: 'Press'
+      },
+      {
+        actionmapName: 'spaceship_weapons',
+        id: 'v_weapon_gimbal_mode_cycle_fixed_auto',
+        name: 'Cycle Fixed / Auto Gimbal Modes',
+        category: 'Vehicles / Weapons',
+        inputType: 'Press'
+      },
+      {
+        actionmapName: 'spaceship_weapons',
+        id: 'v_weapon_gimbal_mode_set_auto',
+        name: 'Set Auto Gimbal Mode (Short Press)',
+        category: 'Vehicles / Weapons',
+        inputType: 'Press'
+      },
+      {
+        actionmapName: 'spaceship_weapons',
+        id: 'v_weapon_gimbal_mode_set_auto_long',
+        name: 'Set Auto Gimbal Mode (Long Press)',
+        category: 'Vehicles / Weapons',
+        inputType: 'Press'
+      },
+      {
+        actionmapName: 'spaceship_weapons',
+        id: 'v_weapon_gimbal_mode_set_fixed',
+        name: 'Set Fixed Gimbal Mode (Short Press)',
+        category: 'Vehicles / Weapons',
+        inputType: 'Press'
+      },
+      {
+        actionmapName: 'spaceship_weapons',
+        id: 'v_weapon_gimbal_mode_set_fixed_long',
+        name: 'Set Fixed Gimbal Mode (Long Press)',
+        category: 'Vehicles / Weapons',
+        inputType: 'Press'
+      },
+      {
+        actionmapName: 'spaceship_weapons',
+        id: 'v_weapon_gimbal_mode_set_manual',
+        name: 'Set Manual Gimbal Mode (Short Press)',
+        category: 'Vehicles / Weapons',
+        inputType: 'Press'
+      },
+      {
+        actionmapName: 'spaceship_weapons',
+        id: 'v_weapon_gimbal_mode_set_manual_long',
+        name: 'Set Manual Gimbal Mode (Long Press)',
+        category: 'Vehicles / Weapons',
+        inputType: 'Press'
+      },
+      {
+        actionmapName: 'spaceship_weapons',
+        id: 'v_weapon_manual_gimbal_cycle_source',
+        name: 'Manual Gimble Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+        category: 'Vehicles / Weapons',
+        inputType: 'Toggle'
+      },
+      {
+        actionmapName: 'spaceship_weapons',
+        id: 'v_weapon_manual_gimbal_lock_vector',
+        name: 'Manual Gimble Mode - Lock Aim Vector',
+        category: 'Vehicles / Weapons',
+        inputType: 'Toggle'
+      },
+      {
+        actionmapName: 'spaceship_weapons',
+        id: 'v_weapon_pip_combination_type_set_combined_all',
+        name: 'PIP Combination Type: Set Average of All',
+        category: 'Vehicles / Weapons',
+        inputType: 'Press'
+      },
+      {
+        actionmapName: 'spaceship_weapons',
+        id: 'v_weapon_pip_combination_type_set_combined_weapon_group',
+        name: 'PIP Combination Type: Set One Pip Per Weapon Type',
+        category: 'Vehicles / Weapons',
+        inputType: 'Press'
+      },
+      {
+        actionmapName: 'spaceship_weapons',
+        id: 'v_weapon_pip_combination_type_set_single',
+        name: 'PIP Combination Type: Set One Pip Per Weapon',
+        category: 'Vehicles / Weapons',
+        inputType: 'Press'
+      },
+      {
+        actionmapName: 'spaceship_weapons',
+        id: 'v_weapon_pip_combination_type_toggle',
+        name: 'PIP Combination Type: Toggle',
+        category: 'Vehicles / Weapons',
+        inputType: 'Toggle'
+      },
+      {
+        actionmapName: 'spaceship_weapons',
+        id: 'v_weapon_pip_toggle_lead_lag',
+        name: 'Toggle Lead / Lag PIPs',
+        category: 'Vehicles / Weapons',
+        inputType: 'Toggle'
+      },
+      {
+        actionmapName: 'spaceship_weapons',
+        id: 'v_weapon_pip_set_lag',
+        name: 'Set Lag PIPs',
+        category: 'Vehicles / Weapons',
+        inputType: 'Toggle'
+      },
+      {
+        actionmapName: 'spaceship_weapons',
+        id: 'v_weapon_pip_set_lead',
+        name: 'Set Lead PIPs',
+        category: 'Vehicles / Weapons',
+        inputType: 'Toggle'
+      },
+      {
+        actionmapName: 'spaceship_weapons',
+        id: 'v_weapon_suppress_aim_assists_hold',
+        name: 'Suppress Aim Assist (Hold)',
+        category: 'Vehicles / Weapons',
+        inputType: 'Hold'
+      },
+      // spaceship_missiles / Vehicles - Missiles
+      {
+        actionmapName: 'spaceship_missiles',
+        id: 'v_weapon_bombing_hud_range_increase',
+        name: 'Bombs - Increase HUD Range',
+        category: 'Vehicles / Missiles',
+        inputType: 'Hold'
+      },
+      {
+        actionmapName: 'spaceship_missiles',
+        id: 'v_weapon_bombing_hud_range_decrease',
+        name: 'Bombs - Decrease HUD Range',
+        category: 'Vehicles / Missiles',
+        inputType: 'Hold'
+      }
     ]
   },
 
