@@ -25,6 +25,7 @@ export default function ActionTable({ onActionSelect }) {
 
     // const [inputs, setInputs] = useState([]);
     // const [selectedInputs, setSelectedInputs] = useState([]);
+    const [expandedRows, setExpandedRows] = useState([]);
 
 
     const [filters, setFilters] = useState({
@@ -153,7 +154,7 @@ export default function ActionTable({ onActionSelect }) {
         return (
             <div className="flex flex-col  gap-[5px] ml-[4px] ">
                 <span className="text-list-default">{rowData.name.toUpperCase()}</span>
-                <span className="text-list-default text-layer1"> {rowData.category.toUpperCase()}</span>
+                {/* <span className="text-list-default text-layer1"> {rowData.category.toUpperCase()}</span> */}
             </div>
         );
     };
@@ -196,7 +197,24 @@ export default function ActionTable({ onActionSelect }) {
             </div>
         );
     };
+    const headerTemplate = (rowData) => {
+        return (
+            <div className="flex align-items-center gap-2">
+                {/* <img alt={data.representative.name} src={`https://primefaces.org/cdn/primereact/images/avatar/${data.representative.image}`} width="32" /> */}
+                <span className="font-bold">WOW + "" + {rowData.category}</span>
+            </div>
+        );
+    };
 
+    const footerTemplate = (rowData) => {
+        return (
+            <React.Fragment>
+                <td colSpan="1">
+                    <div className="flex justify-content-end font-bold w-full">Total Customers: {rowData.name}</div>
+                </td>
+            </React.Fragment>
+        );
+    };
     const dateBodyTemplate = (rowData) => {
         return formatDate(rowData.date);
     };
@@ -214,7 +232,7 @@ export default function ActionTable({ onActionSelect }) {
     };
 
     const statusBodyTemplate = (rowData) => {
-        return <Tag value={rowData.status} severity={getSeverity(rowData.status)} />;
+        return <Tag value={rowData.id} severity={getSeverity(rowData.status)} />;
     };
 
     const statusFilterTemplate = (options) => {
@@ -268,7 +286,15 @@ export default function ActionTable({ onActionSelect }) {
                 // onRowSelect={() =>
                 //      onRowSelectAction()
                 //     }
-                value={actions} paginator header={header} rows={3}
+                expandableRowGroups
+
+                rowGroupHeaderTemplate={headerTemplate}
+                rowGroupFooterTemplate={footerTemplate}
+                rowGroupMode="subheader"
+                expandedRows={expandedRows}
+                onRowToggle={(e) => setExpandedRows(e.data)}
+                groupRowsBy='e.category'
+                value={actions} paginator header={header} rows={12}
                 rowClassName={"list-bg"}
                 className="w-full"
                 paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
@@ -281,6 +307,7 @@ export default function ActionTable({ onActionSelect }) {
                 emptyMessage="No customers found." currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
                 {/* <Column selectionMode="single" headerStyle={{ width: '1rem' }}> </Column> */}
                 <Column field="name" header="Name" sortable filter filterPlaceholder="Search by name" style={{ maxWidth: '100px' }} body={nameBodyTemplate} />
+                {/* <Column field="action" header="Action" body={statusBodyTemplate} sortable filter filterPlaceholder="Search by name" style={{ maxWidth: '100px' }} body={nameBodyTemplate} /> */}
 
             </DataTable>
 
