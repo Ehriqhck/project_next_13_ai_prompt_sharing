@@ -152,9 +152,9 @@ export default function ActionTable({ onActionSelect }) {
     };
     const nameBodyTemplate = (rowData) => {
         return (
-            <div className="flex flex-col  gap-[5px] ml-[4px] ">
+            <div className="flex flex-col  gap-[2px] ml-[4px] ">
                 <span className="text-list-default">{rowData.name.toUpperCase()}</span>
-                {/* <span className="text-list-default text-layer1"> {rowData.category.toUpperCase()}</span> */}
+                <span className="text-list-default text-layer1"> {rowData.category}</span>
             </div>
         );
     };
@@ -276,7 +276,9 @@ export default function ActionTable({ onActionSelect }) {
 
     // }, [selectedActions])
     //BIND BUTTON STUFF
-
+    const allowExpansion = (rowData) => {
+        return rowData.id.length > 0;
+    };
 
     return (
         <div className="flex w-full flex-col gap-[8px]">
@@ -287,14 +289,16 @@ export default function ActionTable({ onActionSelect }) {
                 //      onRowSelectAction()
                 //     }
                 expandableRowGroups
-
+                expander={allowExpansion}
                 rowGroupHeaderTemplate={headerTemplate}
                 rowGroupFooterTemplate={footerTemplate}
                 rowGroupMode="subheader"
                 expandedRows={expandedRows}
                 onRowToggle={(e) => setExpandedRows(e.data)}
+                sortMode="single" sortField="e.name" sortOrder={1}
+
                 groupRowsBy='e.category'
-                value={actions} paginator header={header} rows={12}
+                value={actions} paginator header={header} rows={5}
                 rowClassName={"list-bg"}
                 className="w-full"
                 paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
