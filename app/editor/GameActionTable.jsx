@@ -6,6 +6,7 @@ import { InputText } from 'primereact/inputtext';
 import { SelectButton } from 'primereact/selectbutton';
 // import { NodeService } from './service/NodeService';
 import { GameActions } from './GameActions';
+import { Tree } from 'primereact/tree';
 
 export default function FilterDemo() {
     const [nodes, setNodes] = useState([]);
@@ -15,7 +16,8 @@ export default function FilterDemo() {
         { label: 'Lenient', value: 'lenient' },
         { label: 'Strict', value: 'strict' }
     ]);
-
+    const [selectedNodeKey, setSelectedNodeKey] = useState(null);
+    const [metaKey, setMetaKey] = useState(true);
     useEffect(() => {
         GameActions.getTreeTableNodes().then((data) => setNodes(data));
     }, []);
@@ -32,18 +34,34 @@ export default function FilterDemo() {
     };
 
     let header = getHeader();
-
-    return (
-        <div className="card">
-            <div className="flex justify-content-center mb-4">
-                <SelectButton value={filterMode} onChange={(e) => setFilterMode(e.value)} options={filterOptions} />
+    const bodyTemplate = (rowData) => {
+        return (
+            <div className="flex flex-wrap gap-2">
+                asd  {rowData}
+                {/* <Button type="button" icon="pi pi-search" rounded></Button>
+                <Button type="button" icon="pi pi-pencil" severity="success" rounded></Button> */}
             </div>
-            <TreeTable value={nodes} globalFilter={globalFilter} header={header} filterMode={filterMode} tableStyle={{ minWidth: '50rem' }}>
-                <Column field="name" header="ID" expander filter filterPlaceholder="Filter by name"></Column>
-                {/* <Column field="size" header="Size" filter filterPlaceholder="Filter by size"></Column>
-                <Column field="type" header="Type" filter filterPlaceholder="Filter by type"></Column> */}
-            </TreeTable>
+        );
+    };
+    return (
+
+        <div className="card flex flex-wrap justify-content-center gap-5">
+            <Tree value={nodes} filter filterMode="lenient" filterPlaceholder="Lenient Filter" className="w-full md:w-30rem" />
+            <Tree value={nodes} filter filterMode="strict" filterPlaceholder="Strict Filter" className="w-full md:w-30rem" />
         </div>
+
+        // <div className="card">
+        //     <div className="flex justify-content-center mb-4">
+        //         <SelectButton value={filterMode} onChange={(e) => setFilterMode(e.value)} options={filterOptions} />
+        //     </div>
+        //     <TreeTable
+        //      bodyTemplate={bodyTemplate}
+        //      selectionMode="single"  selectionKeys={selectedNodeKey} onSelectionChange={(e) => setSelectedNodeKey(e.value)} metaKeySelection={metaKey} 
+        //     value={nodes} globalFilter={globalFilter} header={header} filterMode={filterMode} tableStyle={{ minWidth: '50rem' }}>
+        //         <Column field="name" header="Name" expander filter filterPlaceholder="Filter by name"></Column>
+        //         <Column field="category" header="ID"  ></Column>
+
+        //     </TreeTable>
+        // </div>
     )
 }
-        
