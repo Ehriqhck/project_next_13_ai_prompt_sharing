@@ -256,12 +256,26 @@ body > main > section > div.panel-default > div.panel-inset > div > div > div.p-
 .card {
   /* background: var(--surface-card); */
   background: transparent;
-
-  padding: 2rem;
+width: 100%;
+  /* padding: 2rem; */
   border-radius: 10px;
   margin-bottom: 1rem;
 }
-
+.p-highlight {
+  background: rgba(255, 255, 255, 0) !important;
+  /* color: #00000000 !important; */
+  outline: 1.5px solid #00ffdab3 !important;
+  outline-offset: -0.15rem !important;
+  box-shadow: 0px 0px 30px 0px #00ffbb33, inset -13px -15px 30px 0px #00ffbb33 !important;
+  background: rgba(255, 255, 255, 0.16);
+  color: #cefcff !important;
+}
+.p-treenode-label{
+  font-family: 'Inter', Helvetica;
+  font-weight: 520;
+  font-size: 11px;
+  color: #cefcff;
+}
 .button1 {
   width: 222px;
 }
@@ -1089,9 +1103,31 @@ justify-content: center;
 width: 100%;
 gap: 60px;
 }
+.p-tree {
+  border: unset !important;
+  background: unset !important;
+  color: unset !important;
+  padding: unset !important;
+  border-radius: unset !important;
+}
+.p-treenode-content	{
+  border-radius: 6px;
+  transition: box-shadow 0.3s;
+  padding: 0.5rem;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.87);
+  transition: box-shadow 0.3s;
+}
+.p-tree .p-tree-container .p-treenode .p-treenode-content {
+  border-radius: 6px;
+  transition: box-shadow 0.3s;
+  padding: 0.5rem;
 
-
-
+  text-align: left;
+  border: 0px solid #263238;
+  border-width: 0 0 0px 0;
+  padding: 0.5rem 0.5rem;
+}
 .panel-inset-forAbsolute {
   display: flex;
   height: fit-content;

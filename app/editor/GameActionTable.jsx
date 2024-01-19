@@ -12,6 +12,8 @@ export default function FilterDemo() {
     const [nodes, setNodes] = useState([]);
     const [globalFilter, setGlobalFilter] = useState('');
     const [filterMode, setFilterMode] = useState('lenient');
+    const [selectedKey, setSelectedKey] = useState('');
+
     const [filterOptions] = useState([
         { label: 'Lenient', value: 'lenient' },
         { label: 'Strict', value: 'strict' }
@@ -34,6 +36,9 @@ export default function FilterDemo() {
     };
 
     let header = getHeader();
+    const getIcon = (node) => {
+
+    }
     const bodyTemplate = (rowData) => {
         return (
             <div className="flex flex-wrap gap-2">
@@ -43,11 +48,26 @@ export default function FilterDemo() {
             </div>
         );
     };
+
+    // const get
+    const nodeTemplate = (node, options) => {
+        
+        let label = <b>{node.label}</b>;
+
+        if (node.url) {
+            label = <a href={node.url} className="text-700 hover:text-primary" target="_blank" rel="noopener noreferrer">{node.label}</a>;
+        }
+
+        return <span className={options.className}>{label}</span>;
+    }
+
     return (
 
         <div className="card flex flex-wrap justify-content-center gap-5">
-            <Tree value={nodes} filter filterMode="lenient" filterPlaceholder="Lenient Filter" className="w-full md:w-30rem" />
-            <Tree value={nodes} filter filterMode="strict" filterPlaceholder="Strict Filter" className="w-full md:w-30rem" />
+            <Tree
+            selectionMode="single" selectionKeys={selectedKey} onSelectionChange={(e) => setSelectedKey(e.value)}
+            nodeTemplate={nodeTemplate}  value={nodes} filter filterMode="lenient" filterPlaceholder="Lenient Filter" className="w-full md:w-30rem" />
+            {/* <Tree value={nodes} filter filterMode="strict" filterPlaceholder="Strict Filter" className="w-full md:w-30rem" /> */}
         </div>
 
         // <div className="card">
