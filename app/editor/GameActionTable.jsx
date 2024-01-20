@@ -7,6 +7,7 @@ import { SelectButton } from 'primereact/selectbutton';
 // import { NodeService } from './service/NodeService';
 import { GameActions } from './GameActions';
 import { Tree } from 'primereact/tree';
+import { classNames } from 'primereact/utils';
 
 export default function FilterDemo() {
     const [nodes, setNodes] = useState([]);
@@ -39,23 +40,52 @@ export default function FilterDemo() {
     const getIcon = (node) => {
 
     }
-    const bodyTemplate = (rowData) => {
+
+    const togglerTemplate = (node, options) => {
+        if (!node) {
+            return;
+        }
+        let label = <b className='self-center justify-center '>{node.label}</b>;
+
+
+        const expanded = options.expanded;
+        const iconClassName = classNames('p-tree-toggler-icon pi pi-fw', {
+            'gg-minimize-alt': expanded,
+            'gg-arrows-expand-right': !expanded,
+            // 'gg-arrows-expand-right': expanded
+
+        });
+
+        const toggleIcon = (expanded) => {
+            if (!expanded) {
+                return (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.8995 4.10052V2.10052H21.8995V10.1005H19.8995V5.51477L14.1213 11.293L12.7071 9.87878L18.4854 4.10052H13.8995Z" fill="currentColor" /><path d="M4.10046 13.8995H2.10046V21.8995H10.1005V19.8995H5.51468L11.2929 14.1212L9.87872 12.707L4.10046 18.4853V13.8995Z" fill="currentColor" /></svg>)
+            } else {
+                return (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.567 8.02947L20.9105 1.76929L22.3153 3.19282L15.9916 9.43352L19.5614 9.44772L19.5534 11.4477L12.5535 11.4199L12.5813 4.41992L14.5813 4.42788L14.567 8.02947Z" fill="currentColor" /><path d="M7.97879 14.5429L4.40886 14.5457L4.40729 12.5457L11.4073 12.5402L11.4128 19.5402L9.41277 19.5417L9.40995 15.9402L3.09623 22.2306L1.68463 20.8138L7.97879 14.5429Z" fill="currentColor" /></svg>)
+            }
+
+        }
+
+
+
         return (
-            <div className="flex flex-wrap gap-2">
-                asd  {rowData}
-                {/* <Button type="button" icon="pi pi-search" rounded></Button>
-                <Button type="button" icon="pi pi-pencil" severity="success" rounded></Button> */}
-            </div>
+            <button type="button" className="justify-center  p-tree-toggler flex   gap-[5px] pl-[2px]  " tabIndex={-1} onClick={options.onClick}>
+                <div className='flex flex-row content-start justify-center self-start gap-[5px] '>
+                    <span className='' aria-hidden="true"> {toggleIcon(expanded)}</span>
+                    
+                    <span className='self-center justify-center '>{label}</span>
+                    {expanded}
+                </div>
+
+            </button>
         );
     };
-
     // const get
     const nodeTemplate = (node, options) => {
-        
+
         let label = <b>{node.label}</b>;
 
-        if (node.url) {
-            label = <a href={node.url} className="text-700 hover:text-primary" target="_blank" rel="noopener noreferrer">{node.label}</a>;
+        if (Object.hasOwn(node, 'children')) {
+            label = <></>
         }
 
         return <span className={options.className}>{label}</span>;
@@ -65,8 +95,9 @@ export default function FilterDemo() {
 
         <div className="card flex flex-wrap justify-content-center gap-5">
             <Tree
-            selectionMode="single" selectionKeys={selectedKey} onSelectionChange={(e) => setSelectedKey(e.value)}
-            nodeTemplate={nodeTemplate}  value={nodes} filter filterMode="lenient" filterPlaceholder="Lenient Filter" className="w-full md:w-30rem" />
+                togglerTemplate={togglerTemplate}
+                selectionMode="single" selectionKeys={selectedKey} onSelectionChange={(e) => setSelectedKey(e.value)}
+                nodeTemplate={nodeTemplate} value={nodes} filter filterMode="lenient" filterPlaceholder="Lenient Filter" className="w-full md:w-30rem" />
             {/* <Tree value={nodes} filter filterMode="strict" filterPlaceholder="Strict Filter" className="w-full md:w-30rem" /> */}
         </div>
 
