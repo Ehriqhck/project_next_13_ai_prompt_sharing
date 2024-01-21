@@ -38,14 +38,21 @@ export default function FilterDemo() {
 
     let header = getHeader();
     const getIcon = (node) => {
+        switch (key) {
+            case value:
 
+                break;
+
+            default:
+                break;
+        }
     }
 
     const togglerTemplate = (node, options) => {
         if (!node) {
             return;
         }
-        let label = <b className='self-center justify-center '>{node.label}</b>;
+        let label = <p className='self-center justify-center text-list-default '>{node.label.toUpperCase()}</p>;
 
 
         const expanded = options.expanded;
@@ -68,14 +75,17 @@ export default function FilterDemo() {
 
 
         return (
-            <button type="button" className="justify-center  p-tree-toggler flex   gap-[5px] pl-[2px]  " tabIndex={-1} onClick={options.onClick}>
+            <button type="button" className="justify-center  p-tree-toggler flex flex-col  gap-[0px] pl-[2px]  " tabIndex={-1} onClick={options.onClick}>
                 <div className='flex flex-row content-start justify-center self-start gap-[5px] '>
                     <span className='' aria-hidden="true"> {toggleIcon(expanded)}</span>
-                    
+
                     <span className='self-center justify-center '>{label}</span>
                     {expanded}
                 </div>
-
+                <div className='self-start pl-[32px] flex flex-row'>
+                    <svg fill="#00f7ff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16px" height="16px"><path d="M 3 2 L 3 9.5 C 3 10.324219 3.675781 11 4.5 11 L 12.203125 11 L 10.015625 13.28125 L 10.734375 13.96875 L 14.066406 10.5 L 10.734375 7.03125 L 10.015625 7.71875 L 12.203125 10 L 4.5 10 C 4.21875 10 4 9.78125 4 9.5 L 4 2 Z" /></svg>
+                    {/* {Object.keys(node.children).length} */}
+                </div>
             </button>
         );
     };
