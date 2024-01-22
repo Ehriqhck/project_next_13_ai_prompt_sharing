@@ -6,7 +6,6 @@
 @tailwind components;
 @tailwind utilities;
 @import 'primereact/resources/primereact.min.css';
-@import url('https://unpkg.com/css.gg@2.0.0/icons/css/minimize-alt.css');
 /* 
   Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
 */

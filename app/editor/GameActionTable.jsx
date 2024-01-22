@@ -8,7 +8,7 @@ import { SelectButton } from 'primereact/selectbutton';
 import { GameActions } from './GameActions';
 import { Tree } from 'primereact/tree';
 import { classNames } from 'primereact/utils';
-
+import SeatIcon from 'public/assets/icons/actions/gameCategory/SeatIcon'
 export default function FilterDemo() {
     const [nodes, setNodes] = useState([]);
     const [globalFilter, setGlobalFilter] = useState('');
@@ -37,10 +37,24 @@ export default function FilterDemo() {
     };
 
     let header = getHeader();
-    const getIcon = (node) => {
-        switch (key) {
-            case value:
+    const getHeaderIcon = (actionmapName) => {
+        console.log(actionmapName);
+        switch (actionmapName) {
+            case "seat_general":
+                console.log('SEAT GENERAL');
+                return (<div className='w-[25px]'> <SeatIcon /></div>)
+                break;
 
+            default:
+                break;
+        }
+    }
+    const getIcon = (actionmapName) => {
+        console.log(actionmapName);
+        switch (actionmapName) {
+            case "seat_general":
+                console.log('SEAT GENERAL');
+                return (<div className='w-[25px]'> <SeatIcon /></div>)
                 break;
 
             default:
@@ -53,8 +67,6 @@ export default function FilterDemo() {
             return;
         }
         let label = <p className='self-center justify-center text-list-default '>{node.label.toUpperCase()}</p>;
-
-
         const expanded = options.expanded;
         const iconClassName = classNames('p-tree-toggler-icon pi pi-fw', {
             'gg-minimize-alt': expanded,
@@ -72,12 +84,12 @@ export default function FilterDemo() {
 
         }
 
-
-
         return (
             <button type="button" className="justify-center  p-tree-toggler flex flex-col  gap-[0px] pl-[2px]  " tabIndex={-1} onClick={options.onClick}>
                 <div className='flex flex-row content-start justify-center self-start gap-[5px] '>
                     <span className='' aria-hidden="true"> {toggleIcon(expanded)}</span>
+                    {/* <p className=' pt-[16px]'>/d</p> */}
+                    <span className='' aria-hidden="true"> {getHeaderIcon(node.key)}</span>
 
                     <span className='self-center justify-center '>{label}</span>
                     {expanded}
@@ -92,18 +104,27 @@ export default function FilterDemo() {
     // const get
     const nodeTemplate = (node, options) => {
 
-        let label = <b>{node.label}</b>;
+        let label = <p>{node.label}</p>;
 
         if (Object.hasOwn(node, 'children')) {
             label = <></>
         }
 
-        return <span className={options.className}>{label}</span>;
+        return <span className={options.className}>
+            <div className='flex flex-row'> 
+
+                {getIcon(node.data.actionmapName)}
+                <p className='text-[26px] font-[100] leading-[26px] text-[#00ffdd]'>/ </p>
+
+                {label}
+            </div>
+        </span>;
     }
 
     return (
 
         <div className="card flex flex-wrap justify-content-center gap-5">
+
             <Tree
                 togglerTemplate={togglerTemplate}
                 selectionMode="single" selectionKeys={selectedKey} onSelectionChange={(e) => setSelectedKey(e.value)}
