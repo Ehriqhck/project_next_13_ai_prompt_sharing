@@ -66,7 +66,7 @@ export default function FilterDemo() {
         if (!node) {
             return;
         }
-        let label = <p className='self-center justify-center text-list-default '>{node.label.toUpperCase()}</p>;
+        let label = <p className='self-center justify-center text-list-default '>{node.label?.toUpperCase()}</p>;
         const expanded = options.expanded;
         const iconClassName = classNames('p-tree-toggler-icon pi pi-fw', {
             'gg-minimize-alt': expanded,
@@ -114,7 +114,7 @@ export default function FilterDemo() {
             <div className='flex flex-row'> 
 
                 {getIcon(node.data.actionmapName)}
-                <p className='text-[26px] font-[100] leading-[26px] text-[#00ffdd]'>/ </p>
+                <p className='text-[26px] font-[200] leading-[26px] text-[#00ffdd]'> </p>
 
                 {label}
             </div>
@@ -128,7 +128,7 @@ export default function FilterDemo() {
             <Tree
                 togglerTemplate={togglerTemplate}
                 selectionMode="single" selectionKeys={selectedKey} onSelectionChange={(e) => setSelectedKey(e.value)}
-                nodeTemplate={nodeTemplate} value={nodes} filter filterMode="lenient" filterPlaceholder="Lenient Filter" className="w-full md:w-30rem" />
+                nodeTemplate={nodeTemplate} value={nodes} filter filterBy='label' filterMode="strict" filterPlaceholder="Lenient Filter" className="w-full md:w-30rem" />
             {/* <Tree value={nodes} filter filterMode="strict" filterPlaceholder="Strict Filter" className="w-full md:w-30rem" /> */}
         </div>
 

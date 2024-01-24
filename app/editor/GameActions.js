@@ -1950,7 +1950,7 @@ export const GameActions = {
       },
       // turret_advanced / Turret Advanced
       {
-        key: 'turret_movement',
+        key: 'turret_movement_REMOVE_THIS',
         label: 'Turret Movement Advanced',
 
         data: {
