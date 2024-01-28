@@ -16,6 +16,21 @@ html{
   min-width: 555px;
 }
 
+.p-treenode>[data-pc-section^="content"].p-treenode-content.p-treenode-selectable {
+  border-radius: 6px;
+  transition: box-shadow 0.3s;
+  padding: 0px !important;
+}
+.p-treenode.p-treenode-leaf>[data-pc-section^="content"].p-treenode-content.p-treenode-selectable {
+  border-radius: 6px;
+  transition: box-shadow 0.3s;
+  padding: 12px !important;
+}
+/* .p-treenode.p-treenode-leaf>[data-pc-section^="content"].p-treenode-content.p-treenode-selectable.p-highlight {
+  border-radius: 6px;
+  transition: box-shadow 0.3s;
+  padding: 12px !important;
+} */
 .gg-arrows-expand-right {
   box-sizing: border-box;
   position: relative;

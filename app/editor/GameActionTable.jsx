@@ -8,7 +8,21 @@ import { SelectButton } from 'primereact/selectbutton';
 import { GameActions } from './GameActions';
 import { Tree } from 'primereact/tree';
 import { classNames } from 'primereact/utils';
-import SeatIcon from 'public/assets/icons/actions/gameCategory/SeatIcon'
+import SeatIcon from '@public/assets/icons/actions/gameCategory/SeatIcon'
+import ArrowRightIcon from '@public/assets/icons/actions/gameCategory/ArrowRightIcon'
+import GenericSettingIcon from '@public/assets/icons/actions/gameCategory/GenericSettingIcon'
+import QuantumIcon from '@public/assets/icons/actions/gameCategory/QuantumIcon'
+import SalvageIcon from '@public/assets/icons/actions/gameCategory/SalvageIcon'
+import ScanningIcon from '@public/assets/icons/actions/gameCategory/ScanningIcon'
+import MiningIcon from '@public/assets/icons/actions/gameCategory/MiningIcon'
+import CameraIcon from '@public/assets/icons/actions/gameCategory/CameraIcon'
+import WarningIcon from '@public/assets/icons/actions/gameCategory/WarningIcon'
+import SpaceshipIcon from '@public/assets/icons/actions/gameCategory/SpaceshipIcon'
+import KeyIcon from '@public/assets/icons/actions/gameCategory/KeyIcon'
+import GroundVehicleIcon from '@public/assets/icons/actions/gameCategory/GroundVehicleIcon'
+import PlusIcon from '@public/assets/icons/actions/gameCategory/PlusIcon'
+import MoveIcon from '@public/assets/icons/actions/gameCategory/MoveIcon'
+
 export default function FilterDemo() {
     const [nodes, setNodes] = useState([]);
     const [globalFilter, setGlobalFilter] = useState('');
@@ -37,30 +51,64 @@ export default function FilterDemo() {
     };
 
     let header = getHeader();
-    const getHeaderIcon = (actionmapName) => {
-        console.log(actionmapName);
-        switch (actionmapName) {
-            case "seat_general":
-                console.log('SEAT GENERAL');
+    const getHeaderIcon = (node) => {
+        switch (node.key) {
+            // Seat Icon
+            case "":
                 return (<div className='w-[25px]'> <SeatIcon /></div>)
-                break;
+            // Spaceship Icon + Ground Vehicle
+            case "spaceship_general":
+            case "spaceship_view":
+            case "seat_general":
+
+                return (
+                    <div className='flex flex-row gap-[5px]'>
+                        <div className='w-[25px]'> <SpaceshipIcon /></div>
+                        {/* <div className='w-[20px]'> <PlusIcon /></div> */}
+
+                        <div className='w-[25px]'> <GroundVehicleIcon /></div>
+                    </div>
+                )
+            // Spaceship Icon
+            case "spaceship_general":
+            case "spaceship_movement":
+            case "spaceship_quantum":
+            case "spaceship_targeting_advanced":
+            case "spaceship_targeting":
+            case "spaceship_target_hailing":
+            case "spaceship_radar":
+            case "spaceship_mining":
+            case "spaceship_target_hailing":
+            case "spaceship_salvage":
+
+                return (
+                    <div className='w-[25px]'>
+                        <SpaceshipIcon />
+                    </div>
+                )
+
+            // Move Icon
+            case "spaceship_movement-movement":
+                return (
+                    <div className=' flex flex-row mr-[5px]'>
+                        <div className='flex flex-row gap-[5px]'>
+                            <div className='w-[25px]'> <SpaceshipIcon /></div>
+                            <div className='w-[20px] self-center mx-[0px]'>
+                                <ArrowRightIcon />
+                            </div>
+                            <div className='w-[25px]'> <MoveIcon /></div>
+                        </div>
+                        {/* <div className='w-[20px] self-center mx-[3px]'>
+                        <ArrowRightIcon />
+                    </div> */}
+                    </div>
+                )
 
             default:
                 break;
         }
     }
-    const getIcon = (actionmapName) => {
-        console.log(actionmapName);
-        switch (actionmapName) {
-            case "seat_general":
-                console.log('SEAT GENERAL');
-                return (<div className='w-[25px]'> <SeatIcon /></div>)
-                break;
 
-            default:
-                break;
-        }
-    }
 
     const togglerTemplate = (node, options) => {
         if (!node) {
@@ -89,7 +137,7 @@ export default function FilterDemo() {
                 <div className='flex flex-row content-start justify-center self-start gap-[5px] '>
                     <span className='' aria-hidden="true"> {toggleIcon(expanded)}</span>
                     {/* <p className=' pt-[16px]'>/d</p> */}
-                    <span className='' aria-hidden="true"> {getHeaderIcon(node.key)}</span>
+                    <span className='' aria-hidden="true"> {getHeaderIcon(node)}</span>
 
                     <span className='self-center justify-center '>{label}</span>
                     {expanded}
@@ -101,19 +149,182 @@ export default function FilterDemo() {
             </button>
         );
     };
-    // const get
-    const nodeTemplate = (node, options) => {
 
+    const getGameActionIcon = (node) => {
+        switch (node.key) {
+            // Quantum Icon
+            case "v_toggle_quantum_mode":
+                return (
+                    <div className='w-[25px] self-center'>
+                        <QuantumIcon />
+                    </div>
+                )
+
+            // Salvage Icon
+            case "v_toggle_salvage_mode":
+                return (
+                    <div className='w-[25px] self-center'>
+                        <SalvageIcon />
+                    </div>
+                )
+
+            // Scanning Icon  
+            case "v_toggle_scan_mode":
+                return (
+                    <div className='w-[25px] self-center'>
+                        <ScanningIcon />
+                    </div>
+                )
+
+            // Mining Icon  
+            case "v_toggle_mining_mode":
+                return (
+                    <div className='w-[25px] self-center'>
+                        <MiningIcon />
+                    </div>
+                )
+
+            // Camera Icon  
+            case "v_view_look_behind":
+                return (
+                    <div className='w-[25px] self-center'>
+                        <CameraIcon />
+                    </div>
+                )
+
+            // Camera Icon  
+
+            // Warning Icon
+            case "v_emergency_exit":
+            case "v_self_destruct":
+            case "v_eject":
+                return (
+                    <div className='w-[25px] self-center'>
+                        <WarningIcon />
+                    </div>
+                )
+                break;
+
+            // Key Icon
+            case "v_close_all_doors":
+            case "v_lock_all_doors":
+            case "v_toggle_all_doorlocks":
+            case "v_open_all_doors":
+            case "v_toggle_all_doors":
+            case "v_lock_all_ports":
+            case "v_unlock_all_ports":
+            case "v_toggle_all_portlocks":
+
+            case "v_toggle_all_doorlocks":
+                return (
+                    <div className='w-[25px] self-center'>
+                        <KeyIcon />
+                    </div>
+                )
+                break;
+            default:
+                return (
+                    <div className='w-[25px] self-center'>
+                        <GenericSettingIcon />
+                    </div>
+                )
+                break;
+        }
+    }
+    const getCategoryIcon = (node) => {
+
+        if (node.data.actionmapName === "spaceship_view") {
+            return (<div className=' flex flex-row mr-[5px]'>
+                <div className='flex flex-row gap-[5px]'>
+                    <div className='w-[25px]'> <SpaceshipIcon /></div>
+
+                    <div className='w-[25px]'> <GroundVehicleIcon /></div>
+                </div>
+                <div className='w-[20px] self-center mx-[3px]'>
+                    <ArrowRightIcon />
+                </div>
+                <div className='w-[25px] self-center mx-[3px]'>
+                    <CameraIcon />
+                </div>            </div>
+            )
+        }
+        switch (node.data.category) {
+            // Seat Icon
+            case "Flight / Movement":
+                return (
+                    <div className=' flex flex-row mr-[5px]'>
+                        <div className=' flex flex-row mr-[5px]'>
+                            <div className='flex flex-row gap-[3px]'>
+                                <div className='w-[25px] self-center'> <SpaceshipIcon /></div>
+                                <div className='w-[20px] self-center mx-[0px]'>
+                                    <ArrowRightIcon />
+                                </div>
+                                <div className='w-[25px]'> <MoveIcon /></div>
+                            </div>
+                
+                        </div>                  
+                        {getGameActionIcon(node)}
+                    </div>
+                )
+            // Seat Icon
+            case "seat_general":
+                return (
+                    <div className=' flex flex-row mr-[5px]'>
+                        <div className='w-[25px] self-center'>  <SeatIcon /> </div>
+                        <div className='w-[20px] self-center mr-[3px]'>  <ArrowRightIcon /> </div>
+
+                        {/* <div className='w-[24px] self-center ml-[2px]'>   <GenericSettingIcon /> </div> */}
+
+                        {getGameActionIcon(node)}
+                    </div>
+                )
+
+            // Spaceship Icon
+            case "spaceshipd_general":
+            case "spaceship_dgeneral":
+                return (
+                    <div className=' flex flex-row mr-[5px]'>
+                        <div className='w-[25px] self-center'>  <SpaceshipIcon /> </div>
+                        <div className='w-[20px] self-center mr-[3px]'>  <ArrowRightIcon /> </div>
+                        {getGameActionIcon(node)}
+                    </div>
+                )
+
+            // Spaceship Icon + Ground Vehicle Icon
+            case "spaceship_general":
+            case "spaceship_view":
+                return (
+
+                    <div className=' flex flex-row mr-[5px]'>
+                        <div className='flex flex-row gap-[5px]'>
+                            <div className='w-[25px]'> <SpaceshipIcon /></div>
+                            {/* <div className='w-[20px]'> <PlusIcon /></div> */}
+
+                            <div className='w-[25px]'> <GroundVehicleIcon /></div>
+                        </div>
+                        <div className='w-[20px] self-center mx-[3px]'>
+                            <ArrowRightIcon />
+                        </div>
+                        {getGameActionIcon(node)}
+                    </div>
+                )
+
+            default:
+                break;
+        }
+    }
+    const nodeTemplate = (node, options) => {
         let label = <p>{node.label}</p>;
 
+        // check if node is category with child array of game actions
         if (Object.hasOwn(node, 'children')) {
             label = <></>
         }
 
         return <span className={options.className}>
-            <div className='flex flex-row'> 
+            <div className='flex flex-row'>
 
-                {getIcon(node.data.actionmapName)}
+                {getCategoryIcon(node)}
                 <p className='text-[26px] font-[200] leading-[26px] text-[#00ffdd]'> </p>
 
                 {label}
@@ -122,28 +333,13 @@ export default function FilterDemo() {
     }
 
     return (
-
         <div className="card flex flex-wrap justify-content-center gap-5">
-
             <Tree
                 togglerTemplate={togglerTemplate}
                 selectionMode="single" selectionKeys={selectedKey} onSelectionChange={(e) => setSelectedKey(e.value)}
                 nodeTemplate={nodeTemplate} value={nodes} filter filterBy='label' filterMode="strict" filterPlaceholder="Lenient Filter" className="w-full md:w-30rem" />
-            {/* <Tree value={nodes} filter filterMode="strict" filterPlaceholder="Strict Filter" className="w-full md:w-30rem" /> */}
         </div>
 
-        // <div className="card">
-        //     <div className="flex justify-content-center mb-4">
-        //         <SelectButton value={filterMode} onChange={(e) => setFilterMode(e.value)} options={filterOptions} />
-        //     </div>
-        //     <TreeTable
-        //      bodyTemplate={bodyTemplate}
-        //      selectionMode="single"  selectionKeys={selectedNodeKey} onSelectionChange={(e) => setSelectedNodeKey(e.value)} metaKeySelection={metaKey} 
-        //     value={nodes} globalFilter={globalFilter} header={header} filterMode={filterMode} tableStyle={{ minWidth: '50rem' }}>
-        //         <Column field="name" header="Name" expander filter filterPlaceholder="Filter by name"></Column>
-        //         <Column field="category" header="ID"  ></Column>
 
-        //     </TreeTable>
-        // </div>
     )
 }
