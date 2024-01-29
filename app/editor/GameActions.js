@@ -7,7 +7,8 @@ export const GameActions = {
         label: 'Vehicles / Seats & Operator Modes',
 
         data: {
-          name: 'Vehicles / Seats & Operator Modes'
+          name: 'Vehicles / Seats & Operator Modes',
+          category: 'Vehicles / Seats & Operator Modes'
         },
         children: [
           {
@@ -105,7 +106,7 @@ export const GameActions = {
       {
         key: 'spaceship_general',
         data: {
-          name: 'Vehicles / Cockpit'
+          category: 'Vehicles / Cockpit'
         },
         label: 'Vehicles / Cockpit',
 
@@ -162,24 +163,15 @@ export const GameActions = {
           },
           {
             key: 'v_toggle_all_doorlocks',
-            label: 'Lock All Doors',
+            label: 'Lock & Unlock Doors',
             data: {
-              name: 'Lock All Doors',
-              category: 'Lock & Unlock Doors',
+              name: 'Lock & Unlock Doors',
+              category: 'Vehicles / Cockpit',
               actionmapName: 'spaceship_general',
               inputType: 'Toggle'
             }
           },
-          {
-            key: 'v_toggle_all_doorlocks',
-            label: 'Unlock All Doors',
-            data: {
-              name: 'Unlock All Doors',
-              category: 'Unlock All Doors',
-              actionmapName: 'spaceship_general',
-              inputType: 'Press'
-            }
-          },
+    
           {
             key: 'v_open_all_doors',
             label: 'Open All Doors',
@@ -415,29 +407,172 @@ export const GameActions = {
         key: 'spaceship_movement',
         label: 'Flight / Movement',
         data: {
-          name: 'Flight / Movement'
+          category: 'Flight / Movement'
         },
         children: [
           {
-            key: 'spaceship_movement-movement',
+            key: 'spaceship_movement-maneuvering',
             label: 'Movemeasdant',
             data: {
-              actionmapName: 'spaceship_movement-movement',
-              name: 'Flight / Movement'
+              actionmapName: 'spaceship_movement-maneuvering',
+              category: 'Flight / Movement / Maneuvering'
             },
-            children: [ {
-              key: 'v_strdafe_abs_rel_swap',
-              label: 'Throttle - Swap Relative & Absolute',
-              data: {
-                name: 'Throttle - Swap Relative & Absolute',
-                category: 'Flight / Movement',
-                actionmapName: 'spaceship_movement',
-                inputType: 'press'
-              }}]
-
+            children: [
+              {
+                key: 'v_strafe_back_abs',
+                label: 'Throttle - Backwards (Absolute)',
+                data: {
+                  name: 'Throttle - Backwards (Absolute)',
+                  category: 'Flight / Movement / Maneuvering',
+                  actionmapName: 'spaceship_movement',
+                  inputType: 'pressHold'
+                }
+              },
+              {
+                key: 'v_strafe_back_abs_rel-FIX THIS KEY',
+                label: 'Throttle - Backwards (Relative)',
+                data: {
+                  name: 'Throttle - Backwards (Relative)',
+                  category: 'Flight / Movement / Maneuvering',
+                  actionmapName: 'spaceship_movement',
+                  inputType: 'pressHold'
+                }
+              },
+              {
+                key: 'v_strafe_back_abs_rel',
+                label: 'Throttle - Backwards (Relative & Absolute)',
+                data: {
+                  name: 'Throttle - Backwards (Relative & Absolute)',
+                  category: 'Flight / Movement / Maneuvering',
+                  actionmapName: 'spaceship_movement',
+                  inputType: 'pressHold'
+                }
+              },
+    
+              {
+                key: 'v_strafe_forward_abs',
+                label: 'Throttle - Forward (Absolute)',
+                data: {
+                  name: 'Throttle - Forward (Absolute)',
+                  category: 'Flight / Movement / Maneuvering',
+                  actionmapName: 'spaceship_movement',
+                  inputType: 'pressHold'
+                }
+              },
+              {
+                key: 'v_strafe_forward_abs_rel',
+                label: 'Throttle - Forward (Absolute & Relative)',
+                data: {
+                  name: 'Throttle - Forward (Absolute & Relative)',
+                  category: 'Flight / Movement / Maneuvering',
+                  actionmapName: 'spaceship_movement',
+                  inputType: 'pressHold'
+                }
+              },
+              {
+                key: 'v_strafe_forward_rel',
+                label: 'Throttle - Forward (Relative)',
+                data: {
+                  name: 'Throttle - Forward (Relative)',
+                  category: 'Flight / Movement / Maneuvering',
+                  actionmapName: 'spaceship_movement',
+                  inputType: 'pressHold'
+                }
+              },  {
+                key: 'v_strafe_right',
+                label: 'Strafe Right (Absolute)',
+                data: {
+                  name: 'Strafe Right (Absolute)',
+                  category: 'Flight / Movement / Maneuvering',
+                  actionmapName: 'spaceship_movement',
+                  inputType: 'PressHold'
+                }
+              },
+              {
+                key: 'v_strafe_vertical',
+                label: 'Strafe Up & Down (Absolute)',
+                data: {
+                  name: 'Strafe Up & Down (Absolute)',
+                  category: 'Flight / Movement / Maneuvering',
+                  actionmapName: 'spaceship_movement',
+                  inputType: 'PressHold'
+                }
+              },  {
+                key: 'v_strafe_down',
+                label: 'Strafe Down (Absolute)',
+                data: {
+                  name: 'Strafe Down (Absolute)',
+                  category: 'Flight / Movement / Maneuvering',
+                  actionmapName: 'spaceship_movement',
+                  inputType: 'pressHold'
+                }
+              },
+              {
+                key: 'v_strafe_lateral',
+                label: 'Strafe Left & Right (Absolute)',
+                data: {
+                  name: 'Strafe Left & Right (Absolute)',
+                  category: 'Flight / Movement / Maneuvering',
+                  actionmapName: 'spaceship_movement',
+                  inputType: 'Axis'
+                }
+              },
+              {
+                key: 'v_strafe_left',
+                label: 'Strafe Left (Absolute)',
+                data: {
+                  name: 'Strafe Left (Absolute)',
+                  category: 'Flight / Movement / Maneuvering',
+                  actionmapName: 'spaceship_movement',
+                  inputType: 'PressHold'
+                }
+              },
+              {
+                key: 'v_strafe_longitudinal_abs',
+                label: 'Strafe Forward & Backward (Absolute)',
+                data: {
+                  name: 'Strafe Forward & Backward (Absolute)',
+                  category: 'Flight / Movement / Maneuvering',
+                  actionmapName: 'spaceship_movement',
+                  inputType: 'Axis'
+                }
+              },
+              {
+                key: 'v_strafe_longitudinal_abs_rel',
+                label: 'Strafe Forward & Backward (Absolute & Relative)',
+                data: {
+                  name: 'Strafe Forward & Backward (Absolute & Relative)',
+                  category: 'Flight / Movement / Maneuvering',
+                  actionmapName: 'spaceship_movement',
+                  inputType: 'Axis'
+                }
+              },
+              {
+                key: 'v_strafe_longitudinal_rel',
+                label: 'Strafe Forward & Backward (Relative)',
+                data: {
+                  name: 'Strafe Forward & Backward (Relative)',
+                  category: 'Flight / Movement / Maneuvering',
+                  actionmapName: 'spaceship_movement',
+                  inputType: 'Axis'
+                }
+              },
+              {
+                key: 'v_strafe_longitudinal_invert',
+                label: 'Strafe Forward & Back Invert',
+                data: {
+                  name: 'Strafe Forward & Back Invert',
+                  category: 'Flight / Movement / Maneuvering',
+                  actionmapName: 'spaceship_movement',
+                  inputType: 'Press'
+                }
+              }
+            ]
           },
+       
+         
           {
-            key: 'v_strafe_abs_rel_swap',
+            key: 'v_strdafe_abs_rel_swap',
             label: 'Throttle - Swap Relative & Absolute',
             data: {
               name: 'Throttle - Swap Relative & Absolute',
@@ -446,136 +581,7 @@ export const GameActions = {
               inputType: 'press'
             }
           },
-          {
-            key: 'v_strafe_back_abs',
-            label: 'Throttle - Backwards (Absolute)',
-            data: {
-              name: 'Throttle - Backwards (Absolute)',
-              category: 'Flight / Movement',
-              actionmapName: 'spaceship_movement',
-              inputType: 'pressHold'
-            }
-          },
-          {
-            key: 'v_strafe_back_abs_rel',
-            label: 'Throttle - Backwards (Relative)',
-            data: {
-              name: 'Throttle - Backwards (Relative)',
-              category: 'Flight / Movement',
-              actionmapName: 'spaceship_movement',
-              inputType: 'pressHold'
-            }
-          },
-          {
-            key: 'v_strafe_back_abs_rel',
-            label: 'Throttle - Backwards (Relative & Absolute)',
-            data: {
-              name: 'Throttle - Backwards (Relative & Absolute)',
-              category: 'Flight / Movement',
-              actionmapName: 'spaceship_movement',
-              inputType: 'pressHold'
-            }
-          },
-          {
-            key: 'v_strafe_down',
-            label: 'Strafe Down (Absolute)',
-            data: {
-              name: 'Strafe Down (Absolute)',
-              category: 'Flight / Movement',
-              actionmapName: 'spaceship_movement',
-              inputType: 'pressHold'
-            }
-          },
-          {
-            key: 'v_strafe_forward_abs',
-            label: 'Throttle - Forward (Absolute)',
-            data: {
-              name: 'Throttle - Forward (Absolute)',
-              category: 'Flight / Movement',
-              actionmapName: 'spaceship_movement',
-              inputType: 'pressHold'
-            }
-          },
-          {
-            key: 'v_strafe_forward_abs_rel',
-            label: 'Throttle - Forward (Absolute & Relative)',
-            data: {
-              name: 'Throttle - Forward (Absolute & Relative)',
-              category: 'Flight / Movement',
-              actionmapName: 'spaceship_movement',
-              inputType: 'pressHold'
-            }
-          },
-          {
-            key: 'v_strafe_forward_rel',
-            label: 'Throttle - Forward (Relative)',
-            data: {
-              name: 'Throttle - Forward (Relative)',
-              category: 'Flight / Movement',
-              actionmapName: 'spaceship_movement',
-              inputType: 'pressHold'
-            }
-          },
-          {
-            key: 'v_strafe_lateral',
-            label: 'Strafe Left & Right (Absolute)',
-            data: {
-              name: 'Strafe Left & Right (Absolute)',
-              category: 'Flight / Movement',
-              actionmapName: 'spaceship_movement',
-              inputType: 'Axis'
-            }
-          },
-          {
-            key: 'v_strafe_left',
-            label: 'Strafe Left (Absolute)',
-            data: {
-              name: 'Strafe Left (Absolute)',
-              category: 'Flight / Movement',
-              actionmapName: 'spaceship_movement',
-              inputType: 'PressHold'
-            }
-          },
-          {
-            key: 'v_strafe_longitudinal_abs',
-            label: 'Strafe Forward & Backward (Absolute)',
-            data: {
-              name: 'Strafe Forward & Backward (Absolute)',
-              category: 'Flight / Movement',
-              actionmapName: 'spaceship_movement',
-              inputType: 'Axis'
-            }
-          },
-          {
-            key: 'v_strafe_longitudinal_abs_rel',
-            label: 'Strafe Forward & Backward (Absolute & Relative)',
-            data: {
-              name: 'Strafe Forward & Backward (Absolute & Relative)',
-              category: 'Flight / Movement',
-              actionmapName: 'spaceship_movement',
-              inputType: 'Axis'
-            }
-          },
-          {
-            key: 'v_strafe_longitudinal_rel',
-            label: 'Strafe Forward & Backward (Relative)',
-            data: {
-              name: 'Strafe Forward & Backward (Relative)',
-              category: 'Flight / Movement',
-              actionmapName: 'spaceship_movement',
-              inputType: 'Axis'
-            }
-          },
-          {
-            key: 'v_strafe_longitudinal_invert',
-            label: 'Strafe Forward & Back Invert',
-            data: {
-              name: 'Strafe Forward & Back Invert',
-              category: 'Flight / Movement',
-              actionmapName: 'spaceship_movement',
-              inputType: 'Press'
-            }
-          },
+
           {
             key: 'v_strafe_reset_rel_long',
             label: 'Throttle - Remove Trim (Long)',
@@ -616,26 +622,7 @@ export const GameActions = {
               inputType: 'Press'
             }
           },
-          {
-            key: 'v_strafe_right',
-            label: 'Strafe Right (Absolute)',
-            data: {
-              name: 'Strafe Right (Absolute)',
-              category: 'Flight / Movement',
-              actionmapName: 'spaceship_movement',
-              inputType: 'PressHold'
-            }
-          },
-          {
-            key: 'v_strafe_vertical',
-            label: 'Strafe Up & Down (Absolute)',
-            data: {
-              name: 'Strafe Up & Down (Absolute)',
-              category: 'Flight / Movement',
-              actionmapName: 'spaceship_movement',
-              inputType: 'PressHold'
-            }
-          },
+       
           {
             key: 'v_target_match_vel',
             label: 'Match Target Velocity',
@@ -721,7 +708,9 @@ export const GameActions = {
             label: 'Acceleration Limiter Up/Down (Relative)',
             data: {
               name: 'Acceleration Limiter Up/Down (Relative)',
-              inputType: 'Press'
+              inputType: 'Press',
+              category: 'Flight / Movement',
+              actionmapName: 'spaceship_movement',
             }
           },
           {
@@ -729,9 +718,10 @@ export const GameActions = {
             label: 'Afterburner',
             data: {
               name: 'Afterburner',
-              category: 'Flight / Movement',
               actionmapName: 'spaceship_movement',
-              inputType: 'Press'
+              inputType: 'Press',
+              category: 'Flight / Movement',
+
             }
           },
           {

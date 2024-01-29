@@ -308,8 +308,8 @@ table.p-datatable-table {
   margin: 20px 20px 20px 20px;
   height:auto;
   min-width: 330px;
-  margin: 10px 10px 10px 10px;
-  align-self: center;
+  margin: 150px 10px 10px 10px;
+  align-self: flex-start;
 }
 
 .p-selectable-row:focus {

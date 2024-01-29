@@ -88,7 +88,7 @@ export default function FilterDemo() {
                 )
 
             // Move Icon
-            case "spaceship_movement-movement":
+            case "spaceship_movement-maneuvering":
                 return (
                     <div className=' flex flex-row mr-[5px]'>
                         <div className='flex flex-row gap-[5px]'>
@@ -135,7 +135,7 @@ export default function FilterDemo() {
         return (
             <button type="button" className="justify-center  p-tree-toggler flex flex-col  gap-[0px] pl-[2px]  " tabIndex={-1} onClick={options.onClick}>
                 <div className='flex flex-row content-start justify-center self-start gap-[5px] '>
-                    <span className='' aria-hidden="true"> {toggleIcon(expanded)}</span>
+                    {/* <span className='' aria-hidden="true"> {toggleIcon(expanded)}</span> */}
                     {/* <p className=' pt-[16px]'>/d</p> */}
                     <span className='' aria-hidden="true"> {getHeaderIcon(node)}</span>
 
@@ -214,6 +214,7 @@ export default function FilterDemo() {
             case "v_lock_all_ports":
             case "v_unlock_all_ports":
             case "v_toggle_all_portlocks":
+            case "v_unlock_all_doorlocks":
 
             case "v_toggle_all_doorlocks":
                 return (
@@ -248,8 +249,25 @@ export default function FilterDemo() {
                 </div>            </div>
             )
         }
+        if (node.data.category === "Flight / Movement / Maneuvering") {
+            return (
+                <div className=' flex flex-row mr-[5px]'>
+                    <div className='flex flex-row gap-[5px]'>
+                        <div className='w-[25px]'> <SpaceshipIcon /></div>
+
+                    </div>
+                    <div className='w-[20px] self-center mx-[3px]'>
+                        <ArrowRightIcon />
+                    </div>
+                    <div className='w-[25px] self-center mx-[0px]'>
+                        <MoveIcon />
+                    </div>
+                </div>
+            )
+        }
         switch (node.data.category) {
             // Seat Icon
+
             case "Flight / Movement":
                 return (
                     <div className=' flex flex-row mr-[5px]'>
@@ -259,15 +277,31 @@ export default function FilterDemo() {
                                 <div className='w-[20px] self-center mx-[0px]'>
                                     <ArrowRightIcon />
                                 </div>
-                                <div className='w-[25px]'> <MoveIcon /></div>
+                                {/* <div className='w-[25px]'> <MoveIcon /></div> */}
                             </div>
-                
-                        </div>                  
+
+                        </div>
+                        {getGameActionIcon(node)}
+                    </div>
+                )
+            case "asdasd":
+                return (
+                    <div className=' flex flex-row mr-[5px]'>
+                        <div className=' flex flex-row mr-[5px]'>
+                            <div className='flex flex-row gap-[3px]'>
+                                <div className='w-[25px]'> <MoveIcon /></div>
+
+                                <div className='w-[20px] self-center mx-[0px]'>
+                                    <ArrowRightIcon />
+                                </div>
+                            </div>
+
+                        </div>
                         {getGameActionIcon(node)}
                     </div>
                 )
             // Seat Icon
-            case "seat_general":
+            case "Vehicles / Seats & Operator Modes":
                 return (
                     <div className=' flex flex-row mr-[5px]'>
                         <div className='w-[25px] self-center'>  <SeatIcon /> </div>
@@ -291,8 +325,8 @@ export default function FilterDemo() {
                 )
 
             // Spaceship Icon + Ground Vehicle Icon
-            case "spaceship_general":
-            case "spaceship_view":
+            case "Vehicles / Cockpit":
+            case "Vehicles / View":
                 return (
 
                     <div className=' flex flex-row mr-[5px]'>
@@ -325,9 +359,8 @@ export default function FilterDemo() {
             <div className='flex flex-row'>
 
                 {getCategoryIcon(node)}
-                <p className='text-[26px] font-[200] leading-[26px] text-[#00ffdd]'> </p>
-
                 {label}
+
             </div>
         </span>;
     }
