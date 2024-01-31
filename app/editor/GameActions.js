@@ -171,7 +171,7 @@ export const GameActions = {
               inputType: 'Toggle'
             }
           },
-    
+
           {
             key: 'v_open_all_doors',
             label: 'Open All Doors',
@@ -448,7 +448,7 @@ export const GameActions = {
                   inputType: 'pressHold'
                 }
               },
-    
+
               {
                 key: 'v_strafe_forward_abs',
                 label: 'Throttle - Forward (Absolute)',
@@ -478,7 +478,8 @@ export const GameActions = {
                   actionmapName: 'spaceship_movement',
                   inputType: 'pressHold'
                 }
-              },  {
+              },
+              {
                 key: 'v_strafe_right',
                 label: 'Strafe Right (Absolute)',
                 data: {
@@ -497,7 +498,8 @@ export const GameActions = {
                   actionmapName: 'spaceship_movement',
                   inputType: 'PressHold'
                 }
-              },  {
+              },
+              {
                 key: 'v_strafe_down',
                 label: 'Strafe Down (Absolute)',
                 data: {
@@ -566,11 +568,130 @@ export const GameActions = {
                   actionmapName: 'spaceship_movement',
                   inputType: 'Press'
                 }
+              },
+              {
+                key: 'v_afterburner',
+                label: 'Afterburner',
+                data: {
+                  name: 'Afterburner',
+                  actionmapName: 'spaceship_movement',
+                  inputType: 'Press',
+                  category: 'Flight / Movement / Maneuvering'
+                }
               }
             ]
           },
-       
-         
+          {
+            key: 'spaceship_movement-limiters',
+            label: 'Limiters',
+            data: {
+              actionmapName: 'spaceship_movement-limiters',
+              category: 'Flight / Movement / Limiters'
+            },
+            children: [
+              {
+                key: 'v_speed_range_abs',
+                label: 'Speed Limiter (Absolute)',
+                data: {
+                  name: 'Speed Limiter (Absolute)',
+                  category: 'Flight / Movement / Limiters',
+                  actionmapName: 'spaceship_movement',
+                  inputType: 'Axis'
+                }
+              },
+              {
+                key: 'v_speed_range_down',
+                label: 'Speed Limiter Decrease',
+                data: {
+                  name: 'Speed Limiter Decrease',
+                  category: 'Flight / Movement / Limiters',
+                  actionmapName: 'spaceship_movement',
+                  inputType: 'PressHold'
+                }
+              },
+              {
+                key: 'v_speed_range_up',
+                label: 'Speed Limiter Increase',
+                data: {
+                  name: 'Speed Limiter Increase',
+                  category: 'Flight / Movement / Limiters',
+                  actionmapName: 'spaceship_movement',
+                  inputType: 'PressHold'
+                }
+              },
+              {
+                key: 'v_speed_range_rel',
+                label: 'Speed Limiter (Relative)',
+                data: {
+                  name: 'Speed Limiter (Relative)',
+                  category: 'Flight / Movement / Limiters',
+                  actionmapName: 'spaceship_movement',
+                  inputType: 'Axis'
+                }
+              },
+              {
+                key: 'v_accel_range_abs',
+                label: 'Acceleration Limiter Up/Down (Absolute)',
+                data: {
+                  name: 'Acceleration Limiter Up/Down (Absolute)',
+                  category: 'Flight / Movement / Limiters',
+                  actionmapName: 'spaceship_movement',
+                  inputType: 'Axis'
+                }
+              },
+              {
+                key: 'v_accel_range_up',
+                label: 'Acceleration Limiter Increase',
+                data: {
+                  name: 'Acceleration Limiter Increase',
+                  category: 'Flight / Movement / Limiters',
+                  actionmapName: 'spaceship_movement',
+                  inputType: 'Press'
+                }
+              },
+              {
+                key: 'v_accel_range_down',
+                label: 'Acceleration Limiter Decrease',
+                data: {
+                  name: 'Acceleration Limiter Decrease',
+                  category: 'Flight / Movement / Limiters',
+                  actionmapName: 'spaceship_movement',
+                  inputType: 'Press'
+                }
+              },
+              {
+                key: 'v_accel_range_rel',
+                label: 'Acceleration Limiter Up/Down (Relative)',
+                data: {
+                  name: 'Acceleration Limiter Up/Down (Relative)',
+                  inputType: 'Press',
+                  category: 'Flight / Movement / Limiters',
+                  actionmapName: 'spaceship_movement'
+                }
+              },
+              {
+                key: 'v_ifcs_speed_limiter_reset_scm',
+                label: 'Speed Limiter - Reset to SCM Speed',
+                data: {
+                  name: 'Speed Limiter - Reset to SCM Speed',
+                  category: 'Flight / Movement / Limiters',
+                  actionmapName: 'spaceship_movement',
+                  inputType: 'Press'
+                }
+              },
+              {
+                key: 'v_ifcs_toggle_speed_limiter',
+                label: 'Speed Limiter On/Off (Hold/Toggle)',
+                data: {
+                  name: 'Speed Limiter On/Off (Hold/Toggle)',
+                  category: 'Flight / Movement / Limiters',
+                  actionmapName: 'spaceship_movement',
+                  inputType: 'Press'
+                }
+              }
+            ]
+          },
+
           {
             key: 'v_strdafe_abs_rel_swap',
             label: 'Throttle - Swap Relative & Absolute',
@@ -622,7 +743,7 @@ export const GameActions = {
               inputType: 'Press'
             }
           },
-       
+
           {
             key: 'v_target_match_vel',
             label: 'Match Target Velocity',
@@ -633,97 +754,7 @@ export const GameActions = {
               inputType: 'Press'
             }
           },
-          {
-            key: 'v_speed_range_abs',
-            label: 'Speed Limiter (Absolute)',
-            data: {
-              name: 'Speed Limiter (Absolute)',
-              category: 'Flight / Movement',
-              actionmapName: 'spaceship_movement',
-              inputType: 'Axis'
-            }
-          },
-          {
-            key: 'v_speed_range_down',
-            label: 'Speed Limiter Decrease',
-            data: {
-              name: 'Speed Limiter Decrease',
-              category: 'Flight / Movement',
-              actionmapName: 'spaceship_movement',
-              inputType: 'PressHold'
-            }
-          },
-          {
-            key: 'v_speed_range_up',
-            label: 'Speed Limiter Increase',
-            data: {
-              name: 'Speed Limiter Increase',
-              category: 'Flight / Movement',
-              actionmapName: 'spaceship_movement',
-              inputType: 'PressHold'
-            }
-          },
-          {
-            key: 'v_speed_range_rel',
-            label: 'Speed Limiter (Relative)',
-            data: {
-              name: 'Speed Limiter (Relative)',
-              category: 'Flight / Movement',
-              actionmapName: 'spaceship_movement',
-              inputType: 'Axis'
-            }
-          },
-          {
-            key: 'v_accel_range_abs',
-            label: 'Acceleration Limiter Up/Down (Absolute)',
-            data: {
-              name: 'Acceleration Limiter Up/Down (Absolute)',
-              category: 'Flight / Movement',
-              actionmapName: 'spaceship_movement',
-              inputType: 'Axis'
-            }
-          },
-          {
-            key: 'v_accel_range_up',
-            label: 'Acceleration Limiter Increase',
-            data: {
-              name: 'Acceleration Limiter Increase',
-              category: 'Flight / Movement',
-              actionmapName: 'spaceship_movement',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'v_accel_range_down',
-            label: 'Acceleration Limiter Decrease',
-            data: {
-              name: 'Acceleration Limiter Decrease',
-              category: 'Flight / Movement',
-              actionmapName: 'spaceship_movement',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'v_accel_range_rel',
-            label: 'Acceleration Limiter Up/Down (Relative)',
-            data: {
-              name: 'Acceleration Limiter Up/Down (Relative)',
-              inputType: 'Press',
-              category: 'Flight / Movement',
-              actionmapName: 'spaceship_movement',
-            }
-          },
-          {
-            key: 'v_afterburner',
-            label: 'Afterburner',
-            data: {
-              name: 'Afterburner',
-              actionmapName: 'spaceship_movement',
-              inputType: 'Press',
-              category: 'Flight / Movement',
 
-            }
-          },
           {
             key: 'v_atc_loading_area_request',
             label: 'ATC Loading Request',
@@ -854,16 +885,7 @@ export const GameActions = {
               inputType: 'Hold'
             }
           },
-          {
-            key: 'v_ifcs_speed_limiter_reset_scm',
-            label: 'Speed Limiter - Reset to SCM Speed',
-            data: {
-              name: 'Speed Limiter - Reset to SCM Speed',
-              category: 'Flight / Movement',
-              actionmapName: 'spaceship_movement',
-              inputType: 'Press'
-            }
-          },
+
           {
             key: 'v_ifcs_toggle_cruise_control',
             label: 'Cruise Control',
@@ -894,16 +916,7 @@ export const GameActions = {
               inputType: 'PressHold'
             }
           },
-          {
-            key: 'v_ifcs_toggle_speed_limiter',
-            label: 'Speed Limiter On/Off (Hold/Toggle)',
-            data: {
-              name: 'Speed Limiter On/Off (Hold/Toggle)',
-              category: 'Flight / Movement',
-              actionmapName: 'spaceship_movement',
-              inputType: 'Press'
-            }
-          },
+
           {
             key: 'v_ifcs_toggle_vector_decoupling',
             label: 'Decoupled Mode (Hold/Toggle)',

@@ -22,6 +22,8 @@ import KeyIcon from '@public/assets/icons/actions/gameCategory/KeyIcon'
 import GroundVehicleIcon from '@public/assets/icons/actions/gameCategory/GroundVehicleIcon'
 import PlusIcon from '@public/assets/icons/actions/gameCategory/PlusIcon'
 import MoveIcon from '@public/assets/icons/actions/gameCategory/MoveIcon'
+import LandingIcon from '@public/assets/icons/actions/gameCategory/LandingIcon'
+import SpeedometerIcon from '@public/assets/icons/actions/gameCategory/SpeedometerIcon'
 
 export default function FilterDemo() {
     const [nodes, setNodes] = useState([]);
@@ -152,8 +154,22 @@ export default function FilterDemo() {
 
     const getGameActionIcon = (node) => {
         switch (node.key) {
+
+            // Landing Icon
+            case "v_deploy_landing_system":
+            case "v_retract_landing_system":
+            case "v_toggle_landing_system":
+
+                return (
+                    <div className='w-[25px] self-center'>
+                        <LandingIcon />
+                    </div>
+                )
             // Quantum Icon
             case "v_toggle_quantum_mode":
+            case "v_toggle_jump_request":
+            case "v_engage_jump":
+
                 return (
                     <div className='w-[25px] self-center'>
                         <QuantumIcon />
@@ -261,6 +277,22 @@ export default function FilterDemo() {
                     </div>
                     <div className='w-[25px] self-center mx-[0px]'>
                         <MoveIcon />
+                    </div>
+                </div>
+            )
+        }
+        if (node.data.category === "Flight / Movement / Limiters") {
+            return (
+                <div className=' flex flex-row mr-[5px]'>
+                    <div className='flex flex-row gap-[5px]'>
+                        <div className='w-[25px]'> <SpaceshipIcon /></div>
+
+                    </div>
+                    <div className='w-[20px] self-center mx-[3px]'>
+                        <ArrowRightIcon />
+                    </div>
+                    <div className='w-[28px] self-center mx-[0px]'>
+                        <SpeedometerIcon />
                     </div>
                 </div>
             )
