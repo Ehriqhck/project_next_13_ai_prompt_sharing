@@ -955,7 +955,16 @@ export const GameActions = {
               actionmapName: 'spaceship_quantum',
               inputType: 'Hold'
             }
-          },
+          }
+        ]
+      },
+      {
+        key: 'spaceship_docking',
+        label: 'Flight / Docking',
+        data: {
+          name: 'Flight / Docking'
+        },
+        children: [
           {
             key: 'v_toggle_docking_mode',
             label: 'Toggle Docking Mode',
@@ -985,14 +994,16 @@ export const GameActions = {
               actionmapName: 'spaceship_docking',
               inputType: 'Press'
             }
-          }
+          },
+
+       
         ]
       },
       {
         key: 'spaceship_targeting',
-        label: 'Flight / Docking',
+        label: 'Flight / Targeting',
         data: {
-          name: 'Flight / Docking'
+          name: 'Flight / Targeting'
         },
         children: [
           {
@@ -1000,7 +1011,7 @@ export const GameActions = {
             label: 'Enter Remote Turret 1',
             data: {
               name: 'Enter Remote Turret 1',
-              category: 'Flight / Docking',
+              category: 'Flight / Targeting',
               actionmapName: 'spaceship_targeting',
               inputType: 'Press'
             }
@@ -1010,7 +1021,7 @@ export const GameActions = {
             label: 'Enter Remote Turret 2',
             data: {
               name: 'Enter Remote Turret 2',
-              category: 'Flight / Docking',
+              category: 'Flight / Targeting',
               actionmapName: 'spaceship_targeting',
               inputType: 'Press'
             }
@@ -1020,7 +1031,7 @@ export const GameActions = {
             label: 'Enter Remote Turret 3',
             data: {
               name: 'Enter Remote Turret 3',
-              category: 'Flight / Docking',
+              category: 'Flight / Targeting',
               actionmapName: 'spaceship_targeting',
               inputType: 'Press'
             }
@@ -1030,7 +1041,7 @@ export const GameActions = {
             label: 'Enable / Disable Look Ahead',
             data: {
               name: 'Enable / Disable Look Ahead',
-              category: 'Flight / Docking',
+              category: 'Flight / Targeting',
               actionmapName: 'spaceship_targeting',
               inputType: 'Press'
             }
@@ -1040,7 +1051,7 @@ export const GameActions = {
             label: 'Enable / Disable Target Padlock (Toggle, Hold)',
             data: {
               name: 'Enable / Disable Target Padlock (Toggle, Hold)',
-              category: 'Flight / Docking',
+              category: 'Flight / Targeting',
               actionmapName: 'spaceship_targeting',
               inputType: 'PressHold'
             }
@@ -1050,7 +1061,7 @@ export const GameActions = {
             label: 'Lock Selected Target',
             data: {
               name: 'Lock Selected Target',
-              category: 'Flight / Docking',
+              category: 'Flight / Targeting',
               actionmapName: 'spaceship_targeting',
               inputType: 'Press'
             }
@@ -1060,7 +1071,7 @@ export const GameActions = {
             label: 'Unlock Selected Target',
             data: {
               name: 'Unlock Selected Target',
-              category: 'Flight / Docking',
+              category: 'Flight / Targeting',
               actionmapName: 'spaceship_targeting',
               inputType: 'Hold'
             }
@@ -1070,7 +1081,7 @@ export const GameActions = {
             label: 'Pin Selected Target (Press)',
             data: {
               name: 'Pin Selected Target (Press)',
-              category: 'Flight / Docking',
+              category: 'Flight / Targeting',
               actionmapName: 'spaceship_targeting',
               inputType: 'Press'
             }
@@ -1080,7 +1091,7 @@ export const GameActions = {
             label: 'Pin Selected Target (Hold)',
             data: {
               name: 'Pin Selected Target (Hold)',
-              category: 'Flight / Docking',
+              category: 'Flight / Targeting',
               actionmapName: 'spaceship_targeting',
               inputType: 'Hold'
             }
