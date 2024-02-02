@@ -188,6 +188,10 @@ export default function FilterDemo() {
             case "v_target_cycle_friendly_reset":
             case "v_target_cycle_attacker_reset":
             case "v_target_cycle_hostile_reset":
+            case "v_target_cycle_all_reset":
+            case "v_target_cycle_in_view_reset":
+                case "v_target_cycle_pinned_reset":
+                    case "v_target_cycle_subitem_reset":
 
                 return (
                     <div className='w-[26px] self-center'>
