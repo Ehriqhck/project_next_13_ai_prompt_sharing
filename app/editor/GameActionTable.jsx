@@ -8,31 +8,47 @@ import { SelectButton } from 'primereact/selectbutton';
 import { GameActions } from './GameActions';
 import { Tree } from 'primereact/tree';
 import { classNames } from 'primereact/utils';
-import SeatIcon from '@public/assets/icons/actions/gameCategory/SeatIcon'
-import ArrowRightIcon from '@public/assets/icons/actions/gameCategory/ArrowRightIcon'
-import GenericSettingIcon from '@public/assets/icons/actions/gameCategory/GenericSettingIcon'
-import QuantumIcon from '@public/assets/icons/actions/gameCategory/QuantumIcon'
-import SalvageIcon from '@public/assets/icons/actions/gameCategory/SalvageIcon'
-import ScanningIcon from '@public/assets/icons/actions/gameCategory/ScanningIcon'
-import MiningIcon from '@public/assets/icons/actions/gameCategory/MiningIcon'
-import CameraIcon from '@public/assets/icons/actions/gameCategory/CameraIcon'
-import WarningIcon from '@public/assets/icons/actions/gameCategory/WarningIcon'
-import SpaceshipIcon from '@public/assets/icons/actions/gameCategory/SpaceshipIcon'
-import KeyIcon from '@public/assets/icons/actions/gameCategory/KeyIcon'
-import GroundVehicleIcon from '@public/assets/icons/actions/gameCategory/GroundVehicleIcon'
-import PlusIcon from '@public/assets/icons/actions/gameCategory/PlusIcon'
-import MoveIcon from '@public/assets/icons/actions/gameCategory/MoveIcon'
-import LandingIcon from '@public/assets/icons/actions/gameCategory/LandingIcon'
-import SpeedometerIcon from '@public/assets/icons/actions/gameCategory/SpeedometerIcon'
-import WifiIcon from '@public/assets/icons/actions/gameCategory/WifiIcon'
-import TurretIcon from '@public/assets/icons/actions/gameCategory/TurretIcon'
-import TargetingIcon from '@public/assets/icons/actions/gameCategory/TargetingIcon'
-import TargetingIconHostile from '@public/assets/icons/actions/gameCategory/TargetingIconHostile'
-import TargetingIconFriendly from '@public/assets/icons/actions/gameCategory/TargetingIconFriendly'
-import TargetingIconAttacker from '@public/assets/icons/actions/gameCategory/TargetingIconAttacker'
-import ResetIcon from '@public/assets/icons/actions/gameCategory/ResetIcon'
-import CycleIcon from '@public/assets/icons/actions/gameCategory/CycleIcon'
+import SeatIcon from '@public/assets/icons/actions/gameCategory/SeatIcon.jsx'
+import ArrowRightIcon from '@public/assets/icons/actions/gameCategory/ArrowRightIcon.jsx'
+import GenericSettingIcon from '@public/assets/icons/actions/gameCategory/GenericSettingIcon.jsx'
+import QuantumIcon from '@public/assets/icons/actions/gameCategory/QuantumIcon.jsx'
+import SalvageIcon from '@public/assets/icons/actions/gameCategory/SalvageIcon.jsx'
+import ScanningIcon from '@public/assets/icons/actions/gameCategory/ScanningIcon.jsx'
+import MiningIcon from '@public/assets/icons/actions/gameCategory/MiningIcon.jsx'
+import CameraIcon from '@public/assets/icons/actions/gameCategory/CameraIcon.jsx'
+import WarningIcon from '@public/assets/icons/actions/gameCategory/WarningIcon.jsx'
+import SpaceshipIcon from '@public/assets/icons/actions/gameCategory/SpaceshipIcon.jsx'
+import KeyIcon from '@public/assets/icons/actions/gameCategory/KeyIcon.jsx'
+import GroundVehicleIcon from '@public/assets/icons/actions/gameCategory/GroundVehicleIcon.jsx'
+import PlusIcon from '@public/assets/icons/actions/gameCategory/PlusIcon.jsx'
+import MoveIcon from '@public/assets/icons/actions/gameCategory/MoveIcon.jsx'
+import LandingIcon from '@public/assets/icons/actions/gameCategory/LandingIcon.jsx'
+import SpeedometerIcon from '@public/assets/icons/actions/gameCategory/SpeedometerIcon.jsx'
+import WifiIcon from '@public/assets/icons/actions/gameCategory/WifiIcon.jsx'
+import TurretIcon from '@public/assets/icons/actions/gameCategory/TurretIcon.jsx'
+import TargetingIcon from '@public/assets/icons/actions/gameCategory/TargetingIcon.jsx'
+import TargetingIconHostile from '@public/assets/icons/actions/gameCategory/TargetingIconHostile.jsx'
+import TargetingIconFriendly from '@public/assets/icons/actions/gameCategory/TargetingIconFriendly.jsx'
+import TargetingIconAttacker from '@public/assets/icons/actions/gameCategory/TargetingIconAttacker.jsx'
+import ResetIcon from '@public/assets/icons/actions/gameCategory/ResetIcon.jsx'
+import CycleIcon from '@public/assets/icons/actions/gameCategory/CycleIcon.jsx'
 import TargetingIconView from '@public/assets/icons/actions/gameCategory/TargetingIconView'
+import BackwardIcon from '@public/assets/icons/actions/gameCategory/BackwardIcon.jsx'
+import ForwardIcon from '@public/assets/icons/actions/gameCategory/ForwardIcon.jsx'
+import OneIcon from '@public/assets/icons/actions/gameCategory/OneIcon.jsx'
+import TwoIcon from '@public/assets/icons/actions/gameCategory/TwoIcon.jsx'
+import ThreeIcon from '@public/assets/icons/actions/gameCategory/ThreeIcon.jsx'
+import IncreaseIcon from '@public/assets/icons/actions/gameCategory/increaseIcon.jsx'
+import DecreaseIcon from '@public/assets/icons/actions/gameCategory/decreaseIcon.jsx'
+import FractureIcon from '@public/assets/icons/actions/gameCategory/fractureIcon.jsx'
+import DisintegrateIcon from '@public/assets/icons/actions/gameCategory/disintegrateIcon.jsx'
+import NudgeIcon from '@public/assets/icons/actions/gameCategory/nudgeIcon.jsx'
+import AngleIcon from '@public/assets/icons/actions/gameCategory/angleIcon.jsx'
+import FocusedBeamIcon from '@public/assets/icons/actions/gameCategory/FocusedBeamIcon.jsx'
+import TractorBeamIcon from '@public/assets/icons/actions/gameCategory/TractorBeamIcon.jsx'
+import LeftwardIcon from '@public/assets/icons/actions/gameCategory/LeftwardIcon.jsx'
+import RightwardIcon from '@public/assets/icons/actions/gameCategory/RightwardIcon.jsx'
+import SalvageBeamIcon from '@public/assets/icons/actions/gameCategory/SalvageBeamIcon.jsx'
 
 export default function FilterDemo() {
     const [nodes, setNodes] = useState([]);
@@ -64,8 +80,6 @@ export default function FilterDemo() {
     let header = getHeader();
     const getHeaderIcon = (node) => {
         switch (node.key) {
-
-
             // Seat Icon
             case "":
                 return (<div className='w-[25px]'> <SeatIcon /></div>)
@@ -74,11 +88,15 @@ export default function FilterDemo() {
             case "spaceship_view":
             case "seat_general":
             case "spaceship_targeting_advanced":
+            case "spaceship_target_hailing":
+            case "spaceship_radar":
+            case "spaceship_mining":
+            case "spaceship_salvage":
+
                 return (
                     <div className='flex flex-row gap-[5px]'>
                         <div className='w-[25px]'> <SpaceshipIcon /></div>
                         {/* <div className='w-[20px]'> <PlusIcon /></div> */}
-
                         <div className='w-[25px]'> <GroundVehicleIcon /></div>
                     </div>
                 )
@@ -190,8 +208,8 @@ export default function FilterDemo() {
             case "v_target_cycle_hostile_reset":
             case "v_target_cycle_all_reset":
             case "v_target_cycle_in_view_reset":
-                case "v_target_cycle_pinned_reset":
-                    case "v_target_cycle_subitem_reset":
+            case "v_target_cycle_pinned_reset":
+            case "v_target_cycle_subitem_reset":
 
                 return (
                     <div className='w-[26px] self-center'>
@@ -199,27 +217,33 @@ export default function FilterDemo() {
                     </div>
                 )
 
-            // Targeting Forward Icon
-            // case "v_target_cycle_hostile_fwd":
-            // case "v_target_cycle_friendly_fwd":
-            // case "v_target_cycle_attacker_fwd":
+            //   Targeting Forward Icon
+            case "v_target_cycle_hostile_fwd":
+            case "v_target_cycle_friendly_fwd":
+            case "v_target_cycle_attacker_fwd":
+            case "v_target_cycle_all_fwd":
+            case "v_target_cycle_in_view_fwd":
+            case "v_target_cycle_pinned_fwd":
+            case "v_target_cycle_subitem_fwd":
+                return (
+                    <div className='w-[26px] self-center'>
+                        <ForwardIcon />
+                    </div>
+                )
 
-            //     return (
-            //         <div className='w-[26px] self-center'>
-            //             <TargetingIconHostile />
-            //         </div>
-            //     )
             // Targeting Back Icon
-            // case "v_target_cycle_hostile_back":
-            // case "v_target_cycle_attacker_back":
-            // case "v_target_cycle_friendly_back":
-
-
-            //     return (
-            //         <div className='w-[26px] self-center'>
-            //             <TargetingIconHostile />
-            //         </div>
-            //     )
+            case "v_target_cycle_hostile_back":
+            case "v_target_cycle_attacker_back":
+            case "v_target_cycle_friendly_back":
+            case "v_target_cycle_all_back":
+            case "v_target_cycle_pinned_back":
+            case "v_target_cycle_subitem_back":
+            case "v_target_cycle_in_view_back":
+                return (
+                    <div className='w-[26px] self-center'>
+                        <BackwardIcon />
+                    </div>
+                )
             // Turret Icon
             case "v_enter_remote_turret_1":
             case "v_enter_remote_turret_2":
@@ -234,6 +258,7 @@ export default function FilterDemo() {
             // Wifi/Communications Icon
             case "v_atc_loading_area_request":
             case "v_atc_request":
+            case "v_target_hail":
 
                 return (
                     <div className='w-[25px] self-center'>
@@ -302,6 +327,7 @@ export default function FilterDemo() {
             case "v_emergency_exit":
             case "v_self_destruct":
             case "v_eject":
+            case "v_jettison_volatile_cargo":
                 return (
                     <div className='w-[25px] self-center'>
                         <WarningIcon />
@@ -327,6 +353,34 @@ export default function FilterDemo() {
                     </div>
                 )
                 break;
+            case "v_toggle_all_doorlocks":
+                return (
+                    <div className='w-[25px] self-center'>
+                        <KeyIcon />
+                    </div>
+                )
+                break;
+            // One Icon
+
+            case "v_mining_use_consumable1":
+                return (
+                    <div className='w-[25px] self-center'>
+                        <OneIcon />
+                    </div>)
+
+
+            // Two Icon
+            case "v_mining_use_consumable2":
+                return (
+                    <div className='w-[25px] self-center'>
+                        <TwoIcon />
+                    </div>)
+            // Three Icon
+            case "v_mining_use_consumable3":
+                return (
+                    <div className='w-[25px] self-center'>
+                        <ThreeIcon />
+                    </div>)
             default:
                 return (
                     <div className='w-[25px] self-center'>
@@ -339,6 +393,62 @@ export default function FilterDemo() {
     const getCategoryIcon = (node) => {
         if (Object.hasOwn(node, 'children')) {
             return;
+        }
+
+        if (node.data.actionmapName === "spaceship_mining") {
+            return (
+                <div className=' flex flex-row mr-[5px]'>
+                    <div className='flex flex-row gap-[5px]'>
+                        <div className='w-[25px]'> <SpaceshipIcon /></div>
+                        <div className='w-[25px]'> <GroundVehicleIcon /></div>
+
+                    </div>
+                    <div className='w-[20px] self-center mx-[3px]'>
+                        <ArrowRightIcon />
+                    </div>
+                    <div className='flex flex-row gap-[5px]'>
+
+                        <div className='w-[26px] self-center mx-[3px]'>
+                            <MiningIcon />
+                        </div>
+                        <div className='flex self-center content-center align-middle'>
+                            {getGameActionIcon(node)}
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+        if (node.data.actionmapName === "spaceship_targeting_advanced") {
+            switch (node.key) {
+                // TargetingFriendly Icon
+                case "v_target_cycle_friendly_back":
+            
+                    return (
+                        <div className=' flex flex-row mr-[5px]'>
+                            <div className='flex flex-row gap-[5px]'>
+                                <div className='w-[25px]'> <SpaceshipIcon /></div>
+                                <div className='w-[25px]'> <GroundVehicleIcon /></div>
+                            </div>
+
+                            <div className='w-[20px] self-center mx-[3px]'>
+                                <ArrowRightIcon />
+                            </div>
+
+                            <div className='flex flex-row gap-[5px]'>
+                                <div className='w-[26px] self-center'>
+                                    <TargetingIconFriendly />
+                                </div>
+                                {getGameActionIcon(node)}
+                            </div>
+
+                        </div>
+                    )
+
+
+
+                default:
+                    break;
+            }
         }
         if (node.data.actionmapName === "spaceship_targeting_advanced") {
             switch (node.key) {
@@ -446,7 +556,6 @@ export default function FilterDemo() {
                     break;
             }
         }
-
         if (node.data.actionmapName === "spaceship_targeting") {
             return (
                 <div className=' flex flex-row mr-[5px]'>
@@ -458,6 +567,24 @@ export default function FilterDemo() {
                     </div>
                     <div className='w-[26px] self-center mx-[3px]'>
                         <TargetingIcon />
+                    </div>
+                    {getGameActionIcon(node)}
+                </div>
+            )
+        }
+        if (node.data.actionmapName === "spaceship_radar"
+            ||
+            node.data.actionmapName === "spaceship_scanning") {
+            return (
+                <div className=' flex flex-row mr-[5px]'>
+                    <div className='flex flex-row gap-[5px]'>
+                        <div className='w-[25px]'> <SpaceshipIcon /></div>
+                    </div>
+                    <div className='w-[20px] self-center mx-[3px]'>
+                        <ArrowRightIcon />
+                    </div>
+                    <div className='w-[26px] self-center mx-[3px]'>
+                        <ScanningIcon />
                     </div>
                     {getGameActionIcon(node)}
                 </div>
@@ -479,6 +606,24 @@ export default function FilterDemo() {
                 {getGameActionIcon(node)}
 
             </div>
+            )
+        }
+        if (node.data.actionmapName === "spaceship_target_hailing") {
+            return (
+                <div className=' flex flex-row mr-[5px]'>
+                    <div className='flex flex-row gap-[5px]'>
+                        <div className='w-[25px]'> <SpaceshipIcon /></div>
+                        <div className='w-[25px]'> <GroundVehicleIcon /></div>
+
+                    </div>
+                    <div className='w-[20px] self-center mx-[3px]'>
+                        <ArrowRightIcon />
+                    </div>
+                    <div className='w-[26px] self-center mx-[3px]'>
+                        <TargetingIcon />
+                    </div>
+                    {getGameActionIcon(node)}
+                </div>
             )
         }
         if (node.data.actionmapName === "spaceship_view") {
