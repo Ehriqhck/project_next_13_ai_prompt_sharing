@@ -4,14 +4,14 @@ import IconLegend from '@components/generic/IconLegend';
 import React from 'react'
 import ActionTable from '@app/editor/ActionTable'
 import InputTable from '@app/editor/InputTable'
-import {SelectedEditorActionTableTargetContext ,SelectContext, SelectedEditorActionContext, EditorPanelTitleContext } from '@components/Provider';
+import { SelectedEditorActionTableTargetContext, SelectContext, SelectedEditorActionContext, EditorPanelTitleContext } from '@components/Provider';
 import LayerChip from '@components/generic/LayerChip';
 import ModLayerSelector from '@components/actionSelector/ModLayerSelector.js';
 import BindButton from '@app/editor/BindButton.jsx'
 import PanelSwitchButtonMobile from './PanelSwitchButtonMobile.js';
 import { Utils } from '@app/editor/utils.js'
 import GameActionTable from '@app/editor/GameActionTable.jsx'
-
+import TreeTableDialogue from '@app/editor/TreeTableDialogue.jsx'
 import { createContext, useContext, useState } from 'react';
 
 
@@ -86,7 +86,7 @@ const Editor = ({ show }) => {
 
           <ModLayerSelector />
         </div>
-
+        <TreeTableDialogue />
         <BindButton selectedAction={setSelectedAction} selectedInput={setSelectedAction} />
         {/* {renderBindButton()} */}
         {/* <ActionTable type="actions" /> */}
