@@ -776,11 +776,11 @@ export default function FilterDemo() {
     }
 
     return (
-        <div className="card flex flex-wrap justify-content-center gap-5">
+        <div className="card flex flex-wrap justify-content-center gap-5 w-[1000px]">
             <Tree
                 togglerTemplate={togglerTemplate}
                 selectionMode="single" selectionKeys={selectedKey} onSelectionChange={(e) => setSelectedKey(e.value)}
-                nodeTemplate={nodeTemplate} value={nodes} filter filterBy='label' filterMode="strict" filterPlaceholder="Lenient Filter" className="w-full md:w-30rem" />
+                nodeTemplate={nodeTemplate} value={nodes} filter filterBy='label' filterMode="strict" filterPlaceholder="Lenient Filter" className="w-[1000px] md:w-30rem" />
         </div>
 
 
