@@ -15,7 +15,11 @@
 html{
   min-width: 555px;
 }
-
+.p-dialog {
+  border-radius: unset !important;
+  border: unset !important;
+  box-shadow: unset !important;
+}
 .p-treenode>[data-pc-section^="content"].p-treenode-content.p-treenode-selectable {
   border-radius: 6px;
   transition: box-shadow 0.3s;
@@ -494,7 +498,14 @@ width: 100%;
   filter: drop-shadow(0px 4px 35px #00f0ff);
   box-shadow: 0px 0px 23px 0px #00f0ff;
 }
-
+.spacer-dialogue{
+  transform: rotate(15deg);
+  width: 2px;
+  margin: 0px 10px 0px 5px;
+  background:linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,240,255,1) 45%, rgba(0,240,255,1) 55%, rgba(0,0,0,0) 100%);
+  filter: drop-shadow(0px 4px 35px #00f0ff);
+  box-shadow: 0px 0px 23px 0px #00f0ff;
+}
 .text-profile-title {
   color: #cefcff;
   filter: drop-shadow(0px 4px 35px #00f0ff);

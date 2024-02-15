@@ -4,7 +4,8 @@ export const GameActions = {
       //seat_general
       {
         key: 'seat_general',
-        label: 'Vehicles / Seats & Operator Modes',
+        label: 'Seats & Operator Modes',
+        parentCategory: 'Vehicles',
 
         data: {
           name: 'Vehicles / Seats & Operator Modes',
@@ -994,9 +995,7 @@ export const GameActions = {
               actionmapName: 'spaceship_docking',
               inputType: 'Press'
             }
-          },
-
-       
+          }
         ]
       },
       {
