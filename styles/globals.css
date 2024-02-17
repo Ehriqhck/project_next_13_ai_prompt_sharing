@@ -497,6 +497,8 @@ width: 100%;
   background:linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,240,255,1) 45%, rgba(0,240,255,1) 55%, rgba(0,0,0,0) 100%);
   filter: drop-shadow(0px 4px 35px #00f0ff);
   box-shadow: 0px 0px 23px 0px #00f0ff;
+  margin: 0 5px 0 0;
+
 }
 .spacer-dialogue{
   transform: rotate(15deg);
