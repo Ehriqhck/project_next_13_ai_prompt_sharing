@@ -82,7 +82,7 @@ export default function TreeTableDialogue() {
 
     let header = getHeader();
     const getHeaderIcon = (node) => {
-        switch (node.parentCategory) {
+        switch (node) {
             // Seat Icon
             case "":
                 return (<div className='w-[25px]'> <SeatIcon /></div>)
@@ -97,7 +97,13 @@ export default function TreeTableDialogue() {
             case "spaceship_salvage":
 
                 return (
-                    getActionTypeIcon.getIcon('vehicles')
+                    <div className='flex flex-row gap-[5px] h-[42px] '>
+                        <div className='flex flex-row gap-[1px] mx-[5px]'>
+                            <SpaceshipIcon width='25px' />
+                            {/* <div className='spacer'/> */}
+                            <GroundVehicleIcon width='28px' />
+                        </div>
+                    </div>
                 )
             // Spaceship Icon
             case "spaceship_general":
@@ -114,11 +120,19 @@ export default function TreeTableDialogue() {
             case "spaceship_salvage":
 
                 return (
-                    <>
-                        {getActionTypeIcon.getIcon('vehicles')}
 
-                    </>
+                    getActionTypeIcon.getIcon('vehicles')
 
+
+
+                )
+            // Seat Icon 
+            case "Seats & Operator Modes":
+                return (
+                    <div className='GameAction-Category-Heading '>
+                        <SeatIcon width='25px' />
+                        {/* <div className='spacer'/> */}
+                    </div>
                 )
 
             // Move Icon
@@ -158,6 +172,61 @@ export default function TreeTableDialogue() {
         }
     }
 
+    const getCategoryHeader = (node) => {
+        if (!Object.hasOwn(node.data, 'category')) {
+            console.log('Node has no data.category' + Object.hasOwn(node.data, 'category'));
+            return;
+        } else {
+            // console.log('NODE HAS DATA CATEGORY: ' + Object.hasOwn(node.data, 'category'));
+            let stringCategory = node.data.category;
+            const split = stringCategory.split(" / ");
+            // console.log("SPLIT[0]: " + split);
+
+
+            return (
+                <div className='flex flex-row'>
+                    {
+                        split.map((category, index) => {
+                            if (index == 0) {
+                                return (
+                                    <div className='flex flex-row'>
+                                        {/* <div className="spacer-dialogue" /> */}
+
+                                        <span className='self-center justify-center '>
+                                            <p className='text-GameAction-Category-Heading'>{category} </p>
+                                        </span>
+                                        <span className='' aria-hidden="true">
+                                            {getHeaderIcon(category)}
+
+                                        </span>
+                                    </div>
+
+                                )
+                            } else {
+                                return (
+                                    <div className='flex flex-row'>
+                                    <div className="spacer-dialogue" />
+
+                                    <span className='self-center justify-center '>
+                                        <p className='text-GameAction-Category-Heading'>{category} </p>
+                                    </span>
+                                    <span className='' aria-hidden="true">
+                                        {getHeaderIcon(category)}
+
+                                    </span>
+                                </div>
+                                )
+                          
+                            }
+
+                        })
+                    }
+                </div>
+            )
+        }
+
+
+    }
 
     const togglerTemplate = (node, options) => {
         if (!node) {
@@ -186,21 +255,23 @@ export default function TreeTableDialogue() {
             }
 
         }
-
+        console.log("RETURNDDDDDDDDDDDDD" + getCategoryHeader(node));
         return (
             <button type="button" className="justify-center  p-tree-toggler flex flex-col  gap-[0px] pl-[2px]  " tabIndex={-1} onClick={options.onClick}>
                 <div className='flex flex-row content-start justify-center self-start gap-[5px] '>
-
-                    <span className='' aria-hidden="true"> {getHeaderIcon(node)}</span>
-
-                    <span className='self-center justify-center '>{label}</span>
+                    <div className='self-center justify-center '>
+                        {getCategoryHeader(node)}
+                    </div>
+                    <div className='self-center justify-center flex '>
+                        {getHeaderIcon(node)}
+                    </div>
                     <div className="spacer-dialogue" />
 
+                    <span className='self-center justify-center '>{label}</span>
+                    {/* <div className="spacer-dialogue" /> */}
                     {expanded}
                 </div>
-                <div className='self-start pl-[32px] flex flex-row'>
-                    {/* <svg fill="#00f7ff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16px" height="16px"><path d="M 3 2 L 3 9.5 C 3 10.324219 3.675781 11 4.5 11 L 12.203125 11 L 10.015625 13.28125 L 10.734375 13.96875 L 14.066406 10.5 L 10.734375 7.03125 L 10.015625 7.71875 L 12.203125 10 L 4.5 10 C 4.21875 10 4 9.78125 4 9.5 L 4 2 Z" /></svg> */}
-                </div>
+
             </button>
         );
     };
@@ -532,7 +603,7 @@ export default function TreeTableDialogue() {
                         <ArrowRightIcon />
                     </div>
                     <div className='w-[26px] self-center mx-[5px]'>
-                    {getGameActionIcon(node)}
+                        {getGameActionIcon(node)}
                     </div>
                 </div>
             )
@@ -628,7 +699,6 @@ export default function TreeTableDialogue() {
         }
         switch (node.data.category) {
             // Seat Icon
-
             case "Flight / Movement":
             case "Flight / Quantum Travel":
 

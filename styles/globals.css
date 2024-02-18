@@ -15,6 +15,22 @@
 html{
   min-width: 555px;
 }
+.text-GameAction-Category-Heading{
+  font-family: 'Inter', Helvetica;
+  font-weight: 350;
+  font-size: 15px;
+  color: #cefcff;
+  text-transform: uppercase;
+}
+
+.GameAction-Category-Heading{
+  display: flex;
+  flex-direction: row;
+  margin: 0 5px 0 5px;
+  padding: 8px 0px 12px px;
+  gap: 5px;
+  height: 42px;
+}
 .p-dialog {
   border-radius: unset !important;
   border: unset !important;
@@ -1319,10 +1335,10 @@ gap: 60px;
   width: 100%;
 }
 
-.p-input-icon-left > i:first-of-type, .p-input-icon-left > svg:first-of-type, .p-input-icon-left > .p-input-prefix {
+/* .p-input-icon-left > i:first-of-type, .p-input-icon-left > svg:first-of-type, .p-input-icon-left > .p-input-prefix {
   left: 0.75rem;
   color: #B8FFEE;
-}
+} */
 
 .p-inputtext {
   font-family: "Exo 2", sans-serif !important;
