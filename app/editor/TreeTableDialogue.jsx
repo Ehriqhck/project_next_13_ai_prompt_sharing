@@ -118,14 +118,15 @@ export default function TreeTableDialogue() {
             case "spaceship_salvage":
             case "spaceship_docking":
             case "spaceship_salvage":
-
+            case "Flight":
                 return (
-
-                    getActionTypeIcon.getIcon('vehicles')
-
-
-
-                )
+                    <div className='flex flex-row gap-[5px] h-[42px] '>
+                        <div className='flex flex-row gap-[1px] mx-[5px]'>
+                            <SpaceshipIcon width='25px' />
+                            {/* <div className='spacer'/> */}
+                            {/* <GroundVehicleIcon width='28px' /> */}
+                        </div>
+                    </div>)
             // Seat Icon 
             case "Seats & Operator Modes":
                 return (
@@ -137,19 +138,12 @@ export default function TreeTableDialogue() {
 
             // Move Icon
             case "spaceship_movement-maneuvering":
+            case "Movement":
                 return (
-                    <div className=' flex flex-row mr-[5px]'>
-                        <div className='flex flex-row gap-[5px]'>
-                            {getActionTypeIcon.getIcon('spaceship')}
-                            <div className='w-[20px] self-center mx-[0px]'>
-                                <ArrowRightIcon />
-                            </div>
-                            <div className='w-[25px]'> <MoveIcon /></div>
-                        </div>
-                        {/* <div className='w-[20px] self-center mx-[3px]'>
-                        <ArrowRightIcon />
-                    </div> */}
-                    </div>
+                    <div className='GameAction-Category-Heading '>
+                    <MoveIcon width='25px' />
+                    {/* <div className='spacer'/> */}
+                </div>
                 )
 
             // Speedometer Icon
@@ -203,20 +197,37 @@ export default function TreeTableDialogue() {
 
                                 )
                             } else {
-                                return (
-                                    <div className='flex flex-row'>
-                                    <div className="spacer-dialogue" />
+                                if (split[index + 1] === undefined) {
+                                    console.log("ASDASDSAAAAAAAAAAAAAAAAAAA");
+                                    return (
+                                        <div className='flex flex-row'>
+                                            <div className="spacer-dialogue" />
+                                            <span className='self-center justify-center '>
+                                                <p className='text-GameAction-Category-bold'>{category} </p>
+                                            </span>
+                                            <span className='' aria-hidden="true">
+                                                {getHeaderIcon(category)}
 
-                                    <span className='self-center justify-center '>
-                                        <p className='text-GameAction-Category-Heading'>{category} </p>
-                                    </span>
-                                    <span className='' aria-hidden="true">
-                                        {getHeaderIcon(category)}
+                                            </span>
+                                        </div>
+                                    )
+                                } else {
+                                    return (
+                                        <div className='flex flex-row'>
+                                            <div className="spacer-dialogue" />
 
-                                    </span>
-                                </div>
-                                )
-                          
+                                            <span className='self-center justify-center '>
+                                                <p className='text-GameAction-Category-Heading'>{category} </p>
+                                            </span>
+                                            <span className='' aria-hidden="true">
+                                                {getHeaderIcon(category)}
+
+                                            </span>
+                                        </div>
+                                    )
+                                }
+
+
                             }
 
                         })
@@ -255,7 +266,6 @@ export default function TreeTableDialogue() {
             }
 
         }
-        console.log("RETURNDDDDDDDDDDDDD" + getCategoryHeader(node));
         return (
             <button type="button" className="justify-center  p-tree-toggler flex flex-col  gap-[0px] pl-[2px]  " tabIndex={-1} onClick={options.onClick}>
                 <div className='flex flex-row content-start justify-center self-start gap-[5px] '>
@@ -265,9 +275,9 @@ export default function TreeTableDialogue() {
                     <div className='self-center justify-center flex '>
                         {getHeaderIcon(node)}
                     </div>
-                    <div className="spacer-dialogue" />
+                    {/* <div className="spacer-dialogue" />
 
-                    <span className='self-center justify-center '>{label}</span>
+                    <span className='self-center justify-center '>{label}</span> */}
                     {/* <div className="spacer-dialogue" /> */}
                     {expanded}
                 </div>

@@ -239,7 +239,9 @@ export const GameActions = {
         key: 'spaceship_view',
         label: 'Vehicles / View',
         data: {
-          name: 'Vehicles / View'
+          name: 'Vehicles / View',
+          category: 'Vehicles / View'
+
         },
         children: [
           {
@@ -944,7 +946,7 @@ export const GameActions = {
         key: 'spaceship_quantum',
         label: 'Flight / Quantum Travel',
         data: {
-          name: 'Flight / Quantum Travel'
+          category: 'Flight / Quantum Travel'
         },
         children: [
           {
@@ -963,7 +965,7 @@ export const GameActions = {
         key: 'spaceship_docking',
         label: 'Flight / Docking',
         data: {
-          name: 'Flight / Docking'
+          category: 'Flight / Docking'
         },
         children: [
           {
@@ -1002,7 +1004,7 @@ export const GameActions = {
         key: 'spaceship_targeting',
         label: 'Flight / Targeting',
         data: {
-          name: 'Flight / Targeting'
+          category: 'Flight / Targeting'
         },
         children: [
           {
@@ -1101,7 +1103,7 @@ export const GameActions = {
         key: 'spaceship_targeting_advanced',
         label: 'Vehicles / Target Cycling',
         data: {
-          name: 'Vehicles / Target Cycling'
+          category: 'Vehicles / Target Cycling'
         },
         children: [
           {
@@ -1321,7 +1323,7 @@ export const GameActions = {
         label: 'Vehicles / Target Hailing',
 
         data: {
-          name: 'Vehicles / Target Hailing'
+          category: 'Vehicles / Target Hailing'
         },
         children: [
           {
@@ -1341,7 +1343,7 @@ export const GameActions = {
         label: 'Vehicles / Radar',
 
         data: {
-          name: 'Vehicles / Radar'
+          category: 'Vehicles / Radar'
         },
         children: [
           {
@@ -1391,7 +1393,7 @@ export const GameActions = {
         label: 'Vehicles / Mining',
 
         data: {
-          name: 'Vehicles / Mining'
+          category: 'Vehicles / Mining'
         },
         children: [
           {
@@ -1492,7 +1494,7 @@ export const GameActions = {
         label: 'Vehicles / Salvage',
 
         data: {
-          name: 'Vehicles / Salvage'
+          category: 'Vehicles / Salvage'
         },
         children: [
           {
@@ -1974,7 +1976,7 @@ export const GameActions = {
         label: 'Turret Movement Advanced',
 
         data: {
-          name: 'Turret Movement Advanced'
+          category: 'Turret Movement Advanced'
         },
         children: [
           {
@@ -2096,7 +2098,7 @@ export const GameActions = {
         key: 'spaceship_weapons',
         label: 'Vehicles / Weapons',
         data: {
-          name: 'Vehicles / Weapons'
+          category: 'Vehicles / Weapons'
         },
         children: [
           {
@@ -2379,7 +2381,7 @@ export const GameActions = {
         label: 'Vehicles / Missiles',
 
         data: {
-          name: 'Vehicles / Missiles'
+          category: 'Vehicles / Missiles'
         },
         children: [
           {
@@ -2531,7 +2533,7 @@ export const GameActions = {
         label: 'Vehicles / Shields and Countermeasures',
 
         data: {
-          name: 'Vehicles / Shields and Countermeasures'
+          category: 'Vehicles / Shields and Countermeasures'
         },
         children: [
           {
@@ -2662,7 +2664,7 @@ export const GameActions = {
         key: 'spaceshivehicle_capacitor_assignmentp_defensive',
         label: 'Vehicles / Power Triangle Assignment',
         data: {
-          name: 'Vehicles / Power Triangle Assignment'
+          category: 'Vehicles / Power Triangle Assignment'
         },
         children: [
           {
@@ -2878,7 +2880,7 @@ export const GameActions = {
         key: 'spaceship_power',
         label: 'Flight / Power',
         data: {
-          name: 'Flight / Power'
+          category: 'Flight / Power'
         },
         children: [
           {
@@ -3038,7 +3040,7 @@ export const GameActions = {
         key: 'spaceship_hud',
         label: 'Flight / HUD',
         data: {
-          name: 'Flight / HUD'
+          category: 'Flight / HUD'
         },
         children: [
           {
@@ -3089,7 +3091,7 @@ export const GameActions = {
         label: 'Lights',
 
         data: {
-          name: 'Lights'
+          category: 'Lights'
         },
         children: [
           {
@@ -3108,7 +3110,9 @@ export const GameActions = {
       {
         key: 'stopwatch',
         label: 'Stopwatch',
-        data: { name: 'Stopwatch' },
+        data: { 
+          category: 'Stopwatch'
+         },
         children: [
           {
             key: 'stopwatch_reset',
@@ -3137,7 +3141,7 @@ export const GameActions = {
       {
         key: 'player',
         label: 'On Foot / All',
-        data: { name: 'On Foot / All' },
+        data: { category: 'On Foot / All' },
         children: [
           {
             key: 'ammoRepool',
@@ -3775,7 +3779,7 @@ export const GameActions = {
       {
         key: 'playerProne',
         label: 'On Foot / All / Prone',
-        data: { name: 'On Foot / All / Prone' },
+        data: { category: 'On Foot / All / Prone' },
         children: [
           {
             data: {
@@ -3803,7 +3807,7 @@ export const GameActions = {
       {
         key: 'playerTractorBeam',
         label: 'On Foot / All / Tractor Beam',
-        data: { name: 'On Foot / All / Tractor Beam' },
+        data: { category: 'On Foot / All / Tractor Beam' },
         children: [
           {
             data: {
@@ -3830,7 +3834,7 @@ export const GameActions = {
       // zero_gravity_eva / EVA - ALL
       {
         key: 'zero_gravity_eva',
-        data: { name: 'EVA / All' },
+        data: { category: 'EVA / All' },
         label: 'EVA / All',
 
         children: [
@@ -4040,7 +4044,7 @@ export const GameActions = {
       {
         key: 'zero_gravity_traversal',
         label: 'Zero G Traversal',
-        data: { name: 'Zero G Traversal' },
+        data: { category: 'Zero G Traversal' },
         children: [
           {
             data: {
@@ -4088,7 +4092,7 @@ export const GameActions = {
       {
         key: 'vehicle_general',
         label: 'Ground Vehicle / General',
-        data: { name: 'Ground Vehicle / General' },
+        data: { category: 'Ground Vehicle / General' },
         children: [
           {
             data: {
@@ -4317,7 +4321,7 @@ export const GameActions = {
       {
         key: 'vehicle_driver',
         label: 'Ground Vehicle / Movement',
-        data: { name: 'Ground Vehicle / Movement' },
+        data: { category: 'Ground Vehicle / Movement' },
         children: [
           {
             data: {
@@ -4505,7 +4509,7 @@ export const GameActions = {
       {
         key: 'spectator',
         label: 'Electronic Access / Spectator',
-        data: { name: 'Electronic Access / Spectator' },
+        data: { category: 'Electronic Access / Spectator' },
         children: [
           {
             data: {
@@ -4643,7 +4647,7 @@ export const GameActions = {
       {
         key: 'default',
         label: 'Social / General',
-        data: { name: 'Social / General' },
+        data: { category: 'Social / General' },
         children: [
           {
             data: {
@@ -4701,7 +4705,7 @@ export const GameActions = {
       {
         key: 'player_emotes',
         label: 'Social / Emotes',
-        data: { name: 'Social / Emotes' },
+        data: { category: 'Social / Emotes' },
         children: [
           {
             key: 'emote_agree',
@@ -5109,7 +5113,7 @@ export const GameActions = {
       {
         key: 'player_input_optical_tracking',
         label: 'VOIP, FOIP, and Headtracking',
-        data: { name: 'VOIP, FOIP, and Headtracking' },
+        data: { category: 'VOIP, FOIP, and Headtracking' },
         children: [
           {
             key: 'foip_cyclechannel',
@@ -5208,7 +5212,7 @@ export const GameActions = {
       {
         key: 'player_choice',
         label: 'Quick Keys, Intraction, & Inner Thought',
-        data: { name: 'Quick Keys, Intraction, & Inner Thought' },
+        data: { category: 'Quick Keys, Intraction, & Inner Thought' },
         children: [
           {
             key: 'pc_camera_orbit',
@@ -5536,7 +5540,7 @@ export const GameActions = {
       {
         key: 'view_director_mode',
         label: 'Camera / Advanced Camera Controls',
-        data: { name: 'Camera / Advanced Camera Controls' },
+        data: { category: 'Camera / Advanced Camera Controls' },
         children: [
           {
             key: 'view_fov_in',

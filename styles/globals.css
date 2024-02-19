@@ -22,7 +22,13 @@ html{
   color: #cefcff;
   text-transform: uppercase;
 }
-
+.text-GameAction-Category-bold{
+  font-family: 'Inter', Helvetica;
+  font-weight: 500;
+  font-size: 15px;
+  color: #cefcff;
+  text-transform: uppercase;
+}
 .GameAction-Category-Heading{
   display: flex;
   flex-direction: row;
