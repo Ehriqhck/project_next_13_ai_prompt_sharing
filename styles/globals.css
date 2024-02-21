@@ -1247,14 +1247,22 @@ transition: filter 0.3s;
   gap: 0.875rem;
   border-radius: 10px;
 }
+.p-tree-container {
+  background: repeating-linear-gradient(-45deg, rgba(0, 9, 16, 0.5), rgb(0, 9, 16, 0.5) 5.5px, rgba(229, 229, 247, 0) 2.5px, rgba(229, 229, 247, 0) 17.5px);
+border-radius: 8px;
+}
+.bg-striped {
+  background: repeating-linear-gradient(-45deg, rgb(0, 9, 16), rgb(0, 9, 16) 5.5px, rgb(229, 229, 247) 2.5px, rgb(229, 229, 247) 17.5px);
+}
 .panel {
   border: 1px solid rgba(0, 240, 255, 0.2);
-  /* background: radial-gradient(644.70% 114.87% at 22.25% 28.07%, rgba(0, 163, 255, 0.02) 0%, rgba(73, 162, 214, 0.26) 100%); */
-  background: radial-gradient(
+  fill: #01151A;
+  /* background: radial-gradient(
     644.7% 114.87% at 22.25% 28.07%,
     rgba(0, 163, 255, 0.02) 0%,
     rgba(73, 162, 214, 0.26) 100%
-  );
+  ); */
+  background: #01151ae8;
   display: inline-flex;
   padding: 0.9375rem 0.875rem 1.1875rem 0.875rem;
   flex-direction: column;

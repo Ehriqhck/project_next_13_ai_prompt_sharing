@@ -106,18 +106,18 @@ export default function TreeTableDialogue() {
                     </div>
                 )
             // Spaceship Icon
-            case "spaceship_general":
-            case "spaceship_movement":
-            case "spaceship_quantum":
-            case "spaceship_targeting_advanced":
-            case "spaceship_targeting":
-            case "spaceship_target_hailing":
-            case "spaceship_radar":
-            case "spaceship_mining":
-            case "spaceship_target_hailing":
-            case "spaceship_salvage":
-            case "spaceship_docking":
-            case "spaceship_salvage":
+            // case "spaceship_general":
+            // case "spaceship_movement":
+            // case "spaceship_quantum":
+            // case "spaceship_targeting_advanced":
+            // case "spaceship_targeting":
+            // case "spaceship_target_hailing":
+            // case "spaceship_radar":
+            // case "spaceship_mining":
+            // case "spaceship_target_hailing":
+            // case "spaceship_salvage":
+            // case "spaceship_docking":
+            // case "spaceship_salvage":
             case "Flight":
                 return (
                     <div className='flex flex-row gap-[5px] h-[42px] '>
@@ -141,9 +141,9 @@ export default function TreeTableDialogue() {
             case "Movement":
                 return (
                     <div className='GameAction-Category-Heading '>
-                    <MoveIcon width='25px' />
-                    {/* <div className='spacer'/> */}
-                </div>
+                        <MoveIcon width='25px' />
+                        {/* <div className='spacer'/> */}
+                    </div>
                 )
 
             // Speedometer Icon
@@ -437,7 +437,9 @@ export default function TreeTableDialogue() {
                 return (
                     <div className='w-[25px] self-center'>
                         <KeyIcon />
+                        
                     </div>
+                    
                 )
                 break;
             case "v_toggle_all_doorlocks":
@@ -674,7 +676,13 @@ export default function TreeTableDialogue() {
                 </div> */}
                 <div className='w-[25px] self-center mx-[3px]'>
                     <CameraIcon />
-                </div>            </div>
+                </div>
+                <div className='w-[20px] self-center mx-[3px]'>
+                    <ArrowRightIcon />
+                </div>
+                {getGameActionIcon(node)}
+
+            </div>
             )
         }
         if (node.data.category === "Flight / Movement / Maneuvering") {
@@ -697,7 +705,9 @@ export default function TreeTableDialogue() {
             return (
                 <div className=' flex flex-row mr-[5px]'>
                     {getActionTypeIcon.getIcon('spaceship')}
-
+                    <div className='w-[25px] self-center mx-[0px]'>
+                        <MoveIcon />
+                    </div>
                     <div className='w-[20px] self-center mx-[3px]'>
                         <ArrowRightIcon />
                     </div>
@@ -747,24 +757,21 @@ export default function TreeTableDialogue() {
             case "Vehicles / Seats & Operator Modes":
                 return (
                     <div className=' flex flex-row mr-[5px]'>
-                        <div className='w-[25px] self-center'>  <SeatIcon /> </div>
-                        <div className='w-[20px] self-center mr-[3px]'>  <ArrowRightIcon /> </div>
+                        {getActionTypeIcon.getIcon('vehicles')}
 
-                        {/* <div className='w-[24px] self-center ml-[2px]'>   <GenericSettingIcon /> </div> */}
-
-                        {getGameActionIcon(node)}
+                        <div className='w-[24px] self-center ml-[2px]'>
+                            <SeatIcon />
+                        </div>
+                        <div className='w-[20px] self-center mx-[0px]'>
+                            <ArrowRightIcon />
+                        </div>
+                        <div className='w-[24px] self-center ml-[2px]'>
+                            {getGameActionIcon(node)}
+                        </div>
                     </div>
                 )
 
-            // Spaceship Icon
-            case "spaceshipd_general":
-            case "spaceship_dgeneral":
-                return (
-                    <div className=' flex flex-row mr-[5px]'>
-                        {getActionTypeIcon('spaceship')}
-                        {getGameActionIcon(node)}
-                    </div>
-                )
+     
 
             // Spaceship Icon + Ground Vehicle Icon
             case "Vehicles / Cockpit":
@@ -773,10 +780,12 @@ export default function TreeTableDialogue() {
 
                     <div className=' flex flex-row mr-[5px] '>
                         {getActionTypeIcon.getIcon('vehicles')}
-
-                        {/* <div className='w-[20px] self-center mx-[3px]'>
+                        <div className='w-[25px] self-center '>
+                            <SeatIcon />
+                        </div>
+                        <div className='w-[20px] self-center mx-[3px]'>
                             <ArrowRightIcon />
-                        </div> */}
+                        </div>
                         {getGameActionIcon(node)}
                     </div>
                 )
@@ -813,7 +822,7 @@ export default function TreeTableDialogue() {
                 modal
                 onHide={() => setVisible(false)}
                 content={({ hide }) => (
-                    <div className="panel flex flex-wrap justify-content-center gap-[5px] w-[1000px]">
+                    <div className="panel flex flex-wrap justify-content-center gap-[5px] w-[1000px] bg-striped">
                         <Tree
                             togglerTemplate={togglerTemplate}
                             selectionMode="single" selectionKeys={selectedKey} onSelectionChange={(e) => setSelectedKey(e.value)}
