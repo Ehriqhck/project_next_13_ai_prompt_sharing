@@ -1,6 +1,6 @@
 import * as React from "react"
 const LandingIcon = (props) => (
-  <svg width="" height="" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg width={props.width} height={props.height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       fill="#98FDDF"
       d="M7.24 9.24a1 1 0 0 0-.697 1.717l.068.068H2.5a1 1 0 1 0 0 2h4.06l-.017.018a1 1 0 1 0 1.414 1.414l1.75-1.75a1 1 0 0 0 0-1.414l-1.75-1.75a1 1 0 0 0-.718-.303Z"

@@ -1,6 +1,6 @@
 import * as React from "react"
 const CameraIcon = (props) => (
-<svg width="" height="" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width={props.width} height={props.height} viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path fill="#006654" d="M4 6.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z" />
     <path
       fill="#006654"

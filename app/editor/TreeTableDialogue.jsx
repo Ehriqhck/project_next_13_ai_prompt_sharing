@@ -51,6 +51,13 @@ import LeftwardIcon from '@public/assets/icons/actions/gameCategory/LeftwardIcon
 import RightwardIcon from '@public/assets/icons/actions/gameCategory/RightwardIcon.jsx'
 import SalvageBeamIcon from '@public/assets/icons/actions/gameCategory/SalvageBeamIcon.jsx'
 import { getActionTypeIcon } from '@utils/getActionTypeIcon.jsx'
+import LeftRightIcon from '@public/assets/icons/actions/gameCategory/LeftRightIcon.jsx'
+import UpDownIcon from '@public/assets/icons/actions/gameCategory/UpDownIcon.jsx'
+import InvertIcon from '@public/assets/icons/actions/gameCategory/InvertIcon.jsx'
+import TurboIcon from '@public/assets/icons/actions/gameCategory/TurboIcon.jsx'
+import ZoomInIcon from '@public/assets/icons/actions/gameCategory/ZoomInIcon.jsx'
+import ZoomOutIcon from '@public/assets/icons/actions/gameCategory/ZoomOutIcon.jsx'
+import ZoomIcon from '@public/assets/icons/actions/gameCategory/ZoomIcon.jsx'
 
 export default function TreeTableDialogue() {
     const [visible, setVisible] = useState(false);
@@ -88,45 +95,46 @@ export default function TreeTableDialogue() {
                 return (<div className='w-[25px]'> <SeatIcon /></div>)
             // Spaceship Icon + Ground Vehicle
             case "Vehicles":
-            case "spaceship_view":
-            case "seat_general":
-            case "spaceship_targeting_advanced":
-            case "spaceship_target_hailing":
-            case "spaceship_radar":
-            case "spaceship_mining":
-            case "spaceship_salvage":
-
                 return (
                     <div className='flex flex-row gap-[5px] h-[42px] '>
-                        <div className='flex flex-row gap-[1px] mx-[5px]'>
+                        <div className='flex flex-row gap-[5px] mx-[5px]'>
                             <SpaceshipIcon width='25px' />
                             {/* <div className='spacer'/> */}
                             <GroundVehicleIcon width='28px' />
                         </div>
                     </div>
                 )
+            // Spaceship Icon + Ground Vehicle
+            case "Targeting":
+                return (
+                    <div className='flex flex-row gap-[5px] h-[42px] '>
+                        <div className='flex flex-row gap-[5px] mx-[5px]'>
+                            <TargetingIcon width='26px' />
+                            {/* <div className='spacer'/> */}
+                        </div>
+                    </div>
+                )
+            // Camera Icon
+            case "View":
+                return (
+                    <div className='flex flex-row gap-[5px] h-[42px] '>
+                        <div className='flex flex-row gap-[5px] mx-[6px] self-center align-middle'>
+                            <CameraIcon width='26px' />
+                            {/* <div className='spacer'/> */}
+                        </div>
+                    </div>
+                )
             // Spaceship Icon
-            // case "spaceship_general":
-            // case "spaceship_movement":
-            // case "spaceship_quantum":
-            // case "spaceship_targeting_advanced":
-            // case "spaceship_targeting":
-            // case "spaceship_target_hailing":
-            // case "spaceship_radar":
-            // case "spaceship_mining":
-            // case "spaceship_target_hailing":
-            // case "spaceship_salvage":
-            // case "spaceship_docking":
-            // case "spaceship_salvage":
             case "Flight":
                 return (
                     <div className='flex flex-row gap-[5px] h-[42px] '>
-                        <div className='flex flex-row gap-[1px] mx-[5px]'>
+                        <div className='flex flex-row gap-[5px] mx-[5px]'>
                             <SpaceshipIcon width='25px' />
                             {/* <div className='spacer'/> */}
                             {/* <GroundVehicleIcon width='28px' /> */}
                         </div>
                     </div>)
+
             // Seat Icon 
             case "Seats & Operator Modes":
                 return (
@@ -135,7 +143,19 @@ export default function TreeTableDialogue() {
                         {/* <div className='spacer'/> */}
                     </div>
                 )
+            // Seat + Spaceship Icon 
+            case "Cockpit":
+                return (
+                    <div className='GameAction-Category-Heading '>
+                        {/* <div className='spacer'/> */}
+                        <div className='flex flex-row gap-[5px] '>
+                            <SpaceshipIcon width='25px' />
+                            <SeatIcon width='25px' />
 
+                            {/* <GroundVehicleIcon width='28px' /> */}
+                        </div>
+                    </div>
+                )
             // Move Icon
             case "spaceship_movement-maneuvering":
             case "Movement":
@@ -145,7 +165,16 @@ export default function TreeTableDialogue() {
                         {/* <div className='spacer'/> */}
                     </div>
                 )
+            // Quantum Icon
+            case "Quantum Travel":
+                return (
+                    <div className='GameAction-Category-Heading '>
+                        <div className='flex flex-row gap-[5px] '>
+                            <QuantumIcon width='25px' />
 
+                        </div>
+                    </div>
+                )
             // Speedometer Icon
             case "spaceship_movement-limiters":
                 return (
@@ -289,7 +318,7 @@ export default function TreeTableDialogue() {
     const getGameActionIcon = (node) => {
         switch (node.key) {
 
-            // Targeting Reset Icon
+            // Reset Icon
             case "v_target_cycle_friendly_reset":
             case "v_target_cycle_attacker_reset":
             case "v_target_cycle_hostile_reset":
@@ -304,7 +333,7 @@ export default function TreeTableDialogue() {
                     </div>
                 )
 
-            //   Targeting Forward Icon
+            //   Forward Icon
             case "v_target_cycle_hostile_fwd":
             case "v_target_cycle_friendly_fwd":
             case "v_target_cycle_attacker_fwd":
@@ -312,13 +341,18 @@ export default function TreeTableDialogue() {
             case "v_target_cycle_in_view_fwd":
             case "v_target_cycle_pinned_fwd":
             case "v_target_cycle_subitem_fwd":
+            case "v_strafe_forward_abs":
+            case "v_strafe_forward_abs_rel":
+            case "v_strafe_forward_rel":
+            case "v_view_pitch_up":
+
                 return (
                     <div className='w-[26px] self-center'>
                         <ForwardIcon />
                     </div>
                 )
 
-            // Targeting Back Icon
+            //  Backward Icon
             case "v_target_cycle_hostile_back":
             case "v_target_cycle_attacker_back":
             case "v_target_cycle_friendly_back":
@@ -326,10 +360,160 @@ export default function TreeTableDialogue() {
             case "v_target_cycle_pinned_back":
             case "v_target_cycle_subitem_back":
             case "v_target_cycle_in_view_back":
+            case "v_strafe_back_abs":
+            case "v_strafe_back_abs_rel-FIX THIS KEY":
+            case "v_strafe_back_abs_rel":
+            case "v_strafe_down":
+            case "v_view_pitch_down":
                 return (
                     <div className='w-[26px] self-center'>
                         <BackwardIcon />
                     </div>
+                )
+
+            // Rightward Icon
+            case "v_strafe_right":
+            case "v_view_yaw_right":
+
+                return (
+                    <div className='w-[26px] self-center'>
+                        <RightwardIcon />
+                    </div>
+                )
+            // Leftward Icon
+            case "v_strafe_left":
+            case "v_view_yaw_left":
+                return (
+                    <div className='w-[26px] self-center'>
+                        <LeftwardIcon />
+                    </div>
+                )
+            // UpDown Icon
+            case "v_strafe_vertical":
+            case "v_strafe_longitudinal_abs":
+            case "v_strafe_longitudinal_abs_rel":
+            case "v_strafe_longitudinal_rel":
+            case "v_view_pitch":
+
+                // case "v_strafe_longitudinal_invert":
+
+                return (
+                    <div className='w-[26px] self-center'>
+                        <UpDownIcon />
+                    </div>
+                )
+            // LeftRight Icon
+            case "v_strafe_lateral":
+            case "v_view_yaw":
+
+                return (
+                    <div className='w-[26px] self-center'>
+                        <LeftRightIcon />
+                    </div>
+                )
+            // Turbo / Afterburner Icon
+            case "v_afterburner":
+                return (
+                    <div className='w-[26px] self-center'>
+                        <TurboIcon />
+                    </div>
+                )
+            // Zoom In Icon
+            case "v_view_zoom_in":
+            case "v_view_dynamic_zoom_rel_in":
+                return (
+                    <div className='flex flex-row gap-[5px] '>
+                        <div className='self-center'>
+                            <ZoomInIcon width='24px' />
+                        </div>
+                        <div className=' h-[24px] self-center'>
+                            <IncreaseIcon />
+                        </div>
+
+
+                    </div>
+                )
+            // Zoom Out Icon
+            case "v_view_zoom_out":
+            case "v_view_dynamic_zoom_rel_out":
+
+                return (
+                    <div className='flex flex-row gap-[5px] '>
+                        <div className='self-center'>
+                            <ZoomOutIcon width='24px' />
+                        </div>
+                        <div className=' h-[24px] self-center'>
+                            <DecreaseIcon />
+                        </div>
+
+                    </div>
+                )
+            // Zoom + Settings Icon
+            case "v_view_dynamic_zoom_abs_toggle":
+                return (
+                    <div className='flex flex-row gap-[5px] '>
+                        <div className='self-center'>
+                            <ZoomIcon width='24px' />
+                        </div>
+
+                        <div className='w-[24px] self-center'>
+                            <GenericSettingIcon />
+                        </div>
+                    </div>
+                )
+            // Zoom In Out Icon
+            case "v_view_dynamic_zoom_abs":
+            case "v_view_dynamic_zoom_rel":
+
+                return (
+                    <div className='flex flex-row gap-[5px] '>
+                        <div className='self-center'>
+                            <ZoomIcon width='24px' />
+                        </div>
+                        <div className=' h-[24px] self-center'>
+                            <DecreaseIcon />
+                        </div>
+                        <div className=' h-[24px] self-center'>
+                            <IncreaseIcon />
+                        </div>
+                    </div>
+                )
+
+            // Zoom Icon
+            case "v_view_freelook_mode":
+                return (
+                    <div className='flex flex-row gap-[5px] '>
+                        <div className='self-center'>
+                            <ZoomIcon width='24px' />
+                        </div>
+
+                    </div>
+                )
+            // Invert Icon
+            case "v_strafe_longitudinal_invert":
+                return (
+                    <div className='flex flex-row gap-[5px] '>
+                        <div className='self-center'>
+                            <InvertIcon width='24px' />
+                        </div>
+                        <div className='w-[26px] self-center'>
+                            <UpDownIcon width='26px' />
+                        </div>
+                    </div>
+
+                )
+            // Cycle Icon
+            case "v_view_mode":
+            case "v_view_cycle_fwd":
+
+                return (
+                    <div className='flex flex-row gap-[5px] '>
+                        <div className='self-center'>
+                            <CycleIcon width='26px' />
+                        </div>
+
+                    </div>
+
                 )
             // Turret Icon
             case "v_enter_remote_turret_1":
@@ -437,9 +621,9 @@ export default function TreeTableDialogue() {
                 return (
                     <div className='w-[25px] self-center'>
                         <KeyIcon />
-                        
+
                     </div>
-                    
+
                 )
                 break;
             case "v_toggle_all_doorlocks":
@@ -488,15 +672,15 @@ export default function TreeTableDialogue() {
             return (
                 <div className=' flex flex-row mr-[5px]'>
                     {getActionTypeIcon.getIcon('vehicles')}
-
+                    <div className='w-[26px] self-center mx-[3px]'>
+                        <MiningIcon />
+                    </div>
                     <div className='w-[20px] self-center mx-[3px]'>
                         <ArrowRightIcon />
                     </div>
                     <div className='flex flex-row gap-[5px]'>
 
-                        <div className='w-[26px] self-center mx-[3px]'>
-                            <MiningIcon />
-                        </div>
+
                         <div className='flex self-center content-center align-middle'>
                             {getGameActionIcon(node)}
                         </div>
@@ -680,7 +864,10 @@ export default function TreeTableDialogue() {
                 <div className='w-[20px] self-center mx-[3px]'>
                     <ArrowRightIcon />
                 </div>
-                {getGameActionIcon(node)}
+                <div className=' self-center mx-[3px]'>
+                    {getGameActionIcon(node)}
+
+                </div>
 
             </div>
             )
@@ -695,7 +882,7 @@ export default function TreeTableDialogue() {
                     <div className='w-[20px] self-center mx-[3px]'>
                         <ArrowRightIcon />
                     </div>
-                    <div className='w-[25px] self-center mx-[0px]'>
+                    <div className=' self-center mx-[0px]'>
                         {getGameActionIcon(node)}
                     </div>
                 </div>
@@ -771,7 +958,7 @@ export default function TreeTableDialogue() {
                     </div>
                 )
 
-     
+
 
             // Spaceship Icon + Ground Vehicle Icon
             case "Vehicles / Cockpit":
