@@ -1,6 +1,6 @@
 import * as React from "react"
 const SalvageIcon = (props) => (
-<svg width="" height="" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width={props.width} height={props.height} viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path
       fill="#006654"
       d="M14.583 4.52 13.13 2.189h-2.047a2.669 2.669 0 0 0-2.29 1.295L7.439 5.687 12.25 8.75l2.333-4.23Z"

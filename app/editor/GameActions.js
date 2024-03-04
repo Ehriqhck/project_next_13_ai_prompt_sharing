@@ -973,7 +973,7 @@ export const GameActions = {
             label: 'Toggle Docking Mode',
             data: {
               name: 'Toggle Docking Mode',
-              category: 'Flight / Quantum Travel',
+              category: 'Flight / Docking',
               actionmapName: 'spaceship_docking',
               inputType: 'Press'
             }
@@ -983,7 +983,7 @@ export const GameActions = {
             label: 'Invoke Docking',
             data: {
               name: 'Invoke Docking',
-              category: 'Flight / Quantum Travel',
+              category: 'Flight / Docking',
               actionmapName: 'spaceship_docking',
               inputType: 'Press'
             }
@@ -993,7 +993,7 @@ export const GameActions = {
             label: 'Toggle Docking View',
             data: {
               name: 'Toggle Docking View',
-              category: 'Flight / Quantum Travel',
+              category: 'Flight / Docking',
               actionmapName: 'spaceship_docking',
               inputType: 'Press'
             }
@@ -1391,7 +1391,6 @@ export const GameActions = {
       {
         key: 'spaceship_mining',
         label: 'Vehicles / Mining',
-
         data: {
           category: 'Vehicles / Mining'
         },

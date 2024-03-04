@@ -1,6 +1,6 @@
 import * as React from "react"
 const ScanningIcon = (props) => (
-  <svg width="" height="" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg width={props.width} height={props.height} viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       fill="#01CEAD"
       d="M10.5 6.125A4.38 4.38 0 0 0 6.125 10.5a4.38 4.38 0 0 0 4.375 4.375c.318 0 .625-.038.923-.102a1.324 1.324 0 0 1-.048-.335c0-.725.588-1.313 1.313-1.313.375 0 .71.16.95.412a4.352 4.352 0 0 0 .509-5.447l-1.962 1.962c.038.145.065.292.065.448a1.75 1.75 0 1 1-1.75-1.75c.156 0 .303.027.448.065l1.962-1.962a4.35 4.35 0 0 0-2.41-.728Z"

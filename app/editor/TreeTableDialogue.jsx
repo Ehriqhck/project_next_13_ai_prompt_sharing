@@ -58,6 +58,10 @@ import TurboIcon from '@public/assets/icons/actions/gameCategory/TurboIcon.jsx'
 import ZoomInIcon from '@public/assets/icons/actions/gameCategory/ZoomInIcon.jsx'
 import ZoomOutIcon from '@public/assets/icons/actions/gameCategory/ZoomOutIcon.jsx'
 import ZoomIcon from '@public/assets/icons/actions/gameCategory/ZoomIcon.jsx'
+import DockingIcon from '@public/assets/icons/actions/gameCategory/DockingIcon.jsx'
+import WeaponsIcon from '@public/assets/icons/actions/gameCategory/WeaponsIcon.jsx'
+import MissileIcon from '@public/assets/icons/actions/gameCategory/MissileIcon.jsx'
+
 
 export default function TreeTableDialogue() {
     const [visible, setVisible] = useState(false);
@@ -175,21 +179,92 @@ export default function TreeTableDialogue() {
                         </div>
                     </div>
                 )
-            // Speedometer Icon
-            case "spaceship_movement-limiters":
+            case "Target Cycling":
                 return (
-                    <div className=' flex flex-row mr-[5px]'>
-                        <div className='flex flex-row gap-[5px]'>
-                            {getActionTypeIcon.getIcon('spaceship')}
-                            <div className='w-[25px]'> <SpeedometerIcon /></div>
+                    <div className='GameAction-Category-Heading '>
+                        <div className='flex flex-row gap-[5px] '>
+                            <TargetingIcon width='25px' />
 
-                            <div className='w-[20px] self-center mx-[0px]'>
-                                <ArrowRightIcon />
-                            </div>
                         </div>
+                        <div className='flex flex-row gap-[5px] '>
+                            <CycleIcon width='25px' />
 
+                        </div>
                     </div>
                 )
+
+            case "Docking":
+                return (
+                    <div className='GameAction-Category-Heading '>
+                        <div className='flex flex-row gap-[5px] '>
+                            <DockingIcon width='25px' />
+
+                        </div>
+                    </div>
+                )
+            case "Target Hailing":
+                return (
+                    <div className='GameAction-Category-Heading '>
+                        <div className='flex flex-row gap-[5px] '>
+                            <TargetingIcon width='25px' />
+
+                        </div>
+                        <div className='flex flex-row gap-[5px] '>
+                            <WifiIcon width='25px' />
+
+                        </div>
+                    </div>
+                )
+            case "Radar":
+                return (
+                    <div className='GameAction-Category-Heading '>
+                        <div className='flex flex-row gap-[5px] '>
+                            <ScanningIcon width='25px' />
+
+                        </div>
+                     
+                    </div>
+                )
+                case "Mining":
+                    return (
+                        <div className='GameAction-Category-Heading '>
+                            <div className='flex flex-row gap-[5px] '>
+                                <MiningIcon width='25px' />
+    
+                            </div>
+                         
+                        </div>
+                    )
+                    case "Salvage":
+                        return (
+                            <div className='GameAction-Category-Heading '>
+                                <div className='flex flex-row gap-[5px] '>
+                                    <SalvageIcon width='25px' />
+        
+                                </div>
+                             
+                            </div>
+                        )
+                        case "Weapons":
+                            return (
+                                <div className='GameAction-Category-Heading '>
+                                    <div className='flex flex-row gap-[5px]  self-center'>
+                                        <WeaponsIcon width='29px' height='25px' />
+            
+                                    </div>
+                                 
+                                </div>
+                            )
+                            case "Missiles":
+                                return (
+                                    <div className='GameAction-Category-Heading '>
+                                        <div className='flex flex-row gap-[5px]  self-center'>
+                                            <MissileIcon width='23px'  />
+                
+                                        </div>
+                                     
+                                    </div>
+                                )
             default:
                 break;
         }
@@ -667,7 +742,24 @@ export default function TreeTableDialogue() {
         if (Object.hasOwn(node, 'children')) {
             return;
         }
-
+        if (node.data.actionmapName === 'spaceship_docking') {
+            return (
+                <div className=' flex flex-row mr-[5px]'>
+                    {getActionTypeIcon.getIcon('vehicles')}
+                    <div className='w-[26px] self-center mx-[3px]'>
+                        <DockingIcon />
+                    </div>
+                    <div className='w-[20px] self-center mx-[3px]'>
+                        <ArrowRightIcon />
+                    </div>
+                    <div className='flex flex-row gap-[5px]'>
+                        <div className='flex self-center content-center align-middle'>
+                            {getGameActionIcon(node)}
+                        </div>
+                    </div>
+                </div>
+            )
+        }
         if (node.data.actionmapName === "spaceship_mining") {
             return (
                 <div className=' flex flex-row mr-[5px]'>
