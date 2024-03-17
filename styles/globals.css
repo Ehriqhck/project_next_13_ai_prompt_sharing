@@ -1250,6 +1250,8 @@ transition: filter 0.3s;
 .p-tree-container {
   background: repeating-linear-gradient(-45deg, rgba(0, 9, 16, 0.5), rgb(0, 9, 16, 0.5) 5.5px, rgba(229, 229, 247, 0) 2.5px, rgba(229, 229, 247, 0) 17.5px);
 border-radius: 8px;
+overflow: auto !important;
+height: 1000px !important;
 }
 .bg-striped {
   background: repeating-linear-gradient(-45deg, rgb(0, 9, 16), rgb(0, 9, 16) 5.5px, rgb(229, 229, 247) 2.5px, rgb(229, 229, 247) 17.5px);

@@ -1497,25 +1497,156 @@ export const GameActions = {
         },
         children: [
           {
-            key: 'tractor_beam_vehicle_increase_distance',
-            label: 'Tractor Beam Vehicle - Increase Distance',
+            key: 'spaceship_salvage-nudging',
+            label: 'Vehicles / Salvage / Nudging',
+    
             data: {
-              name: 'Tractor Beam Vehicle - Increase Distance',
-              category: 'Vehicles / Salvage',
-              actionmapName: 'spaceship_salvage',
-              inputType: 'Press'
-            }
-          },
+              category: 'Vehicles / Salvage / Nudging'
+            },
+            children: [
           {
-            key: 'tractor_beam_vehicle_decrease_distance',
-            label: 'Tractor Beam Vehicle - Decrease Distance',
-            data: {
-              name: 'Tractor Beam Vehicle - Decrease Distance',
-              category: 'Vehicles / Salvage',
-              actionmapName: 'spaceship_salvage',
-              inputType: 'Press'
-            }
-          },
+                key: 'v_salvage_nudge_up__left',
+                label: 'Nudge Left Salvage Tool Up',
+                data: {
+                  name: 'Nudge Left Salvage Tool Up',
+                  category: 'Vehicles / Salvage / Nudging',
+                  actionmapName: 'spaceship_salvage',
+                  inputType: 'Press'
+                }
+              },
+              {
+                key: 'v_salvage_nudge_down__left',
+                label: 'Nudge Left Salvage Tool Down',
+                data: {
+                  name: 'Nudge Left Salvage Tool Down',
+                  category: 'Vehicles / Salvage / Nudging',
+                  actionmapName: 'spaceship_salvage',
+                  inputType: 'Press'
+                }
+              },
+             
+              {
+                key: 'v_salvage_nudge_left__left',
+                label: 'Nudge Left Salvage Tool Left',
+                data: {
+                  name: 'Nudge Left Salvage Tool Left',
+                  category: 'Vehicles / Salvage / Nudging',
+                  actionmapName: 'spaceship_salvage',
+                  inputType: 'Press'
+                }
+              },
+              {
+                key: 'v_salvage_nudge_right__left',
+                label: 'Nudge Left Salvage Tool Right',
+                data: {
+                  name: 'Nudge Right Salvage Tool Left',
+                  category: 'Vehicles / Salvage / Nudging',
+                  actionmapName: 'spaceship_salvage',
+                  inputType: 'Press'
+                }
+              },
+              {
+                key: 'v_salvage_nudge_up__right',
+                label: 'Nudge Right Salvage Tool Up',
+                data: {
+                  name: 'Nudge Right Salvage Tool Up',
+                  category: 'Vehicles / Salvage / Nudging',
+                  actionmapName: 'spaceship_salvage',
+                  inputType: 'Press'
+                }
+              },
+              {
+                key: 'v_salvage_nudge_down__right',
+                label: 'Nudge Right Salvage Tool Down',
+                data: {
+                  name: 'Nudge Right Salvage Tool Down',
+                  category: 'Vehicles / Salvage / Nudging' ,
+                  actionmapName: 'spaceship_salvage',
+                  inputType: 'Press'
+                }
+              },
+             
+              {
+                key: 'v_salvage_nudge_left__right',
+                label: 'Nudge Right Salvage Tool Left',
+                data: {
+                  name: 'Nudge Right Salvage Tool Right',
+                  category: 'Vehicles / Salvage / Nudging',
+                  actionmapName: 'spaceship_salvage',
+                  inputType: 'Press'
+                }
+              },
+              
+              {
+                key: 'v_salvage_nudge_right__right',
+                label: 'Nudge Right Salvage Tool Right',
+                data: {
+                  name: 'Nudge Right Salvage Tool Right',
+                  category: 'Vehicles / Salvage / Nudging',
+                  actionmapName: 'spaceship_salvage',
+                  inputType: 'Press'
+                }
+              },
+             
+            ]},
+            {
+              key: 'spaceship_salvage-tractor',
+              label: 'Vehicles / Salvage / Tractor Beam',
+      
+              data: {
+                category: 'Vehicles / Salvage / Tractor Beam'
+              },
+              children: [
+                {
+                  key: 'tractor_beam_vehicle_increase_distance',
+                  label: 'Tractor Beam Vehicle - Increase Distance',
+                  data: {
+                    name: 'Tractor Beam Vehicle - Increase Distance',
+                    category: 'Vehicles / Salvage',
+                    actionmapName: 'spaceship_salvage',
+                    inputType: 'Press'
+                  }
+                },
+                {
+                  key: 'tractor_beam_vehicle_decrease_distance',
+                  label: 'Tractor Beam Vehicle - Decrease Distance',
+                  data: {
+                    name: 'Tractor Beam Vehicle - Decrease Distance',
+                    category: 'Vehicles / Salvage',
+                    actionmapName: 'spaceship_salvage',
+                    inputType: 'Press'
+                  }
+                },
+              ]},
+              {
+                key: 'spaceship_salvage-tractor',
+                label: 'Vehicles / Salvage / Disintegration Beam',
+        
+                data: {
+                  category: 'Vehicles / Salvage / Disintegration Beam'
+                },
+                children: [
+                  {
+                    key: 'v_salvage_focus_disintegrate',
+                    label: 'Focus Disintegration Tool',
+                    data: {
+                      name: 'Focus Disintegration Tool',
+                      category: 'Vehicles / Salvage',
+                      actionmapName: 'spaceship_salvage',
+                      inputType: 'Press'
+                    }
+                  },
+                  {
+                    key: 'v_salvage_toggle_fire_disintegrate',
+                    label: 'Toggle Fire Disintegrate',
+                    data: {
+                      name: 'Toggle Fire Disintegrate',
+                      category: 'Vehicles / Salvage',
+                      actionmapName: 'spaceship_salvage',
+                      inputType: 'Press'
+                    }
+                  },
+                ]},
           {
             key: 'v_salvage_beam_spacing_abs',
             label: 'Salvage Beam Spacing (Absolute)',
@@ -1626,16 +1757,7 @@ export const GameActions = {
               inputType: 'Press'
             }
           },
-          {
-            key: 'v_salvage_focus_disintegrate',
-            label: 'Focus Disintegration Tool',
-            data: {
-              name: 'Focus Disintegration Tool',
-              category: 'Vehicles / Salvage',
-              actionmapName: 'spaceship_salvage',
-              inputType: 'Press'
-            }
-          },
+         
           {
             key: 'v_salvage_focus_fracture',
             label: 'Focus Fracture Tool',
@@ -1656,106 +1778,7 @@ export const GameActions = {
               inputType: 'Press'
             }
           },
-          {
-            key: 'v_salvage_nudge_up__left',
-            label: 'Nudge Left Salvage Tool Up',
-            data: {
-              name: 'Nudge Left Salvage Tool Up',
-              category: 'Vehicles / Salvage',
-              actionmapName: 'spaceship_salvage',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'v_salvage_nudge_down__left',
-            label: 'Nudge Left Salvage Tool Down',
-            data: {
-              name: 'Nudge Left Salvage Tool Down',
-              category: 'Vehicles / Salvage',
-              actionmapName: 'spaceship_salvage',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'v_salvage_nudge_down__right',
-            label: 'Nudge Left Salvage Tool Down',
-            data: {
-              name: 'Nudge Left Salvage Tool Down',
-              category: 'Vehicles / Salvage',
-              actionmapName: 'spaceship_salvage',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'v_salvage_nudge_left__left',
-            label: 'Nudge Left Salvage Tool Left',
-            data: {
-              name: 'Nudge Left Salvage Tool Left',
-              category: 'Vehicles / Salvage',
-              actionmapName: 'spaceship_salvage',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'v_salvage_nudge_down__right',
-            label: 'Nudge Left Salvage Tool Down',
-            data: {
-              name: 'Nudge Left Salvage Tool Down',
-              category: 'Vehicles / Salvage',
-              actionmapName: 'spaceship_salvage',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'v_salvage_nudge_left__left',
-            label: 'Nudge Left Salvage Tool Left',
-            data: {
-              name: 'Nudge Left Salvage Tool Left',
-              category: 'Vehicles / Salvage',
-              actionmapName: 'spaceship_salvage',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'v_salvage_nudge_left__right',
-            label: 'Nudge Left Salvage Tool Right',
-            data: {
-              name: 'Nudge Left Salvage Tool Right',
-              category: 'Vehicles / Salvage',
-              actionmapName: 'spaceship_salvage',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'v_salvage_nudge_right__left',
-            label: 'Nudge Right Salvage Tool Left',
-            data: {
-              name: 'Nudge Right Salvage Tool Left',
-              category: 'Vehicles / Salvage',
-              actionmapName: 'spaceship_salvage',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'v_salvage_nudge_right__right',
-            label: 'Nudge Right Salvage Tool Right',
-            data: {
-              name: 'Nudge Right Salvage Tool Right',
-              category: 'Vehicles / Salvage',
-              actionmapName: 'spaceship_salvage',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'v_salvage_nudge_up__right',
-            label: 'Nudge Right Salvage Tool Up',
-            data: {
-              name: 'Nudge Right Salvage Tool Up',
-              category: 'Vehicles / Salvage',
-              actionmapName: 'spaceship_salvage',
-              inputType: 'Press'
-            }
-          },
+          
           {
             key: 'v_salvage_reset_gimbal',
             label: 'Reset Salvage Gimbal',
@@ -1776,16 +1799,7 @@ export const GameActions = {
               inputType: 'Press'
             }
           },
-          {
-            key: 'v_salvage_toggle_fire_disintegrate',
-            label: 'Toggle Fire Disintegrate',
-            data: {
-              name: 'Toggle Fire Disintegrate',
-              category: 'Vehicles / Salvage',
-              actionmapName: 'spaceship_salvage',
-              inputType: 'Press'
-            }
-          },
+         
           {
             key: 'v_salvage_toggle_fire_focused',
             label: 'Toggle Fire Focused',

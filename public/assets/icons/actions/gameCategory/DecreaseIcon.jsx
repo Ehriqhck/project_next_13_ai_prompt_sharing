@@ -1,6 +1,6 @@
 import * as React from "react"
 const FocusedBeamIcon = (props) => (
-  <svg width="" height="" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg width={props.width} height={props.height} viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clip-path="url(#clip0_1405_373)">
       <path d="M16 0H4C1.80078 0 0 1.80078 0 4V16C0 18.1992 1.80078 20 4 20H16C18.1992 20 20 18.1992 20 16V4C20 1.80078 18.1992 0 16 0ZM16 11H4V9H16V11Z" fill="#003E33" />
       <path d="M16 11H4V9H16V11Z" fill="#00FFC2" />

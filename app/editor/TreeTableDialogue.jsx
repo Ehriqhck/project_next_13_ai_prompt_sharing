@@ -61,6 +61,8 @@ import ZoomIcon from '@public/assets/icons/actions/gameCategory/ZoomIcon.jsx'
 import DockingIcon from '@public/assets/icons/actions/gameCategory/DockingIcon.jsx'
 import WeaponsIcon from '@public/assets/icons/actions/gameCategory/WeaponsIcon.jsx'
 import MissileIcon from '@public/assets/icons/actions/gameCategory/MissileIcon.jsx'
+import RightSideIcon from '@public/assets/icons/actions/gameCategory/RightSideIcon.jsx'
+import LeftSideIcon from '@public/assets/icons/actions/gameCategory/LeftSideIcon.jsx'
 
 
 export default function TreeTableDialogue() {
@@ -222,49 +224,49 @@ export default function TreeTableDialogue() {
                             <ScanningIcon width='25px' />
 
                         </div>
-                     
+
                     </div>
                 )
-                case "Mining":
-                    return (
-                        <div className='GameAction-Category-Heading '>
-                            <div className='flex flex-row gap-[5px] '>
-                                <MiningIcon width='25px' />
-    
-                            </div>
-                         
+            case "Mining":
+                return (
+                    <div className='GameAction-Category-Heading '>
+                        <div className='flex flex-row gap-[5px] '>
+                            <MiningIcon width='25px' />
+
                         </div>
-                    )
-                    case "Salvage":
-                        return (
-                            <div className='GameAction-Category-Heading '>
-                                <div className='flex flex-row gap-[5px] '>
-                                    <SalvageIcon width='25px' />
-        
-                                </div>
-                             
-                            </div>
-                        )
-                        case "Weapons":
-                            return (
-                                <div className='GameAction-Category-Heading '>
-                                    <div className='flex flex-row gap-[5px]  self-center'>
-                                        <WeaponsIcon width='29px' height='25px' />
-            
-                                    </div>
-                                 
-                                </div>
-                            )
-                            case "Missiles":
-                                return (
-                                    <div className='GameAction-Category-Heading '>
-                                        <div className='flex flex-row gap-[5px]  self-center'>
-                                            <MissileIcon width='23px'  />
-                
-                                        </div>
-                                     
-                                    </div>
-                                )
+
+                    </div>
+                )
+            case "Salvage":
+                return (
+                    <div className='GameAction-Category-Heading '>
+                        <div className='flex flex-row gap-[5px] '>
+                            <SalvageIcon width='25px' />
+
+                        </div>
+
+                    </div>
+                )
+            case "Weapons":
+                return (
+                    <div className='GameAction-Category-Heading '>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+                            <WeaponsIcon width='29px' height='25px' />
+
+                        </div>
+
+                    </div>
+                )
+            case "Missiles":
+                return (
+                    <div className='GameAction-Category-Heading '>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+                            <MissileIcon width='23px' />
+
+                        </div>
+
+                    </div>
+                )
             default:
                 break;
         }
@@ -302,7 +304,6 @@ export default function TreeTableDialogue() {
                                 )
                             } else {
                                 if (split[index + 1] === undefined) {
-                                    console.log("ASDASDSAAAAAAAAAAAAAAAAAAA");
                                     return (
                                         <div className='flex flex-row'>
                                             <div className="spacer-dialogue" />
@@ -580,7 +581,7 @@ export default function TreeTableDialogue() {
             // Cycle Icon
             case "v_view_mode":
             case "v_view_cycle_fwd":
-
+            case "v_toggle_docking_mode":
                 return (
                     <div className='flex flex-row gap-[5px] '>
                         <div className='self-center'>
@@ -729,6 +730,146 @@ export default function TreeTableDialogue() {
                     <div className='w-[25px] self-center'>
                         <ThreeIcon />
                     </div>)
+            // LeftSide Icon + Forward Icon
+            case "v_salvage_nudge_up__left":
+                return (
+                    <div className='flex flex-row gap-[5px] '>
+                        <LeftSideIcon width="26px" className='self-center' />
+                        <ForwardIcon height="26px" className='self-center' />
+
+                    </div>
+                )
+            // LeftSide Icon + Down Icon
+            case "v_salvage_nudge_down__left":
+                return (
+                    <div className='flex flex-row gap-[5px] '>
+                        <LeftSideIcon width="26px" className='self-center' />
+                        <BackwardIcon height="26px" className='self-center' />
+
+                    </div>
+                )
+            // LeftSide Icon + Leftward Icon
+            case "v_salvage_nudge_left__left":
+                return (
+                    <div className='flex flex-row gap-[5px] '>
+                        <LeftSideIcon width="26px" className='self-center' />
+                        <LeftwardIcon height="26px" className='self-center' />
+
+                    </div>
+                )
+            // LeftSide Icon + Rightward Icon
+            case "v_salvage_nudge_right__left":
+                return (
+                    <div className='flex flex-row gap-[5px] '>
+                        <LeftSideIcon width="26px" className='self-center' />
+                        <RightwardIcon height="26px" className='self-center' />
+
+                    </div>
+                )
+            // RightSide Icon + Upward Icon
+            case "v_salvage_nudge_up__right":
+                return (
+                    <div className='flex flex-row gap-[5px] '>
+                        <RightSideIcon width="26px" className='self-center' />
+                        <ForwardIcon height="26px" className='self-center' />
+
+                    </div>
+                )
+            // RightSide Icon + Downward Icon
+            case "v_salvage_nudge_down__right":
+                return (
+                    <div className='flex flex-row gap-[5px] '>
+                        <RightSideIcon width="26px" className='self-center' />
+                        <BackwardIcon height="26px" className='self-center' />
+                    </div>
+                )
+            // RightSide Icon + Leftward Icon
+            case "v_salvage_nudge_left__right":
+                return (
+                    <div className='flex flex-row gap-[5px] '>
+                        <RightSideIcon width="26px" className='self-center' />
+                        <LeftwardIcon height="26px" className='self-center' />
+                    </div>
+                )
+            // RightSide Icon + Rightward Icon
+            case "v_salvage_nudge_right__right":
+                return (
+                    <div className='flex flex-row gap-[5px] '>
+                        <RightSideIcon width="26px" className='self-center' />
+                        <RightwardIcon height="26px" className='self-center' />
+                    </div>
+                )
+            // Laser Icon + Cycle Icon
+            case "v_toggle_mining_laser_fire":
+                return (
+                    <div className='flex flex-row gap-[5px] '>
+                        <SalvageBeamIcon height="26px" className='self-center' />
+
+
+                    </div>
+                )
+            // Laser Icon + Cycle Icon
+            case "v_toggle_mining_laser_type":
+                return (
+                    <div className='flex flex-row gap-[5px] '>
+                        <SalvageBeamIcon height="26px" className='self-center' />
+
+                        <CycleIcon width="26px" className='self-center' />
+
+                    </div>
+                )
+            // Laser Icon + Increase Icon
+            case "v_increase_mining_throttle":
+                return (
+                    <div className='flex flex-row gap-[5px] '>
+                        <SalvageBeamIcon height="26px" className='self-center' />
+
+                        <IncreaseIcon width="26px" className='self-center' />
+
+                    </div>
+                )
+            // Laser Icon + Decrease Icon
+            case "v_decrease_mining_throttle":
+                return (
+                    <div className='flex flex-row gap-[5px] '>
+                        <SalvageBeamIcon height="26px" className='self-center' />
+
+                        <DecreaseIcon width="26px" className='self-center' />
+
+                    </div>
+                )
+            // Laser Icon + Decrease Icon + Decrease Icon
+            case "v_mining_throttle":
+                return (
+                    <div className='flex flex-row gap-[5px] '>
+                        <SalvageBeamIcon height="26px" className='self-center' />
+                        <IncreaseIcon width="26px" className='self-center' />
+
+                        <DecreaseIcon width="26px" className='self-center' />
+
+                    </div>
+                )
+            // Angle Icon + Decrease Icon
+            case "v_dec_scan_focus_level":
+                return (
+                    <div className='flex flex-row gap-[5px] '>
+                        <AngleIcon height="26px" className='self-center' />
+
+                        <DecreaseIcon width="26px" className='self-center' />
+
+                    </div>
+                )
+            // Angle Icon + Increase Icon
+            case "v_inc_scan_focus_level":
+                return (
+                    <div className='flex flex-row gap-[5px] '>
+                        <AngleIcon height="26px" className='self-center' />
+
+                        <IncreaseIcon width="26px" className='self-center' />
+
+                    </div>
+                )
+
             default:
                 return (
                     <div className='w-[25px] self-center'>
@@ -748,6 +889,60 @@ export default function TreeTableDialogue() {
                     {getActionTypeIcon.getIcon('vehicles')}
                     <div className='w-[26px] self-center mx-[3px]'>
                         <DockingIcon />
+                    </div>
+                    <div className='w-[20px] self-center mx-[3px]'>
+                        <ArrowRightIcon />
+                    </div>
+                    <div className='flex flex-row gap-[5px]'>
+                        <div className='flex self-center content-center align-middle'>
+                            {getGameActionIcon(node)}
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+        if (node.data.category === 'Vehicles / Salvage / Nudging') {
+            return (
+                <div className=' flex flex-row mr-[5px]'>
+                    {getActionTypeIcon.getIcon('vehicles')}
+                    <div className='w-[26px] self-center mx-[3px]'>
+                        <NudgeIcon />
+                    </div>
+                    <div className='w-[20px] self-center mx-[3px]'>
+                        <ArrowRightIcon />
+                    </div>
+                    <div className='flex flex-row gap-[5px]'>
+                        <div className='flex self-center content-center align-middle'>
+                            {getGameActionIcon(node)}
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+        if (node.data.category === 'Vehicles / Salvage / Tractor Beam') {
+            return (
+                <div className=' flex flex-row mr-[5px]'>
+                    {getActionTypeIcon.getIcon('vehicles')}
+                    <div className='w-[26px] self-center mx-[3px]'>
+                        <TractorBeamIcon />
+                    </div>
+                    <div className='w-[20px] self-center mx-[3px]'>
+                        <ArrowRightIcon />
+                    </div>
+                    <div className='flex flex-row gap-[5px]'>
+                        <div className='flex self-center content-center align-middle'>
+                            {getGameActionIcon(node)}
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+        if (node.data.category === 'Vehicles / Salvage / Disintegration Beam') {
+            return (
+                <div className=' flex flex-row mr-[5px]'>
+                    {getActionTypeIcon.getIcon('vehicles')}
+                    <div className='w-[26px] self-center mx-[3px]'>
+                        <DisintegrateIcon />
                     </div>
                     <div className='w-[20px] self-center mx-[3px]'>
                         <ArrowRightIcon />
@@ -1101,7 +1296,7 @@ export default function TreeTableDialogue() {
                 modal
                 onHide={() => setVisible(false)}
                 content={({ hide }) => (
-                    <div className="panel flex flex-wrap justify-content-center gap-[5px] w-[1000px] bg-striped">
+                    <div className="panel flex flex-wrap justify-content-center gap-[5px] w-[100%] bg-striped">
                         <Tree
                             togglerTemplate={togglerTemplate}
                             selectionMode="single" selectionKeys={selectedKey} onSelectionChange={(e) => setSelectedKey(e.value)}
