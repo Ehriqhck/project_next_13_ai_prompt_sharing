@@ -64,6 +64,7 @@ import MissileIcon from '@public/assets/icons/actions/gameCategory/MissileIcon.j
 import RightSideIcon from '@public/assets/icons/actions/gameCategory/RightSideIcon.jsx'
 import LeftSideIcon from '@public/assets/icons/actions/gameCategory/LeftSideIcon.jsx'
 import FocusIcon from '@public/assets/icons/actions/gameCategory/FocusIcon.jsx'
+import ExitIcon from '@public/assets/icons/actions/gameCategory/ExitIcon.jsx'
 
 
 export default function TreeTableDialogue() {
@@ -248,6 +249,18 @@ export default function TreeTableDialogue() {
 
                     </div>
                 )
+            case "Turret Movement Advanced":
+            case "Turret Movement":
+
+                return (
+                    <div className='GameAction-Category-Heading '>
+                        <div className='flex flex-row gap-[5px] '>
+                            <TurretIcon width='25px' />
+
+                        </div>
+
+                    </div>
+                )
             case "Weapons":
                 return (
                     <div className='GameAction-Category-Heading '>
@@ -427,10 +440,18 @@ export default function TreeTableDialogue() {
             case "v_strafe_forward_abs_rel":
             case "v_strafe_forward_rel":
             case "v_view_pitch_up":
+            case "turret_pitch_up":
 
                 return (
-                    <div className='w-[26px] self-center'>
-                        <ForwardIcon />
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px] '>
+
+                            <ForwardIcon height="26px" className='self-center' />
+
+                        </div>
                     </div>
                 )
 
@@ -447,27 +468,52 @@ export default function TreeTableDialogue() {
             case "v_strafe_back_abs_rel":
             case "v_strafe_down":
             case "v_view_pitch_down":
+            case "turret_pitch_down":
+
                 return (
-                    <div className='w-[26px] self-center'>
-                        <BackwardIcon />
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px] '>
+
+                            <BackwardIcon height="26px" className='self-center' />
+
+                        </div>
                     </div>
                 )
 
             // Rightward Icon
             case "v_strafe_right":
             case "v_view_yaw_right":
-
+            case "turret_yaw_left":
                 return (
-                    <div className='w-[26px] self-center'>
-                        <RightwardIcon />
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px] '>
+
+                            <RightwardIcon height="26px" className='self-center' />
+
+                        </div>
                     </div>
                 )
             // Leftward Icon
             case "v_strafe_left":
             case "v_view_yaw_left":
+            case "turret_yaw_right":
                 return (
-                    <div className='w-[26px] self-center'>
-                        <LeftwardIcon />
+
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px] '>
+
+                            <LeftwardIcon height="26px" className='self-center' />
+
+                        </div>
                     </div>
                 )
             // UpDown Icon
@@ -476,21 +522,36 @@ export default function TreeTableDialogue() {
             case "v_strafe_longitudinal_abs_rel":
             case "v_strafe_longitudinal_rel":
             case "v_view_pitch":
+            case "turret_pitch":
 
                 // case "v_strafe_longitudinal_invert":
 
                 return (
-                    <div className='w-[26px] self-center'>
-                        <UpDownIcon />
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px] '>
+
+                            <UpDownIcon height="26px" className='self-center' />
+
+                        </div>
                     </div>
                 )
             // LeftRight Icon
             case "v_strafe_lateral":
             case "v_view_yaw":
-
+            case "turret_yaw":
                 return (
-                    <div className='w-[26px] self-center'>
-                        <LeftRightIcon />
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px] '>
+
+                            <LeftRightIcon height="26px" className='self-center' />
+
+                        </div>
                     </div>
                 )
             // Turbo / Afterburner Icon
@@ -503,44 +564,60 @@ export default function TreeTableDialogue() {
             // Zoom In Icon
             case "v_view_zoom_in":
             case "v_view_dynamic_zoom_rel_in":
-                return (
-                    <div className='flex flex-row gap-[5px] '>
-                        <div className='self-center'>
-                            <ZoomInIcon width='24px' />
-                        </div>
-                        <div className=' h-[24px] self-center'>
-                            <IncreaseIcon />
-                        </div>
+            case "turret_remote_zoom_in":
 
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px] '>
+
+                            <ZoomInIcon width="24px" className='self-center' />
+                            <IncreaseIcon width="24px" className='self-center' />
+
+                        </div>
 
                     </div>
+
+
+
                 )
             // Zoom Out Icon
             case "v_view_zoom_out":
             case "v_view_dynamic_zoom_rel_out":
+            case "turret_remote_zoom_out":
 
                 return (
-                    <div className='flex flex-row gap-[5px] '>
-                        <div className='self-center'>
-                            <ZoomOutIcon width='24px' />
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
                         </div>
-                        <div className=' h-[24px] self-center'>
-                            <DecreaseIcon />
+                        <div className='flex flex-row gap-[5px] '>
+
+                            <ZoomOutIcon width="24px" className='self-center' />
+                            <DecreaseIcon width="24px" className='self-center' />
+
                         </div>
 
                     </div>
                 )
             // Zoom + Settings Icon
             case "v_view_dynamic_zoom_abs_toggle":
+            case "turret_remote_zoom_toggle":
+
                 return (
-                    <div className='flex flex-row gap-[5px] '>
-                        <div className='self-center'>
-                            <ZoomIcon width='24px' />
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px] '>
+
+                            <ZoomIcon width="24px" className='self-center' />
+                            <GenericSettingIcon width="22px" className='self-center' />
+
                         </div>
 
-                        <div className='w-[24px] self-center'>
-                            <GenericSettingIcon />
-                        </div>
                     </div>
                 )
             // Zoom In Out Icon
@@ -603,8 +680,12 @@ export default function TreeTableDialogue() {
             case "v_enter_remote_turret_3":
 
                 return (
-                    <div className='w-[26px] self-center'>
-                        <TurretIcon />
+                    <div className=' self-center flex flex-row gap-[3px]'>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+
+                        <TurretIcon width='25px' />
                     </div>
                 )
 
@@ -1089,6 +1170,20 @@ export default function TreeTableDialogue() {
                         </div>
                     </div>
                 )
+                  // Exit Icon
+            case "turret_remote_exit":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px] '>
+
+                            <ExitIcon width="26px" className='self-center' />
+
+                        </div>
+                    </div>
+                )
             default:
                 return (
 
@@ -1110,6 +1205,181 @@ export default function TreeTableDialogue() {
         if (Object.hasOwn(node, 'children')) {
             return;
         }
+        if (node.data.actionmapName === "spaceship_targeting_advanced") {
+            switch (node.key) {
+                // TargetingFriendly Icon
+                case "v_target_cycle_friendly_back":
+                case "v_target_cycle_friendly_fwd":
+                case "v_target_cycle_friendly_reset":
+                    return (
+                        <div className=' flex flex-row mr-[5px]'>
+                            {getActionTypeIcon.getIcon('vehicles')}
+                            <div className='w-[26px] self-center'>
+                                <TargetingIcon />
+                            </div>
+
+                            <div className='w-[20px] self-center mx-[3px]'>
+                                <ArrowRightIcon />
+                            </div>
+                            <div className='flex flex-row gap-[3px]'>
+                                <div className='w-[26px] self-center'>
+                                    <TargetingIconFriendly />
+                                </div>
+                                {getGameActionIcon(node)}
+                            </div>
+
+                        </div>
+                    )
+                    case "v_target_cycle_all_back":
+                        case "v_target_cycle_all_fwd":
+                        case "v_target_cycle_all_reset":
+                            return (
+                                <div className=' flex flex-row mr-[5px]'>
+                                    {getActionTypeIcon.getIcon('vehicles')}
+                                    <div className='w-[26px] self-center'>
+                                        <TargetingIcon />
+                                    </div>
+        
+                            
+                                    <div className='flex flex-row gap-[3px]'>
+                                     
+                                        {getGameActionIcon(node)}
+                                    </div>
+        
+                                </div>
+                            )
+                // TargetingHostile Icon
+                case "v_target_cycle_attacker_back":
+                case "v_target_cycle_attacker_fwd":
+                case "v_target_cycle_attacker_reset":
+
+                    return (
+                        <div className=' flex flex-row mr-[5px]'>
+                            {getActionTypeIcon.getIcon('vehicles')}
+                            <div className='w-[26px] self-center'>
+                                <TargetingIcon />
+                            </div>
+                            <div className='w-[20px] self-center mx-[3px]'>
+                                <ArrowRightIcon />
+                            </div>
+
+                            <div className='flex flex-row gap-[3px]'>
+                                <div className='w-[26px] self-center'>
+                                    <TargetingIconAttacker />
+                                </div>
+                                {getGameActionIcon(node)}
+                            </div>
+                        </div>
+                    )
+                // TargetingHostile Icon
+                case "v_target_cycle_hostile_back":
+                case "v_target_cycle_hostile_fwd":
+                case "v_target_cycle_hostile_reset":
+
+                    return (
+                        <div className=' flex flex-row mr-[5px]'>
+                            {getActionTypeIcon.getIcon('vehicles')}
+                            <div className='w-[26px] self-center'>
+                                <TargetingIcon />
+                            </div>
+
+                            <div className='w-[20px] self-center mx-[3px]'>
+                                <ArrowRightIcon />
+                            </div>
+
+                            <div className='flex flex-row gap-[3px]'>
+                                <div className='w-[26px] self-center'>
+                                    <TargetingIconHostile />
+                                </div>
+                                {getGameActionIcon(node)}
+                            </div>
+                        </div>
+                    )
+                case "v_target_cycle_in_view_back":
+                case "v_target_cycle_in_view_fwd":
+                case "v_target_cycle_in_view_reset":
+
+                    return (
+
+                        <div className=' flex flex-row mr-[5px]'>
+                            {getActionTypeIcon.getIcon('vehicles')}
+                            <div className='w-[26px] self-center '>
+                                <TargetingIcon />
+                            </div>
+                            <div className='w-[20px] self-center mx-[3px]'>
+                                <ArrowRightIcon />
+                            </div>
+                            <div className='w-[26px] self-center mr-[3px]'>
+                                <TargetingIconView />
+                            </div>
+                            <div className='flex flex-row gap-[5px]'>
+                                <div className='flex self-center content-center align-middle'>
+                                    {getGameActionIcon(node)}
+                                </div>
+                            </div>
+                        </div>
+                    )
+                case "v_target_cycle_pinned_back":
+                case "v_target_cycle_pinned_fwd":
+                case "v_target_cycle_pinned_reset":
+                    return (
+
+                        <div className=' flex flex-row mr-[5px]'>
+                            {getActionTypeIcon.getIcon('vehicles')}
+                            <div className='w-[26px] self-center '>
+                                <TargetingIcon />
+                            </div>
+                            <div className='w-[20px] self-center mx-[3px]'>
+                                <ArrowRightIcon />
+                            </div>
+                            <div className='w-[22px] self-center mr-[3px]'>
+                                <GenericSettingIcon />
+                            </div>
+                            <div className='flex flex-row gap-[5px]'>
+                                <div className='flex self-center content-center align-middle'>
+                                    {getGameActionIcon(node)}
+                                </div>
+                            </div>
+                        </div>
+                    )
+                case "v_target_cycle_subitem_back":
+                case "v_target_cycle_subitem_fwd":
+                case "v_target_cycle_subitem_reset":
+                    return (
+
+                        <div className=' flex flex-row mr-[5px]'>
+                            {getActionTypeIcon.getIcon('vehicles')}
+                            <div className='w-[26px] self-center '>
+                                <TargetingIcon />
+                            </div>
+                            <div className='w-[26px] self-center mx-[3px]'>
+                                <GenericSettingIcon />
+                            </div>
+                            <div className='flex flex-row gap-[5px]'>
+                                <div className='flex self-center content-center align-middle'>
+                                    {getGameActionIcon(node)}
+                                </div>
+                            </div>
+                        </div>
+                    )
+                default:
+                    break;
+            }
+        }
+        if (node.data.actionmapName === "spaceship_targeting") {
+            return (
+                <div className=' flex flex-row mr-[5px]'>
+                    {getActionTypeIcon.getIcon('spaceship')}
+                    <div className='w-[26px] self-center mx-[3px]'>
+                        <TargetingIcon />
+                    </div>
+
+                    <div className='w-[26px] self-center mx-[5px]'>
+                        {getGameActionIcon(node)}
+                    </div>
+                </div>
+            )
+        }
         if (node.data.actionmapName === 'spaceship_docking') {
             return (
                 <div className=' flex flex-row mr-[5px]'>
@@ -1128,6 +1398,7 @@ export default function TreeTableDialogue() {
                 </div>
             )
         }
+
         if (node.data.category === 'Vehicles / Salvage') {
             return (
                 <div className=' flex flex-row mr-[5px]'>
@@ -1213,6 +1484,22 @@ export default function TreeTableDialogue() {
                 </div>
             )
         }
+        if (node.data.actionmapName === 'turret_movement' || 'turret_advanced') {
+            return (
+                <div className=' flex flex-row mr-[5px]'>
+                    {getActionTypeIcon.getIcon('vehicles')}
+                    <div className='w-[26px] self-center mx-[3px]'>
+                        <TurretIcon />
+                    </div>
+
+                    <div className='flex flex-row gap-[5px]'>
+                        <div className='flex self-center content-center align-middle'>
+                            {getGameActionIcon(node)}
+                        </div>
+                    </div>
+                </div>
+            )
+        }
         if (node.data.actionmapName === "spaceship_mining") {
             return (
                 <div className=' flex flex-row mr-[5px]'>
@@ -1234,121 +1521,7 @@ export default function TreeTableDialogue() {
             )
         }
 
-        if (node.data.actionmapName === "spaceship_targeting_advanced") {
-            switch (node.key) {
-                // TargetingFriendly Icon
-                case "v_target_cycle_friendly_back":
-                case "v_target_cycle_friendly_fwd":
-                case "v_target_cycle_friendly_reset":
-                    return (
-                        <div className=' flex flex-row mr-[5px]'>
-                            {getActionTypeIcon.getIcon('vehicles')}
-                            <div className='w-[26px] self-center'>
-                                <TargetingIcon />
-                            </div>
 
-                            <div className='w-[20px] self-center mx-[3px]'>
-                                <ArrowRightIcon />
-                            </div>
-                            <div className='flex flex-row gap-[5px]'>
-                                <div className='w-[26px] self-center'>
-                                    <TargetingIconFriendly />
-                                </div>
-                                {getGameActionIcon(node)}
-                            </div>
-
-                        </div>
-                    )
-
-                // TargetingHostile Icon
-                case "v_target_cycle_attacker_back":
-                case "v_target_cycle_attacker_fwd":
-                case "v_target_cycle_attacker_reset":
-
-                    return (
-                        <div className=' flex flex-row mr-[5px]'>
-                            {getActionTypeIcon.getIcon('vehicles')}
-                            <div className='w-[26px] self-center'>
-                                <TargetingIcon />
-                            </div>
-                            <div className='w-[20px] self-center mx-[3px]'>
-                                <ArrowRightIcon />
-                            </div>
-
-                            <div className='flex flex-row gap-[5px]'>
-                                <div className='w-[26px] self-center'>
-                                    <TargetingIconAttacker />
-                                </div>
-                                {getGameActionIcon(node)}
-                            </div>
-                        </div>
-                    )
-                // TargetingHostile Icon
-                case "v_target_cycle_hostile_back":
-                case "v_target_cycle_hostile_fwd":
-                case "v_target_cycle_hostile_reset":
-
-                    return (
-                        <div className=' flex flex-row mr-[5px]'>
-                            {getActionTypeIcon.getIcon('vehicles')}
-                            <div className='w-[26px] self-center'>
-                                <TargetingIcon />
-                            </div>
-
-                            <div className='w-[20px] self-center mx-[3px]'>
-                                <ArrowRightIcon />
-                            </div>
-
-                            <div className='flex flex-row gap-[5px]'>
-                                <div className='w-[26px] self-center'>
-                                    <TargetingIconHostile />
-                                </div>
-                                {getGameActionIcon(node)}
-                            </div>
-                        </div>
-                    )
-                case "v_target_cycle_in_view_back":
-                case "v_target_cycle_in_view_fwd":
-                case "v_target_cycle_in_view_reset":
-
-                    return (
-                        <div className=' flex flex-row mr-[5px]'>
-                            {getActionTypeIcon.getIcon('vehicles')}
-                            <div className='w-[26px] self-center'>
-                                <TargetingIcon />
-                            </div>
-
-                            <div className='w-[20px] self-center mx-[3px]'>
-                                <ArrowRightIcon />
-                            </div>
-                            <div className='flex flex-row gap-[5px]'>
-                                <div className='w-[26px] self-center'>
-                                    <TargetingIconView />
-                                </div>
-                                {getGameActionIcon(node)}
-                            </div>
-                        </div>
-                    )
-                default:
-                    break;
-            }
-        }
-        if (node.data.actionmapName === "spaceship_targeting") {
-            return (
-                <div className=' flex flex-row mr-[5px]'>
-                    {getActionTypeIcon.getIcon('spaceship')}
-                    <div className='w-[26px] self-center mx-[3px]'>
-                        <TargetingIcon />
-                    </div>
-                    <div className='w-[20px] self-center '>
-                        <ArrowRightIcon />
-                    </div>
-                    <div className='w-[26px] self-center mx-[5px]'>
-                        {getGameActionIcon(node)}
-                    </div>
-                </div>
-            )
-        }
         if (node.data.actionmapName === "spaceship_radar"
             ||
             node.data.actionmapName === "spaceship_scanning") {
@@ -1366,21 +1539,21 @@ export default function TreeTableDialogue() {
                 </div>
             )
         }
-        if (node.data.actionmapName === "spaceship_targeting_advanced") {
-            return (<div className=' flex flex-row mr-[5px]'>
-                {getActionTypeIcon.getIcon('vehicles')}
+        // if (node.data.actionmapName === "spaceship_targeting_advanced") {
+        //     return (<div className=' flex flex-row mr-[5px]'>
+        //         {getActionTypeIcon.getIcon('vehicles')}
 
-                <div className='w-[20px] self-center '>
-                    <ArrowRightIcon />
-                </div>
-                <div className='w-[26px] self-center mx-[3px]'>
-                    <TargetingIcon />
-                </div>
-                {getGameActionIcon(node)}
+        //         <div className='w-[20px] self-center '>
+        //             <ArrowRightIcon />
+        //         </div>
+        //         <div className='w-[26px] self-center mx-[3px]'>
+        //             <TargetingIcon />
+        //         </div>
+        //         {getGameActionIcon(node)}
 
-            </div>
-            )
-        }
+        //     </div>
+        //     )
+        // }
         if (node.data.actionmapName === "spaceship_target_hailing") {
             return (
                 <div className=' flex flex-row mr-[5px]'>

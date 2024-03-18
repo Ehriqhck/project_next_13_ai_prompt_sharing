@@ -241,7 +241,6 @@ export const GameActions = {
         data: {
           name: 'Vehicles / View',
           category: 'Vehicles / View'
-
         },
         children: [
           {
@@ -1499,12 +1498,12 @@ export const GameActions = {
           {
             key: 'spaceship_salvage-nudging',
             label: 'Vehicles / Salvage / Nudging',
-    
+
             data: {
               category: 'Vehicles / Salvage / Nudging'
             },
             children: [
-          {
+              {
                 key: 'v_salvage_nudge_up__left',
                 label: 'Nudge Left Salvage Tool Up',
                 data: {
@@ -1524,7 +1523,7 @@ export const GameActions = {
                   inputType: 'Press'
                 }
               },
-             
+
               {
                 key: 'v_salvage_nudge_left__left',
                 label: 'Nudge Left Salvage Tool Left',
@@ -1560,12 +1559,12 @@ export const GameActions = {
                 label: 'Nudge Right Salvage Tool Down',
                 data: {
                   name: 'Nudge Right Salvage Tool Down',
-                  category: 'Vehicles / Salvage / Nudging' ,
+                  category: 'Vehicles / Salvage / Nudging',
                   actionmapName: 'spaceship_salvage',
                   inputType: 'Press'
                 }
               },
-             
+
               {
                 key: 'v_salvage_nudge_left__right',
                 label: 'Nudge Right Salvage Tool Left',
@@ -1576,7 +1575,7 @@ export const GameActions = {
                   inputType: 'Press'
                 }
               },
-              
+
               {
                 key: 'v_salvage_nudge_right__right',
                 label: 'Nudge Right Salvage Tool Right',
@@ -1586,67 +1585,69 @@ export const GameActions = {
                   actionmapName: 'spaceship_salvage',
                   inputType: 'Press'
                 }
-              },
-             
-            ]},
-            {
-              key: 'spaceship_salvage-tractor',
-              label: 'Vehicles / Salvage / Tractor Beam',
-      
-              data: {
-                category: 'Vehicles / Salvage / Tractor Beam'
-              },
-              children: [
-                {
-                  key: 'tractor_beam_vehicle_increase_distance',
-                  label: 'Tractor Beam Vehicle - Increase Distance',
-                  data: {
-                    name: 'Tractor Beam Vehicle - Increase Distance',
-                    category: 'Vehicles / Salvage / Tractor Beam',
-                    actionmapName: 'spaceship_salvage',
-                    inputType: 'Press'
-                  }
-                },
-                {
-                  key: 'tractor_beam_vehicle_decrease_distance',
-                  label: 'Tractor Beam Vehicle - Decrease Distance',
-                  data: {
-                    name: 'Tractor Beam Vehicle - Decrease Distance',
-                    category: 'Vehicles / Salvage / Tractor Beam',
-                    actionmapName: 'spaceship_salvage',
-                    inputType: 'Press'
-                  }
-                },
-              ]},
+              }
+            ]
+          },
+          {
+            key: 'spaceship_salvage-tractor',
+            label: 'Vehicles / Salvage / Tractor Beam',
+
+            data: {
+              category: 'Vehicles / Salvage / Tractor Beam'
+            },
+            children: [
               {
-                key: 'spaceship_salvage-disintegration',
-                label: 'Vehicles / Salvage / Disintegration Beam',
-        
+                key: 'tractor_beam_vehicle_increase_distance',
+                label: 'Tractor Beam Vehicle - Increase Distance',
                 data: {
-                  category: 'Vehicles / Salvage / Disintegration Beam'
-                },
-                children: [
-                  {
-                    key: 'v_salvage_focus_disintegrate',
-                    label: 'Focus Disintegration Tool',
-                    data: {
-                      name: 'Focus Disintegration Tool',
-                      category: 'Vehicles / Salvage / Disintegration Beam',
-                      actionmapName: 'spaceship_salvage',
-                      inputType: 'Press'
-                    }
-                  },
-                  {
-                    key: 'v_salvage_toggle_fire_disintegrate',
-                    label: 'Toggle Fire Disintegrate',
-                    data: {
-                      name: 'Toggle Fire Disintegrate',
-                      category: 'Vehicles / Salvage / Disintegration Beam',
-                      actionmapName: 'spaceship_salvage',
-                      inputType: 'Press'
-                    }
-                  },
-                ]},
+                  name: 'Tractor Beam Vehicle - Increase Distance',
+                  category: 'Vehicles / Salvage / Tractor Beam',
+                  actionmapName: 'spaceship_salvage',
+                  inputType: 'Press'
+                }
+              },
+              {
+                key: 'tractor_beam_vehicle_decrease_distance',
+                label: 'Tractor Beam Vehicle - Decrease Distance',
+                data: {
+                  name: 'Tractor Beam Vehicle - Decrease Distance',
+                  category: 'Vehicles / Salvage / Tractor Beam',
+                  actionmapName: 'spaceship_salvage',
+                  inputType: 'Press'
+                }
+              }
+            ]
+          },
+          {
+            key: 'spaceship_salvage-disintegration',
+            label: 'Vehicles / Salvage / Disintegration Beam',
+
+            data: {
+              category: 'Vehicles / Salvage / Disintegration Beam'
+            },
+            children: [
+              {
+                key: 'v_salvage_focus_disintegrate',
+                label: 'Focus Disintegration Tool',
+                data: {
+                  name: 'Focus Disintegration Tool',
+                  category: 'Vehicles / Salvage / Disintegration Beam',
+                  actionmapName: 'spaceship_salvage',
+                  inputType: 'Press'
+                }
+              },
+              {
+                key: 'v_salvage_toggle_fire_disintegrate',
+                label: 'Toggle Fire Disintegrate',
+                data: {
+                  name: 'Toggle Fire Disintegrate',
+                  category: 'Vehicles / Salvage / Disintegration Beam',
+                  actionmapName: 'spaceship_salvage',
+                  inputType: 'Press'
+                }
+              }
+            ]
+          },
           {
             key: 'v_salvage_beam_spacing_abs',
             label: 'Salvage Beam Spacing (Absolute)',
@@ -1667,7 +1668,7 @@ export const GameActions = {
               inputType: 'Press'
             }
           },
-        
+
           {
             key: 'v_salvage_cycle_modifiers_focused',
             label: 'Cycle Focused Salvage Modifiers',
@@ -1768,7 +1769,7 @@ export const GameActions = {
               inputType: 'Press'
             }
           },
-         
+
           {
             key: 'v_salvage_focus_fracture',
             label: 'Focus Fracture Tool',
@@ -1779,11 +1780,7 @@ export const GameActions = {
               inputType: 'Press'
             }
           },
-    
-          
-   
-        
-         
+
           {
             key: 'v_salvage_toggle_fire_focused',
             label: 'Toggle Fire Focused',
@@ -1849,10 +1846,10 @@ export const GameActions = {
       // turret_movement / Turret Movement
       {
         key: 'turret_movement',
-        label: 'Turret Movement',
-
+        label: 'Vehicles / Turret Movement',
         data: {
-          name: 'Turret Movement'
+          name: 'Vehicles / Turret Movement',
+          category: 'Vehicles / Turret Movement'
         },
         children: [
           {
@@ -1861,7 +1858,7 @@ export const GameActions = {
             data: {
               actionmapName: 'turret_movement',
               name: 'Turret Gyro Stabilization (Toggle)',
-              category: 'Turret Movement',
+              category: 'Vehicles / Turret Movement',
               inputType: 'Toggle'
             }
           },
@@ -1897,10 +1894,10 @@ export const GameActions = {
           },
           {
             key: 'turret_yaw',
-            label: 'Turret Yaw (Axis)',
+            label: 'Turret Yaw Left & Right (Axis)',
             data: {
               actionmapName: 'turret_movement',
-              name: 'Turret Yaw',
+              name: 'Turret Yaw Left & Right',
               category: 'Turret Movement',
               inputType: 'Axis'
             }
@@ -1979,11 +1976,11 @@ export const GameActions = {
       },
       // turret_advanced / Turret Advanced
       {
-        key: 'turret_movement_REMOVE_THIS',
-        label: 'Turret Movement Advanced',
+        key: 'turret_advanced',
+        label: 'Vehicles / Turret Movement Advanced',
 
         data: {
-          category: 'Turret Movement Advanced'
+          category: 'Vehicles / Turret Movement Advanced'
         },
         children: [
           {
@@ -3117,9 +3114,9 @@ export const GameActions = {
       {
         key: 'stopwatch',
         label: 'Stopwatch',
-        data: { 
+        data: {
           category: 'Stopwatch'
-         },
+        },
         children: [
           {
             key: 'stopwatch_reset',
