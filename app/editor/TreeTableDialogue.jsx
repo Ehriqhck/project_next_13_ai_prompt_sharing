@@ -63,6 +63,7 @@ import WeaponsIcon from '@public/assets/icons/actions/gameCategory/WeaponsIcon.j
 import MissileIcon from '@public/assets/icons/actions/gameCategory/MissileIcon.jsx'
 import RightSideIcon from '@public/assets/icons/actions/gameCategory/RightSideIcon.jsx'
 import LeftSideIcon from '@public/assets/icons/actions/gameCategory/LeftSideIcon.jsx'
+import FocusIcon from '@public/assets/icons/actions/gameCategory/FocusIcon.jsx'
 
 
 export default function TreeTableDialogue() {
@@ -402,10 +403,15 @@ export default function TreeTableDialogue() {
             case "v_target_cycle_in_view_reset":
             case "v_target_cycle_pinned_reset":
             case "v_target_cycle_subitem_reset":
+            case "v_salvage_reset_gimbal":
 
                 return (
-                    <div className='w-[26px] self-center'>
-                        <ResetIcon />
+                    <div className=' self-center flex flex-row gap-[3px]'>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+
+                        <ResetIcon width='26px' />
                     </div>
                 )
 
@@ -730,6 +736,20 @@ export default function TreeTableDialogue() {
                     <div className='w-[25px] self-center'>
                         <ThreeIcon />
                     </div>)
+            // LeftSide Icon 
+            case "v_salvage_toggle_fire_left":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px] '>
+
+                            <LeftSideIcon height="26px" className='self-center' />
+
+                        </div>
+                    </div>
+                )
             // LeftSide Icon + Forward Icon
             case "v_salvage_nudge_up__left":
                 return (
@@ -764,6 +784,20 @@ export default function TreeTableDialogue() {
                         <LeftSideIcon width="26px" className='self-center' />
                         <RightwardIcon height="26px" className='self-center' />
 
+                    </div>
+                )
+            // RightSide Icon 
+            case "v_salvage_toggle_fire_right":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px] '>
+
+                            <RightSideIcon height="26px" className='self-center' />
+
+                        </div>
                     </div>
                 )
             // RightSide Icon + Upward Icon
@@ -802,11 +836,28 @@ export default function TreeTableDialogue() {
             // Laser Icon + Cycle Icon
             case "v_toggle_mining_laser_fire":
                 return (
-                    <div className='flex flex-row gap-[5px] '>
+                    <div className='flex flex-row gap-[3px] '>
                         <SalvageBeamIcon height="26px" className='self-center' />
 
 
                     </div>
+                )
+            // Laser Icon + Generic Icon
+            case "v_salvage_toggle_beam_spacing_axis":
+                return (
+
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+
+                        <div className='gap-[5px] flex flex-row'>
+                            <SalvageBeamIcon height="26px" className='self-center' />
+                            <GenericSettingIcon height="22px" className='self-center' />
+                        </div>
+
+                    </div>
+
                 )
             // Laser Icon + Cycle Icon
             case "v_toggle_mining_laser_type":
@@ -820,8 +871,12 @@ export default function TreeTableDialogue() {
                 )
             // Laser Icon + Increase Icon
             case "v_increase_mining_throttle":
+            case "v_salvage_increase_beam_spacing":
+
                 return (
                     <div className='flex flex-row gap-[5px] '>
+                        <ArrowRightIcon width="20px" />
+
                         <SalvageBeamIcon height="26px" className='self-center' />
 
                         <IncreaseIcon width="26px" className='self-center' />
@@ -830,14 +885,19 @@ export default function TreeTableDialogue() {
                 )
             // Laser Icon + Decrease Icon
             case "v_decrease_mining_throttle":
+            case "v_salvage_decrease_beam_spacing":
+
                 return (
                     <div className='flex flex-row gap-[5px] '>
+                        <ArrowRightIcon width="20px" />
+
                         <SalvageBeamIcon height="26px" className='self-center' />
 
                         <DecreaseIcon width="26px" className='self-center' />
 
                     </div>
                 )
+
             // Laser Icon + Decrease Icon + Decrease Icon
             case "v_mining_throttle":
                 return (
@@ -847,6 +907,129 @@ export default function TreeTableDialogue() {
 
                         <DecreaseIcon width="26px" className='self-center' />
 
+                    </div>
+                )
+            // Laser Icon 
+            case "v_salvage_beam_spacing_abs":
+            case "v_salvage_beam_spacing_rel":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px] '>
+
+
+                            <SalvageBeamIcon height="26px" className='self-center' />
+
+                            <GenericSettingIcon width="22px" className='self-center' />
+                        </div>
+                    </div>
+                )
+
+            // Focus Icon 
+            case "v_salvage_focus_disintegrate":
+            case "v_salvage_toggle_fire_focused":
+
+
+                return (
+
+                    <div className='flex flex-row gap-[5px] '>
+                        <ArrowRightIcon width="20px" />
+                        <FocusIcon height="26px" className='self-center' />
+
+
+                    </div>
+                )
+            // Focus Icon + Left Icon + Right Icon
+            case "v_salvage_focus_all_heads":
+                return (
+
+                    <div className='flex flex-row gap-[5px] '>
+                        <ArrowRightIcon width="20px" />
+                        <FocusIcon height="26px" className='self-center' />
+                        <LeftSideIcon height="26px" className='self-center' />
+                        <RightSideIcon height="26px" className='self-center' />
+
+
+                    </div>
+                )
+            // Focus Icon + Left Icon
+            case "v_salvage_focus_left":
+                return (
+                    <div className='flex flex-row gap-[5px] '>
+                        <ArrowRightIcon width="20px" />
+                        <FocusIcon height="26px" className='self-center' />
+                        <LeftSideIcon height="26px" className='self-center' />
+                    </div>
+                )
+            // Focus Icon + Right Icon
+            case "v_salvage_focus_right":
+                return (
+                    <div className='flex flex-row gap-[5px] '>
+                        <ArrowRightIcon width="20px" />
+                        <FocusIcon height="26px" className='self-center' />
+                        <RightSideIcon height="26px" className='self-center' />
+                    </div>
+                )
+            // Focus Icon + Increase Icon 
+            case "v_salvage_focus_disintegrate":
+                return (
+
+                    <div className='flex flex-row gap-[5px] '>
+                        <ArrowRightIcon width="20px" />
+                        <FocusIcon height="26px" className='self-center' />
+
+
+                    </div>
+                )
+            // Focus Icon + Fracture Icon 
+            case "v_salvage_focus_fracture":
+                return (
+
+                    <div className='flex flex-row gap-[5px] '>
+                        <ArrowRightIcon width="20px" />
+                        <FocusIcon height="26px" className='self-center' />
+                        <FractureIcon height="26px" className='self-center' />
+
+
+                    </div>
+                )
+            // Cycle Icon + Focus Icon
+            case "v_salvage_cycle_modifiers_focused":
+                return (
+                    <div className='flex flex-row gap-[5px] '>
+                        <ArrowRightIcon width="20px" />
+                        <CycleIcon height="26px" className='self-center' />
+                        <FocusIcon height="26px" className='self-center' />
+                    </div>
+                )
+            // Cycle Icon + Left Icon
+            case "v_salvage_cycle_modifiers_left":
+                return (
+                    <div className='flex flex-row gap-[5px] '>
+                        <ArrowRightIcon width="20px" />
+                        <CycleIcon height="26px" className='self-center' />
+                        <LeftSideIcon height="26px" className='self-center' />
+                    </div>
+                )
+            // Cycle Icon + Left Icon
+            case "v_salvage_cycle_modifiers_right":
+                return (
+                    <div className='flex flex-row gap-[5px] '>
+                        <ArrowRightIcon width="20px" />
+                        <CycleIcon height="26px" className='self-center' />
+                        <RightSideIcon height="26px" className='self-center' />
+                    </div>
+                )
+            // Cycle Icon + Salvage Icon
+            case "v_salvage_cycle_modifiers_structural":
+                return (
+                    <div className='flex flex-row gap-[5px] '>
+                        <ArrowRightIcon width="20px" />
+                        <CycleIcon height="26px" className='self-center' />
+                        <SalvageIcon height="26px" className='self-center' />
                     </div>
                 )
             // Angle Icon + Decrease Icon
@@ -869,11 +1052,55 @@ export default function TreeTableDialogue() {
 
                     </div>
                 )
+            // Empty
+            case "v_salvage_toggle_fire_disintegrate":
+                return (
+                    <></>
+                )
+            // Increase Icon
+            case "tractor_beam_vehicle_increase_distance":
+                return (
+                    <div className='flex flex-row gap-[5px] '>
 
+                        <IncreaseIcon width="26px" className='self-center' />
+
+                    </div>
+                )
+            // Decrease Icon
+            case "tractor_beam_vehicle_decrease_distance":
+                return (
+                    <div className='flex flex-row gap-[5px] '>
+
+                        <DecreaseIcon width="26px" className='self-center' />
+
+                    </div>
+                )
+            // Fracture Icon + Focus Icon
+            case "v_salvage_toggle_fire_fracture":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px] '>
+
+                            <FractureIcon height="26px" className='self-center' />
+
+                        </div>
+                    </div>
+                )
             default:
                 return (
-                    <div className='w-[25px] self-center'>
-                        <GenericSettingIcon />
+
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px] '>
+
+                            <GenericSettingIcon height="24px" className='self-center' />
+
+                        </div>
                     </div>
                 )
                 break;
@@ -901,11 +1128,34 @@ export default function TreeTableDialogue() {
                 </div>
             )
         }
+        if (node.data.category === 'Vehicles / Salvage') {
+            return (
+                <div className=' flex flex-row mr-[5px]'>
+                    {getActionTypeIcon.getIcon('vehicles')}
+                    <div className='w-[26px] self-center mr-[3px] '>
+                        <SalvageIcon />
+                    </div>
+
+                    {/* <div className='w-[20px] self-center mx-[3px]'>
+                        <ArrowRightIcon />
+                    </div> */}
+                    <div className='flex self-center content-center align-middle'>
+                        {getGameActionIcon(node)}
+                    </div>
+                </div>
+            )
+        }
         if (node.data.category === 'Vehicles / Salvage / Nudging') {
             return (
                 <div className=' flex flex-row mr-[5px]'>
                     {getActionTypeIcon.getIcon('vehicles')}
-                    <div className='w-[26px] self-center mx-[3px]'>
+                    <div className='w-[26px] self-center '>
+                        <SalvageIcon />
+                    </div>
+                    <div className='w-[20px] self-center mx-[3px]'>
+                        <ArrowRightIcon />
+                    </div>
+                    <div className='w-[26px] self-center mx-[px]'>
                         <NudgeIcon />
                     </div>
                     <div className='w-[20px] self-center mx-[3px]'>
@@ -923,14 +1173,18 @@ export default function TreeTableDialogue() {
             return (
                 <div className=' flex flex-row mr-[5px]'>
                     {getActionTypeIcon.getIcon('vehicles')}
-                    <div className='w-[26px] self-center mx-[3px]'>
-                        <TractorBeamIcon />
+                    <div className='w-[26px] self-center '>
+                        <SalvageIcon />
                     </div>
                     <div className='w-[20px] self-center mx-[3px]'>
                         <ArrowRightIcon />
                     </div>
+                    <div className='w-[26px] self-center '>
+                        <TractorBeamIcon />
+                    </div>
+
                     <div className='flex flex-row gap-[5px]'>
-                        <div className='flex self-center content-center align-middle'>
+                        <div className='flex self-center content-center align-middle mx-[3px]'>
                             {getGameActionIcon(node)}
                         </div>
                     </div>
@@ -941,12 +1195,16 @@ export default function TreeTableDialogue() {
             return (
                 <div className=' flex flex-row mr-[5px]'>
                     {getActionTypeIcon.getIcon('vehicles')}
-                    <div className='w-[26px] self-center mx-[3px]'>
-                        <DisintegrateIcon />
+                    <div className='w-[26px] self-center '>
+                        <SalvageIcon />
                     </div>
                     <div className='w-[20px] self-center mx-[3px]'>
                         <ArrowRightIcon />
                     </div>
+                    <div className='w-[26px] self-center mx-[3px]'>
+                        <DisintegrateIcon />
+                    </div>
+
                     <div className='flex flex-row gap-[5px]'>
                         <div className='flex self-center content-center align-middle'>
                             {getGameActionIcon(node)}

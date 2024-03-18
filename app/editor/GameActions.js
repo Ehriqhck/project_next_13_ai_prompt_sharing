@@ -1602,7 +1602,7 @@ export const GameActions = {
                   label: 'Tractor Beam Vehicle - Increase Distance',
                   data: {
                     name: 'Tractor Beam Vehicle - Increase Distance',
-                    category: 'Vehicles / Salvage',
+                    category: 'Vehicles / Salvage / Tractor Beam',
                     actionmapName: 'spaceship_salvage',
                     inputType: 'Press'
                   }
@@ -1612,14 +1612,14 @@ export const GameActions = {
                   label: 'Tractor Beam Vehicle - Decrease Distance',
                   data: {
                     name: 'Tractor Beam Vehicle - Decrease Distance',
-                    category: 'Vehicles / Salvage',
+                    category: 'Vehicles / Salvage / Tractor Beam',
                     actionmapName: 'spaceship_salvage',
                     inputType: 'Press'
                   }
                 },
               ]},
               {
-                key: 'spaceship_salvage-tractor',
+                key: 'spaceship_salvage-disintegration',
                 label: 'Vehicles / Salvage / Disintegration Beam',
         
                 data: {
@@ -1631,7 +1631,7 @@ export const GameActions = {
                     label: 'Focus Disintegration Tool',
                     data: {
                       name: 'Focus Disintegration Tool',
-                      category: 'Vehicles / Salvage',
+                      category: 'Vehicles / Salvage / Disintegration Beam',
                       actionmapName: 'spaceship_salvage',
                       inputType: 'Press'
                     }
@@ -1641,7 +1641,7 @@ export const GameActions = {
                     label: 'Toggle Fire Disintegrate',
                     data: {
                       name: 'Toggle Fire Disintegrate',
-                      category: 'Vehicles / Salvage',
+                      category: 'Vehicles / Salvage / Disintegration Beam',
                       actionmapName: 'spaceship_salvage',
                       inputType: 'Press'
                     }
@@ -1667,6 +1667,7 @@ export const GameActions = {
               inputType: 'Press'
             }
           },
+        
           {
             key: 'v_salvage_cycle_modifiers_focused',
             label: 'Cycle Focused Salvage Modifiers',
@@ -1728,6 +1729,16 @@ export const GameActions = {
             }
           },
           {
+            key: 'v_salvage_toggle_beam_spacing_axis',
+            label: 'Salvage Beam Axis (Toggle)',
+            data: {
+              name: 'Salvage Beam Axis (Toggle)',
+              category: 'Vehicles / Salvage',
+              actionmapName: 'spaceship_salvage',
+              inputType: 'Press'
+            }
+          },
+          {
             key: 'v_salvage_focus_all_heads',
             label: 'Focus All Salvage Heads',
             data: {
@@ -1768,37 +1779,10 @@ export const GameActions = {
               inputType: 'Press'
             }
           },
-          {
-            key: 'v_salvage_increase_beam_spacing',
-            label: 'Focus Fracture Tool',
-            data: {
-              name: 'Focus Fracture Tool',
-              category: 'Vehicles / Salvage',
-              actionmapName: 'spaceship_salvage',
-              inputType: 'Press'
-            }
-          },
+    
           
-          {
-            key: 'v_salvage_reset_gimbal',
-            label: 'Reset Salvage Gimbal',
-            data: {
-              name: 'Reset Salvage Gimbal',
-              category: 'Vehicles / Salvage',
-              actionmapName: 'spaceship_salvage',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'v_salvage_toggle_beam_spacing_axis',
-            label: 'Salvage Beam Axis (Toggle)',
-            data: {
-              name: 'Salvage Beam Axis (Toggle)',
-              category: 'Vehicles / Salvage',
-              actionmapName: 'spaceship_salvage',
-              inputType: 'Press'
-            }
-          },
+   
+        
          
           {
             key: 'v_salvage_toggle_fire_focused',
@@ -1831,10 +1815,20 @@ export const GameActions = {
             }
           },
           {
-            key: 'v_salvage_toggle_fire_left',
+            key: 'v_salvage_toggle_fire_right',
             label: 'Toggle Fire Right',
             data: {
               name: 'Toggle Fire Right',
+              category: 'Vehicles / Salvage',
+              actionmapName: 'spaceship_salvage',
+              inputType: 'Press'
+            }
+          },
+          {
+            key: 'v_salvage_reset_gimbal',
+            label: 'Reset Salvage Gimbal',
+            data: {
+              name: 'Reset Salvage Gimbal',
               category: 'Vehicles / Salvage',
               actionmapName: 'spaceship_salvage',
               inputType: 'Press'
