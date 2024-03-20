@@ -65,6 +65,11 @@ import RightSideIcon from '@public/assets/icons/actions/gameCategory/RightSideIc
 import LeftSideIcon from '@public/assets/icons/actions/gameCategory/LeftSideIcon.jsx'
 import FocusIcon from '@public/assets/icons/actions/gameCategory/FocusIcon.jsx'
 import ExitIcon from '@public/assets/icons/actions/gameCategory/ExitIcon.jsx'
+import ESPIcon from '@public/assets/icons/actions/gameCategory/ESPIcon.jsx'
+import ManualGimbalIcon from '@public/assets/icons/actions/gameCategory/ManualGimbalIcon.jsx'
+import AutoGimbalIcon from '@public/assets/icons/actions/gameCategory/AutoGimbalIcon.jsx'
+import FixedGimbalIcon from '@public/assets/icons/actions/gameCategory/FixedGimbalIcon.jsx'
+import LockIcon from '@public/assets/icons/actions/gameCategory/LockIcon.jsx'
 
 
 export default function TreeTableDialogue() {
@@ -427,7 +432,21 @@ export default function TreeTableDialogue() {
                         <ResetIcon width='26px' />
                     </div>
                 )
+            // Reset Icon + Generic Settings Icon
+            case "turret_recenter":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px] '>
 
+                            <ResetIcon width="24px" className='self-center' />
+                            <GenericSettingIcon width="22px" className='self-center' />
+
+                        </div>
+                    </div>
+                )
             //   Forward Icon
             case "v_target_cycle_hostile_fwd":
             case "v_target_cycle_friendly_fwd":
@@ -561,7 +580,85 @@ export default function TreeTableDialogue() {
                         <TurboIcon />
                     </div>
                 )
+            // Speedometer Icon
+            case "turret_limiter_abs":
+            case "turret_limiter_rel":
+            case "turret_remote_zoom_in":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px] '>
+
+                            <SpeedometerIcon width="24px" className='self-center' />
+
+                        </div>
+                    </div>
+                )
+            // Speedometer Icon + Increase Icon
+            case "turret_limiter_rel_increase":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px] '>
+
+                            <SpeedometerIcon width="24px" className='self-center' />
+                            <IncreaseIcon width="24px" className='self-center' />
+
+                        </div>
+                    </div>
+                )
+            // Speedometer Icon + Decrease Icon
+            case "turret_limiter_rel_decrease":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px] '>
+
+                            <SpeedometerIcon width="24px" className='self-center' />
+                            <DecreaseIcon width="24px" className='self-center' />
+
+                        </div>
+                    </div>
+                )
+            // Speedometer Icon + Generic Settings Icon
+            case "turret_limiter_toggle":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px] '>
+
+                            <SpeedometerIcon width="24px" className='self-center' />
+                            <GenericSettingIcon width="22px" className='self-center' />
+
+                        </div>
+                    </div>
+                )
+
             // Zoom In Icon
+            case "turret_instant_zoom":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px] '>
+
+                            <ZoomInIcon width="24px" className='self-center' />
+                        </div>
+
+                    </div>
+
+                )
+            // Zoom In Icon + Increase Icon
             case "v_view_zoom_in":
             case "v_view_dynamic_zoom_rel_in":
             case "turret_remote_zoom_in":
@@ -673,6 +770,38 @@ export default function TreeTableDialogue() {
 
                     </div>
 
+                )
+            // Cycle Icon + Weapons Icon
+            case "turret_change_firemode":
+            case "v_weapon_change_firemode":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px] '>
+
+                            <CycleIcon width="24px" className='self-center' />
+                            <WeaponsIcon width="26px" className='self-center' />
+
+                        </div>
+                    </div>
+                )
+            // Angle Icon
+            case "v_weapon_convergence_distance_rel":
+            case 'v_weapon_convergence_distance_abs':
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px] '>
+
+                            <AngleIcon height="24px" className='self-center ' />
+
+                        </div>
+                    </div>
                 )
             // Turret Icon
             case "v_enter_remote_turret_1":
@@ -796,27 +925,70 @@ export default function TreeTableDialogue() {
                     </div>
                 )
                 break;
-            // One Icon
 
+            // One Icon
             case "v_mining_use_consumable1":
+            case "v_attack_group1":
+
                 return (
-                    <div className='w-[25px] self-center'>
-                        <OneIcon />
-                    </div>)
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px] '>
+
+                            <OneIcon height="25px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
 
 
             // Two Icon
             case "v_mining_use_consumable2":
+            case "v_attack_group2":
+
                 return (
-                    <div className='w-[25px] self-center'>
-                        <TwoIcon />
-                    </div>)
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px] '>
+
+                            <TwoIcon height="25px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // One Icon + Two Icon
+            case "v_attack_all":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px] '>
+                            <OneIcon height="25px" className='self-center ' />
+
+                            <TwoIcon height="25px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
             // Three Icon
             case "v_mining_use_consumable3":
                 return (
-                    <div className='w-[25px] self-center'>
-                        <ThreeIcon />
-                    </div>)
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px] '>
+
+                            <ThreeIcon height="25px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
             // LeftSide Icon 
             case "v_salvage_toggle_fire_left":
                 return (
@@ -1115,21 +1287,182 @@ export default function TreeTableDialogue() {
                 )
             // Angle Icon + Decrease Icon
             case "v_dec_scan_focus_level":
-                return (
-                    <div className='flex flex-row gap-[5px] '>
-                        <AngleIcon height="26px" className='self-center' />
+            case "v_weapon_convergence_distance_rel_decrease":
 
-                        <DecreaseIcon width="26px" className='self-center' />
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px]  justify-center'>
+
+                            <AngleIcon height="24px" className='self-center ' />
+                            <DecreaseIcon width="24px" className='self-center ' />
+                        </div>
 
                     </div>
+
                 )
             // Angle Icon + Increase Icon
             case "v_inc_scan_focus_level":
-                return (
-                    <div className='flex flex-row gap-[5px] '>
-                        <AngleIcon height="26px" className='self-center' />
+            case "v_weapon_convergence_distance_rel_increase":
 
-                        <IncreaseIcon width="26px" className='self-center' />
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px]  justify-center'>
+
+                            <AngleIcon height="24px" className='self-center ' />
+                            <IncreaseIcon width="24px" className='self-center ' />
+                        </div>
+
+                    </div>
+                )
+            // Angle Icon + Reset Icon
+            case "v_weapon_convergence_distance_set_default":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px]  justify-center'>
+                            <ResetIcon width="24px" className='self-center ' />
+
+                            <AngleIcon height="24px" className='self-center ' />
+                        </div>
+
+                    </div>
+                )
+            // Auto Gimbal Icon 
+            case "v_weapon_gimbal_mode_set_auto":
+            case "v_weapon_gimbal_mode_set_auto_long":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px]  justify-center'>
+                            <AutoGimbalIcon height="24px" className='self-center ' />
+                        </div>
+
+                    </div>
+                )
+            // Manual Gimbal Icon 
+            case "v_weapon_gimbal_mode_set_manual":
+            case "v_weapon_gimbal_mode_set_manual_long":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px]  justify-center'>
+                            <ManualGimbalIcon height="24px" className='self-center ' />
+                        </div>
+
+                    </div>
+                )
+            // Manual Gimbal Icon + Generic Settings Icon 
+            case "v_weapon_manual_gimbal_cycle_source":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px]  justify-center'>
+                            <ManualGimbalIcon height="24px" className='self-center ' />
+                            <GenericSettingIcon height="22px" className='self-center ' />
+
+                        </div>
+
+                    </div>
+                )
+            // Manual Gimbal Icon + Lock Icon 
+            case "v_weapon_manual_gimbal_lock_vector":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[2px]  justify-center'>
+                            <ManualGimbalIcon height="24px" className='self-center ' />
+                            <LockIcon width="24px" className='self-center ' />
+
+                        </div>
+
+                    </div>
+                )
+            // Manual Gimbal Icon + Auto Gimbal Icon + Fixed Gimbal Icon + Cycle Icon
+            case "v_weapon_gimbal_mode_cycle_all":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  justify-center'>
+                            <CycleIcon width="24px" className='self-center ' />
+                            <AutoGimbalIcon height="24px" className='self-center ' />
+                            <ManualGimbalIcon height="24px" className='self-center ' />
+
+                            <FixedGimbalIcon height="24px" className='self-center ' />
+                        </div>
+
+                    </div>
+                )
+            // Manual Gimbal Icon + Fixed Gimbal Icon + Reset Icon
+            case "v_weapon_gimbal_mode_cycle_fixed_auto":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  justify-center'>
+                            <CycleIcon height="24px" className='self-center ' />
+
+                            <FixedGimbalIcon width="24px" className='self-center ' />
+                            <AutoGimbalIcon height="24px" className='self-center ' />
+
+                        </div>
+
+                    </div>
+                )
+
+            // Manual Gimbal Icon + Fixed Gimbal Icon + Reset Icon
+            case "v_weapon_gimbal_mode_cycle_fixed_auto":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px]  justify-center'>
+                            <CycleIcon height="24px" className='self-center ' />
+
+                            <ManualGimbalIcon height="24px" className='self-center ' />
+                            <FixedGimbalIcon width="24px" className='self-center ' />
+                        </div>
+
+                    </div>
+                )
+            // Fixed Gimbal Icon 
+            case "v_weapon_gimbal_mode_set_fixed":
+            case "v_weapon_gimbal_mode_set_fixed_long":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px]  justify-center'>
+                            <FixedGimbalIcon height="24px" className='self-center ' />
+                        </div>
 
                     </div>
                 )
@@ -1170,7 +1503,7 @@ export default function TreeTableDialogue() {
                         </div>
                     </div>
                 )
-                  // Exit Icon
+            // Exit Icon
             case "turret_remote_exit":
                 return (
                     <div className='flex flex-row '>
@@ -1180,6 +1513,21 @@ export default function TreeTableDialogue() {
                         <div className='flex flex-row gap-[3px] '>
 
                             <ExitIcon width="26px" className='self-center' />
+
+                        </div>
+                    </div>
+                )
+            // ESP Icon
+            case "turret_esp_hold":
+            case 'turret_esp_toggle':
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px] outline-primary self-center'>
+
+                            <ESPIcon height="22px" className='self-center ' />
 
                         </div>
                     </div>
@@ -1205,6 +1553,7 @@ export default function TreeTableDialogue() {
         if (Object.hasOwn(node, 'children')) {
             return;
         }
+
         if (node.data.actionmapName === "spaceship_targeting_advanced") {
             switch (node.key) {
                 // TargetingFriendly Icon
@@ -1230,24 +1579,24 @@ export default function TreeTableDialogue() {
 
                         </div>
                     )
-                    case "v_target_cycle_all_back":
-                        case "v_target_cycle_all_fwd":
-                        case "v_target_cycle_all_reset":
-                            return (
-                                <div className=' flex flex-row mr-[5px]'>
-                                    {getActionTypeIcon.getIcon('vehicles')}
-                                    <div className='w-[26px] self-center'>
-                                        <TargetingIcon />
-                                    </div>
-        
-                            
-                                    <div className='flex flex-row gap-[3px]'>
-                                     
-                                        {getGameActionIcon(node)}
-                                    </div>
-        
-                                </div>
-                            )
+                case "v_target_cycle_all_back":
+                case "v_target_cycle_all_fwd":
+                case "v_target_cycle_all_reset":
+                    return (
+                        <div className=' flex flex-row mr-[5px]'>
+                            {getActionTypeIcon.getIcon('vehicles')}
+                            <div className='w-[26px] self-center'>
+                                <TargetingIcon />
+                            </div>
+
+
+                            <div className='flex flex-row gap-[3px]'>
+
+                                {getGameActionIcon(node)}
+                            </div>
+
+                        </div>
+                    )
                 // TargetingHostile Icon
                 case "v_target_cycle_attacker_back":
                 case "v_target_cycle_attacker_fwd":
@@ -1366,6 +1715,7 @@ export default function TreeTableDialogue() {
                     break;
             }
         }
+
         if (node.data.actionmapName === "spaceship_targeting") {
             return (
                 <div className=' flex flex-row mr-[5px]'>
@@ -1380,6 +1730,7 @@ export default function TreeTableDialogue() {
                 </div>
             )
         }
+
         if (node.data.actionmapName === 'spaceship_docking') {
             return (
                 <div className=' flex flex-row mr-[5px]'>
@@ -1416,6 +1767,7 @@ export default function TreeTableDialogue() {
                 </div>
             )
         }
+
         if (node.data.category === 'Vehicles / Salvage / Nudging') {
             return (
                 <div className=' flex flex-row mr-[5px]'>
@@ -1440,6 +1792,7 @@ export default function TreeTableDialogue() {
                 </div>
             )
         }
+
         if (node.data.category === 'Vehicles / Salvage / Tractor Beam') {
             return (
                 <div className=' flex flex-row mr-[5px]'>
@@ -1484,7 +1837,8 @@ export default function TreeTableDialogue() {
                 </div>
             )
         }
-        if (node.data.actionmapName === 'turret_movement' || 'turret_advanced') {
+
+        if (node.data.actionmapName === 'turret_movement' || node.data.actionmapName === 'turret_advanced') {
             return (
                 <div className=' flex flex-row mr-[5px]'>
                     {getActionTypeIcon.getIcon('vehicles')}
@@ -1496,6 +1850,23 @@ export default function TreeTableDialogue() {
                         <div className='flex self-center content-center align-middle'>
                             {getGameActionIcon(node)}
                         </div>
+                    </div>
+                </div>
+            )
+        }
+        if (node.data.category === 'Vehicles / Weapons') {
+            return (
+                <div className=' flex flex-row mr-[5px]'>
+                    {getActionTypeIcon.getIcon('vehicles')}
+                    <div className='w-[26px] self-center mr-[3px] '>
+                        <WeaponsIcon />
+                    </div>
+
+                    {/* <div className='w-[20px] self-center mx-[3px]'>
+                        <ArrowRightIcon />
+                    </div> */}
+                    <div className='flex self-center content-center align-middle'>
+                        {getGameActionIcon(node)}
                     </div>
                 </div>
             )

@@ -132,6 +132,11 @@ html{
   background: transparent;
   transition: box-shadow 0.3s;
 }
+.outline-primary {
+  outline: 1.5px solid #00ffdab3 !important;
+  outline-offset: -0.15rem !important;
+  border-radius: 6px;
+}
  .popover-select {
   background: rgba(255, 255, 255, 0) !important;
   color: #00000000 !important;
@@ -1018,34 +1023,7 @@ background: linear-gradient(90deg, #d77300be 20%, #d37f00cf 100%);
     }
 
 
-/* .button-chip:hover {
 
-  border-width: 2px;
-
-}
-.button-chip:checked {
-
-  border-width: 4px;
-
-}
-.button-chip:active {
-
-  border-width: 4px;
-
-} */
-/* .selectModLayerField label {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  height: 24px;
-  border-radius: 10px;
-  background: linear-gradient(90deg, #d77300be 20%, #d37f00cf 100%);
-  padding: 0px 5px 0px 5px;
-  border-width: 1px;
-  border-color: #ffffff7c;
-  box-shadow: 0px 8px 35px #ffb3279c;
-  align-items: center;
-} */
 .modifier-chip-layer-2 {
   fill: linear-gradient(0deg, rgb(255, 255, 255) 30%, rgb(195, 228, 255) 100%);
 }

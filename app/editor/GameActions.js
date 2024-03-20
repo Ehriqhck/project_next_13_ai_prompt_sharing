@@ -2054,16 +2054,6 @@ export const GameActions = {
             }
           },
           {
-            key: 'turret_limiter_rel_decrease',
-            label: 'Turret - Decrease Speed Limiter (Relative) (Axis)',
-            data: {
-              actionmapName: 'turret_advanced',
-              name: 'Turret - Decrease Speed Limiter (Relative)',
-              category: 'Turret Advanced',
-              inputType: 'Axis'
-            }
-          },
-          {
             key: 'turret_limiter_rel_increase',
             label: 'Turret - Increase Speed Limiter (Relative) (Axis)',
             data: {
@@ -2073,6 +2063,17 @@ export const GameActions = {
               inputType: 'Axis'
             }
           },
+          {
+            key: 'turret_limiter_rel_decrease',
+            label: 'Turret - Decrease Speed Limiter (Relative) (Axis)',
+            data: {
+              actionmapName: 'turret_advanced',
+              name: 'Turret - Decrease Speed Limiter (Relative)',
+              category: 'Turret Advanced',
+              inputType: 'Axis'
+            }
+          },
+    
           {
             key: 'turret_limiter_toggle',
             label:
