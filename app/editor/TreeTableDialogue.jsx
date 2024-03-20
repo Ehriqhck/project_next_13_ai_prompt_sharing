@@ -70,6 +70,9 @@ import ManualGimbalIcon from '@public/assets/icons/actions/gameCategory/ManualGi
 import AutoGimbalIcon from '@public/assets/icons/actions/gameCategory/AutoGimbalIcon.jsx'
 import FixedGimbalIcon from '@public/assets/icons/actions/gameCategory/FixedGimbalIcon.jsx'
 import LockIcon from '@public/assets/icons/actions/gameCategory/LockIcon.jsx'
+import PIPIcon from '@public/assets/icons/actions/gameCategory/PIPIcon.jsx'
+import LeadPIPIcon from '@public/assets/icons/actions/gameCategory/LeadPIPIcon.jsx'
+import LagPIPIcon from '@public/assets/icons/actions/gameCategory/LagPIPIcon.jsx'
 
 
 export default function TreeTableDialogue() {
@@ -1528,6 +1531,68 @@ export default function TreeTableDialogue() {
                         <div className='flex flex-row gap-[3px] outline-primary self-center'>
 
                             <ESPIcon height="22px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // PIP Icon
+            case "v_weapon_pip_combination_type_set_combined_all":
+            case 'v_weapon_pip_combination_type_set_combined_weapon_group':
+            case 'v_weapon_pip_combination_type_set_single':
+            case 'v_weapon_pip_combination_type_toggle':
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px]  self-center'>
+
+                            <PIPIcon width="25px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Lead PIP Icon + Lag PIP Icon
+            case "v_weapon_pip_toggle_lead_lag":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px]  self-center'>
+
+                            <LeadPIPIcon width="25px" className='self-center ' />
+                            <CycleIcon width="25px"></CycleIcon>
+                            <LagPIPIcon width="25px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Lead PIP Icon
+            case "v_weapon_pip_set_lead":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px]  self-center'>
+
+                            <LeadPIPIcon width="25px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Lag PIP Icon
+            case "v_weapon_pip_set_lag":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px]  self-center'>
+
+                            <LagPIPIcon width="25px" className='self-center ' />
 
                         </div>
                     </div>
