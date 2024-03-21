@@ -73,6 +73,24 @@ import LockIcon from '@public/assets/icons/actions/gameCategory/LockIcon.jsx'
 import PIPIcon from '@public/assets/icons/actions/gameCategory/PIPIcon.jsx'
 import LeadPIPIcon from '@public/assets/icons/actions/gameCategory/LeadPIPIcon.jsx'
 import LagPIPIcon from '@public/assets/icons/actions/gameCategory/LagPIPIcon.jsx'
+import HUDIcon from '@public/assets/icons/actions/gameCategory/HUDIcon.jsx'
+import NextIcon from '@public/assets/icons/actions/gameCategory/NextIcon.jsx'
+import PreviousIcon from '@public/assets/icons/actions/gameCategory/PreviousIcon.jsx'
+import ShieldTopIcon from '@public/assets/icons/actions/gameCategory/ShieldTopIcon.jsx'
+import ShieldLeftIcon from '@public/assets/icons/actions/gameCategory/ShieldLeftIcon.jsx'
+import ShieldBottomIcon from '@public/assets/icons/actions/gameCategory/ShieldBottomIcon.jsx'
+import ShieldRightIcon from '@public/assets/icons/actions/gameCategory/ShieldRightIcon.jsx'
+import ShieldIcon from '@public/assets/icons/actions/gameCategory/ShieldIcon.jsx'
+import TopIcon from '@public/assets/icons/actions/gameCategory/TopIcon.jsx'
+import BottomIcon from '@public/assets/icons/actions/gameCategory/BottomIcon.jsx'
+import ShieldAltIcon from '@public/assets/icons/actions/gameCategory/ShieldAltIcon.jsx'
+import NoiseIcon from '@public/assets/icons/actions/gameCategory/NoiseIcon.jsx'
+import DecoyIcon from '@public/assets/icons/actions/gameCategory/DecoyIcon.jsx'
+import PowerTriangleIcon from '@public/assets/icons/actions/gameCategory/PowerTriangleIcon.jsx'
+import ThrusterIcon from '@public/assets/icons/actions/gameCategory/ThrusterIcon.jsx'
+import EngineIcon from '@public/assets/icons/actions/gameCategory/EngineIcon.jsx'
+import SetMinIcon from '@public/assets/icons/actions/gameCategory/SetMinIcon.jsx'
+import SetMaxIcon from '@public/assets/icons/actions/gameCategory/SetMaxIcon.jsx'
 
 
 export default function TreeTableDialogue() {
@@ -289,6 +307,26 @@ export default function TreeTableDialogue() {
 
                     </div>
                 )
+                case "Shields and Countermeasures":
+                    return (
+                        <div className='GameAction-Category-Heading '>
+                            <div className='flex flex-row gap-[5px]  self-center'>
+                                <ShieldAltIcon height='22px' />
+    
+                            </div>
+    
+                        </div>
+                    )
+                    case "Power Triangle Assignment":
+                        return (
+                            <div className='GameAction-Category-Heading '>
+                                <div className='flex flex-row gap-[5px]  self-center'>
+                                    <PowerTriangleIcon height='22px' />
+        
+                                </div>
+        
+                            </div>
+                        )
             default:
                 break;
         }
@@ -425,14 +463,17 @@ export default function TreeTableDialogue() {
             case "v_target_cycle_pinned_reset":
             case "v_target_cycle_subitem_reset":
             case "v_salvage_reset_gimbal":
+            case "v_weapon_reset_max_missiles":
+            case "v_shield_reset_level":
+            case "v_capacitor_assignment_reset":
 
                 return (
-                    <div className=' self-center flex flex-row gap-[3px]'>
+                    <div className=' self-center flex flex-row gap-[px]'>
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
 
-                        <ResetIcon width='26px' />
+                        <ResetIcon width='24px' />
                     </div>
                 )
             // Reset Icon + Generic Settings Icon
@@ -878,16 +919,22 @@ export default function TreeTableDialogue() {
                 )
 
             // Camera Icon  
-            case "v_view_look_behind":
-            case "v_dock_toggle_view":
+            case "v_weapon_launch_missile_cinematic":
+            case "v_weapon_launch_missile_cinematic_hold":
 
                 return (
-                    <div className='w-[25px] self-center'>
-                        <CameraIcon />
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px] '>
+
+                            <CameraIcon width="24px" className='self-center' />
+
+                        </div>
                     </div>
                 )
 
-            // Camera Icon  
 
             // Warning Icon
             case "v_emergency_exit":
@@ -1471,24 +1518,39 @@ export default function TreeTableDialogue() {
                 )
             // Empty
             case "v_salvage_toggle_fire_disintegrate":
+            case "v_weapon_launch_missile":
+            case "v_weapon_toggle_launch_missile":
+
                 return (
                     <></>
                 )
             // Increase Icon
             case "tractor_beam_vehicle_increase_distance":
-                return (
-                    <div className='flex flex-row gap-[5px] '>
+            case "v_weapon_increase_max_missiles":
 
-                        <IncreaseIcon width="26px" className='self-center' />
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px]  justify-center'>
+                            <IncreaseIcon width="26px" className='self-center ' />
+                        </div>
 
                     </div>
                 )
             // Decrease Icon
             case "tractor_beam_vehicle_decrease_distance":
-                return (
-                    <div className='flex flex-row gap-[5px] '>
+            case "v_weapon_decrease_max_missiles":
 
-                        <DecreaseIcon width="26px" className='self-center' />
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px]  justify-center'>
+                            <DecreaseIcon width="26px" className='self-center ' />
+                        </div>
 
                     </div>
                 )
@@ -1553,6 +1615,56 @@ export default function TreeTableDialogue() {
                         </div>
                     </div>
                 )
+            // HUD Icon + Increase Icon
+            case 'v_weapon_bombing_hud_range_increase':
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px]  self-center '>
+                            <div className='self-center outline-primary '>
+                                <HUDIcon height="24px" />
+                            </div>
+                            <IncreaseIcon width="24px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // HUD Icon + Decrease Icon
+            case 'v_weapon_bombing_hud_range_decrease':
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px]  self-center '>
+                            <div className='self-center outline-primary '>
+                                <HUDIcon height="24px" />
+                            </div>
+                            <DecreaseIcon width="24px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // HUD Icon + Reset Icon
+            case 'v_weapon_bombing_hud_range_reset':
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px]  self-center '>
+                            <div className='self-center outline-primary '>
+                                <HUDIcon height="24px" />
+                            </div>
+                            <ResetIcon width="24px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+
             // Lead PIP Icon + Lag PIP Icon
             case "v_weapon_pip_toggle_lead_lag":
                 return (
@@ -1597,6 +1709,507 @@ export default function TreeTableDialogue() {
                         </div>
                     </div>
                 )
+
+            // Targeting Icon + Generic Settings Icon
+            case "v_weapon_bombing_toggle_desired_impact_point":
+            case "v_weapon_bombing_toggle_desired_impact_point_hold":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px]  self-center'>
+
+                            <TargetingIcon width="25px" className='self-center ' />
+                            <GenericSettingIcon width="22px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Next Icon
+            case "v_weapon_cycle_missile_fwd":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px]  self-center'>
+
+                            <NextIcon width="25px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Previous Icon
+            case "v_weapon_cycle_missile_back":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px]  self-center'>
+
+                            <PreviousIcon width="25px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Shield Bottom Icon + Increase Icon
+            case "v_shield_raise_level_back":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <ShieldBottomIcon width="25px" className='self-center ' />
+                            <IncreaseIcon width="26px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Shield Front Icon + Increase Icon
+            case "v_shield_raise_level_forward":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <ShieldTopIcon width="25px" className='self-center ' />
+                            <IncreaseIcon width="26px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Shield Right Icon + Increase Icon
+            case "v_shield_raise_level_right":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <ShieldRightIcon width="25px" className='self-center ' />
+                            <IncreaseIcon width="26px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Top Icon + Increase Icon
+            case "v_shield_raise_level_up":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <TopIcon width="23px" className='self-center ' />
+                            <IncreaseIcon width="26px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Top Icon + Increase Icon
+            case "v_shield_raise_level_down":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <BottomIcon width="23px" className='self-center ' />
+                            <IncreaseIcon width="26px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Shield Left Icon + Increase Icon
+            case "v_shield_raise_level_left":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <ShieldLeftIcon width="25px" className='self-center ' />
+                            <IncreaseIcon width="26px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Noise Icon
+            case "v_weapon_countermeasure_noise_launch":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <NoiseIcon width="25px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Decoy Icon
+            case "v_weapon_countermeasure_decoy_launch":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <DecoyIcon width="25px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Decoy Icon + Increase Icon
+            case "v_weapon_countermeasure_decoy_burst_increase":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <DecoyIcon width="25px" className='self-center ' />
+                            <IncreaseIcon width="25px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Decoy Icon + Decrease Icon
+            case "v_weapon_countermeasure_decoy_burst_decrease":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <DecoyIcon width="25px" className='self-center ' />
+                            <DecreaseIcon width="25px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Decoy Icon + Warning Icon
+            case "v_weapon_countermeasure_decoy_launch_panic":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <DecoyIcon width="25px" className='self-center ' />
+                            <WarningIcon width="25px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Engine Icon + Decrease Icon
+            case "v_capacitor_assignment_engine_decrease":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <EngineIcon width="28px" className='self-center ' />
+                            <DecreaseIcon width="25px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Engine Icon + Decrease Icon + Set Min Icon
+            case "v_capacitor_assignment_engine_combined_decrease_min":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <EngineIcon width="28px" className='self-center ' />
+                            <DecreaseIcon width="25px" className='self-center ' />
+
+                            <SetMinIcon width="22px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Engine Icon + Increase Icon
+            case "v_capacitor_assignment_engine_increase":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <EngineIcon width="28px" className='self-center ' />
+                            <IncreaseIcon width="25px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Engine Icon + Increase Icon + Set Max Icon
+            case "v_capacitor_assignment_engine_combined_increase_max":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <EngineIcon width="28px" className='self-center ' />
+                            <IncreaseIcon width="25px" className='self-center ' />
+                            <SetMaxIcon width="22px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Engine Icon + Set Max Icon
+            case "v_capacitor_assignment_engine_max":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <EngineIcon width="28px" className='self-center ' />
+                            <SetMaxIcon width="22px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Engine Icon + Set Min Icon
+            case "v_capacitor_assignment_engine_min":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <EngineIcon width="28px" className='self-center ' />
+                            <SetMinIcon width="22px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Shield Icon + Decrease Icon
+            case "v_capacitor_assignment_shield_decrease":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <ShieldIcon width="24px" className='self-center ' />
+                            <DecreaseIcon width="26px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Shield Icon + Decrease Icon + Set Min Icon
+            case "v_capacitor_assignment_shield_combined_decrease_min":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <ShieldIcon width="24px" className='self-center ' />
+                            <DecreaseIcon width="26px" className='self-center ' />
+                            <SetMinIcon width="22px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Shield Icon + Increase Icon
+            case "v_capacitor_assignment_shield_increase":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <ShieldIcon width="24px" className='self-center ' />
+                            <IncreaseIcon width="26px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Shield Icon + Increase Icon + Set Max Icon
+            case "v_capacitor_assignment_shield_combined_increase_max":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <ShieldIcon width="24px" className='self-center ' />
+                            <IncreaseIcon width="26px" className='self-center ' />
+                            <SetMaxIcon width="22px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Shield Icon + Set Max Icon
+            case "v_capacitor_assignment_shield_max":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <ShieldIcon width="24px" className='self-center ' />
+                            <SetMaxIcon width="22px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Shield Icon + Set Min Icon
+            case "v_capacitor_assignment_shield_min":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <ShieldIcon width="24px" className='self-center ' />
+                            <SetMinIcon width="22px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Weapons Icon + Increase Icon
+            case "v_capacitor_assignment_weapon_increase":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <WeaponsIcon width="24px" className='self-center ' />
+                            <IncreaseIcon width="26px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Weapons Icon + Increase Icon + Set Max Icon
+            case "v_capacitor_assignment_weapon_combined_increase_max":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <WeaponsIcon width="24px" className='self-center ' />
+                            <IncreaseIcon width="26px" className='self-center ' />
+                            <SetMaxIcon width="22px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Weapons Icon + Decrease Icon
+            case "v_capacitor_assignment_weapon_decrease":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <WeaponsIcon width="24px" className='self-center ' />
+                            <DecreaseIcon width="26px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Weapons Icon + Decrease Icon  + Set Min Icon
+            case "v_capacitor_assignment_weapon_combined_decrease_min":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <WeaponsIcon width="24px" className='self-center ' />
+                            <DecreaseIcon width="26px" className='self-center ' />
+                            <SetMinIcon width="22px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Weapons Icon + Set Max Icon
+            case "v_capacitor_assignment_weapon_max":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <WeaponsIcon width="24px" className='self-center ' />
+                            <SetMaxIcon width="22px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Weapons Icon + Set Min Icon
+            case "v_capacitor_assignment_weapon_min":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <WeaponsIcon width="24px" className='self-center ' />
+                            <SetMinIcon width="22px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
             default:
                 return (
 
@@ -1618,7 +2231,40 @@ export default function TreeTableDialogue() {
         if (Object.hasOwn(node, 'children')) {
             return;
         }
+        if (node.data.category === 'Vehicles / Power Triangle Assignment') {
+            return (
+                <div className=' flex flex-row mr-[5px]'>
+                    {getActionTypeIcon.getIcon('vehicles')}
+                    <div className='w-[27px] self-center mr-[3px] '>
+                        <PowerTriangleIcon />
+                    </div>
 
+                    {/* <div className='w-[20px] self-center mx-[3px]'>
+                        <ArrowRightIcon />
+                    </div> */}
+                    <div className='flex self-center content-center align-middle'>
+                        {getGameActionIcon(node)}
+                    </div>
+                </div>
+            )
+        }
+        if (node.data.category === 'Vehicles / Shields and Countermeasures') {
+            return (
+                <div className=' flex flex-row mr-[5px]'>
+                    {getActionTypeIcon.getIcon('vehicles')}
+                    <div className='w-[26px] self-center mr-[3px] '>
+                        <ShieldAltIcon />
+                    </div>
+
+                    {/* <div className='w-[20px] self-center mx-[3px]'>
+                        <ArrowRightIcon />
+                    </div> */}
+                    <div className='flex self-center content-center align-middle'>
+                        {getGameActionIcon(node)}
+                    </div>
+                </div>
+            )
+        }
         if (node.data.actionmapName === "spaceship_targeting_advanced") {
             switch (node.key) {
                 // TargetingFriendly Icon
@@ -1796,6 +2442,22 @@ export default function TreeTableDialogue() {
             )
         }
 
+        if (node.data.category === "Vehicles / Missiles") {
+            return (
+                <div className=' flex flex-row mr-[5px]'>
+                    {getActionTypeIcon.getIcon('vehicles')}
+                    <div className='w-[24px] self-center mx-[3px]'>
+                        <MissileIcon />
+                    </div>
+
+                    <div className='flex flex-row gap-[5px]'>
+                        <div className='flex self-center content-center align-middle'>
+                            {getGameActionIcon(node)}
+                        </div>
+                    </div>
+                </div>
+            )
+        }
         if (node.data.actionmapName === 'spaceship_docking') {
             return (
                 <div className=' flex flex-row mr-[5px]'>

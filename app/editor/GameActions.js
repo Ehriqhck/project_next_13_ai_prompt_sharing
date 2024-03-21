@@ -2551,16 +2551,7 @@ export const GameActions = {
               inputType: 'Press'
             }
           },
-          {
-            key: 'v_shield_raise_level_down',
-            label: 'Shield Raise Level Bottom (Press)',
-            data: {
-              actionmapName: 'spaceship_defensive',
-              name: 'Shield Raise Level Bottom',
-              category: 'Vehicles / Shields and Countermeasures',
-              inputType: 'Press'
-            }
-          },
+     
           {
             key: 'v_shield_raise_level_forward',
             label: 'Shield Raise Level Forward (Press)',
@@ -2597,6 +2588,16 @@ export const GameActions = {
             data: {
               actionmapName: 'spaceship_defensive',
               name: 'Shield Raise Level Top',
+              category: 'Vehicles / Shields and Countermeasures',
+              inputType: 'Press'
+            }
+          },
+          {
+            key: 'v_shield_raise_level_down',
+            label: 'Shield Raise Level Bottom (Press)',
+            data: {
+              actionmapName: 'spaceship_defensive',
+              name: 'Shield Raise Level Bottom',
               category: 'Vehicles / Shields and Countermeasures',
               inputType: 'Press'
             }
