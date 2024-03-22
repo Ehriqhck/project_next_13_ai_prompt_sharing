@@ -91,6 +91,9 @@ import ThrusterIcon from '@public/assets/icons/actions/gameCategory/ThrusterIcon
 import EngineIcon from '@public/assets/icons/actions/gameCategory/EngineIcon.jsx'
 import SetMinIcon from '@public/assets/icons/actions/gameCategory/SetMinIcon.jsx'
 import SetMaxIcon from '@public/assets/icons/actions/gameCategory/SetMaxIcon.jsx'
+import PowerOnIcon from '@public/assets/icons/actions/gameCategory/PowerOnIcon.jsx'
+import PowerOffIcon from '@public/assets/icons/actions/gameCategory/PowerOffIcon.jsx'
+import PowerButtonIcon from '@public/assets/icons/actions/gameCategory/PowerButtonIcon.jsx'
 
 
 export default function TreeTableDialogue() {
@@ -307,21 +310,41 @@ export default function TreeTableDialogue() {
 
                     </div>
                 )
-                case "Shields and Countermeasures":
+            case "Shields and Countermeasures":
+                return (
+                    <div className='GameAction-Category-Heading '>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+                            <ShieldAltIcon height='22px' />
+
+                        </div>
+
+                    </div>
+                )
+            case "Power Triangle Assignment":
+                return (
+                    <div className='GameAction-Category-Heading '>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+                            <PowerTriangleIcon height='22px' />
+
+                        </div>
+
+                    </div>
+                )
+                case "Power":
                     return (
                         <div className='GameAction-Category-Heading '>
                             <div className='flex flex-row gap-[5px]  self-center'>
-                                <ShieldAltIcon height='22px' />
+                                <PowerButtonIcon height='26px' />
     
                             </div>
     
                         </div>
                     )
-                    case "Power Triangle Assignment":
+                    case "HUD":
                         return (
                             <div className='GameAction-Category-Heading '>
-                                <div className='flex flex-row gap-[5px]  self-center'>
-                                    <PowerTriangleIcon height='22px' />
+                                <div className='flex flex-row gap-[5px]  outline-primary self-center'>
+                                    <HUDIcon height='26px' />
         
                                 </div>
         
@@ -1520,6 +1543,7 @@ export default function TreeTableDialogue() {
             case "v_salvage_toggle_fire_disintegrate":
             case "v_weapon_launch_missile":
             case "v_weapon_toggle_launch_missile":
+            case "v_power_toggle":
 
                 return (
                     <></>
@@ -1527,6 +1551,7 @@ export default function TreeTableDialogue() {
             // Increase Icon
             case "tractor_beam_vehicle_increase_distance":
             case "v_weapon_increase_max_missiles":
+                case "v_power_throttle_up":
 
                 return (
                     <div className='flex flex-row '>
@@ -1542,6 +1567,7 @@ export default function TreeTableDialogue() {
             // Decrease Icon
             case "tractor_beam_vehicle_decrease_distance":
             case "v_weapon_decrease_max_missiles":
+            case "v_power_throttle_down":
 
                 return (
                     <div className='flex flex-row '>
@@ -1550,6 +1576,20 @@ export default function TreeTableDialogue() {
                         </div>
                         <div className='flex flex-row gap-[3px]  justify-center'>
                             <DecreaseIcon width="26px" className='self-center ' />
+                        </div>
+
+                    </div>
+                )
+            // Set Min Icon
+            case "v_power_throttle_min":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px]  justify-center'>
+                            <SetMinIcon width="22px" className='self-center ' />
                         </div>
 
                     </div>
@@ -1917,6 +1957,21 @@ export default function TreeTableDialogue() {
                         </div>
                     </div>
                 )
+            // Engine Icon 
+            case "v_power_toggle_thrusters":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <EngineIcon width="28px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
             // Engine Icon + Decrease Icon
             case "v_capacitor_assignment_engine_decrease":
 
@@ -2112,6 +2167,36 @@ export default function TreeTableDialogue() {
                         </div>
                     </div>
                 )
+            // Shield Icon 
+            case "v_power_toggle_shields":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <ShieldIcon width="24px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Weapons Icon 
+            case "v_power_toggle_weapons":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <WeaponsIcon width="28px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
             // Weapons Icon + Increase Icon
             case "v_capacitor_assignment_weapon_increase":
 
@@ -2210,6 +2295,131 @@ export default function TreeTableDialogue() {
                         </div>
                     </div>
                 )
+            // Power On Icon  
+            case "v_power_set_on":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <PowerOnIcon width="28px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            case "v_power_set_off":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <PowerOffIcon width="28px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Power On Icon  + Shield Icon
+            case "v_power_set_shields_on":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+                            <ShieldIcon width="28px" className='self-center ' />
+
+                            <PowerOnIcon width="28px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Power Off Icon  + Shield Icon
+            case "v_power_set_shields_off":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+                            <ShieldIcon width="28px" className='self-center ' />
+
+                            <PowerOffIcon width="28px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Power Off Icon  + Thruster Icon
+            case "v_power_set_thrusters_off":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+                            <EngineIcon width="28px" className='self-center ' />
+
+                            <PowerOffIcon width="28px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Power On Icon  + Thruster Icon
+            case "v_power_set_thrusters_on":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+                            <EngineIcon width="28px" className='self-center ' />
+
+                            <PowerOnIcon width="28px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Power On Icon  + Weapons Icon
+            case "v_power_set_weapons_off":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <WeaponsIcon width="28px" className='self-center ' />
+                            <PowerOffIcon width="28px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Power On Icon  + Weapons Icon
+            case "v_power_set_weapons_on":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <WeaponsIcon width="28px" className='self-center ' />
+                            <PowerOnIcon width="28px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
             default:
                 return (
 
@@ -2230,6 +2440,23 @@ export default function TreeTableDialogue() {
     const getCategoryIcon = (node) => {
         if (Object.hasOwn(node, 'children')) {
             return;
+        }
+        if (node.data.category === 'Flight / Power') {
+            return (
+                <div className=' flex flex-row mr-[5px]'>
+                    {getActionTypeIcon.getIcon('vehicles')}
+                    <div className=' self-center mr-[3px] '>
+                        <PowerButtonIcon width='28px' />
+                    </div>
+
+                    {/* <div className='w-[20px] self-center mx-[3px]'>
+                        <ArrowRightIcon />
+                    </div> */}
+                    <div className='flex self-center content-center align-middle'>
+                        {getGameActionIcon(node)}
+                    </div>
+                </div>
+            )
         }
         if (node.data.category === 'Vehicles / Power Triangle Assignment') {
             return (
