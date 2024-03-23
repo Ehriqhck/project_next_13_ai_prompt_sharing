@@ -2073,7 +2073,7 @@ export const GameActions = {
               inputType: 'Axis'
             }
           },
-    
+
           {
             key: 'turret_limiter_toggle',
             label:
@@ -2551,7 +2551,7 @@ export const GameActions = {
               inputType: 'Press'
             }
           },
-     
+
           {
             key: 'v_shield_raise_level_forward',
             label: 'Shield Raise Level Forward (Press)',
@@ -3097,7 +3097,7 @@ export const GameActions = {
         label: 'Lights',
 
         data: {
-          category: 'Lights'
+          category: 'Vehicles / Lights'
         },
         children: [
           {
@@ -3117,7 +3117,7 @@ export const GameActions = {
         key: 'stopwatch',
         label: 'Stopwatch',
         data: {
-          category: 'Stopwatch'
+          category: 'Vehicles / Stopwatch'
         },
         children: [
           {
@@ -3144,1002 +3144,962 @@ export const GameActions = {
       },
       // player / On Foot - All
 
-      {
-        key: 'player',
-        label: 'On Foot / All',
-        data: { category: 'On Foot / All' },
-        children: [
-          {
-            key: 'ammoRepool',
-            label: 'Repool Ammo (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Repool Ammo',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'attack1',
-            label: 'Firearm - Attack (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Firearm - Attack',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'consume',
-            label: '????? (Press)',
-            data: {
-              actionmapName: 'player',
-              name: '?????',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'customize',
-            label: 'Customize Weapon (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Customize Weapon',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'drop',
-            label: 'Drop Item (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Drop Item',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'fixed_speed_decrement',
-            label: 'Default Movement Speed Decrease (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Default Movement Speed Decrease',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'fixed_speed_increment',
-            label: 'Default Movement Speed Increase (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Default Movement Speed Increase',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'force_respawn',
-            label: 'Force Respawn (EVA / On Foot) (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Force Respawn (EVA / On Foot)',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'gp_crouch',
-            label: 'Crouch (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Crouch',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'jump',
-            label: 'Jump (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Jump',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'gp_movex',
-            label: 'Move Forward (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Move Forward',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'gp_movey',
-            label: 'Move Left / Right (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Move Left / Right',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'gp_rotatepitch',
-            label: 'Look - Pitch (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Look - Pitch',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'gp_rotateyaw',
-            label: 'Look - Yaw (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Look - Yaw',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'holster',
-            label: 'Holster Weapon (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Holster Weapon',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'inspect',
-            label: 'Inspect Item (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Inspect Item',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'leanright',
-            label: 'Lean Left (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Lean Left',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'leanleft',
-            label: 'Lean Right (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Lean Right',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'ledgegrab',
-            label: 'Grab Ledge (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Grab Ledge',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'melee_AttackSyringeStab',
-            label: 'Medical Pen - Inject Other (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Medical Pen - Inject Other',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'melee_AttackHeavyLeft',
-            label: 'Melee - Attack Heavy Left (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Melee - Attack Heavy Left',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'melee_AttackLightLeft',
-            label: 'Melee - Attack Left (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Melee - Attack Light Left',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'melee_AttackHeavyRight',
-            label: 'Melee - Attack Heavy Right (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Melee - Attack Heavy Right',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'melee_AttackLightRight',
-            label: 'Melee - Attack Right (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Melee - Attack Light Right',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'melee_block',
-            label: 'Melee - Block (Hold)',
-            data: {
-              actionmapName: 'player',
-              name: 'Melee - Block',
-              category: 'On Foot / All',
-              inputType: 'Hold'
-            }
-          },
-          {
-            key: 'moveback',
-            label: 'Move Backwards (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Move Backwards',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'moveforward',
-            label: 'Move Forwards (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Move Forwards',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'moveleft',
-            label: 'Move Left (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Move Left',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'moveright',
-            label: 'Move Right (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Move Right',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'nextweapon',
-            label: 'Next Weapon (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Next Weapon',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'prevweapon',
-            label: 'Previous Weapon (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Previous Weapon',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'sprint',
-            label: 'Sprint (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Sprint',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'prone',
-            label: 'Prone (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Prone',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'reload',
-            label: 'Reload (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Reload',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'reloadSecondary',
-            label: 'Reload Secondary (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Reload Secondary',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'selectMeleeWeapon',
-            label: 'Select Melee (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Select Melee',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'weapon_melee',
-            label: 'Melee - Attack (Ranged Weapon & Takedowns) (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Melee - Attack (Ranged Weapon & Takedowns)',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'selectUnarmedCombat',
-            label: 'Select Unarmed Combat (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Select Unarmed Combat',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'selectgadget',
-            label: 'Select Gadget (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Select Gadget',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            key: 'selectpistol',
-            label: 'Select Skeyearm (Press)',
-            data: {
-              actionmapName: 'player',
-              name: 'Select Skeyearm',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            }
-          },
-          {
-            data: {
-              actionmapName: 'player',
-              name: 'Select Primary Weapon',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            },
-            key: 'selectprimary',
-            label: 'Select Primary Weapon'
-          },
-          {
-            data: {
-              actionmapName: 'player',
-              name: 'Select Secondary Weapon',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            },
-            key: 'selectsecondary',
-            label: 'Select Secondary Weapon'
-          },
-          {
-            data: {
-              actionmapName: 'player',
-              name: 'Ship Recall',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            },
-            key: 'ship_recall',
-            label: 'Ship Recall'
-          },
-          {
-            data: {
-              actionmapName: 'player',
-              name: 'Hold Breath (ADS)',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            },
-            key: 'stabilize',
-            label: 'Hold Breath (ADS)'
-          },
-          {
-            data: {
-              actionmapName: 'player',
-              name: 'Hold Breath (ADS)',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            },
-            key: 'stabilize',
-            label: 'Hold Breath (ADS)'
-          },
-          {
-            data: {
-              actionmapName: 'player',
-              name: 'Free View Camera (Hold)',
-              category: 'On Foot / All',
-              inputType: 'Hold'
-            },
-            key: 'free_thirdperson_camera',
-            label: 'Free View Camera (Hold)'
-          },
-          {
-            data: {
-              actionmapName: 'player',
-              name: 'Third Person View (Toggle)',
-              category: 'On Foot / All',
-              inputType: 'Toggle'
-            },
-            key: 'thirdperson',
-            label: 'Third Person View (Toggle)'
-          },
-          {
-            data: {
-              actionmapName: 'player',
-              name: 'Throw - Overhand & Two-Handed',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            },
-            key: 'throw_overhand',
-            label: 'Throw - Overhand & Two-Handed'
-          },
-          {
-            data: {
-              actionmapName: 'player',
-              name: 'Throw - Underarm',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            },
-            key: 'throw_underhand',
-            label: 'Throw - Underarm'
-          },
-          {
-            data: {
-              actionmapName: 'player',
-              name: 'Helmet',
-              category: 'On Foot / All',
-              inputType: 'Toggle'
-            },
-            key: 'toggleAttachHelmet',
-            label: 'Helmet'
-          },
-          {
-            data: {
-              actionmapName: 'player',
-              name: '?toggleHelmetState',
-              category: 'On Foot / All',
-              inputType: 'Toggle'
-            },
-            key: 'toggleHelmetState',
-            label: '?toggleHelmetState'
-          },
-          {
-            data: {
-              actionmapName: 'player',
-              name: 'Flashlight (Toggle)',
-              category: 'On Foot / All',
-              inputType: 'Toggle'
-            },
-            key: 'toggle_flashlight',
-            label: 'Flashlight (Toggle)'
-          },
-          {
-            data: {
-              actionmapName: 'player',
-              name: 'Map / Starmap',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            },
-            key: 'v_starmap',
-            label: 'Map / Starmap'
-          },
-          {
-            data: {
-              actionmapName: 'player',
-              name: 'Wipe Helmet Visor',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            },
-            key: 'visor_wipe',
-            label: 'Wipe Helmet Visor'
-          },
-          {
-            data: {
-              actionmapName: 'player',
-              name: 'Walk',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            },
-            key: 'walk',
-            label: 'Walk'
-          },
-          {
-            data: {
-              actionmapName: 'player',
-              name: 'FPS Underbarrel Attachment Action',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            },
-            key: 'weapon_auxiliary_action',
-            label: 'FPS Underbarrel Attachment Action'
-          },
-          {
-            data: {
-              actionmapName: 'player',
-              name: 'Change Fire Mode',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            },
-            key: 'weapon_change_firemode',
-            label: 'Change Fire Mode'
-          },
-          {
-            data: {
-              actionmapName: 'player',
-              name: 'Weapon Zeroing Decrease',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            },
-            key: 'weapon_zeroing_decrease',
-            label: 'Weapon Zeroing Decrease'
-          },
-          {
-            data: {
-              actionmapName: 'player',
-              name: 'Weapon Zeroing Increase / Auto',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            },
-            key: 'weapon_zeroing_increase',
-            label: 'Weapon Zeroing Increase / Auto'
-          },
-          {
-            data: {
-              actionmapName: 'player',
-              name: 'Aim Down Sight',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            },
-            key: 'zoom',
-            label: 'Aim Down Sight'
-          },
-          {
-            data: {
-              actionmapName: 'player',
-              name: 'Zoom In (ADS)',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            },
-            key: 'zoom_in',
-            label: 'Zoom In (ADS)'
-          },
-          {
-            data: {
-              actionmapName: 'player',
-              name: 'Zoom Out (ADS)',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            },
-            key: 'zoom_out',
-            label: 'Zoom Out (ADS)'
-          },
-          {
-            data: {
-              actionmapName: 'player',
-              name: 'Zoom In / Out (ADS)',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            },
-            key: 'zoom_in_out',
-            label: 'Zoom In / Out (ADS)'
-          }
-        ]
-      },
+      // {
+      //   key: 'player',
+      //   label: 'On Foot / All',
+      //   data: { category: 'On Foot / All' },
+      //   children: [
+      //     {
+      //       key: 'ammoRepool',
+      //       label: 'Repool Ammo (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Repool Ammo',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'attack1',
+      //       label: 'Firearm - Attack (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Firearm - Attack',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'consume',
+      //       label: '????? (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: '?????',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'customize',
+      //       label: 'Customize Weapon (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Customize Weapon',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'drop',
+      //       label: 'Drop Item (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Drop Item',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'fixed_speed_decrement',
+      //       label: 'Default Movement Speed Decrease (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Default Movement Speed Decrease',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'fixed_speed_increment',
+      //       label: 'Default Movement Speed Increase (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Default Movement Speed Increase',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'force_respawn',
+      //       label: 'Force Respawn (EVA / On Foot) (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Force Respawn (EVA / On Foot)',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'gp_crouch',
+      //       label: 'Crouch (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Crouch',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'jump',
+      //       label: 'Jump (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Jump',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'gp_movex',
+      //       label: 'Move Forward (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Move Forward',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'gp_movey',
+      //       label: 'Move Left / Right (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Move Left / Right',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'gp_rotatepitch',
+      //       label: 'Look - Pitch (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Look - Pitch',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'gp_rotateyaw',
+      //       label: 'Look - Yaw (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Look - Yaw',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'holster',
+      //       label: 'Holster Weapon (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Holster Weapon',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'inspect',
+      //       label: 'Inspect Item (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Inspect Item',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'leanright',
+      //       label: 'Lean Left (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Lean Left',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'leanleft',
+      //       label: 'Lean Right (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Lean Right',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'ledgegrab',
+      //       label: 'Grab Ledge (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Grab Ledge',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'melee_AttackSyringeStab',
+      //       label: 'Medical Pen - Inject Other (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Medical Pen - Inject Other',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'melee_AttackHeavyLeft',
+      //       label: 'Melee - Attack Heavy Left (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Melee - Attack Heavy Left',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'melee_AttackLightLeft',
+      //       label: 'Melee - Attack Left (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Melee - Attack Light Left',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'melee_AttackHeavyRight',
+      //       label: 'Melee - Attack Heavy Right (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Melee - Attack Heavy Right',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'melee_AttackLightRight',
+      //       label: 'Melee - Attack Right (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Melee - Attack Light Right',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'melee_block',
+      //       label: 'Melee - Block (Hold)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Melee - Block',
+      //         category: 'On Foot / All',
+      //         inputType: 'Hold'
+      //       }
+      //     },
+      //     {
+      //       key: 'moveback',
+      //       label: 'Move Backwards (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Move Backwards',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'moveforward',
+      //       label: 'Move Forwards (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Move Forwards',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'moveleft',
+      //       label: 'Move Left (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Move Left',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'moveright',
+      //       label: 'Move Right (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Move Right',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'nextweapon',
+      //       label: 'Next Weapon (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Next Weapon',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'prevweapon',
+      //       label: 'Previous Weapon (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Previous Weapon',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'sprint',
+      //       label: 'Sprint (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Sprint',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'prone',
+      //       label: 'Prone (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Prone',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'reload',
+      //       label: 'Reload (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Reload',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'reloadSecondary',
+      //       label: 'Reload Secondary (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Reload Secondary',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'selectMeleeWeapon',
+      //       label: 'Select Melee (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Select Melee',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'weapon_melee',
+      //       label: 'Melee - Attack (Ranged Weapon & Takedowns) (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Melee - Attack (Ranged Weapon & Takedowns)',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'selectUnarmedCombat',
+      //       label: 'Select Unarmed Combat (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Select Unarmed Combat',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'selectgadget',
+      //       label: 'Select Gadget (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Select Gadget',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       key: 'selectpistol',
+      //       label: 'Select Skeyearm (Press)',
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Select Skeyearm',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       }
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Select Primary Weapon',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'selectprimary',
+      //       label: 'Select Primary Weapon'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Select Secondary Weapon',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'selectsecondary',
+      //       label: 'Select Secondary Weapon'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Ship Recall',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'ship_recall',
+      //       label: 'Ship Recall'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Hold Breath (ADS)',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'stabilize',
+      //       label: 'Hold Breath (ADS)'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Hold Breath (ADS)',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'stabilize',
+      //       label: 'Hold Breath (ADS)'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Free View Camera (Hold)',
+      //         category: 'On Foot / All',
+      //         inputType: 'Hold'
+      //       },
+      //       key: 'free_thirdperson_camera',
+      //       label: 'Free View Camera (Hold)'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Third Person View (Toggle)',
+      //         category: 'On Foot / All',
+      //         inputType: 'Toggle'
+      //       },
+      //       key: 'thirdperson',
+      //       label: 'Third Person View (Toggle)'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Throw - Overhand & Two-Handed',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'throw_overhand',
+      //       label: 'Throw - Overhand & Two-Handed'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Throw - Underarm',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'throw_underhand',
+      //       label: 'Throw - Underarm'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Helmet',
+      //         category: 'On Foot / All',
+      //         inputType: 'Toggle'
+      //       },
+      //       key: 'toggleAttachHelmet',
+      //       label: 'Helmet'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: '?toggleHelmetState',
+      //         category: 'On Foot / All',
+      //         inputType: 'Toggle'
+      //       },
+      //       key: 'toggleHelmetState',
+      //       label: '?toggleHelmetState'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Flashlight (Toggle)',
+      //         category: 'On Foot / All',
+      //         inputType: 'Toggle'
+      //       },
+      //       key: 'toggle_flashlight',
+      //       label: 'Flashlight (Toggle)'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Map / Starmap',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'v_starmap',
+      //       label: 'Map / Starmap'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Wipe Helmet Visor',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'visor_wipe',
+      //       label: 'Wipe Helmet Visor'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Walk',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'walk',
+      //       label: 'Walk'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'FPS Underbarrel Attachment Action',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'weapon_auxiliary_action',
+      //       label: 'FPS Underbarrel Attachment Action'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Change Fire Mode',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'weapon_change_firemode',
+      //       label: 'Change Fire Mode'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Weapon Zeroing Decrease',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'weapon_zeroing_decrease',
+      //       label: 'Weapon Zeroing Decrease'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Weapon Zeroing Increase / Auto',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'weapon_zeroing_increase',
+      //       label: 'Weapon Zeroing Increase / Auto'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Aim Down Sight',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'zoom',
+      //       label: 'Aim Down Sight'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Zoom In (ADS)',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'zoom_in',
+      //       label: 'Zoom In (ADS)'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Zoom Out (ADS)',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'zoom_out',
+      //       label: 'Zoom Out (ADS)'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'player',
+      //         name: 'Zoom In / Out (ADS)',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'zoom_in_out',
+      //       label: 'Zoom In / Out (ADS)'
+      //     }
+      //   ]
+      // },
       // SUBCHILD: prone
-      {
-        key: 'playerProne',
-        label: 'On Foot / All / Prone',
-        data: { category: 'On Foot / All / Prone' },
-        children: [
-          {
-            data: {
-              actionmapName: 'prone',
-              name: 'Roll Left (While Prone)',
-              category: 'On Foot / All',
-              inputType: 'Axis'
-            },
-            key: 'prone_rollleft',
-            label: 'Roll Left (While Prone)'
-          },
-          {
-            data: {
-              actionmapName: 'prone',
-              name: 'Roll Right (While Prone)',
-              category: 'On Foot / All',
-              inputType: 'Axis'
-            },
-            key: 'prone_rollright',
-            label: 'Roll Right (While Prone)'
-          }
-        ]
-      },
+      // {
+      //   key: 'playerProne',
+      //   label: 'On Foot / All / Prone',
+      //   data: { category: 'On Foot / All / Prone' },
+      //   children: [
+      //     {
+      //       data: {
+      //         actionmapName: 'prone',
+      //         name: 'Roll Left (While Prone)',
+      //         category: 'On Foot / All',
+      //         inputType: 'Axis'
+      //       },
+      //       key: 'prone_rollleft',
+      //       label: 'Roll Left (While Prone)'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'prone',
+      //         name: 'Roll Right (While Prone)',
+      //         category: 'On Foot / All',
+      //         inputType: 'Axis'
+      //       },
+      //       key: 'prone_rollright',
+      //       label: 'Roll Right (While Prone)'
+      //     }
+      //   ]
+      // },
       // SUBCHILD: tractor_beam
-      {
-        key: 'playerTractorBeam',
-        label: 'On Foot / All / Tractor Beam',
-        data: { category: 'On Foot / All / Tractor Beam' },
-        children: [
-          {
-            data: {
-              actionmapName: 'tractor_beam',
-              name: 'Tractor Beam - Decrease Distance',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            },
-            key: 'tractor_beam_decrease_distance',
-            label: 'Tractor Beam - Decrease Distance'
-          },
-          {
-            data: {
-              actionmapName: 'tractor_beam',
-              name: 'Tractor Beam - Increase Distance',
-              category: 'On Foot / All',
-              inputType: 'Press'
-            },
-            key: 'tractor_beam_increase_distance',
-            label: 'Tractor Beam - Increase Distance'
-          }
-        ]
-      },
+      // {
+      //   key: 'playerTractorBeam',
+      //   label: 'On Foot / All / Tractor Beam',
+      //   data: { category: 'On Foot / All / Tractor Beam' },
+      //   children: [
+      //     {
+      //       data: {
+      //         actionmapName: 'tractor_beam',
+      //         name: 'Tractor Beam - Decrease Distance',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'tractor_beam_decrease_distance',
+      //       label: 'Tractor Beam - Decrease Distance'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'tractor_beam',
+      //         name: 'Tractor Beam - Increase Distance',
+      //         category: 'On Foot / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'tractor_beam_increase_distance',
+      //       label: 'Tractor Beam - Increase Distance'
+      //     }
+      //   ]
+      // },
       // zero_gravity_eva / EVA - ALL
-      {
-        key: 'zero_gravity_eva',
-        data: { category: 'EVA / All' },
-        label: 'EVA / All',
+      // {
+      //   key: 'zero_gravity_eva',
+      //   data: { category: 'EVA / All' },
+      //   label: 'EVA / All',
 
-        children: [
-          {
-            data: {
-              actionmapName: 'zero_gravity_eva',
-              name: 'EVA Boost',
-              category: 'EVA / All',
-              inputType: 'Hold'
-            },
-            key: 'eva_boost',
-            label: 'EVA Boost'
-          },
-          {
-            data: {
-              actionmapName: 'zero_gravity_eva',
-              name: 'EVA Brake',
-              category: 'EVA / All',
-              inputType: 'Hold'
-            },
-            key: 'eva_brake',
-            label: 'EVA Brake'
-          },
-          {
-            data: {
-              actionmapName: 'zero_gravity_eva',
-              name: 'EVA Roll Left / Right',
-              category: 'EVA / All',
-              inputType: 'Axis'
-            },
-            key: 'eva_roll',
-            label: 'EVA Roll Left / Right'
-          },
-          {
-            data: {
-              actionmapName: 'zero_gravity_eva',
-              name: 'EVA Roll Left',
-              category: 'EVA / All',
-              inputType: 'Press'
-            },
-            key: 'eva_roll_left',
-            label: 'EVA Roll Left'
-          },
-          {
-            data: {
-              actionmapName: 'zero_gravity_eva',
-              name: 'EVA Roll Right',
-              category: 'EVA / All',
-              inputType: 'Press'
-            },
-            key: 'eva_roll_right',
-            label: 'EVA Roll Right'
-          },
-          {
-            data: {
-              actionmapName: 'zero_gravity_eva',
-              name: 'EVA Strafe Back',
-              category: 'EVA / All',
-              inputType: 'Press'
-            },
-            key: 'eva_strafe_back',
-            label: 'EVA Strafe Back'
-          },
-          {
-            data: {
-              actionmapName: 'zero_gravity_eva',
-              name: 'EVA Strafe Up / Down',
-              category: 'EVA / All',
-              inputType: 'Axis'
-            },
-            key: 'eva_strafe_vertical',
-            label: 'EVA Strafe Up / Down'
-          },
-          {
-            data: {
-              actionmapName: 'zero_gravity_eva',
-              name: 'EVA Strafe Up',
-              category: 'EVA / All',
-              inputType: 'Press'
-            },
-            key: 'eva_strafe_up',
-            label: 'EVA Strafe Up'
-          },
-          {
-            data: {
-              actionmapName: 'zero_gravity_eva',
-              name: 'EVA Strafe Down',
-              category: 'EVA / All',
-              inputType: 'Press'
-            },
-            key: 'eva_strafe_down',
-            label: 'EVA Strafe Down'
-          },
-          {
-            data: {
-              actionmapName: 'zero_gravity_eva',
-              name: 'EVA Strafe Forward',
-              category: 'EVA / All',
-              inputType: 'Press'
-            },
-            key: 'eva_strafe_forward',
-            label: 'EVA Strafe Forward'
-          },
-          {
-            data: {
-              actionmapName: 'zero_gravity_eva',
-              name: 'EVA Strafe Left / Right',
-              category: 'EVA / All',
-              inputType: 'Axis'
-            },
-            key: 'eva_strafe_lateral',
-            label: 'EVA Strafe Left / Right'
-          },
-          {
-            data: {
-              actionmapName: 'zero_gravity_eva',
-              name: 'EVA Strafe Left',
-              category: 'EVA / All',
-              inputType: 'Press'
-            },
-            key: 'eva_strafe_left',
-            label: 'EVA Strafe Left'
-          },
-          {
-            data: {
-              actionmapName: 'zero_gravity_eva',
-              name: 'EVA Strafe Right',
-              category: 'EVA / All',
-              inputType: 'Press'
-            },
-            key: 'eva_strafe_right',
-            label: 'EVA Strafe Right'
-          },
-          {
-            data: {
-              actionmapName: 'zero_gravity_eva',
-              name: 'Freelook (Hold)',
-              category: 'EVA / All',
-              inputType: 'Hold'
-            },
-            key: 'eva_toggle_headlook_mode',
-            label: 'Freelook (Hold)'
-          },
-          {
-            data: {
-              actionmapName: 'zero_gravity_eva',
-              name: 'EVA View Up / Down',
-              category: 'EVA / All',
-              inputType: 'Axis'
-            },
-            key: 'eva_view_pitch',
-            label: 'EVA View Up / Down'
-          },
-          {
-            data: {
-              actionmapName: 'zero_gravity_eva',
-              name: 'EVA View Down',
-              category: 'EVA / All',
-              inputType: 'Press'
-            },
-            key: 'eva_view_pitch_down',
-            label: 'EVA View Down'
-          },
-          {
-            data: {
-              actionmapName: 'zero_gravity_eva',
-              name: 'EVA View Up',
-              category: 'EVA / All',
-              inputType: 'Press'
-            },
-            key: 'eva_view_pitch_up',
-            label: 'EVA View Up'
-          },
-          {
-            data: {
-              actionmapName: 'zero_gravity_eva',
-              name: 'EVA View Left / Right',
-              category: 'EVA / All',
-              inputType: 'Axis'
-            },
-            key: 'eva_view_yaw',
-            label: 'EVA View Left / Right'
-          },
-          {
-            data: {
-              actionmapName: 'zero_gravity_eva',
-              name: 'EVA View Left',
-              category: 'EVA / All',
-              inputType: 'Press'
-            },
-            key: 'eva_view_yaw_left',
-            label: 'EVA View Left'
-          },
-          {
-            data: {
-              actionmapName: 'zero_gravity_eva',
-              name: 'EVA View Right',
-              category: 'EVA / All',
-              inputType: 'Press'
-            },
-            key: 'eva_view_yaw_right',
-            label: 'EVA View Right'
-          }
-        ]
-      },
+      //   children: [
+      //     {
+      //       data: {
+      //         actionmapName: 'zero_gravity_eva',
+      //         name: 'EVA Boost',
+      //         category: 'EVA / All',
+      //         inputType: 'Hold'
+      //       },
+      //       key: 'eva_boost',
+      //       label: 'EVA Boost'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'zero_gravity_eva',
+      //         name: 'EVA Brake',
+      //         category: 'EVA / All',
+      //         inputType: 'Hold'
+      //       },
+      //       key: 'eva_brake',
+      //       label: 'EVA Brake'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'zero_gravity_eva',
+      //         name: 'EVA Roll Left / Right',
+      //         category: 'EVA / All',
+      //         inputType: 'Axis'
+      //       },
+      //       key: 'eva_roll',
+      //       label: 'EVA Roll Left / Right'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'zero_gravity_eva',
+      //         name: 'EVA Roll Left',
+      //         category: 'EVA / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'eva_roll_left',
+      //       label: 'EVA Roll Left'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'zero_gravity_eva',
+      //         name: 'EVA Roll Right',
+      //         category: 'EVA / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'eva_roll_right',
+      //       label: 'EVA Roll Right'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'zero_gravity_eva',
+      //         name: 'EVA Strafe Back',
+      //         category: 'EVA / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'eva_strafe_back',
+      //       label: 'EVA Strafe Back'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'zero_gravity_eva',
+      //         name: 'EVA Strafe Up / Down',
+      //         category: 'EVA / All',
+      //         inputType: 'Axis'
+      //       },
+      //       key: 'eva_strafe_vertical',
+      //       label: 'EVA Strafe Up / Down'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'zero_gravity_eva',
+      //         name: 'EVA Strafe Up',
+      //         category: 'EVA / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'eva_strafe_up',
+      //       label: 'EVA Strafe Up'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'zero_gravity_eva',
+      //         name: 'EVA Strafe Down',
+      //         category: 'EVA / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'eva_strafe_down',
+      //       label: 'EVA Strafe Down'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'zero_gravity_eva',
+      //         name: 'EVA Strafe Forward',
+      //         category: 'EVA / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'eva_strafe_forward',
+      //       label: 'EVA Strafe Forward'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'zero_gravity_eva',
+      //         name: 'EVA Strafe Left / Right',
+      //         category: 'EVA / All',
+      //         inputType: 'Axis'
+      //       },
+      //       key: 'eva_strafe_lateral',
+      //       label: 'EVA Strafe Left / Right'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'zero_gravity_eva',
+      //         name: 'EVA Strafe Left',
+      //         category: 'EVA / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'eva_strafe_left',
+      //       label: 'EVA Strafe Left'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'zero_gravity_eva',
+      //         name: 'EVA Strafe Right',
+      //         category: 'EVA / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'eva_strafe_right',
+      //       label: 'EVA Strafe Right'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'zero_gravity_eva',
+      //         name: 'Freelook (Hold)',
+      //         category: 'EVA / All',
+      //         inputType: 'Hold'
+      //       },
+      //       key: 'eva_toggle_headlook_mode',
+      //       label: 'Freelook (Hold)'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'zero_gravity_eva',
+      //         name: 'EVA View Up / Down',
+      //         category: 'EVA / All',
+      //         inputType: 'Axis'
+      //       },
+      //       key: 'eva_view_pitch',
+      //       label: 'EVA View Up / Down'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'zero_gravity_eva',
+      //         name: 'EVA View Down',
+      //         category: 'EVA / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'eva_view_pitch_down',
+      //       label: 'EVA View Down'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'zero_gravity_eva',
+      //         name: 'EVA View Up',
+      //         category: 'EVA / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'eva_view_pitch_up',
+      //       label: 'EVA View Up'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'zero_gravity_eva',
+      //         name: 'EVA View Left / Right',
+      //         category: 'EVA / All',
+      //         inputType: 'Axis'
+      //       },
+      //       key: 'eva_view_yaw',
+      //       label: 'EVA View Left / Right'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'zero_gravity_eva',
+      //         name: 'EVA View Left',
+      //         category: 'EVA / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'eva_view_yaw_left',
+      //       label: 'EVA View Left'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'zero_gravity_eva',
+      //         name: 'EVA View Right',
+      //         category: 'EVA / All',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'eva_view_yaw_right',
+      //       label: 'EVA View Right'
+      //     }
+      //   ]
+      // },
       // zero_gravity_traversal / Zero G Traversal
-      {
-        key: 'zero_gravity_traversal',
-        label: 'Zero G Traversal',
-        data: { category: 'Zero G Traversal' },
-        children: [
-          {
-            data: {
-              actionmapName: 'zero_gravity_traversal',
-              name: 'EVA Detach',
-              category: 'Zero G Traversal',
-              inputType: 'Press'
-            },
-            key: 'zgt_detach',
-            label: 'EVA Detach'
-          },
-          {
-            data: {
-              actionmapName: 'zero_gravity_traversal',
-              name: 'EVA Launch',
-              category: 'Zero G Traversal',
-              inputType: 'Press'
-            },
-            key: 'zgt_launch',
-            label: 'EVA Launch'
-          },
-          {
-            data: {
-              actionmapName: 'zero_gravity_traversal',
-              name: 'EVA Roll Left',
-              category: 'Zero G Traversal',
-              inputType: 'Press'
-            },
-            key: 'zgt_roll_left',
-            label: 'EVA Roll Left'
-          },
-          {
-            data: {
-              actionmapName: 'zero_gravity_traversal',
-              name: 'EVA Roll Right',
-              category: 'Zero G Traversal',
-              inputType: 'Press'
-            },
-            key: 'zgt_roll_right',
-            label: 'EVA Roll Right'
-          }
-        ]
-      },
+      // {
+      //   key: 'zero_gravity_traversal',
+      //   label: 'Zero G Traversal',
+      //   data: { category: 'Zero G Traversal' },
+      //   children: [
+      //     {
+      //       data: {
+      //         actionmapName: 'zero_gravity_traversal',
+      //         name: 'EVA Detach',
+      //         category: 'Zero G Traversal',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'zgt_detach',
+      //       label: 'EVA Detach'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'zero_gravity_traversal',
+      //         name: 'EVA Launch',
+      //         category: 'Zero G Traversal',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'zgt_launch',
+      //       label: 'EVA Launch'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'zero_gravity_traversal',
+      //         name: 'EVA Roll Left',
+      //         category: 'Zero G Traversal',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'zgt_roll_left',
+      //       label: 'EVA Roll Left'
+      //     },
+      //     {
+      //       data: {
+      //         actionmapName: 'zero_gravity_traversal',
+      //         name: 'EVA Roll Right',
+      //         category: 'Zero G Traversal',
+      //         inputType: 'Press'
+      //       },
+      //       key: 'zgt_roll_right',
+      //       label: 'EVA Roll Right'
+      //     }
+      //   ]
+      // },
       // vehicle_general / Ground Vehicle - General
       {
         key: 'vehicle_general',
         label: 'Ground Vehicle / General',
         data: { category: 'Ground Vehicle / General' },
         children: [
-          {
-            data: {
-              actionmapName: 'vehicle_general',
-              name: 'Fire Weapon All',
-              category: 'Ground Vehicle / General',
-              inputType: 'Press'
-            },
-            key: 'v_attack_all',
-            label: 'Fire Weapon All'
-          },
-          {
-            data: {
-              actionmapName: 'vehicle_general',
-              name: 'Fire Weapon Group 1',
-              category: 'Ground Vehicle / General',
-              inputType: 'Press'
-            },
-            key: 'v_attack_group1',
-            label: 'Fire Weapon Group 1'
-          },
-          {
-            data: {
-              actionmapName: 'vehicle_general',
-              name: 'Fire Weapon Group 2',
-              category: 'Ground Vehicle / General',
-              inputType: 'Press'
-            },
-            key: 'v_attack_group2',
-            label: 'Fire Weapon Group 2'
-          },
-          {
-            data: {
-              actionmapName: 'vehicle_general',
-              name: 'Flight / Systems Ready',
-              category: 'Ground Vehicle / General',
-              inputType: 'Press'
-            },
-            key: 'v_flightready',
-            label: 'Flight / Systems Ready'
-          },
           {
             data: {
               actionmapName: 'vehicle_general',
@@ -4150,176 +4110,217 @@ export const GameActions = {
             key: 'v_horn',
             label: 'Horn'
           },
-          {
-            data: {
-              actionmapName: 'vehicle_general',
-              name: 'Lock All Doors',
-              category: 'Ground Vehicle / General',
-              inputType: 'Press'
-            },
-            key: 'v_lock_all_doors-vehicles',
-            label: 'Lock All Doors'
-          },
-          {
-            data: {
-              actionmapName: 'vehicle_general',
-              name: 'Lock All Ports',
-              category: 'Ground Vehicle / General',
-              inputType: 'Press'
-            },
-            key: 'v_lock_all_ports',
-            label: 'Lock All Ports'
-          },
-          {
-            data: {
-              actionmapName: 'vehicle_general',
-              name: 'Close All Doors',
-              category: 'Ground Vehicle / General',
-              inputType: 'Press'
-            },
-            key: 'v_close_all_doors',
-            label: 'Close All Doors'
-          },
-          {
-            data: {
-              actionmapName: 'vehicle_general',
-              name: 'Open All Doors',
-              category: 'Ground Vehicle / General',
-              inputType: 'Press'
-            },
-            key: 'v_open_all_doors',
-            label: 'Open All Doors'
-          },
-          {
-            data: {
-              actionmapName: 'vehicle_general',
-              name: 'Open Map / Starmap',
-              category: 'Ground Vehicle / General',
-              inputType: 'Press'
-            },
-            key: 'v_starmap',
-            label: 'Open Map / Starmap'
-          },
-          {
-            data: {
-              actionmapName: 'vehicle_general',
-              name: 'Lock / Unlock Doors (Toggle)',
-              category: 'Ground Vehicle / General',
-              inputType: 'Toggle'
-            },
-            key: 'v_toggle_all_doorlocks',
-            label: 'Lock / Unlock Doors (Toggle)'
-          },
-          {
-            data: {
-              actionmapName: 'vehicle_general',
-              name: 'Open / Close Doors (Toggle)',
-              category: 'Ground Vehicle / General',
-              inputType: 'Toggle'
-            },
-            key: 'v_toggle_all_doors',
-            label: 'Open / Close Doors (Toggle)'
-          },
-          {
-            data: {
-              actionmapName: 'vehicle_general',
-              name: 'Lock / Unlock Ports (Toggle)',
-              category: 'Ground Vehicle / General',
-              inputType: 'Toggle'
-            },
-            key: 'v_toggle_all_portlocks',
-            label: 'Lock / Unlock Ports (Toggle)'
-          },
-          {
-            data: {
-              actionmapName: 'vehicle_general',
-              name: 'Unlock All Doors',
-              category: 'Ground Vehicle / General',
-              inputType: 'Press'
-            },
-            key: 'v_unlock_all_doors',
-            label: 'Unlock All Doors'
-          },
-          {
-            data: {
-              actionmapName: 'vehicle_general',
-              name: 'Unlock All Ports',
-              category: 'Ground Vehicle / General',
-              inputType: 'Press'
-            },
-            key: 'v_unlock_all_ports',
-            label: 'Unlock All Ports'
-          },
-          {
-            data: {
-              actionmapName: 'vehicle_general',
-              name: 'Cycle Camera View',
-              category: 'Ground Vehicle / General',
-              inputType: 'Press'
-            },
-            key: 'v_view_cycle_fwd',
-            label: 'Cycle Camera View'
-          },
-          {
-            data: {
-              actionmapName: 'vehicle_general',
-              name: 'Freelock (Hold)',
-              category: 'Ground Vehicle / General',
-              inputType: 'Hold'
-            },
-            key: 'v_view_freelook_mode',
-            label: 'Freelock (Hold)'
-          },
-          {
-            data: {
-              actionmapName: 'vehicle_general',
-              name: 'Look Up / Down',
-              category: 'Ground Vehicle / General',
-              inputType: 'Axis'
-            },
-            key: 'v_view_pitch',
-            label: 'Look Up / Down'
-          },
-          {
-            data: {
-              actionmapName: 'vehicle_general',
-              name: 'Look Left / Right',
-              category: 'Ground Vehicle / General',
-              inputType: 'Axis'
-            },
-            key: 'v_view_yaw',
-            label: 'Look Left / Right'
-          },
-          {
-            data: {
-              actionmapName: 'vehicle_general',
-              name: 'Zoom In (Third Person View)',
-              category: 'Ground Vehicle / General',
-              inputType: 'Press'
-            },
-            key: 'v_view_zoom_in',
-            label: 'Zoom In (Third Person View)'
-          },
-          {
-            data: {
-              actionmapName: 'vehicle_general',
-              name: 'Zoom Out (Third Person View)',
-              category: 'Ground Vehicle / General',
-              inputType: 'Press'
-            },
-            key: 'v_view_zoom_out',
-            label: 'Zoom Out (Third Person View)'
-          },
-          {
-            data: {
-              actionmapName: 'vehicle_general',
-              name: 'Wipe Helmet Visor',
-              category: 'Ground Vehicle / General',
-              inputType: 'Press'
-            },
-            key: 'visor_wipe',
-            label: 'Wipe Helmet Visor'
-          }
+          // {
+          //   data: {
+          //     actionmapName: 'vehicle_general',
+          //     name: 'Fire Weapon All',
+          //     category: 'Ground Vehicle / General',
+          //     inputType: 'Press'
+          //   },
+          //   key: 'v_attack_all',
+          //   label: 'Fire Weapon All'
+          // },
+          // {
+          //   data: {
+          //     actionmapName: 'vehicle_general',
+          //     name: 'Fire Weapon Group 1',
+          //     category: 'Ground Vehicle / General',
+          //     inputType: 'Press'
+          //   },
+          //   key: 'v_attack_group1',
+          //   label: 'Fire Weapon Group 1'
+          // },
+          // {
+          //   data: {
+          //     actionmapName: 'vehicle_general',
+          //     name: 'Fire Weapon Group 2',
+          //     category: 'Ground Vehicle / General',
+          //     inputType: 'Press'
+          //   },
+          //   key: 'v_attack_group2',
+          //   label: 'Fire Weapon Group 2'
+          // },
+          // {
+          //   data: {
+          //     actionmapName: 'vehicle_general',
+          //     name: 'Flight / Systems Ready',
+          //     category: 'Ground Vehicle / General',
+          //     inputType: 'Press'
+          //   },
+          //   key: 'v_flightready',
+          //   label: 'Flight / Systems Ready'
+          // },
+
+          // {
+          //   data: {
+          //     actionmapName: 'vehicle_general',
+          //     name: 'Lock All Doors',
+          //     category: 'Ground Vehicle / General',
+          //     inputType: 'Press'
+          //   },
+          //   key: 'v_lock_all_doors-vehicles',
+          //   label: 'Lock All Doors'
+          // },
+          // {
+          //   data: {
+          //     actionmapName: 'vehicle_general',
+          //     name: 'Lock All Ports',
+          //     category: 'Ground Vehicle / General',
+          //     inputType: 'Press'
+          //   },
+          //   key: 'v_lock_all_ports',
+          //   label: 'Lock All Ports'
+          // },
+          // {
+          //   data: {
+          //     actionmapName: 'vehicle_general',
+          //     name: 'Close All Doors',
+          //     category: 'Ground Vehicle / General',
+          //     inputType: 'Press'
+          //   },
+          //   key: 'v_close_all_doors',
+          //   label: 'Close All Doors'
+          // },
+          // {
+          //   data: {
+          //     actionmapName: 'vehicle_general',
+          //     name: 'Open All Doors',
+          //     category: 'Ground Vehicle / General',
+          //     inputType: 'Press'
+          //   },
+          //   key: 'v_open_all_doors',
+          //   label: 'Open All Doors'
+          // },
+          // {
+          //   data: {
+          //     actionmapName: 'vehicle_general',
+          //     name: 'Open Map / Starmap',
+          //     category: 'Ground Vehicle / General',
+          //     inputType: 'Press'
+          //   },
+          //   key: 'v_starmap',
+          //   label: 'Open Map / Starmap'
+          // },
+          // {
+          //   data: {
+          //     actionmapName: 'vehicle_general',
+          //     name: 'Lock / Unlock Doors (Toggle)',
+          //     category: 'Ground Vehicle / General',
+          //     inputType: 'Toggle'
+          //   },
+          //   key: 'v_toggle_all_doorlocks',
+          //   label: 'Lock / Unlock Doors (Toggle)'
+          // },
+          // {
+          //   data: {
+          //     actionmapName: 'vehicle_general',
+          //     name: 'Open / Close Doors (Toggle)',
+          //     category: 'Ground Vehicle / General',
+          //     inputType: 'Toggle'
+          //   },
+          //   key: 'v_toggle_all_doors',
+          //   label: 'Open / Close Doors (Toggle)'
+          // },
+          // {
+          //   data: {
+          //     actionmapName: 'vehicle_general',
+          //     name: 'Lock / Unlock Ports (Toggle)',
+          //     category: 'Ground Vehicle / General',
+          //     inputType: 'Toggle'
+          //   },
+          //   key: 'v_toggle_all_portlocks',
+          //   label: 'Lock / Unlock Ports (Toggle)'
+          // },
+          // {
+          //   data: {
+          //     actionmapName: 'vehicle_general',
+          //     name: 'Unlock All Doors',
+          //     category: 'Ground Vehicle / General',
+          //     inputType: 'Press'
+          //   },
+          //   key: 'v_unlock_all_doors',
+          //   label: 'Unlock All Doors'
+          // },
+          // {
+          //   data: {
+          //     actionmapName: 'vehicle_general',
+          //     name: 'Unlock All Ports',
+          //     category: 'Ground Vehicle / General',
+          //     inputType: 'Press'
+          //   },
+          //   key: 'v_unlock_all_ports',
+          //   label: 'Unlock All Ports'
+          // },
+          // {
+          //   data: {
+          //     actionmapName: 'vehicle_general',
+          //     name: 'Cycle Camera View',
+          //     category: 'Ground Vehicle / General',
+          //     inputType: 'Press'
+          //   },
+          //   key: 'v_view_cycle_fwd',
+          //   label: 'Cycle Camera View'
+          // },
+          // {
+          //   data: {
+          //     actionmapName: 'vehicle_general',
+          //     name: 'Freelock (Hold)',
+          //     category: 'Ground Vehicle / General',
+          //     inputType: 'Hold'
+          //   },
+          //   key: 'v_view_freelook_mode',
+          //   label: 'Freelock (Hold)'
+          // },
+          // {
+          //   data: {
+          //     actionmapName: 'vehicle_general',
+          //     name: 'Look Up / Down',
+          //     category: 'Ground Vehicle / General',
+          //     inputType: 'Axis'
+          //   },
+          //   key: 'v_view_pitch',
+          //   label: 'Look Up / Down'
+          // },
+          // {
+          //   data: {
+          //     actionmapName: 'vehicle_general',
+          //     name: 'Look Left / Right',
+          //     category: 'Ground Vehicle / General',
+          //     inputType: 'Axis'
+          //   },
+          //   key: 'v_view_yaw',
+          //   label: 'Look Left / Right'
+          // },
+          // {
+          //   data: {
+          //     actionmapName: 'vehicle_general',
+          //     name: 'Zoom In (Third Person View)',
+          //     category: 'Ground Vehicle / General',
+          //     inputType: 'Press'
+          //   },
+          //   key: 'v_view_zoom_in',
+          //   label: 'Zoom In (Third Person View)'
+          // },
+          // {
+          //   data: {
+          //     actionmapName: 'vehicle_general',
+          //     name: 'Zoom Out (Third Person View)',
+          //     category: 'Ground Vehicle / General',
+          //     inputType: 'Press'
+          //   },
+          //   key: 'v_view_zoom_out',
+          //   label: 'Zoom Out (Third Person View)'
+          // },
+          // {
+          //   data: {
+          //     actionmapName: 'vehicle_general',
+          //     name: 'Wipe Helmet Visor',
+          //     category: 'Ground Vehicle / General',
+          //     inputType: 'Press'
+          //   },
+          //   key: 'visor_wipe',
+          //   label: 'Wipe Helmet Visor'
+          // }
         ]
       },
 
@@ -4708,413 +4709,413 @@ export const GameActions = {
         ]
       },
       //player_emotes / Social - Emotes
-      {
-        key: 'player_emotes',
-        label: 'Social / Emotes',
-        data: { category: 'Social / Emotes' },
-        children: [
-          {
-            key: 'emote_agree',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Agree',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Agree'
-          },
-          {
-            key: 'emote_angry',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Angry',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Angry'
-          },
-          {
-            key: 'emote_atease',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote At Ease',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote At Ease'
-          },
-          {
-            key: 'emote_attention',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Attention',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Attention'
-          },
-          {
-            key: 'emote_blah',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Blah',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Blah'
-          },
-          {
-            key: 'emote_bored',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Bored',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Bored'
-          },
-          {
-            key: 'emote_bow',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Bow',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Bow'
-          },
-          {
-            key: 'emote_burp',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Burp',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Burp'
-          },
-          {
-            key: 'emote_cheer',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Cheer',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Cheer'
-          },
-          {
-            key: 'emote_chicken',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Chicken',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Chicken'
-          },
-          {
-            key: 'emote_clap',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Clap',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Clap'
-          },
-          {
-            key: 'emote_come',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Come',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Come'
-          },
-          {
-            key: 'emote_cry',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Cry',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Cry'
-          },
-          {
-            key: 'emote_cs_forward',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Forward',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Forward'
-          },
-          {
-            key: 'emote_cs_left',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Left',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Left'
-          },
-          {
-            key: 'emote_cs_yes',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Yes',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Yes'
-          },
-          {
-            key: 'emote_cs_no',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote No',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote No'
-          },
-          {
-            key: 'emote_cs_right',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Right',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Right'
-          },
-          {
-            key: 'emote_cs_stop',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Stop',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Stop'
-          },
-          {
-            key: 'emote_dance',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Dance',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Dance'
-          },
-          {
-            key: 'emote_disagree',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Disagree',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Disagree'
-          },
-          {
-            key: 'emote_flex',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Failure',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Failure'
-          },
-          {
-            key: 'emote_failure',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Flex',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Flex'
-          },
-          {
-            key: 'emote_flirt',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Flirt',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Flirt'
-          },
-          {
-            key: 'emote_gasp',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Gasp',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Gasp'
-          },
-          {
-            key: 'emote_gloat',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Gloat',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Gloat'
-          },
-          {
-            key: 'emote_greet',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Greet',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Greet'
-          },
-          {
-            key: 'emote_laugh',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Laugh',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Laugh'
-          },
-          {
-            key: 'emote_launch',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Launch',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Launch'
-          },
-          {
-            key: 'emote_point',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Point',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Point'
-          },
-          {
-            key: 'emote_rude',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Rude',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Rude'
-          },
-          {
-            key: 'emote_salute',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Salute',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Salute'
-          },
-          {
-            key: 'emote_sit',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Sit',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Sit'
-          },
-          {
-            key: 'emote_sleep',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Sleep',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Sleep'
-          },
-          {
-            key: 'emote_smell',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Smell',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Smell'
-          },
-          {
-            key: 'emote_taunt',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Taunt',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Taunt'
-          },
-          {
-            key: 'emote_threaten',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Threaten',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Threaten'
-          },
-          {
-            key: 'emote_wait',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Wait',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Wait'
-          },
-          {
-            key: 'emote_wave',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Wave',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Wave'
-          },
-          {
-            key: 'emote_whistle',
-            data: {
-              actionmapName: 'player_emotes',
-              name: 'Emote Whistle',
-              category: 'Social / Emotes',
-              inputType: 'Press'
-            },
-            label: 'Emote Whistle'
-          }
-        ]
-      },
+      // {
+      //   key: 'player_emotes',
+      //   label: 'Social / Emotes',
+      //   data: { category: 'Social / Emotes' },
+      //   children: [
+      //     {
+      //       key: 'emote_agree',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Agree',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Agree'
+      //     },
+      //     {
+      //       key: 'emote_angry',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Angry',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Angry'
+      //     },
+      //     {
+      //       key: 'emote_atease',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote At Ease',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote At Ease'
+      //     },
+      //     {
+      //       key: 'emote_attention',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Attention',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Attention'
+      //     },
+      //     {
+      //       key: 'emote_blah',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Blah',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Blah'
+      //     },
+      //     {
+      //       key: 'emote_bored',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Bored',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Bored'
+      //     },
+      //     {
+      //       key: 'emote_bow',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Bow',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Bow'
+      //     },
+      //     {
+      //       key: 'emote_burp',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Burp',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Burp'
+      //     },
+      //     {
+      //       key: 'emote_cheer',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Cheer',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Cheer'
+      //     },
+      //     {
+      //       key: 'emote_chicken',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Chicken',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Chicken'
+      //     },
+      //     {
+      //       key: 'emote_clap',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Clap',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Clap'
+      //     },
+      //     {
+      //       key: 'emote_come',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Come',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Come'
+      //     },
+      //     {
+      //       key: 'emote_cry',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Cry',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Cry'
+      //     },
+      //     {
+      //       key: 'emote_cs_forward',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Forward',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Forward'
+      //     },
+      //     {
+      //       key: 'emote_cs_left',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Left',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Left'
+      //     },
+      //     {
+      //       key: 'emote_cs_yes',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Yes',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Yes'
+      //     },
+      //     {
+      //       key: 'emote_cs_no',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote No',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote No'
+      //     },
+      //     {
+      //       key: 'emote_cs_right',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Right',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Right'
+      //     },
+      //     {
+      //       key: 'emote_cs_stop',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Stop',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Stop'
+      //     },
+      //     {
+      //       key: 'emote_dance',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Dance',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Dance'
+      //     },
+      //     {
+      //       key: 'emote_disagree',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Disagree',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Disagree'
+      //     },
+      //     {
+      //       key: 'emote_flex',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Failure',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Failure'
+      //     },
+      //     {
+      //       key: 'emote_failure',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Flex',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Flex'
+      //     },
+      //     {
+      //       key: 'emote_flirt',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Flirt',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Flirt'
+      //     },
+      //     {
+      //       key: 'emote_gasp',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Gasp',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Gasp'
+      //     },
+      //     {
+      //       key: 'emote_gloat',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Gloat',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Gloat'
+      //     },
+      //     {
+      //       key: 'emote_greet',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Greet',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Greet'
+      //     },
+      //     {
+      //       key: 'emote_laugh',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Laugh',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Laugh'
+      //     },
+      //     {
+      //       key: 'emote_launch',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Launch',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Launch'
+      //     },
+      //     {
+      //       key: 'emote_point',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Point',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Point'
+      //     },
+      //     {
+      //       key: 'emote_rude',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Rude',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Rude'
+      //     },
+      //     {
+      //       key: 'emote_salute',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Salute',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Salute'
+      //     },
+      //     {
+      //       key: 'emote_sit',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Sit',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Sit'
+      //     },
+      //     {
+      //       key: 'emote_sleep',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Sleep',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Sleep'
+      //     },
+      //     {
+      //       key: 'emote_smell',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Smell',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Smell'
+      //     },
+      //     {
+      //       key: 'emote_taunt',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Taunt',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Taunt'
+      //     },
+      //     {
+      //       key: 'emote_threaten',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Threaten',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Threaten'
+      //     },
+      //     {
+      //       key: 'emote_wait',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Wait',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Wait'
+      //     },
+      //     {
+      //       key: 'emote_wave',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Wave',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Wave'
+      //     },
+      //     {
+      //       key: 'emote_whistle',
+      //       data: {
+      //         actionmapName: 'player_emotes',
+      //         name: 'Emote Whistle',
+      //         category: 'Social / Emotes',
+      //         inputType: 'Press'
+      //       },
+      //       label: 'Emote Whistle'
+      //     }
+      //   ]
+      // },
       // player_input_optical_tracking / VOIP, FOIP, and Headtracking
       {
         key: 'player_input_optical_tracking',

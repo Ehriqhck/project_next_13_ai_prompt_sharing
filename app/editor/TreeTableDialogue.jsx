@@ -94,6 +94,11 @@ import SetMaxIcon from '@public/assets/icons/actions/gameCategory/SetMaxIcon.jsx
 import PowerOnIcon from '@public/assets/icons/actions/gameCategory/PowerOnIcon.jsx'
 import PowerOffIcon from '@public/assets/icons/actions/gameCategory/PowerOffIcon.jsx'
 import PowerButtonIcon from '@public/assets/icons/actions/gameCategory/PowerButtonIcon.jsx'
+import WipeIcon from '@public/assets/icons/actions/gameCategory/WipeIcon.jsx'
+import FlashlightIcon from '@public/assets/icons/actions/gameCategory/FlashlightIcon.jsx'
+import LadderIcon from '@public/assets/icons/actions/gameCategory/LadderIcon.jsx'
+import ScoreboardIcon from '@public/assets/icons/actions/gameCategory/ScoreboardIcon.jsx'
+import StopwatchIcon from '@public/assets/icons/actions/gameCategory/StopwatchIcon.jsx'
 
 
 export default function TreeTableDialogue() {
@@ -147,6 +152,16 @@ export default function TreeTableDialogue() {
                     <div className='flex flex-row gap-[5px] h-[42px] '>
                         <div className='flex flex-row gap-[5px] mx-[5px]'>
                             <TargetingIcon width='26px' />
+                            {/* <div className='spacer'/> */}
+                        </div>
+                    </div>
+                )
+            // Spaceship Icon + Ground Vehicle
+            case "Ground Vehicle":
+                return (
+                    <div className='flex flex-row gap-[5px] h-[42px] '>
+                        <div className='flex flex-row gap-[5px] mx-[5px]'>
+                            <GroundVehicleIcon width='26px' />
                             {/* <div className='spacer'/> */}
                         </div>
                     </div>
@@ -330,26 +345,56 @@ export default function TreeTableDialogue() {
 
                     </div>
                 )
-                case "Power":
-                    return (
-                        <div className='GameAction-Category-Heading '>
-                            <div className='flex flex-row gap-[5px]  self-center'>
-                                <PowerButtonIcon height='26px' />
-    
-                            </div>
-    
+            case "Power":
+                return (
+                    <div className='GameAction-Category-Heading '>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+                            <PowerButtonIcon height='26px' />
+
                         </div>
-                    )
-                    case "HUD":
-                        return (
-                            <div className='GameAction-Category-Heading '>
-                                <div className='flex flex-row gap-[5px]  outline-primary self-center'>
-                                    <HUDIcon height='26px' />
-        
-                                </div>
-        
-                            </div>
-                        )
+
+                    </div>
+                )
+            case "HUD":
+                return (
+                    <div className='GameAction-Category-Heading '>
+                        <div className='flex flex-row gap-[5px]  outline-primary self-center'>
+                            <HUDIcon height='26px' />
+
+                        </div>
+
+                    </div>
+                )
+            case "Lights":
+                return (
+                    <div className='GameAction-Category-Heading '>
+                        <div className='flex flex-row   self-center'>
+                            <FlashlightIcon height='26px' />
+
+                        </div>
+
+                    </div>
+                )
+            case "Stopwatch":
+                return (
+                    <div className='GameAction-Category-Heading '>
+                        <div className='flex flex-row   self-center'>
+                            <StopwatchIcon height='26px' />
+
+                        </div>
+
+                    </div>
+                )
+            case "Spectator":
+                return (
+                    <div className='GameAction-Category-Heading '>
+                        <div className='flex flex-row   self-center'>
+                            <GroundVehicleIcon height='26px' />
+
+                        </div>
+
+                    </div>
+                )
             default:
                 break;
         }
@@ -489,6 +534,7 @@ export default function TreeTableDialogue() {
             case "v_weapon_reset_max_missiles":
             case "v_shield_reset_level":
             case "v_capacitor_assignment_reset":
+            case "stopwatch_reset":
 
                 return (
                     <div className=' self-center flex flex-row gap-[px]'>
@@ -514,7 +560,7 @@ export default function TreeTableDialogue() {
                         </div>
                     </div>
                 )
-            //   Forward Icon
+            // Forward Icon
             case "v_target_cycle_hostile_fwd":
             case "v_target_cycle_friendly_fwd":
             case "v_target_cycle_attacker_fwd":
@@ -527,6 +573,7 @@ export default function TreeTableDialogue() {
             case "v_strafe_forward_rel":
             case "v_view_pitch_up":
             case "turret_pitch_up":
+                case "v_move_forward":
 
                 return (
                     <div className='flex flex-row '>
@@ -555,6 +602,7 @@ export default function TreeTableDialogue() {
             case "v_strafe_down":
             case "v_view_pitch_down":
             case "turret_pitch_down":
+                case "v_move_back":
 
                 return (
                     <div className='flex flex-row '>
@@ -573,6 +621,8 @@ export default function TreeTableDialogue() {
             case "v_strafe_right":
             case "v_view_yaw_right":
             case "turret_yaw_left":
+                case "v_yaw_right":
+
                 return (
                     <div className='flex flex-row '>
                         <div className='mr-[3px] self-center'>
@@ -589,6 +639,8 @@ export default function TreeTableDialogue() {
             case "v_strafe_left":
             case "v_view_yaw_left":
             case "turret_yaw_right":
+                case "v_yaw_left":
+
                 return (
 
                     <div className='flex flex-row '>
@@ -609,6 +661,7 @@ export default function TreeTableDialogue() {
             case "v_strafe_longitudinal_rel":
             case "v_view_pitch":
             case "turret_pitch":
+                case "v_move":
 
                 // case "v_strafe_longitudinal_invert":
 
@@ -628,6 +681,8 @@ export default function TreeTableDialogue() {
             case "v_strafe_lateral":
             case "v_view_yaw":
             case "turret_yaw":
+                case "v_yaw":
+
                 return (
                     <div className='flex flex-row '>
                         <div className='mr-[3px] self-center'>
@@ -642,9 +697,18 @@ export default function TreeTableDialogue() {
                 )
             // Turbo / Afterburner Icon
             case "v_afterburner":
+            case "v_boost":
+
                 return (
-                    <div className='w-[26px] self-center'>
-                        <TurboIcon />
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px] '>
+
+                            <TurboIcon height="26px" className='self-center' />
+
+                        </div>
                     </div>
                 )
             // Speedometer Icon
@@ -910,10 +974,15 @@ export default function TreeTableDialogue() {
             case "v_toggle_jump_request":
             case "v_engage_jump":
             case "v_toggle_qdrive_engagement":
+            case "v_starmap":
 
                 return (
-                    <div className='w-[25px] self-center'>
-                        <QuantumIcon />
+                    <div className=' self-center flex flex-row gap-[3px]'>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+
+                        <QuantumIcon width='25px' />
                     </div>
                 )
 
@@ -1544,6 +1613,8 @@ export default function TreeTableDialogue() {
             case "v_weapon_launch_missile":
             case "v_weapon_toggle_launch_missile":
             case "v_power_toggle":
+            case "v_power_toggle":
+            case "player":
 
                 return (
                     <></>
@@ -1551,7 +1622,7 @@ export default function TreeTableDialogue() {
             // Increase Icon
             case "tractor_beam_vehicle_increase_distance":
             case "v_weapon_increase_max_missiles":
-                case "v_power_throttle_up":
+            case "v_power_throttle_up":
 
                 return (
                     <div className='flex flex-row '>
@@ -2420,6 +2491,52 @@ export default function TreeTableDialogue() {
                         </div>
                     </div>
                 )
+            // Scoreboard Icon 
+            case "v_hud_open_scoreboard":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <ScoreboardIcon width="26px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Wipe Icon 
+            case "visor_wipe":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+
+                            <WipeIcon height="26px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Ladder Icon + Cycle Icon
+            case "v_cycle_pitch_ladder_mode":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+                            <CycleIcon height="26px" className='self-center ' />
+
+                            <LadderIcon height="26px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
             default:
                 return (
 
@@ -2441,12 +2558,77 @@ export default function TreeTableDialogue() {
         if (Object.hasOwn(node, 'children')) {
             return;
         }
+        if (node.data.category === "Lights") {
+            return (
+                <div className=' flex flex-row mr-[5px]'>
+                    {getActionTypeIcon.getIcon('vehicles')}
+                    <div className=' self-center mx-[0px]'>
+                        <FlashlightIcon width='30px' />
+                    </div>
+
+                    <div className='flex flex-row gap-[5px]'>
+                        <div className='flex self-center content-center align-middle'>
+                            {getGameActionIcon(node)}
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+        if (node.data.category === "Ground Vehicle / General" || node.data.category === "Ground Vehicle / Movement") {
+            return (
+                <div className=' flex flex-row mr-[5px]'>
+                    {getActionTypeIcon.getIcon('vehicles')}
+                    <div className=' self-center mx-[3px]'>
+                        <GroundVehicleIcon width='24px' />
+                    </div>
+
+                    <div className='flex flex-row gap-[5px]'>
+                        <div className='flex self-center content-center align-middle'>
+                            {getGameActionIcon(node)}
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+        if (node.data.category === "Stopwatch") {
+            return (
+                <div className=' flex flex-row mr-[5px]'>
+                    {getActionTypeIcon.getIcon('vehicles')}
+                    <div className=' self-center mx-[0px]'>
+                        <StopwatchIcon width='27px' />
+                    </div>
+
+                    <div className='flex flex-row gap-[5px]'>
+                        <div className='flex self-center content-center align-middle'>
+                            {getGameActionIcon(node)}
+                        </div>
+                    </div>
+                </div>
+            )
+        }
         if (node.data.category === 'Flight / Power') {
             return (
                 <div className=' flex flex-row mr-[5px]'>
                     {getActionTypeIcon.getIcon('vehicles')}
                     <div className=' self-center mr-[3px] '>
                         <PowerButtonIcon width='28px' />
+                    </div>
+
+                    {/* <div className='w-[20px] self-center mx-[3px]'>
+                        <ArrowRightIcon />
+                    </div> */}
+                    <div className='flex self-center content-center align-middle'>
+                        {getGameActionIcon(node)}
+                    </div>
+                </div>
+            )
+        }
+        if (node.data.category === 'Flight / HUD') {
+            return (
+                <div className=' flex flex-row mr-[5px]'>
+                    {getActionTypeIcon.getIcon('vehicles')}
+                    <div className=' self-center mr-[3px] outline-primary '>
+                        <HUDIcon height='24px' />
                     </div>
 
                     {/* <div className='w-[20px] self-center mx-[3px]'>
@@ -2685,6 +2867,7 @@ export default function TreeTableDialogue() {
                 </div>
             )
         }
+
         if (node.data.actionmapName === 'spaceship_docking') {
             return (
                 <div className=' flex flex-row mr-[5px]'>
