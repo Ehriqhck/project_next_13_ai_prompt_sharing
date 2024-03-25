@@ -102,6 +102,8 @@ import StopwatchIcon from '@public/assets/icons/actions/gameCategory/StopwatchIc
 import BrakeIcon from '@public/assets/icons/actions/gameCategory/BrakeIcon.jsx'
 import EyeIcon from '@public/assets/icons/actions/gameCategory/EyeIcon.jsx'
 import RotateIcon from '@public/assets/icons/actions/gameCategory/RotateIcon.jsx'
+import ChatBubbleIcon from '@public/assets/icons/actions/gameCategory/ChatBubbleIcon.jsx'
+import UsersIcon from '@public/assets/icons/actions/gameCategory/UsersIcon.jsx'
 
 
 export default function TreeTableDialogue() {
@@ -843,7 +845,7 @@ export default function TreeTableDialogue() {
             // Zoom In Icon + Zoom Out Icon
             case "v_view_dynamic_zoom_abs":
             case "v_view_dynamic_zoom_rel":
-                case "spectate_zoom":
+            case "spectate_zoom":
 
                 return (
                     <div className='flex flex-row '>
@@ -862,7 +864,7 @@ export default function TreeTableDialogue() {
                 )
             // Zoom In Icon + Zoom Out Icon + Generic Settings Icon
             case "v_view_dynamic_zoom_abs_toggle":
-     
+
                 return (
                     <div className='flex flex-row '>
                         <div className='mr-[3px] self-center'>
@@ -883,7 +885,7 @@ export default function TreeTableDialogue() {
             case "v_view_zoom_in":
             case "v_view_dynamic_zoom_rel_in":
             case "turret_remote_zoom_in":
-                case "spectate_zoom_in":
+            case "spectate_zoom_in":
 
                 return (
                     <div className='flex flex-row '>
@@ -907,7 +909,7 @@ export default function TreeTableDialogue() {
             case "v_view_zoom_out":
             case "v_view_dynamic_zoom_rel_out":
             case "turret_remote_zoom_out":
-                case "spectate_zoom_out":
+            case "spectate_zoom_out":
 
                 return (
                     <div className='flex flex-row '>
@@ -1119,22 +1121,22 @@ export default function TreeTableDialogue() {
                         </div>
                     </div>
                 )
-    // Camera Icon  + Lock Icon
-    case "spectate_toggle_lock_target":
+            // Camera Icon  + Lock Icon
+            case "spectate_toggle_lock_target":
 
-            return (
-                <div className='flex flex-row '>
-                    <div className='mr-[3px] self-center'>
-                        <ArrowRightIcon width="20px" />
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px] '>
+
+                            <CameraIcon width="24px" className='self-center' />
+                            <LockIcon width="24px" className='self-center' />
+
+                        </div>
                     </div>
-                    <div className='flex flex-row gap-[3px] '>
-
-                        <CameraIcon width="24px" className='self-center' />
-                        <LockIcon width="24px" className='self-center' />
-
-                    </div>
-                </div>
-            )
+                )
 
 
             // Warning Icon
@@ -1142,10 +1144,19 @@ export default function TreeTableDialogue() {
             case "v_self_destruct":
             case "v_eject":
             case "v_jettison_volatile_cargo":
+                case "respawn":
+
                 return (
-                    <div className='w-[25px] self-center'>
-                        <WarningIcon />
+                    <div className='flex flex-row '>
+                    <div className='mr-[3px] self-center'>
+                        <ArrowRightIcon width="20px" />
                     </div>
+                    <div className='flex flex-row gap-[3px] '>
+
+                        <WarningIcon width="25px" className='self-center' />
+
+                    </div>
+                </div>
                 )
                 break;
 
@@ -1884,22 +1895,22 @@ export default function TreeTableDialogue() {
                         </div>
                     </div>
                 )
-    // HUD Icon + Generic Settings Icon
-    case 'spectate_toggle_hud':
-        return (
-            <div className='flex flex-row '>
-                <div className='mr-[3px] self-center'>
-                    <ArrowRightIcon width="20px" />
-                </div>
-                <div className='flex flex-row gap-[5px]  self-center '>
-                    <div className='self-center outline-primary '>
-                        <HUDIcon height="24px" />
-                    </div>
-                    <GenericSettingIcon width="22px" className='self-center ' />
+            // HUD Icon + Generic Settings Icon
+            case 'spectate_toggle_hud':
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center '>
+                            <div className='self-center outline-primary '>
+                                <HUDIcon height="24px" />
+                            </div>
+                            <GenericSettingIcon width="22px" className='self-center ' />
 
-                </div>
-            </div>
-        )
+                        </div>
+                    </div>
+                )
             // Lead PIP Icon + Lag PIP Icon
             case "v_weapon_pip_toggle_lead_lag":
                 return (
@@ -1976,8 +1987,8 @@ export default function TreeTableDialogue() {
                         </div>
                     </div>
                 )
-                    // Next Icon + Generic Settings Icon
-                case "spectate_gen_nextmode":
+            // Next Icon + Generic Settings Icon
+            case "spectate_gen_nextmode":
 
                 return (
                     <div className='flex flex-row '>
@@ -1992,55 +2003,55 @@ export default function TreeTableDialogue() {
                         </div>
                     </div>
                 )
-                       // Previous Icon + Generic Settings Icon
-                       case "spectate_gen_prevmode":
+            // Previous Icon + Generic Settings Icon
+            case "spectate_gen_prevmode":
 
-                       return (
-                           <div className='flex flex-row '>
-                               <div className='mr-[3px] self-center'>
-                                   <ArrowRightIcon width="20px" />
-                               </div>
-                               <div className='flex flex-row gap-[3px]  self-center'>
-       
-                                   <PreviousIcon width="25px" className='self-center ' />
-                                   <GenericSettingIcon width="23px" className='self-center ' />
-       
-                               </div>
-                           </div>
-                       )
-                          // Next Icon + Target Icon
-                          case "spectate_next_target":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
-                          return (
-                              <div className='flex flex-row '>
-                                  <div className='mr-[3px] self-center'>
-                                      <ArrowRightIcon width="20px" />
-                                  </div>
-                                  <div className='flex flex-row gap-[3px]  self-center'>
-          
-                                      <NextIcon width="25px" className='self-center ' />
-                                      <TargetingIcon width="26px" className='self-center ' />
-          
-                                  </div>
-                              </div>
-                          )
-                        // Previous Icon + Target Icon
-                        case "spectate_prev_target":
+                            <PreviousIcon width="25px" className='self-center ' />
+                            <GenericSettingIcon width="23px" className='self-center ' />
 
-                        return (
-                            <div className='flex flex-row '>
-                                <div className='mr-[3px] self-center'>
-                                    <ArrowRightIcon width="20px" />
-                                </div>
-                                <div className='flex flex-row gap-[3px]  self-center'>
-        
-                                    <PreviousIcon width="25px" className='self-center ' />
-                                    <TargetingIcon width="26px" className='self-center ' />
-        
-                                </div>
-                            </div>
-                        )
-                        
+                        </div>
+                    </div>
+                )
+            // Next Icon + Target Icon
+            case "spectate_next_target":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px]  self-center'>
+
+                            <NextIcon width="25px" className='self-center ' />
+                            <TargetingIcon width="26px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Previous Icon + Target Icon
+            case "spectate_prev_target":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px]  self-center'>
+
+                            <PreviousIcon width="25px" className='self-center ' />
+                            <TargetingIcon width="26px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+
             // Previous Icon
             case "v_weapon_cycle_missile_back":
                 return (
@@ -2759,40 +2770,85 @@ export default function TreeTableDialogue() {
                         </div>
                     </div>
                 )
-                  // Rotate Icon + UpDown Icon
+            // Rotate Icon + UpDown Icon
             case "spectate_rotatepitch":
-                case "spectate_rotatepitch_mouse":
+            case "spectate_rotatepitch_mouse":
 
-            return (
-                <div className='flex flex-row '>
-                    <div className='mr-[3px] self-center'>
-                        <ArrowRightIcon width="20px" />
-                    </div>
-                    <div className='flex flex-row gap-[5px]  self-center'>
-                        <RotateIcon width="26px" height='26px' className='self-center ' />
-                        <UpDownIcon height="24px" className='self-center ' />
-
-
-                    </div>
-                </div>
-            )
-                    // Rotate Icon + LeftRight Icon
-                    case "spectate_rotateyaw":
-                        case "spectate_rotateyaw_mouse":
-        
-                    return (
-                        <div className='flex flex-row '>
-                            <div className='mr-[3px] self-center'>
-                                <ArrowRightIcon width="20px" />
-                            </div>
-                            <div className='flex flex-row gap-[5px]  self-center'>
-                                <RotateIcon width="26px" height='26px' className='self-center ' />
-                                <LeftRightIcon height="24px" className='self-center ' />
-        
-        
-                            </div>
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
                         </div>
-                    )
+                        <div className='flex flex-row gap-[5px]  self-center'>
+                            <RotateIcon width="26px" height='26px' className='self-center ' />
+                            <UpDownIcon height="24px" className='self-center ' />
+
+
+                        </div>
+                    </div>
+                )
+            // Rotate Icon + LeftRight Icon
+            case "spectate_rotateyaw":
+            case "spectate_rotateyaw_mouse":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+                            <RotateIcon width="26px" height='26px' className='self-center ' />
+                            <LeftRightIcon height="24px" className='self-center ' />
+
+
+                        </div>
+                    </div>
+                )
+            // Chat Bubble Icon
+            case "toggle_chat":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+                            <ChatBubbleIcon width="22px" height='26px' className='self-center ' />
+                            <LeftRightIcon height="24px" className='self-center ' />
+
+
+                        </div>
+                    </div>
+                )
+            // Chat Bubble Icon + Focus Icon
+            case "focus_on_chat_textinput":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+                            <ChatBubbleIcon width="22px" height='26px' className='self-center ' />
+                            <FocusIcon height="24px" className='self-center ' />
+
+
+                        </div>
+                    </div>
+                )
+            // Exit Icon + Seat Icon
+            case "pl_exit":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[px]  self-center'>
+                            <ExitIcon width="24px" className='self-center ' />
+                            <SeatIcon width="26px" className='self-center ' />
+
+
+                        </div>
+                    </div>
+                )
             default:
                 return (
 
@@ -2813,6 +2869,23 @@ export default function TreeTableDialogue() {
     const getCategoryIcon = (node) => {
         if (Object.hasOwn(node, 'children')) {
             return;
+        }
+        if (node.data.category === 'Social / General') {
+            return (
+                <div className=' flex flex-row mr-[5px]'>
+                    {getActionTypeIcon.getIcon('vehicles')}
+                    <div className='w-[26px] self-center mr-[3px] '>
+                        <UsersIcon />
+                    </div>
+
+                    {/* <div className='w-[20px] self-center mx-[3px]'>
+                        <ArrowRightIcon />
+                    </div> */}
+                    <div className='flex self-center content-center align-middle'>
+                        {getGameActionIcon(node)}
+                    </div>
+                </div>
+            )
         }
         if (node.data.category === 'Electronic Access / Spectator') {
             return (
@@ -2947,7 +3020,7 @@ export default function TreeTableDialogue() {
                 </div>
             )
         }
-      
+
         if (node.data.actionmapName === "spaceship_targeting_advanced") {
             switch (node.key) {
                 // TargetingFriendly Icon
