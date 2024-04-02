@@ -5312,26 +5312,26 @@ export const GameActions = {
             },
             label: 'Pit Category - Inventory'
           },
-          {
-            key: 'pc_pit_item_actions',
-            data: {
-              actionmapName: 'player_choice',
-              name: 'Pit Category - Item Actions',
-              category: 'Quick Keys, Interaction, & Inner Thought',
-              inputType: 'Press'
-            },
-            label: 'Pit Category - Item Actions'
-          },
-          {
-            key: 'pc_pit_item_drop',
-            data: {
-              actionmapName: 'player_choice',
-              name: 'Drop Item',
-              category: 'Quick Keys, Interaction, & Inner Thought',
-              inputType: 'Press'
-            },
-            label: 'Drop Item'
-          },
+          // {
+          //   key: 'pc_pit_item_actions',
+          //   data: {
+          //     actionmapName: 'player_choice',
+          //     name: 'Pit Category - Item Actions',
+          //     category: 'Quick Keys, Interaction, & Inner Thought',
+          //     inputType: 'Press'
+          //   },
+          //   label: 'Pit Category - Item Actions'
+          // },
+          // {
+          //   key: 'pc_pit_item_drop',
+          //   data: {
+          //     actionmapName: 'player_choice',
+          //     name: 'Drop Item',
+          //     category: 'Quick Keys, Interaction, & Inner Thought',
+          //     inputType: 'Press'
+          //   },
+          //   label: 'Drop Item'
+          // },
           {
             key: 'pc_pit_miningmode_actions',
             data: {
@@ -5352,16 +5352,16 @@ export const GameActions = {
             },
             label: 'Pit Category - Mobiglass Actions'
           },
-          {
-            key: 'pc_pit_player_actions',
-            data: {
-              actionmapName: 'player_choice',
-              name: 'Pit Category - Player Actions',
-              category: 'Quick Keys, Interaction, & Inner Thought',
-              inputType: 'Press'
-            },
-            label: 'Pit Category - Player Actions'
-          },
+          // {
+          //   key: 'pc_pit_player_actions',
+          //   data: {
+          //     actionmapName: 'player_choice',
+          //     name: 'Pit Category - Player Actions',
+          //     category: 'Quick Keys, Interaction, & Inner Thought',
+          //     inputType: 'Press'
+          //   },
+          //   label: 'Pit Category - Player Actions'
+          // },
           {
             key: 'pc_pit_remote_turrets',
             data: {
@@ -5432,46 +5432,46 @@ export const GameActions = {
             },
             label: 'Flight Mode Select Radial Menu'
           },
-          {
-            key: 'pc_qs_grenades',
-            data: {
-              actionmapName: 'player_choice',
-              name: 'Throwables Select Radial Menu',
-              category: 'Quick Keys, Interaction, & Inner Thought',
-              inputType: 'Press'
-            },
-            label: 'Throwables Select Radial Menu'
-          },
-          {
-            key: 'pc_qs_weapons_pistol',
-            data: {
-              actionmapName: 'player_choice',
-              name: 'Skeyearm Weapons Select Radial Menu',
-              category: 'Quick Keys, Interaction, & Inner Thought',
-              inputType: 'Press'
-            },
-            label: 'Skeyearm Weapons Select Radial Menu'
-          },
-          {
-            key: 'pc_qs_weapons_secondary',
-            data: {
-              actionmapName: 'player_choice',
-              name: 'Secondary Weapons Select Radial Menu',
-              category: 'Quick Keys, Interaction, & Inner Thought',
-              inputType: 'Press'
-            },
-            label: 'Secondary Weapons Select Radial Menu'
-          },
-          {
-            key: 'pc_qs_weapons_primary',
-            data: {
-              actionmapName: 'player_choice',
-              name: 'Primary Weapons Select Radial Menu',
-              category: 'Quick Keys, Interaction, & Inner Thought',
-              inputType: 'Press'
-            },
-            label: 'Primary Weapons Select Radial Menu'
-          },
+          // {
+          //   key: 'pc_qs_grenades',
+          //   data: {
+          //     actionmapName: 'player_choice',
+          //     name: 'Throwables Select Radial Menu',
+          //     category: 'Quick Keys, Interaction, & Inner Thought',
+          //     inputType: 'Press'
+          //   },
+          //   label: 'Throwables Select Radial Menu'
+          // },
+          // {
+          //   key: 'pc_qs_weapons_pistol',
+          //   data: {
+          //     actionmapName: 'player_choice',
+          //     name: 'Skeyearm Weapons Select Radial Menu',
+          //     category: 'Quick Keys, Interaction, & Inner Thought',
+          //     inputType: 'Press'
+          //   },
+          //   label: 'Skeyearm Weapons Select Radial Menu'
+          // },
+          // {
+          //   key: 'pc_qs_weapons_secondary',
+          //   data: {
+          //     actionmapName: 'player_choice',
+          //     name: 'Secondary Weapons Select Radial Menu',
+          //     category: 'Quick Keys, Interaction, & Inner Thought',
+          //     inputType: 'Press'
+          //   },
+          //   label: 'Secondary Weapons Select Radial Menu'
+          // },
+          // {
+          //   key: 'pc_qs_weapons_primary',
+          //   data: {
+          //     actionmapName: 'player_choice',
+          //     name: 'Primary Weapons Select Radial Menu',
+          //     category: 'Quick Keys, Interaction, & Inner Thought',
+          //     inputType: 'Press'
+          //   },
+          //   label: 'Primary Weapons Select Radial Menu'
+          // },
           {
             key: 'pc_screen_focus_down',
             data: {

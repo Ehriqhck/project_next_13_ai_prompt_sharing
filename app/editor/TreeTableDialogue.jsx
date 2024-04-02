@@ -111,7 +111,10 @@ import EyeTrackerIcon from '@public/assets/icons/actions/gameCategory/EyeTracker
 import SpeakingIcon from '@public/assets/icons/actions/gameCategory/SpeakingIcon.jsx'
 import InteractIcon from '@public/assets/icons/actions/gameCategory/InteractIcon.jsx'
 import MonitorIcon from '@public/assets/icons/actions/gameCategory/MonitorIcon.jsx'
-// import MonitorIcon from '@public/assets/icons/actions/gameCategory/MonitorIcon.jsx'
+import InnerThoughtIcon from '@public/assets/icons/actions/gameCategory/InnerThoughtIcon.jsx'
+import ChestIcon from '@public/assets/icons/actions/gameCategory/ChestIcon.jsx'
+import MobiglassIcon from '@public/assets/icons/actions/gameCategory/MobiglassIcon.jsx'
+import RadialMenuIcon from '@public/assets/icons/actions/gameCategory/RadialMenuIcon.jsx'
 
 
 export default function TreeTableDialogue() {
@@ -858,6 +861,8 @@ export default function TreeTableDialogue() {
 
             // Zoom In Icon
             case "turret_instant_zoom":
+                case "pc_zoom_in":
+
                 return (
                     <div className='flex flex-row '>
                         <div className='mr-[3px] self-center'>
@@ -866,6 +871,8 @@ export default function TreeTableDialogue() {
                         <div className='flex flex-row gap-[5px] '>
 
                             <ZoomInIcon width="24px" className='self-center' />
+                            <IncreaseIcon width="24px" className='self-center' />
+
                         </div>
 
                     </div>
@@ -939,6 +946,7 @@ export default function TreeTableDialogue() {
             case "v_view_dynamic_zoom_rel_out":
             case "turret_remote_zoom_out":
             case "spectate_zoom_out":
+                case "pc_zoom_out":
 
                 return (
                     <div className='flex flex-row '>
@@ -975,6 +983,7 @@ export default function TreeTableDialogue() {
             // Zoom In Out Icon
             case "v_view_dynamic_zoom_abs":
             case "v_view_dynamic_zoom_rel":
+                case "pc_zoom_in":
 
                 return (
                     <div className='flex flex-row gap-[5px] '>
@@ -1137,7 +1146,7 @@ export default function TreeTableDialogue() {
             // Camera Icon  
             case "v_weapon_launch_missile_cinematic":
             case "v_weapon_launch_missile_cinematic_hold":
-                case "pc_camera_orbit":
+            case "pc_camera_orbit":
 
                 return (
                     <div className='flex flex-row '>
@@ -3040,6 +3049,268 @@ export default function TreeTableDialogue() {
                         </div>
                     </div>
                 )
+            // Inner Thought Icon 
+            case "pc_personal_thought":
+                case "pc_select":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+                            <InnerThoughtIcon width="24px" className='self-center ' />
+
+                            {/* <AudioWaveIcon width="24px" className='self-center ' /> */}
+                        </div>
+                    </div>
+                )
+            // Inner Thought Icon + Emote Icon
+            case "pc_pit_emotes":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+                            <InnerThoughtIcon width="24px" className='self-center ' />
+                            😀
+                            {/* <AudioWaveIcon width="24px" className='self-center ' /> */}
+                        </div>
+                    </div>
+                )
+            // Inner Thought Icon + Spaceship Icon
+            case "pc_pit_flight_systems":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[4px]  self-center'>
+                            <InnerThoughtIcon width="24px" className='self-center ' />
+                            <SpaceshipIcon width="24px" className='self-center ' />
+
+                            {/* <AudioWaveIcon width="24px" className='self-center ' /> */}
+                        </div>
+                    </div>
+                )
+            // Inner Thought Icon + Spaceship Icon
+            case "pc_pit_flight_systems":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[4px]  self-center'>
+                            <InnerThoughtIcon width="24px" className='self-center ' />
+                            <SpaceshipIcon width="24px" className='self-center ' />
+
+                            {/* <AudioWaveIcon width="24px" className='self-center ' /> */}
+                        </div>
+                    </div>
+                )
+            // Inner Thought Icon + Chest Icon
+            case "pc_pit_inventory":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[4px]  self-center'>
+                            <InnerThoughtIcon width="24px" className='self-center ' />
+                            <ChestIcon width="24px" className='self-center ' />
+
+                            {/* <AudioWaveIcon width="24px" className='self-center ' /> */}
+                        </div>
+                    </div>
+                )
+            // Inner Thought Icon + Mining Icon
+            case "pc_pit_miningmode_actions":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[4px]  self-center'>
+                            <InnerThoughtIcon width="24px" className='self-center ' />
+                            <MiningIcon width="24px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Inner Thought Icon + MobiGlass Icon
+            case "pc_pit_mobiglas_actions":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[4px]  self-center'>
+                            <InnerThoughtIcon width="24px" className='self-center ' />
+                            <MobiglassIcon width="24px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Inner Thought Icon + Power Icon
+            case "pc_pit_ship_systems":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[4px]  self-center'>
+                            <InnerThoughtIcon width="24px" className='self-center ' />
+                            <PowerTriangleIcon width="24px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Inner Thought Icon + Ground Vehicle Icon
+            case "pc_pit_vehicle_actions":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[4px]  self-center'>
+                            <InnerThoughtIcon width="24px" className='self-center ' />
+                            <GroundVehicleIcon width="24px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Inner Thought Icon + Weapons Icon
+            case "pc_pit_weapons_systems":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[4px]  self-center'>
+                            <InnerThoughtIcon width="24px" className='self-center ' />
+                            <WeaponsIcon width="26px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Inner Thought Icon + Weapons Icon + Cycle Icon
+            case "pc_pit_weapon_selection":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[4px]  self-center'>
+                            <InnerThoughtIcon width="24px" className='self-center ' />
+                            <CycleIcon width="24px" className='self-center ' />
+
+                            <WeaponsIcon width="26px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+
+            // Inner Thought Icon + Turret Icon
+            case "pc_pit_remote_turrets":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[4px]  self-center'>
+                            <InnerThoughtIcon width="24px" className='self-center ' />
+                            <TurretIcon width="28px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Radial Menu Icon + One  Icon
+            case "pc_qs_consumables":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[4px]  self-center'>
+                            <RadialMenuIcon width="24px" className='self-center ' />
+                            <OneIcon width="26px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Radial Menu Icon + Spaceship  Icon
+            case "pc_qs_flight_mode":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[4px]  self-center'>
+                            <RadialMenuIcon width="24px" className='self-center ' />
+                            <SpaceshipIcon width="24px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Monitor Icon + Backward  Icon
+            case "pc_screen_focus_down":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[4px]  self-center'>
+                            <MonitorIcon width="24px" className='self-center ' />
+                            <BackwardIcon width="24px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Monitor Icon + ForwardIcon Icon
+            case "pc_screen_focus_up":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[4px]  self-center'>
+                            <MonitorIcon width="24px" className='self-center ' />
+                            <ForwardIcon width="24px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Monitor Icon + Leftward Icon
+            case "pc_screen_focus_left":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[4px]  self-center'>
+                            <MonitorIcon width="24px" className='self-center ' />
+                            <LeftwardIcon width="24px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
+            // Monitor Icon + Rightward Icon
+            case "pc_screen_focus_right":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[4px]  self-center'>
+                            <MonitorIcon width="24px" className='self-center ' />
+                            <RightwardIcon width="24px" className='self-center ' />
+
+                        </div>
+                    </div>
+                )
             default:
                 return (
 
@@ -3060,6 +3331,23 @@ export default function TreeTableDialogue() {
     const getCategoryIcon = (node) => {
         if (Object.hasOwn(node, 'children')) {
             return;
+        }
+        if (node.data.category === 'Camera / Advanced Camera Controls') {
+            return (
+                <div className=' flex flex-row mr-[5px]'>
+                    {getActionTypeIcon.getIcon('vehicles')}
+                    <div className=' self-center mr-[3px] '>
+                        <CameraIcon width='24px' />
+                    </div>
+
+                    {/* <div className='w-[20px] self-center mx-[3px]'>
+                        <ArrowRightIcon />
+                    </div> */}
+                    <div className='flex self-center content-center align-middle'>
+                        {getGameActionIcon(node)}
+                    </div>
+                </div>
+            )
         }
         if (node.data.category === 'Quick Keys, Interaction, & Inner Thought') {
             return (
