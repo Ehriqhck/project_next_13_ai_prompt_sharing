@@ -5172,16 +5172,7 @@ export const GameActions = {
             },
             label: 'FOIP Selfie Camera'
           },
-          {
-            key: 'headtrack_camera_enabled',
-            data: {
-              actionmapName: 'player_input_optical_tracking',
-              name: 'Enable Head Tracking',
-              category: 'VOIP, FOIP, and Headtracking',
-              inputType: 'Toggle'
-            },
-            label: 'Enable Head Tracking'
-          },
+     
           {
             key: 'headtrack_enabled',
             data: {
@@ -5192,6 +5183,16 @@ export const GameActions = {
             },
             label:
               'Enable / Disable Head Tracking for Third Person Camera (Toggle)'
+          },
+          {
+            key: 'headtrack_camera_enabled',
+            data: {
+              actionmapName: 'player_input_optical_tracking',
+              name: 'Enable Head Tracking',
+              category: 'VOIP, FOIP, and Headtracking',
+              inputType: 'Toggle'
+            },
+            label: 'Enable Head Tracking'
           },
           {
             key: 'headtrack_hold',
@@ -5218,8 +5219,8 @@ export const GameActions = {
       // player_choice / Quick Keys, Intraction, & Inner Thought
       {
         key: 'player_choice',
-        label: 'Quick Keys, Intraction, & Inner Thought',
-        data: { category: 'Quick Keys, Intraction, & Inner Thought' },
+        label: 'Quick Keys, Interaction, & Inner Thought',
+        data: { category: 'Quick Keys, Interaction, & Inner Thought' },
         children: [
           {
             key: 'pc_camera_orbit',

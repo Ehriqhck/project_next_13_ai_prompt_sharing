@@ -104,6 +104,14 @@ import EyeIcon from '@public/assets/icons/actions/gameCategory/EyeIcon.jsx'
 import RotateIcon from '@public/assets/icons/actions/gameCategory/RotateIcon.jsx'
 import ChatBubbleIcon from '@public/assets/icons/actions/gameCategory/ChatBubbleIcon.jsx'
 import UsersIcon from '@public/assets/icons/actions/gameCategory/UsersIcon.jsx'
+import FOIPIcon from '@public/assets/icons/actions/gameCategory/FOIPIcon.jsx'
+import VOIPIcon from '@public/assets/icons/actions/gameCategory/VOIPIcon.jsx'
+import AudioWaveIcon from '@public/assets/icons/actions/gameCategory/AudioWaveIcon.jsx'
+import EyeTrackerIcon from '@public/assets/icons/actions/gameCategory/EyeTrackerIcon.jsx'
+import SpeakingIcon from '@public/assets/icons/actions/gameCategory/SpeakingIcon.jsx'
+import InteractIcon from '@public/assets/icons/actions/gameCategory/InteractIcon.jsx'
+import MonitorIcon from '@public/assets/icons/actions/gameCategory/MonitorIcon.jsx'
+// import MonitorIcon from '@public/assets/icons/actions/gameCategory/MonitorIcon.jsx'
 
 
 export default function TreeTableDialogue() {
@@ -173,6 +181,7 @@ export default function TreeTableDialogue() {
                 )
             // Camera Icon
             case "View":
+
                 return (
                     <div className='flex flex-row gap-[5px] h-[42px] '>
                         <div className='flex flex-row gap-[5px] mx-[6px] self-center align-middle'>
@@ -395,6 +404,26 @@ export default function TreeTableDialogue() {
                     <div className='GameAction-Category-Heading '>
                         <div className='flex flex-row   self-center'>
                             <EyeIcon width='26px' />
+
+                        </div>
+
+                    </div>
+                )
+            case "VOIP, FOIP, and Headtracking":
+                return (
+                    <div className='GameAction-Category-Heading '>
+                        <div className='flex flex-row   self-center'>
+                            <EyeTrackerIcon width='26px' />
+
+                        </div>
+
+                    </div>
+                )
+            case "Quick Keys, Interaction, & Inner Thought":
+                return (
+                    <div className='GameAction-Category-Heading '>
+                        <div className='flex flex-row   self-center'>
+                            <InteractIcon width='24px' />
 
                         </div>
 
@@ -1108,6 +1137,7 @@ export default function TreeTableDialogue() {
             // Camera Icon  
             case "v_weapon_launch_missile_cinematic":
             case "v_weapon_launch_missile_cinematic_hold":
+                case "pc_camera_orbit":
 
                 return (
                     <div className='flex flex-row '>
@@ -1144,19 +1174,19 @@ export default function TreeTableDialogue() {
             case "v_self_destruct":
             case "v_eject":
             case "v_jettison_volatile_cargo":
-                case "respawn":
+            case "respawn":
 
                 return (
                     <div className='flex flex-row '>
-                    <div className='mr-[3px] self-center'>
-                        <ArrowRightIcon width="20px" />
-                    </div>
-                    <div className='flex flex-row gap-[3px] '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px] '>
 
-                        <WarningIcon width="25px" className='self-center' />
+                            <WarningIcon width="25px" className='self-center' />
 
+                        </div>
                     </div>
-                </div>
                 )
                 break;
 
@@ -1446,7 +1476,7 @@ export default function TreeTableDialogue() {
             // Focus Icon 
             case "v_salvage_focus_disintegrate":
             case "v_salvage_toggle_fire_focused":
-
+            case "pc_focus":
 
                 return (
 
@@ -1735,6 +1765,7 @@ export default function TreeTableDialogue() {
             case "v_power_toggle":
             case "v_power_toggle":
             case "player":
+            case "pc_interaction_mode":
 
                 return (
                     <></>
@@ -1801,6 +1832,8 @@ export default function TreeTableDialogue() {
                 )
             // Exit Icon
             case "turret_remote_exit":
+            case "pc_personal_back":
+
                 return (
                     <div className='flex flex-row '>
                         <div className='mr-[3px] self-center'>
@@ -2569,6 +2602,7 @@ export default function TreeTableDialogue() {
                 )
             // Power On Icon  
             case "v_power_set_on":
+            case "pc_interaction_select":
 
                 return (
                     <div className='flex flex-row '>
@@ -2849,6 +2883,163 @@ export default function TreeTableDialogue() {
                         </div>
                     </div>
                 )
+            // Cycle Icon + Audio Wave Icon
+            case "foip_cyclechannel":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+                            <CycleIcon width="26px" className='self-center ' />
+
+                            <AudioWaveIcon width="24px" className='self-center ' />
+
+
+                        </div>
+                    </div>
+                )
+            // VOIP Icon + Power On Icon
+            case "foip_pushtotalk":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px]  self-center'>
+                            <VOIPIcon width="26px" className='self-center ' />
+                            <AudioWaveIcon width="26px" className='self-center ' />
+
+                            {/* <AudioWaveIcon width="24px" className='self-center ' /> */}
+
+
+                        </div>
+                    </div>
+                )
+            // VOIP Icon + Speaking Icon
+            case "foip_pushtotalk_proximity":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+                            <VOIPIcon width="26px" className='self-center ' />
+                            <SpeakingIcon width="22px" className='self-center ' />
+
+                            {/* <AudioWaveIcon width="24px" className='self-center ' /> */}
+                        </div>
+                    </div>
+                )
+
+            // FOIP Icon + Speaking Icon
+            case "foip_recalibrate":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[7px]  self-center'>
+                            <FOIPIcon height="26px" className='self-center ' />
+                            <SpeakingIcon width="22px" className='self-center ' />
+
+                            {/* <AudioWaveIcon width="24px" className='self-center ' /> */}
+
+
+                        </div>
+                    </div>
+                )
+            // FOIP Icon + Camera Icon
+            case "foip_viewownplayer":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[7px]  self-center'>
+                            <FOIPIcon height="26px" className='self-center ' />
+                            <CameraIcon width="24px" className='self-center ' />
+
+                            {/* <AudioWaveIcon width="24px" className='self-center ' /> */}
+                        </div>
+                    </div>
+                )
+            // FOIP Icon + Power On Icon
+            case "headtrack_camera_enabled":
+            case "headtrack_hold":
+
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+                            <FOIPIcon height="26px" className='self-center ' />
+
+                            <PowerOnIcon width="24px" className='self-center ' />
+                        </div>
+                    </div>
+                )
+            // FOIP Icon + Camera Icon
+            case "foip_viewownplayer":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[7px]  self-center'>
+                            <FOIPIcon height="26px" className='self-center ' />
+                            <CameraIcon width="24px" className='self-center ' />
+
+                            {/* <AudioWaveIcon width="24px" className='self-center ' /> */}
+                        </div>
+                    </div>
+                )
+            // FOIP Icon + Camera Icon + Generic Settings Icon
+            case "headtrack_enabled":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[7px]  self-center'>
+                            <FOIPIcon height="26px" className='self-center ' />
+                            <CameraIcon width="24px" className='self-center ' />
+                            <GenericSettingIcon width="22px" className='self-center ' />
+
+                            {/* <AudioWaveIcon width="24px" className='self-center ' /> */}
+                        </div>
+                    </div>
+                )
+            // FOIP Icon + Reset Icon
+            case "headtrack_recenter_device":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+                            <FOIPIcon height="26px" className='self-center ' />
+                            <ResetIcon width="24px" className='self-center ' />
+
+                            {/* <AudioWaveIcon width="24px" className='self-center ' /> */}
+                        </div>
+                    </div>
+                )
+            // Interact Icon 
+            case "headtrack_recenter_device":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+                            <InteractIcon width="24px" className='self-center ' />
+
+                            {/* <AudioWaveIcon width="24px" className='self-center ' /> */}
+                        </div>
+                    </div>
+                )
             default:
                 return (
 
@@ -2870,12 +3061,46 @@ export default function TreeTableDialogue() {
         if (Object.hasOwn(node, 'children')) {
             return;
         }
+        if (node.data.category === 'Quick Keys, Interaction, & Inner Thought') {
+            return (
+                <div className=' flex flex-row mr-[5px]'>
+                    {getActionTypeIcon.getIcon('vehicles')}
+                    <div className='w-[25px] self-center mr-[-2px] '>
+                        <InteractIcon />
+                    </div>
+
+                    {/* <div className='w-[20px] self-center mx-[3px]'>
+                        <ArrowRightIcon />
+                    </div> */}
+                    <div className='flex self-center content-center align-middle'>
+                        {getGameActionIcon(node)}
+                    </div>
+                </div>
+            )
+        }
         if (node.data.category === 'Social / General') {
             return (
                 <div className=' flex flex-row mr-[5px]'>
                     {getActionTypeIcon.getIcon('vehicles')}
                     <div className='w-[26px] self-center mr-[3px] '>
                         <UsersIcon />
+                    </div>
+
+                    {/* <div className='w-[20px] self-center mx-[3px]'>
+                        <ArrowRightIcon />
+                    </div> */}
+                    <div className='flex self-center content-center align-middle'>
+                        {getGameActionIcon(node)}
+                    </div>
+                </div>
+            )
+        }
+        if (node.data.category === 'VOIP, FOIP, and Headtracking') {
+            return (
+                <div className=' flex flex-row mr-[5px]'>
+                    {getActionTypeIcon.getIcon('vehicles')}
+                    <div className=' self-center mr-[3px] '>
+                        <EyeTrackerIcon width='26px' />
                     </div>
 
                     {/* <div className='w-[20px] self-center mx-[3px]'>
