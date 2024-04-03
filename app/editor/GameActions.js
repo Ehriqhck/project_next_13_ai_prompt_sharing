@@ -5552,6 +5552,7 @@ export const GameActions = {
         children: [
           {
             key: 'view_fov_in',
+            label: 'Increase FoV',
             data: {
               actionmapName: 'view_director_mode',
               name: 'Increase FoV',
@@ -5561,6 +5562,7 @@ export const GameActions = {
           },
           {
             key: 'view_fov_out',
+            label: 'Decrease FoV',
             data: {
               actionmapName: 'view_director_mode',
               name: 'Decrease FoV',
@@ -5570,6 +5572,7 @@ export const GameActions = {
           },
           {
             key: 'view_fstop_in',
+            label: 'Increase DoF / fstop',
             data: {
               actionmapName: 'view_director_mode',
               name: 'Increase DoF / fstop',
@@ -5579,6 +5582,7 @@ export const GameActions = {
           },
           {
             key: 'view_fstop_out',
+            label: 'Decrease DoF / fstop',
             data: {
               actionmapName: 'view_director_mode',
               name: 'Decrease DoF / fstop',
@@ -5588,6 +5592,7 @@ export const GameActions = {
           },
           {
             key: 'view_restore_defaults',
+            label: 'Reset Current View',
             data: {
               actionmapName: 'view_director_mode',
               name: 'Reset Current View',
