@@ -1029,7 +1029,7 @@ export default function TreeTableDialogue() {
             case "v_toggle_docking_mode":
                 return (
                     <div className='flex flex-row gap-[3px] '>
-                                                <ArrowRightIcon width="20px" />
+                        <ArrowRightIcon width="20px" />
 
                         <div className='self-center'>
                             <CycleIcon width='26px' />
@@ -1089,11 +1089,16 @@ export default function TreeTableDialogue() {
             case "v_atc_loading_area_request":
             case "v_atc_request":
             case "v_target_hail":
+            case "toggle_contact":
 
                 return (
-                    <div className='w-[25px] self-center'>
-                        <WifiIcon />
+                    <div className=' self-center flex flex-row '>
+                    <div className='mr-[2px] self-center'>
+                        <ArrowRightIcon width="20px" />
                     </div>
+
+                    <WifiIcon width='24px' />
+                </div>
                 )
             // Landing Icon
             case "v_deploy_landing_system":
@@ -1394,7 +1399,7 @@ export default function TreeTableDialogue() {
             case "v_toggle_mining_laser_fire":
                 return (
                     <div className='flex flex-row gap-[3px] '>
-                                                <ArrowRightIcon width="20px" />
+                        <ArrowRightIcon width="20px" />
 
                         <SalvageBeamIcon height="26px" className='self-center' />
 
@@ -1422,7 +1427,7 @@ export default function TreeTableDialogue() {
             case "v_toggle_mining_laser_type":
                 return (
                     <div className='flex flex-row gap-[3px] '>
-                                                <ArrowRightIcon width="20px" />
+                        <ArrowRightIcon width="20px" />
 
                         <SalvageBeamIcon height="26px" className='self-center' />
 
@@ -1783,6 +1788,7 @@ export default function TreeTableDialogue() {
             case "v_power_toggle":
             case "v_power_toggle":
             case "player":
+            case "pc_interaction_mode":
             case "pc_interaction_mode":
 
                 return (
@@ -2863,9 +2869,8 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[3px]  self-center'>
+                        <div className='flex flex-row gap-[5px]  self-center'>
                             <ChatBubbleIcon width="22px" height='26px' className='self-center ' />
-                            <LeftRightIcon height="24px" className='self-center ' />
 
 
                         </div>
@@ -2878,7 +2883,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[3px]  self-center'>
+                        <div className='flex flex-row gap-[7px]  self-center'>
                             <ChatBubbleIcon width="22px" height='26px' className='self-center ' />
                             <FocusIcon height="24px" className='self-center ' />
 
@@ -3350,6 +3355,18 @@ export default function TreeTableDialogue() {
                     </div>
 
                 )
+            // Eye Icon
+            case "v_dock_toggle_view":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[3px]  self-center'>
+                            <EyeIcon width="26px" className='self-center ' />
+                        </div>
+                    </div>
+                )
             // Eye Icon + Increase Icon
             case "view_fov_in":
                 return (
@@ -3360,10 +3377,8 @@ export default function TreeTableDialogue() {
                         <div className='flex flex-row gap-[3px]  self-center'>
                             <EyeIcon width="24px" className='self-center ' />
                             <IncreaseIcon width="24px" className='self-center ' />
-
                         </div>
                     </div>
-
                 )
             // Eye Icon + Decrease Icon
             case "view_fov_out":
