@@ -155,8 +155,8 @@ export default function TreeTableDialogue() {
             // Spaceship Icon + Ground Vehicle
             case "Vehicles":
                 return (
-                    <div className='flex flex-row gap-[5px] h-[42px] '>
-                        <div className='flex flex-row gap-[5px] mx-[5px]'>
+                    <div className='flex flex-row gap-[3px] h-[42px] '>
+                        <div className='flex flex-row gap-[3px] mx-[5px]'>
                             <SpaceshipIcon width='25px' />
                             {/* <div className='spacer'/> */}
                             <GroundVehicleIcon width='28px' />
@@ -166,8 +166,8 @@ export default function TreeTableDialogue() {
             // Spaceship Icon + Ground Vehicle
             case "Targeting":
                 return (
-                    <div className='flex flex-row gap-[5px] h-[42px] '>
-                        <div className='flex flex-row gap-[5px] mx-[5px]'>
+                    <div className='flex flex-row gap-[3px] h-[42px] '>
+                        <div className='flex flex-row gap-[3px] mx-[5px]'>
                             <TargetingIcon width='26px' />
                             {/* <div className='spacer'/> */}
                         </div>
@@ -176,8 +176,8 @@ export default function TreeTableDialogue() {
             // Spaceship Icon + Ground Vehicle
             case "Ground Vehicle":
                 return (
-                    <div className='flex flex-row gap-[5px] h-[42px] '>
-                        <div className='flex flex-row gap-[5px] mx-[5px]'>
+                    <div className='flex flex-row gap-[3px] h-[42px] '>
+                        <div className='flex flex-row gap-[3px] mx-[5px]'>
                             <GroundVehicleIcon width='26px' />
                             {/* <div className='spacer'/> */}
                         </div>
@@ -187,8 +187,8 @@ export default function TreeTableDialogue() {
             case "View":
 
                 return (
-                    <div className='flex flex-row gap-[5px] h-[42px] '>
-                        <div className='flex flex-row gap-[5px] mx-[6px] self-center align-middle'>
+                    <div className='flex flex-row gap-[3px] h-[42px] '>
+                        <div className='flex flex-row gap-[3px] mx-[6px] self-center align-middle'>
                             <CameraIcon width='26px' />
                             {/* <div className='spacer'/> */}
                         </div>
@@ -197,8 +197,8 @@ export default function TreeTableDialogue() {
             // Spaceship Icon
             case "Flight":
                 return (
-                    <div className='flex flex-row gap-[5px] h-[42px] '>
-                        <div className='flex flex-row gap-[5px] mx-[5px]'>
+                    <div className='flex flex-row gap-[3px] h-[42px] '>
+                        <div className='flex flex-row gap-[3px] mx-[5px]'>
                             <SpaceshipIcon width='25px' />
                             {/* <div className='spacer'/> */}
                             {/* <GroundVehicleIcon width='28px' /> */}
@@ -218,7 +218,7 @@ export default function TreeTableDialogue() {
                 return (
                     <div className='GameAction-Category-Heading '>
                         {/* <div className='spacer'/> */}
-                        <div className='flex flex-row gap-[5px] '>
+                        <div className='flex flex-row gap-[3px] '>
                             <SpaceshipIcon width='25px' />
                             <SeatIcon width='25px' />
 
@@ -239,7 +239,7 @@ export default function TreeTableDialogue() {
             case "Quantum Travel":
                 return (
                     <div className='GameAction-Category-Heading '>
-                        <div className='flex flex-row gap-[5px] '>
+                        <div className='flex flex-row gap-[3px] '>
                             <QuantumIcon width='25px' />
 
                         </div>
@@ -248,11 +248,11 @@ export default function TreeTableDialogue() {
             case "Target Cycling":
                 return (
                     <div className='GameAction-Category-Heading '>
-                        <div className='flex flex-row gap-[5px] '>
+                        <div className='flex flex-row gap-[3px] '>
                             <TargetingIcon width='25px' />
 
                         </div>
-                        <div className='flex flex-row gap-[5px] '>
+                        <div className='flex flex-row gap-[3px] '>
                             <CycleIcon width='25px' />
 
                         </div>
@@ -262,7 +262,7 @@ export default function TreeTableDialogue() {
             case "Docking":
                 return (
                     <div className='GameAction-Category-Heading '>
-                        <div className='flex flex-row gap-[5px] '>
+                        <div className='flex flex-row gap-[3px] '>
                             <DockingIcon width='25px' />
 
                         </div>
@@ -271,11 +271,11 @@ export default function TreeTableDialogue() {
             case "Target Hailing":
                 return (
                     <div className='GameAction-Category-Heading '>
-                        <div className='flex flex-row gap-[5px] '>
+                        <div className='flex flex-row gap-[3px] '>
                             <TargetingIcon width='25px' />
 
                         </div>
-                        <div className='flex flex-row gap-[5px] '>
+                        <div className='flex flex-row gap-[3px] '>
                             <WifiIcon width='25px' />
 
                         </div>
@@ -284,7 +284,7 @@ export default function TreeTableDialogue() {
             case "Radar":
                 return (
                     <div className='GameAction-Category-Heading '>
-                        <div className='flex flex-row gap-[5px] '>
+                        <div className='flex flex-row gap-[3px] '>
                             <ScanningIcon width='25px' />
 
                         </div>
@@ -294,7 +294,7 @@ export default function TreeTableDialogue() {
             case "Mining":
                 return (
                     <div className='GameAction-Category-Heading '>
-                        <div className='flex flex-row gap-[5px] '>
+                        <div className='flex flex-row gap-[3px] '>
                             <MiningIcon width='25px' />
 
                         </div>
@@ -304,7 +304,7 @@ export default function TreeTableDialogue() {
             case "Salvage":
                 return (
                     <div className='GameAction-Category-Heading '>
-                        <div className='flex flex-row gap-[5px] '>
+                        <div className='flex flex-row gap-[3px] '>
                             <SalvageIcon width='25px' />
 
                         </div>
@@ -316,7 +316,7 @@ export default function TreeTableDialogue() {
 
                 return (
                     <div className='GameAction-Category-Heading '>
-                        <div className='flex flex-row gap-[5px] '>
+                        <div className='flex flex-row gap-[3px] '>
                             <TurretIcon width='25px' />
 
                         </div>
@@ -326,7 +326,7 @@ export default function TreeTableDialogue() {
             case "Weapons":
                 return (
                     <div className='GameAction-Category-Heading '>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
                             <WeaponsIcon width='29px' height='25px' />
 
                         </div>
@@ -336,7 +336,7 @@ export default function TreeTableDialogue() {
             case "Missiles":
                 return (
                     <div className='GameAction-Category-Heading '>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
                             <MissileIcon width='23px' />
 
                         </div>
@@ -346,7 +346,7 @@ export default function TreeTableDialogue() {
             case "Shields and Countermeasures":
                 return (
                     <div className='GameAction-Category-Heading '>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
                             <ShieldAltIcon height='22px' />
 
                         </div>
@@ -356,7 +356,7 @@ export default function TreeTableDialogue() {
             case "Power Triangle Assignment":
                 return (
                     <div className='GameAction-Category-Heading '>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
                             <PowerTriangleIcon height='22px' />
 
                         </div>
@@ -366,7 +366,7 @@ export default function TreeTableDialogue() {
             case "Power":
                 return (
                     <div className='GameAction-Category-Heading '>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
                             <PowerButtonIcon height='26px' />
 
                         </div>
@@ -376,7 +376,7 @@ export default function TreeTableDialogue() {
             case "HUD":
                 return (
                     <div className='GameAction-Category-Heading '>
-                        <div className='flex flex-row gap-[5px]  outline-primary self-center'>
+                        <div className='flex flex-row gap-[3px]  outline-primary self-center'>
                             <HUDIcon height='26px' />
 
                         </div>
@@ -539,7 +539,7 @@ export default function TreeTableDialogue() {
         }
         return (
             <button type="button" className="justify-center  p-tree-toggler flex flex-col  gap-[0px] pl-[2px]  " tabIndex={-1} onClick={options.onClick}>
-                <div className='flex flex-row content-start justify-center self-start gap-[5px] '>
+                <div className='flex flex-row content-start justify-center self-start gap-[3px] '>
                     <div className='self-center justify-center '>
                         {getCategoryHeader(node)}
                     </div>
@@ -590,7 +590,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px] '>
+                        <div className='flex flex-row gap-[3px] '>
 
                             <ResetIcon width="24px" className='self-center' />
                             <GenericSettingIcon width="22px" className='self-center' />
@@ -759,7 +759,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px] '>
+                        <div className='flex flex-row gap-[3px] '>
 
                             <SpeedometerIcon width="24px" className='self-center' />
 
@@ -774,7 +774,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px] '>
+                        <div className='flex flex-row gap-[3px] '>
 
                             <SpeedometerIcon width="26px" className='self-center' />
                             <ForwardIcon width="24px" className='self-center' />
@@ -790,7 +790,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px] '>
+                        <div className='flex flex-row gap-[3px] '>
 
                             <SpeedometerIcon width="26px" className='self-center' />
                             <BackwardIcon width="24px" className='self-center' />
@@ -806,7 +806,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px] '>
+                        <div className='flex flex-row gap-[3px] '>
 
                             <SpeedometerIcon width="26px" className='self-center' />
                             <UpDownIcon width="24px" className='self-center' />
@@ -821,7 +821,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px] '>
+                        <div className='flex flex-row gap-[3px] '>
 
                             <SpeedometerIcon width="24px" className='self-center' />
                             <IncreaseIcon width="24px" className='self-center' />
@@ -836,7 +836,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px] '>
+                        <div className='flex flex-row gap-[3px] '>
 
                             <SpeedometerIcon width="24px" className='self-center' />
                             <DecreaseIcon width="24px" className='self-center' />
@@ -851,7 +851,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px] '>
+                        <div className='flex flex-row gap-[3px] '>
 
                             <SpeedometerIcon width="24px" className='self-center' />
                             <GenericSettingIcon width="22px" className='self-center' />
@@ -869,7 +869,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px] '>
+                        <div className='flex flex-row gap-[3px] '>
 
                             <ZoomInIcon width="24px" className='self-center' />
                             <IncreaseIcon width="24px" className='self-center' />
@@ -889,7 +889,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px] '>
+                        <div className='flex flex-row gap-[3px] '>
 
                             <ZoomInIcon width="24px" className='self-center' />
                             <ZoomOutIcon width="24px" className='self-center' />
@@ -907,7 +907,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px] '>
+                        <div className='flex flex-row gap-[3px] '>
 
                             <ZoomInIcon width="24px" className='self-center' />
                             <ZoomOutIcon width="24px" className='self-center' />
@@ -929,7 +929,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px] '>
+                        <div className='flex flex-row gap-[3px] '>
 
                             <ZoomInIcon width="24px" className='self-center' />
                             <IncreaseIcon width="24px" className='self-center' />
@@ -954,7 +954,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px] '>
+                        <div className='flex flex-row gap-[3px] '>
 
                             <ZoomOutIcon width="24px" className='self-center' />
                             <DecreaseIcon width="24px" className='self-center' />
@@ -972,7 +972,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px] '>
+                        <div className='flex flex-row gap-[3px] '>
 
                             <ZoomIcon width="24px" className='self-center' />
                             <GenericSettingIcon width="22px" className='self-center' />
@@ -987,7 +987,7 @@ export default function TreeTableDialogue() {
             case "pc_zoom_in":
 
                 return (
-                    <div className='flex flex-row gap-[5px] '>
+                    <div className='flex flex-row gap-[3px] '>
                         <div className='self-center'>
                             <ZoomIcon width='24px' />
                         </div>
@@ -1003,7 +1003,7 @@ export default function TreeTableDialogue() {
             // Zoom Icon
             case "v_view_freelook_mode":
                 return (
-                    <div className='flex flex-row gap-[5px] '>
+                    <div className='flex flex-row gap-[3px] '>
                         <div className='self-center'>
                             <ZoomIcon width='24px' />
                         </div>
@@ -1013,7 +1013,7 @@ export default function TreeTableDialogue() {
             // Invert Icon
             case "v_strafe_longitudinal_invert":
                 return (
-                    <div className='flex flex-row gap-[5px] '>
+                    <div className='flex flex-row gap-[3px] '>
                         <div className='self-center'>
                             <InvertIcon width='24px' />
                         </div>
@@ -1028,7 +1028,9 @@ export default function TreeTableDialogue() {
             case "v_view_cycle_fwd":
             case "v_toggle_docking_mode":
                 return (
-                    <div className='flex flex-row gap-[5px] '>
+                    <div className='flex flex-row gap-[3px] '>
+                                                <ArrowRightIcon width="20px" />
+
                         <div className='self-center'>
                             <CycleIcon width='26px' />
                         </div>
@@ -1045,7 +1047,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px] '>
+                        <div className='flex flex-row gap-[3px] '>
 
                             <CycleIcon width="24px" className='self-center' />
                             <WeaponsIcon width="26px" className='self-center' />
@@ -1308,7 +1310,7 @@ export default function TreeTableDialogue() {
             // LeftSide Icon + Forward Icon
             case "v_salvage_nudge_up__left":
                 return (
-                    <div className='flex flex-row gap-[5px] '>
+                    <div className='flex flex-row gap-[3px] '>
                         <LeftSideIcon width="26px" className='self-center' />
                         <ForwardIcon height="26px" className='self-center' />
 
@@ -1317,7 +1319,7 @@ export default function TreeTableDialogue() {
             // LeftSide Icon + Down Icon
             case "v_salvage_nudge_down__left":
                 return (
-                    <div className='flex flex-row gap-[5px] '>
+                    <div className='flex flex-row gap-[3px] '>
                         <LeftSideIcon width="26px" className='self-center' />
                         <BackwardIcon height="26px" className='self-center' />
 
@@ -1326,7 +1328,7 @@ export default function TreeTableDialogue() {
             // LeftSide Icon + Leftward Icon
             case "v_salvage_nudge_left__left":
                 return (
-                    <div className='flex flex-row gap-[5px] '>
+                    <div className='flex flex-row gap-[3px] '>
                         <LeftSideIcon width="26px" className='self-center' />
                         <LeftwardIcon height="26px" className='self-center' />
 
@@ -1335,7 +1337,7 @@ export default function TreeTableDialogue() {
             // LeftSide Icon + Rightward Icon
             case "v_salvage_nudge_right__left":
                 return (
-                    <div className='flex flex-row gap-[5px] '>
+                    <div className='flex flex-row gap-[3px] '>
                         <LeftSideIcon width="26px" className='self-center' />
                         <RightwardIcon height="26px" className='self-center' />
 
@@ -1358,7 +1360,7 @@ export default function TreeTableDialogue() {
             // RightSide Icon + Upward Icon
             case "v_salvage_nudge_up__right":
                 return (
-                    <div className='flex flex-row gap-[5px] '>
+                    <div className='flex flex-row gap-[3px] '>
                         <RightSideIcon width="26px" className='self-center' />
                         <ForwardIcon height="26px" className='self-center' />
 
@@ -1367,7 +1369,7 @@ export default function TreeTableDialogue() {
             // RightSide Icon + Downward Icon
             case "v_salvage_nudge_down__right":
                 return (
-                    <div className='flex flex-row gap-[5px] '>
+                    <div className='flex flex-row gap-[3px] '>
                         <RightSideIcon width="26px" className='self-center' />
                         <BackwardIcon height="26px" className='self-center' />
                     </div>
@@ -1375,7 +1377,7 @@ export default function TreeTableDialogue() {
             // RightSide Icon + Leftward Icon
             case "v_salvage_nudge_left__right":
                 return (
-                    <div className='flex flex-row gap-[5px] '>
+                    <div className='flex flex-row gap-[3px] '>
                         <RightSideIcon width="26px" className='self-center' />
                         <LeftwardIcon height="26px" className='self-center' />
                     </div>
@@ -1383,7 +1385,7 @@ export default function TreeTableDialogue() {
             // RightSide Icon + Rightward Icon
             case "v_salvage_nudge_right__right":
                 return (
-                    <div className='flex flex-row gap-[5px] '>
+                    <div className='flex flex-row gap-[3px] '>
                         <RightSideIcon width="26px" className='self-center' />
                         <RightwardIcon height="26px" className='self-center' />
                     </div>
@@ -1392,6 +1394,8 @@ export default function TreeTableDialogue() {
             case "v_toggle_mining_laser_fire":
                 return (
                     <div className='flex flex-row gap-[3px] '>
+                                                <ArrowRightIcon width="20px" />
+
                         <SalvageBeamIcon height="26px" className='self-center' />
 
 
@@ -1406,7 +1410,7 @@ export default function TreeTableDialogue() {
                             <ArrowRightIcon width="20px" />
                         </div>
 
-                        <div className='gap-[5px] flex flex-row'>
+                        <div className='gap-[3px] flex flex-row'>
                             <SalvageBeamIcon height="26px" className='self-center' />
                             <GenericSettingIcon height="22px" className='self-center' />
                         </div>
@@ -1417,7 +1421,9 @@ export default function TreeTableDialogue() {
             // Laser Icon + Cycle Icon
             case "v_toggle_mining_laser_type":
                 return (
-                    <div className='flex flex-row gap-[5px] '>
+                    <div className='flex flex-row gap-[3px] '>
+                                                <ArrowRightIcon width="20px" />
+
                         <SalvageBeamIcon height="26px" className='self-center' />
 
                         <CycleIcon width="26px" className='self-center' />
@@ -1429,7 +1435,7 @@ export default function TreeTableDialogue() {
             case "v_salvage_increase_beam_spacing":
 
                 return (
-                    <div className='flex flex-row gap-[5px] '>
+                    <div className='flex flex-row gap-[3px] '>
                         <ArrowRightIcon width="20px" />
 
                         <SalvageBeamIcon height="26px" className='self-center' />
@@ -1443,7 +1449,7 @@ export default function TreeTableDialogue() {
             case "v_salvage_decrease_beam_spacing":
 
                 return (
-                    <div className='flex flex-row gap-[5px] '>
+                    <div className='flex flex-row gap-[3px] '>
                         <ArrowRightIcon width="20px" />
 
                         <SalvageBeamIcon height="26px" className='self-center' />
@@ -1456,7 +1462,9 @@ export default function TreeTableDialogue() {
             // Laser Icon + Decrease Icon + Decrease Icon
             case "v_mining_throttle":
                 return (
-                    <div className='flex flex-row gap-[5px] '>
+                    <div className='flex flex-row gap-[3px] '>
+                        <ArrowRightIcon width="20px" />
+
                         <SalvageBeamIcon height="26px" className='self-center' />
                         <IncreaseIcon width="26px" className='self-center' />
 
@@ -1490,7 +1498,7 @@ export default function TreeTableDialogue() {
 
                 return (
 
-                    <div className='flex flex-row gap-[5px] '>
+                    <div className='flex flex-row gap-[3px] '>
                         <ArrowRightIcon width="20px" />
                         <FocusIcon height="26px" className='self-center' />
 
@@ -1501,7 +1509,7 @@ export default function TreeTableDialogue() {
             case "v_salvage_focus_all_heads":
                 return (
 
-                    <div className='flex flex-row gap-[5px] '>
+                    <div className='flex flex-row gap-[3px] '>
                         <ArrowRightIcon width="20px" />
                         <FocusIcon height="26px" className='self-center' />
                         <LeftSideIcon height="26px" className='self-center' />
@@ -1513,7 +1521,7 @@ export default function TreeTableDialogue() {
             // Focus Icon + Left Icon
             case "v_salvage_focus_left":
                 return (
-                    <div className='flex flex-row gap-[5px] '>
+                    <div className='flex flex-row gap-[3px] '>
                         <ArrowRightIcon width="20px" />
                         <FocusIcon height="26px" className='self-center' />
                         <LeftSideIcon height="26px" className='self-center' />
@@ -1522,7 +1530,7 @@ export default function TreeTableDialogue() {
             // Focus Icon + Right Icon
             case "v_salvage_focus_right":
                 return (
-                    <div className='flex flex-row gap-[5px] '>
+                    <div className='flex flex-row gap-[3px] '>
                         <ArrowRightIcon width="20px" />
                         <FocusIcon height="26px" className='self-center' />
                         <RightSideIcon height="26px" className='self-center' />
@@ -1532,7 +1540,7 @@ export default function TreeTableDialogue() {
             case "v_salvage_focus_disintegrate":
                 return (
 
-                    <div className='flex flex-row gap-[5px] '>
+                    <div className='flex flex-row gap-[3px] '>
                         <ArrowRightIcon width="20px" />
                         <FocusIcon height="26px" className='self-center' />
 
@@ -1543,7 +1551,7 @@ export default function TreeTableDialogue() {
             case "v_salvage_focus_fracture":
                 return (
 
-                    <div className='flex flex-row gap-[5px] '>
+                    <div className='flex flex-row gap-[3px] '>
                         <ArrowRightIcon width="20px" />
                         <FocusIcon height="26px" className='self-center' />
                         <FractureIcon height="26px" className='self-center' />
@@ -1554,7 +1562,7 @@ export default function TreeTableDialogue() {
             // Cycle Icon + Focus Icon
             case "v_salvage_cycle_modifiers_focused":
                 return (
-                    <div className='flex flex-row gap-[5px] '>
+                    <div className='flex flex-row gap-[3px] '>
                         <ArrowRightIcon width="20px" />
                         <CycleIcon height="26px" className='self-center' />
                         <FocusIcon height="26px" className='self-center' />
@@ -1563,7 +1571,7 @@ export default function TreeTableDialogue() {
             // Cycle Icon + Left Icon
             case "v_salvage_cycle_modifiers_left":
                 return (
-                    <div className='flex flex-row gap-[5px] '>
+                    <div className='flex flex-row gap-[3px] '>
                         <ArrowRightIcon width="20px" />
                         <CycleIcon height="26px" className='self-center' />
                         <LeftSideIcon height="26px" className='self-center' />
@@ -1572,7 +1580,7 @@ export default function TreeTableDialogue() {
             // Cycle Icon + Left Icon
             case "v_salvage_cycle_modifiers_right":
                 return (
-                    <div className='flex flex-row gap-[5px] '>
+                    <div className='flex flex-row gap-[3px] '>
                         <ArrowRightIcon width="20px" />
                         <CycleIcon height="26px" className='self-center' />
                         <RightSideIcon height="26px" className='self-center' />
@@ -1581,7 +1589,7 @@ export default function TreeTableDialogue() {
             // Cycle Icon + Salvage Icon
             case "v_salvage_cycle_modifiers_structural":
                 return (
-                    <div className='flex flex-row gap-[5px] '>
+                    <div className='flex flex-row gap-[3px] '>
                         <ArrowRightIcon width="20px" />
                         <CycleIcon height="26px" className='self-center' />
                         <SalvageIcon height="26px" className='self-center' />
@@ -1708,7 +1716,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  justify-center'>
+                        <div className='flex flex-row gap-[3px]  justify-center'>
                             <CycleIcon width="24px" className='self-center ' />
                             <AutoGimbalIcon height="24px" className='self-center ' />
                             <ManualGimbalIcon height="24px" className='self-center ' />
@@ -1726,7 +1734,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  justify-center'>
+                        <div className='flex flex-row gap-[3px]  justify-center'>
                             <CycleIcon height="24px" className='self-center ' />
 
                             <FixedGimbalIcon width="24px" className='self-center ' />
@@ -1945,7 +1953,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center '>
+                        <div className='flex flex-row gap-[3px]  self-center '>
                             <div className='self-center outline-primary '>
                                 <HUDIcon height="24px" />
                             </div>
@@ -2116,7 +2124,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <ShieldBottomIcon width="25px" className='self-center ' />
                             <IncreaseIcon width="26px" className='self-center ' />
@@ -2131,7 +2139,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <ShieldTopIcon width="25px" className='self-center ' />
                             <IncreaseIcon width="26px" className='self-center ' />
@@ -2146,7 +2154,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <ShieldRightIcon width="25px" className='self-center ' />
                             <IncreaseIcon width="26px" className='self-center ' />
@@ -2161,7 +2169,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <TopIcon width="23px" className='self-center ' />
                             <IncreaseIcon width="26px" className='self-center ' />
@@ -2176,7 +2184,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <BottomIcon width="23px" className='self-center ' />
                             <IncreaseIcon width="26px" className='self-center ' />
@@ -2191,7 +2199,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <ShieldLeftIcon width="25px" className='self-center ' />
                             <IncreaseIcon width="26px" className='self-center ' />
@@ -2206,7 +2214,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <NoiseIcon width="25px" className='self-center ' />
 
@@ -2220,7 +2228,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <DecoyIcon width="25px" className='self-center ' />
 
@@ -2234,7 +2242,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <DecoyIcon width="25px" className='self-center ' />
                             <IncreaseIcon width="25px" className='self-center ' />
@@ -2249,7 +2257,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <DecoyIcon width="25px" className='self-center ' />
                             <DecreaseIcon width="25px" className='self-center ' />
@@ -2264,7 +2272,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <DecoyIcon width="25px" className='self-center ' />
                             <WarningIcon width="25px" className='self-center ' />
@@ -2280,7 +2288,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <EngineIcon width="28px" className='self-center ' />
 
@@ -2295,7 +2303,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <EngineIcon width="28px" className='self-center ' />
                             <DecreaseIcon width="25px" className='self-center ' />
@@ -2311,7 +2319,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <EngineIcon width="28px" className='self-center ' />
                             <DecreaseIcon width="25px" className='self-center ' />
@@ -2329,7 +2337,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <EngineIcon width="28px" className='self-center ' />
                             <IncreaseIcon width="25px" className='self-center ' />
@@ -2345,7 +2353,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <EngineIcon width="28px" className='self-center ' />
                             <IncreaseIcon width="25px" className='self-center ' />
@@ -2361,7 +2369,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <EngineIcon width="28px" className='self-center ' />
                             <SetMaxIcon width="22px" className='self-center ' />
@@ -2376,7 +2384,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <EngineIcon width="28px" className='self-center ' />
                             <SetMinIcon width="22px" className='self-center ' />
@@ -2392,7 +2400,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <ShieldIcon width="24px" className='self-center ' />
                             <DecreaseIcon width="26px" className='self-center ' />
@@ -2408,7 +2416,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <ShieldIcon width="24px" className='self-center ' />
                             <DecreaseIcon width="26px" className='self-center ' />
@@ -2425,7 +2433,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <ShieldIcon width="24px" className='self-center ' />
                             <IncreaseIcon width="26px" className='self-center ' />
@@ -2441,7 +2449,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <ShieldIcon width="24px" className='self-center ' />
                             <IncreaseIcon width="26px" className='self-center ' />
@@ -2458,7 +2466,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <ShieldIcon width="24px" className='self-center ' />
                             <SetMaxIcon width="22px" className='self-center ' />
@@ -2474,7 +2482,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <ShieldIcon width="24px" className='self-center ' />
                             <SetMinIcon width="22px" className='self-center ' />
@@ -2490,7 +2498,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <ShieldIcon width="24px" className='self-center ' />
 
@@ -2505,7 +2513,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <WeaponsIcon width="28px" className='self-center ' />
 
@@ -2520,7 +2528,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <WeaponsIcon width="24px" className='self-center ' />
                             <IncreaseIcon width="26px" className='self-center ' />
@@ -2536,7 +2544,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <WeaponsIcon width="24px" className='self-center ' />
                             <IncreaseIcon width="26px" className='self-center ' />
@@ -2553,7 +2561,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <WeaponsIcon width="24px" className='self-center ' />
                             <DecreaseIcon width="26px" className='self-center ' />
@@ -2569,7 +2577,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <WeaponsIcon width="24px" className='self-center ' />
                             <DecreaseIcon width="26px" className='self-center ' />
@@ -2586,7 +2594,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <WeaponsIcon width="24px" className='self-center ' />
                             <SetMaxIcon width="22px" className='self-center ' />
@@ -2602,7 +2610,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <WeaponsIcon width="24px" className='self-center ' />
                             <SetMinIcon width="22px" className='self-center ' />
@@ -2619,7 +2627,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <PowerOnIcon width="28px" className='self-center ' />
 
@@ -2633,7 +2641,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <PowerOffIcon width="28px" className='self-center ' />
 
@@ -2648,7 +2656,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
                             <ShieldIcon width="28px" className='self-center ' />
 
                             <PowerOnIcon width="28px" className='self-center ' />
@@ -2664,7 +2672,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
                             <ShieldIcon width="28px" className='self-center ' />
 
                             <PowerOffIcon width="28px" className='self-center ' />
@@ -2680,7 +2688,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
                             <EngineIcon width="28px" className='self-center ' />
 
                             <PowerOffIcon width="28px" className='self-center ' />
@@ -2696,7 +2704,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
                             <EngineIcon width="28px" className='self-center ' />
 
                             <PowerOnIcon width="28px" className='self-center ' />
@@ -2712,7 +2720,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <WeaponsIcon width="28px" className='self-center ' />
                             <PowerOffIcon width="28px" className='self-center ' />
@@ -2728,7 +2736,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <WeaponsIcon width="28px" className='self-center ' />
                             <PowerOnIcon width="28px" className='self-center ' />
@@ -2744,7 +2752,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <ScoreboardIcon width="26px" className='self-center ' />
 
@@ -2759,7 +2767,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
 
                             <WipeIcon height="26px" className='self-center ' />
 
@@ -2774,7 +2782,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
                             <CycleIcon height="26px" className='self-center ' />
 
                             <LadderIcon height="26px" className='self-center ' />
@@ -2790,7 +2798,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
                             <LockIcon height="26px" className='self-center ' />
 
                             <UpDownIcon height="24px" className='self-center ' />
@@ -2807,7 +2815,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
                             <BrakeIcon height="25px" className='self-center ' />
 
 
@@ -2823,7 +2831,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
                             <RotateIcon width="26px" height='26px' className='self-center ' />
                             <UpDownIcon height="24px" className='self-center ' />
 
@@ -2840,7 +2848,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
                             <RotateIcon width="26px" height='26px' className='self-center ' />
                             <LeftRightIcon height="24px" className='self-center ' />
 
@@ -2855,7 +2863,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
                             <ChatBubbleIcon width="22px" height='26px' className='self-center ' />
                             <LeftRightIcon height="24px" className='self-center ' />
 
@@ -2870,7 +2878,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
                             <ChatBubbleIcon width="22px" height='26px' className='self-center ' />
                             <FocusIcon height="24px" className='self-center ' />
 
@@ -2900,7 +2908,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
                             <CycleIcon width="26px" className='self-center ' />
 
                             <AudioWaveIcon width="24px" className='self-center ' />
@@ -2933,7 +2941,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
                             <VOIPIcon width="26px" className='self-center ' />
                             <SpeakingIcon width="22px" className='self-center ' />
 
@@ -2983,7 +2991,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
                             <FOIPIcon height="26px" className='self-center ' />
 
                             <PowerOnIcon width="24px" className='self-center ' />
@@ -3028,7 +3036,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
                             <FOIPIcon height="26px" className='self-center ' />
                             <ResetIcon width="24px" className='self-center ' />
 
@@ -3043,7 +3051,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
                             <InteractIcon width="24px" className='self-center ' />
 
                             {/* <AudioWaveIcon width="24px" className='self-center ' /> */}
@@ -3059,7 +3067,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
                             <InnerThoughtIcon width="24px" className='self-center ' />
 
                             {/* <AudioWaveIcon width="24px" className='self-center ' /> */}
@@ -3073,7 +3081,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
                             <InnerThoughtIcon width="24px" className='self-center ' />
                             😀
                             {/* <AudioWaveIcon width="24px" className='self-center ' /> */}
@@ -3291,7 +3299,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
                             <MonitorIcon width="24px" className='self-center ' />
                             <LeftwardIcon width="24px" className='self-center ' />
 
@@ -3305,7 +3313,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
                             <MonitorIcon width="24px" className='self-center ' />
                             <RightwardIcon width="24px" className='self-center ' />
 
@@ -3319,7 +3327,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
                             <ApertureIcon width="24px" className='self-center ' />
                             <IncreaseIcon width="24px" className='self-center ' />
 
@@ -3334,7 +3342,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
                             <ApertureIcon width="24px" className='self-center ' />
                             <DecreaseIcon width="24px" className='self-center ' />
 
@@ -3349,7 +3357,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
                             <EyeIcon width="24px" className='self-center ' />
                             <IncreaseIcon width="24px" className='self-center ' />
 
@@ -3364,7 +3372,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
                             <EyeIcon width="24px" className='self-center ' />
                             <DecreaseIcon width="24px" className='self-center ' />
 
@@ -3379,7 +3387,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[5px]  self-center'>
+                        <div className='flex flex-row gap-[3px]  self-center'>
                             <EyeIcon width="24px" className='self-center ' />
                             <ResetIcon width="24px" className='self-center ' />
 
@@ -3501,7 +3509,7 @@ export default function TreeTableDialogue() {
                         <FlashlightIcon width='30px' />
                     </div>
 
-                    <div className='flex flex-row gap-[5px]'>
+                    <div className='flex flex-row gap-[3px]'>
                         <div className='flex self-center content-center align-middle'>
                             {getGameActionIcon(node)}
                         </div>
@@ -3517,7 +3525,7 @@ export default function TreeTableDialogue() {
                         <GroundVehicleIcon width='24px' />
                     </div>
 
-                    <div className='flex flex-row gap-[5px]'>
+                    <div className='flex flex-row gap-[3px]'>
                         <div className='flex self-center content-center align-middle'>
                             {getGameActionIcon(node)}
                         </div>
@@ -3533,7 +3541,7 @@ export default function TreeTableDialogue() {
                         <StopwatchIcon width='27px' />
                     </div>
 
-                    <div className='flex flex-row gap-[5px]'>
+                    <div className='flex flex-row gap-[3px]'>
                         <div className='flex self-center content-center align-middle'>
                             {getGameActionIcon(node)}
                         </div>
@@ -3711,13 +3719,11 @@ export default function TreeTableDialogue() {
                             <div className='w-[26px] self-center '>
                                 <TargetingIcon />
                             </div>
-                            <div className='w-[20px] self-center mx-[3px]'>
-                                <ArrowRightIcon />
-                            </div>
-                            <div className='w-[26px] self-center mr-[3px]'>
+
+                            <div className='w-[26px] self-center mx-[3px]'>
                                 <TargetingIconView />
                             </div>
-                            <div className='flex flex-row gap-[5px]'>
+                            <div className='flex flex-row gap-[3px]'>
                                 <div className='flex self-center content-center align-middle'>
                                     {getGameActionIcon(node)}
                                 </div>
@@ -3740,7 +3746,7 @@ export default function TreeTableDialogue() {
                             <div className='w-[22px] self-center mr-[3px]'>
                                 <GenericSettingIcon />
                             </div>
-                            <div className='flex flex-row gap-[5px]'>
+                            <div className='flex flex-row gap-[3px]'>
                                 <div className='flex self-center content-center align-middle'>
                                     {getGameActionIcon(node)}
                                 </div>
@@ -3760,7 +3766,7 @@ export default function TreeTableDialogue() {
                             <div className='w-[26px] self-center mx-[3px]'>
                                 <GenericSettingIcon />
                             </div>
-                            <div className='flex flex-row gap-[5px]'>
+                            <div className='flex flex-row gap-[3px]'>
                                 <div className='flex self-center content-center align-middle'>
                                     {getGameActionIcon(node)}
                                 </div>
@@ -3775,12 +3781,15 @@ export default function TreeTableDialogue() {
         if (node.data.actionmapName === "spaceship_targeting") {
             return (
                 <div className=' flex flex-row mr-[5px]'>
-                    {getActionTypeIcon.getIcon('spaceship')}
-                    <div className='w-[26px] self-center mx-[3px]'>
+                    {getActionTypeIcon.getIcon('vehicles')}
+                    <div className='w-[26px] self-center mr-[2px] '>
                         <TargetingIcon />
                     </div>
 
-                    <div className='w-[26px] self-center mx-[5px]'>
+                    {/* <div className='w-[20px] self-center mx-[3px]'>
+                    <ArrowRightIcon />
+                </div> */}
+                    <div className='flex self-center content-center align-middle'>
                         {getGameActionIcon(node)}
                     </div>
                 </div>
@@ -3795,7 +3804,7 @@ export default function TreeTableDialogue() {
                         <MissileIcon />
                     </div>
 
-                    <div className='flex flex-row gap-[5px]'>
+                    <div className='flex flex-row gap-[3px]'>
                         <div className='flex self-center content-center align-middle'>
                             {getGameActionIcon(node)}
                         </div>
@@ -3804,17 +3813,14 @@ export default function TreeTableDialogue() {
             )
         }
 
-        if (node.data.actionmapName === 'spaceship_docking') {
+        if (node.data.category === 'Flight / Docking') {
             return (
                 <div className=' flex flex-row mr-[5px]'>
                     {getActionTypeIcon.getIcon('vehicles')}
-                    <div className='w-[26px] self-center mx-[3px]'>
-                        <DockingIcon />
+                    <div className='w-[26px] self-center mr-[3px] '>
+                        <DockingIcon width='26px' />
                     </div>
-                    <div className='w-[20px] self-center mx-[3px]'>
-                        <ArrowRightIcon />
-                    </div>
-                    <div className='flex flex-row gap-[5px]'>
+                    <div className='flex flex-row gap-[3px]'>
                         <div className='flex self-center content-center align-middle'>
                             {getGameActionIcon(node)}
                         </div>
@@ -3857,7 +3863,7 @@ export default function TreeTableDialogue() {
                     <div className='w-[20px] self-center mx-[3px]'>
                         <ArrowRightIcon />
                     </div>
-                    <div className='flex flex-row gap-[5px]'>
+                    <div className='flex flex-row gap-[3px]'>
                         <div className='flex self-center content-center align-middle'>
                             {getGameActionIcon(node)}
                         </div>
@@ -3880,7 +3886,7 @@ export default function TreeTableDialogue() {
                         <TractorBeamIcon />
                     </div>
 
-                    <div className='flex flex-row gap-[5px]'>
+                    <div className='flex flex-row gap-[3px]'>
                         <div className='flex self-center content-center align-middle mx-[3px]'>
                             {getGameActionIcon(node)}
                         </div>
@@ -3902,7 +3908,7 @@ export default function TreeTableDialogue() {
                         <DisintegrateIcon />
                     </div>
 
-                    <div className='flex flex-row gap-[5px]'>
+                    <div className='flex flex-row gap-[3px]'>
                         <div className='flex self-center content-center align-middle'>
                             {getGameActionIcon(node)}
                         </div>
@@ -3919,7 +3925,7 @@ export default function TreeTableDialogue() {
                         <TurretIcon />
                     </div>
 
-                    <div className='flex flex-row gap-[5px]'>
+                    <div className='flex flex-row gap-[3px]'>
                         <div className='flex self-center content-center align-middle'>
                             {getGameActionIcon(node)}
                         </div>
@@ -3948,18 +3954,14 @@ export default function TreeTableDialogue() {
             return (
                 <div className=' flex flex-row mr-[5px]'>
                     {getActionTypeIcon.getIcon('vehicles')}
-                    <div className='w-[26px] self-center mx-[3px]'>
+                    <div className='w-[26px] self-center mr-[5px]'>
                         <MiningIcon />
                     </div>
-                    <div className='w-[20px] self-center mx-[3px]'>
-                        <ArrowRightIcon />
-                    </div>
-                    <div className='flex flex-row gap-[5px]'>
 
 
-                        <div className='flex self-center content-center align-middle'>
-                            {getGameActionIcon(node)}
-                        </div>
+
+                    <div className='flex self-center content-center align-middle'>
+                        {getGameActionIcon(node)}
                     </div>
                 </div>
             )
@@ -3972,12 +3974,10 @@ export default function TreeTableDialogue() {
             return (
                 <div className=' flex flex-row mr-[5px]'>
                     {getActionTypeIcon.getIcon('spaceship')}
-                    <div className='w-[26px] self-center '>
+                    <div className='w-[26px] self-center mr-[3px] '>
                         <ScanningIcon />
                     </div>
-                    <div className='w-[20px] self-center mx-[3px]'>
-                        <ArrowRightIcon />
-                    </div>
+
 
                     {getGameActionIcon(node)}
                 </div>
@@ -4020,12 +4020,10 @@ export default function TreeTableDialogue() {
                 {/* <div className='w-[20px] self-center mx-[3px]'>
                     <ArrowRightIcon />
                 </div> */}
-                <div className='w-[25px] self-center mx-[3px]'>
+                <div className='w-[25px] self-center mx-[2px]'>
                     <CameraIcon />
                 </div>
-                <div className='w-[20px] self-center mx-[3px]'>
-                    <ArrowRightIcon />
-                </div>
+
                 <div className=' self-center mx-[3px]'>
                     {getGameActionIcon(node)}
 
@@ -4038,15 +4036,11 @@ export default function TreeTableDialogue() {
             return (
                 <div className=' flex flex-row mr-[5px]'>
                     {getActionTypeIcon.getIcon('spaceship')}
-                    <div className='w-[25px] self-center mx-[0px]'>
+                    <div className='w-[26px] self-center mr-[3px] '>
                         <MoveIcon />
                     </div>
-                    <div className='w-[20px] self-center mx-[3px]'>
-                        <ArrowRightIcon />
-                    </div>
-                    <div className=' self-center mx-[0px]'>
-                        {getGameActionIcon(node)}
-                    </div>
+
+                    {getGameActionIcon(node)}
                 </div>
             )
         }
@@ -4054,69 +4048,50 @@ export default function TreeTableDialogue() {
             return (
                 <div className=' flex flex-row mr-[5px]'>
                     {getActionTypeIcon.getIcon('spaceship')}
-                    <div className='w-[25px] self-center mx-[0px]'>
-                        <MoveIcon />
-                    </div>
-                    <div className='w-[20px] self-center mx-[3px]'>
-                        <ArrowRightIcon />
-                    </div>
-                    <div className='w-[28px] self-center mx-[0px]'>
+                    <div className='w-[26px] self-center mr-[3px] '>
                         <SpeedometerIcon />
                     </div>
+
+                    {getGameActionIcon(node)}
+                </div>
+            )
+        }
+        if (node.data.category === "Flight / Movement") {
+            return (
+                <div className=' flex flex-row mr-[5px]'>
+                    {getActionTypeIcon.getIcon('spaceship')}
+                    <div className='w-[26px] self-center mr-[3px] '>
+                        <SpeedometerIcon />
+                    </div>
+                    {getGameActionIcon(node)}
                 </div>
             )
         }
         switch (node.data.category) {
-            // Seat Icon
-            case "Flight / Movement":
+            // Quantum Icon
             case "Flight / Quantum Travel":
 
                 return (
                     <div className=' flex flex-row mr-[5px]'>
-                        <div className=' flex flex-row mr-[5px]'>
-                            <div className='flex flex-row gap-[3px]'>
-                                {getActionTypeIcon.getIcon('spaceship')}
-                                <div className='w-[20px] self-center mx-[0px]'>
-                                    <ArrowRightIcon />
-                                </div>
-                                {/* <div className='w-[25px]'> <MoveIcon /></div> */}
-                            </div>
-
+                        {getActionTypeIcon.getIcon('spaceship')}
+                        <div className='w-[26px] self-center mr-[3px] '>
+                            <QuantumIcon />
                         </div>
-                        {getGameActionIcon(node)}
+
                     </div>
                 )
-            case "asdasd":
-                return (
-                    <div className=' flex flex-row mr-[5px]'>
-                        <div className=' flex flex-row mr-[5px]'>
-                            <div className='flex flex-row gap-[3px]'>
-                                <div className='w-[25px]'> <MoveIcon /></div>
 
-                                <div className='w-[20px] self-center mx-[0px]'>
-                                    <ArrowRightIcon />
-                                </div>
-                            </div>
-
-                        </div>
-                        {getGameActionIcon(node)}
-                    </div>
-                )
             // Seat Icon
             case "Vehicles / Seats & Operator Modes":
                 return (
                     <div className=' flex flex-row mr-[5px]'>
                         {getActionTypeIcon.getIcon('vehicles')}
 
-                        <div className='w-[24px] self-center ml-[2px]'>
+                        <div className='w-[24px] self-center mr-[2px]'>
                             <SeatIcon />
                         </div>
-                        <div className='w-[20px] self-center mx-[0px]'>
-                            <ArrowRightIcon />
-                        </div>
-                        <div className='w-[24px] self-center ml-[2px]'>
-                            {getGameActionIcon(node)}
-                        </div>
+
+                        {getGameActionIcon(node)}
                     </div>
                 )
 
@@ -4129,12 +4104,10 @@ export default function TreeTableDialogue() {
 
                     <div className=' flex flex-row mr-[5px] '>
                         {getActionTypeIcon.getIcon('vehicles')}
-                        <div className='w-[25px] self-center '>
+                        <div className='w-[25px] self-center mr-[2px] '>
                             <SeatIcon />
                         </div>
-                        <div className='w-[20px] self-center mx-[3px]'>
-                            <ArrowRightIcon />
-                        </div>
+
                         {getGameActionIcon(node)}
                     </div>
                 )
@@ -4171,7 +4144,7 @@ export default function TreeTableDialogue() {
                 modal
                 onHide={() => setVisible(false)}
                 content={({ hide }) => (
-                    <div className="panel flex flex-wrap justify-content-center gap-[5px] w-[100%] bg-striped">
+                    <div className="panel flex flex-wrap justify-content-center gap-[3px] w-[100%] bg-striped">
                         <Tree
                             togglerTemplate={togglerTemplate}
                             selectionMode="single" selectionKeys={selectedKey} onSelectionChange={(e) => setSelectedKey(e.value)}
