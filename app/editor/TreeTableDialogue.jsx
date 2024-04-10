@@ -115,6 +115,7 @@ import InnerThoughtIcon from '@public/assets/icons/actions/gameCategory/InnerTho
 import ChestIcon from '@public/assets/icons/actions/gameCategory/ChestIcon.jsx'
 import MobiglassIcon from '@public/assets/icons/actions/gameCategory/MobiglassIcon.jsx'
 import RadialMenuIcon from '@public/assets/icons/actions/gameCategory/RadialMenuIcon.jsx'
+import ApertureIcon from '@public/assets/icons/actions/gameCategory/ApertureIcon.jsx'
 
 
 export default function TreeTableDialogue() {
@@ -861,7 +862,7 @@ export default function TreeTableDialogue() {
 
             // Zoom In Icon
             case "turret_instant_zoom":
-                case "pc_zoom_in":
+            case "pc_zoom_in":
 
                 return (
                     <div className='flex flex-row '>
@@ -946,7 +947,7 @@ export default function TreeTableDialogue() {
             case "v_view_dynamic_zoom_rel_out":
             case "turret_remote_zoom_out":
             case "spectate_zoom_out":
-                case "pc_zoom_out":
+            case "pc_zoom_out":
 
                 return (
                     <div className='flex flex-row '>
@@ -983,7 +984,7 @@ export default function TreeTableDialogue() {
             // Zoom In Out Icon
             case "v_view_dynamic_zoom_abs":
             case "v_view_dynamic_zoom_rel":
-                case "pc_zoom_in":
+            case "pc_zoom_in":
 
                 return (
                     <div className='flex flex-row gap-[5px] '>
@@ -3051,7 +3052,7 @@ export default function TreeTableDialogue() {
                 )
             // Inner Thought Icon 
             case "pc_personal_thought":
-                case "pc_select":
+            case "pc_select":
 
                 return (
                     <div className='flex flex-row '>
@@ -3290,7 +3291,7 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[4px]  self-center'>
+                        <div className='flex flex-row gap-[5px]  self-center'>
                             <MonitorIcon width="24px" className='self-center ' />
                             <LeftwardIcon width="24px" className='self-center ' />
 
@@ -3304,12 +3305,87 @@ export default function TreeTableDialogue() {
                         <div className='mr-[3px] self-center'>
                             <ArrowRightIcon width="20px" />
                         </div>
-                        <div className='flex flex-row gap-[4px]  self-center'>
+                        <div className='flex flex-row gap-[5px]  self-center'>
                             <MonitorIcon width="24px" className='self-center ' />
                             <RightwardIcon width="24px" className='self-center ' />
 
                         </div>
                     </div>
+                )
+            // Aperture Icon + Increase Icon
+            case "view_fstop_in":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+                            <ApertureIcon width="24px" className='self-center ' />
+                            <IncreaseIcon width="24px" className='self-center ' />
+
+                        </div>
+                    </div>
+
+                )
+            // Aperture Icon + Decrease Icon
+            case "view_fstop_out":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+                            <ApertureIcon width="24px" className='self-center ' />
+                            <DecreaseIcon width="24px" className='self-center ' />
+
+                        </div>
+                    </div>
+
+                )
+            // Eye Icon + Increase Icon
+            case "view_fov_in":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+                            <EyeIcon width="24px" className='self-center ' />
+                            <IncreaseIcon width="24px" className='self-center ' />
+
+                        </div>
+                    </div>
+
+                )
+            // Eye Icon + Decrease Icon
+            case "view_fov_out":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+                            <EyeIcon width="24px" className='self-center ' />
+                            <DecreaseIcon width="24px" className='self-center ' />
+
+                        </div>
+                    </div>
+
+                )
+            // Eye Icon + Reset Icon
+            case "view_restore_defaults":
+                return (
+                    <div className='flex flex-row '>
+                        <div className='mr-[3px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
+                        <div className='flex flex-row gap-[5px]  self-center'>
+                            <EyeIcon width="24px" className='self-center ' />
+                            <ResetIcon width="24px" className='self-center ' />
+
+                        </div>
+                    </div>
+
                 )
             default:
                 return (
