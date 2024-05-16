@@ -26,11 +26,7 @@ const Editor = ({ show }) => {
 
 
 
-  // useEffect(() => {
-  //   renderBindButton();
 
-
-  // }, [selectedInput, selectedAction])
   const getInputTitle = () => {
     try {
       var name = (editorPanelTitle).toUpperCase();

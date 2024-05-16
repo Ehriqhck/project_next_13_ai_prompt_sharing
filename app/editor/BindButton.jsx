@@ -34,7 +34,7 @@ const BindButton = (props) => {
             body: JSON.stringify({
                 userId: session?.user.id,
                 selectedInput: selectedEditorInput,
-                selectedAction: selectedAction,
+                selectedAction: selectedAction.key,
                 selectedLayer: selectedLayer
             })
         }
@@ -80,7 +80,10 @@ const BindButton = (props) => {
                     console.log(selectedLayerNum);
                     // console.log(selectedEditorInput);
                 }}>
-                \                <p className='bindBtn-input bind-text '>{" ' " + selectedAction + " ' "} </p>
+                \
+                <p className='bindBtn-input bind-text '>
+                    {" ' " + selectedAction.data?.name + " ' "}
+                </p>
 
                 <p className=''> &nbsp;  Bind to: &nbsp; </p>
                 <p className='bindBtn-input bind-text '>

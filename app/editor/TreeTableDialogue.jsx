@@ -1,7 +1,8 @@
 import { Button } from 'primereact/button';
 import { Dialog } from 'primereact/dialog';
 import GameActionTable from 'app/editor/GameActionTable.jsx'
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import BindButton from './BindButton';
 import { TreeTable } from 'primereact/treetable';
 import { Column } from 'primereact/column';
 import { InputText } from 'primereact/inputtext';
@@ -116,6 +117,7 @@ import ChestIcon from '@public/assets/icons/actions/gameCategory/ChestIcon.jsx'
 import MobiglassIcon from '@public/assets/icons/actions/gameCategory/MobiglassIcon.jsx'
 import RadialMenuIcon from '@public/assets/icons/actions/gameCategory/RadialMenuIcon.jsx'
 import ApertureIcon from '@public/assets/icons/actions/gameCategory/ApertureIcon.jsx'
+import { SelectContext, SelectedActionContext } from '@components/Provider';
 
 
 export default function TreeTableDialogue() {
@@ -124,6 +126,7 @@ export default function TreeTableDialogue() {
     const [globalFilter, setGlobalFilter] = useState('');
     const [filterMode, setFilterMode] = useState('lenient');
     const [selectedKey, setSelectedKey] = useState('');
+    const { selectedAction, setSelectedAction } = useContext(SelectedActionContext);
 
     const [filterOptions] = useState([
         { label: 'Lenient', value: 'lenient' },
@@ -1093,12 +1096,12 @@ export default function TreeTableDialogue() {
 
                 return (
                     <div className=' self-center flex flex-row '>
-                    <div className='mr-[2px] self-center'>
-                        <ArrowRightIcon width="20px" />
-                    </div>
+                        <div className='mr-[2px] self-center'>
+                            <ArrowRightIcon width="20px" />
+                        </div>
 
-                    <WifiIcon width='24px' />
-                </div>
+                        <WifiIcon width='24px' />
+                    </div>
                 )
             // Landing Icon
             case "v_deploy_landing_system":
@@ -4154,15 +4157,27 @@ export default function TreeTableDialogue() {
     return (
         <div className="card flex justify-content-center">
             <Button label="Login" icon="pi pi-user" onClick={() => setVisible(true)} />
+
             <Dialog
                 visible={visible}
                 modal
                 onHide={() => setVisible(false)}
                 content={({ hide }) => (
                     <div className="panel flex flex-wrap justify-content-center gap-[3px] w-[100%] bg-striped">
+                        <BindButton />
+
                         <Tree
                             togglerTemplate={togglerTemplate}
-                            selectionMode="single" selectionKeys={selectedKey} onSelectionChange={(e) => setSelectedKey(e.value)}
+                            selectionMode="single" selectionKeys={selectedKey}
+                            onSelectionChange={(e) => {
+                            }}
+                            onNodeClick={(e) => {
+                                setSelectedAction(e.node);
+                                // console.log(e.node.key);
+                            }}
+                            // onNodeClick={(e) => {
+                            //     console.log("WHAT IS NODE???:   " + e.data);
+                            // }}
                             nodeTemplate={nodeTemplate} value={nodes} filter filterBy='label' filterMode="strict" filterPlaceholder="Lenient Filter" className="w-[1000px] md:w-30rem" />
                     </div>
                 )}
