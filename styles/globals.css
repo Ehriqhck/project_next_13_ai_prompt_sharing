@@ -29,6 +29,13 @@ html{
   color: #cefcff;
   text-transform: uppercase;
 }
+.title-text{
+  font-family: 'Exo';
+  font-weight: 200;
+  font-size: 16px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
 .GameAction-Category-Heading{
   display: flex;
   flex-direction: row;
@@ -1363,17 +1370,135 @@ gap: 60px;
 .bind-text {
   color: #00ffc8
 }
+.p-tabmenu .p-tabmenu-nav .p-tabmenuitem.p-highlight .p-menuitem-link {
+  background: #002229 !important;
+  border-color: #002229 !important;
+  color: unset !important;
+  border-width: 0 0 0px 0 !important;
+    border-color: transparent transparent #00ffaa transparent !important;
+    border-image: radial-gradient(rgb(0, 255, 187), rgba(17, 255, 184, 0)) 1 !important;
 
-
-/* .p-inputtext :focus {
-  color: red !important;
-  border: 1px solid rgba(0, 240, 255, 0.2) !important;
-} */
-.nav {
-  margin-top: 5px;
-  padding-bottom: 2px;
-  max-width: 1400px;
 }
+.navMenu-text {
+  font-family: 'inter';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  color: #CEFCFF;
+  line-height: 12px;
+  padding: 4px 8px 4px 8px;
+}
+.p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link {
+    border-width: 0 0 1px 0 !important;
+    border-color: transparent transparent #00ffaa transparent;
+    background: #002229 !important;
+    color: rgba(13, 255, 215, 0.6) !important;
+    padding: 4px 8px 4px 8px !important;
+    border-radius: 0 0 0 0 !important;
+    transition: box-shadow 0.3s;
+    margin: 0 0 0px 0 !important;
+    height: auto !important;
+
+}
+.p-tabmenu .p-tabmenu-nav {
+  background: transparent;
+  border: solid #26323800 !important;
+  border-width: 0 1px 1px 1px !important;
+  border-image: radial-gradient(rgb(0, 255, 187), rgba(17, 255, 184, 0)) 1 !important;
+}
+.p-tabmenu .p-tabmenu-nav {
+  background: transparent;
+  border: 1px solid #263238;
+  border-width: 0 0 2px 0;
+  align-self: center;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: row;
+  width: fit-content !important;
+  
+}
+
+body > main > nav > div:nth-child(2) > ul > li:last-child{
+  display: none;
+}
+ul[role='menubar'] {
+  display: flex;
+  flex-direction: row;
+position: relative;
+  /* background: #002229 !important; */
+  transition: box-shadow 0.3s;
+  height: fit-content !important;
+  width: fit-content;
+ 
+border:none;
+  
+}
+ul[role='menubar']::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-width: 0 1px 1px 1px !important;
+
+  border-radius: 0px 0px 10px 10px;
+  border: 1px solid transparent;
+  background: radial-gradient(rgb(0, 255, 187), rgba(17, 255, 184, 0.459)) border-box;;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
+.navMenu-item{
+  padding: 2px 8px 4px 8px !important;
+  width: fit-content;
+  height: fit-content ;
+display: flex;
+}
+:is(li[data-p-highlight=true], li[data-p-highlight=false]):hover{
+  cursor: pointer;
+  filter: drop-shadow(0px 2px 35px #00f0ff);
+  transition: filter 0.2s;
+  
+}
+li[data-p-highlight=true] {
+  opacity: 100% ;
+  filter: drop-shadow(0px 10px 15px #00eeff8f);
+
+}
+li[data-p-highlight=false] {
+  opacity: 66%;
+}
+li[data-p-highlight=true]:hover {
+  opacity: 100% ;
+}
+div[data-pc-name='tabmenu']{
+  display: flex ;
+  flex-direction: row ;
+  justify-content: center ;
+  justify-self: center ;
+}
+
+.gradient-border-mask {
+  display: block;
+  position: relative;
+  padding: 1.3rem;
+  max-width: 800px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+
+.nav {
+padding: 0 100px 0 100px;
+height: 73px;
+/* border: 1px solid rgba(0, 240, 255, 0.2); */
+/* outline:  1px solid rgba(0, 238, 255, 0.184); */
+border:  double ;
+border-image: radial-gradient(rgb(0, 255, 187), rgba(17, 255, 184, 0)) 1;
+border-width: 0px 0px 1px 0px;
+fill: #001B21;
+}
+
 
 .p-datatable {
   position: relative;
@@ -1418,7 +1543,7 @@ gap: 60px;
 }
 
 .app {
-  @apply relative z-10 flex justify-center items-center flex-col max-w-[100%] mx-auto  px-6;
+  @apply relative z-10 flex justify-center items-center flex-col max-w-[100%] mx-auto  ;
 }
 
 .black_btn {
