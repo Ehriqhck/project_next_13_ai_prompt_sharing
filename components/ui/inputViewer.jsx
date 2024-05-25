@@ -61,7 +61,7 @@ const InputViewer = ({ selectedButton }) => {
             setPress(profileContext?.deviceProfiles?.deviceProfiles?.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["press"]);
 
         };
-        console.log("profile context:  " + JSON.stringify(profileContext));
+        // console.log("profile context:  " + JSON.stringify(profileContext));
         fetchDeviceProfiles();
         //rehydrate when another input is selected
     }, [selectedButton, selectedViewerInput, actionUpdate])
@@ -122,7 +122,7 @@ const InputViewer = ({ selectedButton }) => {
 
             //else return the slot component
         } else {
-            console.log("TOP SLOT: UNDEFINED");
+            // console.log("TOP SLOT: UNDEFINED");
             return (<></>)
 
         }
@@ -136,7 +136,7 @@ const InputViewer = ({ selectedButton }) => {
 
             //else return the slot component
         } else {
-            console.log("LEFT SLOT: UNDEFINED");
+            // console.log("LEFT SLOT: UNDEFINED");
             return (<></>)
 
         }
@@ -150,7 +150,7 @@ const InputViewer = ({ selectedButton }) => {
 
             //else return the slot component
         } else {
-            console.log("RIGHT SLOT: UNDEFINED");
+            // console.log("RIGHT SLOT: UNDEFINED");
             return (<></>)
 
         }
@@ -179,7 +179,7 @@ const InputViewer = ({ selectedButton }) => {
             //else return the slot component
         } else {
             return (<></>)
-            console.log("PRESS SLOT: UNDEFINED");
+            // console.log("PRESS SLOT: UNDEFINED");
         }
     }
     return (

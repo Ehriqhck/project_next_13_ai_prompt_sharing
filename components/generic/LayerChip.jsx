@@ -11,7 +11,7 @@ export default function LayerChip(props) {
     const { data: session } = useSession();
     // console.log(props);
     const layerNumber = props.layer;
-    console.log(props.layer);
+    // console.log(props.layer);
 
 
     const modifierKey = "// SHIFT + P";

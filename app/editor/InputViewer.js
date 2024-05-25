@@ -23,7 +23,7 @@ const Editor = ({ show }) => {
   )
 
   // setSelectedViewerInput("Circle Switch");
-  console.log('selectedViewerInput: ' + selectedViewerInput)
+  // console.log('selectedViewerInput: ' + selectedViewerInput)
   // console.log("SelectContext: " + SelectContext);
   // const [isOpen, setIsOpen] = useState(false);
   return (
