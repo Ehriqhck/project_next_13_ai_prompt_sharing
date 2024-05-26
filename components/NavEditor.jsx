@@ -12,7 +12,7 @@ const NavEditor = () => {
   const [devices, setDevices] = useState({});
   const { profileContext, setprofileContext } = useContext(Context);
 
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
   const [providers, setProviders] = useState(null);
   const [toggleDropdown, setToggleDropdown] = useState(false);
 
@@ -33,31 +33,34 @@ const NavEditor = () => {
       setProviders(res);
     })();
   }, []);
+  
+  // useEffect(() => {
+  //   fetchDeviceProfiles()
+  // })
+ 
+  // if (status === "authenticated") {
+  //   return <p>Signed in as {session.user.email}</p>
+  // }
+  const fetchDeviceProfiles = async () => {
+    // console.log("FETCHED DEVICEPROFILES BEFORE: ");
 
-  //   useEffect(() => {
-  //     const fetchDeviceProfiles = async () => {
-  //       // console.log("FETCHED DEVICEPROFILES BEFORE: ");
+    const response = await fetch('/api/deviceProfiles', {
+      method: 'POST',
+      body: JSON.stringify({
+        userId: session?.user.id
+      })
+    })
 
-  //       const response = await fetch("/api/deviceProfiles", {
-  //         method: "POST",
-  //         body: JSON.stringify({
-  //           userId: session?.user.id,
-  //         })
-  //       });
+    const data = await response.json()
+    // console.log("INPUT VIEWER !!!!!!!!!!!" + JSON.stringify(data[0].deviceProfiles.deviceProfiles.saved["VKB_GLADIATOR_EVO"].buttons["circleSwitch"]?.["top"]));
+    // console.log("FETCHED RESPONSE: " + JSON.stringify(data));
+    // console.log("!!!!!!!!!!!! FETCHED RESPONSE: " + JSON.stringify(data.deviceProfiles));
+    setprofileContext(data)
+    // console.log("PARSED & STRINGED RESPONSE: " + JSON.parse(JSON.stringify(data[0].deviceProfiles.deviceProfiles)));
+    // console.log("RAW RESPONSE: " + JSON.stringify(data[0].deviceProfiles.deviceProfiles.saved["VKB_GLADIATOR_EVO"].buttons[selectedButton]?.["top"]));
+    // console.log("FETCHED DEVICEPROFILES: " + data);
 
-  //       const data = await response.json();
-  //       // console.log("INPUT VIEWER !!!!!!!!!!!" + JSON.stringify(data.deviceProfiles.deviceProfiles.saved));
-  //       // console.log("FETCHED RESPONSE: " + JSON.stringify(data));
-  //       setDevices(data?.deviceProfiles?.deviceProfiles?.saved);
-
-  //       console.log("profile context STRING:  " + JSON.stringify(data?.deviceProfiles?.deviceProfiles?.saved));
-  // console.log(Object.getOwnPropertyNames(devices));
-  //       // console.log("!!!!!!!!!!!! FETCHED RESPONSE: " + JSON.stringify(data.deviceProfiles));
-  //     };
-  //     // console.log("profile context:  " + JSON.stringify(devices));
-  //     fetchDeviceProfiles();
-  //     // console.log("profile context:  " + devices);
-  //   }, [])
+  }
 
   // console.log(Object.getOwnPropertyNames(profileContext?.deviceProfiles?.deviceProfiles?.saved) );
 
@@ -78,13 +81,13 @@ const NavEditor = () => {
   //     template: (item) => itemRenderer(item, 2)
   //   }
   // ];
-  
-const items = Object.getOwnPropertyNames(profileContext?.deviceProfiles?.deviceProfiles?.saved).map((device) => { 
-  return ({
-    name: device,
-    template: (item) => itemRenderer(item, 0)
+
+  const items = Object.getOwnPropertyNames(profileContext?.deviceProfiles?.deviceProfiles?.saved).map((device) => {
+    return ({
+      name: device,
+      template: (item) => itemRenderer(item, 0)
+    })
   })
-})
   return (
     <nav className=' w-full'>
       <div className='nav  w-full mb-[-1px] pt-3 flex flex-between flex-row'>
@@ -151,8 +154,7 @@ const items = Object.getOwnPropertyNames(profileContext?.deviceProfiles?.deviceP
       <TabMenu unstyled model={items} activeIndex={activeIndex} onTabChange={(e) => {
         setActiveIndex(e.index);
         console.log("TAB INDEX: " + e.index);
-      }}
-      />
+      }} />
       {/* Mobile Navigation */}
       {/* <div className='sm:hidden flex relative'>
         {session?.user ? (

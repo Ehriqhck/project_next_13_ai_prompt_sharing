@@ -1,24 +1,22 @@
-import "@styles/globals.css";
+import '@styles/globals.css'
 import { Exo } from 'next/font/google'
-import 'primereact-sass-theme-9.6.2/themes/mytheme/theme.scss';
+import 'primereact-sass-theme-9.6.2/themes/mytheme/theme.scss'
 import NavEditor from '@components/NavEditor.jsx'
-
-import Nav from "@components/Nav";
-import Provider from "@components/Provider";
-import { signIn, signOut, useSession, getProviders } from "next-auth/react";
+import { Context } from '@components/Provider.jsx'
+import { useContext } from 'react';
+import Nav from '@components/Nav'
+import Provider from '@components/Provider'
+import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
 
 export const metadata = {
-  title: "Control Mapper",
-  description: "",
-};
+  title: 'Control Mapper',
+  description: ''
+}
 
 const RootLayout = ({ children }) => (
-  <html lang='en' className="dark">
-
-
+  <html lang='en' className='dark'>
     <body>
-
-      <Provider >
+      <Provider>
         <div className='main'>
           <div className='gradient' />
         </div>
@@ -28,9 +26,8 @@ const RootLayout = ({ children }) => (
           {children}
         </main>
       </Provider>
-
     </body>
   </html>
-);
+)
 
-export default RootLayout;
+export default RootLayout

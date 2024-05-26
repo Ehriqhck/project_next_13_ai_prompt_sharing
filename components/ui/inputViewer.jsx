@@ -35,41 +35,48 @@ const InputViewer = ({ selectedButton }) => {
     const [press, setPress] = useState();
 
     console.log("Selected BUTTON: " + selectedButton);
+
+    // useEffect(() => {
+
+    //     // console.log("profile context:  " + JSON.stringify(profileContext));
+    //     fetchDeviceProfiles();
+    //     //rehydrate when another input is selected
+    // }, [selectedButton, selectedViewerInput, actionUpdate])
+
     useEffect(() => {
-        const fetchDeviceProfiles = async () => {
-            // console.log("FETCHED DEVICEPROFILES BEFORE: ");
-
-            const response = await fetch("/api/deviceProfiles", {
-                method: "POST",
-                body: JSON.stringify({
-                    userId: session?.user.id,
-                })
-            });
-
-            const data = await response.json();
-            // console.log("INPUT VIEWER !!!!!!!!!!!" + JSON.stringify(data[0].deviceProfiles.deviceProfiles.saved["VKB_GLADIATOR_EVO"].buttons["circleSwitch"]?.["top"]));
-            // console.log("FETCHED RESPONSE: " + JSON.stringify(data));
-            // console.log("!!!!!!!!!!!! FETCHED RESPONSE: " + JSON.stringify(data.deviceProfiles));
-            setprofileContext(data);
-            // console.log("PARSED & STRINGED RESPONSE: " + JSON.parse(JSON.stringify(data[0].deviceProfiles.deviceProfiles)));
-            // console.log("RAW RESPONSE: " + JSON.stringify(data[0].deviceProfiles.deviceProfiles.saved["VKB_GLADIATOR_EVO"].buttons[selectedButton]?.["top"]));
-            // console.log("FETCHED DEVICEPROFILES: " + data);
-            setTop(profileContext?.deviceProfiles?.deviceProfiles?.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["top"]);
-            setbottom(profileContext?.deviceProfiles?.deviceProfiles?.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["bottom"]);
-            setLeft(profileContext?.deviceProfiles?.deviceProfiles?.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["left"]);
-            setRight(profileContext?.deviceProfiles?.deviceProfiles?.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["right"]);
-            setPress(profileContext?.deviceProfiles?.deviceProfiles?.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["press"]);
-
-        };
-        // console.log("profile context:  " + JSON.stringify(profileContext));
         fetchDeviceProfiles();
-        //rehydrate when another input is selected
-    }, [selectedButton, selectedViewerInput, actionUpdate])
 
+
+    },[selectedViewerInput, selectedEditorInput])
 
     // const ButtonName = profileContext.deviceProfiles.saved["VKB_GLADIATOR_EVO"].profileName;
 
+    const fetchDeviceProfiles = async () => {
+        console.log("FETCHED DEVICEPROFILES BEFORE: ");
 
+        const response = await fetch("/api/deviceProfiles", {
+            method: "POST",
+            body: JSON.stringify({
+                userId: session?.user.id,
+            })
+        });
+
+        const data = await response.json();
+        // console.log("INPUT VIEWER !!!!!!!!!!!" + JSON.stringify(data[0].deviceProfiles.deviceProfiles.saved["VKB_GLADIATOR_EVO"].buttons["circleSwitch"]?.["top"]));
+        // console.log("FETCHED RESPONSE: " + JSON.stringify(data));
+        // console.log("!!!!!!!!!!!! FETCHED RESPONSE: " + JSON.stringify(data.deviceProfiles));
+        setTop(data?.deviceProfiles?.deviceProfiles?.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["top"]);
+        setbottom(data?.deviceProfiles?.deviceProfiles?.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["bottom"]);
+        setLeft(data?.deviceProfiles?.deviceProfiles?.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["left"]);
+        setRight(data?.deviceProfiles?.deviceProfiles?.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["right"]);
+        setPress(data?.deviceProfiles?.deviceProfiles?.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["press"]);
+        setprofileContext(data);
+        // console.log("PARSED & STRINGED RESPONSE: " + JSON.parse(JSON.stringify(data[0].deviceProfiles.deviceProfiles)));
+        // console.log("RAW RESPONSE: " + JSON.stringify(data[0].deviceProfiles.deviceProfiles.saved["VKB_GLADIATOR_EVO"].buttons[selectedButton]?.["top"]));
+        // console.log("FETCHED DEVICEPROFILES: " + data);
+
+
+    };
 
     // console.log("fetchDeviceProfiles: " + top);
     // console.log("PARSED fetchDeviceProfiles: " + JSON.stringify(top));
@@ -165,8 +172,9 @@ const InputViewer = ({ selectedButton }) => {
 
             //else return the slot component
         } else {
+            console.log("PRESS SLOT: UNDEFINED");
+
             return (<></>)
-            // console.log("PRESS SLOT: UNDEFINED");
         }
     }
 
@@ -178,8 +186,9 @@ const InputViewer = ({ selectedButton }) => {
 
             //else return the slot component
         } else {
+            console.log("PRESS SLOT: UNDEFINED");
+
             return (<></>)
-            // console.log("PRESS SLOT: UNDEFINED");
         }
     }
     return (
