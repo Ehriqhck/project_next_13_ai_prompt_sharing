@@ -70,6 +70,7 @@ const InputViewer = ({ selectedButton }) => {
         setLeft(data?.deviceProfiles?.deviceProfiles?.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["left"]);
         setRight(data?.deviceProfiles?.deviceProfiles?.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["right"]);
         setPress(data?.deviceProfiles?.deviceProfiles?.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["press"]);
+        console.log(data);
         setprofileContext(data);
         // console.log("PARSED & STRINGED RESPONSE: " + JSON.parse(JSON.stringify(data[0].deviceProfiles.deviceProfiles)));
         // console.log("RAW RESPONSE: " + JSON.stringify(data[0].deviceProfiles.deviceProfiles.saved["VKB_GLADIATOR_EVO"].buttons[selectedButton]?.["top"]));

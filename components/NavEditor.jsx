@@ -9,13 +9,28 @@ import Spacer from "components/generic/Spacer.jsx"
 import { Context } from '@components/Provider.jsx'
 
 const NavEditor = () => {
-  const [devices, setDevices] = useState({});
+  const [devices, setDevices] = useState([
+    {
+      name: 'Amy Elsner',
+      image: 'amyelsner.png',
+      template: (item) => itemRenderer(item, 0)
+    },
+    {
+      name: 'Anna Fali',
+      image: 'annafali.png',
+      template: (item) => itemRenderer(item, 1)
+    },
+    {
+      name: 'Asiya Javayant',
+      image: 'asiyajavayant.png',
+      template: (item) => itemRenderer(item, 2)
+    }
+  ]);
   const { profileContext, setprofileContext } = useContext(Context);
-
   const { data: session, status } = useSession();
   const [providers, setProviders] = useState(null);
   const [toggleDropdown, setToggleDropdown] = useState(false);
-
+  const [profileName, setProfileName] = useState("no profile loaded")
   const [activeIndex, setActiveIndex] = useState(0);
   const itemRenderer = (item, itemIndex) => (
     <a className="navMenu-item " onClick={() => setActiveIndex(itemIndex)}>
@@ -32,12 +47,12 @@ const NavEditor = () => {
       const res = await getProviders();
       setProviders(res);
     })();
-  }, []);
-  
-  // useEffect(() => {
-  //   fetchDeviceProfiles()
-  // })
- 
+    fetchDeviceProfiles()
+
+  }, [session]);
+
+
+
   // if (status === "authenticated") {
   //   return <p>Signed in as {session.user.email}</p>
   // }
@@ -59,35 +74,44 @@ const NavEditor = () => {
     // console.log("PARSED & STRINGED RESPONSE: " + JSON.parse(JSON.stringify(data[0].deviceProfiles.deviceProfiles)));
     // console.log("RAW RESPONSE: " + JSON.stringify(data[0].deviceProfiles.deviceProfiles.saved["VKB_GLADIATOR_EVO"].buttons[selectedButton]?.["top"]));
     // console.log("FETCHED DEVICEPROFILES: " + data);
-
+    setProfileName(data?.deviceProfiles?.deviceProfiles?.saved['VKB_GLADIATOR_EVO'].profileName)
+    setDevices(Object.getOwnPropertyNames(data?.deviceProfiles?.deviceProfiles?.saved).map((device) => {
+      return ({
+        name: device,
+        template: (item) => itemRenderer(item, 0)
+      })
+    })
+    )
   }
 
   // console.log(Object.getOwnPropertyNames(profileContext?.deviceProfiles?.deviceProfiles?.saved) );
 
-  // const items = [
-  //   {
-  //     name: 'Amy Elsner',
-  //     image: 'amyelsner.png',
-  //     template: (item) => itemRenderer(item, 0)
-  //   },
-  //   {
-  //     name: 'Anna Fali',
-  //     image: 'annafali.png',
-  //     template: (item) => itemRenderer(item, 1)
-  //   },
-  //   {
-  //     name: 'Asiya Javayant',
-  //     image: 'asiyajavayant.png',
-  //     template: (item) => itemRenderer(item, 2)
-  //   }
-  // ];
-
-  const items = Object.getOwnPropertyNames(profileContext?.deviceProfiles?.deviceProfiles?.saved).map((device) => {
-    return ({
-      name: device,
+  const items = [
+    {
+      name: 'Amy Elsner',
+      image: 'amyelsner.png',
       template: (item) => itemRenderer(item, 0)
-    })
-  })
+    },
+    {
+      name: 'Anna Fali',
+      image: 'annafali.png',
+      template: (item) => itemRenderer(item, 1)
+    },
+    {
+      name: 'Asiya Javayant',
+      image: 'asiyajavayant.png',
+      template: (item) => itemRenderer(item, 2)
+    }
+  ];
+
+  // setDevices(
+  //   Object.getOwnPropertyNames(profileContext?.deviceProfiles?.deviceProfiles?.saved).map((device) => {
+  //     return ({
+  //       name: device,
+  //       template: (item) => itemRenderer(item, 0)
+  //     })
+  //   })
+  // )
   return (
     <nav className=' w-full'>
       <div className='nav  w-full mb-[-1px] pt-3 flex flex-between flex-row'>
@@ -97,7 +121,6 @@ const NavEditor = () => {
             <p className="title-text">HOME</p>
           </div>
 
-          {/* <Spacer className=""/> */}
           <div className="spacer" />
 
           <div className="flex flex-col">
@@ -108,7 +131,13 @@ const NavEditor = () => {
 
         </div>
 
-
+        <div className="flex flex-col">
+          <div className="flex flex-row">
+            <p className="text-base">// CURRENT PROFILE</p>
+            <div> </div>
+          </div>
+          <p className="text-profile-title slant">{profileName}</p>
+        </div>
         {/* Desktop Navigation */}
         <div className='sm:flex '>
           {session?.user ? (
@@ -151,10 +180,13 @@ const NavEditor = () => {
         </div>
       </div>
 
-      <TabMenu unstyled model={items} activeIndex={activeIndex} onTabChange={(e) => {
+      <TabMenu unstyled model={devices} activeIndex={activeIndex} onTabChange={(e) => {
         setActiveIndex(e.index);
         console.log("TAB INDEX: " + e.index);
       }} />
+
+
+
       {/* Mobile Navigation */}
       {/* <div className='sm:hidden flex relative'>
         {session?.user ? (

@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&family=Exo:wght@600&family=Inter:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -1233,13 +1234,13 @@ transition: filter 0.3s;
   border-radius: 10px;
 }
 .p-tree-container {
-  background: repeating-linear-gradient(-45deg, rgba(0, 9, 16, 0.5), rgb(0, 9, 16, 0.5) 5.5px, rgba(229, 229, 247, 0) 2.5px, rgba(229, 229, 247, 0) 17.5px);
+  background: repeating-linear-gradient(-45deg, rgb(0, 14, 16), rgb(0, 9, 16, 0.3) 2px, rgba(0, 0, 0, 0) 2px, rgba(0, 0, 0, 0) 7px);
 border-radius: 8px;
 overflow: auto !important;
 height: 1000px !important;
 }
 .bg-striped {
-  background: repeating-linear-gradient(-45deg, rgb(0, 9, 16), rgb(0, 9, 16) 5.5px, rgb(229, 229, 247) 2.5px, rgb(229, 229, 247) 17.5px);
+  background: repeating-linear-gradient(-45deg, rgba(0, 9, 16, 0.5), rgb(0, 9, 16, 0.5) 2.5px, rgba(229, 229, 247, 0) 2.5px, rgba(229, 229, 247, 0) 7px);
 }
 .panel {
   border: 1px solid rgba(0, 240, 255, 0.2);
@@ -1486,8 +1487,84 @@ div[data-pc-name='tabmenu']{
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
+.control-profile-card-bg {
+  border-radius: 10px;
+  background-color: #021519;
+  position: relative;
+  background: repeating-linear-gradient(-45deg, rgb(0, 14, 16), rgb(0, 9, 16, 0.3) 2px, rgba(0, 0, 0, 0) 2px, rgba(0, 0, 0, 0) 7px);
+}
+.control-profile-card-bg:hover {
+  border-radius: 10px;
+  background-color: #00000000;
+  position: relative;
+  filter: drop-shadow(0px 4px 24px #00eeff2f);
+transition: filter 0.18s;
+}
 
+.control-profile-card-bg:hover::before {
 
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-width: 1.5px;
+
+  border-radius: 10px 10px 10px 10px;
+  border: 2px solid transparent;
+  background: #008890;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  transition: background 0.3s;
+
+}
+.control-profile-card-bg::before {
+
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-width: 1.5px;
+cursor: pointer;
+  border-radius: 10px 10px 10px 10px;
+  border: 2px solid transparent;
+  background: radial-gradient(rgb(0, 255, 234), rgba(0, 44, 31, 0.459)) border-box;;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
+.control-profile-card-title {
+  font-family: 'Roboto' , sans-serif;
+  font-size: 15pt;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+color: #CEFCFF;
+}
+.control-profile-card-device {
+  font-family: 'Exo 2';
+  font-size: 12pt;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #CEFCFF;
+  line-height: 12px;
+}
+.control-profile-card-device-number {
+  font-family: 'Exo 2';
+  font-size: 24pt;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #CEFCFF;
+  line-height: 24px;
+}
+.control-profile-card-body{
+  font-family: 'Exo 2';
+  font-size: 10pt;
+  font-weight: 400;
+  text-transform: capitalize;
+  color: #CEFCFF;
+  line-height: 10px;
+}
 .nav {
 padding: 0 100px 0 100px;
 height: 73px;
