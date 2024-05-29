@@ -17,7 +17,7 @@ export const SelectedActionContext = createContext();
 export const ShowViewerPanelContext = createContext();
 export const ShowEditorPanelContext = createContext();
 
-export const Context = createContext(null);
+export const Context = createContext();
 export const ActionUpdateContext = createContext();
 
 

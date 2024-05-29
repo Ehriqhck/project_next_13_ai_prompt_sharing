@@ -8,6 +8,7 @@ import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 import Spacer from "components/generic/Spacer.jsx"
 import { Context } from '@components/Provider.jsx'
 
+
 const NavEditor = () => {
   const [devices, setDevices] = useState([
     {
@@ -74,8 +75,8 @@ const NavEditor = () => {
     // console.log("PARSED & STRINGED RESPONSE: " + JSON.parse(JSON.stringify(data[0].deviceProfiles.deviceProfiles)));
     // console.log("RAW RESPONSE: " + JSON.stringify(data[0].deviceProfiles.deviceProfiles.saved["VKB_GLADIATOR_EVO"].buttons[selectedButton]?.["top"]));
     // console.log("FETCHED DEVICEPROFILES: " + data);
-    setProfileName(data?.deviceProfiles?.deviceProfiles?.saved['VKB_GLADIATOR_EVO'].profileName)
-    setDevices(Object.getOwnPropertyNames(data?.deviceProfiles?.deviceProfiles?.saved).map((device) => {
+    setProfileName(data?.deviceProfiles?.TEST_PROFILE_1?.profileName)
+    setDevices(Object.getOwnPropertyNames(data?.deviceProfiles?.TEST_PROFILE_1?.saved).map((device) => {
       return ({
         name: device,
         template: (item) => itemRenderer(item, 0)
