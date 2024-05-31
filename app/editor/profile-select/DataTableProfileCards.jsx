@@ -5,9 +5,31 @@ import { useState, useEffect, useContext } from 'react';
 import { Button, Column } from 'primereact/button';
 import { Context } from '@components/Provider.jsx'
 import { parse } from 'postcss';
+import { FilterMatchMode, FilterOperator } from 'primereact/api';
 
 const DataTableProfileCards = (props) => {
+    const [selected, setSelected] = useState({
+        name: 'No Selection',
+        devices: '0',
+        dateLastModified: 'No Selection',
+        dateCreated: 'No Selection'
 
+    })
+    const [globalFilterValue, setGlobalFilterValue] = useState('');
+    const onGlobalFilterChange = (e) => {
+        const value = e.target.value;
+        let _filters = { ...filters };
+
+        _filters['global'].value = value;
+
+        setFilters(_filters);
+        setGlobalFilterValue(value);
+    };
+    const [filters, setFilters] = useState({
+
+        name: { value: null, matchMode: FilterMatchMode.STARTS_WITH },
+
+    });
     // const [profile, setProfile] = useState({
     //     TEST_PROhFILE_1: {
     //         profileName: 'TEST PROFILE 1',
@@ -417,14 +439,9 @@ const DataTableProfileCards = (props) => {
 
 
 
-    const header = (
-        <div className="flex flex-wrap align-items-center justify-content-between gap-2">
-            <span className="text-xl text-900 font-bold">Products</span>
-            <Button icon="pi pi-refresh" rounded raised />
-        </div>
-    );
+   
     const footer = `In total there are ${devices ? devices.length : 0} products.`;
-    
+
     const parseDevices = Object.keys(props.context).map(key => (
         {
             name: key,
@@ -443,37 +460,78 @@ const DataTableProfileCards = (props) => {
 
     const imageBodyTemplate = (device) => {
         return (
-            <div>
 
-                <Button unstyled onClick={(e) => console.log(props.context)}
-                    className='flex flex-col min-w-[250px] control-profile-card-bg   p-[8px] gap-[8px] '>
+                <Button  onClick={(e) => {
+                    console.log(device)
+                    setSelected(device)
+                }}
+                type='profile-card-button'
+                    className='flex flex-col min-w-[250px]  w-[345px]  control-profile-card-bg  px-[16px] pb-[8px] pt-[14px] gap-[8px] '>
                     <div className='flex w-full'>
-                        <p className='ml-[8px] ml-[0px] control-profile-card-title'>{device.name} </p>
+                        <p className=' control-profile-card-title'>{device.name} </p>
                     </div>
 
-                    <div className='flex flex-row justify-between mb-[4px]'>
+                    <div className='flex flex-row justify-between mb-[4px]  w-[100%]'>
                         <div className='flex flex-row mr-[64px] h-full justify-center gap-[4px]'>
                             <p className='flex control-profile-card-device-number'>{device.devices}</p>
                             <p className='flex control-profile-card-device self-end '>DEVICES</p>
                         </div>
 
-                        <div className='flex flex-col  justify-between '>
-                            <p className='control-profile-card-body'>LAST MODIFIED</p>
+                        <div className='flex flex-col  justify-between gap-[2px] '>
+                            <p className='control-profile-card-body mb-[2px]'>LAST MODIFIED</p>
                             <p className='control-profile-card-body'>July 3rd, 12:10AM {device.dateLastModified}</p>
                         </div>
                     </div>
                 </Button>
 
-            </div>
 
         )
     };
+    const paginatorBodyTemplate = {
+        layout: 'RowsPerPageDropdown PrevPageLink PageLinks NextPageLink CurrentPageReport',
+
+        CurrentPageReport: (options) => {
+            return (
+                <span style={{ color: 'var(--text-color)', userSelect: 'none', width: '120px', textAlign: 'center' }}>
+                    asd  {options.first} - {options.last} of {options.totalRecords}
+                </span>
+            );
+        }
+    }
 
     return (
-        <DataTable unstyled value={parseDevices} header={header} footer={footer} rows={3} paginator selectionMode='single'>
-            <Column header="Image" body={imageBodyTemplate}></Column>
+        <div className='flex flex-row  control-profile-selector'>
+            <DataTable 
+            className='min-w-[345px] w-full'
+             filterDisplay="row" type='profile card' value={parseDevices} footer={footer} rows={3} paginator={true} selectionMode='single' paginatorTemplate={paginatorBodyTemplate}>
+                <Column field="name" filter filterPlaceholder='search'  body={imageBodyTemplate}></Column>
 
-        </DataTable>
+            </DataTable>
+
+            <div>
+                <Button unstyled onClick={(e) => {
+                    console.log(e)
+                }}
+                    className='flex flex-col min-w-[250px] control-profile-card-bg  w-[345px] p-[8px] gap-[8px] '>
+                    <div className='flex w-full'>
+                        <p className='ml-[8px] ml-[0px] control-profile-card-title'>{selected.name} </p>
+                    </div>
+
+                    <div className='flex flex-row justify-between mb-[4px]'>
+                        <div className='flex flex-row mr-[64px] h-full justify-center gap-[4px]'>
+                            <p className='flex control-profile-card-device-number justify-self-end  self-end'>{selected.devices}</p>
+                            <p className='flex control-profile-card-device self-end '>DEVICES</p>
+                        </div>
+
+                        <div className='flex flex-col  justify-between '>
+                            <p className='control-profile-card-body whitespace-nowrap'>LAST MODIFIED</p>
+                            <p className='control-profile-card-body whitespace-nowrap'> {selected.dateLastModified}</p>
+                        </div>
+                    </div>
+                </Button>
+            </div>
+        </div>
+
     )
 }
 

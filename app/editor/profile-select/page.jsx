@@ -440,7 +440,8 @@ const page = () => {
 
             } catch (error) {
                 console.log(error);
-            } finally {
+            } 
+            finally {
                 setIsLoading(false);
             }
             // setProfileName(data?.deviceProfiles?.TEST_PROFILE_1?.saved['VKB_GLADIATOR_EVO'].profileName)
@@ -505,7 +506,7 @@ const page = () => {
 
             </Button> */}
 
-            <DataTableProfileCards profileDevices={devices} context={profiles} />
+            <DataTableProfileCards profileDevices={devices} context={profiles}  />
         </section>
     )
 }
