@@ -6,15 +6,21 @@ import { Button, Column } from 'primereact/button';
 import { Context } from '@components/Provider.jsx'
 import { parse } from 'postcss';
 import { FilterMatchMode, FilterOperator } from 'primereact/api';
+import { log } from 'util';
+import { err } from '@iconfu/svg-inject';
 
 const DataTableProfileCards = (props) => {
-    const [selected, setSelected] = useState({
-        name: 'No Selection',
-        devices: '0',
-        dateLastModified: 'No Selection',
-        dateCreated: 'No Selection'
+    const [context, setContext] = useState({
+    })
+    const [isLoading, setIsLoading] = useState(false)
+
+    const [selectedPreview, setSelectedPreview] = useState({
+        profileName: "loading",
+        deviceList: ["none"],
+        deviceAmount: '-',
 
     })
+
     const [globalFilterValue, setGlobalFilterValue] = useState('');
     const onGlobalFilterChange = (e) => {
         const value = e.target.value;
@@ -30,388 +36,7 @@ const DataTableProfileCards = (props) => {
         name: { value: null, matchMode: FilterMatchMode.STARTS_WITH },
 
     });
-    // const [profile, setProfile] = useState({
-    //     TEST_PROhFILE_1: {
-    //         profileName: 'TEST PROFILE 1',
-    //         dateModified: '',
-    //         dateCreated: '',
-    //         saved: {
-    //             VKB_GLADIATOR_EVO: {
-    //                 buttons: {
-    //                     circleSwitch: {
-    //                         top: {
-    //                             name: 'CIRCLE SWITCH UP',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-    //                             ]
-    //                         },
-    //                         bottom: {
-    //                             name: 'CIRCLE SWITCH DOWN',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'SECOND LAYER',
-    //                                 'THIRD LAYER'
-    //                             ]
-    //                         },
-    //                         press: {
-    //                             name: 'CIRCLE SWITCH PRESS',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'SECOND LAYER',
-    //                                 'THIRD LAYER'
-    //                             ]
-    //                         },
-    //                         left: {
-    //                             name: 'CIRCLE SWITCH LEFT',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-    //                             ]
-    //                         },
-    //                         right: {
-    //                             name: 'CIRCLE SWITCH UP',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'SECOND LAYER',
-    //                                 'THIRD LAYER'
-    //                             ]
-    //                         }
-    //                     },
-    //                     hatSwitch: {
-    //                         top: {
-    //                             name: 'HAT SWITCH UP',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-    //                             ]
-    //                         },
-    //                         bottom: {
-    //                             name: 'HAT SWITCH DOWN',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'SECOND LAYER',
-    //                                 'THIRD LAYER'
-    //                             ]
-    //                         },
-    //                         press: {
-    //                             name: 'HAT SWITCH PRESS',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'SECOND LAYER',
-    //                                 'THIRD LAYER'
-    //                             ]
-    //                         },
-    //                         left: {
-    //                             name: 'HAT SWITCH LEFT',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-    //                             ]
-    //                         },
-    //                         right: {
-    //                             name: 'HAT SWITCH UP',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'SECOND LAYER',
-    //                                 'THIRD LAYER'
-    //                             ]
-    //                         }
-    //                     },
-    //                     pillSwitch: {
-    //                         top: {
-    //                             name: 'PILL SWITCH UP',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-    //                             ]
-    //                         },
-    //                         bottom: {
-    //                             name: 'PILL SWITCH DOWN',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'SECOND LAYER',
-    //                                 'THIRD LAYER'
-    //                             ]
-    //                         },
-    //                         press: {
-    //                             name: 'PILL SWITCH PRESS',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'SECOND LAYER',
-    //                                 'THIRD LAYER'
-    //                             ]
-    //                         },
-    //                         left: {
-    //                             name: 'PILL SWITCH LEFT',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-    //                             ]
-    //                         },
-    //                         right: {
-    //                             name: 'PILL SWITCH UP',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'SECOND LAYER',
-    //                                 'THIRD LAYER'
-    //                             ]
-    //                         }
-    //                     },
-    //                     redButton: {
-    //                         press: {
-    //                             name: 'RED BUTTON PRESS',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'SECOND LAYER',
-    //                                 'THIRD LAYER'
-    //                             ]
-    //                         }
-    //                     },
-    //                     chipSwitch: {
-    //                         top: {
-    //                             name: 'CHIP SWITCH UP',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-    //                             ]
-    //                         },
-    //                         bottom: {
-    //                             name: 'CHIP SWITCH DOWN',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'SECOND LAYER',
-    //                                 'THIRD LAYER'
-    //                             ]
-    //                         },
-    //                         press: {
-    //                             name: 'CHIP SWITCH PRESS',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'SECOND LAYER',
-    //                                 'THIRD LAYER'
-    //                             ]
-    //                         },
-    //                         left: {
-    //                             name: 'CHIP SWITCH LEFT',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-    //                             ]
-    //                         },
-    //                         right: {
-    //                             name: 'CHIP SWITCH UP',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'SECOND LAYER',
-    //                                 'THIRD LAYER'
-    //                             ]
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     }
-    // },
-    // {
-    //     TEST_PROFILE_2: {
-    //         profileName: 'TEST PROFILE 2',
-    //         dateModified: '',
-    //         dateCreated: '',
-    //         saved: {
-    //             VKB_GLADIATOR_EVO: {
-    //                 buttons: {
-    //                     circleSwitch: {
-    //                         top: {
-    //                             name: 'CIRCLE SWITCH UP',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-    //                             ]
-    //                         },
-    //                         bottom: {
-    //                             name: 'CIRCLE SWITCH DOWN',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'SECOND LAYER',
-    //                                 'THIRD LAYER'
-    //                             ]
-    //                         },
-    //                         press: {
-    //                             name: 'CIRCLE SWITCH PRESS',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'SECOND LAYER',
-    //                                 'THIRD LAYER'
-    //                             ]
-    //                         },
-    //                         left: {
-    //                             name: 'CIRCLE SWITCH LEFT',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-    //                             ]
-    //                         },
-    //                         right: {
-    //                             name: 'CIRCLE SWITCH UP',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'SECOND LAYER',
-    //                                 'THIRD LAYER'
-    //                             ]
-    //                         }
-    //                     },
-    //                     hatSwitch: {
-    //                         top: {
-    //                             name: 'HAT SWITCH UP',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-    //                             ]
-    //                         },
-    //                         bottom: {
-    //                             name: 'HAT SWITCH DOWN',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'SECOND LAYER',
-    //                                 'THIRD LAYER'
-    //                             ]
-    //                         },
-    //                         press: {
-    //                             name: 'HAT SWITCH PRESS',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'SECOND LAYER',
-    //                                 'THIRD LAYER'
-    //                             ]
-    //                         },
-    //                         left: {
-    //                             name: 'HAT SWITCH LEFT',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-    //                             ]
-    //                         },
-    //                         right: {
-    //                             name: 'HAT SWITCH UP',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'SECOND LAYER',
-    //                                 'THIRD LAYER'
-    //                             ]
-    //                         }
-    //                     },
-    //                     pillSwitch: {
-    //                         top: {
-    //                             name: 'PILL SWITCH UP',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-    //                             ]
-    //                         },
-    //                         bottom: {
-    //                             name: 'PILL SWITCH DOWN',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'SECOND LAYER',
-    //                                 'THIRD LAYER'
-    //                             ]
-    //                         },
-    //                         press: {
-    //                             name: 'PILL SWITCH PRESS',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'SECOND LAYER',
-    //                                 'THIRD LAYER'
-    //                             ]
-    //                         },
-    //                         left: {
-    //                             name: 'PILL SWITCH LEFT',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-    //                             ]
-    //                         },
-    //                         right: {
-    //                             name: 'PILL SWITCH UP',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'SECOND LAYER',
-    //                                 'THIRD LAYER'
-    //                             ]
-    //                         }
-    //                     },
-    //                     redButton: {
-    //                         press: {
-    //                             name: 'RED BUTTON PRESS',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'SECOND LAYER',
-    //                                 'THIRD LAYER'
-    //                             ]
-    //                         }
-    //                     },
-    //                     chipSwitch: {
-    //                         top: {
-    //                             name: 'CHIP SWITCH UP',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-    //                             ]
-    //                         },
-    //                         bottom: {
-    //                             name: 'CHIP SWITCH DOWN',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'SECOND LAYER',
-    //                                 'THIRD LAYER'
-    //                             ]
-    //                         },
-    //                         press: {
-    //                             name: 'CHIP SWITCH PRESS',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'SECOND LAYER',
-    //                                 'THIRD LAYER'
-    //                             ]
-    //                         },
-    //                         left: {
-    //                             name: 'CHIP SWITCH LEFT',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-    //                             ]
-    //                         },
-    //                         right: {
-    //                             name: 'CHIP SWITCH UP',
-    //                             layers: [
-    //                                 'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-    //                                 'SECOND LAYER',
-    //                                 'THIRD LAYER'
-    //                             ]
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     }
-    // })
+
     const [loading, setLoading] = useState(true)
     const [devices, setDevices] = useState([{
         id: '1000',
@@ -437,56 +62,100 @@ const DataTableProfileCards = (props) => {
         rating: 5
     }]);
 
+    useEffect(() => {
 
+        try {
+            setIsLoading(true)
+            setContext(props?.context)
 
-   
-    const footer = `In total there are ${devices ? devices.length : 0} products.`;
-
-    const parseDevices = Object.keys(props.context).map(key => (
-        {
-            name: key,
-            devices: Object.keys(props.context[key]?.saved)?.length,
-            dateLastModified: props.context[key].dateModified,
-            dateCreated: props.context[key].dateCreated,
-
+            // props?.context
+            setDevices(props?.context)
+            console.log("GALSKDJALSKDJ");
+            console.log(context);
+        } catch (error) {
+            console.log(error);
+        } finally {
+            setIsLoading(false)
         }
 
-    ))
-    // useEffect(() => {
-    //     console.log(props.context);
-    //     console.log(profileContext);
-    //     setProfile(props.context)
-    // }, [profile, props])
 
-    const imageBodyTemplate = (device) => {
+    })
+
+
+    const footer = `In total there are ${devices ? devices.length : 0} products.`;
+
+    // const parseDevices = Object.keys(context?.deviceProfiles).map(key => (
+    //     {
+    //         name: key,
+    //         devices: Object.keys(context[key]?.saved),
+    //         deviceAmount: Object.keys(context[key]?.saved)?.length,
+    //         dateLastModified: context[key].dateModified,
+    //         dateCreated: context[key].dateCreated,
+
+    //     })
+
+    // )
+    // setDevices(parseDevices);
+
+    const imageBodyTemplate = (profile) => {
+
         return (
 
-                <Button  onClick={(e) => {
-                    console.log(device)
-                    setSelected(device)
-                }}
+            <Button onClick={(e) => {
+                try {
+                    setLoading(true);
+                    console.log(Object.entries(profile?.savedDevices).length);
+                    setSelectedPreview({
+                        deviceAmount: profile.deviceAmount,
+                        profileName: profile.profileName,
+                        deviceList: Object.keys(profile?.savedDevices)
+                    });
+                    console.log("new selection");
+                    console.log(selectedPreview);
+                } catch (error) {
+                    console.log(error);
+                } finally {
+                    setLoading(false)
+                }
+
+
+            }}
                 type='profile-card-button'
-                    className='flex flex-col min-w-[250px]  w-[345px]  control-profile-card-bg  px-[16px] pb-[8px] pt-[14px] gap-[8px] '>
-                    <div className='flex w-full'>
-                        <p className=' control-profile-card-title'>{device.name} </p>
+                className='flex flex-col min-w-[250px]  w-[345px]  control-profile-card-bg  px-[16px] pb-[8px] pt-[14px] gap-[8px] '>
+                <div className='flex w-full'>
+                    <p className=' control-profile-card-title'>{profile.profileName} </p>
+                </div>
+
+                <div className='flex flex-row justify-between mb-[4px]  w-[100%]'>
+                    <div className='flex flex-row mr-[64px] h-full justify-center gap-[4px]'>
+                        <p className='flex control-profile-card-device-number justify-self-end  self-end'>
+                       {profile.deviceAmount}
+
+                        </p>
+
+                        <p className='flex control-profile-card-device self-end '>DEVICES</p>
                     </div>
 
-                    <div className='flex flex-row justify-between mb-[4px]  w-[100%]'>
-                        <div className='flex flex-row mr-[64px] h-full justify-center gap-[4px]'>
-                            <p className='flex control-profile-card-device-number'>{device.devices}</p>
-                            <p className='flex control-profile-card-device self-end '>DEVICES</p>
-                        </div>
-
-                        <div className='flex flex-col  justify-between gap-[2px] '>
-                            <p className='control-profile-card-body mb-[2px]'>LAST MODIFIED</p>
-                            <p className='control-profile-card-body'>July 3rd, 12:10AM {device.dateLastModified}</p>
-                        </div>
+                    <div className='flex flex-col  justify-between gap-[2px] '>
+                        <p className='control-profile-card-body mb-[2px]'>LAST MODIFIED</p>
+                        <p className='control-profile-card-body'>July 3rd, 12:10AM {profile.dateLastModified}</p>
                     </div>
-                </Button>
-
+                </div>
+            </Button>
 
         )
     };
+
+    const getSelectedProfile = (selectedDevice) => {
+        // console.log(selected);
+        // const deviceList = Object.keys(selectedDevice.deviceList).map(device => {
+        //     <li> {device.deviceList}</li>
+        // })
+
+        // // console.log(deviceList);
+        // return deviceList;
+    }
+
     const paginatorBodyTemplate = {
         layout: 'RowsPerPageDropdown PrevPageLink PageLinks NextPageLink CurrentPageReport',
 
@@ -498,40 +167,67 @@ const DataTableProfileCards = (props) => {
             );
         }
     }
-
     return (
         <div className='flex flex-row  control-profile-selector'>
-            <DataTable 
-            className='min-w-[345px] w-full'
-             filterDisplay="row" type='profile card' value={parseDevices} footer={footer} rows={3} paginator={true} selectionMode='single' paginatorTemplate={paginatorBodyTemplate}>
-                <Column field="name" filter filterPlaceholder='search'  body={imageBodyTemplate}></Column>
+            <DataTable
+                className='min-w-[345px] w-full'
+                filterDisplay="row" type='profile card' value={devices} footer={footer} rows={3} paginator={true} selectionMode='single' paginatorTemplate={paginatorBodyTemplate}>
+                <Column field="name" filter filterPlaceholder='search' body={imageBodyTemplate}></Column>
 
             </DataTable>
+            <div className='ml-[36px] flex flex-col'>
+                <div className='min-w-[600px] flex flex-col p-[16px] min-h-[385px] panel-white  gap-[16px]'>
+                    <p className="font-['Exo_2'] text-[24px] leading-[24px] font-medium"> Title </p>
 
-            <div>
-                <Button unstyled onClick={(e) => {
-                    console.log(e)
-                }}
-                    className='flex flex-col min-w-[250px] control-profile-card-bg  w-[345px] p-[8px] gap-[8px] '>
-                    <div className='flex w-full'>
-                        <p className='ml-[8px] ml-[0px] control-profile-card-title'>{selected.name} </p>
+                    <div>
+                        <div className='flex flex-row gap-[36px]'>
+                            <div flex flex-col>
+                                <p className="font-['Exo_2'] text-[10pt] font-medium "> LAST MODIFIED </p>
+                                <p> - </p>
+                            </div>
+                            <div flex flex-col>
+                                <p className="font-['Exo_2'] text-[10pt] font-medium "> GAME VERSION </p>
+                                <p> - </p>
+                            </div>
+
+                        </div>
+                        <div className='flex flex-col'>
+                            <p className="font-['Exo_2'] text-[10pt] font-medium "> PROFILE DEVICES </p>
+                            
+                            {
+                                selectedPreview.deviceList
+                            }
+
+                        </div>
                     </div>
 
-                    <div className='flex flex-row justify-between mb-[4px]'>
-                        <div className='flex flex-row mr-[64px] h-full justify-center gap-[4px]'>
-                            <p className='flex control-profile-card-device-number justify-self-end  self-end'>{selected.devices}</p>
-                            <p className='flex control-profile-card-device self-end '>DEVICES</p>
+                </div>
+                <div className='flex flex-col gap-[3px] mt-[16px]'>
+                    <p className="font-['Exo_2'] text-[10pt] font-medium">SELECTED PROFILE </p>
+                    <Button unstyled onClick={(e) => {
+                        // console.log("ASDAKSDHKASJ" + e.devices[0])
+                        console.log(e);
+                    }}
+                        className='flex flex-col min-w-[250px] control-profile-card-bg  w-[345px] p-[8px] gap-[8px] '>
+                        <div className='flex w-full'>
+                            <p className='ml-[8px] ml-[0px] control-profile-card-title'>{selectedPreview.profileName} </p>
                         </div>
 
-                        <div className='flex flex-col  justify-between '>
-                            <p className='control-profile-card-body whitespace-nowrap'>LAST MODIFIED</p>
-                            <p className='control-profile-card-body whitespace-nowrap'> {selected.dateLastModified}</p>
+                        <div className='flex flex-row justify-between mb-[4px]'>
+                            <div className='flex flex-row mr-[64px] h-full justify-center gap-[4px]'>
+                                <p className='flex control-profile-card-device-number justify-self-end  self-end'>{selectedPreview.deviceAmount}</p>
+                                <p className='flex control-profile-card-device self-end '>DEVICES</p>
+                            </div>
+
+                            <div className='flex flex-col  justify-between '>
+                                <p className='control-profile-card-body whitespace-nowrap'>LAST MODIFIED</p>
+                                <p className='control-profile-card-body whitespace-nowrap'> {selectedPreview.dateLastModified}</p>
+                            </div>
                         </div>
-                    </div>
-                </Button>
+                    </Button>
+                </div>
             </div>
         </div>
-
     )
 }
 
