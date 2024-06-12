@@ -3,6 +3,7 @@ import { useContext, createContext, useState, useEffect } from "react";
 import { SessionProvider } from "next-auth/react";
 import { PrimeReactProvider, PrimeReactContext } from "primereact/api";
 import "primereact-sass-theme-9.6.2/themes/mytheme/theme.scss";
+import Tailwind from 'primereact/passthrough/tailwind';
 
 export const SelectContext = createContext();
 export const SelectedEditorActionContext = createContext();

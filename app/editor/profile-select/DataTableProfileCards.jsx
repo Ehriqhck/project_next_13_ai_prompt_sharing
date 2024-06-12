@@ -82,7 +82,6 @@ const DataTableProfileCards = (props) => {
     })
 
 
-    const footer = `In total there are ${devices ? devices.length : 0} products.`;
 
     // const parseDevices = Object.keys(context?.deviceProfiles).map(key => (
     //     {
@@ -104,11 +103,14 @@ const DataTableProfileCards = (props) => {
             <Button onClick={(e) => {
                 try {
                     setLoading(true);
-                    console.log(Object.entries(profile?.savedDevices).length);
+                    // console.log(Object.entries(profile?.savedDevices).length);
                     setSelectedPreview({
                         deviceAmount: profile.deviceAmount,
                         profileName: profile.profileName,
-                        deviceList: Object.keys(profile?.savedDevices)
+                        deviceList: Object.keys(profile?.savedDevices),
+                        dateModified: profile.dateModified,
+                        dateCreated: profile.dateCreated,
+                        gameVersion: profile.gameVersion
                     });
                     console.log("new selection");
                     console.log(selectedPreview);
@@ -129,7 +131,7 @@ const DataTableProfileCards = (props) => {
                 <div className='flex flex-row justify-between mb-[4px]  w-[100%]'>
                     <div className='flex flex-row mr-[64px] h-full justify-center gap-[4px]'>
                         <p className='flex control-profile-card-device-number justify-self-end  self-end'>
-                       {profile.deviceAmount}
+                            {profile.deviceAmount}
 
                         </p>
 
@@ -162,41 +164,50 @@ const DataTableProfileCards = (props) => {
         CurrentPageReport: (options) => {
             return (
                 <span style={{ color: 'var(--text-color)', userSelect: 'none', width: '120px', textAlign: 'center' }}>
-                    asd  {options.first} - {options.last} of {options.totalRecords}
+                      {options.first} - {options.last} of {options.totalRecords} 
                 </span>
             );
         }
     }
     return (
         <div className='flex flex-row  control-profile-selector'>
-            <DataTable
-                className='min-w-[345px] w-full'
-                filterDisplay="row" type='profile card' value={devices} footer={footer} rows={3} paginator={true} selectionMode='single' paginatorTemplate={paginatorBodyTemplate}>
-                <Column field="name" filter filterPlaceholder='search' body={imageBodyTemplate}></Column>
+            <div className='radial-outline'>
+                <p> SAVED PROFILES</p>
 
-            </DataTable>
+                <DataTable
+                    className='min-w-[345px] '
+                    filterDisplay="row" type='profile card' value={devices}  rows={3} paginator={true} selectionMode='single' paginatorTemplate={paginatorBodyTemplate}>
+                    <Column field="name" filter filterPlaceholder='search' body={imageBodyTemplate}></Column>
+
+                </DataTable>
+            </div>
+
             <div className='ml-[36px] flex flex-col'>
                 <div className='min-w-[600px] flex flex-col p-[16px] min-h-[385px] panel-white  gap-[16px]'>
                     <p className="font-['Exo_2'] text-[24px] leading-[24px] font-medium"> Title </p>
 
                     <div>
                         <div className='flex flex-row gap-[36px]'>
-                            <div flex flex-col>
+                            <div className='flex flex-col gap-[4px] '>
                                 <p className="font-['Exo_2'] text-[10pt] font-medium "> LAST MODIFIED </p>
-                                <p> - </p>
+                                <p className="font-['Exo_2'] text-[10pt] font-light capitalize ">{selectedPreview.dateModified} </p>
                             </div>
-                            <div flex flex-col>
+                            <div className='flex flex-col gap-[4px] '>
+                                <p className="font-['Exo_2'] text-[10pt] font-medium  "> DATE CREATED </p>
+                                <p className="font-['Exo_2'] text-[10pt] font-light capitalize "> {selectedPreview.dateCreated} </p>
+                            </div>
+                            <div className='flex flex-col gap-[4px] '>
                                 <p className="font-['Exo_2'] text-[10pt] font-medium "> GAME VERSION </p>
-                                <p> - </p>
+                                <p className="font-['Exo_2'] text-[10pt] font-light capitalize "> {selectedPreview.gameVersion} </p>
                             </div>
 
                         </div>
-                        <div className='flex flex-col'>
+                        <div className='flex flex-col gap-[4px] mt-[16px]'>
                             <p className="font-['Exo_2'] text-[10pt] font-medium "> PROFILE DEVICES </p>
-                            
-                            {
-                                selectedPreview.deviceList
-                            }
+
+
+                            <p className="font-['Exo_2'] text-[10pt] font-light capitalize ">{selectedPreview.deviceList} </p>
+
 
                         </div>
                     </div>

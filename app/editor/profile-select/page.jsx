@@ -47,10 +47,11 @@ const page = () => {
                 setAccountProfiles(Object.keys(data?.deviceProfiles).map((device) => {
                     return ({
                         "profileName":  data?.deviceProfiles[device]?.profileName,
-                        "dateMofified": data?.deviceProfiles[device]?.dateModified,
+                        "dateModified": data?.deviceProfiles[device]?.dateModified,
                         "dateCreated": data?.deviceProfiles[device]?.dateCreated,
                         "savedDevices":  data?.deviceProfiles[device]?.savedDevices,
                         "deviceAmount": data?.deviceProfiles[device]?.deviceAmount,
+                        "gameVersion": data?.deviceProfiles[device]?.gameVersion,
                     })
                 })
                 )
