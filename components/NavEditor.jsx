@@ -27,7 +27,6 @@ const NavEditor = () => {
       template: (item) => itemRenderer(item, 2)
     }
   ]);
-  const { profileContext, setprofileContext } = useContext(Context);
   const { data: session, status } = useSession();
   const [providers, setProviders] = useState(null);
   const [toggleDropdown, setToggleDropdown] = useState(false);

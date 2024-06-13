@@ -1,6 +1,6 @@
 'use client'
 import CloseButton from 'public/assets/icons/generic/button_close.svg'
-import IconLegend from '@components/generic/IconLegend';
+
 import React from 'react'
 import Device_VKB_SpaceEvo from '@components/Device_VKB_SpaceEvo';
 import InputEditor from './InputEditor';
@@ -9,8 +9,7 @@ import { useState, useContext, useEffect } from 'react';
 import { ShowEditorPanelContext, ShowViewerPanelContext } from '@components/Provider';
 import clsx from 'clsx';
 const page = () => {
-  const action = "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)"
-  const inputName = "HAT UP"
+
   const { showViewerPanel, setshowViewerPanel } = useContext(ShowViewerPanelContext);
   const { showEditorPanel, setshowEditorPanel } = useContext(ShowEditorPanelContext);
 

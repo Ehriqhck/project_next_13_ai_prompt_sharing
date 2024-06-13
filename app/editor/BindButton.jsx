@@ -16,7 +16,6 @@ const BindButton = (props) => {
     const { profileContext, setprofileContext } = useContext(Context);
     const { actionUpdate, setActionUpdate } = useContext(ActionUpdateContext)
 
-    const [fetcthed, setfetcthed] = useState();
     const { data: session } = useSession();
 
 

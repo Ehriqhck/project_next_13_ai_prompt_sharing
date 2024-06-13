@@ -8,7 +8,7 @@ import { parse } from 'postcss';
 import { FilterMatchMode, FilterOperator } from 'primereact/api';
 import { log } from 'util';
 import { err } from '@iconfu/svg-inject';
-
+import Link from 'next/link';
 const DataTableProfileCards = (props) => {
     const [context, setContext] = useState({
     })
@@ -18,8 +18,9 @@ const DataTableProfileCards = (props) => {
         profileName: "loading",
         deviceList: ["none"],
         deviceAmount: '-',
-
+        
     })
+    const { profileContext, setprofileContext } = useContext(Context);
 
     const [globalFilterValue, setGlobalFilterValue] = useState('');
     const onGlobalFilterChange = (e) => {
@@ -70,8 +71,8 @@ const DataTableProfileCards = (props) => {
 
             // props?.context
             setDevices(props?.context)
-            console.log("GALSKDJALSKDJ");
-            console.log(context);
+            // console.log("GALSKDJALSKDJ");
+            // console.log(context);
         } catch (error) {
             console.log(error);
         } finally {
@@ -107,13 +108,15 @@ const DataTableProfileCards = (props) => {
                     setSelectedPreview({
                         deviceAmount: profile.deviceAmount,
                         profileName: profile.profileName,
-                        deviceList: Object.keys(profile?.savedDevices),
+                        deviceList: profile?.savedDevices,
                         dateModified: profile.dateModified,
                         dateCreated: profile.dateCreated,
                         gameVersion: profile.gameVersion
                     });
                     console.log("new selection");
                     console.log(selectedPreview);
+                    setprofileContext(selectedPreview);
+
                 } catch (error) {
                     console.log(error);
                 } finally {
@@ -164,7 +167,7 @@ const DataTableProfileCards = (props) => {
         CurrentPageReport: (options) => {
             return (
                 <span style={{ color: 'var(--text-color)', userSelect: 'none', width: '120px', textAlign: 'center' }}>
-                      {options.first} - {options.last} of {options.totalRecords} 
+                    {options.first} - {options.last} of {options.totalRecords}
                 </span>
             );
         }
@@ -176,7 +179,7 @@ const DataTableProfileCards = (props) => {
 
                 <DataTable
                     className='min-w-[345px] '
-                    filterDisplay="row" type='profile card' value={devices}  rows={3} paginator={true} selectionMode='single' paginatorTemplate={paginatorBodyTemplate}>
+                    filterDisplay="row" type='profile card' value={devices} rows={3} paginator={true} selectionMode='single' paginatorTemplate={paginatorBodyTemplate}>
                     <Column field="name" filter filterPlaceholder='search' body={imageBodyTemplate}></Column>
 
                 </DataTable>
@@ -206,7 +209,7 @@ const DataTableProfileCards = (props) => {
                             <p className="font-['Exo_2'] text-[10pt] font-medium "> PROFILE DEVICES </p>
 
 
-                            <p className="font-['Exo_2'] text-[10pt] font-light capitalize ">{selectedPreview.deviceList} </p>
+                            <p className="font-['Exo_2'] text-[10pt] font-light capitalize ">{Object.keys(selectedPreview.deviceList)} </p>
 
 
                         </div>
@@ -214,28 +217,42 @@ const DataTableProfileCards = (props) => {
 
                 </div>
                 <div className='flex flex-col gap-[3px] mt-[16px]'>
-                    <p className="font-['Exo_2'] text-[10pt] font-medium">SELECTED PROFILE </p>
-                    <Button unstyled onClick={(e) => {
-                        // console.log("ASDAKSDHKASJ" + e.devices[0])
-                        console.log(e);
-                    }}
-                        className='flex flex-col min-w-[250px] control-profile-card-bg  w-[345px] p-[8px] gap-[8px] '>
-                        <div className='flex w-full'>
-                            <p className='ml-[8px] ml-[0px] control-profile-card-title'>{selectedPreview.profileName} </p>
-                        </div>
+                    <div>
+                        <div>
+                            <p className="font-['Exo_2'] text-[10pt] font-medium">SELECTED PROFILE </p>
+                            <Button unstyled onClick={(e) => {
+                                // console.log("ASDAKSDHKASJ" + e.devices[0])
+                                console.log(e);
+                            }}
+                                className='flex flex-col min-w-[250px] control-profile-card-bg  w-[345px] p-[8px] gap-[8px] '>
+                                <div className='flex w-full'>
+                                    <p className='ml-[8px] ml-[0px] control-profile-card-title'>{selectedPreview.profileName} </p>
+                                </div>
 
-                        <div className='flex flex-row justify-between mb-[4px]'>
-                            <div className='flex flex-row mr-[64px] h-full justify-center gap-[4px]'>
-                                <p className='flex control-profile-card-device-number justify-self-end  self-end'>{selectedPreview.deviceAmount}</p>
-                                <p className='flex control-profile-card-device self-end '>DEVICES</p>
-                            </div>
+                                <div className='flex flex-row justify-between mb-[4px]'>
+                                    <div className='flex flex-row mr-[64px] h-full justify-center gap-[4px]'>
+                                        <p className='flex control-profile-card-device-number justify-self-end  self-end'>{selectedPreview.deviceAmount}</p>
+                                        <p className='flex control-profile-card-device self-end '>DEVICES</p>
+                                    </div>
 
-                            <div className='flex flex-col  justify-between '>
-                                <p className='control-profile-card-body whitespace-nowrap'>LAST MODIFIED</p>
-                                <p className='control-profile-card-body whitespace-nowrap'> {selectedPreview.dateLastModified}</p>
-                            </div>
+                                    <div className='flex flex-col  justify-between '>
+                                        <p className='control-profile-card-body whitespace-nowrap'>LAST MODIFIED</p>
+                                        <p className='control-profile-card-body whitespace-nowrap'> {selectedPreview.dateLastModified}</p>
+                                    </div>
+                                </div>
+                            </Button>
                         </div>
-                    </Button>
+                                                   <Link href="/editor"> 
+
+                        <Button onClick={(e) => {
+                            // console.log("ASDAKSDHKASJ" + e.devices[0])
+                            setprofileContext(selectedPreview);
+                            console.log(profileContext?.buttons);
+
+                        }}>
+                        </Button>
+                        </Link> 
+                    </div>
                 </div>
             </div>
         </div>

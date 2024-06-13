@@ -21,10 +21,10 @@ const InputViewer = ({ selectedButton }) => {
     const { data: session } = useSession();
     const userId = { id: session?.user.id };
     console.log("USER ID: " + userId.id);
-    const { profileContext, setprofileContext } = useContext(Context);
     const { selectedViewerInput, setSelectedViewerInput } = useContext(SelectContext);
     const { selectedEditorInput, setSelectedEditorInput } = useContext(SelectedEditorActionContext)
     const { actionUpdate, setActionUpdate } = useContext(ActionUpdateContext)
+    const { profileContext, setprofileContext } = useContext(Context);
 
 
     const [top, setTop] = useState();
@@ -36,42 +36,63 @@ const InputViewer = ({ selectedButton }) => {
 
     console.log("Selected BUTTON: " + selectedButton);
 
-    // useEffect(() => {
-
-    //     // console.log("profile context:  " + JSON.stringify(profileContext));
-    //     fetchDeviceProfiles();
-    //     //rehydrate when another input is selected
-    // }, [selectedButton, selectedViewerInput, actionUpdate])
-
     useEffect(() => {
-        fetchDeviceProfiles();
+        console.log("/EDITOR :" + profileContext);
+        console.log( profileContext);
 
-
-    },[selectedViewerInput, selectedEditorInput])
+        // setTop(profileContext?.savedDevices["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["top"]);
+        // setbottom(data?.deviceProfiles?.TEST_PROFILE_1?.savedDevices["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["bottom"]);
+        // setLeft(data?.deviceProfiles?.TEST_PROFILE_1?.savedDevices["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["left"]);
+        // setRight(data?.deviceProfiles?.TEST_PROFILE_1?.savedDevices["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["right"]);
+        // setPress(data?.deviceProfiles?.TEST_PROFILE_1?.savedDevices["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["press"]);
+        getDeviceProfiles()
+    }, [selectedViewerInput, selectedEditorInput, profileContext])
 
     // const ButtonName = profileContext.deviceProfiles.saved["VKB_GLADIATOR_EVO"].profileName;
 
-    const fetchDeviceProfiles = async () => {
-        console.log("FETCHED DEVICEPROFILES BEFORE: ");
+    // const fetchDeviceProfiles = async () => {
+    //     console.log("FETCHED DEVICEPROFILES BEFORE: ");
 
-        const response = await fetch("/api/deviceProfiles", {
-            method: "POST",
-            body: JSON.stringify({
-                userId: session?.user.id,
-            })
-        });
+    //     const response = await fetch("/api/deviceProfiles", {
+    //         method: "POST",
+    //         body: JSON.stringify({
+    //             userId: session?.user.id,
+    //         })
+    //     });
 
-        const data = await response.json();
-        // console.log("INPUT VIEWER !!!!!!!!!!!" + JSON.stringify(data[0].deviceProfiles.deviceProfiles.saved["VKB_GLADIATOR_EVO"].buttons["circleSwitch"]?.["top"]));
-        // console.log("FETCHED RESPONSE: " + JSON.stringify(data));
-        // console.log("!!!!!!!!!!!! FETCHED RESPONSE: " + JSON.stringify(data.deviceProfiles));
-        setTop(data?.deviceProfiles?.TEST_PROFILE_1?.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["top"]);
-        setbottom(data?.deviceProfiles?.TEST_PROFILE_1?.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["bottom"]);
-        setLeft(data?.deviceProfiles?.TEST_PROFILE_1?.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["left"]);
-        setRight(data?.deviceProfiles?.TEST_PROFILE_1?.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["right"]);
-        setPress(data?.deviceProfiles?.TEST_PROFILE_1?.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["press"]);
-        console.log(data);
-        setprofileContext(data);
+    //     const data = await response.json();
+
+    //     setTop(data?.deviceProfiles?.TEST_PROFILE_1?.savedDevices["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["top"]);
+    //     setbottom(data?.deviceProfiles?.TEST_PROFILE_1?.savedDevices["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["bottom"]);
+    //     setLeft(data?.deviceProfiles?.TEST_PROFILE_1?.savedDevices["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["left"]);
+    //     setRight(data?.deviceProfiles?.TEST_PROFILE_1?.savedDevices["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["right"]);
+    //     setPress(data?.deviceProfiles?.TEST_PROFILE_1?.savedDevices["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["press"]);
+    //     console.log(data);
+    //     // setprofileContext(data);
+    //     // console.log("PARSED & STRINGED RESPONSE: " + JSON.parse(JSON.stringify(data[0].deviceProfiles.deviceProfiles)));
+    //     // console.log("RAW RESPONSE: " + JSON.stringify(data[0].deviceProfiles.deviceProfiles.saved["VKB_GLADIATOR_EVO"].buttons[selectedButton]?.["top"]));
+    //     // console.log("FETCHED DEVICEPROFILES: " + data);
+
+
+    // };
+
+    const getDeviceProfiles = () => {
+
+        console.log("FETCHED DEVICEPROFILES BEFORE: " );
+        console.log(profileContext);
+
+        setTop(profileContext?.deviceList["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["top"]);
+        setbottom(profileContext?.deviceList["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["bottom"]);
+        setRight(profileContext?.deviceList["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["right"]);
+        setPress(profileContext?.deviceList["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["press"]);
+        setLeft(profileContext?.deviceList["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["left"]);
+
+        // setbottom(data?.deviceProfiles?.TEST_PROFILE_1?.savedDevices["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["bottom"]);
+        // setLeft(data?.deviceProfiles?.TEST_PROFILE_1?.savedDevices["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["left"]);
+        // setRight(data?.deviceProfiles?.TEST_PROFILE_1?.savedDevices["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["right"]);
+        // setPress(data?.deviceProfiles?.TEST_PROFILE_1?.savedDevices["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["press"]);
+        console.log(profileContext);
+        // setprofileContext(data);
         // console.log("PARSED & STRINGED RESPONSE: " + JSON.parse(JSON.stringify(data[0].deviceProfiles.deviceProfiles)));
         // console.log("RAW RESPONSE: " + JSON.stringify(data[0].deviceProfiles.deviceProfiles.saved["VKB_GLADIATOR_EVO"].buttons[selectedButton]?.["top"]));
         // console.log("FETCHED DEVICEPROFILES: " + data);
@@ -79,45 +100,7 @@ const InputViewer = ({ selectedButton }) => {
 
     };
 
-    // console.log("fetchDeviceProfiles: " + top);
-    // console.log("PARSED fetchDeviceProfiles: " + JSON.stringify(top));
-    // const bottom = profileContext.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedButton]?.["bottom"];
-    // const left = profileContext.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedButton]?.["left"];
-    // const right = profileContext.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedButton]?.["right"];
-    // const press = profileContext.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons[selectedButton]?.["press"];
 
-    // console.log("CHILD SELECT: " + selectedButton);
-    // setTop(fetchDeviceProfiles);
-
-    const getSelectedInputIcon = (ButtonName) => {
-
-        switch (ButtonName) {
-            case ("circleSwitch"):
-
-                return (<CircleSwitch />)
-                break;
-
-            case ('hatSwitch'):
-                return (<Hat className="testCircle p-[10px]" />)
-                break;
-
-            case ('pillSwitch'):
-                return (<PillSwitch className="testCircle p-[10px]" />)
-                break;
-
-            case ('redButton'):
-                return (<RedButton className="testCircle p-[10px]" />)
-                break;
-            case ('chipSwitch'):
-                return (<ChipSwitch className="testCircle p-[10px]" />)
-                break;
-
-            default:
-                return (<Hat></Hat>)
-                break;
-        }
-
-    }
 
     const getInputTop = (input) => {
         //check if slot is undefined 
