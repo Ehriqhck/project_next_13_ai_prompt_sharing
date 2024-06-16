@@ -16,6 +16,9 @@
 html{
   min-width: 555px;
 }
+.p-dock {
+  position: unset !important;
+}
 .text-GameAction-Category-Heading{
   font-family: 'Inter', Helvetica;
   font-weight: 350;

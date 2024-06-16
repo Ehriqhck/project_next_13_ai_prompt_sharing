@@ -20,7 +20,7 @@ const DataTableProfileCards = (props) => {
         profileName: "loading",
         deviceList: ["none"],
         deviceAmount: '-',
-        
+
     })
     const { profileContext, setprofileContext } = useContext(Context);
 
@@ -118,7 +118,7 @@ const DataTableProfileCards = (props) => {
                     console.log("new selection");
                     console.log(selectedPreview);
                     setprofileContext(selectedPreview);
-
+                    sessionStorage.setItem(selectedProfile, JSON.stringify(selectedPreview))
                 } catch (error) {
                     console.log(error);
                 } finally {
@@ -244,16 +244,16 @@ const DataTableProfileCards = (props) => {
                                 </div>
                             </Button>
                         </div>
-                                                   <Link href="/editor"> 
+                        <Link href="/editor">
 
-                        <Button onClick={(e) => {
-                            // console.log("ASDAKSDHKASJ" + e.devices[0])
-                            setprofileContext(selectedPreview);
-                            console.log(profileContext?.buttons);
+                            <Button onClick={(e) => {
+                                // console.log("ASDAKSDHKASJ" + e.devices[0])
+                                setprofileContext(selectedPreview);
+                                console.log(profileContext?.buttons);
 
-                        }}>
-                        </Button>
-                        </Link> 
+                            }}>
+                            </Button>
+                        </Link>
                     </div>
                 </div>
             </div>

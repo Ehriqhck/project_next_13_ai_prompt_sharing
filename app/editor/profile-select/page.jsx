@@ -4,7 +4,7 @@ import NavEditor from 'components/NavEditor.jsx'
 import { Button } from 'primereact/button';
 import { useContext, useState, useEffect } from 'react'
 import { Context } from '@components/Provider.jsx'
-import DataTableProfileCards from 'app/editor/profile-select/DataTableProfileCards.jsx'
+import DataTableProfileCards from '@app/editor/profile-select/DataTableProfileCards.jsx'
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 
 const page = () => {
@@ -44,17 +44,19 @@ const page = () => {
                     })
                 })
                 const data = await response.json()
-                setAccountProfiles(Object.keys(data?.deviceProfiles).map((device) => {
+
+                const loadedProfiles = Object.keys(data?.deviceProfiles).map((device) => {
                     return ({
-                        "profileName":  data?.deviceProfiles[device]?.profileName,
+                        "profileName": data?.deviceProfiles[device]?.profileName,
                         "dateModified": data?.deviceProfiles[device]?.dateModified,
                         "dateCreated": data?.deviceProfiles[device]?.dateCreated,
-                        "savedDevices":  data?.deviceProfiles[device]?.savedDevices,
+                        "savedDevices": data?.deviceProfiles[device]?.savedDevices,
                         "deviceAmount": data?.deviceProfiles[device]?.deviceAmount,
                         "gameVersion": data?.deviceProfiles[device]?.gameVersion,
                     })
                 })
-                )
+                setAccountProfiles (loadedProfiles );
+                sessionStorage.setItem('loadedProfiles', JSON.stringify(loadedProfiles))
                 setProfiles(data?.deviceProfiles)
 
 

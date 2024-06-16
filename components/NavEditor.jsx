@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 import Spacer from "components/generic/Spacer.jsx"
 import { Context, SelectedDeviceContext } from '@components/Provider.jsx'
+import { Dock } from 'primereact/dock';
 
 import { usePathname } from 'next/navigation'
 
@@ -30,6 +31,24 @@ const NavEditor = () => {
       template: (item) => itemRenderer(item, 2)
     }
   ]);
+  const items = [
+    {
+      label: 'Finder',
+      icon: () => <img alt="Finder" src="https://primefaces.org/cdn/primereact/images/dock/finder.svg" width="100%" />,
+    },
+    {
+      label: 'App Store',
+      icon: () => <img alt="App Store" src="https://primefaces.org/cdn/primereact/images/dock/appstore.svg" width="100%" />,
+    },
+    {
+      label: 'Photos',
+      icon: () => <img alt="Photos" src="https://primefaces.org/cdn/primereact/images/dock/photos.svg" width="100%" />,
+    },
+    {
+      label: 'Trash',
+      icon: () => <img alt="trash" src="https://primefaces.org/cdn/primereact/images/dock/trash.png" width="100%" />,
+    }
+  ];
   const { data: session, status } = useSession();
   const [providers, setProviders] = useState(null);
   const [toggleDropdown, setToggleDropdown] = useState(false);
@@ -54,23 +73,23 @@ const NavEditor = () => {
 
   // console.log(Object.getOwnPropertyNames(profileContext?.deviceProfiles?.deviceProfiles?.saved) );
 
-  const items = [
-    {
-      name: 'Amy Elsner',
-      image: 'amyelsner.png',
-      template: (item) => itemRenderer(item, 0)
-    },
-    {
-      name: 'Anna Fali',
-      image: 'annafali.png',
-      template: (item) => itemRenderer(item, 1)
-    },
-    {
-      name: 'Asiya Javayant',
-      image: 'asiyajavayant.png',
-      template: (item) => itemRenderer(item, 2)
-    }
-  ];
+  // const items = [
+  //   {
+  //     name: 'Amy Elsner',
+  //     image: 'amyelsner.png',
+  //     template: (item) => itemRenderer(item, 0)
+  //   },
+  //   {
+  //     name: 'Anna Fali',
+  //     image: 'annafali.png',
+  //     template: (item) => itemRenderer(item, 1)
+  //   },
+  //   {
+  //     name: 'Asiya Javayant',
+  //     image: 'asiyajavayant.png',
+  //     template: (item) => itemRenderer(item, 2)
+  //   }
+  // ];
 
   // setDevices(
   //   Object.getOwnPropertyNames(profileContext?.deviceProfiles?.deviceProfiles?.saved).map((device) => {
@@ -228,11 +247,12 @@ const NavEditor = () => {
 
 
           </nav>
+          <Dock model={items}  />
 
-          <TabMenu unstyled model={devices} activeIndex={activeIndex} onTabChange={(e) => {
+          {/* <TabMenu unstyled model={devices} activeIndex={activeIndex} onTabChange={(e) => {
             setActiveIndex(e.index);
             console.log("TAB INDEX: " + e.index);
-          }} />
+          }} /> */}
         </div>
 
       )

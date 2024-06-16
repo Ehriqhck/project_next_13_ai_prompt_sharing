@@ -35,10 +35,11 @@ const InputViewer = ({ selectedButton }) => {
     const [press, setPress] = useState();
 
     console.log("Selected BUTTON: " + selectedButton);
+    const sessionProfiles = JSON.parse(sessionStorage.getItem('selectedProfile'))
 
     useEffect(() => {
         console.log("/EDITOR :" + profileContext);
-        console.log( profileContext);
+        console.log(profileContext);
 
         // setTop(profileContext?.savedDevices["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["top"]);
         // setbottom(data?.deviceProfiles?.TEST_PROFILE_1?.savedDevices["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["bottom"]);
@@ -78,20 +79,20 @@ const InputViewer = ({ selectedButton }) => {
 
     const getDeviceProfiles = () => {
 
-        console.log("FETCHED DEVICEPROFILES BEFORE: " );
-        console.log(profileContext);
+        console.log("FETCHED DEVICEPROFILES BEFORE: ");
+        console.log(sessionProfiles);
 
-        setTop(profileContext?.deviceList["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["top"]);
-        setbottom(profileContext?.deviceList["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["bottom"]);
-        setRight(profileContext?.deviceList["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["right"]);
-        setPress(profileContext?.deviceList["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["press"]);
-        setLeft(profileContext?.deviceList["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["left"]);
+        setTop(sessionProfiles?.deviceList["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["top"]);
+        setbottom(sessionProfiles?.deviceList["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["bottom"]);
+        setRight(sessionProfiles?.deviceList["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["right"]);
+        setPress(sessionProfiles?.deviceList["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["press"]);
+        setLeft(sessionProfiles?.deviceList["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["left"]);
 
         // setbottom(data?.deviceProfiles?.TEST_PROFILE_1?.savedDevices["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["bottom"]);
         // setLeft(data?.deviceProfiles?.TEST_PROFILE_1?.savedDevices["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["left"]);
         // setRight(data?.deviceProfiles?.TEST_PROFILE_1?.savedDevices["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["right"]);
         // setPress(data?.deviceProfiles?.TEST_PROFILE_1?.savedDevices["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["press"]);
-        console.log(profileContext);
+        // console.log(profileContext);
         // setprofileContext(data);
         // console.log("PARSED & STRINGED RESPONSE: " + JSON.parse(JSON.stringify(data[0].deviceProfiles.deviceProfiles)));
         // console.log("RAW RESPONSE: " + JSON.stringify(data[0].deviceProfiles.deviceProfiles.saved["VKB_GLADIATOR_EVO"].buttons[selectedButton]?.["top"]));
