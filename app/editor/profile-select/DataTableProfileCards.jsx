@@ -9,6 +9,8 @@ import { FilterMatchMode, FilterOperator } from 'primereact/api';
 import { log } from 'util';
 import { err } from '@iconfu/svg-inject';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation'
+
 const DataTableProfileCards = (props) => {
     const [context, setContext] = useState({
     })

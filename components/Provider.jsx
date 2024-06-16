@@ -13,6 +13,7 @@ export const SelectedInputContext = createContext();
 export const SelectedLayerContext = createContext();
 export const EditorPanelTitleContext = createContext();
 export const ViewerPanelTitleContext = createContext();
+export const SelectedDeviceContext = createContext();
 
 export const SelectedActionContext = createContext();
 export const ShowViewerPanelContext = createContext();
@@ -29,6 +30,7 @@ const Provider = ({ children, session }) => {
   const [selectedAction, setSelectedAction] = useState("No Action Selected");
   const [selectedEditorInput, setSelectedEditorInput] = useState("No Input Selected");
   const [selectedEditorInputActions, setSelectedEditorInputActions] = useState("circleSwitch");
+  const [selectedDevice, setSelectedDevice] = useState("No Device Selected");
 
   const [showEditorPanel, setshowEditorPanel] = useState(false);
   const [showViewerPanel, setshowViewerPanel] = useState(true);
@@ -53,7 +55,10 @@ const Provider = ({ children, session }) => {
                         <ViewerPanelTitleContext.Provider value={{ viewerPanelTitle, setViewerPanelTitle }}>
                           <SelectedEditorActionTableTargetContext.Provider value={{ selectedEditorInputActions, setSelectedEditorInputActions }}>
                             <ActionUpdateContext.Provider value={{actionUpdate, setActionUpdate}}>
+                            <SelectedDeviceContext.Provider value={{selectedDevice, setSelectedDevice }}>
+
                               {children}
+                              </SelectedDeviceContext.Provider>
                             </ActionUpdateContext.Provider>
                           </SelectedEditorActionTableTargetContext.Provider>
                         </ViewerPanelTitleContext.Provider>
