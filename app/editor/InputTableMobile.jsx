@@ -95,7 +95,7 @@ export default function CustomersDemo({ onInputSelect }) {
 
             const data = await response.json();
           
-            setTest(data?.deviceProfiles?.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons["circleSwitch"]?.["top"].layers);
+            // setTest(data?.deviceProfiles?.deviceProfiles.saved["VKB_GLADIATOR_EVO"]?.buttons["circleSwitch"]?.["top"].layers);
         };
 
         fetchDeviceProfiles();

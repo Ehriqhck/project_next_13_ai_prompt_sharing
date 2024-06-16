@@ -16,8 +16,40 @@
 html{
   min-width: 555px;
 }
+.p-dock .p-dock-list {
+  background: rgba(255, 255, 255, 0.1);
+  border: 0px 1px 1px 1px transparent rgba(255, 255, 255, 0.2) !important;
+  border-width: 0px 1px 1px 1px !important;
+  padding: 4px 8px 14px 8px !important;
+  border-radius: 0px 0px 8px 8px !important;
+}
 .p-dock {
   position: unset !important;
+}
+.p-dock-bottom.p-dock-magnification .p-dock-item {
+  transform-origin: center top !important;
+}
+.p-dock-magnification .p-dock-item-prev, .p-dock-magnification .p-dock-item-next {
+  transform: scale(1.0) !important;
+}
+.p-dock-magnification .p-dock-item-second-prev, .p-dock-magnification .p-dock-item-second-next {
+  transform: scale(1.0) !important;
+}
+.p-dock .p-dock-item {
+  padding: 8px !important;
+}
+.p-dock.p-dock-magnification.p-dock-top .p-dock-item-second-prev, .p-dock.p-dock-magnification.p-dock-top .p-dock-item-second-next, .p-dock.p-dock-magnification.p-dock-bottom .p-dock-item-second-prev, .p-dock.p-dock-magnification.p-dock-bottom .p-dock-item-second-next {
+  margin: unset !important;
+}
+.p-dock.p-dock-magnification.p-dock-top .p-dock-item-current, .p-dock.p-dock-magnification.p-dock-bottom .p-dock-item-current {
+  margin: 0 8px !important;
+}
+.p-dock-magnification .p-dock-item-current {
+  transform: scale(1.2) !important;
+  z-index: 1;
+}
+.p-dock.p-dock-magnification.p-dock-top .p-dock-item-prev, .p-dock.p-dock-magnification.p-dock-top .p-dock-item-next, .p-dock.p-dock-magnification.p-dock-bottom .p-dock-item-prev, .p-dock.p-dock-magnification.p-dock-bottom .p-dock-item-next {
+  margin: unset !important;
 }
 .text-GameAction-Category-Heading{
   font-family: 'Inter', Helvetica;
@@ -1442,7 +1474,14 @@ gap: 60px;
   width: fit-content !important;
   
 }
+ul[role='menubar'] > li[role='none']{
 
+  display: none !important;
+}
+element.style {
+  width: 0px !important;
+  left: 0px;
+}
 body > main > nav > div:nth-child(2) > ul > li:last-child{
   display: none;
 }

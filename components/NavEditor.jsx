@@ -31,29 +31,13 @@ const NavEditor = () => {
       template: (item) => itemRenderer(item, 2)
     }
   ]);
-  const items = [
-    {
-      label: 'Finder',
-      icon: () => <img alt="Finder" src="https://primefaces.org/cdn/primereact/images/dock/finder.svg" width="100%" />,
-    },
-    {
-      label: 'App Store',
-      icon: () => <img alt="App Store" src="https://primefaces.org/cdn/primereact/images/dock/appstore.svg" width="100%" />,
-    },
-    {
-      label: 'Photos',
-      icon: () => <img alt="Photos" src="https://primefaces.org/cdn/primereact/images/dock/photos.svg" width="100%" />,
-    },
-    {
-      label: 'Trash',
-      icon: () => <img alt="trash" src="https://primefaces.org/cdn/primereact/images/dock/trash.png" width="100%" />,
-    }
-  ];
+
   const { data: session, status } = useSession();
   const [providers, setProviders] = useState(null);
   const [toggleDropdown, setToggleDropdown] = useState(false);
   const [profileName, setProfileName] = useState("no profile loaded")
   const [activeIndex, setActiveIndex] = useState(0);
+
   const itemRenderer = (item, itemIndex) => (
     <a className="navMenu-item " onClick={() => setActiveIndex(itemIndex)}>
       {/* <img
@@ -65,8 +49,30 @@ const NavEditor = () => {
   );
 
   useEffect(() => {
-    // setPathname(usePathname())
+    (async () => {
+      const res = await getProviders();
+      setProviders(res);
+    })();
+    setDevices(
+      Object.keys(JSON.parse(sessionStorage.getItem('selectedProfile')).deviceList).map(
+        (key, index) => {
+          return ({
+            name: key,
+            template: (item) => itemRenderer(item, index)
+
+          })
+        }
+      )
+
+    )
   }, []);
+
+  JSON.parse(sessionStorage.getItem("selectedProfile"))
+
+  useEffect(() => {
+    sessionStorage.setItem('selectedDevice', JSON.stringify(selectedDevice))
+    // then set the selected device item in the tabmenu to be ACTIVE/FOCUS
+  }, [selectedDevice]);
 
 
 
@@ -154,6 +160,7 @@ const NavEditor = () => {
                 </div>
               ) : (
                 <>
+
                   {providers &&
                     Object.values(providers).map((provider) => (
                       <button
@@ -171,13 +178,10 @@ const NavEditor = () => {
               )}
             </div>
           </div>
-
-
-
-
         </nav>
       )
       break;
+
     case "/editor":
       return (
         <div className='nav flex flex-col  w-full'>
@@ -247,12 +251,11 @@ const NavEditor = () => {
 
 
           </nav>
-          <Dock model={items}  />
+          {/* <Dock model={items}  /> */}
 
-          {/* <TabMenu unstyled model={devices} activeIndex={activeIndex} onTabChange={(e) => {
+          <TabMenu unstyled model={devices} activeIndex={activeIndex} onTabChange={(e) => {
             setActiveIndex(e.index);
-            console.log("TAB INDEX: " + e.index);
-          }} /> */}
+          }} />
         </div>
 
       )
@@ -321,8 +324,6 @@ const NavEditor = () => {
             </>
           )}
         </div>
-
-
       </nav>)
 
   }

@@ -83,6 +83,11 @@ const DataTableProfileCards = (props) => {
 
 
     })
+useEffect(() => {
+    sessionStorage.setItem("selectedProfile", JSON.stringify(selectedPreview))
+
+
+}, [selectedPreview])
 
 
 
@@ -118,11 +123,13 @@ const DataTableProfileCards = (props) => {
                     console.log("new selection");
                     console.log(selectedPreview);
                     setprofileContext(selectedPreview);
-                    sessionStorage.setItem(selectedProfile, JSON.stringify(selectedPreview))
+
                 } catch (error) {
                     console.log(error);
                 } finally {
+
                     setLoading(false)
+
                 }
 
 
