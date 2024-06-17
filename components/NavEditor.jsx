@@ -53,18 +53,8 @@ const NavEditor = () => {
       const res = await getProviders();
       setProviders(res);
     })();
-    setDevices(
-      Object.keys(JSON.parse(sessionStorage.getItem('selectedProfile')).deviceList).map(
-        (key, index) => {
-          return ({
-            name: key,
-            template: (item) => itemRenderer(item, index)
 
-          })
-        }
-      )
 
-    )
   }, []);
 
   JSON.parse(sessionStorage.getItem("selectedProfile"))
@@ -72,39 +62,28 @@ const NavEditor = () => {
   useEffect(() => {
     sessionStorage.setItem('selectedDevice', JSON.stringify(selectedDevice))
     // then set the selected device item in the tabmenu to be ACTIVE/FOCUS
+
+    try {
+      setDevices(
+        Object.keys(JSON.parse(sessionStorage.getItem('selectedProfile'))?.deviceList).map(
+          (key, index) => {
+            return ({
+              name: key,
+              template: (item) => itemRenderer(item, index)
+  
+            })
+          }
+        )
+  
+      )
+    } catch (error) {
+      console.log(error);
+    }
+
   }, [selectedDevice]);
 
 
 
-
-  // console.log(Object.getOwnPropertyNames(profileContext?.deviceProfiles?.deviceProfiles?.saved) );
-
-  // const items = [
-  //   {
-  //     name: 'Amy Elsner',
-  //     image: 'amyelsner.png',
-  //     template: (item) => itemRenderer(item, 0)
-  //   },
-  //   {
-  //     name: 'Anna Fali',
-  //     image: 'annafali.png',
-  //     template: (item) => itemRenderer(item, 1)
-  //   },
-  //   {
-  //     name: 'Asiya Javayant',
-  //     image: 'asiyajavayant.png',
-  //     template: (item) => itemRenderer(item, 2)
-  //   }
-  // ];
-
-  // setDevices(
-  //   Object.getOwnPropertyNames(profileContext?.deviceProfiles?.deviceProfiles?.saved).map((device) => {
-  //     return ({
-  //       name: device,
-  //       template: (item) => itemRenderer(item, 0)
-  //     })
-  //   })
-  // )
   const urlPath = usePathname();
   console.log(urlPath);
   switch (urlPath) {
@@ -183,6 +162,7 @@ const NavEditor = () => {
       break;
 
     case "/editor":
+   
       return (
         <div className='nav flex flex-col  w-full'>
           <nav className=' flex-between  mb-[15px] pt-3'>
