@@ -1873,8 +1873,6 @@ color: #CEFCFF;
   radial-gradient(ellipse at 85% 0%, #009DBF, #04c9f13d , transparent) border-box, 
   radial-gradient(ellipse at 0% 40%,#009DBF, #00c4eb25 , transparent) border-box,
   radial-gradient(ellipse at 65% 100%,#009DBF, #00c4eb4f , transparent) border-box;
-
-  
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0) !important;
   mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0) !important;
   -webkit-mask-composite: destination-out !important;
