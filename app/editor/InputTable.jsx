@@ -158,25 +158,20 @@ export default function CustomersDemo({ onInputSelect }) {
 
     const renderHeader = () => {
         return (
-            // <div className="flex flex-wrap gap-2 justify-content-between align-items-center w-full pl-12px">
-            //     {/* <h4 className="m-0"></h4> */}
-            //     <span className="p-input-icon-left ">
+  
+            // <div className="flex flex-row">
+            //     <span className="p-input-icon-left">
             //         <i className="pi pi-search" />
-            //         <SearchIcon/>
-            //         <InputText unstyled= "true" className='color-[#cefcff]' value={globalFilterValue} onChange={onGlobalFilterChange} placeholder="START TYPING" />
+            //         <SearchIcon className="w-[15px] h-auto glow-test"></SearchIcon>
+            //         <InputText  unstyled="true" className='p-inputtext' value={globalFilterValue} onChange={onGlobalFilterChange} placeholder="START TYPING" />
             //     </span>
-
             // </div>
-
-            <div className="flex flex-wrap gap-2 justify-content-between align-items-center w-full pl-12px mb-[8px]">
-                <span className="p-input-icon-left">
-                    <i className="pi pi-search" />
-                    <SearchIcon className="w-[15px] h-auto glow-test"></SearchIcon>
-                    <InputText unstyled="true" className='' value={globalFilterValue} onChange={onGlobalFilterChange} placeholder="START TYPING" />
-
-                </span>
-
-            </div>
+                        <div className="flex justify-content-end">
+                        <div className="p-input-icon-left">
+                            <i className="pi pi-search"></i>
+                            <InputText type="search" value={globalFilterValue} onChange={onGlobalFilterChange} placeholder="START TYPING"/>
+                        </div>
+                    </div>
         );
     };
 

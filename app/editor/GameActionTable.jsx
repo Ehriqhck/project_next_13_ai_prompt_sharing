@@ -345,6 +345,13 @@ export default function FilterDemo() {
             case "v_unlock_all_ports":
             case "v_toggle_all_portlocks":
             case "v_unlock_all_doorlocks":
+            case "v_toggle_all_doorlocks":
+                return (
+                    <div className='w-[25px] self-center'>
+                        <KeyIcon />
+                    </div>
+                )
+                break;
 
             case "v_toggle_all_doorlocks":
                 return (
@@ -353,15 +360,16 @@ export default function FilterDemo() {
                     </div>
                 )
                 break;
-            case "v_toggle_all_doorlocks":
+
+            // Angle Icon
+            case "v_inc_scan_focus_level":
                 return (
                     <div className='w-[25px] self-center'>
-                        <KeyIcon />
+                        <AngleIcon />
                     </div>
                 )
-                break;
+
             // One Icon
-
             case "v_mining_use_consumable1":
                 return (
                     <div className='w-[25px] self-center'>
@@ -384,7 +392,7 @@ export default function FilterDemo() {
             default:
                 return (
                     <div className='w-[25px] self-center'>
-                        <GenericSettingIcon />
+                        {/* <GenericSettingIcon /> */}
                     </div>
                 )
                 break;
@@ -422,7 +430,7 @@ export default function FilterDemo() {
             switch (node.key) {
                 // TargetingFriendly Icon
                 case "v_target_cycle_friendly_back":
-            
+
                     return (
                         <div className=' flex flex-row mr-[5px]'>
                             <div className='flex flex-row gap-[5px]'>
@@ -586,7 +594,7 @@ export default function FilterDemo() {
                     <div className='w-[26px] self-center mx-[3px]'>
                         <ScanningIcon />
                     </div>
-                    {getGameActionIcon(node)}
+                    {/* {getGameActionIcon(node)} */}
                 </div>
             )
         }

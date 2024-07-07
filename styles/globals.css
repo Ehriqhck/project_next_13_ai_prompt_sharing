@@ -755,14 +755,26 @@ margin-top:4.45px;
 
 
 .p-datatable-header {
-
-  background: transparent !important;
-  color: #ffffff;
-  border: 0px solid #263238 !important;
-  /* border-width: 0 0 2px 0; */
-  padding: 0px !important;
-  margin-bottom: 12px;
-  font-weight: 500;
+  display: none !important;
+  font-family: "Exo 2", sans-serif !important;
+  font-size: 12px !important;
+  font-style: italic;
+  color: #cefcff !important;
+  padding: 0.5rem 0.75rem;
+  /* border: 2px solid #263238; */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* border-radius: 6px; */
+  width: 100% !important;
+  display: flex !important;
+  height: 32px !important;
+  border-radius: 10px !important;
+  background: linear-gradient(90deg, #00ffe408 20%, rgb(0 231 255 / 12%) 100%) !important;
+  padding: 0px 5px 0px 5px;
+  border-width: 0px !important;
+  border-color: #ffffff !important;
 
 }
 
@@ -1423,6 +1435,7 @@ gap: 60px;
 
 }
 
+
 .bind-text {
   color: #00ffc8
 }
@@ -1435,6 +1448,11 @@ gap: 60px;
     border-image: radial-gradient(rgb(0, 255, 187), rgba(17, 255, 184, 0)) 1 !important;
 
 }
+
+li[role="presentation"] {
+  display:flex !important;
+  flex-direction: row !important;
+}
 .navMenu-text {
   font-family: 'inter';
   font-style: normal;
@@ -1443,6 +1461,39 @@ gap: 60px;
   color: #CEFCFF;
   line-height: 12px;
   /* padding: 4px 8px 4px 8px; */
+}
+.smallButton-text {
+  font-family: 'inter';
+  font-weight: bold;
+  font-size: 10px;
+  color: #CEFCFF;
+  line-height: 10px;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(180deg, rgb(247 254 255) 40%, rgb(126 255 231 / 57%) 100%);
+}
+.small-text {
+  font-family: 'inter';
+  font-weight: bold;
+  font-size: 10px;
+  color: #CEFCFF;
+  line-height: 10px;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(180deg, #CEFCFF 40%, rgb(126 255 231 / 57%) 100%);
+}
+.text-modifier-chip-layer-2 {
+  font-family: 'Exo 2', Helvetica;
+  font-size: 10pt;
+  font-weight: 740;
+  letter-spacing: 0.2px;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(
+  180deg,
+  rgb(255, 255, 255) 40%,
+  rgb(215 255 126 / 57%) 100%
+);
 }
 .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link {
     border-width: 0 0 1px 0 !important;
@@ -1474,10 +1525,7 @@ gap: 60px;
   width: fit-content !important;
   
 }
-ul[role='menubar'] > li[role='none']{
 
-  display: none !important;
-}
 element.style {
   width: 0px !important;
   left: 0px;
@@ -1488,7 +1536,7 @@ body > main > nav > div:nth-child(2) > ul > li:last-child{
 
 .nav {
   padding: 0 100px 0 100px;
-  height: 73px;
+  height: fit-content -1px;
   /* border: 1px solid rgba(0, 240, 255, 0.2); */
   /* outline:  1px solid rgba(0, 238, 255, 0.184); */
   /* border:  double ; */
@@ -1531,9 +1579,14 @@ ul[role='menubar'] {
   background: 
   linear-gradient(180deg, rgb(255 255 255 / 0%) 0%, rgb(0 208 255 / 7%) 100%), #000708,
    #000708 !important;
-  
+  display: flex !important;
+  flex-direction: row !important;
+}
+li[data-pc-section="inkbar"] {
+  display: none !important;
 }
 ul[role='menubar']::before {
+  
   content: "";
   position: absolute;
   inset: 0;
@@ -1574,6 +1627,7 @@ li[data-p-highlight=true]:hover {
   opacity: 100% ;
 }
 div[data-pc-name='tabmenu']{
+  margin-top: -1px;
   display: flex ;
   flex-direction: row ;
   justify-content: center ;
@@ -1945,6 +1999,99 @@ color: #CEFCFF;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
     border-radius: 6px;
 }
+/* BUTTON SMALL*/
+button[type='small'] {
+  border-radius: 6px !important; 
+  background-color: #021519 !important;
+  position: relative !important;
+  background: 
+    repeating-linear-gradient(-45deg, rgb(0, 14, 16), rgb(0, 9, 16, 0.3) 2px,  rgba(0, 0, 0, 0) 2px, rgba(0, 0, 0, 0) 2.83px),
+   linear-gradient(151deg, rgba(0,34,41,0) 0%, rgba(0, 156, 191, 0.555) 100%) !important;
+}
+button[type='small']:enabled::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  cursor: pointer !important;
+  border-radius: 6px !important;
+  border: 1px solid transparent !important;
+  background: 
+  radial-gradient(ellipse at 85% 0%, #009DBF, #04c9f13d , transparent) border-box, 
+  radial-gradient(ellipse at 0% 40%,#009DBF, #00c4eb25 , transparent) border-box,
+  radial-gradient(ellipse at 65% 100%,#009DBF, #00c4eb4f , transparent) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0) !important;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0) !important;
+  -webkit-mask-composite: destination-out !important;
+  mask-composite: exclude !important;
+}
+
+button[type='small']:enabled:hover {
+  border-radius: 6px!important;
+  background-color: #00000000 !important;
+  background: radial-gradient(#00000000, #00eeff3d) border-box,
+  repeating-linear-gradient(-45deg, rgb(0, 14, 16), rgb(0, 9, 16, 0.3) 2px,  rgba(0, 0, 0, 0) 2px, rgba(0, 0, 0, 0) 2.83px),
+  linear-gradient(151deg, rgba(0,34,41,0) 0%, rgba(0, 156, 191, 0.555) 100%)  !important; 
+  position: relative;
+  filter: drop-shadow(0px 4px 24px #00eeff2f) !important;
+  transition: filter 0.18s !important; 
+}
+.button[type='small']:enabled:hover:before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  border-width: 1px !important;
+  border-radius: 6px!important;
+  border: 1px solid transparent !important;
+  background: #008890 !important;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0) !important;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0) !important;
+  -webkit-mask-composite: destination-out !important;
+  mask-composite: exclude !important;
+  transition: background 0.3s !important;
+}
+
+
+
+button[type='small']:enabled:focus::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  cursor: pointer !important;
+  border-radius: 6px !important;
+  border: 1px solid transparent !important;
+  background: radial-gradient(#000000, #00eeff57) border-box !important;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0) !important;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0) !important;
+  -webkit-mask-composite: destination-out !important;
+  mask-composite: exclude !important;
+}
+
+ button[type='small']:enabled:focus {
+  border-radius: 6px !important;
+  background-color: #00000000 !important;
+  background: radial-gradient(#00000000, #00eeff3d) border-box,
+  repeating-linear-gradient(-45deg, rgb(0, 14, 16), rgb(0, 9, 16, 0.3) 2px,  rgba(0, 0, 0, 0) 2px, rgba(0, 0, 0, 0) 2.83px),
+  linear-gradient(151deg, rgba(0,34,41,0) 0%, rgba(0, 156, 191, 0.555) 100%)  !important; 
+  position: relative;
+  filter: drop-shadow(0px 4px 24px #00eeff2f) !important;
+  transition: filter 0.18s !important; 
+   outline: 0 none !important;
+   outline-offset: 0 !important;
+   box-shadow: 0 0 0 1px #00cad8 !important;
+   /* box-shadow: unset; */
+ 
+  }
+
+
+/* .p-button {
+    color: unset ;
+    border: unset !important;
+    padding: unset;
+    font-size: 12px ;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+    border-radius: 6px;
+} */
+
 .switchButton:hover {
   /* .p-button {
     color: #121212;
