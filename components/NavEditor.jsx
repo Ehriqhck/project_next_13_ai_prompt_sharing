@@ -6,13 +6,15 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 import Spacer from "components/generic/Spacer.jsx"
-import { Context, SelectedDeviceContext } from '@components/Provider.jsx'
+import { Context, SelectedDeviceContext, SelectedEditorDeviceContext } from '@components/Provider.jsx'
 import { Dock } from 'primereact/dock';
 import { Button } from 'primereact/button';
 import { usePathname } from 'next/navigation'
 
 const NavEditor = () => {
   const { selectedDevice, setSelectedDevice } = useContext(SelectedDeviceContext);
+  const { selectedEditorDevice, setSelectedEditorDevice } = useContext(SelectedEditorDeviceContext);
+  const [ isLoading, setIsLoading ] = useState(false);
   const [pathname, setPathname] = useState()
   const [devices, setDevices] = useState([
     {
@@ -39,11 +41,15 @@ const NavEditor = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const itemRenderer = (item, itemIndex) => (
-    <a className="navMenu-item " onClick={() => setActiveIndex(itemIndex)}>
-      {/* <img
-        alt={item.name}
-        src={`https://primefaces.org/cdn/primereact/images/avatar/${item.image}`}
-        style={{ width: '32px' }} /> */}
+    <a
+      className="navMenu-item"
+      onClick={() => {
+        setActiveIndex(itemIndex);
+        setSelectedEditorDevice(item.name);
+      }
+      }
+    >
+
       <span className="navMenu-text flex">{item.name}</span>
     </a>
   );
@@ -53,17 +59,21 @@ const NavEditor = () => {
       const res = await getProviders();
       setProviders(res);
     })();
-
-
   }, []);
+
 
   JSON.parse(sessionStorage.getItem("selectedProfile"))
 
+
   useEffect(() => {
-    sessionStorage.setItem('selectedDevice', JSON.stringify(selectedDevice))
     // then set the selected device item in the tabmenu to be ACTIVE/FOCUS
 
     try {
+setIsLoading(true)
+      sessionStorage.setItem('selectedDevice', JSON.stringify(selectedDevice))
+
+      console.log("STORED PROFILE VVVV");
+      console.log(sessionStorage.getItem('selectedProfile'));
       setDevices(
         Object.keys(JSON.parse(sessionStorage.getItem('selectedProfile'))?.deviceList).map(
           (key, index) => {
@@ -78,9 +88,11 @@ const NavEditor = () => {
       )
     } catch (error) {
       console.log(error);
+    } finally {
+      setIsLoading(false);
     }
 
-  }, [selectedDevice]);
+  }, [selectedDevice, isLoading]);
 
 
   const urlPath = usePathname();
@@ -110,7 +122,7 @@ const NavEditor = () => {
                 <p className="text-profile-title slant">{profileName}</p>
               </div>
               {/* Desktop Navigation */}
-              <div className='sm:flex '>
+              <div className='flex '>
                 {session?.user ? (
                   <div className='flex gap-3 md:gap-5'>
                     <Link href='/create-control-profile' className='black_btn hidden'>
@@ -133,7 +145,6 @@ const NavEditor = () => {
                   </div>
                 ) : (
                   <>
-
                     {providers &&
                       Object.values(providers).map((provider) => (
                         <button
@@ -162,6 +173,7 @@ const NavEditor = () => {
 
       return (
         <div className=' flex flex-col  w-full mb-[16px]'>
+
           <div className=' flex flex-col  w-full'>
 
             <nav className='nav flex flex-col  w-full '>
@@ -178,6 +190,46 @@ const NavEditor = () => {
 
                   {/* <Spacer className=""/> */}
                   <div className="spacer" />
+                  {/* Desktop Navigation */}
+                  <div className='sm:flex '>
+                    {session?.user ? (
+                      <div className='flex gap-3 md:gap-5'>
+                        <Link href='/create-control-profile' className='black_btn hidden'>
+                          Create Control Profile
+                        </Link>
+
+                        <button type='button' onClick={signOut} className='outline_btn'>
+                          Sign Out
+                        </button>
+
+                        <Link href='/profile'>
+                          <Image
+                            src={session?.user.image}
+                            width={37}
+                            height={37}
+                            className='rounded-full'
+                            alt='profile'
+                          />
+                        </Link>
+                      </div>
+                    ) : (
+                      <>
+                        {providers &&
+                          Object.values(providers).map((provider) => (
+                            <button
+                              type='button'
+                              key={provider.name}
+                              onClick={() => {
+                                signIn(provider.id);
+                              }}
+                              className='black_btn'
+                            >
+                              Sign in
+                            </button>
+                          ))}
+                      </>
+                    )}
+                  </div>
 
                   <div className="flex flex-col">
                     <div className="flex flex-row">
@@ -186,46 +238,7 @@ const NavEditor = () => {
                     </div>
                     <p className="text-profile-title slant">VKB GLADIATOR NXT EVO</p>
                   </div>
-                </div>
-                {/* Desktop Navigation */}
-                <div className='sm:flex '>
-                  {session?.user ? (
-                    <div className='flex gap-3 md:gap-5'>
-                      <Link href='/create-control-profile' className='black_btn hidden'>
-                        Create Control Profile
-                      </Link>
 
-                      <button type='button' onClick={signOut} className='outline_btn'>
-                        Sign Out
-                      </button>
-
-                      <Link href='/profile'>
-                        <Image
-                          src={session?.user.image}
-                          width={37}
-                          height={37}
-                          className='rounded-full'
-                          alt='profile'
-                        />
-                      </Link>
-                    </div>
-                  ) : (
-                    <>
-                      {providers &&
-                        Object.values(providers).map((provider) => (
-                          <button
-                            type='button'
-                            key={provider.name}
-                            onClick={() => {
-                              signIn(provider.id);
-                            }}
-                            className='black_btn'
-                          >
-                            Sign in
-                          </button>
-                        ))}
-                    </>
-                  )}
                 </div>
 
 
@@ -236,14 +249,16 @@ const NavEditor = () => {
                   <p className='small-text  px-[5px]'>// SWITCH DEVICE \\</p>
 
                 </div>
-                <Button unstyled type="small" className=' self-center flex justify-center align-middle px-[5px] py-[5px] w-fit' >
+                <Button
+                  onClick={() => { sessionStorage.clear() }}
+                  unstyled type="small" className=' self-center flex justify-center align-middle px-[5px] py-[5px] w-fit' >
                   <span className='smallButton-text px-[5px] '> ADD DEVICE +</span>
                 </Button>
 
               </div>
-      
+
             </nav>
-        
+
           </div>
 
           <TabMenu unstyled model={devices} activeIndex={activeIndex} onTabChange={(e) => {

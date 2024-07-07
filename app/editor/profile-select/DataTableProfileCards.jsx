@@ -10,8 +10,11 @@ import { log } from 'util';
 import { err } from '@iconfu/svg-inject';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation'
+import { SelectedEditorDeviceContext } from '@components/Provider';
 
 const DataTableProfileCards = (props) => {
+    const { selectedEditorDevice, setSelectedEditorDevice } = useContext(SelectedEditorDeviceContext);
+
     const [context, setContext] = useState({
     })
     const [isLoading, setIsLoading] = useState(false)
@@ -83,11 +86,11 @@ const DataTableProfileCards = (props) => {
 
 
     })
-useEffect(() => {
-    sessionStorage.setItem("selectedProfile", JSON.stringify(selectedPreview))
+    useEffect(() => {
+        sessionStorage.setItem("selectedProfile", JSON.stringify(selectedPreview))
 
 
-}, [selectedPreview])
+    }, [selectedPreview])
 
 
 
@@ -111,7 +114,7 @@ useEffect(() => {
             <Button onClick={(e) => {
                 try {
                     setLoading(true);
-                    // console.log(Object.entries(profile?.savedDevices).length);
+                    console.log(Object.entries(profile?.savedDevices).length);
                     setSelectedPreview({
                         deviceAmount: profile.deviceAmount,
                         profileName: profile.profileName,
@@ -257,7 +260,9 @@ useEffect(() => {
                                 // console.log("ASDAKSDHKASJ" + e.devices[0])
                                 setprofileContext(selectedPreview);
                                 console.log(profileContext?.buttons);
-
+                                setSelectedEditorDevice(Object.keys(selectedPreview.deviceList)[0]);
+                                console.log("LOADING DEVICE:");
+                                console.log(Object.keys(selectedPreview.deviceList)[0]);
                             }}>
                             </Button>
                         </Link>

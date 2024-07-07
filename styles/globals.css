@@ -1545,12 +1545,12 @@ body > main > nav > div:nth-child(2) > ul > li:last-child{
   /* background: radial-gradient(at center top,#00eeff1f, #ffffff00 ) border-box; */
   border-radius: 0px 0px 10px 10px !important;
   background-color: #02151900  !important;
-  position: relative !important;
+  position: unset !important;
 
   
   }
 
-  .nav::before{
+  /* .nav::before{
     content: "";
     position: absolute;
     inset: 0;
@@ -1570,7 +1570,7 @@ body > main > nav > div:nth-child(2) > ul > li:last-child{
     border-width: 1px 0px 0px 0px !important;
     border-color: white !important;
   }
-  
+   */
 ul[role='menubar'] {
   border-radius: 0px 0px 10px 10px !important;
   padding: 6px 12px 4px 12px !important;
@@ -1883,7 +1883,9 @@ color: #CEFCFF;
   display: flex;
   align-self: f;
 }
-
+.p-datatable .p-datatable-header {
+  display: none !important;
+}
 
 
 .p-datatable {

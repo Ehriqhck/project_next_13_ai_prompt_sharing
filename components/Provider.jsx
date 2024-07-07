@@ -14,6 +14,8 @@ export const SelectedLayerContext = createContext();
 export const EditorPanelTitleContext = createContext();
 export const ViewerPanelTitleContext = createContext();
 export const SelectedDeviceContext = createContext();
+export const SelectedEditorDeviceContext = createContext();
+export const SelectedEditorDeviceViewOrientationContext = createContext();
 
 export const SelectedActionContext = createContext();
 export const ShowViewerPanelContext = createContext();
@@ -31,6 +33,8 @@ const Provider = ({ children, session }) => {
   const [selectedEditorInput, setSelectedEditorInput] = useState("No Input Selected");
   const [selectedEditorInputActions, setSelectedEditorInputActions] = useState("circleSwitch");
   const [selectedDevice, setSelectedDevice] = useState("No Device Selected");
+  const [selectedEditorDevice, setSelectedEditorDevice] = useState();
+  const [selectedEditorDeviceViewOrientation, setSelectedEditorDeviceViewOrientation] = useState("front");
 
   const [showEditorPanel, setshowEditorPanel] = useState(false);
   const [showViewerPanel, setshowViewerPanel] = useState(true);
@@ -54,10 +58,16 @@ const Provider = ({ children, session }) => {
                       <EditorPanelTitleContext.Provider value={{ editorPanelTitle, setEditorPanelTitle }}>
                         <ViewerPanelTitleContext.Provider value={{ viewerPanelTitle, setViewerPanelTitle }}>
                           <SelectedEditorActionTableTargetContext.Provider value={{ selectedEditorInputActions, setSelectedEditorInputActions }}>
-                            <ActionUpdateContext.Provider value={{actionUpdate, setActionUpdate}}>
-                            <SelectedDeviceContext.Provider value={{selectedDevice, setSelectedDevice }}>
+                            <ActionUpdateContext.Provider value={{ actionUpdate, setActionUpdate }}>
+                              <SelectedDeviceContext.Provider value={{ selectedDevice, setSelectedDevice }}>
+                                <SelectedEditorDeviceContext.Provider value={{ selectedEditorDevice, setSelectedEditorDevice }}>
+                                  <SelectedEditorDeviceViewOrientationContext.Provider value={{ selectedEditorDeviceViewOrientation, setSelectedEditorDeviceViewOrientation }}>
 
-                              {children}
+                                    {children}
+                                  </SelectedEditorDeviceViewOrientationContext.Provider>
+
+                                </SelectedEditorDeviceContext.Provider>
+
                               </SelectedDeviceContext.Provider>
                             </ActionUpdateContext.Provider>
                           </SelectedEditorActionTableTargetContext.Provider>

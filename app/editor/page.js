@@ -1,20 +1,22 @@
 'use client'
-import CloseButton from 'public/assets/icons/generic/button_close.svg'
 
 import React from 'react'
-import Device_VKB_SpaceEvo from '@components/Device_VKB_SpaceEvo';
+import Device_VKB_GLADIATOR_NXT_EVO_LEFT from '@components/Device_VKB_GLADIATOR_NXT_EVO_LEFT.jsx';
+import Device_VKB_GLADIATOR_NXT_EVO_RIGHT from '@components/Device_VKB_GLADIATOR_NXT_EVO_RIGHT.jsx';
 import InputEditor from './InputEditor';
 import InputViewer from './InputViewer'
 import { useState, useContext, useEffect } from 'react';
-import { ShowEditorPanelContext, ShowViewerPanelContext } from '@components/Provider';
+import { ShowEditorPanelContext, ShowViewerPanelContext, SelectedEditorDeviceContext } from '@components/Provider';
 import clsx from 'clsx';
 const page = () => {
 
   const { showViewerPanel, setshowViewerPanel } = useContext(ShowViewerPanelContext);
   const { showEditorPanel, setshowEditorPanel } = useContext(ShowEditorPanelContext);
+  const { selectedEditorDevice, setSelectedEditorDevice } = useContext(SelectedEditorDeviceContext);
+  const [isLoading, setIsLoading] = useState(false)
 
   const [showInputEditor, setInputEditor] = useState(true);
-
+  const [currentSelectedEditorDevice, setCurrentSelectedEditorDevice] = useState(<></>)
 
   const editorPanelVisibility = clsx({
     'hidden': !showEditorPanel,
@@ -24,34 +26,55 @@ const page = () => {
     'hidden': !showViewerPanel,
     'show': showViewerPanel
   })
-  // useEffect(() => {
 
-  //   const editorPanelVisibility = clsx({
-  //     'hidden': showEditorPanel,
-  //     'none': !showEditorPanel
-  //   })
-  //   const viewerPanelVisibility = clsx({
-  //     'hidden': showViewerPanel,
-  //     'none': !showViewerPanel
-  //   })
+  useEffect(() => {
+    try {
+      setIsLoading(true);
+      setCurrentSelectedEditorDevice(getSelectedEditorDevice(selectedEditorDevice));
 
-  // }, [showEditorPanel, showEditorPanel])
+    } catch (error) {
+      console.log(error);
+    }
+    finally {
+      console.log("selectedEditorDevice VVV");
+      console.log(selectedEditorDevice);
+      setIsLoading(false);
+    }
 
-  // const getEditor = () => {
-  //   return (<Device_VKB_SpaceEvo className="min-w-[330px]" />
-  //   )
-  // }
+  }, [selectedEditorDevice])
+
+  const getSelectedEditorDevice = (selected) => {
+    console.log(selected);
+
+    switch (selected) {
+      case "VKB_GLADIATOR_NXT_EVO_RIGHT":
+        return (
+          <Device_VKB_GLADIATOR_NXT_EVO_RIGHT className="min-w-[330px]" />
+        );
+        break;
+
+      case "VKB_GLADIATOR_NXT_EVO_LEFT":
+        return (
+          <Device_VKB_GLADIATOR_NXT_EVO_LEFT className="min-w-[330px]" />
+        )
+        break;
+      default:
+        return (
+          <Device_VKB_GLADIATOR_NXT_EVO_LEFT className="min-w-[330px]" />
+        )
+        break;
+    }
+  }
+
   return (
 
     <section id="InputViewerPanel" className='editor-container' >
-      <div  className={viewerPanelVisibility}>
+      <div className={viewerPanelVisibility}>
         <InputViewer />
-
-
       </div>
 
       <div className='device-container' >
-        <Device_VKB_SpaceEvo className="min-w-[330px]" />
+        {currentSelectedEditorDevice}
       </div>
       <div id="InputEditorPanel" className={editorPanelVisibility}>
         <InputEditor />

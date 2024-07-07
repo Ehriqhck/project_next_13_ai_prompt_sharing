@@ -6,10 +6,12 @@ import { useContext, useState, useEffect } from 'react'
 import { Context } from '@components/Provider.jsx'
 import DataTableProfileCards from '@app/editor/profile-select/DataTableProfileCards.jsx'
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
+import { SelectedEditorDeviceContext } from '@components/Provider';
 
 const page = () => {
     const { data: session, status } = useSession();
     const [providers, setProviders] = useState(null);
+    const { selectedEditorDevice, setSelectedEditorDevice } = useContext(SelectedEditorDeviceContext);
 
     const [isLoading, setIsLoading] = useState(false)
     const { profileContext, setprofileContext } = useContext(Context);
@@ -31,7 +33,7 @@ const page = () => {
             template: (item) => itemRenderer(item, 2)
         }
     ]);
-    // console.log(profileContext);
+    console.log(profileContext);
     useEffect(() => {
 
         const fetchDeviceProfiles = async () => {
@@ -44,7 +46,8 @@ const page = () => {
                     })
                 })
                 const data = await response.json()
-
+                console.log("DATA BELOW vvvv");
+                console.log(data);
                 const loadedProfiles = Object.keys(data?.deviceProfiles).map((device) => {
                     return ({
                         "profileName": data?.deviceProfiles[device]?.profileName,
@@ -55,7 +58,7 @@ const page = () => {
                         "gameVersion": data?.deviceProfiles[device]?.gameVersion,
                     })
                 })
-                setAccountProfiles (loadedProfiles );
+                setAccountProfiles(loadedProfiles);
                 sessionStorage.setItem('loadedProfiles', JSON.stringify(loadedProfiles))
                 setProfiles(data?.deviceProfiles)
 
@@ -64,6 +67,7 @@ const page = () => {
                 console.log(error);
             }
             finally {
+                console.log(accountProfiles);
                 setIsLoading(false);
             }
             // setProfileName(data?.deviceProfiles?.TEST_PROFILE_1?.saved['VKB_GLADIATOR_EVO'].profileName)
