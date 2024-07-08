@@ -84,14 +84,14 @@ const page = () => {
           <div className='flex flex-col'>
 
             <p className=' small-text w-full flex justify-start'> CURRENT VIEW </p>
-            <FieldSet legendTemplate={legendTemplate}>
+            <Fieldset legendTemplate={legendTemplate}>
               <Button
                 onClick={() => { }}
                 unstyled type="small" className=' self-center flex justify-center align-middle px-[5px] py-[5px] w-fit' >
                 <span className='smallButton-text px-[5px] '> ADD DEVICE +</span>
               </Button>
 
-            </FieldSet>
+            </Fieldset>
 
           </div>
 
