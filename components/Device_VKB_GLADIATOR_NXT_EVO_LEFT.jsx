@@ -20,11 +20,11 @@ const Device_VKB_SpaceEvo = (props) => {
   return (
     <>
 
-      <InputPopover InputId={"chipSwitch"} InputName={"CHIP STICK"} TargetId={"#input5"}/>
-      <InputPopover InputId={"pillSwitch"} InputName={"PILL STICK"} TargetId={"#input1"}/>
-      <InputPopover InputId={"hatSwitch"} InputName={"HAT STICK"} TargetId={"#input2"}/>
-      <InputPopover InputId={"circleSwitch"} InputName={"CIRCLE STICK"} TargetId={"#input3"}/>
-      <InputPopover InputId={"redButton"} InputName={"RED BUTTON"} TargetId={"#input4"}/>
+      <InputPopover InputId={"chipSwitch"} InputName={"CHIP STICK"} TargetId={"#input5"} />
+      <InputPopover InputId={"pillSwitch"} InputName={"PILL STICK"} TargetId={"#input1"} />
+      <InputPopover InputId={"hatSwitch"} InputName={"HAT STICK"} TargetId={"#input2"} />
+      <InputPopover InputId={"circleSwitch"} InputName={"CIRCLE STICK"} TargetId={"#input3"} />
+      <InputPopover InputId={"redButton"} InputName={"RED BUTTON"} TargetId={"#input4"} />
 
       <div>
 
@@ -980,7 +980,8 @@ const Device_VKB_SpaceEvo = (props) => {
               </g>
             </g>
 
-            <g id="input5"
+            <g
+              id="input5"
               className=" selected-input corner-test"
 
               // data-pr-position="top"
