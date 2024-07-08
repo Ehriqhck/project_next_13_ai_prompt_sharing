@@ -14,7 +14,7 @@ import { usePathname } from 'next/navigation'
 const NavEditor = () => {
   const { selectedDevice, setSelectedDevice } = useContext(SelectedDeviceContext);
   const { selectedEditorDevice, setSelectedEditorDevice } = useContext(SelectedEditorDeviceContext);
-  const [ isLoading, setIsLoading ] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [pathname, setPathname] = useState()
   const [devices, setDevices] = useState([
     {
@@ -69,7 +69,7 @@ const NavEditor = () => {
     // then set the selected device item in the tabmenu to be ACTIVE/FOCUS
 
     try {
-setIsLoading(true)
+      setIsLoading(true)
       sessionStorage.setItem('selectedDevice', JSON.stringify(selectedDevice))
 
       console.log("STORED PROFILE VVVV");

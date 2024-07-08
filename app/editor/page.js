@@ -1,4 +1,6 @@
 'use client'
+import { Button } from 'primereact/button';
+import { Fieldset } from 'primereact/fieldset';
 
 import React from 'react'
 import Device_VKB_GLADIATOR_NXT_EVO_LEFT from '@components/Device_VKB_GLADIATOR_NXT_EVO_LEFT.jsx';
@@ -60,12 +62,16 @@ const page = () => {
         break;
       default:
         return (
-          <Device_VKB_GLADIATOR_NXT_EVO_LEFT className="min-w-[330px]" />
+          <></>
         )
         break;
     }
   }
-
+  const legendTemplate = (
+    <div className="flex align-items-center gap-2 px-2">
+        <span className="font-bold">Amy Elsner</span>
+    </div>
+);
   return (
 
     <section id="InputViewerPanel" className='editor-container' >
@@ -73,9 +79,28 @@ const page = () => {
         <InputViewer />
       </div>
 
-      <div className='device-container' >
-        {currentSelectedEditorDevice}
+      <div className='flex flex-col gap-0'>
+        <div className='corner-viewChanger'>
+          <div className='flex flex-col'>
+
+            <p className=' small-text w-full flex justify-start'> CURRENT VIEW </p>
+            <FieldSet legendTemplate={legendTemplate}>
+              <Button
+                onClick={() => { }}
+                unstyled type="small" className=' self-center flex justify-center align-middle px-[5px] py-[5px] w-fit' >
+                <span className='smallButton-text px-[5px] '> ADD DEVICE +</span>
+              </Button>
+
+            </FieldSet>
+
+          </div>
+
+        </div>
+        <div className='device-container' >
+          {currentSelectedEditorDevice}
+        </div>
       </div>
+
       <div id="InputEditorPanel" className={editorPanelVisibility}>
         <InputEditor />
 
