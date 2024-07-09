@@ -1,6 +1,8 @@
 'use client'
 import { Button } from 'primereact/button';
-import { Fieldset } from 'primereact/fieldset';
+import { TabMenu } from 'primereact/tabmenu';
+import CubeFrontIcon from '@public/assets/icons/actions/gameCategory/CubeFrontIcon.jsx';
+import CubeBackIcon from '@public/assets/icons/actions/gameCategory/CubeBackIcon.jsx';
 
 import React from 'react'
 import Device_VKB_GLADIATOR_NXT_EVO_LEFT from '@components/Device_VKB_GLADIATOR_NXT_EVO_LEFT.jsx';
@@ -28,6 +30,38 @@ const page = () => {
     'hidden': !showViewerPanel,
     'show': showViewerPanel
   })
+
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const itemRenderer = (item, itemIndex) => (
+    <a className="p-menuitem-link flex align-items-center flex-col justify-center align-middle gap-2 mx-[8px] " onClick={() => setActiveIndex(itemIndex)}>
+      {getDeviceOrientations(item)}
+      <span className="small-text flex self-center">{item.name}</span>
+    </a>
+  );
+
+  const getDeviceOrientations = (item) => {
+    if (item.name == "FRONT") {
+      return (<CubeFrontIcon width="24px"></CubeFrontIcon>);
+    }
+    if (item.name == "BACK") {
+      return (<CubeBackIcon width="24px"></CubeBackIcon>);
+    }
+
+  }
+
+  const items = [
+    {
+      name: 'FRONT',
+      image: <CubeBackIcon width="24" />,
+      template: (item) => itemRenderer(item, 0)
+    },
+    {
+      name: 'BACK',
+      image: <CubeFrontIcon width="24" />,
+      template: (item) => itemRenderer(item, 1)
+    },
+  ];
 
   useEffect(() => {
     try {
@@ -67,11 +101,12 @@ const page = () => {
         break;
     }
   }
+
   const legendTemplate = (
-    <div className="flex align-items-center gap-2 px-2">
-        <span className="font-bold">Amy Elsner</span>
+    <div className="flex align-items-center gap-2 px-2 w-[20px]" >
+      <span className="font-bold">Amy Elsner</span>
     </div>
-);
+  );
   return (
 
     <section id="InputViewerPanel" className='editor-container' >
@@ -80,18 +115,13 @@ const page = () => {
       </div>
 
       <div className='flex flex-col gap-0'>
-        <div className='corner-viewChanger'>
+        <div className=''>
           <div className='flex flex-col'>
 
             <p className=' small-text w-full flex justify-start'> CURRENT VIEW </p>
-            <Fieldset legendTemplate={legendTemplate}>
-              <Button
-                onClick={() => { }}
-                unstyled type="small" className=' self-center flex justify-center align-middle px-[5px] py-[5px] w-fit' >
-                <span className='smallButton-text px-[5px] '> ADD DEVICE +</span>
-              </Button>
+            <TabMenu unstyled type="device_orientation" model={items} activeIndex={activeIndex} onTabChange={(e) => setActiveIndex(e.index)} />
 
-            </Fieldset>
+
 
           </div>
 
@@ -106,7 +136,7 @@ const page = () => {
 
       </div>
 
-    </section>
+    </section >
 
 
   )

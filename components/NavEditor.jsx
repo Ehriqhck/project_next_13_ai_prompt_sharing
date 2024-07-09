@@ -261,7 +261,7 @@ const NavEditor = () => {
 
           </div>
 
-          <TabMenu unstyled model={devices} activeIndex={activeIndex} onTabChange={(e) => {
+          <TabMenu unstyled type="deviceSwitcher" model={devices} activeIndex={activeIndex} onTabChange={(e) => {
             setActiveIndex(e.index);
           }} />
         </div>
