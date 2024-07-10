@@ -1475,6 +1475,8 @@ gap: 60px;
 }
 
 
+
+
 li[role="presentation"] {
   display:flex !important;
   flex-direction: row !important;
@@ -1584,57 +1586,7 @@ body > main > nav > div:nth-child(2) > ul > li:last-child{
   
   }
 
-  /* .nav::before{
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 0px 0px 10px 10px !important;
-    border: 1px transparent !important;
-    border-width: 0px 1px 1px 1px !important;
-    background: 
-    radial-gradient(at center bottom,#00eeff8e, #00000000 ) border-box, 
-    radial-gradient(at right top,#00eeff8e, #00000000 ) border-box !important;
-    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0) !important;
-    mask: linear-gradient(#ffffff 0 0) padding-box, linear-gradient(#fff 0 0) !important;
-    -webkit-mask-composite: destination-out !important;
-    mask-composite: exclude !important;
-    
-  }
-  .nav::after {
-    border-width: 1px 0px 0px 0px !important;
-    border-color: white !important;
-  }
-   */
-   div[type="device_orientation"] > ul[role='menubar'] {
-    border-radius: 0px 0px 10px 10px !important;
-    padding: 6px 12px 4px 12px !important;
-    background-color: #021519  !important;
-    position: relative !important;
-    background: 
-    linear-gradient(180deg, rgb(255 255 255 / 0%) 0%, rgb(0 208 255 / 7%) 100%), #000708,
-     #000708 !important;
-    display: flex !important;
-    flex-direction: column !important;
-  }
   
-  div[type="device_orientation"] > ul[role='menubar']::before {
-    display: flex !important;
-flex-direction: column !important;
-    content: "";
-    position: absolute;
-    inset: 0;
-    cursor: pointer;
-    border-radius: 0px 0px 10px 10px !important;
-    border: 1px solid transparent !important;
-    border-width: 0px 1px 1px 1px !important;
-    background: 
-    radial-gradient(at center bottom,#00eeff8e, #00000000 ) border-box, 
-    radial-gradient(at right top,#00eeff8e, #00000000 ) border-box !important;
-    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0) !important;
-    mask: linear-gradient(#ffffff 0 0) padding-box, linear-gradient(#fff 0 0) !important;
-    -webkit-mask-composite: destination-out !important;
-    mask-composite: exclude !important;
-  }
 div[type="deviceSwitcher"] > ul[role='menubar'] {
   border-radius: 0px 0px 10px 10px !important;
   padding: 6px 12px 4px 12px !important;
@@ -1748,10 +1700,12 @@ div[type='device_orientation'] > ul {
   filter: drop-shadow(0px 4px 24px #00eeff2f);
   transition: filter 0.18s;
 }
+
 div[type='profile card'] > .p-datatable-wrapper > table > tbody >tr >td  {
   padding: 0px;
   width: 100% !important;
 }
+
 div[type='profile card'] > .p-datatable-wrapper > table > tbody.p-datatable-tbody  {
   margin: 10px 0px 10px 0px  !important;
   display: flex;
@@ -2078,8 +2032,10 @@ color: #CEFCFF;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
     border-radius: 6px;
 }
+
+
 /* BUTTON SMALL*/
-button[type='small'] {
+button[type='small'], button[type='device_orientation'] {
   border-radius: 6px !important; 
   background-color: #021519 !important;
   position: relative !important;
@@ -2087,7 +2043,8 @@ button[type='small'] {
     repeating-linear-gradient(-45deg, rgb(0, 14, 16), rgb(0, 9, 16, 0.3) 2px,  rgba(0, 0, 0, 0) 2px, rgba(0, 0, 0, 0) 2.83px),
    linear-gradient(151deg, rgba(0,34,41,0) 0%, rgba(0, 156, 191, 0.555) 100%) !important;
 }
-button[type='small']:enabled::before {
+
+button[type='small']:enabled::before, button[type='device_orientation']:enabled::before {
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
@@ -2104,7 +2061,7 @@ button[type='small']:enabled::before {
   mask-composite: exclude !important;
 }
 
-button[type='small']:enabled:hover {
+button[type='small']:enabled:hover, button[type='device_orientation']:enabled:hover {
   border-radius: 6px!important;
   background-color: #00000000 !important;
   background: radial-gradient(#00000000, #00eeff3d) border-box,
@@ -2114,7 +2071,7 @@ button[type='small']:enabled:hover {
   filter: drop-shadow(0px 4px 24px #00eeff2f) !important;
   transition: filter 0.18s !important; 
 }
-.button[type='small']:enabled:hover:before {
+.button[type='small']:enabled:hover:before, .button[type='device_orientation']:enabled:hover:before {
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
@@ -2131,7 +2088,7 @@ button[type='small']:enabled:hover {
 
 
 
-button[type='small']:enabled:focus::before {
+button[type='small']:enabled:focus::before, button[type='device_orientation']:enabled:focus::before {
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
@@ -2145,7 +2102,7 @@ button[type='small']:enabled:focus::before {
   mask-composite: exclude !important;
 }
 
- button[type='small']:enabled:focus {
+ button[type='small']:enabled:focus, button[type='device_orientation']:enabled:focus {
   border-radius: 6px !important;
   background-color: #00000000 !important;
   background: radial-gradient(#00000000, #00eeff3d) border-box,

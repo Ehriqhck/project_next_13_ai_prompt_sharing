@@ -34,10 +34,10 @@ const page = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const itemRenderer = (item, itemIndex) => (
-    <a className="p-menuitem-link flex align-items-center flex-col justify-center align-middle gap-2 mx-[8px] " onClick={() => setActiveIndex(itemIndex)}>
+    <Button type="device_orientation" className="p-menuitem-link flex align-items-center flex-col justify-center align-middle gap-2 mx-[8px] " onClick={() => setActiveIndex(itemIndex)}>
       {getDeviceOrientations(item)}
       <span className="small-text flex self-center">{item.name}</span>
-    </a>
+    </Button>
   );
 
   const getDeviceOrientations = (item) => {
@@ -107,6 +107,7 @@ const page = () => {
       <span className="font-bold">Amy Elsner</span>
     </div>
   );
+
   return (
 
     <section id="InputViewerPanel" className='editor-container' >
@@ -119,26 +120,18 @@ const page = () => {
           <div className='flex flex-col'>
 
             <p className=' small-text w-full flex justify-start'> CURRENT VIEW </p>
-            <TabMenu unstyled type="device_orientation" model={items} activeIndex={activeIndex} onTabChange={(e) => setActiveIndex(e.index)} />
-
-
+            <TabMenu unstyled className='corner-test' type="device_orientation" model={items} activeIndex={activeIndex} onTabChange={(e) => setActiveIndex(e.index)} />
 
           </div>
-
         </div>
         <div className='device-container' >
           {currentSelectedEditorDevice}
         </div>
       </div>
-
       <div id="InputEditorPanel" className={editorPanelVisibility}>
         <InputEditor />
-
       </div>
-
     </section >
-
-
   )
 }
 
