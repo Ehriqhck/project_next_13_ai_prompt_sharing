@@ -526,8 +526,6 @@ export default function TreeTableDialogue() {
 
         });
 
-
-
         const toggleIcon = (expanded) => {
             if (!expanded) {
                 return (

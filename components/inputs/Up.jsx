@@ -2,12 +2,19 @@ import React from 'react'
 import Press from 'public/assets/icons/actions/input_up.svg';
 import ActionList from '@components/ActionList';
 
-const Up = ({layers, name}) => {
+const Up = ({ layers, name, iconOnly }) => {
 
   console.log("NAME:" + name);
-  
 
 
+  if (iconOnly) {
+    return (
+      <div className="ui-corners square_contain">
+        <div className='square_contain'>
+          <Press />
+        </div>
+      </div>)
+  }
   return (
 
     <div className="input-up-absolute ">
@@ -16,13 +23,13 @@ const Up = ({layers, name}) => {
         <div className="text-wrapper">{name}</div>
       </div>
       <div className="action-list ">
-      <ActionList layers={layers} input_direction ={null}/>
+        <ActionList layers={layers} input_direction={null} />
 
       </div>
 
       <div className="ui-corners square_contain">
         <div className='square_contain'>
-            <Press />
+          <Press />
         </div>
       </div>
     </div>
