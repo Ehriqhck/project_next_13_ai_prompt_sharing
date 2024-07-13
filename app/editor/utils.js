@@ -3,6 +3,8 @@ import RedButton from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/RedButt
 import ChipSwitch from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/ChipSwitch.jsx'
 // import CircleSwitch from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/CircleSwitch.jsx'
 import Hat from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/Hat.jsx'
+import Image from 'next/image'
+
 import CircleSwitch from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/CircleSwitch.svg'
 import QuestionMark from '@components/generic/Icons/QuestionIcon.svg'
 // export const fetchMappings = async ({ id }) => {
@@ -23,7 +25,7 @@ import QuestionMark from '@components/generic/Icons/QuestionIcon.svg'
 // }
 
 export const Utils = {
-  getInputIcon (ButtonName) {
+  getInputIcon(ButtonName) {
     switch (ButtonName) {
       case 'circleSwitch':
         return <CircleSwitch />
@@ -47,7 +49,7 @@ export const Utils = {
       default:
         return (
           <div className=' panel'>
-           <div className='w-[50px] glow opacity-[85%] flex flex-col '> <QuestionMark className="gradient-overlay"/> </div> 
+            <div className='w-[50px] glow opacity-[85%] flex flex-col '> <QuestionMark className="gradient-overlay" /> </div>
             <p class='text-default text-layer1 default w-[100%] '> SELECT AN INPUT TO VIEW </p>
           </div>
         )
@@ -55,7 +57,7 @@ export const Utils = {
     }
   },
 
-  getInputIconTitle (ButtonName) {
+  getInputIconTitle(ButtonName) {
     switch (ButtonName) {
       case 'circleSwitch':
         return <CircleSwitch />
@@ -78,8 +80,47 @@ export const Utils = {
 
       default:
         return (
-            <p class='text-modifier text-layer1 default '> SELECT AN INPUT </p>
+          <p class='text-modifier text-layer1 default '> SELECT AN INPUT </p>
         )
+        break
+    }
+  },
+  getSelectedDeviceIcon(DeviceName) {
+    console.log("DEVICE PREVIEW ICON NAME ================");
+    console.log(DeviceName);
+    switch (DeviceName) {
+      case 'VKB_GLADIATOR_NXT_EVO_LEFT':
+        return (
+          <img src='/assets/VKB/Device_VKB_GLADIATOR_NXT_EVO_LEFT_BACK_1@2x.webp' width={30} />
+        )
+        break
+      case 'VKB_GLADIATOR_NXT_EVO_RIGHT':
+        return (
+          <img src='/assets/VKB/Device_VKB_GLADIATOR_NXT_EVO_LEFT_BACK_1@2x.webp' width={30} />
+        )
+
+        break
+      case 'hatSwitch':
+        return <Hat className='testCircle p-[10px]' />
+        break
+
+      case 'pillSwitch':
+        return <PillSwitch className='testCircle p-[10px]' />
+        break
+
+      case 'redButton':
+        return <RedButton className='testCircle p-[10px]' />
+        break
+      case 'chipSwitch':
+        return <ChipSwitch className='testCircle p-[10px]' />
+        break
+
+      default:
+        return (
+          <div>
+            <img src='/assets/VKB/Device_VKB_GLADIATOR_NXTd_EVO_LEFT_BACK_1@2x.webp' width={30} />
+
+          </div>)
         break
     }
   }
