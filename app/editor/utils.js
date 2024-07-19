@@ -4,6 +4,11 @@ import ChipSwitch from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/ChipSw
 // import CircleSwitch from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/CircleSwitch.jsx'
 import Hat from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/Hat.jsx'
 import Image from 'next/image'
+import InputLeftIcon from '@public/assets/icons/actions/InputLeftIcon.jsx'
+import InputRightIcon from '@public/assets/icons/actions/InputRightIcon.jsx'
+import InputUpIcon from '@public/assets/icons/actions/InputUpIcon.jsx'
+import InputDownIcon from '@public/assets/icons/actions/InputDownIcon.jsx'
+import InputPressIcon from '@public/assets/icons/actions/InputPressIcon.jsx'
 
 import CircleSwitch from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/CircleSwitch.svg'
 import QuestionMark from '@components/generic/Icons/QuestionIcon.svg'
@@ -25,59 +30,114 @@ import QuestionMark from '@components/generic/Icons/QuestionIcon.svg'
 // }
 
 export const Utils = {
-  getInputIcon(ButtonName) {
+  getInputIcon(ButtonName, width, height) {
     switch (ButtonName) {
-      case 'circleSwitch':
-        return <CircleSwitch />
+      case 'Circle_Stick':
+        return (
+          <div className='corner-inputTableIcons'>
+            <CircleSwitch className='testCircle ' width={width} height={height} />
+          </div>
+        )
+
         break
 
-      case 'hatSwitch':
-        return <Hat className='testCircle p-[10px]' />
+      case 'Hat_Stick': return (
+        <div className='corner-inputTableIcons'>
+
+          <Hat className='testCircle' width={width} height={height} />
+        </div>
+      )
+
         break
 
-      case 'pillSwitch':
-        return <PillSwitch className='testCircle p-[10px]' />
+      case 'Pill_Stick': return (
+        <div className='corner-inputTableIcons'>
+
+          <PillSwitch className='testCircle ' width={width} height={height} />
+        </div>)
+
         break
 
-      case 'redButton':
-        return <RedButton className='testCircle p-[10px]' />
+      case 'Red_Button': return (
+        <div className='corner-inputTableIcons'>
+
+          <RedButton className='testCircle ' width={width} height={height} />
+        </div>
+      )
         break
-      case 'chipSwitch':
-        return <ChipSwitch className='testCircle p-[10px]' />
+
+      case 'Chip_Stick': return (
+        <div className='corner-inputTableIcons'>
+          <ChipSwitch className='testCircle ' width={width} height={height} />
+        </div>
+      )
+
+
         break
 
       default:
         return (
-          <div className=' panel'>
-            <div className='w-[50px] glow opacity-[85%] flex flex-col '> <QuestionMark className="gradient-overlay" /> </div>
-            <p class='text-default text-layer1 default w-[100%] '> SELECT AN INPUT TO VIEW </p>
-          </div>
+          // <div className=' panel'>
+          //   <div className='w-[50px] glow opacity-[85%] flex flex-col '> <QuestionMark className="gradient-overlay" /> </div>
+          //   <p class='text-default text-layer1 default w-[100%] '> SELECT AN INPUT TO VIEW </p>
+          // </div>
+          null)
+        break
+    }
+  },
+  getInputSlotIcons(slotName, width, height) {
+    switch (slotName) {
+      case 'top':
+        return <InputUpIcon className='testCircle' width={width} height={height} />
+        break
+
+      case 'bottom':
+        return <InputDownIcon className='testCircle' width={width} height={height} />
+        break
+
+      case 'press':
+        return <InputPressIcon className='testCircle ' width={width} height={height} />
+        break
+
+      case 'left':
+        return <InputLeftIcon className='testCircle ' width={width} height={height} />
+      case 'right':
+        return <InputRightIcon className='testCircle ' width={width} height={height} />
+        break
+
+      default:
+        return (
+          <></>
         )
         break
     }
   },
-
   getInputIconTitle(ButtonName) {
     switch (ButtonName) {
-      case 'circleSwitch':
+      case 'Circle_Stick':
         return <CircleSwitch />
         break
 
-      case 'hatSwitch':
+      case 'Hat_Stick':
         return <Hat className='testCircle p-[10px]' />
         break
 
-      case 'pillSwitch':
+      case 'Pill_Stick':
         return <PillSwitch className='testCircle p-[10px]' />
         break
 
-      case 'redButton':
+      case 'Red_Button':
         return <RedButton className='testCircle p-[10px]' />
         break
-      case 'chipSwitch':
+      case 'Chip_Stick':
         return <ChipSwitch className='testCircle p-[10px]' />
         break
-
+        
+      case 'Red_Button':
+        return (
+          <>Red_Button</>
+        )
+        break
       default:
         return (
           <p class='text-modifier text-layer1 default '> SELECT AN INPUT </p>
