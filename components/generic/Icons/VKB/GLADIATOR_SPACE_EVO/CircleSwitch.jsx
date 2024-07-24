@@ -1,13 +1,13 @@
 import * as React from "react"
 const SvgComponent = (props) => (
-    <div className="testCircle p-[5px]">
         <svg
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
             id="nxt-evo-Layer_2"
             data-name="nxt-evo-Layer 2"
             viewBox="0 0 55.54 59.08"
-            {...props}
+            width={props.width}
+            height={props.height}
         >
             <defs>
                 <radialGradient
@@ -393,6 +393,5 @@ const SvgComponent = (props) => (
                 </g>
             </g>
         </svg>
-    </div>
 )
 export default SvgComponent

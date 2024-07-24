@@ -12,6 +12,7 @@ const ActionList = ({ layers, input_direction }) => {
   const classNames = clsx({
     "action-list-left": input_direction == "left",
     "action-list-right": input_direction == "right",
+    "action-list-inputTable": input_direction == "inputTable",
 
     "action-list": input_direction !== "left" || "right" 
   });

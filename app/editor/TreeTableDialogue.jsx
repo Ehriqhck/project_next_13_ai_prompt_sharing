@@ -442,9 +442,9 @@ export default function TreeTableDialogue() {
     }
 
     const getCategoryHeader = (node) => {
-        if (!Object.hasOwn(node.data, 'category')) {
+        if (!Object.hasOwn(node, 'children')) {
             console.log('Node has no data.category' + Object.hasOwn(node.data, 'category'));
-            return;
+            return (<></>);
         } else {
             // console.log('NODE HAS DATA CATEGORY: ' + Object.hasOwn(node.data, 'category'));
             let stringCategory = node.data.category;
@@ -477,7 +477,7 @@ export default function TreeTableDialogue() {
                                         <div className='flex flex-row'>
                                             <div className="spacer-dialogue" />
                                             <span className='self-center justify-center '>
-                                                <p className='text-GameAction-Category-bold'>{category} </p>
+                                                <p className='text-GameAction-Category-Heading'>{category} </p>
                                             </span>
                                             <span className='' aria-hidden="true">
                                                 {getHeaderIcon(category)}
@@ -515,7 +515,7 @@ export default function TreeTableDialogue() {
 
     const togglerTemplate = (node, options) => {
         if (!node) {
-            return;
+            return (<></>);
         }
         let label = <p className='self-center justify-center text-list-default '>{node.label?.toUpperCase()}</p>;
         const expanded = options.expanded;
@@ -545,7 +545,7 @@ export default function TreeTableDialogue() {
                         {getCategoryHeader(node)}
                     </div>
                     <div className='self-center justify-center flex '>
-                        {getHeaderIcon(node)}
+                        {/* {getHeaderIcon(node)} */}
                     </div>
                     {/* <div className="spacer-dialogue" />
 
@@ -4138,22 +4138,33 @@ export default function TreeTableDialogue() {
 
         // check if node is category with child array of game actions
         if (Object.hasOwn(node, 'children')) {
-            label = <></>
+            return (
+                <></>
+            )
         }
 
-        return <span className={options.className}>
-            <div className='flex flex-row'>
+        return (
+            <Button type="gameActions" unstyled>
+                {/* <span className={options.className}> */}
+                <div unstyled className='flex flex-row pl-[8px] py-[8px]'>
+                    {getCategoryIcon(node)}
 
-                {getCategoryIcon(node)}
+                    <div className='flex flex-col  justify-start w-full'>
+                        <p className='gameAction-text-regular flex '>{label}</p>
+                        <p className=' gameAction-text-subheading flex' >{node.data.category}</p>
 
-                {label}
+                    </div>
 
-            </div>
-        </span>;
+                </div>
+                {/* </span> */}
+            </Button>
+        )
+
+
     }
 
     return (
-        <div className="card flex justify-content-center">
+        <div className=" flex justify-content-center radial-outline">
             <Button label="Login" icon="pi pi-user" onClick={() => setVisible(true)} />
 
             <Dialog
@@ -4161,14 +4172,19 @@ export default function TreeTableDialogue() {
                 modal
                 onHide={() => setVisible(false)}
                 content={({ hide }) => (
-                    <div className="panel flex flex-wrap justify-content-center gap-[3px] w-[100%] bg-striped">
+                    <div className="panel-gameAction flex flex-row justify-content-center gap-[3px] w-[100%] radial-outline">
+                        <div className='panel-gameAction-sidebar h-full'> 
                         <BindButton />
+
+
+                        </div>
 
                         <Tree
                             togglerTemplate={togglerTemplate}
                             selectionMode="single" selectionKeys={selectedKey}
                             onSelectionChange={(e) => {
                             }}
+                            unstyled
                             onNodeClick={(e) => {
                                 setSelectedAction(e.node);
                                 // console.log(e.node.key);
@@ -4176,7 +4192,8 @@ export default function TreeTableDialogue() {
                             // onNodeClick={(e) => {
                             //     console.log("WHAT IS NODE???:   " + e.data);
                             // }}
-                            nodeTemplate={nodeTemplate} value={nodes} filter filterBy='label' filterMode="strict" filterPlaceholder="Lenient Filter" className="w-[1000px] md:w-30rem" />
+                            nodeTemplate={nodeTemplate} value={nodes} filter filterBy='label' filterMode="strict" filterPlaceholder="Lenient Filter"
+                             className="w-[800px] h-[100%]" />
                     </div>
                 )}
             ></Dialog>

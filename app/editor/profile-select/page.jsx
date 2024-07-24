@@ -9,6 +9,709 @@ import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 import { SelectedEditorDeviceContext } from '@components/Provider';
 
 const page = () => {
+
+    const TEMP_PROFILE = {
+        "_id": { "$oid": "669d8e426876942f3d04d3b2" },
+        "email": "rickierumbles@gmail.com",
+        "username": "rickierumbles",
+        "image": "https://lh3.googleusercontent.com/a/ACg8ocJ4GNNufWvuw4IiOPY6nd5L4SrJTIIMwwrM8tB5veVjiI9f8MAQ=s96-c",
+        "deviceProfiles":
+        {
+            "TEST_PROFILE_1":
+            {
+                "profileName": "TEST PROFILE 1",
+                "dateModified": "yesterday",
+                "dateCreated": "today",
+                "savedDevices": {
+                    "VKB_GLADIATOR_NXT_EVO_RIGHT": {
+                        "buttons": {
+
+                            "X_Axis": {
+                                "press": {
+                                    "name": "TWIST X",
+                                    "layers": [
+                                        "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                        "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                        "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)"
+                                    ]
+                                },
+                                "bottom":
+                                {
+                                    "name": "TRANSLATE X",
+                                    "layers": [
+                                        "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                        "SECOND LAYER",
+                                        "THIRD LAYER"
+                                    ]
+                                },
+                            },
+                            "Y_Axis": {
+                                "Twist Y": {
+                                  "press": {
+                                    "name": "TWIST Y",
+                                    "layers": [
+                                      "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                      "SECOND LAYER",
+                                      "THIRD LAYER"
+                                    ]
+                                  },
+                                },
+                                "Translate Y": {
+                                    "bottom": {
+                                        "name": "Translate Y",
+                                        "layers": [
+                                          "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                          "SECOND LAYER",
+                                          "THIRD LAYER"
+                                        ]
+                                      },
+                                },
+                              },
+                            "Z_AXIS": {
+                                "Translate_Z": {
+                                    "press": {
+                                        "name": "TRANSLATE Z",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    }
+                                }
+                            },
+                            "Front": {
+                                "Circle_Stick": {
+                                    "top": {
+                                        "name": "CIRCLE SWITCH UP",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)"
+                                        ]
+                                    },
+                                    "bottom": {
+                                        "name": "CIRCLE SWITCH DOWN",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    },
+                                    "press": {
+                                        "name": "CIRCLE SWITCH PRESS",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    },
+                                    "left": {
+                                        "name": "CIRCLE SWITCH LEFT",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)"
+                                        ]
+                                    },
+                                    "right": {
+                                        "name": "CIRCLE SWITCH RIGHT",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    }
+                                },
+                                "Hat_Stick": {
+                                    "top": {
+                                        "name": "HAT SWITCH UP",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)"
+                                        ]
+                                    },
+                                    "bottom": {
+                                        "name": "HAT SWITCH DOWN",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    },
+                                    "press": {
+                                        "name": "HAT SWITCH PRESS",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    },
+                                    "left": {
+                                        "name": "HAT SWITCH LEFT",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)"
+                                        ]
+                                    },
+                                    "right": {
+                                        "name": "HAT SWITCH RIGHT",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    }
+                                },
+                                "Pill_Stick": {
+                                    "top": {
+                                        "name": "PILL SWITCH UP",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)"
+                                        ]
+                                    },
+                                    "bottom": {
+                                        "name": "PILL SWITCH DOWN",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    },
+                                    "press": {
+                                        "name": "PILL SWITCH PRESS",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    },
+                                    "left": {
+                                        "name": "PILL SWITCH LEFT",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)"
+                                        ]
+                                    },
+                                    "right": {
+                                        "name": "PILL SWITCH RIGHT",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    }
+                                },
+                                "Red_Button": {
+                                    "press": {
+                                        "name": "RED BUTTON PRESS",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    }
+                                },
+                                "Chip_Stick": {
+                                    "top": {
+                                        "name": "CHIP SWITCH UP",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)"
+                                        ]
+                                    },
+                                    "bottom": {
+                                        "name": "CHIP SWITCH DOWN",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    },
+                                    "press": {
+                                        "name": "CHIP SWITCH PRESS",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    },
+                                    "left": {
+                                        "name": "CHIP SWITCH LEFT",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)"
+                                        ]
+                                    },
+                                    "right": {
+                                        "name": "CHIP SWITCH RIGHT",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    }
+                                }
+                            },
+                            "Back": {
+                                "Primary_Trigger": {
+                                    "press": {
+                                        "name": "PRIMARY TRIGGER PRESS",
+                                        "layers": [
+                                            "FIRE WEAPONS",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    },
+                                },
+                                "Secondary_Trigger": {
+                                    "press": {
+                                        "name": "SECONDARY TRIGGER PRESS",
+                                        "layers": [
+                                            "FIRE WEAPONS",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    },
+                                },
+                                "Pinky_Button": {
+                                    "press": {
+                                        "name": "SECONDARY TRIGGER PRESS",
+                                        "layers": [
+                                            "TOGGLE INTERACTION MODE",
+                                        ]
+                                    },
+
+
+                                },
+                                'Side_Index_Button': {
+                                    "press": {
+                                        "name": "SECONDARY TRIGGER PRESS",
+                                        "layers": [
+                                            "TOGGLE INTERACTION MODE",
+                                        ]
+                                    },
+                                }
+                            }
+
+                        }
+                    },
+                    "VKB_GLADIATOR_NXT_EVO_LEFT": {
+                        "buttons": {
+                            "Main Stick": {
+                                "Twist_X": {
+                                    "top": {
+                                        "name": "TWIST X",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)"
+                                        ]
+                                    },
+                                    "Twist_Y": {
+                                        "name": "TWIST Y",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    },
+                                    "Translate_X": {
+                                        "name": "TRANSLATE X",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    },
+                                    "Translate_Y": {
+                                        "name": "TRANSLATE Y",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)"
+                                        ]
+                                    },
+                                    "Translate_Z": {
+                                        "name": "TRANSLATE Z",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    }
+                                },
+                                "Hat_Stick": {
+                                    "top": {
+                                        "name": "HAT SWITCH UP",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)"
+                                        ]
+                                    },
+                                    "bottom": {
+                                        "name": "HAT SWITCH DOWN",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    },
+                                    "press": {
+                                        "name": "HAT SWITCH PRESS",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    },
+                                    "left": {
+                                        "name": "HAT SWITCH LEFT",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)"
+                                        ]
+                                    },
+                                    "right": {
+                                        "name": "HAT SWITCH RIGHT",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    }
+                                },
+                                "Pill_Stick": {
+                                    "top": {
+                                        "name": "PILL SWITCH UP",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)"
+                                        ]
+                                    },
+                                    "bottom": {
+                                        "name": "PILL SWITCH DOWN",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    },
+                                    "press": {
+                                        "name": "PILL SWITCH PRESS",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    },
+                                    "left": {
+                                        "name": "PILL SWITCH LEFT",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)"
+                                        ]
+                                    },
+                                    "right": {
+                                        "name": "PILL SWITCH RIGHT",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    }
+                                },
+                                "Red_Button": {
+                                    "press": {
+                                        "name": "RED BUTTON PRESS",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    }
+                                },
+                                "Chip_Stick": {
+                                    "top": {
+                                        "name": "CHIP SWITCH UP",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)"
+                                        ]
+                                    },
+                                    "bottom": {
+                                        "name": "CHIP SWITCH DOWN",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    },
+                                    "press": {
+                                        "name": "CHIP SWITCH PRESS",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    },
+                                    "left": {
+                                        "name": "CHIP SWITCH LEFT",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)"
+                                        ]
+                                    },
+                                    "right": {
+                                        "name": "CHIP SWITCH RIGHT",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    }
+                                }
+                            },
+                            "Front": {
+                                "Circle_Stick": {
+                                    "top": {
+                                        "name": "CIRCLE SWITCH UP",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)"
+                                        ]
+                                    },
+                                    "bottom": {
+                                        "name": "CIRCLE SWITCH DOWN",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    },
+                                    "press": {
+                                        "name": "CIRCLE SWITCH PRESS",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    },
+                                    "left": {
+                                        "name": "CIRCLE SWITCH LEFT",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)"
+                                        ]
+                                    },
+                                    "right": {
+                                        "name": "CIRCLE SWITCH RIGHT",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    }
+                                },
+                                "Hat_Stick": {
+                                    "top": {
+                                        "name": "HAT SWITCH UP",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)"
+                                        ]
+                                    },
+                                    "bottom": {
+                                        "name": "HAT SWITCH DOWN",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    },
+                                    "press": {
+                                        "name": "HAT SWITCH PRESS",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    },
+                                    "left": {
+                                        "name": "HAT SWITCH LEFT",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)"
+                                        ]
+                                    },
+                                    "right": {
+                                        "name": "HAT SWITCH RIGHT",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    }
+                                },
+                                "Pill_Stick": {
+                                    "top": {
+                                        "name": "PILL SWITCH UP",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)"
+                                        ]
+                                    },
+                                    "bottom": {
+                                        "name": "PILL SWITCH DOWN",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    },
+                                    "press": {
+                                        "name": "PILL SWITCH PRESS",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    },
+                                    "left": {
+                                        "name": "PILL SWITCH LEFT",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)"
+                                        ]
+                                    },
+                                    "right": {
+                                        "name": "PILL SWITCH RIGHT",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    }
+                                },
+                                "Red_Button": {
+                                    "press": {
+                                        "name": "RED BUTTON PRESS",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    }
+                                },
+                                "Chip_Stick": {
+                                    "top": {
+                                        "name": "CHIP SWITCH UP",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)"
+                                        ]
+                                    },
+                                    "bottom": {
+                                        "name": "CHIP SWITCH DOWN",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    },
+                                    "press": {
+                                        "name": "CHIP SWITCH PRESS",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    },
+                                    "left": {
+                                        "name": "CHIP SWITCH LEFT",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)"
+                                        ]
+                                    },
+                                    "right": {
+                                        "name": "CHIP SWITCH RIGHT",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    }
+                                }
+                            },
+                            "Back": {
+                                "Primary_Trigger": {
+                                    "press": {
+                                        "name": "PRIMARY TRIGGER PRESS",
+                                        "layers": [
+                                            "FIRE WEAPONS",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    },
+                                },
+                                "Secondary_Trigger": {
+                                    "press": {
+                                        "name": "SECONDARY TRIGGER PRESS",
+                                        "layers": [
+                                            "FIRE WEAPONS",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    },
+                                },
+                                "Pinky_Button": {
+                                    "press": {
+                                        "name": "SECONDARY TRIGGER PRESS",
+                                        "layers": [
+                                            "TOGGLE INTERACTION MODE",
+                                        ]
+                                    },
+
+
+                                },
+                                'Side_Index_Button': {
+                                    "press": {
+                                        "name": "SECONDARY TRIGGER PRESS",
+                                        "layers": [
+                                            "TOGGLE INTERACTION MODE",
+                                        ]
+                                    },
+                                }
+                            }
+
+                        }
+                    },
+                },
+
+            }
+        }, "__v": { "$numberInt": "0" }
+    }
     const { data: session, status } = useSession();
     const [providers, setProviders] = useState(null);
     const { selectedEditorDevice, setSelectedEditorDevice } = useContext(SelectedEditorDeviceContext);
@@ -39,13 +742,14 @@ const page = () => {
         const fetchDeviceProfiles = async () => {
             try {
                 setIsLoading(true);
-                const response = await fetch('/api/deviceProfiles', {
-                    method: 'POST',
-                    body: JSON.stringify({
-                        userId: session?.user.id
-                    })
-                })
-                const data = await response.json()
+                // const response = await fetch('/api/deviceProfiles', {
+                //     method: 'POST',
+                //     body: JSON.stringify({
+                //         userId: session?.user.id
+                //     })
+                // })
+                // const data = await response.json()
+                const data = TEMP_PROFILE;
                 console.log("DATA BELOW vvvv");
                 console.log(data);
                 const loadedProfiles = Object.keys(data?.deviceProfiles).map((device) => {

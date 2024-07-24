@@ -5,6 +5,8 @@ const RedButton = (props) => (
     id="redButtonLayer_2"
     data-name="Layer 2"
     viewBox="0 0 34.92 38.05"
+    width={props.width}
+    height={props.height}
     {...props}
   >
     <defs>

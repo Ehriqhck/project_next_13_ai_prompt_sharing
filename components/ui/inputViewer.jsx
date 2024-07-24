@@ -3,13 +3,14 @@
 import React from 'react'
 import Hat from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/Hat.jsx';
 import Up from '@components/inputs/Up';
+import Press from '@components/inputs/Press';
+import Down from '@components/inputs/Down';
 import Left from '@components/inputs/Left';
 import Right from '@components/inputs/Right';
 import { useContext, useState, useEffect } from 'react';
-import { Context, SelectContext, SelectedEditorActionContext, ActionUpdateContext, SelectedEditorDeviceContext } from '@components/Provider.jsx'
+import { Context, SelectContext, SelectedEditorActionContext, ActionUpdateContext, SelectedEditorDeviceContext, SelectedEditorDeviceViewOrientationContext } from '@components/Provider.jsx'
 import CircleSwitch from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/CircleSwitch.jsx';
-import Press from '@components/inputs/Press';
-import Down from '@components/inputs/Down';
+
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 import PillSwitch from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/PillSwitch.jsx'
 import RedButton from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/RedButton.jsx'
@@ -26,6 +27,7 @@ const InputViewer = ({ selectedButton }) => {
     const { actionUpdate, setActionUpdate } = useContext(ActionUpdateContext)
     const { profileContext, setprofileContext } = useContext(Context);
     const { selectedEditorDevice, setSelectedEditorDevice } = useContext(SelectedEditorDeviceContext);
+    const { selectedEditorDeviceViewOrientation, setSelectedEditorDeviceViewOrientation } = useContext(SelectedEditorDeviceViewOrientationContext);
 
 
     const [top, setTop] = useState();
@@ -48,20 +50,29 @@ const InputViewer = ({ selectedButton }) => {
         // setRight(data?.deviceProfiles?.TEST_PROFILE_1?.savedDevices["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["right"]);
         // setPress(data?.deviceProfiles?.TEST_PROFILE_1?.savedDevices["VKB_GLADIATOR_EVO"]?.buttons[selectedViewerInput]?.["press"]);
         getDeviceProfiles()
-    }, [selectedViewerInput, selectedEditorInput, profileContext, selectedEditorDevice ])
+    }, [selectedViewerInput, selectedEditorInput, profileContext, selectedEditorDevice, selectedEditorDeviceViewOrientation])
 
 
 
     const getDeviceProfiles = () => {
 
         console.log("FETCHED DEVICEPROFILES BEFORE: ");
-        console.log(sessionProfiles);
+        console.log(JSON.parse(sessionStorage.getItem('loadedProfile'))?.deviceList[sessionStorage.getItem('selectedEditorDevice')].buttons[sessionStorage.getItem("selectedEditorDeviceViewOrientation")][sessionStorage.getItem("selectedEditorDeviceButton")]);
+        console.log(JSON.parse(sessionStorage.getItem('loadedProfile'))?.deviceList["VKB_GLADIATOR_NXT_EVO_RIGHT"]);
+        console.log(JSON.parse(sessionStorage.getItem('loadedProfile'))?.deviceList[sessionStorage.getItem('selectedEditorDevice')].buttons[sessionStorage.getItem("selectedEditorDeviceViewOrientation")][sessionStorage.getItem("selectedEditorDeviceButton")]);
 
-        setTop(sessionProfiles?.deviceList[selectedEditorDevice]?.buttons[selectedViewerInput]?.["top"]);
-        setbottom(sessionProfiles?.deviceList[selectedEditorDevice]?.buttons[selectedViewerInput]?.["bottom"]);
-        setRight(sessionProfiles?.deviceList[selectedEditorDevice]?.buttons[selectedViewerInput]?.["right"]);
-        setPress(sessionProfiles?.deviceList[selectedEditorDevice]?.buttons[selectedViewerInput]?.["press"]);
-        setLeft(sessionProfiles?.deviceList[selectedEditorDevice]?.buttons[selectedViewerInput]?.["left"]);
+        console.log(JSON.parse(sessionStorage.getItem('loadedProfile')), sessionStorage.getItem('selectedEditorDevice'), sessionStorage.getItem("selectedEditorDeviceViewOrientation"), sessionStorage.getItem("selectedEditorDeviceButton"));
+        if (sessionStorage.getItem("selectedEditorDeviceButton") == undefined) {
+            console.log("UNDEFINED UNDEFINED UNDEFINEDUNDEFINEDUNDEFINEDUNDEFINEDUNDEFINEDUNDEFINED");
+            return (undefined)
+        } else {
+            setTop(JSON.parse(sessionStorage.getItem('loadedProfile'))?.deviceList[sessionStorage.getItem('selectedEditorDevice')]?.buttons[sessionStorage.getItem("selectedEditorDeviceViewOrientation")][selectedViewerInput]?.["top"]);
+            setbottom(JSON.parse(sessionStorage.getItem('loadedProfile'))?.deviceList[sessionStorage.getItem('selectedEditorDevice')]?.buttons[sessionStorage.getItem("selectedEditorDeviceViewOrientation")][selectedViewerInput]?.["bottom"]);
+            setRight(JSON.parse(sessionStorage.getItem('loadedProfile'))?.deviceList[sessionStorage.getItem('selectedEditorDevice')]?.buttons[sessionStorage.getItem("selectedEditorDeviceViewOrientation")][selectedViewerInput]?.["right"]);
+            setPress(JSON.parse(sessionStorage.getItem('loadedProfile'))?.deviceList[sessionStorage.getItem('selectedEditorDevice')]?.buttons[sessionStorage.getItem("selectedEditorDeviceViewOrientation")][selectedViewerInput]?.["press"]);
+            setLeft(JSON.parse(sessionStorage.getItem('loadedProfile'))?.deviceList[sessionStorage.getItem('selectedEditorDevice')]?.buttons[sessionStorage.getItem("selectedEditorDeviceViewOrientation")][selectedViewerInput]?.["left"]);
+
+        }
 
 
     };
@@ -109,9 +120,7 @@ const InputViewer = ({ selectedButton }) => {
         } else {
             // console.log("RIGHT SLOT: UNDEFINED");
             return (<></>)
-
         }
-
     }
 
     const getInputPress = (input) => {
@@ -141,12 +150,11 @@ const InputViewer = ({ selectedButton }) => {
             return (<></>)
         }
     }
+
     return (
         <div className='panel-viewer'>
             <PanelSwitchButtonMobile whatPanel='viewer' />
-
             <div className="test2">
-
                 {getInputTop(top)
                 }
                 {/* <Up inputName_id={inputName} action_id={action} /> */}
@@ -166,13 +174,8 @@ const InputViewer = ({ selectedButton }) => {
                     {getInputRight(right)}
 
                     {/* <Right inputName_id={inputName} action_id={action} /> */}
-
                 </div>
-
-
-
             </div>
-
         </div>)
 }
 

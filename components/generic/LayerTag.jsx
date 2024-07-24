@@ -8,7 +8,8 @@ const LayerTag = ({ layerNumber, input_direction }) => {
     // console.log(layerNumber == 0);
 
     const textClassName = clsx({
-        'text-modifier self-middle': true,
+        'text-modifier self-middle': input_direction !== 'inputTable',
+        'text-modifier-inputTable' : input_direction == 'inputTable',
         'text-layer1': layerNumber == 0,
         'text-layer2': layerNumber == 1,
         'text-layer3': layerNumber == 2,

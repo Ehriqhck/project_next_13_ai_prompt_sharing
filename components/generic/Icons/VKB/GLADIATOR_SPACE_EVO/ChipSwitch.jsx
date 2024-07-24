@@ -5,6 +5,8 @@ const ChipSwitch = (props) => (
     xmlnsXlink="http://www.w3.org/1999/xlink"
     id="chipSwitchLayer_2"
     data-name="chipSwitchLayer 2"
+    width={props.width}
+    height={props.height}
     viewBox="0 0 35.77 34.12"
     {...props}
   >

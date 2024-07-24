@@ -10,6 +10,7 @@ import { Context, SelectedDeviceContext, SelectedEditorDeviceContext } from '@co
 import { Dock } from 'primereact/dock';
 import { Button } from 'primereact/button';
 import { usePathname } from 'next/navigation'
+import { Utils } from '@app/editor/utils.js'
 
 const NavEditor = () => {
   const { selectedDevice, setSelectedDevice } = useContext(SelectedDeviceContext);
@@ -39,19 +40,30 @@ const NavEditor = () => {
   const [toggleDropdown, setToggleDropdown] = useState(false);
   const [profileName, setProfileName] = useState("no profile loaded")
   const [activeIndex, setActiveIndex] = useState(0);
+  const parseDeviceString = (deviceString) => {
 
+    return (deviceString.split('_').join(' '));
+  }
   const itemRenderer = (item, itemIndex) => (
-    <a
-      className="navMenu-item"
+    <Button
+      type="device_switcher"
+      className="navdMenu-item "
       onClick={() => {
         setActiveIndex(itemIndex);
         setSelectedEditorDevice(item.name);
+        sessionStorage.setItem('selectedEditorDevice', item.name);
       }
       }
     >
 
-      <span className="navMenu-text flex">{item.name}</span>
-    </a>
+      <span className="navMenu-text small-text flex">{parseDeviceString(item.name)}</span>
+      <div>
+        {
+          Utils.getSelectedDeviceIcon(item.name)
+
+        }
+      </div>
+    </Button>
   );
 
   useEffect(() => {
@@ -67,11 +79,9 @@ const NavEditor = () => {
 
   useEffect(() => {
     // then set the selected device item in the tabmenu to be ACTIVE/FOCUS
-
     try {
       setIsLoading(true)
       sessionStorage.setItem('selectedDevice', JSON.stringify(selectedDevice))
-
       console.log("STORED PROFILE VVVV");
       console.log(sessionStorage.getItem('selectedProfile'));
       setDevices(
@@ -80,18 +90,15 @@ const NavEditor = () => {
             return ({
               name: key,
               template: (item) => itemRenderer(item, index)
-
             })
           }
         )
-
       )
     } catch (error) {
       console.log(error);
     } finally {
       setIsLoading(false);
     }
-
   }, [selectedDevice, isLoading]);
 
 
@@ -177,7 +184,7 @@ const NavEditor = () => {
           <div className=' flex flex-col  w-full'>
 
             <nav className='nav flex flex-col  w-full '>
-              <div className='flex-between  mb-[5px] pt-3 w-full'>
+              <div className='flex-between  mb-[5px] pt-3 pb-[8px] w-full'>
 
                 <div className="flex flex-row gap-[30px] title-left ">
                   <div className="flex flex-col">
@@ -233,37 +240,29 @@ const NavEditor = () => {
 
                   <div className="flex flex-col">
                     <div className="flex flex-row">
-                      <p className="text-base">// CURRENT DEVICE</p>
-                      <div> </div>
+                      <TabMenu unstyled className="flex flex-row" type="device_switcher" model={devices} activeIndex={activeIndex} onTabChange={(e) => {
+                        setActiveIndex(e.index);
+
+                      }} />
                     </div>
-                    <p className="text-profile-title slant">VKB GLADIATOR NXT EVO</p>
                   </div>
-
                 </div>
-
-
-
-              </div>
-              <div className='w-full flex justify-center align-middle'>
-                <div>
-                  <p className='small-text  px-[5px]'>// SWITCH DEVICE \\</p>
-
-                </div>
-                <Button
-                  onClick={() => { sessionStorage.clear() }}
-                  unstyled type="small" className=' self-center flex justify-center align-middle px-[5px] py-[5px] w-fit' >
-                  <span className='smallButton-text px-[5px] '> ADD DEVICE +</span>
-                </Button>
-
               </div>
 
             </nav>
+          </div>
+          <div className='navbarExtra'>
 
+            <div>
+              <Button
+                onClick={() => { sessionStorage.clear() }}
+                unstyled type="small" className=' self-center flex justify-center align-middle px-[5px] py-[5px] w-fit' >
+                <span className='smallButton-text px-[5px] '> ADD DEVICE +</span>
+              </Button>
+            </div>
           </div>
 
-          <TabMenu unstyled type="deviceSwitcher" model={devices} activeIndex={activeIndex} onTabChange={(e) => {
-            setActiveIndex(e.index);
-          }} />
+
         </div>
 
       )

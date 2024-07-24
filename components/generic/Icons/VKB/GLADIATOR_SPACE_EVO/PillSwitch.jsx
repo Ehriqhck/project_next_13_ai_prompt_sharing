@@ -7,6 +7,8 @@ const PillSwitch = (props) => (
         data-name="Layer 2"
         viewBox="0 0 33.55 43.19"
         {...props}
+        width={props.width}
+        height={props.height}
     >
         <defs>
             <linearGradient

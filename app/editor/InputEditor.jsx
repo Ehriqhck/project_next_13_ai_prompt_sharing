@@ -4,7 +4,7 @@ import IconLegend from '@components/generic/IconLegend';
 import React from 'react'
 import ActionTable from '@app/editor/ActionTable'
 import InputTable from '@app/editor/InputTable'
-import { SelectedEditorActionTableTargetContext, SelectContext, SelectedEditorActionContext, EditorPanelTitleContext } from '@components/Provider';
+import { SelectedEditorActionTableTargetContext, SelectContext, SelectedEditorActionContext, EditorPanelTitleContext, SelectedEditorDeviceContext } from '@components/Provider';
 import LayerChip from '@components/generic/LayerChip';
 import ModLayerSelector from '@components/actionSelector/ModLayerSelector.js';
 import BindButton from '@app/editor/BindButton.jsx'
@@ -22,7 +22,7 @@ const Editor = ({ show }) => {
   const { selectedViewerInput, setSelectedViewerInput } = useContext(SelectContext)
   const { selectedEditorInput, setSelectedEditorInput } = useContext(SelectedEditorActionContext)
   const { editorPanelTitle, setEditorPanelTitle } = useContext(EditorPanelTitleContext)
-  const { selectedEditorInputActions, setSelectedEditorInputActions } = useContext(SelectedEditorActionTableTargetContext)
+  const { selectedEditorDevice, setselectedEditorDevice} = useContext(SelectedEditorDeviceContext)
 
 
 
@@ -40,9 +40,7 @@ const Editor = ({ show }) => {
 
     <div className='panel-default' id="editorPanel">
       <div className='flex space-between flex-row  w-full'>
-        <button >
-          <CloseButton className='button1' />
-        </button>
+   
         <div className='w-full flex flex-row justify-end mr-[10px]'>
           <IconLegend />
         </div>
@@ -53,7 +51,7 @@ const Editor = ({ show }) => {
 
       <div className='text-input-title flex flex-row'>
         <div className='corner-test w-[70px] h-[100%]'>
-          {Utils.getInputIconTitle(selectedEditorInputActions)}
+          {Utils.getSelectedDeviceIcon(sessionStorage.getItem('selectedEditorDevice'))}
         </div>
 
         {/* <p className='text-base ml-[0px]'></p> */}
@@ -61,35 +59,20 @@ const Editor = ({ show }) => {
         <p className='text-input-title corner-test '>{editorPanelTitle.toUpperCase()}</p>
       </div>
 
-      {/* <div className='text-input-title'>
-        <p className='text-input-title corner-test '> {getInputTitle()}</p>
-      </div> */}
-      {/* <div className='flex flex-col gap-[7px]'>
-        <p className='text-base self-start'>// MODIFIER LAYERS</p>
-        <div className='flex flex-row gap-[10px]'>
-          <LayerChip layer="1" />
-          <LayerChip layer="2" />
-        </div>
-
-
-      </div> */}
+ 
       <div className='flex flex-col gap-[2px] w-[100%]' >
-        <div className="panel-inset flex flex-col gap-[0px]">
+        <div className="inputTable-inset flex flex-col gap-[0px]">
 
           <InputTable
             onInputSelect={setSelectedInput}
           />
 
-          <ModLayerSelector />
+          {/* <ModLayerSelector /> */}
         </div>
         <TreeTableDialogue />
-        <BindButton selectedAction={setSelectedAction} selectedInput={setSelectedAction} />
         {/* {renderBindButton()} */}
         {/* <ActionTable type="actions" /> */}
-        <div className='panel-inset'>
-          {/* <ActionTable onActionSelect={setSelectedAction} /> */}
-          <GameActionTable> </GameActionTable>
-        </div>
+     
 
         {/* <BindTable /> */}
       </div>

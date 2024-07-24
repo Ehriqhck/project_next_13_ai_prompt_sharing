@@ -10,11 +10,13 @@ import { log } from 'util';
 import { err } from '@iconfu/svg-inject';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation'
-import { SelectedEditorDeviceContext } from '@components/Provider';
+import { SelectedEditorDeviceContext, SelectedEditorDeviceViewOrientationContext, SelectedInputTableInputContext } from '@components/Provider';
 
 const DataTableProfileCards = (props) => {
     const { selectedEditorDevice, setSelectedEditorDevice } = useContext(SelectedEditorDeviceContext);
+    const { selectedInputTableInput, setSelectedInputTableInput} = useContext(SelectedInputTableInputContext);
 
+    const { selectedEditorDeviceViewOrientation , setSelectedEditorDeviceViewOrientation } = useContext(SelectedEditorDeviceViewOrientationContext);
     const [context, setContext] = useState({
     })
     const [isLoading, setIsLoading] = useState(false)
@@ -92,21 +94,6 @@ const DataTableProfileCards = (props) => {
 
     }, [selectedPreview])
 
-
-
-    // const parseDevices = Object.keys(context?.deviceProfiles).map(key => (
-    //     {
-    //         name: key,
-    //         devices: Object.keys(context[key]?.saved),
-    //         deviceAmount: Object.keys(context[key]?.saved)?.length,
-    //         dateLastModified: context[key].dateModified,
-    //         dateCreated: context[key].dateCreated,
-
-    //     })
-
-    // )
-    // setDevices(parseDevices);
-
     const imageBodyTemplate = (profile) => {
 
         return (
@@ -125,6 +112,7 @@ const DataTableProfileCards = (props) => {
                     });
                     console.log("new selection");
                     console.log(selectedPreview);
+                    setSelectedEditorDeviceViewOrientation('Front');
                     setprofileContext(selectedPreview);
 
                 } catch (error) {
@@ -163,15 +151,7 @@ const DataTableProfileCards = (props) => {
         )
     };
 
-    const getSelectedProfile = (selectedDevice) => {
-        // console.log(selected);
-        // const deviceList = Object.keys(selectedDevice.deviceList).map(device => {
-        //     <li> {device.deviceList}</li>
-        // })
 
-        // // console.log(deviceList);
-        // return deviceList;
-    }
 
     const paginatorBodyTemplate = {
         layout: 'RowsPerPageDropdown PrevPageLink PageLinks NextPageLink CurrentPageReport',
@@ -261,6 +241,15 @@ const DataTableProfileCards = (props) => {
                                 setprofileContext(selectedPreview);
                                 console.log(profileContext?.buttons);
                                 setSelectedEditorDevice(Object.keys(selectedPreview.deviceList)[0]);
+                                setSelectedEditorDeviceViewOrientation('Front');
+                                setSelectedEditorDevice(Object.keys(selectedPreview.deviceList)[0]);
+
+                                sessionStorage.setItem('loadedProfile', JSON.stringify(selectedPreview) );
+                                setSelectedInputTableInput('Front');
+                                sessionStorage.setItem('selectedEditorInputTableInput', "Front" );
+
+                                sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Front" );
+                                sessionStorage.setItem('selectedEditorDevice', Object.keys(selectedPreview.deviceList)[0]);
                                 console.log("LOADING DEVICE:");
                                 console.log(Object.keys(selectedPreview.deviceList)[0]);
                             }}>

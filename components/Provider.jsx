@@ -16,6 +16,7 @@ export const ViewerPanelTitleContext = createContext();
 export const SelectedDeviceContext = createContext();
 export const SelectedEditorDeviceContext = createContext();
 export const SelectedEditorDeviceViewOrientationContext = createContext();
+export const SelectedInputTableInputContext = createContext();
 
 export const SelectedActionContext = createContext();
 export const ShowViewerPanelContext = createContext();
@@ -28,13 +29,14 @@ export const ActionUpdateContext = createContext();
 const Provider = ({ children, session }) => {
 
   const [selectedLayer, setSelectedLayer] = useState(0);
-  const [selectedViewerInput, setSelectedViewerInput] = useState("Circle Switch");
+  const [selectedViewerInput, setSelectedViewerInput] = useState();
   const [selectedAction, setSelectedAction] = useState("No Action Selected");
   const [selectedEditorInput, setSelectedEditorInput] = useState("No Input Selected");
-  const [selectedEditorInputActions, setSelectedEditorInputActions] = useState("circleSwitch");
+  const [selectedEditorInputActions, setSelectedEditorInputActions] = useState();
   const [selectedDevice, setSelectedDevice] = useState("No Device Selected");
   const [selectedEditorDevice, setSelectedEditorDevice] = useState();
-  const [selectedEditorDeviceViewOrientation, setSelectedEditorDeviceViewOrientation] = useState("front");
+  const [selectedEditorDeviceViewOrientation, setSelectedEditorDeviceViewOrientation] = useState("Front");
+  const [selectedInputTableInput, setSelectedInputTableInput] = useState("Front");
 
   const [showEditorPanel, setshowEditorPanel] = useState(false);
   const [showViewerPanel, setshowViewerPanel] = useState(true);
@@ -62,8 +64,10 @@ const Provider = ({ children, session }) => {
                               <SelectedDeviceContext.Provider value={{ selectedDevice, setSelectedDevice }}>
                                 <SelectedEditorDeviceContext.Provider value={{ selectedEditorDevice, setSelectedEditorDevice }}>
                                   <SelectedEditorDeviceViewOrientationContext.Provider value={{ selectedEditorDeviceViewOrientation, setSelectedEditorDeviceViewOrientation }}>
+                                    <SelectedInputTableInputContext.Provider value={{ selectedInputTableInput, setSelectedInputTableInput }}>
 
-                                    {children}
+                                      {children}
+                                    </SelectedInputTableInputContext.Provider>
                                   </SelectedEditorDeviceViewOrientationContext.Provider>
 
                                 </SelectedEditorDeviceContext.Provider>

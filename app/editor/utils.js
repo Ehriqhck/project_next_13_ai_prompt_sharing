@@ -9,6 +9,10 @@ import InputRightIcon from '@public/assets/icons/actions/InputRightIcon.jsx'
 import InputUpIcon from '@public/assets/icons/actions/InputUpIcon.jsx'
 import InputDownIcon from '@public/assets/icons/actions/InputDownIcon.jsx'
 import InputPressIcon from '@public/assets/icons/actions/InputPressIcon.jsx'
+import Pinkybutton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/pinkybutton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK.jsx'
+import PrimaryTrigger_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/primaryTrigger_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK.jsx'
+import SecondaryTrigger_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/SecondaryTrigger_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK.jsx'
+import SideIndexButton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/SideIndexButton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK.jsx'
 
 import CircleSwitch from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/CircleSwitch.svg'
 import QuestionMark from '@components/generic/Icons/QuestionIcon.svg'
@@ -72,7 +76,34 @@ export const Utils = {
         </div>
       )
 
-
+      case 'Pinky_Button':
+        return (
+          <div className='corner-inputTableIcons'>
+            <Pinkybutton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK width={width} height={height} className='testCircle ' />
+          </div>
+        )
+        break
+      case 'Primary_Trigger':
+        return (
+          <div className='corner-inputTableIcons'>
+            <PrimaryTrigger_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK width={width} height={height} className='testCircle ' />
+          </div>
+        )
+        break
+      case 'Secondary_Trigger':
+        return (
+          <div className='corner-inputTableIcons'>
+            <SecondaryTrigger_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK width={width} height={height} className='testCircle ' />
+          </div>
+        )
+        break
+      case 'Side_Index_Button':
+        return (
+          <div className='corner-inputTableIcons'>
+            <SideIndexButton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK width={width} height={height} className='testCircle ' />
+          </div>
+        )
+        break
         break
 
       default:
@@ -132,10 +163,10 @@ export const Utils = {
       case 'Chip_Stick':
         return <ChipSwitch className='testCircle p-[10px]' />
         break
-        
-      case 'Red_Button':
+
+      case 'Pinky_Button':
         return (
-          <>Red_Button</>
+          <Pinkybutton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK className='testCircle p-[10px]' />
         )
         break
       default:
@@ -151,12 +182,20 @@ export const Utils = {
     switch (DeviceName) {
       case 'VKB_GLADIATOR_NXT_EVO_LEFT':
         return (
-          <img src='/assets/VKB/Device_VKB_GLADIATOR_NXT_EVO_LEFT_BACK_1@2x.webp' width={30} />
+          <div className='my-[6px]'>
+            <img src='/assets/VKB/VKB_GLADIATOR_NEXT_EVO_LEFT_icon@2x.webp' width={25} />
+
+
+          </div>
         )
         break
       case 'VKB_GLADIATOR_NXT_EVO_RIGHT':
         return (
-          <img src='/assets/VKB/Device_VKB_GLADIATOR_NXT_EVO_LEFT_BACK_1@2x.webp' width={30} />
+          <div className='my-[6px]'>
+
+            <img src='/assets/VKB/VKB_GLADIATOR_NEXT_EVO_RIGHT_icon.webp' width={25} />
+          </div>
+
         )
 
         break
