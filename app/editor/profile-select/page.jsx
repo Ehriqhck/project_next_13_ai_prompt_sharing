@@ -47,26 +47,26 @@ const page = () => {
                             },
                             "Y_Axis": {
                                 "Twist Y": {
-                                  "press": {
-                                    "name": "TWIST Y",
-                                    "layers": [
-                                      "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
-                                      "SECOND LAYER",
-                                      "THIRD LAYER"
-                                    ]
-                                  },
+                                    "press": {
+                                        "name": "TWIST Y",
+                                        "layers": [
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
+                                        ]
+                                    },
                                 },
                                 "Translate Y": {
                                     "bottom": {
                                         "name": "Translate Y",
                                         "layers": [
-                                          "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
-                                          "SECOND LAYER",
-                                          "THIRD LAYER"
+                                            "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                            "SECOND LAYER",
+                                            "THIRD LAYER"
                                         ]
-                                      },
+                                    },
                                 },
-                              },
+                            },
                             "Z_AXIS": {
                                 "Translate_Z": {
                                     "press": {
@@ -300,7 +300,56 @@ const page = () => {
                                 }
                             }
 
-                        }
+                        },
+                        "axis": [
+                            {
+                                "name": "TWIST X",
+                                "slotName": "press",
+                                "layers": [
+                                    "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                    "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                    "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)"
+                                ]
+                            },
+                            {
+                                "slotName": "bottom",
+                                "name": "TRANSLATE X",
+                                "layers": [
+                                    "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                    "SECOND LAYER",
+                                    "THIRD LAYER"
+                                ]
+                            },
+                            {
+                                "slotName": "press",
+                                "name": "TWIST Y",
+                                "layers": [
+                                    "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                    "SECOND LAYER",
+                                    "THIRD LAYER"
+                                ]
+                            },
+                            {
+                                "name": "Translate Y",
+                                "slotName": "bottom",
+                                "layers": [
+                                    "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                    "SECOND LAYER",
+                                    "THIRD LAYER"
+                                ]
+                            },
+
+                            {
+                                "slotName": "press",
+                                "name": "TRANSLATE Z",
+                                "layers": [
+                                    "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
+                                    "SECOND LAYER",
+                                    "THIRD LAYER"
+                                ]
+                            }
+
+                        ]
                     },
                     "VKB_GLADIATOR_NXT_EVO_LEFT": {
                         "buttons": {
@@ -736,7 +785,7 @@ const page = () => {
             template: (item) => itemRenderer(item, 2)
         }
     ]);
-    console.log(profileContext);
+    console.log(JSON.parse(sessionStorage.getItem('loadedProfile')));
     useEffect(() => {
 
         const fetchDeviceProfiles = async () => {

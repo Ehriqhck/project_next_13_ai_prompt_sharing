@@ -111,7 +111,7 @@ const DataTableProfileCards = (props) => {
                         gameVersion: profile.gameVersion
                     });
                     console.log("new selection");
-                    console.log(selectedPreview);
+                    console.log(JSON.parse(sessionStorage.getItem('loadedProfile')));
                     setSelectedEditorDeviceViewOrientation('Front');
                     setprofileContext(selectedPreview);
 

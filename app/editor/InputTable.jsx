@@ -122,7 +122,7 @@ import RadialMenuIcon from '@public/assets/icons/actions/gameCategory/RadialMenu
 import RotationalAxisIcon from '@public/assets/icons/actions/gameCategory/RotationalAxisIcon.jsx'
 import { SelectContext, SelectedActionContext, SelectedEditorDeviceContext, SelectedEditorDeviceViewOrientationContext, Context, SelectedInputTableInputContext } from '@components/Provider';
 import DeviceAxisSelector from '@app/editor/DeviceAxisSelector.jsx'
-
+import AxisDataTable from '@app/editor/AxisDataTable.jsx'
 export default function TreeTableDialogue() {
     const [visible, setVisible] = useState(false);
     const [nodes, setNodes] = useState([]);
@@ -132,7 +132,7 @@ export default function TreeTableDialogue() {
     const { selectedAction, setSelectedAction } = useContext(SelectedActionContext);
     const { selectedEditorDevice, setSelectedEditorDevice } = useContext(SelectedEditorDeviceContext);
     const { selectedEditorDeviceViewOrientation, setSelectedEditorDeviceViewOrientation } = useContext(SelectedEditorDeviceViewOrientationContext);
-    const { selectedInputTableInput, setSelectedInputTableInput} = useContext(SelectedInputTableInputContext);
+    const { selectedInputTableInput, setSelectedInputTableInput } = useContext(SelectedInputTableInputContext);
 
     const { profileContext, setprofileContext } = useContext(Context);
 
@@ -263,13 +263,42 @@ export default function TreeTableDialogue() {
             </span>;
         }
     }
+    const getInputTableType = () => {
+        switch ("asd") {
+            case "Axis":
+                return (
+                    <AxisDataTable />
+                );
+                break;
 
+            default:
+                return (
+                    <Tree
+                    togglerTemplate={togglerTemplate}
+                    selectionMode="single" selectionKeys={selectedKey}
+                    onSelectionChange={(e) => {
+                    }}
+                    type="inputTable"
+                    unstyled
+                    onNodeClick={(e) => {
+                        setSelectedAction(e.node);
+                        // console.log(e.node.key);
+                    }}
+                    // onNodeClick={(e) => {
+                    //     console.log("WHAT IS NODE???:   " + e.data);
+                    // }}
+                    nodeTemplate={nodeTemplate} value={nodes} filter filterBy='label' filterMode="strict" filterPlaceholder="Lenient Filter" className=""
+                />
+                )
+                break;
+        }
+    }
     return (
         <div className="flex w-full flex-col gap-[8px] pb-[8px] w-[100%] content-center self-center">
             <div className='flex flex-col corner-viewChanger'>
                 <div className='flex flex-row gap-[3px] ml-[4px] mt-[-8px] mb-[4px] self-center align-middle'>
                     {/* <EyeIcon width="14px" /> */}
-                    <RotationalAxisIcon height="22px" className="flex self-center align-middle"/>
+                    <RotationalAxisIcon height="22px" className="flex self-center align-middle" />
                     <p className=' small-text w-full flex   align-middle justify-center self-center'> MAIN STICK AXIS </p>
                 </div>
                 <DeviceAxisSelector></DeviceAxisSelector>
@@ -291,6 +320,8 @@ export default function TreeTableDialogue() {
                 // console.log(profileContext);
             }}>CLEAR sessionStorage
             </Button> */}
+                                <AxisDataTable />
+
             <Tree
                 togglerTemplate={togglerTemplate}
                 selectionMode="single" selectionKeys={selectedKey}
@@ -305,7 +336,8 @@ export default function TreeTableDialogue() {
                 // onNodeClick={(e) => {
                 //     console.log("WHAT IS NODE???:   " + e.data);
                 // }}
-                nodeTemplate={nodeTemplate} value={nodes} filter filterBy='label' filterMode="strict" filterPlaceholder="Lenient Filter" className="" />
+                nodeTemplate={nodeTemplate} value={nodes} filter filterBy='label' filterMode="strict" filterPlaceholder="Lenient Filter" className=""
+            />
         </div>
     );
 }
