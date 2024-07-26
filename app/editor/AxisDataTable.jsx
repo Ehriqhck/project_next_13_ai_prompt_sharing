@@ -4,6 +4,8 @@ import { SelectContext, SelectedActionContext, SelectedEditorDeviceContext, Sele
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Button } from 'primereact/button';
+import { Utils } from '@app/editor/utils.js'
+import ActionList from '@components/ActionList.jsx'
 
 const AxisDataTable = () => {
     const [selectedInput, setSelectedInput] = useState("CONTEXT INPUT: DEFAULT");
@@ -61,45 +63,49 @@ const AxisDataTable = () => {
 
 
     }, []);
+    const getSlotIcon = (node) => {
 
-    const imageBodyTemplate = (axis) => {
+        if (!Object.hasOwn(node.data, 'slotName')) {
+            return <> {node.label}</>;
+        } else {
+            return (
+                <div className='flex corner-inputTableIcons'>
+                    {Utils.getInputSlotIcons(node.data.slotName, "25px", "25px")}
+                </div>
+            )
+        }
+    }
+    const imageBodyTemplate = (node) => {
 
         return (
 
-            <Button onClick={(e) => {
-                try {
+            <Button type="inputTable" className=" flex flex-col   " >
 
-
-                } catch (error) {
-                    console.log(error);
-                } finally {
-
-                    setLoading(false)
-
-                }
-            }}
-                type='profile-card-button'
-                className='flex flex-col min-w-[250px]  w-[345px]  control-profile-card-bg  px-[16px] pb-[8px] pt-[14px] gap-[8px] '>
-                <div className='flex w-full'>
-                    <p className=' control-profile-card-title'>asd {axis.name}</p>
+            <div className='flex flex-col content-start  self-start gap-[8px] '>
+                <div className='flex flex-row  h-fit'>
+                    {Utils.getInputIcon(node.label, "30px", "30px")}
                 </div>
+                <div className='flex flex-row gap-[8px]'>
+                    <div className='flex '>
+                        {/* {getCategoryHeader(node)} */}
 
-                <div className='flex flex-row justify-between mb-[4px]  w-[100%]'>
-                    <div className='flex flex-row mr-[64px] h-full justify-center gap-[4px]'>
-                        <p className='flex control-profile-card-device-number justify-self-end  self-end'>
-                            asd
-
-                        </p>
-
-                        <p className='flex control-profile-card-device self-end '>DEVICES</p>
                     </div>
+                    <p className='text-inputTable'> {node.label} </p>
 
-                    <div className='flex flex-col  justify-between gap-[2px] '>
-                        <p className='control-profile-card-body mb-[2px]'>LAST MODIFIED</p>
-                        <p className='control-profile-card-body'>July 3rd, 12:10AM asd</p>
-                    </div>
                 </div>
-            </Button>
+                <div className='flex flex-col ml-[2px]'>
+
+                    <ActionList layers={node.layers} input_direction="inputTable" />
+
+                </div>
+                {/* <div className="spacer-dialogue" />
+
+            <span className='self-center justify-center '>{label}</span> */}
+                {/* <div className="spacer-dialogue" /> */}
+                {/* {expanded} */}
+            </div>
+
+        </Button>
 
         )
     };

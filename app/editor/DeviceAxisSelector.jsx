@@ -34,22 +34,22 @@ const DeviceAxisSelector = () => {
     }
     const itemsDeviceAxis = [
         {
-            name: 'X AXIS',
-            inputId: "X_Axis",
+            name: 'AXIS INPUTS',
+            inputId: "Axis",
             template: (item) => deviceAxisRenderer(item, 0)
         },
         {
-            name: 'Y AXIS',
-            inputId: "Y_Axis",
+            name: 'BUTTON INPUTS',
+            inputId: "buttons",
 
             template: (item) => deviceAxisRenderer(item, 1)
         },
-        {
-            name: 'Z AXIS',
-            inputId: "Z_Axis",
+        // {
+        //     name: 'Z AXIS',
+        //     inputId: "Z_Axis",
 
-            template: (item) => deviceAxisRenderer(item, 2)
-        },
+        //     template: (item) => deviceAxisRenderer(item, 2)
+        // },
         // {
         //     name: 'PUSH/PULL Y',
         //     template: (item) => deviceAxisRenderer(item, 3)
