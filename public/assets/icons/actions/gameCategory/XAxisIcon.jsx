@@ -7,7 +7,6 @@ const XAxisIcon = (props) => (
   xmlnsXlink="http://www.w3.org/1999/xlink"
   id="XAxisIconLayer_2"
   viewBox="0 0 18.5 18.01"
-  {...props}
 >
   <defs>
     <linearGradient

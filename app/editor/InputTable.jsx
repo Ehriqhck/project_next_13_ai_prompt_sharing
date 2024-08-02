@@ -59,17 +59,17 @@ export default function TreeTableDialogue() {
             console.log(error);
 
         }
-    }, [selectedEditorDeviceViewOrientation, selectedEditorDevice, profileContext, SelectedEditorDeviceViewOrientationContext, selectedInputTableInput]);
+    }, [ selectedEditorDevice, profileContext, SelectedEditorDeviceViewOrientationContext, selectedInputTableInput]);
 
 
     const buttonTableClassName = clsx({
-        'inputTableDisplayOn': sessionStorage.getItem('selectedEditorInputTableInput') !== 'Axis',
-        'inputTableDisplayOff': sessionStorage.getItem('selectedEditorInputTableInput') == 'Axis',
+        'show': sessionStorage.getItem('inputTableFilter') == 'buttons',
+        'hidden': sessionStorage.getItem('inputTableFilter') == 'Axis',
 
     });
     const axisTableClassName = clsx({
-        'inputTableDisplayOn': sessionStorage.getItem('selectedEditorInputTableInput') !== 'buttons',
-        'inputTableDisplayOff': sessionStorage.getItem('selectedEditorInputTableInput') == 'buttons',
+        'show': sessionStorage.getItem('inputTableFilter') == 'axis',
+        'hidden': sessionStorage.getItem('inputTableFilter') == 'buttons',
 
     });
 
@@ -126,7 +126,7 @@ export default function TreeTableDialogue() {
 
                         </div>
                         <div className='flex flex-col ml-[2px]'>
-
+asd
                             <ActionList layers={node.data.layers} input_direction="inputTable" />
 
                         </div>
@@ -174,7 +174,8 @@ export default function TreeTableDialogue() {
         switch (sessionStorage.getItem('selectedEditorInputTableInput')) {
             case "Axis":
                 return (
-                    <AxisDataTable />
+                                            <AxisDataTable />
+
                 );
                 break;
 
@@ -205,8 +206,7 @@ export default function TreeTableDialogue() {
             <div className='flex flex-col corner-viewChanger'>
                 <div className='flex flex-row gap-[3px] ml-[4px] mt-[-8px] mb-[4px] self-center align-middle'>
                     {/* <EyeIcon width="14px" /> */}
-                    <RotationalAxisIcon height="22px" className="flex self-center align-middle" />
-                    <p className=' small-text w-full flex   align-middle justify-center self-center'> MAIN STICK AXIS </p>
+                    <p className=' small-text w-full flex   align-middle justify-center self-center'> SHOW INPUTS </p>
                 </div>
                 <DeviceAxisSelector></DeviceAxisSelector>
 

@@ -14,9 +14,9 @@ import { SelectedEditorDeviceContext, SelectedEditorDeviceViewOrientationContext
 
 const DataTableProfileCards = (props) => {
     const { selectedEditorDevice, setSelectedEditorDevice } = useContext(SelectedEditorDeviceContext);
-    const { selectedInputTableInput, setSelectedInputTableInput} = useContext(SelectedInputTableInputContext);
+    const { selectedInputTableInput, setSelectedInputTableInput } = useContext(SelectedInputTableInputContext);
 
-    const { selectedEditorDeviceViewOrientation , setSelectedEditorDeviceViewOrientation } = useContext(SelectedEditorDeviceViewOrientationContext);
+    const { selectedEditorDeviceViewOrientation, setSelectedEditorDeviceViewOrientation } = useContext(SelectedEditorDeviceViewOrientationContext);
     const [context, setContext] = useState({
     })
     const [isLoading, setIsLoading] = useState(false)
@@ -243,12 +243,14 @@ const DataTableProfileCards = (props) => {
                                 setSelectedEditorDevice(Object.keys(selectedPreview.deviceList)[0]);
                                 setSelectedEditorDeviceViewOrientation('Front');
                                 setSelectedEditorDevice(Object.keys(selectedPreview.deviceList)[0]);
+                                sessionStorage.setItem('selectedEditorInputTableInput', 'buttons');
+                                sessionStorage.setItem('inputTableFilter', 'buttons');
 
-                                sessionStorage.setItem('loadedProfile', JSON.stringify(selectedPreview) );
+                                sessionStorage.setItem('loadedProfile', JSON.stringify(selectedPreview));
                                 setSelectedInputTableInput('Front');
-                                sessionStorage.setItem('selectedEditorInputTableInput', "Front" );
+                                // sessionStorage.setItem('selectedEditorInputTableInput', "Front");
 
-                                sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Front" );
+                                sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Front");
                                 sessionStorage.setItem('selectedEditorDevice', Object.keys(selectedPreview.deviceList)[0]);
                                 console.log("LOADING DEVICE:");
                                 console.log(Object.keys(selectedPreview.deviceList)[0]);

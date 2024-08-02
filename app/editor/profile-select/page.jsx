@@ -307,8 +307,7 @@ const page = () => {
                                 "slotName": "press",
                                 "layers": [
                                     "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
-                                    "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
-                                    "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)"
+                                  
                                 ]
                             },
                             {
@@ -316,8 +315,7 @@ const page = () => {
                                 "name": "TRANSLATE X",
                                 "layers": [
                                     "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
-                                    "SECOND LAYER",
-                                    "THIRD LAYER"
+   
                                 ]
                             },
                             {
@@ -325,8 +323,7 @@ const page = () => {
                                 "name": "TWIST Y",
                                 "layers": [
                                     "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
-                                    "SECOND LAYER",
-                                    "THIRD LAYER"
+                                
                                 ]
                             },
                             {
@@ -334,8 +331,7 @@ const page = () => {
                                 "slotName": "bottom",
                                 "layers": [
                                     "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
-                                    "SECOND LAYER",
-                                    "THIRD LAYER"
+                             
                                 ]
                             },
 
@@ -344,8 +340,7 @@ const page = () => {
                                 "name": "TRANSLATE Z",
                                 "layers": [
                                     "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
-                                    "SECOND LAYER",
-                                    "THIRD LAYER"
+                             
                                 ]
                             }
 

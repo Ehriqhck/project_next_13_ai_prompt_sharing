@@ -13,6 +13,16 @@ import Pinkybutton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK from '@components/gen
 import PrimaryTrigger_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/primaryTrigger_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK.jsx'
 import SecondaryTrigger_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/SecondaryTrigger_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK.jsx'
 import SideIndexButton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/SideIndexButton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK.jsx'
+import RotationalAxisIcon from '@public/assets/icons/actions/gameCategory/RotationalAxisIcon.jsx'
+import XAxisIcon from '@public/assets/icons/actions/gameCategory/XAxisIcon.jsx'
+import YAxisIcon from '@public/assets/icons/actions/gameCategory/YAxisIcon.jsx'
+import ZAxisIcon from '@public/assets/icons/actions/gameCategory/ZAxisIcon.jsx'
+import RotateYIcon from '@public/assets/icons/actions/gameCategory/RotateYIcon.jsx'
+import RotateXIcon from '@public/assets/icons/actions/gameCategory/RotateXIcon.jsx'
+import AxisIcon from "public/assets/icons/generic/axis.svg"
+
+import BindIcon from "public/assets/icons/generic/bind.svg"
+import LayerIcon from "public/assets/icons/generic/layer.svg"
 
 import CircleSwitch from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/CircleSwitch.svg'
 import QuestionMark from '@components/generic/Icons/QuestionIcon.svg'
@@ -34,73 +44,95 @@ import QuestionMark from '@components/generic/Icons/QuestionIcon.svg'
 // }
 
 export const Utils = {
-  getInputIcon(ButtonName, width, height) {
+  getInputIcon (ButtonName, width, height) {
     switch (ButtonName) {
       case 'Circle_Stick':
         return (
           <div className='corner-inputTableIcons'>
-            <CircleSwitch className='testCircle ' width={width} height={height} />
+            <CircleSwitch
+              className='testCircle '
+              width={width}
+              height={height}
+            />
           </div>
         )
 
         break
 
-      case 'Hat_Stick': return (
-        <div className='corner-inputTableIcons'>
-
-          <Hat className='testCircle' width={width} height={height} />
-        </div>
-      )
-
-        break
-
-      case 'Pill_Stick': return (
-        <div className='corner-inputTableIcons'>
-
-          <PillSwitch className='testCircle ' width={width} height={height} />
-        </div>)
+      case 'Hat_Stick':
+        return (
+          <div className='corner-inputTableIcons'>
+            <Hat className='testCircle' width={width} height={height} />
+          </div>
+        )
 
         break
 
-      case 'Red_Button': return (
-        <div className='corner-inputTableIcons'>
+      case 'Pill_Stick':
+        return (
+          <div className='corner-inputTableIcons'>
+            <PillSwitch className='testCircle ' width={width} height={height} />
+          </div>
+        )
 
-          <RedButton className='testCircle ' width={width} height={height} />
-        </div>
-      )
         break
 
-      case 'Chip_Stick': return (
-        <div className='corner-inputTableIcons'>
-          <ChipSwitch className='testCircle ' width={width} height={height} />
-        </div>
-      )
+      case 'Red_Button':
+        return (
+          <div className='corner-inputTableIcons'>
+            <RedButton className='testCircle ' width={width} height={height} />
+          </div>
+        )
+        break
+
+      case 'Chip_Stick':
+        return (
+          <div className='corner-inputTableIcons'>
+            <ChipSwitch className='testCircle ' width={width} height={height} />
+          </div>
+        )
 
       case 'Pinky_Button':
         return (
           <div className='corner-inputTableIcons'>
-            <Pinkybutton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK width={width} height={height} className='testCircle ' />
+            <Pinkybutton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK
+              width={width}
+              height={height}
+              className='testCircle '
+            />
           </div>
         )
         break
       case 'Primary_Trigger':
         return (
           <div className='corner-inputTableIcons'>
-            <PrimaryTrigger_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK width={width} height={height} className='testCircle ' />
+            <PrimaryTrigger_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK
+              width={width}
+              height={height}
+              className='testCircle '
+            />
           </div>
         )
         break
       case 'Secondary_Trigger':
         return (
           <div className='corner-inputTableIcons'>
-            <SecondaryTrigger_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK width={width} height={height} className='testCircle ' />
+            <SecondaryTrigger_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK
+              width={width}
+              height={height}
+              className='testCircle '
+            />
           </div>
         )
         break
       case 'Side_Index_Button':
         return (
           <div className='corner-inputTableIcons'>
-            <SideIndexButton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK width={width} height={height} className='testCircle ' />
+            <SideIndexButton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK
+              width={width}
+              height={height}
+              className='testCircle '
+            />
           </div>
         )
         break
@@ -112,38 +144,94 @@ export const Utils = {
           //   <div className='w-[50px] glow opacity-[85%] flex flex-col '> <QuestionMark className="gradient-overlay" /> </div>
           //   <p class='text-default text-layer1 default w-[100%] '> SELECT AN INPUT TO VIEW </p>
           // </div>
-          null)
-        break
-    }
-  },
-  getInputSlotIcons(slotName, width, height) {
-    switch (slotName) {
-      case 'top':
-        return <InputUpIcon className='testCircle' width={width} height={height} />
-        break
-
-      case 'bottom':
-        return <InputDownIcon className='testCircle' width={width} height={height} />
-        break
-
-      case 'press':
-        return <InputPressIcon className='testCircle ' width={width} height={height} />
-        break
-
-      case 'left':
-        return <InputLeftIcon className='testCircle ' width={width} height={height} />
-      case 'right':
-        return <InputRightIcon className='testCircle ' width={width} height={height} />
-        break
-
-      default:
-        return (
-          <></>
+          null
         )
         break
     }
   },
-  getInputIconTitle(ButtonName) {
+  getInputSlotIcons (slotName, width, height) {
+    switch (slotName) {
+      case 'top':
+        return (
+          <InputUpIcon className='testCircle' width={width} height={height} />
+        )
+        break
+
+      case 'bottom':
+        return (
+          <InputDownIcon className='testCircle' width={width} height={height} />
+        )
+        break
+
+      case 'press':
+        return (
+          <InputPressIcon
+            className='testCircle '
+            width={width}
+            height={height}
+          />
+        )
+        break
+
+      case 'left':
+        return (
+          <InputLeftIcon
+            className='testCircle '
+            width={width}
+            height={height}
+          />
+        )
+      case 'right':
+        return (
+          <InputRightIcon
+            className='testCircle '
+            width={width}
+            height={height}
+          />
+        )
+        break
+
+      default:
+        return <></>
+        break
+    }
+  },
+  getInputAxisIcons (slotName, width, height) {
+    switch (slotName) {
+      case 'TWIST X':
+        return (
+          <RotateXIcon className='testCircle' width={width} height={height} />
+        )
+        break
+
+      case 'TRANSLATE X':
+        return (
+          <XAxisIcon className='testCircle' width={width} height={height} />
+        )
+        break
+
+      case 'TWIST Y':
+        return (
+          <RotateYIcon className='testCircle ' width={width} height={height} />
+        )
+        break
+
+      case 'Translate Y':
+        return (
+          <YAxisIcon className='testCircle ' width={width} height={height} />
+        )
+      case 'TRANSLATE Z':
+        return (
+          <ZAxisIcon className='testCircle ' width={width} height={height} />
+        )
+        break
+
+      default:
+        return <></>
+        break
+    }
+  },
+  getInputIconTitle (ButtonName) {
     switch (ButtonName) {
       case 'Circle_Stick':
         return <CircleSwitch />
@@ -176,26 +264,29 @@ export const Utils = {
         break
     }
   },
-  getSelectedDeviceIcon(DeviceName) {
-    console.log("DEVICE PREVIEW ICON NAME ================");
-    console.log(DeviceName);
+
+  getSelectedDeviceIcon (DeviceName) {
+    console.log('DEVICE PREVIEW ICON NAME ================')
+    console.log(DeviceName)
     switch (DeviceName) {
       case 'VKB_GLADIATOR_NXT_EVO_LEFT':
         return (
           <div className='my-[6px]'>
-            <img src='/assets/VKB/VKB_GLADIATOR_NEXT_EVO_LEFT_icon@2x.webp' width={25} />
-
-
+            <img
+              src='/assets/VKB/VKB_GLADIATOR_NEXT_EVO_LEFT_icon@2x.webp'
+              width={25}
+            />
           </div>
         )
         break
       case 'VKB_GLADIATOR_NXT_EVO_RIGHT':
         return (
           <div className='my-[6px]'>
-
-            <img src='/assets/VKB/VKB_GLADIATOR_NEXT_EVO_RIGHT_icon.webp' width={25} />
+            <img
+              src='/assets/VKB/VKB_GLADIATOR_NEXT_EVO_RIGHT_icon.webp'
+              width={25}
+            />
           </div>
-
         )
 
         break
@@ -217,10 +308,44 @@ export const Utils = {
       default:
         return (
           <div>
-            <img src='/assets/VKB/Device_VKB_GLADIATOR_NXTd_EVO_LEFT_BACK_1@2x.webp' width={30} />
-
-          </div>)
+            <img
+              src='/assets/VKB/Device_VKB_GLADIATOR_NXTd_EVO_LEFT_BACK_1@2x.webp'
+              width={30}
+            />
+          </div>
+        )
         break
     }
+  },
+
+  getIconLegend (node) {
+    return (
+      <div className='flex flex-row gap-[14px]'>
+        {/* <div className='flex flex-col gap-[2px]'>
+          <p className='text-legend-heading'> LAYERS</p>
+          <div className='flex flex-row gap-[3px] content-center'>
+            <LayerIcon className='self-center w-[17px] h-[17px]' />
+            <p className='text-legend self-center'>
+            {Object.keys(node.layers).length}
+
+            </p>
+          </div>
+        </div> */}
+        <div className='flex flex-col gap-[2px]'>
+          <p className='text-legend-heading'> AXIS</p>
+          <div className='flex flex-row gap-[3px] content-center'>
+            <AxisIcon className='self-center w-[17px] h-[17px]' />
+            <p className='text-legend self-center'>9</p>
+          </div>
+        </div>
+        <div className='flex flex-col gap-[2px]'>
+          <p className='text-legend-heading'> BINDS</p>
+          <div className='flex flex-row gap-[3px] content-center'>
+            <BindIcon className='self-center w-[17px] h-[17px]' />
+            <p className='text-legend self-center'> {Object.keys(node.layers).length} </p>
+          </div>
+        </div>
+      </div>
+    )
   }
 }

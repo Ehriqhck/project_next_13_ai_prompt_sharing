@@ -9,6 +9,7 @@ import RotateYIcon from '@public/assets/icons/actions/gameCategory/RotateYIcon.j
 import RotateXIcon from '@public/assets/icons/actions/gameCategory/RotateXIcon.jsx';
 import { useState, useContext, useEffect } from 'react';
 import { SelectedEditorDeviceViewOrientationContext, SelectedInputTableInputContext } from '@components/Provider'
+import RotationalAxisIcon from '@public/assets/icons/actions/gameCategory/RotationalAxisIcon.jsx'
 
 const DeviceAxisSelector = () => {
     const { selectedEditorDeviceViewOrientation, setSelectedEditorDeviceViewOrientation } = useContext(SelectedEditorDeviceViewOrientationContext);
@@ -22,8 +23,9 @@ const DeviceAxisSelector = () => {
         // if (item.name == "X AXIS") {
         //     return (<RotateXIcon width="24px"></RotateXIcon>);
         // }
-        if (item.name == "X AXIS") {
-            return (<XAxisIcon width="24px"></XAxisIcon>);
+        if (item.name == "AXIS INPUTS") {
+            return (<RotationalAxisIcon height="18px" width="18px" className="flex self-center align-middle" />
+            );
         }
         if (item.name == "Z AXIS") {
             return (<ZAxisIcon width="24px"></ZAxisIcon>);
@@ -61,13 +63,13 @@ const DeviceAxisSelector = () => {
     ];
 
     const deviceAxisRenderer = (item, itemIndex) => (
-        <Button type="device_axis" className='mx-[4px] flex gap-[8px]'
+        <Button type="device_axis" className='mx-[4px] flex gap-[4px]'
             onClick={() => {
                 console.log("SETTING INPUTTABLE INPUT TO:");
                 console.log(item.inputId);
                 setSelectedInputTableInput(item.inputId);
-                sessionStorage.setItem('selectedEditorInputTableInput', item.inputId);
-                
+                sessionStorage.setItem('inputTableFilter', item.inputId);
+
                 // setSelectedEditorDeviceViewOrientation(item.name)
                 setActiveIndexactiveIndexDeviceAxis(itemIndex)
             }}

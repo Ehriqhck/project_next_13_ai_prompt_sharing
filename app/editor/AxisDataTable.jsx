@@ -6,6 +6,7 @@ import { Column } from 'primereact/column';
 import { Button } from 'primereact/button';
 import { Utils } from '@app/editor/utils.js'
 import ActionList from '@components/ActionList.jsx'
+import IconLegend from '@components/generic/IconLegend';
 
 const AxisDataTable = () => {
     const [selectedInput, setSelectedInput] = useState("CONTEXT INPUT: DEFAULT");
@@ -45,20 +46,20 @@ const AxisDataTable = () => {
 
     useEffect(() => {
 
-            try {
-                setIsLoading(true);
+        try {
+            setIsLoading(true);
 
-                setAxis(JSON.parse(sessionStorage.getItem('loadedProfile')).deviceList[sessionStorage.getItem('selectedEditorDevice')]["axis"]
+            setAxis(JSON.parse(sessionStorage.getItem('loadedProfile')).deviceList[sessionStorage.getItem('selectedEditorDevice')]["axis"]
                 .buttons["axis"])
-            } catch (error) {
-                console.log(error);
-            }
-            finally {
-                console.log(JSON.parse(sessionStorage.getItem('loadedProfile')).deviceList[sessionStorage.getItem('selectedEditorDevice')]["axis"]);
-                setIsLoading(false);
-            }
+        } catch (error) {
+            console.log(error);
+        }
+        finally {
+            console.log(JSON.parse(sessionStorage.getItem('loadedProfile')).deviceList[sessionStorage.getItem('selectedEditorDevice')]["axis"]);
+            setIsLoading(false);
+        }
 
-        
+
 
 
 
@@ -81,31 +82,37 @@ const AxisDataTable = () => {
 
             <Button type="inputTable" className=" flex flex-col   " >
 
-            <div className='flex flex-col content-start  self-start gap-[8px] '>
-                <div className='flex flex-row  h-fit'>
-                    {Utils.getInputIcon(node.label, "30px", "30px")}
-                </div>
-                <div className='flex flex-row gap-[8px]'>
-                    <div className='flex '>
-                        {/* {getCategoryHeader(node)} */}
+                <div className='flex flex-col content-start  self-start gap-[8px] '>
+                    <div className='flex flex-row  h-fit'>
+                        <div className='corner-inputTableIcons'>
+                            {Utils.getInputAxisIcons(node.name, "30px", "30px")}
+                        </div>
+
+                        <div className='flex flex-ol'>
+                            <p className='text-inputTable'> {node.name} </p>
+                            <div className=' flex flex-row'>
+                                <p className='text-inputTable'>
+                                    {Utils.getIconLegend(node)}
+                                </p>
+
+                            </div>
+                        </div>
 
                     </div>
-                    <p className='text-inputTable'> {node.label} </p>
 
-                </div>
-                <div className='flex flex-col ml-[2px]'>
+                    <div className='flex flex-col ml-[2px]'>
 
-                    <ActionList layers={node.layers} input_direction="inputTable" />
+                        <ActionList layers={node.layers} input_direction="inputTable" />
 
-                </div>
-                {/* <div className="spacer-dialogue" />
+                    </div>
+                    {/* <div className="spacer-dialogue" />
 
             <span className='self-center justify-center '>{label}</span> */}
-                {/* <div className="spacer-dialogue" /> */}
-                {/* {expanded} */}
-            </div>
+                    {/* <div className="spacer-dialogue" /> */}
+                    {/* {expanded} */}
+                </div>
 
-        </Button>
+            </Button>
 
         )
     };
@@ -113,7 +120,8 @@ const AxisDataTable = () => {
     return (
         <DataTable
             className='min-w-[345px] '
-            filterDisplay="row" type='profile card' value={JSON.parse(sessionStorage.getItem('loadedProfile')).deviceList[sessionStorage.getItem('selectedEditorDevice')]["axis"]} rows={3} paginator={false} selectionMode='single' >
+            unstyled
+            filterDisplay="row" type='AxisInputTable' value={JSON.parse(sessionStorage.getItem('loadedProfile')).deviceList[sessionStorage.getItem('selectedEditorDevice')]["axis"]} rows={3} paginator={false} selectionMode='single' >
             <Column field="name" filter filterPlaceholder='search' body={imageBodyTemplate}></Column>
         </DataTable>
     )

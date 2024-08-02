@@ -16,6 +16,58 @@
 html{
   min-width: 555px;
 }
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 8px;
+  background-color: #00ffd50c;
+  /* border: 1px solid #cacaca; */
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+border: 3px solid transparent;
+ background-clip: content-box;
+  background-color: #00ffb3c4;
+}
+.p-datatable-tbody {
+  display: block !important;
+  border-radius: 12px !important;
+
+}
+div[type='AxisInputTable'] > div > table > thead  >  tr > th > div > button  {
+display: none !important;
+}
+div[type='AxisInputTable'] > div > table > thead  >  tr > th > div  > div   {
+  margin: 0px 8px 8px 0px ;
+  }
+div[type='AxisInputTable'] > div   {
+  padding: 0px;
+  width: 100% !important;
+}
+div[type='AxisInputTable'] > div >table   {
+  width: 100% !important;
+}
+div[type='AxisInputTable'] > div >table >tbody[role=' rowgroup']  {
+  display: block !important;
+
+  width: 100% !important;
+height: 50vh !important;
+overflow-y: scroll !important;
+overflow-x: hidden !important;
+}
+div[type='AxisInputTable'] > div >table >tbody > tr  {
+  width: 100% !important;
+  display: block !important;
+
+}
+div[type='AxisInputTable'] > div >table >tbody > tr > td  {
+  width: 100% !important;
+  display: block !important;
+
+}
 button[type='device_axis'] {
   padding: 8px 8px 8px 8px !important;
   border-radius: 6px !important;
@@ -158,6 +210,8 @@ button[type='inputTable'] {
   background-color: #021519 !important;
   position: relative !important;
   width: 100%;
+  margin: 0px 0px 8px 0px !important;
+
   background: repeating-linear-gradient(-45deg, rgb(0, 14, 16), rgb(0, 9, 16, 0.3) 2px, rgba(0, 0, 0, 0) 2px, rgba(0, 0, 0, 0) 2.83px), linear-gradient(165deg, rgba(0, 34, 41, 0) 0%, rgb(0 171 202 / 34%) 100%) !important;
 }
 
@@ -205,8 +259,9 @@ button[type='inputTable']:enabled:hover:before {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  overflow: scroll;
   height: 50vh;
+  overflow-y: scroll !important;
+overflow-x: hidden !important;
   }
 
   div[type='inputTable'] > ul > li > ul{
