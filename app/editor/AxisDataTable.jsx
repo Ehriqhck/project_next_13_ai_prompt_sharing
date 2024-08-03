@@ -82,18 +82,16 @@ const AxisDataTable = () => {
 
             <Button type="inputTable" className=" flex flex-col   " >
 
-                <div className='flex flex-col content-start  self-start gap-[8px] '>
-                    <div className='flex flex-row  h-fit'>
+                <div className='flex flex-col content-start  self-start gap-[8px] w-full pr-[12px] '>
+                    <div className='flex flex-row gap-[8px] h-fit'>
                         <div className='corner-inputTableIcons'>
                             {Utils.getInputAxisIcons(node.name, "30px", "30px")}
                         </div>
 
-                        <div className='flex flex-ol'>
-                            <p className='text-inputTable'> {node.name} </p>
-                            <div className=' flex flex-row'>
-                                <p className='text-inputTable'>
+                        <div className='flex flex-row justify-between  flex-wrap  align-middle w-full  '>
+                            <p className='text-inputTable flex self-start'> {node.name} </p>
+                            <div className=' flex flex-col text-inputTable '>
                                     {Utils.getIconLegend(node)}
-                                </p>
 
                             </div>
                         </div>

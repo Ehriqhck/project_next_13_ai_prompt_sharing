@@ -19,10 +19,11 @@ import YAxisIcon from '@public/assets/icons/actions/gameCategory/YAxisIcon.jsx'
 import ZAxisIcon from '@public/assets/icons/actions/gameCategory/ZAxisIcon.jsx'
 import RotateYIcon from '@public/assets/icons/actions/gameCategory/RotateYIcon.jsx'
 import RotateXIcon from '@public/assets/icons/actions/gameCategory/RotateXIcon.jsx'
-import AxisIcon from "public/assets/icons/generic/axis.svg"
+import AxisIcon from 'public/assets/icons/generic/axis.svg'
+import BindMissingIcon from '@public/assets/icons/actions/gameCategory/BindMissingIcon.jsx'
 
-import BindIcon from "public/assets/icons/generic/bind.svg"
-import LayerIcon from "public/assets/icons/generic/layer.svg"
+import BindIcon from 'public/assets/icons/generic/bind.svg'
+import LayerIcon from 'public/assets/icons/generic/layer.svg'
 
 import CircleSwitch from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/CircleSwitch.svg'
 import QuestionMark from '@components/generic/Icons/QuestionIcon.svg'
@@ -319,33 +320,61 @@ export const Utils = {
   },
 
   getIconLegend (node) {
-    return (
-      <div className='flex flex-row gap-[14px]'>
-        {/* <div className='flex flex-col gap-[2px]'>
+    const layers = Object.keys(node.layers).length
+
+    if (layers >= 0) {
+      return (
+        <div className='flex flex-row gap-[12px] h-fit'>
+          <div className='flex flex-row gap-[3px] '>
+            <p className='mb-[-3px] text-legend-heading flex self-center leading-[10px]  align-middle  text-center justify-self-center '> AXIS</p>
+            <div className='flex flex-row h-fit gap-[3px] content-center align-center justify-center'>
+              <AxisIcon className='self-center w-[17px] h-[17px] align-center' />
+              <p className=' h-full mb-[-1px] text-legend  align-middle  text-center self-center justify-self-center'>9</p>
+            </div>
+          </div>
+          <div className='flex flex-row gap-[5px]'>
+            <p className='text-legend-heading flex self-center mb-[-3px] '> BINDS</p>
+            <div className='flex flex-row gap-[3px] content-center'>
+              <BindIcon className='self-center w-[17px] h-[17px]' />
+              <p className='text-legend self-center'>
+                {Object.keys(node.layers).length}
+              </p>
+            </div>
+          </div>
+        </div>
+      )
+    } else {
+      return (
+        <div className='flex flex-row gap-[14px]'>
+          {/* <div className='flex flex-col gap-[2px]'>
           <p className='text-legend-heading'> LAYERS</p>
           <div className='flex flex-row gap-[3px] content-center'>
             <LayerIcon className='self-center w-[17px] h-[17px]' />
             <p className='text-legend self-center'>
             {Object.keys(node.layers).length}
-
+  
             </p>
           </div>
         </div> */}
-        <div className='flex flex-col gap-[2px]'>
-          <p className='text-legend-heading'> AXIS</p>
-          <div className='flex flex-row gap-[3px] content-center'>
-            <AxisIcon className='self-center w-[17px] h-[17px]' />
-            <p className='text-legend self-center'>9</p>
+          
+          <div className='flex flex-col gap-[2px]'>
+            <p className='text-legend-heading mb-[-3px] self-center'> AXIS</p>
+            <div className='flex flex-row gap-[3px] content-center'>
+              <AxisIcon className='self-center w-[17px] h-[17px]' />
+              <p className='text-legend self-center'>9</p>
+            </div>
+          </div>
+          <div className='flex flex-col gap-[2px]'>
+            <p className='text-legend-heading mb-[-3px] self-center '> BINDS</p>
+            <div className='flex flex-row gap-[3px] content-center'>
+              <BindMissingIcon className='self-center ' width='17px' />
+              <p className='text-legend self-center'>
+              0
+              </p>
+            </div>
           </div>
         </div>
-        <div className='flex flex-col gap-[2px]'>
-          <p className='text-legend-heading'> BINDS</p>
-          <div className='flex flex-row gap-[3px] content-center'>
-            <BindIcon className='self-center w-[17px] h-[17px]' />
-            <p className='text-legend self-center'> {Object.keys(node.layers).length} </p>
-          </div>
-        </div>
-      </div>
-    )
+      )
+    }
   }
 }

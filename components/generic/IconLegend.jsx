@@ -24,7 +24,7 @@ const IconLegend = (props) => {
                 <p className='text-legend-heading'> AXIS</p>
                 <div className='flex flex-row gap-[3px] content-center'>
                     <AxisIcon className="self-center w-[17px] h-[17px]" />
-                    <p className='text-legend self-center'>9</p>
+                    <p className='text-legend self-center align-center'>9</p>
                 </div>
             </div>
             <div className='flex flex-col gap-[2px]'>

@@ -1,3 +1,4 @@
+"use client"
 import { Button } from 'primereact/button';
 import { Utils } from '@app/editor/utils.js'
 import ActionList from '@components/ActionList.jsx'
@@ -14,7 +15,8 @@ import { SelectButton } from 'primereact/selectbutton';
 import { SessionDeviceInputs } from './SessionDeviceInputs';
 import { Tree } from 'primereact/tree';
 import { classNames } from 'primereact/utils';
-
+import BindIcon from 'public/assets/icons/generic/bind.svg'
+import LayerIcon from 'public/assets/icons/generic/layer.svg'
 import RotationalAxisIcon from '@public/assets/icons/actions/gameCategory/RotationalAxisIcon.jsx'
 import { SelectContext, SelectedActionContext, SelectedEditorDeviceContext, SelectedEditorDeviceViewOrientationContext, Context, SelectedInputTableInputContext } from '@components/Provider';
 import DeviceAxisSelector from '@app/editor/DeviceAxisSelector.jsx'
@@ -59,7 +61,7 @@ export default function TreeTableDialogue() {
             console.log(error);
 
         }
-    }, [ selectedEditorDevice, profileContext, SelectedEditorDeviceViewOrientationContext, selectedInputTableInput]);
+    }, [selectedEditorDevice, profileContext, SelectedEditorDeviceViewOrientationContext, selectedInputTableInput]);
 
 
     const buttonTableClassName = clsx({
@@ -72,7 +74,54 @@ export default function TreeTableDialogue() {
         'hidden': sessionStorage.getItem('inputTableFilter') == 'buttons',
 
     });
+    const getIconLegend = (node) => {
+        if (Object.hasOwn(node, "children")) {
+            return (
+                <div className='flex flex-row gap-[12px] h-fit'>
+                    {/* <div className='flex flex-row gap-[3px] '>
+                        <p className='mb-[-3px] text-legend-heading flex self-center leading-[10px]  align-middle  text-center justify-self-center '> AXIS</p>
+                        <div className='flex flex-row h-fit gap-[3px] content-center align-center justify-center'>
+                            <AxisIcon className='self-center w-[17px] h-[17px] align-center' />
+                            <p className=' h-full mb-[-1px] text-legend  align-middle  text-center self-center justify-self-center'>9</p>
+                        </div>
+                    </div> */}
+                    <div className='flex flex-row gap-[5px]'>
+                        <p className='text-legend-heading flex self-center mb-[-3px] '> BINDS</p>
+                        <div className='flex flex-row gap-[3px] content-center'>
+                            <BindIcon className='self-center w-[17px] h-[17px]' />
+                            <p className='text-legend self-center'>
+                                {Object.keys(node.children).length}
+                            </p>
+                            asd
+                        </div>
+                    </div>
+                </div>
+            )
+        } else {
+            return (
+                <div className='flex flex-row gap-[12px] h-fit'>
+                    {/* <div className='flex flex-row gap-[3px] '>
+                    <p className='mb-[-3px] text-legend-heading flex self-center leading-[10px]  align-middle  text-center justify-self-center '> AXIS</p>
+                    <div className='flex flex-row h-fit gap-[3px] content-center align-center justify-center'>
+                        <AxisIcon className='self-center w-[17px] h-[17px] align-center' />
+                        <p className=' h-full mb-[-1px] text-legend  align-middle  text-center self-center justify-self-center'>9</p>
+                    </div>
+                </div> */}
+                    <div className='flex flex-row gap-[5px]'>
+                        <p className='text-legend-heading flex self-center mb-[-3px] '> BINDS</p>
+                        <div className='flex flex-row gap-[3px] content-center'>
+                            <BindIcon className='self-center w-[17px] h-[17px]' />
+                            <p className='text-legend self-center'>
+                                
+                                {node.data.layers.length}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            )
 
+        }
+    }
 
     const togglerTemplate = (node, options) => {
         const getSlotIcon = (node) => {
@@ -83,6 +132,7 @@ export default function TreeTableDialogue() {
                 return (
                     <div className='flex corner-inputTableIcons'>
                         {Utils.getInputSlotIcons(node.data.slotName, "25px", "25px")}
+
                     </div>
                 )
             }
@@ -99,8 +149,9 @@ export default function TreeTableDialogue() {
                             {Utils.getInputIcon(node.label, "30px", "30px")}
                         </div>
                         <p className='text-inputTable'> {node.label} </p>
+                        {getIconLegend(node)}
+
                         {/* <div className="spacer-dialogue" />
-    
                         <span className='self-center justify-center '>{label}</span> */}
                         {/* <div className="spacer-dialogue" /> */}
                         {/* {expanded} */}
@@ -117,16 +168,17 @@ export default function TreeTableDialogue() {
                             {Utils.getInputIcon(node.label, "30px", "30px")}
                         </div>
                         <div className='flex flex-row gap-[8px]'>
-                            <div className='flex '>
+                            <div className='flex flex-row'>
                                 {/* {getCategoryHeader(node)} */}
 
                                 {getSlotIcon(node)}
+                                {getIconLegend(node)}
                             </div>
                             <p className='text-inputTable'> {node.label} </p>
 
                         </div>
                         <div className='flex flex-col ml-[2px]'>
-asd
+
                             <ActionList layers={node.data.layers} input_direction="inputTable" />
 
                         </div>
@@ -174,7 +226,7 @@ asd
         switch (sessionStorage.getItem('selectedEditorInputTableInput')) {
             case "Axis":
                 return (
-                                            <AxisDataTable />
+                    <AxisDataTable />
 
                 );
                 break;
@@ -247,7 +299,10 @@ asd
                     // onNodeClick={(e) => {
                     //     console.log("WHAT IS NODE???:   " + e.data);
                     // }}
-                    nodeTemplate={nodeTemplate} value={JSON.parse(sessionStorage.getItem('cache_ButtonInputTableData'))} filter filterBy='label' filterMode="strict" filterPlaceholder="Lenient Filter" className=""
+                    nodeTemplate={nodeTemplate}
+                    value={JSON.parse(sessionStorage.getItem('cache_ButtonInputTableData'))}
+                    filter filterBy='label' filterMode="strict" filterPlaceholder="Lenient Filter"
+                    className=""
                 />
             </div>
         </div>
