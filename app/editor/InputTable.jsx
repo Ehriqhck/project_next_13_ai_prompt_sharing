@@ -76,23 +76,30 @@ export default function TreeTableDialogue() {
     });
     const getIconLegend = (node) => {
         if (Object.hasOwn(node, "children")) {
+            const getChildrenBinded = (children) => {
+
+                let index = 0;
+                const bindNum = children.forEach(child => {
+                    if (child.data.layers[0] !== undefined) {
+                        index += 1;
+
+                    }
+                }
+                );
+                return (index);
+
+            }
             return (
                 <div className='flex flex-row gap-[12px] h-fit'>
-                    {/* <div className='flex flex-row gap-[3px] '>
-                        <p className='mb-[-3px] text-legend-heading flex self-center leading-[10px]  align-middle  text-center justify-self-center '> AXIS</p>
-                        <div className='flex flex-row h-fit gap-[3px] content-center align-center justify-center'>
-                            <AxisIcon className='self-center w-[17px] h-[17px] align-center' />
-                            <p className=' h-full mb-[-1px] text-legend  align-middle  text-center self-center justify-self-center'>9</p>
-                        </div>
-                    </div> */}
+              
                     <div className='flex flex-row gap-[5px]'>
-                        <p className='text-legend-heading flex self-center mb-[-3px] '> BINDS</p>
+                        <p className='text-legend-heading flex self-center mb-[-3px] '>  BINDS: </p>
                         <div className='flex flex-row gap-[3px] content-center'>
                             <BindIcon className='self-center w-[17px] h-[17px]' />
                             <p className='text-legend self-center'>
-                                {Object.keys(node.children).length}
+                                {getChildrenBinded(node.children)} / {Object.keys(node.children).length}
                             </p>
-                            asd
+
                         </div>
                     </div>
                 </div>
@@ -108,11 +115,11 @@ export default function TreeTableDialogue() {
                     </div>
                 </div> */}
                     <div className='flex flex-row gap-[5px]'>
-                        <p className='text-legend-heading flex self-center mb-[-3px] '> BINDS</p>
+                        <p className='text-inputTable flex self-center mb-[-3px] '> BINDS</p>
                         <div className='flex flex-row gap-[3px] content-center'>
                             <BindIcon className='self-center w-[17px] h-[17px]' />
                             <p className='text-legend self-center'>
-                                
+
                                 {node.data.layers.length}
                             </p>
                         </div>
@@ -127,7 +134,7 @@ export default function TreeTableDialogue() {
         const getSlotIcon = (node) => {
 
             if (!Object.hasOwn(node.data, 'slotName')) {
-                return <> {node.label}</>;
+                return <p className='text-GameAction-Category-Heading'> {node.label}</p>;
             } else {
                 return (
                     <div className='flex corner-inputTableIcons'>
@@ -142,39 +149,38 @@ export default function TreeTableDialogue() {
         if (!Object.hasOwn(node.data, 'slotName')) {
 
             return (
-                <Button type="inputTable" className=" flex flex-col   " tabIndex={-1} onClick={options.onClick}>
+                <Button type="inputTable" className=" flex flex-row w-full  justify-between " tabIndex={-1} onClick={options.onClick}>
 
-                    <div className='flex flex-row content-start  self-start gap-[8px] '>
-                        <div className='flex flex-row  h-fit'>
+                    <div className='flex py-[2px] flex-row content-start w-full justify-between pr-[16px] self-start gap-[8px] '>
+                        <div className='flex flex-row   h-fit'>
                             {Utils.getInputIcon(node.label, "30px", "30px")}
+                            <p className='text-legend-heading pl-[8px]'> {node.label} </p>
+
                         </div>
-                        <p className='text-inputTable'> {node.label} </p>
+                  
                         {getIconLegend(node)}
 
-                        {/* <div className="spacer-dialogue" />
-                        <span className='self-center justify-center '>{label}</span> */}
-                        {/* <div className="spacer-dialogue" /> */}
-                        {/* {expanded} */}
-                    </div>
 
+                    </div>
                 </Button>
             );
         } else {
             return (
                 <Button type="inputTable" className=" flex flex-col   " tabIndex={-1} onClick={options.onClick}>
 
-                    <div className='flex flex-col content-start  self-start gap-[8px] '>
-                        <div className='flex flex-row  h-fit'>
+                    <div className='flex flex-col content-start w-full pr-[16px]  self-start gap-[8px] '>
+                        <div className='flex flex-row  h-fit '>
                             {Utils.getInputIcon(node.label, "30px", "30px")}
                         </div>
-                        <div className='flex flex-row gap-[8px]'>
-                            <div className='flex flex-row'>
-                                {/* {getCategoryHeader(node)} */}
-
+                        <div className='flex flex-row justify-between w-full'>
+                            {/* {getCategoryHeader(node)} */}
+                            <div className='flex gap-[8px]'>
                                 {getSlotIcon(node)}
-                                {getIconLegend(node)}
+                                <p className='text-legend-heading'> {node.label} </p>
                             </div>
-                            <p className='text-inputTable'> {node.label} </p>
+
+                            {getIconLegend(node)}
+
 
                         </div>
                         <div className='flex flex-col ml-[2px]'>

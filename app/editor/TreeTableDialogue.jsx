@@ -117,10 +117,16 @@ import ChestIcon from '@public/assets/icons/actions/gameCategory/ChestIcon.jsx'
 import MobiglassIcon from '@public/assets/icons/actions/gameCategory/MobiglassIcon.jsx'
 import RadialMenuIcon from '@public/assets/icons/actions/gameCategory/RadialMenuIcon.jsx'
 import ApertureIcon from '@public/assets/icons/actions/gameCategory/ApertureIcon.jsx'
-import { SelectContext, SelectedActionContext } from '@components/Provider';
+import ChevronsRight from '@public/assets/icons/actions/gameCategory/ChevronsRight.jsx'
 
+import { SelectContext, SelectedActionContext, EditorPanelTitleContext } from '@components/Provider';
+
+import { Utils } from '@app/editor/utils.js'
 
 export default function TreeTableDialogue() {
+    const { editorPanelTitle, setEditorPanelTitle } = useContext(EditorPanelTitleContext)
+
+
     const [visible, setVisible] = useState(false);
     const [nodes, setNodes] = useState([]);
     const [globalFilter, setGlobalFilter] = useState('');
@@ -4147,6 +4153,7 @@ export default function TreeTableDialogue() {
             <Button type="gameActions" unstyled>
                 {/* <span className={options.className}> */}
                 <div unstyled className='flex flex-row pl-[8px] py-[8px]'>
+
                     {getCategoryIcon(node)}
 
                     <div className='flex flex-col  justify-start w-full'>
@@ -4170,33 +4177,82 @@ export default function TreeTableDialogue() {
             <Dialog
                 visible={visible}
                 modal
+                closable
+                unstyled
+                closeOnEscape
+                className=' hidden'
                 onHide={() => setVisible(false)}
                 content={({ hide }) => (
-                    <div className="panel-gameAction flex flex-row justify-content-center gap-[3px] w-[100%] radial-outline">
-                        <div className='panel-gameAction-sidebar h-full'> 
-                        <BindButton />
+                    <div className='w-[100vw] h-[100vh]  justify-content-center self-center justify-center flex' >
+
+                        <div className="panel-gameAction flex self-center flex-col justify-content-center gap-[3px]  justify-center radial-outline">
+                            <div className='flex flex-row h-full self-center bind-panel-default '>
+                                <div className='corner-inputTableIcon  flex flex-row content-center align-middle'>
+                                    <div className='corner-inputTableIcons flex flex-row gap-[8px]'>
+                                        <div classname='ml-[4px]'>
+                                            {Utils.getSelectedDeviceIcon(sessionStorage.getItem('selectedEditorDevice'), '40px')}
+                                        </div>
+                                        <div className='spacer-vertical h-[100px] '></div>
+
+                                        <div className='flex flex-col self-center gap-[4px]  justify-start '>
+                                            <p className='text-legend-heading'>{editorPanelTitle.toUpperCase()}</p>
+                                            <div className=' '>
+                                                {Utils.getInputIcon(sessionStorage.getItem('selectedEditorDeviceButton'), '40px')}
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                        <ChevronsRight width="30px" />
+                                        <div className='corner-inputTableIcons flex flex-row gap-[8px]'>
+                                        <div classname='ml-[4px]'>
+                                            {Utils.getSelectedDeviceIcon(sessionStorage.getItem('selectedEditorDevice'), '40px')}
+                                        </div>
+                                        <div className='spacer-vertical h-[100px] '></div>
+
+                                        <div className='flex flex-col self-center gap-[4px]  justify-start '>
+                                            <p className='text-legend-heading'>{editorPanelTitle.toUpperCase()}</p>
+                                            <div className=' '>
+                                                {Utils.getInputIcon(sessionStorage.getItem('selectedEditorDeviceButton'), '40px')}
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div className='panel-gameAction-sidebar h-full'>
+                                        <Button label="hide" icon="pi pi-external-link" onClick={() => setVisible(false)} />
+                                        <BindButton />
+                                    </div>
+                                </div>
 
 
+
+
+
+                            </div>
+                            <Tree
+                                togglerTemplate={togglerTemplate}
+                                selectionMode="single" selectionKeys={selectedKey}
+                                onSelectionChange={(e) => {
+                                }}
+                                unstyled
+                                onNodeClick={(e) => {
+                                    setSelectedAction(e.node);
+                                    // console.log(e.node.key);
+                                }}
+                                // onNodeClick={(e) => {
+                                //     console.log("WHAT IS NODE???:   " + e.data);
+                                // }}
+                                nodeTemplate={nodeTemplate} value={nodes} filter filterBy='label' filterMode="strict" filterPlaceholder="Lenient Filter"
+                                className="w-[800px] h-[100%]" />
                         </div>
-
-                        <Tree
-                            togglerTemplate={togglerTemplate}
-                            selectionMode="single" selectionKeys={selectedKey}
-                            onSelectionChange={(e) => {
-                            }}
-                            unstyled
-                            onNodeClick={(e) => {
-                                setSelectedAction(e.node);
-                                // console.log(e.node.key);
-                            }}
-                            // onNodeClick={(e) => {
-                            //     console.log("WHAT IS NODE???:   " + e.data);
-                            // }}
-                            nodeTemplate={nodeTemplate} value={nodes} filter filterBy='label' filterMode="strict" filterPlaceholder="Lenient Filter"
-                             className="w-[800px] h-[100%]" />
                     </div>
+
                 )}
             ></Dialog>
         </div>
+
     )
 }

@@ -50,11 +50,7 @@ export const Utils = {
       case 'Circle_Stick':
         return (
           <div className='corner-inputTableIcons'>
-            <CircleSwitch
-              className='testCircle '
-              width={width}
-              height={height}
-            />
+            <CircleSwitch className='testCircle ' width={width} height='100%' />
           </div>
         )
 
@@ -63,7 +59,7 @@ export const Utils = {
       case 'Hat_Stick':
         return (
           <div className='corner-inputTableIcons'>
-            <Hat className='testCircle' width={width} height={height} />
+            <Hat className='testCircle' width={width} height='100%' />
           </div>
         )
 
@@ -72,7 +68,7 @@ export const Utils = {
       case 'Pill_Stick':
         return (
           <div className='corner-inputTableIcons'>
-            <PillSwitch className='testCircle ' width={width} height={height} />
+            <PillSwitch className='testCircle ' width={width} height='100%' />
           </div>
         )
 
@@ -81,7 +77,7 @@ export const Utils = {
       case 'Red_Button':
         return (
           <div className='corner-inputTableIcons'>
-            <RedButton className='testCircle ' width={width} height={height} />
+            <RedButton className='testCircle ' width={width} height='100%' />
           </div>
         )
         break
@@ -89,7 +85,7 @@ export const Utils = {
       case 'Chip_Stick':
         return (
           <div className='corner-inputTableIcons'>
-            <ChipSwitch className='testCircle ' width={width} height={height} />
+            <ChipSwitch className='testCircle ' width={width} height='100%' />
           </div>
         )
 
@@ -98,7 +94,7 @@ export const Utils = {
           <div className='corner-inputTableIcons'>
             <Pinkybutton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK
               width={width}
-              height={height}
+              height='100%'
               className='testCircle '
             />
           </div>
@@ -109,7 +105,7 @@ export const Utils = {
           <div className='corner-inputTableIcons'>
             <PrimaryTrigger_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK
               width={width}
-              height={height}
+              height='100%'
               className='testCircle '
             />
           </div>
@@ -120,7 +116,7 @@ export const Utils = {
           <div className='corner-inputTableIcons'>
             <SecondaryTrigger_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK
               width={width}
-              height={height}
+              height='100%'
               className='testCircle '
             />
           </div>
@@ -131,7 +127,7 @@ export const Utils = {
           <div className='corner-inputTableIcons'>
             <SideIndexButton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK
               width={width}
-              height={height}
+              height='100%'
               className='testCircle '
             />
           </div>
@@ -154,41 +150,29 @@ export const Utils = {
     switch (slotName) {
       case 'top':
         return (
-          <InputUpIcon className='testCircle' width={width} height={height} />
+          <InputUpIcon className='testCircle' width={width} height='100%' />
         )
         break
 
       case 'bottom':
         return (
-          <InputDownIcon className='testCircle' width={width} height={height} />
+          <InputDownIcon className='testCircle' width={width} height='100%' />
         )
         break
 
       case 'press':
         return (
-          <InputPressIcon
-            className='testCircle '
-            width={width}
-            height={height}
-          />
+          <InputPressIcon className='testCircle ' width={width} height='100%' />
         )
         break
 
       case 'left':
         return (
-          <InputLeftIcon
-            className='testCircle '
-            width={width}
-            height={height}
-          />
+          <InputLeftIcon className='testCircle ' width={width} height='100%' />
         )
       case 'right':
         return (
-          <InputRightIcon
-            className='testCircle '
-            width={width}
-            height={height}
-          />
+          <InputRightIcon className='testCircle ' width={width} height='100%' />
         )
         break
 
@@ -266,7 +250,7 @@ export const Utils = {
     }
   },
 
-  getSelectedDeviceIcon (DeviceName) {
+  getSelectedDeviceIcon (DeviceName, width, height) {
     console.log('DEVICE PREVIEW ICON NAME ================')
     console.log(DeviceName)
     switch (DeviceName) {
@@ -275,7 +259,8 @@ export const Utils = {
           <div className='my-[6px]'>
             <img
               src='/assets/VKB/VKB_GLADIATOR_NEXT_EVO_LEFT_icon@2x.webp'
-              width={25}
+              width={width}
+              height='100%'
             />
           </div>
         )
@@ -285,7 +270,8 @@ export const Utils = {
           <div className='my-[6px]'>
             <img
               src='/assets/VKB/VKB_GLADIATOR_NEXT_EVO_RIGHT_icon.webp'
-              width={25}
+              width={width}
+              height='100%'
             />
           </div>
         )
@@ -326,14 +312,22 @@ export const Utils = {
       return (
         <div className='flex flex-row gap-[12px] h-fit'>
           <div className='flex flex-row gap-[3px] '>
-            <p className='mb-[-3px] text-legend-heading flex self-center leading-[10px]  align-middle  text-center justify-self-center '> AXIS</p>
+            <p className='mb-[-3px] text-legend-heading flex self-center leading-[10px]  align-middle  text-center justify-self-center '>
+              {' '}
+              AXIS
+            </p>
             <div className='flex flex-row h-fit gap-[3px] content-center align-center justify-center'>
               <AxisIcon className='self-center w-[17px] h-[17px] align-center' />
-              <p className=' h-full mb-[-1px] text-legend  align-middle  text-center self-center justify-self-center'>9</p>
+              <p className=' h-full mb-[-1px] text-legend  align-middle  text-center self-center justify-self-center'>
+                9
+              </p>
             </div>
           </div>
           <div className='flex flex-row gap-[5px]'>
-            <p className='text-legend-heading flex self-center mb-[-3px] '> BINDS</p>
+            <p className='text-legend-heading flex self-center mb-[-3px] '>
+              {' '}
+              BINDS
+            </p>
             <div className='flex flex-row gap-[3px] content-center'>
               <BindIcon className='self-center w-[17px] h-[17px]' />
               <p className='text-legend self-center'>
@@ -356,7 +350,7 @@ export const Utils = {
             </p>
           </div>
         </div> */}
-          
+
           <div className='flex flex-col gap-[2px]'>
             <p className='text-legend-heading mb-[-3px] self-center'> AXIS</p>
             <div className='flex flex-row gap-[3px] content-center'>
@@ -368,9 +362,7 @@ export const Utils = {
             <p className='text-legend-heading mb-[-3px] self-center '> BINDS</p>
             <div className='flex flex-row gap-[3px] content-center'>
               <BindMissingIcon className='self-center ' width='17px' />
-              <p className='text-legend self-center'>
-              0
-              </p>
+              <p className='text-legend self-center'>0</p>
             </div>
           </div>
         </div>
