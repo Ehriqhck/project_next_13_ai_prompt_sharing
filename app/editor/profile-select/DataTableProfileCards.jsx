@@ -10,11 +10,13 @@ import { log } from 'util';
 import { err } from '@iconfu/svg-inject';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation'
-import { SelectedEditorDeviceContext, SelectedEditorDeviceViewOrientationContext, SelectedInputTableInputContext } from '@components/Provider';
+import { SelectedEditorDeviceContext, SelectedEditorDeviceViewOrientationContext, TreeTableDialogueSelectionContext, TreeTableDialogueVisibilityContext, SelectedInputTableInputContext } from '@components/Provider';
 
 const DataTableProfileCards = (props) => {
     const { selectedEditorDevice, setSelectedEditorDevice } = useContext(SelectedEditorDeviceContext);
     const { selectedInputTableInput, setSelectedInputTableInput } = useContext(SelectedInputTableInputContext);
+    const { treeTableDialogueSelection, setTreeTableDialogueSelection } = useContext(TreeTableDialogueSelectionContext)
+    const { treeTableDialogueVisibility, setTreeTableDialogueVisibility } = useContext(TreeTableDialogueVisibilityContext)
 
     const { selectedEditorDeviceViewOrientation, setSelectedEditorDeviceViewOrientation } = useContext(SelectedEditorDeviceViewOrientationContext);
     const [context, setContext] = useState({
@@ -243,9 +245,11 @@ const DataTableProfileCards = (props) => {
                                 setSelectedEditorDevice(Object.keys(selectedPreview.deviceList)[0]);
                                 setSelectedEditorDeviceViewOrientation('Front');
                                 setSelectedEditorDevice(Object.keys(selectedPreview.deviceList)[0]);
+                                setTreeTableDialogueVisibility(false);
+                                
                                 sessionStorage.setItem('selectedEditorInputTableInput', 'buttons');
                                 sessionStorage.setItem('inputTableFilter', 'buttons');
-
+                                sessionStorage.setItem("dialogueVisibility", "false")
                                 sessionStorage.setItem('loadedProfile', JSON.stringify(selectedPreview));
                                 setSelectedInputTableInput('Front');
                                 // sessionStorage.setItem('selectedEditorInputTableInput', "Front");

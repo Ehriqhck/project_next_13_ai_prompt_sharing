@@ -119,20 +119,23 @@ import RadialMenuIcon from '@public/assets/icons/actions/gameCategory/RadialMenu
 import ApertureIcon from '@public/assets/icons/actions/gameCategory/ApertureIcon.jsx'
 import ChevronsRight from '@public/assets/icons/actions/gameCategory/ChevronsRight.jsx'
 
-import { SelectContext, SelectedActionContext, EditorPanelTitleContext } from '@components/Provider';
+import { SelectContext, SelectedActionContext, EditorPanelTitleContext, TreeTableDialogueSelectionContext, TreeTableDialogueVisibilityContext } from '@components/Provider';
 
 import { Utils } from '@app/editor/utils.js'
 
-export default function TreeTableDialogue() {
+export default function TreeTableDialogue(props) {
     const { editorPanelTitle, setEditorPanelTitle } = useContext(EditorPanelTitleContext)
+    const { treeTableDialogueSelection, setTreeTableDialogueSelection } = useContext(TreeTableDialogueSelectionContext)
+    const { treeTableDialogueVisibility, setTreeTableDialogueVisibility } = useContext(TreeTableDialogueVisibilityContext)
 
-
+    const [selectedGameAction, setSelectedGameAction] = useState(<></>)
     const [visible, setVisible] = useState(false);
     const [nodes, setNodes] = useState([]);
     const [globalFilter, setGlobalFilter] = useState('');
     const [filterMode, setFilterMode] = useState('lenient');
     const [selectedKey, setSelectedKey] = useState('');
     const { selectedAction, setSelectedAction } = useContext(SelectedActionContext);
+    const [isLoading, setIsLoading] = useState(false);
 
     const [filterOptions] = useState([
         { label: 'Lenient', value: 'lenient' },
@@ -141,8 +144,16 @@ export default function TreeTableDialogue() {
     const [selectedNodeKey, setSelectedNodeKey] = useState(null);
     const [metaKey, setMetaKey] = useState(true);
     useEffect(() => {
+
+
         GameActions.getTreeTableNodes().then((data) => setNodes(data));
-    }, []);
+        // setTreeTableDialogueVisibility(JSON.parse(sessionStorage.getItem("dialogueVisibility")))
+        // setVisible(treeTableDialogueVisibility)
+console.log(treeTableDialogueSelection);
+setVisible(true)
+setTreeTableDialogueVisibility(true)
+
+    }, [treeTableDialogueVisibility, treeTableDialogueSelection]);
 
     const getHeader = () => {
         return (
@@ -525,12 +536,6 @@ export default function TreeTableDialogue() {
         }
         let label = <p className='self-center justify-center text-list-default '>{node.label?.toUpperCase()}</p>;
         const expanded = options.expanded;
-        const iconClassName = classNames('p-tree-toggler-icon pi pi-fw', {
-            'gg-minimize-alt': expanded,
-            'gg-arrows-expand-right': !expanded,
-            // 'gg-arrows-expand-right': expanded
-
-        });
 
         const toggleIcon = (expanded) => {
             if (!expanded) {
@@ -545,7 +550,12 @@ export default function TreeTableDialogue() {
 
         }
         return (
-            <button type="button" className="justify-center  p-tree-toggler flex flex-col  gap-[0px] pl-[2px]  " tabIndex={-1} onClick={options.onClick}>
+            <button type="button" className="justify-center  p-tree-toggler flex flex-col  gap-[0px] pl-[2px]  " tabIndex={-1}
+                onClick={
+                    options.onClick
+
+                }
+            >
                 <div className='flex flex-row content-start justify-center self-start gap-[3px] '>
                     <div className='self-center justify-center '>
                         {getCategoryHeader(node)}
@@ -4150,7 +4160,26 @@ export default function TreeTableDialogue() {
         }
 
         return (
-            <Button type="gameActions" unstyled>
+            <Button type="gameActions" unstyled
+                onClick={
+                    () => {
+                        setSelectedGameAction(
+                            <div unstyled className='flex flex-row pl-[8px] py-[8px]'>
+
+                                {getCategoryIcon(node)}
+
+                                <div className='flex flex-col  justify-start w-full'>
+                                    <p className='gameAction-text-regular flex '>{label}</p>
+                                    <p className=' gameAction-text-subheading flex' >{node.data.category}</p>
+
+                                </div>
+
+                            </div>
+                        )
+                        console.log(selectedGameAction);
+                    }
+                }
+            >
                 {/* <span className={options.className}> */}
                 <div unstyled className='flex flex-row pl-[8px] py-[8px]'>
 
@@ -4175,19 +4204,30 @@ export default function TreeTableDialogue() {
             <Button label="Login" icon="pi pi-user" onClick={() => setVisible(true)} />
 
             <Dialog
-                visible={visible}
+                visible={
+                    visible
+                }
+                id="gameActionDialogue"
                 modal
                 closable
                 unstyled
                 closeOnEscape
+                // onShow={() => {
+                //     setTreeTableDialogueVisibility(false)
+                // }}
                 className=' hidden'
-                onHide={() => setVisible(false)}
-                content={({ hide }) => (
+
+                // onHide={() => {
+                //     sessionStorage.setItem("dialogueVisibility", "false")
+                //     setTreeTableDialogueVisibility(false)
+                //     setVisible(false)
+                // }}
+                content={() => (
                     <div className='w-[100vw] h-[100vh]  justify-content-center self-center justify-center flex' >
 
                         <div className="panel-gameAction flex self-center flex-col justify-content-center gap-[3px]  justify-center radial-outline">
                             <div className='flex flex-row h-full self-center bind-panel-default '>
-                                <div className='corner-inputTableIcon  flex flex-row content-center align-middle'>
+                                <div className='corner-inputTableIcon gap-[12px] flex flex-row content-center align-middle'>
                                     <div className='corner-inputTableIcons flex flex-row gap-[8px]'>
                                         <div classname='ml-[4px]'>
                                             {Utils.getSelectedDeviceIcon(sessionStorage.getItem('selectedEditorDevice'), '40px')}
@@ -4204,32 +4244,29 @@ export default function TreeTableDialogue() {
 
                                     </div>
 
-                                        <ChevronsRight width="30px" />
-                                        <div className='corner-inputTableIcons flex flex-row gap-[8px]'>
-                                        <div classname='ml-[4px]'>
-                                            {Utils.getSelectedDeviceIcon(sessionStorage.getItem('selectedEditorDevice'), '40px')}
-                                        </div>
-                                        <div className='spacer-vertical h-[100px] '></div>
+                                    <ChevronsRight width="30px" />
+                                    <div className='corner-inputTableIcons flex flex-row gap-[8px]'>
+                                        {selectedGameAction}
+                                        <Button label="hide" icon="pi pi-external-link"
+                                            onClick={() => {
+                                                // const elem = document.querySelector("div[data-pc-section='mask']:has(div[id='gameActionDialogue'])");
+                                                // elem.style.display = 'none'
+                                                setVisible(false)
+                                                // sessionStorage.setItem("dialogueVisibility", "false")
+                                                // setTreeTableDialogueVisibility(false)
+                                                // setTreeTableDialogueVisibility(!visible)
+                                                // console.log(
+                                                //     sessionStorage.getItem("dialogueVisibility"), treeTableDialogueVisibility, visible
+                                                // );
 
-                                        <div className='flex flex-col self-center gap-[4px]  justify-start '>
-                                            <p className='text-legend-heading'>{editorPanelTitle.toUpperCase()}</p>
-                                            <div className=' '>
-                                                {Utils.getInputIcon(sessionStorage.getItem('selectedEditorDeviceButton'), '40px')}
-
-                                            </div>
-                                        </div>
+                                            }} />
 
                                     </div>
 
-                                    <div className='panel-gameAction-sidebar h-full'>
-                                        <Button label="hide" icon="pi pi-external-link" onClick={() => setVisible(false)} />
+                                    {/* <div className='panel-gameAction-sidebar h-full'>
                                         <BindButton />
-                                    </div>
+                                    </div> */}
                                 </div>
-
-
-
-
 
                             </div>
                             <Tree

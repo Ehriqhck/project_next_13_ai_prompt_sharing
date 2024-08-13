@@ -17,6 +17,8 @@ export const SelectedDeviceContext = createContext();
 export const SelectedEditorDeviceContext = createContext();
 export const SelectedEditorDeviceViewOrientationContext = createContext();
 export const SelectedInputTableInputContext = createContext();
+export const TreeTableDialogueSelectionContext = createContext();
+export const TreeTableDialogueVisibilityContext = createContext();
 
 export const SelectedActionContext = createContext();
 export const ShowViewerPanelContext = createContext();
@@ -37,6 +39,8 @@ const Provider = ({ children, session }) => {
   const [selectedEditorDevice, setSelectedEditorDevice] = useState();
   const [selectedEditorDeviceViewOrientation, setSelectedEditorDeviceViewOrientation] = useState("Front");
   const [selectedInputTableInput, setSelectedInputTableInput] = useState("Front");
+  const [treeTableDialogueSelection, setTreeTableDialogueSelection] = useState(false);
+  const [treeTableDialogueVisibility, setTreeTableDialogueVisibility] = useState(false);
 
   const [showEditorPanel, setshowEditorPanel] = useState(false);
   const [showViewerPanel, setshowViewerPanel] = useState(true);
@@ -65,8 +69,14 @@ const Provider = ({ children, session }) => {
                                 <SelectedEditorDeviceContext.Provider value={{ selectedEditorDevice, setSelectedEditorDevice }}>
                                   <SelectedEditorDeviceViewOrientationContext.Provider value={{ selectedEditorDeviceViewOrientation, setSelectedEditorDeviceViewOrientation }}>
                                     <SelectedInputTableInputContext.Provider value={{ selectedInputTableInput, setSelectedInputTableInput }}>
+                                      <TreeTableDialogueSelectionContext.Provider value={{ treeTableDialogueSelection, setTreeTableDialogueSelection }}>
+                                        <TreeTableDialogueVisibilityContext.Provider value={{treeTableDialogueVisibility, setTreeTableDialogueVisibility}}>
 
-                                      {children}
+                                          {children}
+                                        </TreeTableDialogueVisibilityContext.Provider>
+
+                                      </TreeTableDialogueSelectionContext.Provider>
+
                                     </SelectedInputTableInputContext.Provider>
                                   </SelectedEditorDeviceViewOrientationContext.Provider>
 

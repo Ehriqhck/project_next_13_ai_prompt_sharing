@@ -18,10 +18,11 @@ import { classNames } from 'primereact/utils';
 import BindIcon from 'public/assets/icons/generic/bind.svg'
 import LayerIcon from 'public/assets/icons/generic/layer.svg'
 import RotationalAxisIcon from '@public/assets/icons/actions/gameCategory/RotationalAxisIcon.jsx'
-import { SelectContext, SelectedActionContext, SelectedEditorDeviceContext, SelectedEditorDeviceViewOrientationContext, Context, SelectedInputTableInputContext } from '@components/Provider';
+import { TreeTableDialogueSelectionContext, TreeTableDialogueVisibilityContext, SelectContext, SelectedActionContext, SelectedEditorDeviceContext, SelectedEditorDeviceViewOrientationContext, Context, SelectedInputTableInputContext } from '@components/Provider';
 import DeviceAxisSelector from '@app/editor/DeviceAxisSelector.jsx'
 import AxisDataTable from '@app/editor/AxisDataTable.jsx'
-export default function TreeTableDialogue() {
+import TreeTableDialogue from './TreeTableDialogue';
+export default function InputTable() {
     const [visible, setVisible] = useState(false);
     const [nodes, setNodes] = useState([]);
     const [globalFilter, setGlobalFilter] = useState('');
@@ -31,8 +32,10 @@ export default function TreeTableDialogue() {
     const { selectedEditorDevice, setSelectedEditorDevice } = useContext(SelectedEditorDeviceContext);
     const { selectedEditorDeviceViewOrientation, setSelectedEditorDeviceViewOrientation } = useContext(SelectedEditorDeviceViewOrientationContext);
     const { selectedInputTableInput, setSelectedInputTableInput } = useContext(SelectedInputTableInputContext);
+    const { treeTableDialogueVisibility, setTreeTableDialogueVisibility } = useContext(TreeTableDialogueVisibilityContext)
 
     const { profileContext, setprofileContext } = useContext(Context);
+    const { treeTableDialogueSelection, setTreeTableDialogueSelection } = useContext(TreeTableDialogueSelectionContext)
 
     const [filterOptions] = useState([
         { label: 'Lenient', value: 'lenient' },
@@ -91,7 +94,7 @@ export default function TreeTableDialogue() {
             }
             return (
                 <div className='flex flex-row gap-[12px] h-fit'>
-              
+
                     <div className='flex flex-row gap-[5px]'>
                         <p className='text-legend-heading flex self-center mb-[-3px] '>  BINDS: </p>
                         <div className='flex flex-row gap-[3px] content-center'>
@@ -129,7 +132,15 @@ export default function TreeTableDialogue() {
 
         }
     }
+    const openDialogue = (selectedNode) => {
 
+
+        setTreeTableDialogueVisibility(true)
+        setTreeTableDialogueSelection("fhgfhgf")
+        console.log(treeTableDialogueSelection);
+        console.log(selectedNode.data);
+
+    }
     const togglerTemplate = (node, options) => {
         const getSlotIcon = (node) => {
 
@@ -157,7 +168,7 @@ export default function TreeTableDialogue() {
                             <p className='text-legend-heading pl-[8px]'> {node.label} </p>
 
                         </div>
-                  
+
                         {getIconLegend(node)}
 
 
@@ -166,36 +177,9 @@ export default function TreeTableDialogue() {
             );
         } else {
             return (
-                <Button type="inputTable" className=" flex flex-col   " tabIndex={-1} onClick={options.onClick}>
 
-                    <div className='flex flex-col content-start w-full pr-[16px]  self-start gap-[8px] '>
-                        <div className='flex flex-row  h-fit '>
-                            {Utils.getInputIcon(node.label, "30px", "30px")}
-                        </div>
-                        <div className='flex flex-row justify-between w-full'>
-                            {/* {getCategoryHeader(node)} */}
-                            <div className='flex gap-[8px]'>
-                                {getSlotIcon(node)}
-                                <p className='text-legend-heading'> {node.label} </p>
-                            </div>
+                <></>
 
-                            {getIconLegend(node)}
-
-
-                        </div>
-                        <div className='flex flex-col ml-[2px]'>
-
-                            <ActionList layers={node.data.layers} input_direction="inputTable" />
-
-                        </div>
-                        {/* <div className="spacer-dialogue" />
-
-                    <span className='self-center justify-center '>{label}</span> */}
-                        {/* <div className="spacer-dialogue" /> */}
-                        {/* {expanded} */}
-                    </div>
-
-                </Button>
             );
         };
     }
@@ -203,20 +187,61 @@ export default function TreeTableDialogue() {
 
 
     const nodeTemplate = (node, options) => {
+        const getSlotIcon = (node) => {
 
+            if (!Object.hasOwn(node.data, 'slotName')) {
+                return <p className='text-GameAction-Category-Heading'> {node.label}</p>;
+            } else {
+                return (
+                    <div className='flex corner-inputTableIcons'>
+                        {Utils.getInputSlotIcons(node.data.slotName, "25px", "25px")}
+
+                    </div>
+                )
+            }
+        }
         // check if node is category with child array of game actions
         if (Object.hasOwn(node.data, 'layers')) {
 
             return (
-                // <span className={options.className} >
-                //     <div className='flex flex-row'>
+                <button onClick={() => {
+                    console.log(node);
+                    setTreeTableDialogueVisibility(true)
+                    setTreeTableDialogueSelection(node)
+                }}>
+                    <Button type="inputTable" className=" flex flex-col   " tabIndex={-1} onClick={options.onClick}>
 
-                //         {Utils.getInputSlotIcons(node.data.slotName, "100px", "100px")}
-                //         <ActionList layers={node.data.layers} input_direction="press" />
 
-                //     </div>
-                // </span>
-                <></>
+
+                        <div className='flex flex-col content-start w-full pr-[16px]  self-start gap-[8px] '>
+                            <div className='flex flex-row  h-fit '>
+                                {Utils.getInputIcon(node.label, "30px", "30px")}
+                            </div>
+                            <div className='flex flex-row justify-between w-full'>
+                                {/* {getCategoryHeader(node)} */}
+                                <div className='flex gap-[8px]'>
+                                    {getSlotIcon(node)}
+                                    <p className='text-legend-heading'> {node.label} </p>
+                                </div>
+
+                                {getIconLegend(node)}
+
+
+                            </div>
+                            <div className='flex flex-col ml-[2px]'>
+
+                                <ActionList layers={node.data.layers} input_direction="inputTable" />
+
+                            </div>
+                            {/* <div className="spacer-dialogue" />
+
+            <span className='self-center justify-center '>{label}</span> */}
+                            {/* <div className="spacer-dialogue" /> */}
+                            {/* {expanded} */}
+                        </div>
+                    </Button>
+                </button>
+
             )
 
         } else {
@@ -286,10 +311,8 @@ export default function TreeTableDialogue() {
             }}>CLEAR sessionStorage
             </Button> */}
             <div className={axisTableClassName}>
-
                 <AxisDataTable />
             </div>
-            {/* <AxisDataTable /> */}
             <div className={buttonTableClassName}>
                 <Tree
                     togglerTemplate={togglerTemplate}

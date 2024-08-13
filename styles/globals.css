@@ -19,7 +19,9 @@ html{
 ::-webkit-scrollbar {
   width: 16px;
 }
-
+/* div[data-pc-section="mask"]:has(div[id="gameActionDialogue"]) {
+  display: none !important  ;
+} */
 ::-webkit-scrollbar-track {
   border-radius: 8px;
   background-color: #00ffd50c;
