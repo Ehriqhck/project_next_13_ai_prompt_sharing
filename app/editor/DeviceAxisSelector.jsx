@@ -16,6 +16,8 @@ const DeviceAxisSelector = () => {
     const { selectedInputTableInput, setSelectedInputTableInput } = useContext(SelectedInputTableInputContext);
 
     const [activeIndexDeviceAxis, setActiveIndexactiveIndexDeviceAxis] = useState(0);
+ 
+    
     const getDeviceAxis = (item) => {
         // if (item.name == "Y AXIS") {
         //     return (<RotateYIcon width="24px"></RotateYIcon>);

@@ -80,8 +80,8 @@ const DataTableProfileCards = (props) => {
 
             // props?.context
             setDevices(props?.context)
-            // console.log("GALSKDJALSKDJ");
-            // console.log(context);
+            console.log("GALSKDJALSKDJ");
+            console.log(context);
         } catch (error) {
             console.log(error);
         } finally {
@@ -114,6 +114,7 @@ const DataTableProfileCards = (props) => {
                     });
                     console.log("new selection");
                     console.log(JSON.parse(sessionStorage.getItem('loadedProfile')));
+                    console.log(selectedPreview);
                     setSelectedEditorDeviceViewOrientation('Front');
                     setprofileContext(selectedPreview);
 
@@ -173,7 +174,8 @@ const DataTableProfileCards = (props) => {
 
                 <DataTable
                     className='min-w-[345px] '
-                    filterDisplay="row" type='profile card' value={devices} rows={3} paginator={true} selectionMode='single' paginatorTemplate={paginatorBodyTemplate}>
+                    filterDisplay="row" type='profile card'
+                     value={devices} rows={3} paginator={true} selectionMode='single' paginatorTemplate={paginatorBodyTemplate}>
                     <Column field="name" filter filterPlaceholder='search' body={imageBodyTemplate}></Column>
 
                 </DataTable>
@@ -247,11 +249,11 @@ const DataTableProfileCards = (props) => {
                                 setSelectedEditorDevice(Object.keys(selectedPreview.deviceList)[0]);
                                 setTreeTableDialogueVisibility(false);
                                 
-                                sessionStorage.setItem('selectedEditorInputTableInput', 'buttons');
+                                // sessionStorage.setItem('selectedEditorInputTableInput', 'buttons');
                                 sessionStorage.setItem('inputTableFilter', 'buttons');
                                 sessionStorage.setItem("dialogueVisibility", "false")
                                 sessionStorage.setItem('loadedProfile', JSON.stringify(selectedPreview));
-                                setSelectedInputTableInput('Front');
+                                // setSelectedInputTableInput('Front');
                                 // sessionStorage.setItem('selectedEditorInputTableInput', "Front");
 
                                 sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Front");

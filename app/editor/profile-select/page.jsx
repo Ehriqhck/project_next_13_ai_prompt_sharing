@@ -786,14 +786,14 @@ const page = () => {
         const fetchDeviceProfiles = async () => {
             try {
                 setIsLoading(true);
-                // const response = await fetch('/api/deviceProfiles', {
-                //     method: 'POST',
-                //     body: JSON.stringify({
-                //         userId: session?.user.id
-                //     })
-                // })
-                // const data = await response.json()
-                const data = TEMP_PROFILE;
+                const response = await fetch('/api/deviceProfiles', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        userId: session?.user.id
+                    })
+                })
+                const data = await response.json()
+                // const data = TEMP_PROFILE;
                 console.log("DATA BELOW vvvv");
                 console.log(data);
                 const loadedProfiles = Object.keys(data?.deviceProfiles).map((device) => {

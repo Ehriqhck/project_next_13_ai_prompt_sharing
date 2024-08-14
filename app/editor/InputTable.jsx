@@ -33,6 +33,7 @@ export default function InputTable() {
     const { selectedEditorDeviceViewOrientation, setSelectedEditorDeviceViewOrientation } = useContext(SelectedEditorDeviceViewOrientationContext);
     const { selectedInputTableInput, setSelectedInputTableInput } = useContext(SelectedInputTableInputContext);
     const { treeTableDialogueVisibility, setTreeTableDialogueVisibility } = useContext(TreeTableDialogueVisibilityContext)
+    const [isLoading, setIsLoading] = useState(false);
 
     const { profileContext, setprofileContext } = useContext(Context);
     const { treeTableDialogueSelection, setTreeTableDialogueSelection } = useContext(TreeTableDialogueSelectionContext)
@@ -49,7 +50,11 @@ export default function InputTable() {
         // console.log(JSON.parse(sessionStorage.getItem('loadedProfile')));
         // console.log(sessionStorage.getItem('selectedEditorDeviceViewOrientation'));
 
+
+
         try {
+            setIsLoading(true);
+
             // SessionDeviceInputs.getTreeTableNodes(
             //     sessionStorage.getItem('selectedEditorDevice'),
             //     JSON.parse(sessionStorage.getItem('loadedProfile'),
@@ -63,8 +68,11 @@ export default function InputTable() {
         } catch (error) {
             console.log(error);
 
+        } finally {
+            setIsLoading(false);
+
         }
-    }, [selectedEditorDevice, profileContext, SelectedEditorDeviceViewOrientationContext, selectedInputTableInput]);
+    }, [isLoading, selectedEditorDevice, profileContext, SelectedEditorDeviceViewOrientationContext, selectedInputTableInput]);
 
 
     const buttonTableClassName = clsx({
