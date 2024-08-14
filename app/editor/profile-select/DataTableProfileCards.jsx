@@ -11,6 +11,7 @@ import { err } from '@iconfu/svg-inject';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation'
 import { SelectedEditorDeviceContext, SelectedEditorDeviceViewOrientationContext, TreeTableDialogueSelectionContext, TreeTableDialogueVisibilityContext, SelectedInputTableInputContext } from '@components/Provider';
+import { SessionDeviceInputs } from '@app/editor/SessionDeviceInputs.js';
 
 const DataTableProfileCards = (props) => {
     const { selectedEditorDevice, setSelectedEditorDevice } = useContext(SelectedEditorDeviceContext);
@@ -254,11 +255,15 @@ const DataTableProfileCards = (props) => {
                                 sessionStorage.setItem("dialogueVisibility", "false")
                                 sessionStorage.setItem('loadedProfile', JSON.stringify(selectedPreview));
                                 // setSelectedInputTableInput('Front');
-                                // sessionStorage.setItem('selectedEditorInputTableInput', "Front");
+                                sessionStorage.setItem('selectedEditorInputTableInput', "Front");
 
                                 sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Front");
                                 sessionStorage.setItem('selectedEditorDevice', Object.keys(selectedPreview.deviceList)[0]);
                                 console.log("LOADING DEVICE:");
+                                // SessionDeviceInputs.getTreeTableNodes().then((data) => {
+                                //     sessionStorage.setItem('cache_ButtonInputTableData', JSON.stringify(data))
+                                //     setNodes(data)
+                                // });
                                 console.log(Object.keys(selectedPreview.deviceList)[0]);
                             }}>
                             </Button>
