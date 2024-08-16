@@ -238,7 +238,7 @@ export default function InputTable() {
                             </div>
                             <div className='flex flex-col ml-[2px]'>
 
-                                <ActionList layers={node.data.layers} input_direction="inputTable" />
+                                <ActionList layers={node.data.layers} input_direction="inputTable" selectable={false} />
 
                             </div>
                             {/* <div className="spacer-dialogue" />
@@ -261,37 +261,7 @@ export default function InputTable() {
             </span>;
         }
     }
-    const getInputTableType = () => {
-        switch (sessionStorage.getItem('selectedEditorInputTableInput')) {
-            case "Axis":
-                return (
-                    <AxisDataTable />
 
-                );
-                break;
-
-            case "buttons":
-                return (
-                    <Tree
-                        togglerTemplate={togglerTemplate}
-                        selectionMode="single" selectionKeys={selectedKey}
-                        onSelectionChange={(e) => {
-                        }}
-                        type="inputTable"
-                        unstyled
-                        onNodeClick={(e) => {
-                            setSelectedAction(e.node);
-                            // console.log(e.node.key);
-                        }}
-                        // onNodeClick={(e) => {
-                        //     console.log("WHAT IS NODE???:   " + e.data);
-                        // }}
-                        nodeTemplate={nodeTemplate} value={nodes} filter filterBy='label' filterMode="strict" filterPlaceholder="Lenient Filter" className=""
-                    />
-                )
-                break;
-        }
-    }
     return (
         <div className="flex w-full flex-col gap-[8px] pb-[8px] w-[100%] content-center self-center">
             <div className='flex flex-col corner-viewChanger'>

@@ -58,7 +58,7 @@ const BindButton = (props) => {
 
     return (
         <div className='flex flex-col items-center justify-center self-center'>
-            <div className='h-[27px] w-[27px] self-center'>
+            {/* <div className='h-[27px] w-[27px] self-center'>
                 <svg className='chevron' fill="#CEFCFF" viewBox="0 0 24 24" height="100%" width="100%" {...props}>
                     <path
                         fill="#CEFCFF"
@@ -69,7 +69,7 @@ const BindButton = (props) => {
                         d="M17.657 16.95l-1.414 1.414L12 14.12l-4.243 4.243-1.414-1.414L12 11.293l5.657 5.657z"
                     />
                 </svg>
-            </div>
+            </div> */}
 
             <Button
                 id="bindButton"
@@ -88,7 +88,7 @@ const BindButton = (props) => {
                 <p className='bindBtn-input bind-text '>
                     {" ' " + selectedEditorInput.name + " ' "}  </p>
             </Button>
-            <div className='h-[27px] w-[27px] rotate-180'>
+            {/* <div className='h-[27px] w-[27px] rotate-180'>
                 <svg className='chevron' fill="#CEFCFF" viewBox="0 0 24 24" height="100%" width="100%" {...props}>
                     <path
                         fill="#CEFCFF"
@@ -99,7 +99,7 @@ const BindButton = (props) => {
                         d="M17.657 16.95l-1.414 1.414L12 14.12l-4.243 4.243-1.414-1.414L12 11.293l5.657 5.657z"
                     />
                 </svg>
-            </div>
+            </div> */}
         </div>
     )
 }

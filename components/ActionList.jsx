@@ -3,10 +3,10 @@
 import React from 'react'
 import Action from './GameAction'
 import { clsx } from 'clsx'
-import { useContext , useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 
 import { SelectContext } from '@components/Provider';
-const ActionList = ({ layers, input_direction }) => {
+const ActionList = ({ layers, input_direction, selectable }) => {
   // action_id = "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)";
   const data = useContext(SelectContext);
   const classNames = clsx({
@@ -14,35 +14,60 @@ const ActionList = ({ layers, input_direction }) => {
     "action-list-right": input_direction == "right",
     "action-list-inputTable": input_direction == "inputTable",
 
-    "action-list": input_direction !== "left" || "right" 
+    "action-list": input_direction !== "left" || "right"
   });
 
- 
+  if (selectable) {
+    const getSelectedInput = (array) => {
 
-  const getSelectedInput = (array) => {
-    
+      return (
+        array?.map((component, index) => {
+          // console.log("INDEX:  " + index + " |   CURRENT COMPONENT: " + component);
+          return (
+            <Action action_id={component} layer={index} input_direction={input_direction} selectable={true} />
+          )
+        }
+      )
+      )
+    }
+
     return (
-      array?.map((component, index) => {
-        // console.log("INDEX:  " + index + " |   CURRENT COMPONENT: " + component);
-
-        return (
-          <Action action_id={component} layer={index} input_direction={input_direction} />
-        )
-
-      })
+      <div className={classNames}>
+        {/* <Action action_id={action_id} layer={"1"} input_direction={input_direction}/>
+      <Action action_id={action_id} layer={"2"} input_direction={input_direction}/>
+      <Action action_id={action_id} layer={"3"} input_direction={input_direction}/> */}
+        {getSelectedInput(layers)}
+      </div>
     )
 
+  } else {
+
+    const getSelectedInput = (array) => {
+      return (
+        array?.map((component, index) => {
+          // console.log("INDEX:  " + index + " |   CURRENT COMPONENT: " + component);
+
+          return (
+            <Action action_id={component} layer={index} input_direction={input_direction} selectable={true} />
+          )
+
+        })
+      )
+
+    }
+
+
+    return (
+      <div className={classNames}>
+        {/* <Action action_id={action_id} layer={"1"} input_direction={input_direction}/>
+      <Action action_id={action_id} layer={"2"} input_direction={input_direction}/>
+      <Action action_id={action_id} layer={"3"} input_direction={input_direction}/> */}
+        {getSelectedInput(layers)}
+      </div>
+    )
   }
 
 
-  return (
-    <div className={classNames}>
-      {/* <Action action_id={action_id} layer={"1"} input_direction={input_direction}/>
-      <Action action_id={action_id} layer={"2"} input_direction={input_direction}/>
-      <Action action_id={action_id} layer={"3"} input_direction={input_direction}/> */}
-      {getSelectedInput(layers)}
-    </div>
-  )
 }
 
 export default ActionList

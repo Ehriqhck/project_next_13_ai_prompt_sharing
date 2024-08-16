@@ -8,6 +8,7 @@ import Tailwind from 'primereact/passthrough/tailwind';
 export const SelectContext = createContext();
 export const SelectedEditorActionContext = createContext();
 export const SelectedEditorActionTableTargetContext = createContext();
+export const SelectedModLayerContext = createContext();
 
 export const SelectedInputContext = createContext();
 export const SelectedLayerContext = createContext();
@@ -41,6 +42,7 @@ const Provider = ({ children, session }) => {
   const [selectedInputTableInput, setSelectedInputTableInput] = useState("Front");
   const [treeTableDialogueSelection, setTreeTableDialogueSelection] = useState(false);
   const [treeTableDialogueVisibility, setTreeTableDialogueVisibility] = useState(false);
+  const [selectedModLayer, setSelectedModLayer] = useState(0);
 
   const [showEditorPanel, setshowEditorPanel] = useState(false);
   const [showViewerPanel, setshowViewerPanel] = useState(true);
@@ -70,9 +72,12 @@ const Provider = ({ children, session }) => {
                                   <SelectedEditorDeviceViewOrientationContext.Provider value={{ selectedEditorDeviceViewOrientation, setSelectedEditorDeviceViewOrientation }}>
                                     <SelectedInputTableInputContext.Provider value={{ selectedInputTableInput, setSelectedInputTableInput }}>
                                       <TreeTableDialogueSelectionContext.Provider value={{ treeTableDialogueSelection, setTreeTableDialogueSelection }}>
-                                        <TreeTableDialogueVisibilityContext.Provider value={{treeTableDialogueVisibility, setTreeTableDialogueVisibility}}>
+                                        <TreeTableDialogueVisibilityContext.Provider value={{ treeTableDialogueVisibility, setTreeTableDialogueVisibility }}>
+                                          <SelectedModLayerContext.Provider value={{selectedModLayer, setSelectedModLayer }}>
 
-                                          {children}
+                                            {children}
+                                          </SelectedModLayerContext.Provider>
+
                                         </TreeTableDialogueVisibilityContext.Provider>
 
                                       </TreeTableDialogueSelectionContext.Provider>

@@ -9,6 +9,8 @@ import { InputText } from 'primereact/inputtext';
 import { SelectButton } from 'primereact/selectbutton';
 import { GameActions } from './GameActions';
 import { Tree } from 'primereact/tree';
+import ActionList from '@components/ActionList.jsx'
+
 import { classNames } from 'primereact/utils';
 import SeatIcon from '@public/assets/icons/actions/gameCategory/SeatIcon.jsx'
 import ArrowRightIcon from '@public/assets/icons/actions/gameCategory/ArrowRightIcon.jsx'
@@ -118,8 +120,9 @@ import MobiglassIcon from '@public/assets/icons/actions/gameCategory/MobiglassIc
 import RadialMenuIcon from '@public/assets/icons/actions/gameCategory/RadialMenuIcon.jsx'
 import ApertureIcon from '@public/assets/icons/actions/gameCategory/ApertureIcon.jsx'
 import ChevronsRight from '@public/assets/icons/actions/gameCategory/ChevronsRight.jsx'
-
+import ModLayerSelector from '@components/actionSelector/ModLayerSelector';
 import { SelectContext, SelectedActionContext, EditorPanelTitleContext, TreeTableDialogueSelectionContext, TreeTableDialogueVisibilityContext } from '@components/Provider';
+import BindIcon from 'public/assets/icons/generic/bind.svg'
 
 import { Utils } from '@app/editor/utils.js'
 
@@ -149,9 +152,9 @@ export default function TreeTableDialogue(props) {
         GameActions.getTreeTableNodes().then((data) => setNodes(data));
         // setTreeTableDialogueVisibility(JSON.parse(sessionStorage.getItem("dialogueVisibility")))
         // setVisible(treeTableDialogueVisibility)
-console.log(treeTableDialogueSelection);
-setVisible(true)
-setTreeTableDialogueVisibility(true)
+        console.log(treeTableDialogueSelection);
+        setVisible(true)
+        setTreeTableDialogueVisibility(true)
 
     }, [treeTableDialogueVisibility, treeTableDialogueSelection]);
 
@@ -4198,7 +4201,130 @@ setTreeTableDialogueVisibility(true)
 
 
     }
+    const getIconLegend = (node) => {
+        if (Object.hasOwn(node, "children")) {
+            const getChildrenBinded = (children) => {
 
+                let index = 0;
+                const bindNum = children.forEach(child => {
+                    if (child.data.layers[0] !== undefined) {
+                        index += 1;
+
+                    }
+                }
+                );
+                return (index);
+
+            }
+            return (
+                <div className='flex flex-row gap-[12px] h-fit'>
+
+                    <div className='flex flex-row gap-[5px]'>
+                        <p className='text-legend-heading flex self-center mb-[-3px] '>  BINDS: </p>
+                        <div className='flex flex-row gap-[3px] content-center'>
+                            <BindIcon className='self-center w-[17px] h-[17px]' />
+                            <p className='text-legend self-center'>
+                                {getChildrenBinded(node.children)} / {Object.keys(node.children).length}
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            )
+        } else {
+            return (
+                <div className='flex flex-row gap-[12px] h-fit'>
+                    {/* <div className='flex flex-row gap-[3px] '>
+                    <p className='mb-[-3px] text-legend-heading flex self-center leading-[10px]  align-middle  text-center justify-self-center '> AXIS</p>
+                    <div className='flex flex-row h-fit gap-[3px] content-center align-center justify-center'>
+                        <AxisIcon className='self-center w-[17px] h-[17px] align-center' />
+                        <p className=' h-full mb-[-1px] text-legend  align-middle  text-center self-center justify-self-center'>9</p>
+                    </div>
+                </div> */}
+                    <div className='flex flex-row gap-[5px]'>
+                        <p className='text-inputTable flex self-center mb-[-3px] '> BINDS</p>
+                        <div className='flex flex-row gap-[3px] content-center'>
+                            <BindIcon className='self-center w-[17px] h-[17px]' />
+                            <p className='text-legend self-center'>
+
+                                {node.data.layers.length}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            )
+
+        }
+    }
+
+    const getSlotIcon = (node, width, height) => {
+
+        if (!Object.hasOwn(node.data, 'slotName')) {
+            return <p className='text-GameAction-Category-Heading'> {node.label}</p>;
+        } else {
+            return (
+                <div className='flex corner-inputTableIcons'>
+                    {Utils.getInputSlotIcons(node.data.slotName, width, height)}
+
+                </div>
+            )
+        }
+    }
+
+    const selection = (node) => {
+        if (node !== false) {
+            try {
+                return (
+                    <div type="inputTable" className=" flex flex-col   " tabIndex={-1}
+                        onClick={console.log(treeTableDialogueSelection)}>
+                        <div className='flex flex-row content-start w-full pr-[16px]  self-start gap-[8px] '>
+
+                            <div className='flex flex-row justify-between w-full'>
+                                {/* {getCategoryHeader(node)} */}
+                                <div type="inputTable" className='flex flex-col gap-[8px]'>
+
+                                    <p className='text-legend-heading'> {treeTableDialogueSelection.label} </p>
+                                    <div className='flex flex-row gap-[0px]'>
+                                        <div classname='ml-[4px]'>
+                                            {Utils.getSelectedDeviceIcon(sessionStorage.getItem('selectedEditorDevice'), '40px')}
+                                        </div>
+                                        <div className="spacer-default " />
+
+                                        {Utils.getInputIcon(treeTableDialogueSelection.data.buttonName, '32px')}
+
+                                        {getSlotIcon(treeTableDialogueSelection, "32px")}
+                                    </div>
+
+                                    {getIconLegend(treeTableDialogueSelection)}
+
+                                </div>
+                            </div>
+                            <div className='flex flex-col ml-[2px]'>
+
+                                <ActionList
+                                    layers={treeTableDialogueSelection.data.layers}
+                                    input_direction="inputTable"
+                                    selectable={true} />
+                            </div>
+
+                        </div>
+                    </div>
+
+                )
+            } catch (error) {
+                console.log(error)
+                return (
+                    <>error</>
+                )
+            }
+        } else {
+            return (
+                <>error</>
+            )
+        }
+
+
+    }
     return (
         <div className=" flex justify-content-center radial-outline">
             <Button label="Login" icon="pi pi-user" onClick={() => setVisible(true)} />
@@ -4229,37 +4355,23 @@ setTreeTableDialogueVisibility(true)
                             <div className='flex flex-row h-full self-center bind-panel-default '>
                                 <div className='corner-inputTableIcon gap-[12px] flex flex-row content-center align-middle'>
                                     <div className='corner-inputTableIcons flex flex-row gap-[8px]'>
-                                        <div classname='ml-[4px]'>
-                                            {Utils.getSelectedDeviceIcon(sessionStorage.getItem('selectedEditorDevice'), '40px')}
-                                        </div>
-                                        <div className='spacer-vertical h-[100px] '></div>
 
-                                        <div className='flex flex-col self-center gap-[4px]  justify-start '>
+
+                                        {/* <div className='flex flex-col self-center gap-[4px]  justify-start '>
                                             <p className='text-legend-heading'>{editorPanelTitle.toUpperCase()}</p>
                                             <div className=' '>
                                                 {Utils.getInputIcon(sessionStorage.getItem('selectedEditorDeviceButton'), '40px')}
 
                                             </div>
-                                        </div>
-
+                                        </div> */}
+                                        {selection()}
                                     </div>
 
                                     <ChevronsRight width="30px" />
-                                    <div className='corner-inputTableIcons flex flex-row gap-[8px]'>
+                                    <div className='corner-inputTableIcons flex flex-col gap-[8px] h-full'>
                                         {selectedGameAction}
-                                        <Button label="hide" icon="pi pi-external-link"
-                                            onClick={() => {
-                                                // const elem = document.querySelector("div[data-pc-section='mask']:has(div[id='gameActionDialogue'])");
-                                                // elem.style.display = 'none'
-                                                setVisible(false)
-                                                // sessionStorage.setItem("dialogueVisibility", "false")
-                                                // setTreeTableDialogueVisibility(false)
-                                                // setTreeTableDialogueVisibility(!visible)
-                                                // console.log(
-                                                //     sessionStorage.getItem("dialogueVisibility"), treeTableDialogueVisibility, visible
-                                                // );
-
-                                            }} />
+                                        <ModLayerSelector />
+                                        <BindButton />
 
                                     </div>
 
@@ -4269,6 +4381,19 @@ setTreeTableDialogueVisibility(true)
                                 </div>
 
                             </div>
+                            <Button label="hide" icon="pi pi-external-link"
+                                onClick={() => {
+                                    // const elem = document.querySelector("div[data-pc-section='mask']:has(div[id='gameActionDialogue'])");
+                                    // elem.style.display = 'none'
+                                    setVisible(false)
+                                    // sessionStorage.setItem("dialogueVisibility", "false")
+                                    // setTreeTableDialogueVisibility(false)
+                                    // setTreeTableDialogueVisibility(!visible)
+                                    // console.log(
+                                    //     sessionStorage.getItem("dialogueVisibility"), treeTableDialogueVisibility, visible
+                                    // );
+
+                                }} />
                             <Tree
                                 togglerTemplate={togglerTemplate}
                                 selectionMode="single" selectionKeys={selectedKey}

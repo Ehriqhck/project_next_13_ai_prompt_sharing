@@ -17,7 +17,7 @@ const ModLayerSelector = props => {
 
   const getAllChips = props => {
     return (
-      <>
+      < >
         <LayerChip layer={0} isButton = 'true'/>
         <LayerChip layer={1} isButton = 'true' />
         <LayerChip layer={2} isButton = 'true' />
@@ -25,16 +25,11 @@ const ModLayerSelector = props => {
     )
   }
   return (
-    <section>
-      <div className='flex flex-col gap-[8px]'>
-        <p className='text-base'>// SELECT MODIFIER LAYER (OPTIONAL)</p>
         <div className='flex flex-row gap-[8px] ml-[4px]'>
           {/* <LayerChip layer="1" isButton='true' />
                 <LayerChip layer="2" isButton='true' /> */}
           {getAllChips()}
         </div>
-      </div>
-    </section>
   )
 }
 

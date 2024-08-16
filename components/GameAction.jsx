@@ -3,16 +3,16 @@
 import React from 'react'
 import LayerTag from '@components/generic/LayerTag.jsx';
 import clsx from 'clsx';
-const Action = ({action_id, layer, input_direction}) => {
-   
+const Action = ({ action_id, layer, input_direction, selectable }) => {
+
     const getClassNames = (input_direction) => {
         switch (input_direction) {
             case 'inputTable':
                 return (inputTableClassNames);
                 break;
-        
+
             default:
-                return(actionTextClassNames)
+                return (actionTextClassNames)
                 break;
         }
     }
@@ -25,7 +25,7 @@ const Action = ({action_id, layer, input_direction}) => {
         'text-layer3 ': layer == "2",
 
         'default text-modifier': input_direction == "top" || "press" || "bottom",
-        'inputTable-layerText' : input_direction == 'inputTable',
+        'inputTable-layerText': input_direction == 'inputTable',
         'left text-modifier': input_direction == "left",
         'right text-modifier': input_direction == "right",
 
@@ -38,7 +38,7 @@ const Action = ({action_id, layer, input_direction}) => {
         'text-layer2 ': layer == "1",
         'text-layer3 ': layer == "2",
 
-        'inputTable-layerText' : true,
+        'inputTable-layerText': true,
 
 
 
@@ -53,21 +53,39 @@ const Action = ({action_id, layer, input_direction}) => {
 
     });
 
- 
 
- 
+    const render = () => {
+        if (selectable) {
+            return (
+                <div className={actionDirectionClassNames} >
+                    <div className='layer-tag'>
+                        <LayerTag layerNumber={layer} input_direction={input_direction} />
+                    </div>
+                    <p className={getClassNames(input_direction)}> {action_id} </p>
+                </div>
+            )
 
+
+        } else {
+            return (
+                // <>{getLayer(action_id.layer)} </>
+                <div className={actionDirectionClassNames} >
+                    <div className='layer-tag'>
+                        <LayerTag layerNumber={layer} input_direction={input_direction} />
+                    </div>
+                    <p className={getClassNames(input_direction)}> {action_id} </p>
+                </div>
+
+            )
+        }
+    }
     return (
         // <>{getLayer(action_id.layer)} </>
-        <> 
-        <div className={actionDirectionClassNames} >
-            <div className='layer-tag'>
-                <LayerTag layerNumber={layer} input_direction={input_direction}/>
-            </div>
-            <p className={getClassNames(input_direction)}> {action_id} </p>
-        </div></>
+        { render }
 
     )
+
+
 }
 
 export default Action

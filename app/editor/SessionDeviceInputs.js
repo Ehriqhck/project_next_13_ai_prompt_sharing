@@ -26,6 +26,7 @@ export const SessionDeviceInputs = {
           key: childKey,
           label: profileContext?.deviceList[selectedEditorDevice]?.buttons[selectedDeviceOrientation][buttonName][slot]?.name,
           data: {
+            buttonName: buttonName,
             slotName: slot,
             layers: profileContext?.deviceList[selectedEditorDevice]?.buttons[selectedDeviceOrientation][buttonName][slot]?.layers
           }
