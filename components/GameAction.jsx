@@ -3,6 +3,7 @@
 import React from 'react'
 import LayerTag from '@components/generic/LayerTag.jsx';
 import clsx from 'clsx';
+import { Utils } from '@app/editor/utils';
 const Action = ({ action_id, layer, input_direction, selectable }) => {
 
     const getClassNames = (input_direction) => {
@@ -12,11 +13,31 @@ const Action = ({ action_id, layer, input_direction, selectable }) => {
                 break;
 
             default:
-                return (actionTextClassNames)
+                if (selectable) {
+                    return (actionButtonClassNames)
+                } else {
+
+                }
+                return (
+                    actionTextClassNames
+                )
                 break;
         }
     }
+    const actionButtonClassNames = clsx({
 
+
+        'text-layer1 ': layer == "0",
+        'text-layer2 ': layer == "1",
+        'text-layer3 ': layer == "2",
+
+        'default text-modifier': input_direction == "top" || "press" || "bottom",
+        'inputTable-layerText': input_direction == 'inputTable',
+        'left text-modifier': input_direction == "left",
+        'right text-modifier': input_direction == "right",
+
+
+    });
     const actionTextClassNames = clsx({
 
 
@@ -57,12 +78,26 @@ const Action = ({ action_id, layer, input_direction, selectable }) => {
     const render = () => {
         if (selectable) {
             return (
-                <div className={actionDirectionClassNames} >
-                    <div className='layer-tag'>
-                        <LayerTag layerNumber={layer} input_direction={input_direction} />
+                <label
+                    onClick={() => {
+                        // setSelectedLayer(props.layer);
+                        // console.log(props.layer);
+                    }}
+                    for={"choice-" + layer}
+                    className={'gameAction-' + layer + '-button'}
+                >
+
+                    <input type="radio" value={layer} name="modselect" id={"choice-" + layer} />
+
+                    <div className={actionButtonClassNames} >
+                        <div className='flex flex-row gap-[8px]'>
+                            <LayerTag layerNumber={layer} input_direction={input_direction} selectable={true} />
+                            <p className={getClassNames(input_direction) + " whitespace-nowrap"}> {action_id} </p>
+
+                        </div>
                     </div>
-                    <p className={getClassNames(input_direction)}> {action_id} </p>
-                </div>
+                </label>
+
             )
 
 

@@ -4338,16 +4338,9 @@ export default function TreeTableDialogue(props) {
                 closable
                 unstyled
                 closeOnEscape
-                // onShow={() => {
-                //     setTreeTableDialogueVisibility(false)
-                // }}
                 className=' hidden'
 
-                // onHide={() => {
-                //     sessionStorage.setItem("dialogueVisibility", "false")
-                //     setTreeTableDialogueVisibility(false)
-                //     setVisible(false)
-                // }}
+
                 content={() => (
                     <div className='w-[100vw] h-[100vh]  justify-content-center self-center justify-center flex' >
 
@@ -4370,7 +4363,7 @@ export default function TreeTableDialogue(props) {
                                     <ChevronsRight width="30px" />
                                     <div className='corner-inputTableIcons flex flex-col gap-[8px] h-full'>
                                         {selectedGameAction}
-                                        <ModLayerSelector />
+                                        {/* <ModLayerSelector /> */}
                                         <BindButton />
 
                                     </div>
@@ -4383,15 +4376,15 @@ export default function TreeTableDialogue(props) {
                             </div>
                             <Button label="hide" icon="pi pi-external-link"
                                 onClick={() => {
-                                    // const elem = document.querySelector("div[data-pc-section='mask']:has(div[id='gameActionDialogue'])");
-                                    // elem.style.display = 'none'
+
+                                    console.log(JSON.parse(sessionStorage.getItem('loadedProfile')),
+                                    );
+
+                                }} />
+                            <Button label="hide" icon="pi pi-external-link"
+                                onClick={() => {
+
                                     setVisible(false)
-                                    // sessionStorage.setItem("dialogueVisibility", "false")
-                                    // setTreeTableDialogueVisibility(false)
-                                    // setTreeTableDialogueVisibility(!visible)
-                                    // console.log(
-                                    //     sessionStorage.getItem("dialogueVisibility"), treeTableDialogueVisibility, visible
-                                    // );
 
                                 }} />
                             <Tree

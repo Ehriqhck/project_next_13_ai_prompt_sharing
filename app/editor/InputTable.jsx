@@ -45,21 +45,11 @@ export default function InputTable() {
     const [selectedNodeKey, setSelectedNodeKey] = useState(null);
     const [metaKey, setMetaKey] = useState(true);
     useEffect(() => {
-        // console.log("AOSIJF:OAKSLFH:ALSFHJALKFHALKS:HF ____________");
-        // console.log(sessionStorage.getItem('selectedEditorDevice'));
-        // console.log(JSON.parse(sessionStorage.getItem('loadedProfile')));
-        // console.log(sessionStorage.getItem('selectedEditorDeviceViewOrientation'));
-
-
+   
 
         try {
             setIsLoading(true);
 
-            // SessionDeviceInputs.getTreeTableNodes(
-            //     sessionStorage.getItem('selectedEditorDevice'),
-            //     JSON.parse(sessionStorage.getItem('loadedProfile'),
-            //     "Front"
-            //     )).then((data) => setNodes(data));
 
             SessionDeviceInputs.getTreeTableNodes().then((data) => {
                 sessionStorage.setItem('cache_ButtonInputTableData', JSON.stringify(data))
@@ -140,15 +130,7 @@ export default function InputTable() {
 
         }
     }
-    const openDialogue = (selectedNode) => {
-
-
-        setTreeTableDialogueVisibility(true)
-        setTreeTableDialogueSelection("fhgfhgf")
-        console.log(treeTableDialogueSelection);
-        console.log(selectedNode.data);
-
-    }
+ 
     const togglerTemplate = (node, options) => {
         const getSlotIcon = (node) => {
 

@@ -28,7 +28,8 @@ export const SessionDeviceInputs = {
           data: {
             buttonName: buttonName,
             slotName: slot,
-            layers: profileContext?.deviceList[selectedEditorDevice]?.buttons[selectedDeviceOrientation][buttonName][slot]?.layers
+            layers: profileContext?.deviceList[selectedEditorDevice]?.buttons[selectedDeviceOrientation][buttonName][slot]?.layers,
+            category: "temp"
           }
         });
       });

@@ -24,7 +24,8 @@ const ActionList = ({ layers, input_direction, selectable }) => {
         array?.map((component, index) => {
           // console.log("INDEX:  " + index + " |   CURRENT COMPONENT: " + component);
           return (
-            <Action action_id={component} layer={index} input_direction={input_direction} selectable={true} />
+            <Action action_id={component} 
+            layer={index} input_direction={input_direction} selectable={true} />
           )
         }
       )
@@ -32,10 +33,8 @@ const ActionList = ({ layers, input_direction, selectable }) => {
     }
 
     return (
-      <div className={classNames}>
-        {/* <Action action_id={action_id} layer={"1"} input_direction={input_direction}/>
-      <Action action_id={action_id} layer={"2"} input_direction={input_direction}/>
-      <Action action_id={action_id} layer={"3"} input_direction={input_direction}/> */}
+      <div className={'action-list-dialogue'}>
+
         {getSelectedInput(layers)}
       </div>
     )
@@ -48,7 +47,7 @@ const ActionList = ({ layers, input_direction, selectable }) => {
           // console.log("INDEX:  " + index + " |   CURRENT COMPONENT: " + component);
 
           return (
-            <Action action_id={component} layer={index} input_direction={input_direction} selectable={true} />
+            <Action action_id={component} layerNode={component} layer={index} input_direction={input_direction} selectable={false} />
           )
 
         })

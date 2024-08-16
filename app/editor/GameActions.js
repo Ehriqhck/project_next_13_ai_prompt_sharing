@@ -19,6 +19,8 @@ export const GameActions = {
               name: 'Eject',
               category: 'Vehicles / Seats & Operator Modes',
               actionmapName: 'seat_general',
+              category: 'Vehicles / Seats & Operator Modes',
+
               inputType: 'Press'
             }
           },
@@ -29,6 +31,8 @@ export const GameActions = {
               name: 'Emergency Exit Seat',
               category: 'Vehicles / Seats & Operator Modes',
               actionmapName: 'seat_general',
+              category: 'Vehicles / Seats & Operator Modes',
+
               inputType: 'Press'
             }
           },
@@ -39,6 +43,8 @@ export const GameActions = {
               name: 'Cycle Operator Mode Back',
               category: 'Vehicles / Seats & Operator Modes',
               actionmapName: 'seat_general',
+              category: 'Vehicles / Seats & Operator Modes',
+
               inputType: 'Press'
             }
           },
@@ -49,6 +55,8 @@ export const GameActions = {
               name: 'Cycle Operator Mode Forward',
               category: 'Vehicles / Seats & Operator Modes',
               actionmapName: 'seat_general',
+              category: 'Vehicles / Seats & Operator Modes',
+
               inputType: 'Press'
             }
           },
@@ -59,6 +67,8 @@ export const GameActions = {
               name: 'Toggle Mining Mode',
               category: 'Vehicles / Seats & Operator Modes',
               actionmapName: 'seat_general',
+              category: 'Vehicles / Seats & Operator Modes',
+
               inputType: 'Toggle'
             }
           },
@@ -69,6 +79,8 @@ export const GameActions = {
               name: 'Toggle Quantum Mode',
               category: 'Vehicles / Seats & Operator Modes',
               actionmapName: 'seat_general',
+              category: 'Vehicles / Seats & Operator Modes',
+
               inputType: 'Toggle'
             }
           },
@@ -79,6 +91,8 @@ export const GameActions = {
               name: 'Toggle Salvage Mode',
               category: 'Vehicles / Seats & Operator Modes',
               actionmapName: 'seat_general',
+              category: 'Vehicles / Seats & Operator Modes',
+
               inputType: 'Toggle'
             }
           },
@@ -89,6 +103,8 @@ export const GameActions = {
               name: 'Toggle Scan Mode',
               category: 'Vehicles / Seats & Operator Modes',
               actionmapName: 'seat_general',
+              category: 'Vehicles / Seats & Operator Modes',
+
               inputType: 'Toggle'
             }
           },
@@ -99,6 +115,8 @@ export const GameActions = {
               name: 'Look Behind',
               category: 'Vehicles / Seats & Operator Modes',
               actionmapName: 'seat_general',
+              category: 'Vehicles / Seats & Operator Modes',
+
               inputType: 'Press'
             }
           }
@@ -4109,7 +4127,7 @@ export const GameActions = {
             },
             key: 'v_horn',
             label: 'Horn'
-          },
+          }
           // {
           //   data: {
           //     actionmapName: 'vehicle_general',
@@ -5172,7 +5190,7 @@ export const GameActions = {
             },
             label: 'FOIP Selfie Camera'
           },
-     
+
           {
             key: 'headtrack_enabled',
             data: {
