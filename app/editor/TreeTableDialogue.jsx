@@ -4377,7 +4377,7 @@ export default function TreeTableDialogue(props) {
                             <Button label="hide" icon="pi pi-external-link"
                                 onClick={() => {
 
-                                    console.log(JSON.parse(sessionStorage.getItem('loadedProfile')),
+                                    console.log(JSON.parse(sessionStorage.getItem('cache_ButtonInputTableData') ),
                                     );
 
                                 }} />

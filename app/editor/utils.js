@@ -154,7 +154,7 @@ import QuestionMark from '@components/generic/Icons/QuestionIcon.svg'
 
 export const Utils = {
   getGameActionIcon (key) {
-    switch (node.key) {
+    switch (key) {
       // Reset Icon
       case 'v_target_cycle_friendly_reset':
       case 'v_target_cycle_attacker_reset':
@@ -2647,11 +2647,15 @@ export const Utils = {
         break
     }
   },
-  getCategoryIcon ({category, key}) {
+  getCategoryIcon (node) {
+    console.log("HEKLLLLOOOOO");
+    
+    console.log(node);
+    
     if (Object.hasOwn(node, 'children')) {
       return
     }
-    if (category === 'Camera / Advanced Camera Controls') {
+    if (node.data.category === 'Camera / Advanced Camera Controls') {
       return (
         <div className=' flex flex-row mr-[5px]'>
           {getActionTypeIcon.getIcon('vehicles')}
@@ -2663,12 +2667,12 @@ export const Utils = {
                     <ArrowRightIcon />
                 </div> */}
           <div className='flex self-center content-center align-middle'>
-            {getGameActionIcon(key)}
+            {this.getGameActionIcon(node.key)}
           </div>
         </div>
       )
     }
-    if (category === 'Quick Keys, Interaction, & Inner Thought') {
+    if (node.data.category === 'Quick Keys, Interaction, & Inner Thought') {
       return (
         <div className=' flex flex-row mr-[5px]'>
           {getActionTypeIcon.getIcon('vehicles')}
@@ -2680,12 +2684,12 @@ export const Utils = {
                     <ArrowRightIcon />
                 </div> */}
           <div className='flex self-center content-center align-middle'>
-            {getGameActionIcon(key)}
+            {this.getGameActionIcon(node.key)}
           </div>
         </div>
       )
     }
-    if (category === 'Social / General') {
+    if (node.data.category === 'Social / General') {
       return (
         <div className=' flex flex-row mr-[5px]'>
           {getActionTypeIcon.getIcon('vehicles')}
@@ -2697,12 +2701,12 @@ export const Utils = {
                     <ArrowRightIcon />
                 </div> */}
           <div className='flex self-center content-center align-middle'>
-            {getGameActionIcon(key)}
+            {this.getGameActionIcon(node.key)}
           </div>
         </div>
       )
     }
-    if (category === 'VOIP, FOIP, and Headtracking') {
+    if (node.data.category === 'VOIP, FOIP, and Headtracking') {
       return (
         <div className=' flex flex-row mr-[5px]'>
           {getActionTypeIcon.getIcon('vehicles')}
@@ -2714,12 +2718,12 @@ export const Utils = {
                     <ArrowRightIcon />
                 </div> */}
           <div className='flex self-center content-center align-middle'>
-            {getGameActionIcon(key)}
+            {this.getGameActionIcon(node.key)}
           </div>
         </div>
       )
     }
-    if (category === 'Electronic Access / Spectator') {
+    if (node.data.category === 'Electronic Access / Spectator') {
       return (
         <div className=' flex flex-row mr-[5px]'>
           {getActionTypeIcon.getIcon('vehicles')}
@@ -2731,12 +2735,12 @@ export const Utils = {
                     <ArrowRightIcon />
                 </div> */}
           <div className='flex self-center content-center align-middle'>
-            {getGameActionIcon(key)}
+            {this.getGameActionIcon(node.key)}
           </div>
         </div>
       )
     }
-    if (category === 'Lights') {
+    if (node.data.category === 'Lights') {
       return (
         <div className=' flex flex-row mr-[5px]'>
           {getActionTypeIcon.getIcon('vehicles')}
@@ -2746,15 +2750,15 @@ export const Utils = {
 
           <div className='flex flex-row gap-[3px]'>
             <div className='flex self-center content-center align-middle'>
-              {getGameActionIcon(key)}
+              {this.getGameActionIcon(node.key)}
             </div>
           </div>
         </div>
       )
     }
     if (
-      category === 'Ground Vehicle / General' ||
-      category === 'Ground Vehicle / Movement'
+      node.data.category === 'Ground Vehicle / General' ||
+      node.data.category === 'Ground Vehicle / Movement'
     ) {
       return (
         <div className=' flex flex-row mr-[5px]'>
@@ -2765,13 +2769,13 @@ export const Utils = {
 
           <div className='flex flex-row gap-[3px]'>
             <div className='flex self-center content-center align-middle'>
-              {getGameActionIcon(key)}
+              {this.getGameActionIcon(node.key)}
             </div>
           </div>
         </div>
       )
     }
-    if (category === 'Stopwatch') {
+    if (node.data.category === 'Stopwatch') {
       return (
         <div className=' flex flex-row mr-[5px]'>
           {getActionTypeIcon.getIcon('vehicles')}
@@ -2781,13 +2785,13 @@ export const Utils = {
 
           <div className='flex flex-row gap-[3px]'>
             <div className='flex self-center content-center align-middle'>
-              {getGameActionIcon(key)}
+              {this.getGameActionIcon(node.key)}
             </div>
           </div>
         </div>
       )
     }
-    if (category === 'Flight / Power') {
+    if (node.data.category === 'Flight / Power') {
       return (
         <div className=' flex flex-row mr-[5px]'>
           {getActionTypeIcon.getIcon('vehicles')}
@@ -2799,12 +2803,12 @@ export const Utils = {
                     <ArrowRightIcon />
                 </div> */}
           <div className='flex self-center content-center align-middle'>
-            {getGameActionIcon(key)}
+            {this.getGameActionIcon(node.key)}
           </div>
         </div>
       )
     }
-    if (category === 'Flight / HUD') {
+    if (node.data.category === 'Flight / HUD') {
       return (
         <div className=' flex flex-row mr-[5px]'>
           {getActionTypeIcon.getIcon('vehicles')}
@@ -2816,12 +2820,12 @@ export const Utils = {
                     <ArrowRightIcon />
                 </div> */}
           <div className='flex self-center content-center align-middle'>
-            {getGameActionIcon(key)}
+            {this.getGameActionIcon(node.key)}
           </div>
         </div>
       )
     }
-    if (category === 'Vehicles / Power Triangle Assignment') {
+    if (node.data.category === 'Vehicles / Power Triangle Assignment') {
       return (
         <div className=' flex flex-row mr-[5px]'>
           {getActionTypeIcon.getIcon('vehicles')}
@@ -2833,12 +2837,12 @@ export const Utils = {
                     <ArrowRightIcon />
                 </div> */}
           <div className='flex self-center content-center align-middle'>
-            {getGameActionIcon(key)}
+            {this.getGameActionIcon(node.key)}
           </div>
         </div>
       )
     }
-    if (category === 'Vehicles / Shields and Countermeasures') {
+    if (node.data.category === 'Vehicles / Shields and Countermeasures') {
       return (
         <div className=' flex flex-row mr-[5px]'>
           {getActionTypeIcon.getIcon('vehicles')}
@@ -2850,7 +2854,7 @@ export const Utils = {
                     <ArrowRightIcon />
                 </div> */}
           <div className='flex self-center content-center align-middle'>
-            {getGameActionIcon(key)}
+            {this.getGameActionIcon(node.key)}
           </div>
         </div>
       )
@@ -2876,7 +2880,7 @@ export const Utils = {
                 <div className='w-[26px] self-center'>
                   <TargetingIconFriendly />
                 </div>
-                {getGameActionIcon(key)}
+                {this.getGameActionIcon(node.key)}
               </div>
             </div>
           )
@@ -2891,7 +2895,7 @@ export const Utils = {
               </div>
 
               <div className='flex flex-row gap-[3px]'>
-                {getGameActionIcon(key)}
+                {this.getGameActionIcon(node.key)}
               </div>
             </div>
           )
@@ -2913,7 +2917,7 @@ export const Utils = {
                 <div className='w-[26px] self-center'>
                   <TargetingIconAttacker />
                 </div>
-                {getGameActionIcon(key)}
+                {this.getGameActionIcon(node.key)}
               </div>
             </div>
           )
@@ -2936,7 +2940,7 @@ export const Utils = {
                 <div className='w-[26px] self-center'>
                   <TargetingIconHostile />
                 </div>
-                {getGameActionIcon(key)}
+                {this.getGameActionIcon(node.key)}
               </div>
             </div>
           )
@@ -2955,7 +2959,7 @@ export const Utils = {
               </div>
               <div className='flex flex-row gap-[3px]'>
                 <div className='flex self-center content-center align-middle'>
-                  {getGameActionIcon(key)}
+                  {this.getGameActionIcon(node.key)}
                 </div>
               </div>
             </div>
@@ -2977,7 +2981,7 @@ export const Utils = {
               </div>
               <div className='flex flex-row gap-[3px]'>
                 <div className='flex self-center content-center align-middle'>
-                  {getGameActionIcon(key)}
+                  {this.getGameActionIcon(node.key)}
                 </div>
               </div>
             </div>
@@ -2996,7 +3000,7 @@ export const Utils = {
               </div>
               <div className='flex flex-row gap-[3px]'>
                 <div className='flex self-center content-center align-middle'>
-                  {getGameActionIcon(key)}
+                  {this.getGameActionIcon(node.key)}
                 </div>
               </div>
             </div>
@@ -3018,13 +3022,13 @@ export const Utils = {
                 <ArrowRightIcon />
             </div> */}
           <div className='flex self-center content-center align-middle'>
-            {getGameActionIcon(key)}
+            {this.getGameActionIcon(node.key)}
           </div>
         </div>
       )
     }
 
-    if (category === 'Vehicles / Missiles') {
+    if (node.data.category === 'Vehicles / Missiles') {
       return (
         <div className=' flex flex-row mr-[5px]'>
           {getActionTypeIcon.getIcon('vehicles')}
@@ -3034,14 +3038,14 @@ export const Utils = {
 
           <div className='flex flex-row gap-[3px]'>
             <div className='flex self-center content-center align-middle'>
-              {getGameActionIcon(key)}
+              {this.getGameActionIcon(node.key)}
             </div>
           </div>
         </div>
       )
     }
 
-    if (category === 'Flight / Docking') {
+    if (node.data.category === 'Flight / Docking') {
       return (
         <div className=' flex flex-row mr-[5px]'>
           {getActionTypeIcon.getIcon('vehicles')}
@@ -3050,14 +3054,14 @@ export const Utils = {
           </div>
           <div className='flex flex-row gap-[3px]'>
             <div className='flex self-center content-center align-middle'>
-              {getGameActionIcon(key)}
+              {this.getGameActionIcon(node.key)}
             </div>
           </div>
         </div>
       )
     }
 
-    if (category === 'Vehicles / Salvage') {
+    if (node.data.category === 'Vehicles / Salvage') {
       return (
         <div className=' flex flex-row mr-[5px]'>
           {getActionTypeIcon.getIcon('vehicles')}
@@ -3069,13 +3073,13 @@ export const Utils = {
                     <ArrowRightIcon />
                 </div> */}
           <div className='flex self-center content-center align-middle'>
-            {getGameActionIcon(key)}
+            {this.getGameActionIcon(node.key)}
           </div>
         </div>
       )
     }
 
-    if (category === 'Vehicles / Salvage / Nudging') {
+    if (node.data.category === 'Vehicles / Salvage / Nudging') {
       return (
         <div className=' flex flex-row mr-[5px]'>
           {getActionTypeIcon.getIcon('vehicles')}
@@ -3093,14 +3097,14 @@ export const Utils = {
           </div>
           <div className='flex flex-row gap-[3px]'>
             <div className='flex self-center content-center align-middle'>
-              {getGameActionIcon(key)}
+              {this.getGameActionIcon(node.key)}
             </div>
           </div>
         </div>
       )
     }
 
-    if (category === 'Vehicles / Salvage / Tractor Beam') {
+    if (node.data.category === 'Vehicles / Salvage / Tractor Beam') {
       return (
         <div className=' flex flex-row mr-[5px]'>
           {getActionTypeIcon.getIcon('vehicles')}
@@ -3116,13 +3120,13 @@ export const Utils = {
 
           <div className='flex flex-row gap-[3px]'>
             <div className='flex self-center content-center align-middle mx-[3px]'>
-              {getGameActionIcon(key)}
+              {this.getGameActionIcon(node.key)}
             </div>
           </div>
         </div>
       )
     }
-    if (category === 'Vehicles / Salvage / Disintegration Beam') {
+    if (node.data.category === 'Vehicles / Salvage / Disintegration Beam') {
       return (
         <div className=' flex flex-row mr-[5px]'>
           {getActionTypeIcon.getIcon('vehicles')}
@@ -3138,7 +3142,7 @@ export const Utils = {
 
           <div className='flex flex-row gap-[3px]'>
             <div className='flex self-center content-center align-middle'>
-              {getGameActionIcon(key)}
+              {this.getGameActionIcon(node.key)}
             </div>
           </div>
         </div>
@@ -3158,13 +3162,13 @@ export const Utils = {
 
           <div className='flex flex-row gap-[3px]'>
             <div className='flex self-center content-center align-middle'>
-              {getGameActionIcon(key)}
+              {this.getGameActionIcon(node.key)}
             </div>
           </div>
         </div>
       )
     }
-    if (category === 'Vehicles / Weapons') {
+    if (node.data.category === 'Vehicles / Weapons') {
       return (
         <div className=' flex flex-row mr-[5px]'>
           {getActionTypeIcon.getIcon('vehicles')}
@@ -3176,7 +3180,7 @@ export const Utils = {
                     <ArrowRightIcon />
                 </div> */}
           <div className='flex self-center content-center align-middle'>
-            {getGameActionIcon(key)}
+            {this.getGameActionIcon(node.key)}
           </div>
         </div>
       )
@@ -3190,7 +3194,7 @@ export const Utils = {
           </div>
 
           <div className='flex self-center content-center align-middle'>
-            {getGameActionIcon(key)}
+            {this.getGameActionIcon(node.key)}
           </div>
         </div>
       )
@@ -3207,7 +3211,7 @@ export const Utils = {
             <ScanningIcon />
           </div>
 
-          {getGameActionIcon(key)}
+          {this.getGameActionIcon(node.key)}
         </div>
       )
     }
@@ -3221,7 +3225,7 @@ export const Utils = {
     //         <div className='w-[26px] self-center mx-[3px]'>
     //             <TargetingIcon />
     //         </div>
-    //         {getGameActionIcon(key)}
+    //         {this.getGameActionIcon(node.key)}
 
     //     </div>
     //     )
@@ -3230,7 +3234,7 @@ export const Utils = {
       return (
         <div className=' flex flex-row mr-[5px]'>
           {getActionTypeIcon.getIcon('vehicles')}
-          {getGameActionIcon(key)}
+          {this.getGameActionIcon(node.key)}
 
           <div className='w-[20px] self-center mx-[3px]'>
             <ArrowRightIcon />
@@ -3253,11 +3257,11 @@ export const Utils = {
             <CameraIcon />
           </div>
 
-          <div className=' self-center mx-[3px]'>{getGameActionIcon(key)}</div>
+          <div className=' self-center mx-[3px]'>{this.getGameActionIcon(node.key)}</div>
         </div>
       )
     }
-    if (category === 'Flight / Movement / Maneuvering') {
+    if (node.data.category === 'Flight / Movement / Maneuvering') {
       return (
         <div className=' flex flex-row mr-[5px]'>
           {getActionTypeIcon.getIcon('spaceship')}
@@ -3265,11 +3269,11 @@ export const Utils = {
             <MoveIcon />
           </div>
 
-          {getGameActionIcon(key)}
+          {this.getGameActionIcon(node.key)}
         </div>
       )
     }
-    if (category === 'Flight / Movement / Limiters') {
+    if (node.data.category === 'Flight / Movement / Limiters') {
       return (
         <div className=' flex flex-row mr-[5px]'>
           {getActionTypeIcon.getIcon('spaceship')}
@@ -3277,18 +3281,18 @@ export const Utils = {
             <SpeedometerIcon />
           </div>
 
-          {getGameActionIcon(key)}
+          {this.getGameActionIcon(node.key)}
         </div>
       )
     }
-    if (category === 'Flight / Movement') {
+    if (node.data.category === 'Flight / Movement') {
       return (
         <div className=' flex flex-row mr-[5px]'>
           {getActionTypeIcon.getIcon('spaceship')}
           <div className='w-[26px] self-center mr-[3px] '>
             <SpeedometerIcon />
           </div>
-          {getGameActionIcon(key)}
+          {this.getGameActionIcon(node.key)}
         </div>
       )
     }
@@ -3314,7 +3318,7 @@ export const Utils = {
               <SeatIcon />
             </div>
 
-            {getGameActionIcon(key)}
+            {this.getGameActionIcon(node.key)}
           </div>
         )
 
@@ -3328,7 +3332,7 @@ export const Utils = {
               <SeatIcon />
             </div>
 
-            {getGameActionIcon(key)}
+            {this.getGameActionIcon(node.key)}
           </div>
         )
 

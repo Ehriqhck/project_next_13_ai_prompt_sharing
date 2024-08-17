@@ -22,13 +22,19 @@ const ActionList = ({ layers, input_direction, selectable }) => {
 
       return (
         array?.map((component, index) => {
-          // console.log("INDEX:  " + index + " |   CURRENT COMPONENT: " + component);
+          console.log("INDEX:  " + index + " |   CURRENT COMPONENT: " + component);
+          console.log(component);
+          
           return (
-            <Action action_id={component} 
-            layer={index} input_direction={input_direction} selectable={true} />
+            <Action
+             action_id={component.data?.name}
+              node={component}
+              layer={index}
+              input_direction={input_direction}
+              selectable={true} />
           )
         }
-      )
+        )
       )
     }
 
@@ -45,9 +51,8 @@ const ActionList = ({ layers, input_direction, selectable }) => {
       return (
         array?.map((component, index) => {
           // console.log("INDEX:  " + index + " |   CURRENT COMPONENT: " + component);
-
           return (
-            <Action action_id={component} layerNode={component} layer={index} input_direction={input_direction} selectable={false} />
+            <Action action_id={component?.data?.name} node={component} layer={index} input_direction={input_direction} selectable={false} />
           )
 
         })

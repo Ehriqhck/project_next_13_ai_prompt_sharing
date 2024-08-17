@@ -5566,7 +5566,9 @@ export const GameActions = {
       {
         key: 'view_director_mode',
         label: 'Camera / Advanced Camera Controls',
-        data: { category: 'Camera / Advanced Camera Controls' },
+        data: {
+          category: 'Camera / Advanced Camera Controls'
+        },
         children: [
           {
             key: 'view_fov_in',

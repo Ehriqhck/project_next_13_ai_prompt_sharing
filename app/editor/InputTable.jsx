@@ -45,7 +45,7 @@ export default function InputTable() {
     const [selectedNodeKey, setSelectedNodeKey] = useState(null);
     const [metaKey, setMetaKey] = useState(true);
     useEffect(() => {
-   
+
 
         try {
             setIsLoading(true);
@@ -130,7 +130,7 @@ export default function InputTable() {
 
         }
     }
- 
+
     const togglerTemplate = (node, options) => {
         const getSlotIcon = (node) => {
 
@@ -192,12 +192,15 @@ export default function InputTable() {
         }
         // check if node is category with child array of game actions
         if (Object.hasOwn(node.data, 'layers')) {
+            console.log(node);
 
             return (
                 <button onClick={() => {
                     console.log(node);
                     setTreeTableDialogueVisibility(true)
                     setTreeTableDialogueSelection(node)
+                    console.log(node);
+
                 }}>
                     <Button type="inputTable" className=" flex flex-col   " tabIndex={-1} onClick={options.onClick}>
 

@@ -15,17 +15,96 @@ const globalContext = {
             press: {
               name: 'TWIST X',
               layers: [
-                'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-              ]
+                {
+                  key: 'v_weapon_manual_gimbal_cycle_source',
+                  label:
+                    'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                  data: {
+                    actionmapName: 'spaceship_weapons',
+                    name: {
+                      key: 'v_weapon_manual_gimbal_cycle_source',
+                      label:
+                        'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                      data: {
+                        actionmapName: 'spaceship_weapons',
+                        name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                        category: 'Vehicles / Weapons',
+                        inputType: 'Toggle'
+                      }
+                    },
+                    category: 'Vehicles / Weapons',
+                    inputType: 'Toggle'
+                  }
+                },
+                {
+                  key: 'v_weapon_manual_gimbal_cycle_source',
+                  label:
+                    'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                  data: {
+                    actionmapName: 'spaceship_weapons',
+                    name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                    category: 'Vehicles / Weapons',
+                    inputType: 'Toggle'
+                  }
+                },
+                {
+                  key: 'v_weapon_manual_gimbal_cycle_source',
+                  label:
+                    'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                  data: {
+                    actionmapName: 'spaceship_weapons',
+                    name: {
+                      key: 'v_weapon_manual_gimbal_cycle_source',
+                      label:
+                        'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                      data: {
+                        actionmapName: 'spaceship_weapons',
+                        name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                        category: 'Vehicles / Weapons',
+                        inputType: 'Toggle'
+                      }
+                    },
+                    category: 'Vehicles / Weapons',
+                    inputType: 'Toggle'
+                  }
+                },              ]
             },
             bottom: {
               name: 'TRANSLATE X',
               layers: [
-                'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                'SECOND LAYER',
-                'THIRD LAYER'
+                {
+                  key: 'v_weapon_manual_gimbal_cycle_source',
+                  label:
+                    'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                  data: {
+                    actionmapName: 'spaceship_weapons',
+                    name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                    category: 'Vehicles / Weapons',
+                    inputType: 'Toggle'
+                  }
+                },
+                {
+                  key: 'v_weapon_manual_gimbal_cycle_source',
+                  label:
+                    'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                  data: {
+                    actionmapName: 'spaceship_weapons',
+                    name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                    category: 'Vehicles / Weapons',
+                    inputType: 'Toggle'
+                  }
+                },
+                {
+                  key: 'v_weapon_manual_gimbal_cycle_source',
+                  label:
+                    'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                  data: {
+                    actionmapName: 'spaceship_weapons',
+                    name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                    category: 'Vehicles / Weapons',
+                    inputType: 'Toggle'
+                  }
+                }
               ]
             }
           },
@@ -34,9 +113,39 @@ const globalContext = {
               press: {
                 name: 'TWIST Y',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               }
             },
@@ -44,9 +153,39 @@ const globalContext = {
               bottom: {
                 name: 'Translate Y',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               }
             }
@@ -56,9 +195,39 @@ const globalContext = {
               press: {
                 name: 'TRANSLATE Z',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               }
             }
@@ -68,41 +237,180 @@ const globalContext = {
               top: {
                 name: 'CIRCLE SWITCH UP',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-                ]
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },             ]
               },
               bottom: {
                 name: 'CIRCLE SWITCH DOWN',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               },
               press: {
                 name: 'CIRCLE SWITCH PRESS',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               },
               left: {
                 name: 'CIRCLE SWITCH LEFT',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
                   'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
                 ]
               },
               right: {
                 name: 'CIRCLE SWITCH RIGHT',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               }
             },
@@ -110,41 +418,189 @@ const globalContext = {
               top: {
                 name: 'HAT SWITCH UP',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-                ]
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },                ]
               },
               bottom: {
                 name: 'HAT SWITCH DOWN',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               },
               press: {
                 name: 'HAT SWITCH PRESS',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               },
               left: {
                 name: 'HAT SWITCH LEFT',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-                ]
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },                ]
               },
               right: {
                 name: 'HAT SWITCH RIGHT',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               }
             },
@@ -152,41 +608,199 @@ const globalContext = {
               top: {
                 name: 'PILL SWITCH UP',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-                ]
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: {
+                        key: 'v_weapon_manual_gimbal_cycle_source',
+                        label:
+                          'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                        data: {
+                          actionmapName: 'spaceship_weapons',
+                          name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                          category: 'Vehicles / Weapons',
+                          inputType: 'Toggle'
+                        }
+                      },
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },                ]
               },
               bottom: {
                 name: 'PILL SWITCH DOWN',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               },
               press: {
                 name: 'PILL SWITCH PRESS',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               },
               left: {
                 name: 'PILL SWITCH LEFT',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-                ]
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },                ]
               },
               right: {
                 name: 'PILL SWITCH RIGHT',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               }
             },
@@ -194,9 +808,39 @@ const globalContext = {
               press: {
                 name: 'RED BUTTON PRESS',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               }
             },
@@ -204,41 +848,199 @@ const globalContext = {
               top: {
                 name: 'CHIP SWITCH UP',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-                ]
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },                ]
               },
               bottom: {
                 name: 'CHIP SWITCH DOWN',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               },
               press: {
                 name: 'CHIP SWITCH PRESS',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               },
               left: {
                 name: 'CHIP SWITCH LEFT',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-                ]
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: {
+                        key: 'v_weapon_manual_gimbal_cycle_source',
+                        label:
+                          'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                        data: {
+                          actionmapName: 'spaceship_weapons',
+                          name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                          category: 'Vehicles / Weapons',
+                          inputType: 'Toggle'
+                        }
+                      },
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },                ]
               },
               right: {
                 name: 'CHIP SWITCH RIGHT',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               }
             }
@@ -247,13 +1049,61 @@ const globalContext = {
             Primary_Trigger: {
               press: {
                 name: 'PRIMARY TRIGGER PRESS',
-                layers: ['FIRE WEAPONS', 'SECOND LAYER', 'THIRD LAYER']
+                layers: [
+                  'FIRE WEAPONS',
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
+                ]
               }
             },
             Secondary_Trigger: {
               press: {
                 name: 'SECONDARY TRIGGER PRESS',
-                layers: ['FIRE WEAPONS', 'SECOND LAYER', 'THIRD LAYER']
+                layers: [
+                  'FIRE WEAPONS',
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
+                ]
               }
             },
             Pinky_Button: {
@@ -316,41 +1166,190 @@ const globalContext = {
               top: {
                 name: 'TWIST X',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
                   'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
                 ]
               },
               Twist_Y: {
                 name: 'TWIST Y',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               },
               Translate_X: {
                 name: 'TRANSLATE X',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               },
               Translate_Y: {
                 name: 'TRANSLATE Y',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-                ]
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: {
+                        key: 'v_weapon_manual_gimbal_cycle_source',
+                        label:
+                          'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                        data: {
+                          actionmapName: 'spaceship_weapons',
+                          name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                          category: 'Vehicles / Weapons',
+                          inputType: 'Toggle'
+                        }
+                      },
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },                ]
               },
               Translate_Z: {
                 name: 'TRANSLATE Z',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               }
             },
@@ -358,41 +1357,209 @@ const globalContext = {
               top: {
                 name: 'HAT SWITCH UP',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-                ]
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: {
+                        key: 'v_weapon_manual_gimbal_cycle_source',
+                        label:
+                          'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                        data: {
+                          actionmapName: 'spaceship_weapons',
+                          name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                          category: 'Vehicles / Weapons',
+                          inputType: 'Toggle'
+                        }
+                      },
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },                ]
               },
               bottom: {
                 name: 'HAT SWITCH DOWN',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               },
               press: {
                 name: 'HAT SWITCH PRESS',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               },
               left: {
                 name: 'HAT SWITCH LEFT',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-                ]
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: {
+                        key: 'v_weapon_manual_gimbal_cycle_source',
+                        label:
+                          'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                        data: {
+                          actionmapName: 'spaceship_weapons',
+                          name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                          category: 'Vehicles / Weapons',
+                          inputType: 'Toggle'
+                        }
+                      },
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },                ]
               },
               right: {
                 name: 'HAT SWITCH RIGHT',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               }
             },
@@ -400,41 +1567,209 @@ const globalContext = {
               top: {
                 name: 'PILL SWITCH UP',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-                ]
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: {
+                        key: 'v_weapon_manual_gimbal_cycle_source',
+                        label:
+                          'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                        data: {
+                          actionmapName: 'spaceship_weapons',
+                          name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                          category: 'Vehicles / Weapons',
+                          inputType: 'Toggle'
+                        }
+                      },
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },                ]
               },
               bottom: {
                 name: 'PILL SWITCH DOWN',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               },
               press: {
                 name: 'PILL SWITCH PRESS',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               },
               left: {
                 name: 'PILL SWITCH LEFT',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-                ]
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: {
+                        key: 'v_weapon_manual_gimbal_cycle_source',
+                        label:
+                          'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                        data: {
+                          actionmapName: 'spaceship_weapons',
+                          name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                          category: 'Vehicles / Weapons',
+                          inputType: 'Toggle'
+                        }
+                      },
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },                ]
               },
               right: {
                 name: 'PILL SWITCH RIGHT',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               }
             },
@@ -442,9 +1777,39 @@ const globalContext = {
               press: {
                 name: 'RED BUTTON PRESS',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               }
             },
@@ -452,41 +1817,209 @@ const globalContext = {
               top: {
                 name: 'CHIP SWITCH UP',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-                ]
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: {
+                        key: 'v_weapon_manual_gimbal_cycle_source',
+                        label:
+                          'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                        data: {
+                          actionmapName: 'spaceship_weapons',
+                          name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                          category: 'Vehicles / Weapons',
+                          inputType: 'Toggle'
+                        }
+                      },
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },                ]
               },
               bottom: {
                 name: 'CHIP SWITCH DOWN',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               },
               press: {
                 name: 'CHIP SWITCH PRESS',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               },
               left: {
                 name: 'CHIP SWITCH LEFT',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-                ]
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: {
+                        key: 'v_weapon_manual_gimbal_cycle_source',
+                        label:
+                          'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                        data: {
+                          actionmapName: 'spaceship_weapons',
+                          name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                          category: 'Vehicles / Weapons',
+                          inputType: 'Toggle'
+                        }
+                      },
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },                ]
               },
               right: {
                 name: 'CHIP SWITCH RIGHT',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               }
             }
@@ -496,41 +2029,190 @@ const globalContext = {
               top: {
                 name: 'CIRCLE SWITCH UP',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
                   'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
                 ]
               },
               bottom: {
                 name: 'CIRCLE SWITCH DOWN',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               },
               press: {
                 name: 'CIRCLE SWITCH PRESS',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               },
               left: {
                 name: 'CIRCLE SWITCH LEFT',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-                ]
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: {
+                        key: 'v_weapon_manual_gimbal_cycle_source',
+                        label:
+                          'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                        data: {
+                          actionmapName: 'spaceship_weapons',
+                          name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                          category: 'Vehicles / Weapons',
+                          inputType: 'Toggle'
+                        }
+                      },
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },                ]
               },
               right: {
                 name: 'CIRCLE SWITCH RIGHT',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               }
             },
@@ -538,41 +2220,209 @@ const globalContext = {
               top: {
                 name: 'HAT SWITCH UP',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-                ]
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: {
+                        key: 'v_weapon_manual_gimbal_cycle_source',
+                        label:
+                          'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                        data: {
+                          actionmapName: 'spaceship_weapons',
+                          name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                          category: 'Vehicles / Weapons',
+                          inputType: 'Toggle'
+                        }
+                      },
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },                ]
               },
               bottom: {
                 name: 'HAT SWITCH DOWN',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               },
               press: {
                 name: 'HAT SWITCH PRESS',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               },
               left: {
                 name: 'HAT SWITCH LEFT',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-                ]
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: {
+                        key: 'v_weapon_manual_gimbal_cycle_source',
+                        label:
+                          'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                        data: {
+                          actionmapName: 'spaceship_weapons',
+                          name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                          category: 'Vehicles / Weapons',
+                          inputType: 'Toggle'
+                        }
+                      },
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },                ]
               },
               right: {
                 name: 'HAT SWITCH RIGHT',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               }
             },
@@ -580,41 +2430,190 @@ const globalContext = {
               top: {
                 name: 'PILL SWITCH UP',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
                   'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
                 ]
               },
               bottom: {
                 name: 'PILL SWITCH DOWN',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               },
               press: {
                 name: 'PILL SWITCH PRESS',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               },
               left: {
                 name: 'PILL SWITCH LEFT',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-                ]
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: {
+                        key: 'v_weapon_manual_gimbal_cycle_source',
+                        label:
+                          'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                        data: {
+                          actionmapName: 'spaceship_weapons',
+                          name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                          category: 'Vehicles / Weapons',
+                          inputType: 'Toggle'
+                        }
+                      },
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },                ]
               },
               right: {
                 name: 'PILL SWITCH RIGHT',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               }
             },
@@ -622,9 +2621,39 @@ const globalContext = {
               press: {
                 name: 'RED BUTTON PRESS',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               }
             },
@@ -632,41 +2661,190 @@ const globalContext = {
               top: {
                 name: 'CHIP SWITCH UP',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
-                ]
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: {
+                        key: 'v_weapon_manual_gimbal_cycle_source',
+                        label:
+                          'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                        data: {
+                          actionmapName: 'spaceship_weapons',
+                          name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                          category: 'Vehicles / Weapons',
+                          inputType: 'Toggle'
+                        }
+                      },
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },                ]
               },
               bottom: {
                 name: 'CHIP SWITCH DOWN',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               },
               press: {
                 name: 'CHIP SWITCH PRESS',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               },
               left: {
                 name: 'CHIP SWITCH LEFT',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
                   'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)'
                 ]
               },
               right: {
                 name: 'CHIP SWITCH RIGHT',
                 layers: [
-                  'MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)',
-                  'SECOND LAYER',
-                  'THIRD LAYER'
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
                 ]
               }
             }
@@ -675,13 +2853,61 @@ const globalContext = {
             Primary_Trigger: {
               press: {
                 name: 'PRIMARY TRIGGER PRESS',
-                layers: ['FIRE WEAPONS', 'SECOND LAYER', 'THIRD LAYER']
+                layers: [
+                  'FIRE WEAPONS',
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
+                ]
               }
             },
             Secondary_Trigger: {
               press: {
                 name: 'SECONDARY TRIGGER PRESS',
-                layers: ['FIRE WEAPONS', 'SECOND LAYER', 'THIRD LAYER']
+                layers: [
+                  'FIRE WEAPONS',
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  },
+                  {
+                    key: 'v_weapon_manual_gimbal_cycle_source',
+                    label:
+                      'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                    data: {
+                      actionmapName: 'spaceship_weapons',
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                      category: 'Vehicles / Weapons',
+                      inputType: 'Toggle'
+                    }
+                  }
+                ]
               }
             },
             Pinky_Button: {

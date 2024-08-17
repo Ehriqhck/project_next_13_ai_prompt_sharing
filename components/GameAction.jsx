@@ -4,7 +4,7 @@ import React from 'react'
 import LayerTag from '@components/generic/LayerTag.jsx';
 import clsx from 'clsx';
 import { Utils } from '@app/editor/utils';
-const Action = ({ action_id, layer, input_direction, selectable }) => {
+const Action = ({ action_id, node, layer, input_direction, selectable }) => {
 
     const getClassNames = (input_direction) => {
         switch (input_direction) {
@@ -76,6 +76,10 @@ const Action = ({ action_id, layer, input_direction, selectable }) => {
 
 
     const render = () => {
+        console.log("WOWOWOWOWO");
+        
+        console.log(node);
+        
         if (selectable) {
             return (
                 <label
@@ -93,9 +97,9 @@ const Action = ({ action_id, layer, input_direction, selectable }) => {
                         <div className='flex flex-row gap-[8px]'>
                             <LayerTag layerNumber={layer} input_direction={input_direction} selectable={true} />
                             <p className={getClassNames(input_direction) + " whitespace-nowrap"}> {action_id} </p>
-
                         </div>
                     </div>
+                    {Utils.getCategoryIcon(node )}
                 </label>
 
             )
