@@ -1,5 +1,5 @@
 "use client";
-
+import { Button } from 'primereact/button';
 import React from 'react'
 import LayerTag from '@components/generic/LayerTag.jsx';
 import clsx from 'clsx';
@@ -77,9 +77,9 @@ const Action = ({ action_id, node, layer, input_direction, selectable }) => {
 
     const render = () => {
         console.log("WOWOWOWOWO");
-        
+
         console.log(node);
-        
+
         if (selectable) {
             return (
                 <label
@@ -87,19 +87,36 @@ const Action = ({ action_id, node, layer, input_direction, selectable }) => {
                         // setSelectedLayer(props.layer);
                         // console.log(props.layer);
                     }}
+                    type={'bindSelection'+ layer}
                     for={"choice-" + layer}
-                    className={'gameAction-' + layer + '-button'}
+                    // className={'gameAction-' + layer + '-button'}
                 >
 
                     <input type="radio" value={layer} name="modselect" id={"choice-" + layer} />
+                    <div className='flex flex-col'>
 
-                    <div className={actionButtonClassNames} >
-                        <div className='flex flex-row gap-[8px]'>
-                            <LayerTag layerNumber={layer} input_direction={input_direction} selectable={true} />
-                            <p className={getClassNames(input_direction) + " whitespace-nowrap"}> {action_id} </p>
+                        <div className={actionButtonClassNames} >
+                            <div className='flex flex-row gap-[8px]'>
+                                <LayerTag layerNumber={layer} input_direction={input_direction} selectable={true} />
+                                {/* <p className={getClassNames(input_direction) + " whitespace-nowrap"}> {action_id} </p> */}
+                            </div>
                         </div>
+                        {/* {Utils.getCategoryIcon(node)} */}
+
+              
+                            <div unstyled className='flex flex-row pl-[8px] '>
+
+                                {Utils.getCategoryIcon(node)}
+
+                                <div className='flex flex-col  justify-start w-full'>
+                                    <p className='gameAction-text-regular flex whitespace-nowrap'>{node.label}</p>
+                                    <p className=' gameAction-text-subheading flex' >{node.data.category}</p>
+                                </div>
+                            </div>
                     </div>
-                    {Utils.getCategoryIcon(node )}
+
+
+
                 </label>
 
             )

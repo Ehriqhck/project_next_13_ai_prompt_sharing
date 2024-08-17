@@ -13,6 +13,83 @@
 /* svg {
   width: 100%;
 } */
+label[type='bindSelection1'] {
+  padding: 8px 8px 8px 0px !important;
+  border-radius: 6px !important;
+  background-color:#0c1902 !important;
+  position: relative !important;
+  width: 100%;
+z-index: 2;
+  background: repeating-linear-gradient(-45deg, rgb(41 0 21), rgb(76 50 0 / 30%) 2px, rgb(0 0 0 / 0%) 2px, rgba(0, 0, 0, 0) 2.83px), linear-gradient(180deg, rgba(0, 34, 41, 0) 0%, rgb(72 64 0 / 85%) 100%) ;
+}
+
+label[type='bindSelection1']::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  cursor: pointer !important;
+  border-radius: 6px !important;
+  border: 1px solid transparent !important;
+  background: 
+  radial-gradient(ellipse at 85% 0%, #bf8f00, #f1ad043d, transparent) border-box,
+   radial-gradient(ellipse at 0% 40%, #bf740048, #cadb0025, transparent) border-box,
+    radial-gradient(ellipse at 25% 100%, #b1c47c, #ffdd004f, transparent) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0) !important;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0) !important;
+  -webkit-mask-composite: destination-out !important;
+  mask-composite: exclude !important;
+}
+label[type='bindSelection1']:hover {
+  border-radius: 6px!important;
+  background-color:#0c1902 !important;
+  background: repeating-linear-gradient(-45deg, rgb(119 65 29), rgb(76 50 0 / 30%) 2px, rgb(0 0 0 / 0%) 2px, rgba(0, 0, 0, 0) 2.83px), linear-gradient(180deg, rgba(0, 34, 41, 0) 0%, rgb(72 64 0 / 85%) 100%) ;
+  position: relative;
+  filter: none !important;
+  transition: filter 0.18s !important; 
+  transition: background 0.3s !important; 
+
+}
+label[type='bindSelection1']:hover:before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  border-width: 1px !important;
+  border-radius: 6px!important;
+  border: 1px solid transparent !important;
+  background: 
+  radial-gradient(ellipse at 85% 0%, #ff8f16e6, #f1ad043d, transparent) border-box, radial-gradient(ellipse at 0% 40%, #bf740048, #cadb0025, transparent) border-box, radial-gradient(ellipse at 25% 100%, #b1c47c, #edb200, transparent) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0) !important;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0) !important;
+  -webkit-mask-composite: destination-out !important;
+  mask-composite: exclude !important;
+  transition: background 0.3s !important;
+}
+label[type='bindSelection1']:has(input:checked)  {
+  border-radius: 6px!important;
+  background-color:#0c1902 !important;
+  background: repeating-linear-gradient(-45deg, rgb(119 65 29), rgb(76 50 0 / 30%) 2px, rgb(0 0 0 / 0%) 2px, rgba(0, 0, 0, 0) 2.83px), linear-gradient(180deg, rgba(0, 34, 41, 0) 0%, rgb(72 64 0 / 85%) 100%) ;
+  position: relative;
+  filter: none !important;
+  transition: filter 0.18s !important; 
+  transition: background 0.3s !important; 
+
+}
+label[type='bindSelection1']:checked:before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  border-width: 1px !important;
+  border-radius: 6px!important;
+  border: 1px solid transparent !important;
+  background: 
+  radial-gradient(ellipse at 85% 0%, #ff8f16e6, #f1ad043d, transparent) border-box, radial-gradient(ellipse at 0% 40%, #bf740048, #cadb0025, transparent) border-box, radial-gradient(ellipse at 25% 100%, #b1c47c, #edb200, transparent) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0) !important;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0) !important;
+  -webkit-mask-composite: destination-out !important;
+  mask-composite: exclude !important;
+  transition: background 0.3s !important;
+}
+
 .gameAction-0-button  {
 width: 100%;
 
