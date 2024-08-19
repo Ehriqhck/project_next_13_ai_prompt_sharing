@@ -59,7 +59,7 @@ const NavEditor = () => {
       <span className="navMenu-text small-text flex">{parseDeviceString(item.name)}</span>
       <div>
         {
-          Utils.getSelectedDeviceIcon(item.name)
+          Utils.getSelectedDeviceIcon(item.name, "30px")
 
         }
       </div>

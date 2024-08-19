@@ -3346,7 +3346,7 @@ export const Utils = {
       case 'Circle_Stick':
         return (
           <div className='corner-inputTableIcons'>
-            <CircleSwitch className='testCircle ' width={width} height='100%' />
+            <CircleSwitch className='testCircle ' width={width} height={height} />
           </div>
         )
 
@@ -3355,7 +3355,7 @@ export const Utils = {
       case 'Hat_Stick':
         return (
           <div className='corner-inputTableIcons'>
-            <Hat className='testCircle' width={width} height='100%' />
+            <Hat className='testCircle' width={width} height={height} />
           </div>
         )
 
@@ -3364,7 +3364,7 @@ export const Utils = {
       case 'Pill_Stick':
         return (
           <div className='corner-inputTableIcons'>
-            <PillSwitch className='testCircle ' width={width} height='100%' />
+            <PillSwitch className='testCircle ' width={width} height={height} />
           </div>
         )
 
@@ -3373,7 +3373,7 @@ export const Utils = {
       case 'Red_Button':
         return (
           <div className='corner-inputTableIcons'>
-            <RedButton className='testCircle ' width={width} height='100%' />
+            <RedButton className='testCircle ' width={width} height={height} />
           </div>
         )
         break
@@ -3381,7 +3381,7 @@ export const Utils = {
       case 'Chip_Stick':
         return (
           <div className='corner-inputTableIcons'>
-            <ChipSwitch className='testCircle ' width={width} height='100%' />
+            <ChipSwitch className='testCircle ' width={width} height={height} />
           </div>
         )
 
@@ -3390,7 +3390,7 @@ export const Utils = {
           <div className='corner-inputTableIcons'>
             <Pinkybutton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK
               width={width}
-              height='100%'
+              height={height}
               className='testCircle '
             />
           </div>
@@ -3401,7 +3401,7 @@ export const Utils = {
           <div className='corner-inputTableIcons'>
             <PrimaryTrigger_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK
               width={width}
-              height='100%'
+              height={height}
               className='testCircle '
             />
           </div>
@@ -3412,7 +3412,7 @@ export const Utils = {
           <div className='corner-inputTableIcons'>
             <SecondaryTrigger_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK
               width={width}
-              height='100%'
+              height={height}
               className='testCircle '
             />
           </div>
@@ -3423,7 +3423,7 @@ export const Utils = {
           <div className='corner-inputTableIcons'>
             <SideIndexButton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK
               width={width}
-              height='100%'
+              height={height}
               className='testCircle '
             />
           </div>
@@ -3446,29 +3446,29 @@ export const Utils = {
     switch (slotName) {
       case 'top':
         return (
-          <InputUpIcon className='testCircle' width={width} height='100%' />
+          <InputUpIcon className='testCircle' width={width} height={height} />
         )
         break
 
       case 'bottom':
         return (
-          <InputDownIcon className='testCircle' width={width} height='100%' />
+          <InputDownIcon className='testCircle' width={width} height={height} />
         )
         break
 
       case 'press':
         return (
-          <InputPressIcon className='testCircle ' width={width} height='100%' />
+          <InputPressIcon className='testCircle ' width={width} height={height} />
         )
         break
 
       case 'left':
         return (
-          <InputLeftIcon className='testCircle ' width={width} height='100%' />
+          <InputLeftIcon className='testCircle ' width={width} height={height} />
         )
       case 'right':
         return (
-          <InputRightIcon className='testCircle ' width={width} height='100%' />
+          <InputRightIcon className='testCircle ' width={width} height={height} />
         )
         break
 
@@ -3556,7 +3556,7 @@ export const Utils = {
             <img
               src='/assets/VKB/VKB_GLADIATOR_NEXT_EVO_LEFT_icon@2x.webp'
               width={width}
-              height='100%'
+              height={height}
             />
           </div>
         )
@@ -3567,7 +3567,7 @@ export const Utils = {
             <img
               src='/assets/VKB/VKB_GLADIATOR_NEXT_EVO_RIGHT_icon.webp'
               width={width}
-              height='100%'
+              height={height}
             />
           </div>
         )

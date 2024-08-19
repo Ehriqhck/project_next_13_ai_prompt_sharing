@@ -95,12 +95,7 @@ const Action = ({ action_id, node, layer, input_direction, selectable }) => {
                     <input type="radio" value={layer} name="modselect" id={"choice-" + layer} />
                     <div className='flex flex-col'>
 
-                        <div className={actionButtonClassNames} >
-                            <div className='flex flex-row gap-[8px]'>
-                                <LayerTag layerNumber={layer} input_direction={input_direction} selectable={true} />
-                                {/* <p className={getClassNames(input_direction) + " whitespace-nowrap"}> {action_id} </p> */}
-                            </div>
-                        </div>
+                  
                         {/* {Utils.getCategoryIcon(node)} */}
 
               
