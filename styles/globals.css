@@ -2757,11 +2757,11 @@ gap: 60px;
   overflow-x:auto; */
 }
 
-.p-input-icon-left, .p-input-icon-right {
+/* .p-input-icon-left, .p-input-icon-right {
   position: relative;
   display: inline-block;
   width: 100%;
-}
+} */
 
 /* .p-input-icon-left > i:first-of-type, .p-input-icon-left > svg:first-of-type, .p-input-icon-left > .p-input-prefix {
   left: 0.75rem;

@@ -7,8 +7,9 @@ import { Button } from 'primereact/button';
 import { Utils } from '@app/editor/utils.js'
 import ActionList from '@components/ActionList.jsx'
 import IconLegend from '@components/generic/IconLegend';
-
+import { IconField } from 'primereact/iconfield';
 import { FilterMatchMode, FilterOperator } from 'primereact/api';
+import { InputIcon } from 'primereact/inputicon';
 
 import { InputText } from 'primereact/inputtext';
 
@@ -28,6 +29,10 @@ const AxisDataTable = () => {
     const [filters, setFilters] = useState({
         global: { value: null, matchMode: FilterMatchMode.CONTAINS },
         name: { value: null, matchMode: FilterMatchMode.STARTS_WITH },
+        'country.name': { value: null, matchMode: FilterMatchMode.STARTS_WITH },
+        representative: { value: null, matchMode: FilterMatchMode.IN },
+        status: { value: null, matchMode: FilterMatchMode.EQUALS },
+        verified: { value: null, matchMode: FilterMatchMode.EQUALS }
     });
     const [loading, setLoading] = useState(true)
     const [axis, setAxis] = useState([{
@@ -98,10 +103,10 @@ const AxisDataTable = () => {
     const renderHeader = () => {
         return (
             <div className="flex justify-content-end">
-                <div iconPosition="left">
-                    <div className="pi pi-search" />
+                <IconField iconPosition="left">
+                    <InputIcon className="pi pi-search" />
                     <InputText value={globalFilterValue} onChange={onGlobalFilterChange} placeholder="Keyword Search" />
-                </div>
+                </IconField>
             </div>
         );
     };
@@ -160,12 +165,17 @@ const AxisDataTable = () => {
     return (
         <DataTable
             className='min-w-[345px] '
+            filters={filters}
             unstyled
             header={header}
-            globalFilterFields={['name', 'country.name', 'representative.name', 'status']}
-            
-            filterDisplay="row" type='AxisInputTable' value={JSON.parse(sessionStorage.getItem('loadedProfile')).deviceList[sessionStorage.getItem('selectedEditorDevice')]["axis"]} rows={3} paginator={false} selectionMode='single' >
-            <Column field="name" 
+            globalFilterFields={['name']}
+            dataKey="name"
+            globalFilterValue={globalFilterValue}
+            filterDisplay="row" 
+            type='AxisInputTable' 
+            value={JSON.parse(sessionStorage.getItem('loadedProfile')).deviceList[sessionStorage.getItem('selectedEditorDevice')]["axis"]}
+             rows={3} paginator={false} selectionMode='single' >
+            <Column field="name"
                 filter filterPlaceholder='search' body={imageBodyTemplate}></Column>
         </DataTable>
     )
