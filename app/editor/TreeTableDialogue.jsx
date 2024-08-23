@@ -10,7 +10,7 @@ import { SelectButton } from 'primereact/selectbutton';
 import { GameActions } from './GameActions';
 import { Tree } from 'primereact/tree';
 import ActionList from '@components/ActionList.jsx'
-
+import SaveIcon from '@public/assets/icons/actions/gameCategory/SaveIcon.jsx'
 import { classNames } from 'primereact/utils';
 import SeatIcon from '@public/assets/icons/actions/gameCategory/SeatIcon.jsx'
 import ArrowRightIcon from '@public/assets/icons/actions/gameCategory/ArrowRightIcon.jsx'
@@ -122,7 +122,7 @@ import ApertureIcon from '@public/assets/icons/actions/gameCategory/ApertureIcon
 import ChevronsRight from '@public/assets/icons/actions/gameCategory/ChevronsRight.jsx'
 import ModLayerSelector from '@components/actionSelector/ModLayerSelector';
 import { SelectContext, SelectedActionContext, EditorPanelTitleContext, TreeTableDialogueSelectionContext, TreeTableDialogueVisibilityContext } from '@components/Provider';
-import BindIcon from 'public/assets/icons/generic/bind.svg'
+import BindIcon from '@public/assets/icons/generic/bindicon.jsx'
 
 import { Utils } from '@app/editor/utils.js'
 
@@ -4163,7 +4163,11 @@ export default function TreeTableDialogue(props) {
                 break;
         }
     }
-
+    const filterTemplate = () => {
+        return (
+            <div>asdasd</div>
+        )
+    }
     const nodeTemplate = (node, options) => {
         let label = <p>{node.label}</p>;
 
@@ -4309,18 +4313,36 @@ export default function TreeTableDialogue(props) {
 
                             <div className='flex flex-row justify-between w-full '>
                                 {/* {getCategoryHeader(node)} */}
-                                <Button type="inputTable" className='flex flex-col gap-[8px] w-full'>
+                                <Button type="gameActions" className='flex flex-col gap-[8px] w-full  '>
 
-                                    <div className='flex flex-col  gap-[4px] w-full '>
+                                    <div className='flex flex-col  p-[8px] gap-[4px] w-full  '>
+                                        <div className='flex flex-col gap-[4px] pt-[8px] pb-[8px]'>
 
+                                            {/* <SaveIcon width="30px" /> */}
+                                            <div className="self-center">
+                                                <BindIcon width="30px" />
+
+                                            </div>
+                                            <p className='text-legend-heading'>
+                                                BIND & SAVE
+                                            </p>
+
+                                        </div>
+                                        <div className='flex h-[30px]  w-full self-center justify-center gap-[8px] mb-[4px]'>
+                                            <div className='flex rotate-[90deg] self-center align-middle justify-center'>
+                                                <ChevronsRight width="15px" height="15px" />
+                                            </div>
+
+                                        </div>
                                         <div className=' flex flex-col h-full corner-inputTableIcons gap-[8px] '>
                                             <p className='text-legend-heading'> {treeTableDialogueSelection.label} </p>
 
                                             <div className='flex flex-row'>
-
-                                                {Utils.getSelectedDeviceIcon(sessionStorage.getItem('selectedEditorDevice'), '40px', '40px', false)}
+                                                <div className='flex self-center '>
+                                                    {Utils.getSelectedDeviceIcon(sessionStorage.getItem('selectedEditorDevice'), '40px', false)}
+                                                </div>
                                                 <div className="spacer-default " />
-                                                <div className='flex flex-col  h-fit  w-fit py-[4px] pl-[4px]  self-center'>
+                                                <div className='flex flex-col  h-fit  w-fit py-[4px] pl-[4px] gap-[8px] self-center justify-center align-middle'>
                                                     <div className='flex '>
                                                         {Utils.getInputAxisIcons(treeTableDialogueSelection.label, "30px", "30px")}
                                                     </div>
@@ -4390,7 +4412,7 @@ export default function TreeTableDialogue(props) {
 
 
 
-                                    <div className='corner-inputTableIcons flex flex-col gap-[8px] h-full mt-[24px]'>
+                                    <div className='corner-inputTableIcons flex w-full flex-col gap-[8px] h-full mt-[24px] self-center'>
                                         {selectedGameAction}
                                         {/* <ModLayerSelector /> */}
 

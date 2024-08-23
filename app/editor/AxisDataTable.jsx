@@ -8,19 +8,27 @@ import { Utils } from '@app/editor/utils.js'
 import ActionList from '@components/ActionList.jsx'
 import IconLegend from '@components/generic/IconLegend';
 
+import { FilterMatchMode, FilterOperator } from 'primereact/api';
+
+import { InputText } from 'primereact/inputtext';
+
 const AxisDataTable = () => {
     const [selectedInput, setSelectedInput] = useState("CONTEXT INPUT: DEFAULT");
     const [selectedAction, setSelectedAction] = useState("CONTEXT ACTION: DEFAULT")
     const { selectedViewerInput, setSelectedViewerInput } = useContext(SelectContext)
     const { treeTableDialogueSelection, setTreeTableDialogueSelection } = useContext(TreeTableDialogueSelectionContext)
     const { treeTableDialogueVisibility, setTreeTableDialogueVisibility } = useContext(TreeTableDialogueVisibilityContext)
+    const [globalFilterValue, setGlobalFilterValue] = useState('');
 
     const { selectedEditorDevice, setselectedEditorDevice } = useContext(SelectedEditorDeviceContext)
     const { selectedInputTableInput, setSelectedInputTableInput } = useContext(SelectedInputTableInputContext);
     const [isLoading, setIsLoading] = useState(false)
     const { profileContext, setprofileContext } = useContext(Context);
     const { selectedEditorDeviceViewOrientation, setSelectedEditorDeviceViewOrientation } = useContext(SelectedEditorDeviceViewOrientationContext);
-
+    const [filters, setFilters] = useState({
+        global: { value: null, matchMode: FilterMatchMode.CONTAINS },
+        name: { value: null, matchMode: FilterMatchMode.STARTS_WITH },
+    });
     const [loading, setLoading] = useState(true)
     const [axis, setAxis] = useState([{
         id: '1000',
@@ -46,6 +54,15 @@ const AxisDataTable = () => {
         rating: 5
     }]);
 
+    const onGlobalFilterChange = (e) => {
+        const value = e.target.value;
+        let _filters = { ...filters };
+
+        _filters['global'].value = value;
+
+        setFilters(_filters);
+        setGlobalFilterValue(value);
+    };
     useEffect(() => {
 
         try {
@@ -78,6 +95,17 @@ const AxisDataTable = () => {
             )
         }
     }
+    const renderHeader = () => {
+        return (
+            <div className="flex justify-content-end">
+                <div iconPosition="left">
+                    <div className="pi pi-search" />
+                    <InputText value={globalFilterValue} onChange={onGlobalFilterChange} placeholder="Keyword Search" />
+                </div>
+            </div>
+        );
+    };
+    const header = renderHeader;
     const imageBodyTemplate = (node) => {
 
         return (
@@ -133,8 +161,12 @@ const AxisDataTable = () => {
         <DataTable
             className='min-w-[345px] '
             unstyled
+            header={header}
+            globalFilterFields={['name', 'country.name', 'representative.name', 'status']}
+            
             filterDisplay="row" type='AxisInputTable' value={JSON.parse(sessionStorage.getItem('loadedProfile')).deviceList[sessionStorage.getItem('selectedEditorDevice')]["axis"]} rows={3} paginator={false} selectionMode='single' >
-            <Column field="name" filter filterPlaceholder='search' body={imageBodyTemplate}></Column>
+            <Column field="name" 
+                filter filterPlaceholder='search' body={imageBodyTemplate}></Column>
         </DataTable>
     )
 }
