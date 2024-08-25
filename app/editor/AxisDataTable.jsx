@@ -10,7 +10,7 @@ import IconLegend from '@components/generic/IconLegend';
 import { IconField } from 'primereact/iconfield';
 import { FilterMatchMode, FilterOperator } from 'primereact/api';
 import { InputIcon } from 'primereact/inputicon';
-
+import SearchIcon from '@components/generic/Icons/SearchIcon';
 import { InputText } from 'primereact/inputtext';
 
 const AxisDataTable = () => {
@@ -102,10 +102,12 @@ const AxisDataTable = () => {
     }
     const renderHeader = () => {
         return (
-            <div className="flex justify-content-end">
-                <IconField iconPosition="left">
-                    <InputIcon className="pi pi-search" />
-                    <InputText value={globalFilterValue} onChange={onGlobalFilterChange} placeholder="Keyword Search" />
+            <div data-pc-section="searchBar" className="flex justify-content-end ">
+                <IconField unstyled iconPosition="left">
+                    <InputIcon unstyled className="searchIcon" >
+                      <SearchIcon width="16px" height ="16px"/>
+                    </InputIcon >
+                    <InputText unstyled value={globalFilterValue} onChange={onGlobalFilterChange} placeholder="Keyword Search" />
                 </IconField>
             </div>
         );
@@ -114,7 +116,8 @@ const AxisDataTable = () => {
     const imageBodyTemplate = (node) => {
 
         return (
-            <button onClick={() => {
+            <button type="AxisDataTable-Button"
+            onClick={() => {
                 const transposeSelection = {
                     "key": Object.keys(node)[0],
                     "label": node.name,
@@ -125,7 +128,6 @@ const AxisDataTable = () => {
 
                 setTreeTableDialogueVisibility(true)
                 console.log(node, "PROBLEM????????");
-
             }}>
                 <Button type="inputTable" className=" flex flex-col   " >
 
@@ -171,12 +173,12 @@ const AxisDataTable = () => {
             globalFilterFields={['name']}
             dataKey="name"
             globalFilterValue={globalFilterValue}
-            filterDisplay="row" 
-            type='AxisInputTable' 
+            filterDisplay="row"
+            type='AxisInputTable'
             value={JSON.parse(sessionStorage.getItem('loadedProfile')).deviceList[sessionStorage.getItem('selectedEditorDevice')]["axis"]}
-             rows={3} paginator={false} selectionMode='single' >
+            rows={3} paginator={false} selectionMode='single' >
             <Column field="name"
-                filter filterPlaceholder='search' body={imageBodyTemplate}></Column>
+                filter={false} filterPlaceholder='search' body={imageBodyTemplate}></Column>
         </DataTable>
     )
 }

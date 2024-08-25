@@ -28,31 +28,6 @@ const Editor = ({ show }) => {
   const [isLoading, setIsLoading] = useState(false)
   const { profileContext, setprofileContext } = useContext(Context);
 
-  const [loading, setLoading] = useState(true)
-  const [devices, setDevices] = useState([{
-    id: '1000',
-    code: 'f230fh0g3',
-    name: 'Bamboo Watch',
-    description: 'Product Description',
-    image: 'bamboo-watch.jpg',
-    price: 65,
-    category: 'Accessories',
-    quantity: 24,
-    inventoryStatus: 'INSTOCK',
-    rating: 5
-  }, {
-    id: '1020',
-    code: 'f230fh0asdg3',
-    name: 'Bamboo Watdch',
-    description: 'Prodddasuct Description',
-    image: 'bamboo-watch.jpg',
-    price: 65,
-    category: 'Accessories',
-    quantity: 24,
-    inventoryStatus: 'INSTOCK',
-    rating: 5
-  }]);
-
 
   const getInputTitle = () => {
     try {
@@ -72,22 +47,25 @@ const Editor = ({ show }) => {
     <div className='panel-default' id="editorPanel">
       <div className='flex space-between flex-row  w-full'>
 
-        <div className='w-full flex flex-row justify-end mr-[10px]'>
+        {/* <div className='w-full flex flex-row justify-end mr-[10px]'>
           <IconLegend />
-        </div>
+        </div> */}
 
 
       </div>
       <PanelSwitchButtonMobile whatPanel="editor" />
 
-      <div className='text-input-title flex flex-row'>
-        <div className='corner-test w-[70px] h-[100%]'>
-          {Utils.getSelectedDeviceIcon(sessionStorage.getItem('selectedEditorDevice'))}
+      <div className='flex flex-row'>
+        <div className=''>
+          
+          {Utils.getSelectedDeviceIcon(
+            sessionStorage.getItem('selectedEditorDevice'),
+            '40px','', true)}
         </div>
 
         {/* <p className='text-base ml-[0px]'></p> */}
-        <p className='title-colon '> :</p>
-        <p className='text-input-title corner-test '>{editorPanelTitle.toUpperCase()}</p>
+        <p className='title-colon text-input-title  '> :</p>
+        <p className='text-input-title corner-test text-input-title '>{editorPanelTitle.toUpperCase()}</p>
       </div>
 
 
@@ -97,14 +75,8 @@ const Editor = ({ show }) => {
         <InputTable
             onInputSelect={setSelectedInput}
           />
-          {/* <ModLayerSelector /> */}
         </div>
-        <TreeTableDialogue />
-        {/* {renderBindButton()} */}
-        {/* <ActionTable type="actions" /> */}
-
-
-        {/* <BindTable /> */}
+      
       </div>
 
     </div>

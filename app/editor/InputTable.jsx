@@ -22,6 +22,7 @@ import { TreeTableDialogueSelectionContext, TreeTableDialogueVisibilityContext, 
 import DeviceAxisSelector from '@app/editor/DeviceAxisSelector.jsx'
 import AxisDataTable from '@app/editor/AxisDataTable.jsx'
 import TreeTableDialogue from './TreeTableDialogue';
+import SearchIcon from '@components/generic/Icons/SearchIcon';
 export default function InputTable() {
     const [visible, setVisible] = useState(false);
     const [nodes, setNodes] = useState([]);

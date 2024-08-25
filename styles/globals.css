@@ -13,7 +13,79 @@
 /* svg {
   width: 100%;
 } */
+li {
+  transition: all 0.3s !important;
+}
+li > div > button {
+  width: 95%;
+}
+li[aria-expanded="true"]{
+  border-radius: 6px !important;
+  position: relative !important;
+  width: 100%;
+z-index: 1;
+  background: repeating-linear-gradient(-45deg, rgb(7 7 7 / 0%), rgb(0 88 74 / 0%) 2px, rgb(0 0 0 / 0%) 2px, rgb(0 0 0 / 0%) 2.83px), linear-gradient(327deg, rgb(0 71 68 / 0%) 0%, rgb(0 255 196 / 9%) 100%);
+  transition: filter 0.3s ;
+  -webkit-transition: background 1000ms linear;
+  filter: brightness(1);
+  filter: saturate(1);
+  -webkit-transition : -webkit-filter 400ms linear !important;
 
+margin-bottom: 12px;
+}
+div[type="treeTableDialogue"] > ul > li >  ul[role="group"],
+div[type="treeTableDialogue"] > ul > li >  ul[role="group"] > li > ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  gap: 6px;
+  flex-direction: column;
+  padding: 0px 0px 12px 12px !important;
+  transition: all 0.3s !important;
+
+}
+div[type="treeTableDialogue"] > ul > li > div ,
+div[type="treeTableDialogue"] > ul > li > ul > li > div{
+padding: 0px 0px 0px 8px;
+margin-bottom: 8px;
+border-radius: 5px;
+transition: all 0.1s !important;
+
+}
+div[type="treeTableDialogue"] > ul > li > ul > li > div {
+  margin-bottom: 4px !important;
+}
+div[type="treeTableDialogue"] > ul > li > ul > li > div:has(button):hover {
+box-shadow: none;
+}
+li[role="treeitem"]{
+border-radius: 5px;
+}
+div[type="treeTableDialogue"] > ul > li > div:hover,
+div[type="treeTableDialogue"] > ul > li > ul > li > div:hover{
+box-shadow:inset -20px 20px 36px 0px #00fffb24;  
+transition: all 0.1s !important;
+
+}
+
+div[type="treeTableDialogue"] > ul > li > div:hover {
+  box-shadow:inset -20px 20px 36px 0px #00fffb24;  
+  transition: all 0.1s !important;
+
+  }
+/* li[role="treeitem"] > div[data-pc-section="content"]{
+  border-radius: 5px;
+  padding-left: 8px;
+  }
+  li[role="treeitem"] > div[data-pc-section="content"]:hover {
+  background: 
+  radial-gradient(#00000000, #00eeff3d) border-box,
+  repeating-linear-gradient(-45deg, rgb(0, 14, 16), rgb(0, 9, 16, 0.3) 2px,  rgba(0, 0, 0, 0) 2px, rgba(0, 0, 0, 0) 2.83px),
+  linear-gradient(151deg, rgba(0,34,41,0) 0%, rgba(0, 156, 191, 0.555) 100%)  !important
+} */
+button[type="AxisDataTable-Button"] {
+  width: 95% !important;
+}
 .p-icon {
   margin-top: -22px;
   width: 1rem;
@@ -22,14 +94,21 @@
   margin-left: 8px;
   position: absolute;
 }
-
+.searchIcon{
+  margin-top: 7px;
+  width: 1rem;
+  height: 1rem;
+  z-index: 3;
+  margin-left: 8px;
+  position: absolute;
+}
 input[data-pc-section="input"]:focus-visible {
   outline: none !important;
 background: none !important;
 -webkit-transition : -webkit-filter 400ms linear;
 
 }
-input[data-pc-section="input"], input[class='p-column-filter'] {
+input[data-pc-section="input"], input[data-pc-name="inputtext"] {
   padding: 8px 8px 8px 10px !important;
   outline: none !important;
 
@@ -54,7 +133,7 @@ width: 100% !important;
 }
 
 div[data-pc-section="filtercontainer"]:has(input[data-pc-section="input"])
-,div[data-pc-section="filterinput"]:has(input[class='p-column-filter'])   {
+,div[data-pc-section="searchBar"]:has(div):has(input)  {
   border-radius: 6px !important;
   background-color:#021819 ;
   position: relative !important;
@@ -71,7 +150,8 @@ z-index: 1;
 
 }
 
-div[data-pc-section="filtercontainer"]:has(input[data-pc-section="input"])::before , div[data-pc-section="filterinput"]:has(input[class='p-column-filter'])::before {
+div[data-pc-section="filtercontainer"]:has(input[data-pc-section="input"])::before ,
+div[data-pc-section="searchBar"]:has(div):has(input[data-pc-name="inputtext"])::before {
   -webkit-transition : -webkit-filter 400ms linear;
 
   content: "" !important;
@@ -88,13 +168,16 @@ div[data-pc-section="filtercontainer"]:has(input[data-pc-section="input"])::befo
   mask-composite: exclude !important;
   filter: saturate(1);
   transition:   background-color 0.4s !important; 
-  filter: brightness(0.6);
+  filter: brightness(0.4);
   transition: filter 0.4s !important; 
   transition:   box-shadow 0.4s !important; 
   transition:   background-color 0.4s !important; 
 
 }
-div[data-pc-section="filtercontainer"]:has(input[data-pc-section="input"]:hover), div[data-pc-section="filterinput"]:has(input[class='p-column-filter']:hover) {
+div[data-pc-section="filtercontainer"]:has(input[data-pc-section="input"]:hover),
+div[data-pc-section="searchBar"]:has(div):has(input[data-pc-name="inputtext"])
+ /* ,div[data-pc-section="searchBar"]:has(div):has(input):hover  */
+  {
   -webkit-transition : -webkit-filter 400ms linear;
 
   border-radius: 6px ;
@@ -112,7 +195,8 @@ div[data-pc-section="filtercontainer"]:has(input[data-pc-section="input"]:hover)
   outline: none !important;
 
 }
-div[data-pc-section="filtercontainer"]:has(input[data-pc-section="input"]:hover):before, div[data-pc-section="filterinput"]:has(input[class='p-column-filter']:hover)::before {
+div[data-pc-section="filtercontainer"]:has(input[data-pc-section="input"]:hover):before,
+div[data-pc-section="searchBar"]:has(div):has(input[data-pc-name="inputtext"]:hover)::before {
   -webkit-transition : -webkit-filter 400ms linear;
 
   content: "" !important;
@@ -136,7 +220,8 @@ div[data-pc-section="filtercontainer"]:has(input[data-pc-section="input"]:hover)
   transition:   background-color 0.4s !important; 
 
 }
-div[data-pc-section="filtercontainer"]:has(input[data-pc-section="input"]:focus-visible), div[data-pc-section="filterinput"]:has(input[class='p-column-filter']:focus-visible)  {
+div[data-pc-section="filtercontainer"]:has(input[data-pc-section="input"]:focus-visible),
+div[data-pc-section="searchBar"]:has(div):has(input[data-pc-name="inputtext"]:focus-visible)  {
   -webkit-transition : -webkit-filter 400ms linear;
 
   border-radius: 6px!important;
@@ -151,7 +236,8 @@ outline: none !important;
   transition: background-color 0.4s !important;
 
 }
-div[data-pc-section="filtercontainer"]:has(input[data-pc-section="input"]:focus-visible):before, div[data-pc-section="filterinput"]:has(input[class='p-column-filter']:focus-visible)::before  {
+div[data-pc-section="filtercontainer"]:has(input[data-pc-section="input"]:focus-visible):before, 
+div[data-pc-section="searchBar"]:has(div):has(input[data-pc-name="inputtext"]:focus-visible)::before  {
   -webkit-transition : -webkit-filter 400ms linear;
 
   content: "" !important;
@@ -177,6 +263,7 @@ div[data-pc-section="filtercontainer"]:has(input[data-pc-section="input"]:focus-
 
 
 div[type='bindSelection1'] {
+  cursor: pointer;
   padding: 8px 8px 8px 0px !important;
   border-radius: 6px !important;
   background-color:#0c1902 !important;
@@ -226,6 +313,8 @@ z-index: 2;
   }
 
 div[type='bindSelection1']::before {
+  filter: brightness(0.55);
+
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
@@ -241,21 +330,22 @@ div[type='bindSelection1']::before {
   -webkit-mask-composite: destination-out !important;
   mask-composite: exclude !important;
   transition: filter 0.18s !important; 
-  transition: background 0.3s !important; 
-  -webkit-transition: background 1000ms linear;
+
   transition:   background-color 0.4s !important; 
+  transition: all 0.4s !important; 
 
 }
 div[type='bindSelection1']:hover {
-  border-radius: 6px!important;
+
+  border-radius: 6px !important;
   /* background-color:#474107 !important; */
-  filter: saturate(1.2) !important;
+  filter: saturate(1) !important;
   /* background: repeating-linear-gradient(-45deg, rgb(119 65 29), rgb(76 50 0 / 30%) 2px, rgb(0 0 0 / 0%) 2px, rgba(0, 0, 0, 0) 2.83px), linear-gradient(180deg, rgba(0, 34, 41, 0) 0%, rgb(72 64 0 / 85%) 100%) ; */
   position: relative;
   box-shadow: inset 0px 3px 25px 0px #cb8b009c;
 
   filter: none !important;
-  transition: filter 0.4s !important; 
+  transition: all 0.4s !important; 
   transition:   box-shadow 0.4s !important; 
   transition:   background-color 0.4s !important; 
 
@@ -264,20 +354,22 @@ div[type='bindSelection1']:hover {
   -ms-transition: background 1000ms linear;
 }
 div[type='bindSelection1']:hover:before {
+  filter: brightness(1);
+
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
   border-width: 1px !important;
   border-radius: 6px!important;
   border: 1px solid transparent !important;
-  filter: saturate(1.2);
+  filter: saturate(1);
   background-color:#ffe600 !important;
   /* background: radial-gradient(ellipse at 85% 0%, #ff8f16e6, #f1ad043d, transparent) border-box, radial-gradient(ellipse at 0% 40%, #bf740048, #cadb0025, transparent) border-box, radial-gradient(ellipse at 25% 100%, #b1c47c, #edb200, transparent) border-box; */
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0) !important;
   mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0) !important;
   -webkit-mask-composite: destination-out !important;
   mask-composite: exclude !important;
-  transition: filter 0.4s !important; 
+  transition: all 0.4s !important; 
   transition:   box-shadow 0.4s !important; 
   transition:   background-color 0.4s !important; 
 
@@ -329,6 +421,8 @@ z-index: 2;
 }
 
 div[type='bindSelection0']::before {
+  filter: brightness(0.55);
+
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
@@ -342,12 +436,13 @@ div[type='bindSelection0']::before {
   -webkit-mask-composite: destination-out !important;
   mask-composite: exclude !important;
   transition: filter 0.18s !important; 
-  transition: background 0.3s !important; 
-  -webkit-transition: background 1000ms linear;
+
   transition:   background-color 0.4s !important; 
 
 }
 div[type='bindSelection0']:hover {
+  filter: brightness(1);
+
   border-radius: 6px!important;
   /* background-color:#474107 !important; */
   filter: saturate(1.2) !important;
@@ -356,15 +451,14 @@ div[type='bindSelection0']:hover {
   box-shadow: inset 0px 3px 25px 0px #0063cba3;
 
   filter: none !important;
-  transition: filter 0.4s !important; 
-  transition:   box-shadow 0.4s !important; 
-  transition:   background-color 0.4s !important; 
+  transition: all 0.4s !important; 
 
-  transition: background 0.3s !important; 
-  -webkit-transition: background 1000ms linear;
-  -ms-transition: background 1000ms linear;
+
+
 }
 div[type='bindSelection0']:hover:before {
+  filter: brightness(1);
+
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
@@ -378,9 +472,8 @@ div[type='bindSelection0']:hover:before {
   mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0) !important;
   -webkit-mask-composite: destination-out !important;
   mask-composite: exclude !important;
-  transition: filter 0.4s !important; 
-  transition:   box-shadow 0.4s !important; 
-  transition:   background-color 0.4s !important; 
+  transition: all 0.4s !important; 
+
 }
 div[type='bindSelection0']:has(input:checked) {
   border-radius: 6px!important;
@@ -389,11 +482,12 @@ div[type='bindSelection0']:has(input:checked) {
   position: relative;
   filter: saturate(1.3);
   filter: none !important;
-  transition: filter 0.4s !important;
-  transition: box-shadow 0.4s !important;
-  transition: background-color 0.4s !important;
+  transition: all 0.4s !important;
+
 }
 div[type='bindSelection0']:has(input:checked):before {
+  filter: brightness(1);
+
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
@@ -407,9 +501,8 @@ div[type='bindSelection0']:has(input:checked):before {
   mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0) !important;
   -webkit-mask-composite: destination-out !important;
   mask-composite: exclude !important;
-  transition: filter 0.4s !important;
-  transition: box-shadow 0.4s !important;
-  transition: background-color 0.4s !important;
+  transition: all 0.4s !important;
+
 }
 
 div[type='bindSelection2'] {
@@ -426,6 +519,8 @@ z-index: 2;
 }
 
 div[type='bindSelection2']::before {
+  filter: brightness(0.55);
+
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
@@ -438,13 +533,13 @@ div[type='bindSelection2']::before {
   mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0) !important;
   -webkit-mask-composite: destination-out !important;
   mask-composite: exclude !important;
-  transition: filter 0.18s !important; 
-  transition: background 0.3s !important; 
-  -webkit-transition: background 1000ms linear;
-  transition:   background-color 0.4s !important; 
+
+  transition:   all 0.4s !important; 
 
 }
 div[type='bindSelection2']:hover {
+  filter: brightness(1);
+
   border-radius: 6px!important;
   /* background-color:#474107 !important; */
   filter: saturate(1.2) !important;
@@ -453,15 +548,13 @@ div[type='bindSelection2']:hover {
   box-shadow: inset 0px 3px 25px 0px #43cb008a;
 
   filter: none !important;
-  transition: filter 0.4s !important; 
-  transition:   box-shadow 0.4s !important; 
-  transition:   background-color 0.4s !important; 
+  transition: all 0.4s !important; 
 
-  transition: background 0.3s !important; 
-  -webkit-transition: background 1000ms linear;
-  -ms-transition: background 1000ms linear;
+
 }
 div[type='bindSelection2']:hover:before {
+  filter: brightness(1);
+
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
@@ -482,17 +575,20 @@ div[type='bindSelection2']:hover:before {
 
 }
 div[type='bindSelection2']:has(input:checked)  {
+  filter: brightness(1);
+
   border-radius: 6px!important;
   background-color:#0c1902 !important;
   background: repeating-linear-gradient(-45deg, rgb(119 65 29), rgb(76 50 0 / 30%) 2px, rgb(0 0 0 / 0%) 2px, rgba(0, 0, 0, 0) 2.83px), linear-gradient(180deg, rgba(0, 34, 41, 0) 0%, rgb(72 64 0 / 85%) 100%) ;
   position: relative;
   filter: none !important;
-  transition: filter 0.4s !important; 
-  transition:   box-shadow 0.4s !important; 
-  transition:   background-color 0.4s !important; 
+  transition: all 0.4s !important; 
+
 
 }
 div[type='bindSelection2']:has(input:checked):before {
+  filter: brightness(1);
+
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
@@ -506,9 +602,8 @@ div[type='bindSelection2']:has(input:checked):before {
   mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0) !important;
   -webkit-mask-composite: destination-out !important;
   mask-composite: exclude !important;
-  transition: filter 0.4s !important; 
-  transition:   box-shadow 0.4s !important; 
-  transition:   background-color 0.4s !important; 
+  transition: all 0.4s !important; 
+
 
 }
 
@@ -665,6 +760,7 @@ border: 3px solid transparent;
  background-clip: content-box;
   background-color: #00ffb3c4;
 }
+
 .p-datatable-tbody {
   display: block !important;
   border-radius: 12px !important;
@@ -931,13 +1027,13 @@ overflow-x: hidden !important;
   div[type='inputTable'] > ul > li > ul{
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  /* gap: 6px; */
   margin-left: 12px;
   margin-bottom: 12px;
   }
   div[type='inputTable'] > ul > li > div{
  
-    margin-bottom: 8px;
+    margin-bottom: 2px;
     }
   div[type='inputTable'] > ul > li > ul >li{
     display: flex;
@@ -1111,6 +1207,7 @@ ul[role="tree"] {
   height: 50vh;
   display: flex;
   flex-direction: column;
+  border-radius: 5px;
 }
 
 .bind-panel-inset {
@@ -1450,9 +1547,9 @@ button[type='device_switcher']:enabled:focus {
 .InputTableMobile{
   display: none !important;
 }
-.hidden {
+/* .hidden {
   display: none !important;
-}
+} */
 .show {
   display: unset !important;
 }
@@ -1696,7 +1793,20 @@ width: 100%;
     linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: destination-out;
 }
-
+.corner-inputTableIcons::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--c, rgba(255, 0, 0, 0));
+  padding: var(--b);
+  border-radius: var(--r);
+  -webkit-mask: linear-gradient(0deg, #000 calc(2 * var(--b)), #0000 0) 50%
+      var(--b) / calc(100% - 2 * var(--w)) 100% repeat-y,
+    linear-gradient(-90deg, #000 calc(2 * var(--b)), #0000 0) var(--b) 50%/100%
+      calc(100% - 2 * var(--w)) repeat-x,
+    linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: destination-out;
+}
 .corner-inputTableIcons {
   --b: 1px; /* thickness of the border */
   --c: rgba(0, 247, 255, 0.4); /* color of the border */
@@ -1713,8 +1823,24 @@ width: 100%;
   align-items: center;
   text-align: center;
 }
+.corner-deviceView {
+  --b: 1px; /* thickness of the border */
+  --c: rgba(0, 247, 255, 0.4); /* color of the border */
+  --w: 16px; /* width of border */
+  --r: 4px; /* radius */
 
-.corner-inputTableIcons::before {
+  padding: var(--b); /* space for the border */
+  position: relative;
+  /*Irrelevant code*/
+  padding: 6px;
+  box-sizing: border-box;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.corner-deviceView::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -1728,7 +1854,6 @@ width: 100%;
     linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: destination-out;
 }
-
 .corner-viewChanger {
   --b: 1px; /* thickness of the border */
   --c: rgba(0, 247, 255, 0.4); /* color of the border */

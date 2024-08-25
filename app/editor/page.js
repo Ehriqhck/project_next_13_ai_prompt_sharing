@@ -10,6 +10,7 @@ import YAxisIcon from '@public/assets/icons/actions/gameCategory/YAxisIcon.jsx'
 import ZAxisIcon from '@public/assets/icons/actions/gameCategory/ZAxisIcon.jsx'
 import RotateYIcon from '@public/assets/icons/actions/gameCategory/RotateYIcon.jsx'
 import RotateXIcon from '@public/assets/icons/actions/gameCategory/RotateXIcon.jsx'
+import ChevronsRight from '@public/assets/icons/actions/gameCategory/ChevronsRight.jsx'
 
 import React from 'react'
 import Device_VKB_GLADIATOR_NXT_EVO_LEFT from '@components/Device_VKB_GLADIATOR_NXT_EVO_LEFT.jsx'
@@ -219,14 +220,14 @@ const page = () => {
   }
 
   return (
-    <section id='InputViewerPanel' className='editor-container'>
+    <section id='InputViewerPanel' className='editor-container  '>
       <div className={viewerPanelVisibility}>
         <InputViewer />
       </div>
 
-      <div className='flex flex-col gap-0'>
-        <div className='flex flex-col w-full '>
-          <div className='flex flex-col'>
+      <div className='flex flex-col gap-0 corner-deviceView h-fit'>
+        <div className='flex flex-col w-full z-10'>
+          <div className='flex flex-col mt-[8px] self-center'>
             <div className='flex flex-row gap-[3px] ml-[4px]'>
               <EyeIcon width='14px' />
               <p className=' small-text w-full flex justify-start'>
@@ -254,8 +255,13 @@ const page = () => {
           <div className='device-container'>{currentSelectedEditorDevice}</div>
         </div>
       </div>
-      <div id='InputEditorPanel' className={editorPanelVisibility}>
-        <InputEditor />
+      <div className=' flex flex-row gap-[16px]'>
+        <div className='flex  self-center align-middle justify-center'>
+          <ChevronsRight width='30px' />
+        </div>
+        <div id='InputEditorPanel' className={editorPanelVisibility}>
+          <InputEditor />
+        </div>
       </div>
     </section>
   )

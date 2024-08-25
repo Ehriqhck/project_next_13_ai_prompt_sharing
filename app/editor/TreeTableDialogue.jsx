@@ -4390,7 +4390,6 @@ export default function TreeTableDialogue(props) {
                 closable
                 unstyled
                 closeOnEscape
-                className=' hidden'
 
 
                 content={() => (
@@ -4398,6 +4397,19 @@ export default function TreeTableDialogue(props) {
 
                         <div className="panel-gameAction flex self-center flex-col
                          justify-content-center gap-[3px]  justify-center radial-outline">
+                            <div>
+                                <Button type='gameActions'
+                                    onClick={() => {
+
+                                        setVisible(false)
+
+                                    }} >
+                                    <p className='text-legend-heading px-[5px] '>
+                                        CANCEL & RETURN
+                                    </p>
+                                </Button>
+                            </div>
+
                             <div className='flex w-full flex-row h-full self-center bind-panel-default  '>
                                 <div class="panel-title">
                                     <div className='flex flex-row'>
@@ -4424,12 +4436,12 @@ export default function TreeTableDialogue(props) {
                                 </div>
 
                             </div>
-                            <div className='flex flex-row h-full self-center bind-panel-default '>
+                            <div className='flex flex-row h-full self-center bind-panel-default mb-[12px] mt-[8px]'>
 
                                 <div class="panel-title ">
                                     <div className='flex flex-row '>
 
-                                        <span class="text-legend-heading px-[5px] "> 2. BIND ABOVE GAME ACTION TO A INPUT LAYER</span>
+                                        <span class="text-legend-heading px-[5px] "> 2. BIND GAME ACTION TO INPUT LAYER</span>
                                         {/* <p className='text-legend-heading'> {treeTableDialogueSelection.label} </p> */}
 
 
@@ -4446,7 +4458,7 @@ export default function TreeTableDialogue(props) {
 
                             </div>
 
-                            <Button label="hide" icon="pi pi-external-link"
+                            {/* <Button label="hide" icon="pi pi-external-link"
                                 onClick={() => {
 
                                     // console.log(JSON.parse(sessionStorage.getItem('cache_ButtonInputTableData')));
@@ -4454,18 +4466,14 @@ export default function TreeTableDialogue(props) {
 
 
 
-                                }} />
-                            <Button label="hide" icon="pi pi-external-link"
-                                onClick={() => {
+                                }} /> */}
 
-                                    setVisible(false)
-
-                                }} />
                             <Tree
                                 togglerTemplate={togglerTemplate}
                                 selectionMode="single" selectionKeys={selectedKey}
                                 onSelectionChange={(e) => {
                                 }}
+                                type="treeTableDialogue"
                                 unstyled
                                 onNodeClick={(e) => {
                                     setSelectedAction(e.node);
@@ -4474,7 +4482,7 @@ export default function TreeTableDialogue(props) {
                                 // onNodeClick={(e) => {
                                 //     console.log("WHAT IS NODE???:   " + e.data);
                                 // }}
-                                nodeTemplate={nodeTemplate} value={nodes} filter filterBy='label' filterMode="strict" filterPlaceholder="Lenient Filter"
+                                nodeTemplate={nodeTemplate} value={nodes} filter filterBy='label' filterMode="strict" filterPlaceholder="'Fire Weapon Group 1'"
                                 className="w-[800px] h-[100%]" />
                         </div>
                     </div>
