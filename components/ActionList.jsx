@@ -16,21 +16,21 @@ const ActionList = ({ layers, input_direction, selectable }) => {
 
     "action-list": input_direction !== "left" || "right"
   });
-  console.log("ActionList Layers:");
-  
-console.log(layers);
+  // console.log("ActionList Layers:");
+
+  // console.log(layers);
 
   if (selectable) {
     const getSelectedInput = (array) => {
 
       return (
         array?.map((component, index) => {
-          console.log("INDEX:  " + index + " |   CURRENT COMPONENT: " + component);
-          console.log(component);
-          
+          // console.log("INDEX:  " + index + " |   CURRENT COMPONENT: " + component);
+          // console.log(component);
+
           return (
             <Action
-             action_id={component.data?.name}
+              action_id={component.data?.name}
               node={component}
               layer={index}
               input_direction={input_direction}

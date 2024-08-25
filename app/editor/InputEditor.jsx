@@ -44,23 +44,24 @@ const Editor = ({ show }) => {
   return (
 
 
-    <div className='panel-default' id="editorPanel">
-      <div className='flex space-between flex-row  w-full'>
+    <div className='panel-default ' id="editorPanel">
+      <div class="panel-title ">
+        <div className='flex flex-row '>
 
-        {/* <div className='w-full flex flex-row justify-end mr-[10px]'>
-          <IconLegend />
-        </div> */}
+          <span class="text-legend-heading px-[5px] "> BIND EDITOR PANEL</span>
+          {/* <p className='text-legend-heading'> {treeTableDialogueSelection.label} </p> */}
 
 
+        </div>
       </div>
-      <PanelSwitchButtonMobile whatPanel="editor" />
+    
 
-      <div className='flex flex-row'>
-        <div className=''>
-          
+      <div className='flex flex-row pt-[24px] mb-[12px]'>
+        <div className='flex'>
+
           {Utils.getSelectedDeviceIcon(
             sessionStorage.getItem('selectedEditorDevice'),
-            '40px','', true)}
+            '40px', '', true)}
         </div>
 
         {/* <p className='text-base ml-[0px]'></p> */}
@@ -72,11 +73,11 @@ const Editor = ({ show }) => {
       <div className='flex flex-col gap-[2px] w-[100%]' >
         <div className="inputTable-inset flex flex-col gap-[0px]">
 
-        <InputTable
+          <InputTable
             onInputSelect={setSelectedInput}
           />
         </div>
-      
+
       </div>
 
     </div>

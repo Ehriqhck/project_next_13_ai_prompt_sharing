@@ -76,9 +76,9 @@ const Action = ({ action_id, node, layer, input_direction, selectable }) => {
 
 
     const render = () => {
-        console.log("GameAction Node:");
+        // console.log("GameAction Node:");
 
-        console.log(node);
+        // console.log(node);
 
         if (selectable) {
    

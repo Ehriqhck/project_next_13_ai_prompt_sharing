@@ -193,14 +193,13 @@ export default function InputTable() {
         }
         // check if node is category with child array of game actions
         if (Object.hasOwn(node.data, 'layers')) {
-            console.log(node);
+            // console.log(node);
 
             return (
                 <button onClick={() => {
-                    console.log(node);
                     setTreeTableDialogueVisibility(true)
                     setTreeTableDialogueSelection(node)
-                    console.log(node);
+                    console.log(treeTableDialogueVisibility);
 
                 }}>
                     <Button type="inputTable" className=" flex flex-col   " tabIndex={-1} onClick={options.onClick}>
@@ -297,6 +296,10 @@ export default function InputTable() {
                     filter filterBy='label' filterMode="strict" filterPlaceholder="Lenient Filter"
                     className=""
                 />
+                <div className='hidden'>
+                    <TreeTableDialogue></TreeTableDialogue>
+
+                </div>
             </div>
         </div>
     );
