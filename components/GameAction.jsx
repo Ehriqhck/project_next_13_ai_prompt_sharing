@@ -96,7 +96,7 @@ const Action = ({ action_id, node, layer, input_direction, selectable }) => {
                             // type={'bindSelection' + layer}
                             onClick={() => {
                                 // setSelectedLayer(props.layer);
-                                console.log(props.layer);
+                                // console.log(node);
                             }}
                             className='pointer-events-auto'
                             for={"choice-" + layer}

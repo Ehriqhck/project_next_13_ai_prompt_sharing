@@ -226,7 +226,7 @@ const page = () => {
       </div>
 
       <div className='flex flex-col gap-0 corner-deviceView h-fit'>
-        <div className='flex flex-col w-full'>
+        <div className='flex flex-col w-full z-[4]'>
           <div className='flex flex-col mt-[8px] self-center'>
             <div className='flex flex-row gap-[3px] ml-[4px]'>
               <EyeIcon width='14px' />
@@ -252,7 +252,7 @@ const page = () => {
             />
           </div>
 
-          <div className='device-container'>{currentSelectedEditorDevice}</div>
+          <div className='device-container '>{currentSelectedEditorDevice}</div>
         </div>
       </div>
       <div className=' flex flex-row gap-[16px]'>

@@ -198,16 +198,16 @@ const NavEditor = () => {
                   {/* <Spacer className=""/> */}
                   <div className="spacer" />
                   {/* Desktop Navigation */}
-                  <div className='sm:flex '>
+                  <div className=' '>
                     {session?.user ? (
                       <div className='flex gap-3 md:gap-5'>
-                        <Link href='/create-control-profile' className='black_btn hidden'>
+                        {/* <Link href='/create-control-profile' className='black_btn hidden'>
                           Create Control Profile
-                        </Link>
+                        </Link> */}
 
-                        <button type='button' onClick={signOut} className='outline_btn'>
-                          Sign Out
-                        </button>
+                        <Button type='gameActions' onClick={signOut} className='h-[24px] flex'>
+                          <p className='self-center w-full'> Sign Out</p>
+                        </Button>
 
                         <Link href='/profile'>
                           <Image
@@ -251,13 +251,30 @@ const NavEditor = () => {
 
             </nav>
           </div>
-          <div className='navbarExtra'>
+          <div className='navbarExtra '>
 
-            <div>
+            <div className='flex gap-[8px] pb-[2px] '>
               <Button
-                onClick={() => { sessionStorage.clear() }}
+                onClick={() => {
+                  sessionStorage.clear()
+                }}
                 unstyled type="small" className=' self-center flex justify-center align-middle px-[5px] py-[5px] w-fit' >
-                <span className='smallButton-text px-[5px] '> ADD DEVICE +</span>
+                <span className='small-text px-[5px] '> ADD DEVICE +</span>
+              </Button>
+
+              <Button
+                onClick={() => {
+                  sessionStorage.clear()
+                }}
+                unstyled type="small" className=' self-center flex justify-center align-middle px-[5px] py-[5px] w-fit' >
+                <span className='small-text px-[5px] '> IMPORT PROFILE</span>
+              </Button>
+              <Button
+                onClick={() => {
+                  sessionStorage.clear()
+                }}
+                unstyled type="small" className=' self-center flex justify-center align-middle px-[5px] py-[5px] w-fit' >
+                <span className='small-text px-[5px] '> SHARE</span>
               </Button>
             </div>
           </div>

@@ -2445,8 +2445,7 @@ align-self: center; */
 }
 
 .navbarExtra > div{
-border-radius: 0px 0px 10px 10px !important;
-padding: 6px 12px 4px 12px !important;
+padding: 6px 12px 8px 12px !important;
 background-color: #021519  !important;
 position: relative !important;
 background: 
@@ -2462,7 +2461,7 @@ content: "";
 position: absolute;
 inset: 0;
 cursor: pointer;
-border-radius: 0px 0px 10px 10px !important;
+border-radius: 0px 0px 8px 8px !important;
 border: 1px solid transparent !important;
 border-width: 0px 1px 1px 1px !important;
 background: 
@@ -3350,7 +3349,7 @@ color: #CEFCFF;
 }
 .p-button[type='profile-card-button'] {
   border-radius: 10px !important; 
-
+padding: 8px 8px 4px 8px !important;
   background-color: #021519 !important;
   position: relative !important;
   background: 
