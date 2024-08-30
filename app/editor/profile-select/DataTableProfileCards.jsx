@@ -12,6 +12,11 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation'
 import { SelectedEditorDeviceContext, SelectedEditorDeviceViewOrientationContext, TreeTableDialogueSelectionContext, TreeTableDialogueVisibilityContext, SelectedInputTableInputContext } from '@components/Provider';
 import { SessionDeviceInputs } from '@app/editor/SessionDeviceInputs.js';
+import useSWR from 'swr'
+import { FileUpload } from 'primereact/fileupload';
+
+
+
 
 const DataTableProfileCards = (props) => {
     const { selectedEditorDevice, setSelectedEditorDevice } = useContext(SelectedEditorDeviceContext);
@@ -72,6 +77,8 @@ const DataTableProfileCards = (props) => {
         inventoryStatus: 'INSTOCK',
         rating: 5
     }]);
+
+  
 
     useEffect(() => {
 
@@ -176,7 +183,7 @@ const DataTableProfileCards = (props) => {
                 <DataTable
                     className='min-w-[345px] '
                     filterDisplay="row" type='profile card'
-                     value={devices} rows={3} paginator={true} selectionMode='single' paginatorTemplate={paginatorBodyTemplate}>
+                    value={devices} rows={3} paginator={true} selectionMode='single' paginatorTemplate={paginatorBodyTemplate}>
                     <Column field="name" filter filterPlaceholder='search' body={imageBodyTemplate}></Column>
 
                 </DataTable>
@@ -236,6 +243,13 @@ const DataTableProfileCards = (props) => {
                                         <p className='control-profile-card-body whitespace-nowrap'>LAST MODIFIED</p>
                                         <p className='control-profile-card-body whitespace-nowrap'> {selectedPreview.dateLastModified}</p>
                                     </div>
+                                    <FileUpload
+                                        mode="basic"
+                                        name="demoTest"
+                                        url="/api/upload"
+                                        accept=""
+                                        maxFileSize={1000000}
+                                         />
                                 </div>
                             </Button>
                         </div>
@@ -249,7 +263,7 @@ const DataTableProfileCards = (props) => {
                                 setSelectedEditorDeviceViewOrientation('Front');
                                 setSelectedEditorDevice(Object.keys(selectedPreview.deviceList)[0]);
                                 setTreeTableDialogueVisibility(false);
-                                
+
                                 // sessionStorage.setItem('selectedEditorInputTableInput', 'buttons');
                                 sessionStorage.setItem('inputTableFilter', 'buttons');
                                 sessionStorage.setItem("dialogueVisibility", "false")

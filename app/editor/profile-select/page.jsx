@@ -7,6 +7,9 @@ import { Context } from '@components/Provider.jsx'
 import DataTableProfileCards from '@app/editor/profile-select/DataTableProfileCards.jsx'
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 import { SelectedEditorDeviceContext } from '@components/Provider';
+const fetcher = (...args) => fetch(...args).then(res => res.json())
+import useSWR from 'swr'
+import { FileUpload } from 'primereact/fileupload';
 
 const page = () => {
 
@@ -307,7 +310,7 @@ const page = () => {
                                 "slotName": "press",
                                 "layers": [
                                     "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
-                                  
+
                                 ]
                             },
                             {
@@ -315,7 +318,7 @@ const page = () => {
                                 "name": "TRANSLATE X",
                                 "layers": [
                                     "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
-   
+
                                 ]
                             },
                             {
@@ -323,7 +326,7 @@ const page = () => {
                                 "name": "TWIST Y",
                                 "layers": [
                                     "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
-                                
+
                                 ]
                             },
                             {
@@ -331,7 +334,7 @@ const page = () => {
                                 "slotName": "bottom",
                                 "layers": [
                                     "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
-                             
+
                                 ]
                             },
 
@@ -340,7 +343,7 @@ const page = () => {
                                 "name": "TRANSLATE Z",
                                 "layers": [
                                     "MANUAL GIMBAL MODE - SWAP VJOY / LOOK DIRECTION (TOGGLE, HOLD)",
-                             
+
                                 ]
                             }
 
@@ -785,6 +788,10 @@ const page = () => {
 
         const fetchDeviceProfiles = async () => {
             try {
+
+                // const { dataSWR, error } = useSWR('/api/deviceProfiles', fetcher)
+
+
                 setIsLoading(true);
                 const response = await fetch('/api/deviceProfiles', {
                     method: 'POST',
@@ -835,9 +842,36 @@ const page = () => {
 
     }, [isLoading]);
 
+    const profileUpload = async () => {
+        // console.log(selectedAction);
+
+        const response = await fetch("/api/deviceProfiles/bindButton", {
+            method: "PATCH",
+            body: JSON.stringify({
+                userId: session?.user.id,
+                selectedInput: selectedEditorInput,
+                selectedAction: selectedAction.key,
+                selectedLayer: selectedLayer
+            })
+        }
+
+
+        );
+
+        const data = await response.json();
+
+        setprofileContext(data);
+
+        setActionUpdate(!actionUpdate);
+    };
+
+const onUpload = () => {
+    console.log();
+}
 
     return (
         <section>
+<FileUpload mode="basic" name="uploadTEST" url="/api/upload" accept="image/*" maxFileSize={1000000} onUpload={onUpload} auto chooseLabel="Browse" />
 
             <DataTableProfileCards context={accountProfiles} />
         </section>
