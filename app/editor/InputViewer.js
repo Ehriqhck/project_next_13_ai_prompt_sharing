@@ -31,12 +31,12 @@ const Editor = ({ show }) => {
   return (
     <div className='test '>
       <div className='flex space-between flex-row  w-full'>
-        <button>
+        {/* <button>
           <CloseButton className='button1' />
         </button>
         <div className='w-full flex flex-row justify-end mr-[10px]'>
           <IconLegend />
-        </div>
+        </div> */}
       </div>
 
       <div className='text-input-title flex flex-row'>
@@ -50,7 +50,7 @@ const Editor = ({ show }) => {
       </div>
       <InputTableMobile onInputSelect={selectedViewerInput} />
 
-      <div className='flex flex-col gap-[7px]'>
+      {/* <div className='flex flex-col gap-[7px]'>
         <p className='text-base self-start'>// MODIFIER LAYERS</p>
         <div className='flex flex-row gap-[10px]'>
           <LayerChip layer={0} />
@@ -58,7 +58,7 @@ const Editor = ({ show }) => {
           <LayerChip layer={1} />
           <LayerChip layer={2} />
         </div>
-      </div>
+      </div> */}
 
       <InputViewer selectedButton={selectedViewerInput} />
     </div>

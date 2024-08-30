@@ -13,11 +13,55 @@
 /* svg {
   width: 100%;
 } */
+a:has(img[alt='profile']) {
+  border-radius: 100px;
+}
+a > img[alt='profile'] {
+  border-radius: 100px;
+  outline: solid 1px #c8c8c887
+}
+
+.default-white {
+  justify-content: center;
+  height: 41px;
+  background: repeating-linear-gradient(-45deg, rgb(83 83 83 / 44%), rgb(255 255 255 / 0%) 2px, rgb(0 0 0 / 0%) 2px, rgb(0 0 0 / 0%) 2.83px), linear-gradient(327deg, rgb(0 71 68 / 0%) 0%, rgb(255 0 89 / 0%) 100%);
+  box-shadow: 1px 0px 20px 0px rgb(255 255 255 / 22%);
+  background-color: #ffffff2e;
+  /* outline: #ffffffbc; */
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  border-radius: 16px;
+  border: 1px #ffffffbc solid;
+  padding: 8px;
+  font-family: "Exo";
+  font-size: 15px;
+font-weight: 500;
+letter-spacing: 0.2px;
+transition: all 0.4s;
+
+}
+
+.default-white-text {
+
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(180deg, #fafafae8 40%, rgb(209 209 209 / 57%) 100%);
+}
+.default-white:hover {
+  box-shadow: inset 1px 0px 20px 0px rgb(255 255 255 / 22%),1px 0px 20px 0px rgb(255 255 255 / 22%);
+  transition: all 0.4s;
+}
+
 li {
   transition: all 0.3s !important;
 }
 li > div > button {
   width: 95%;
+}
+li[aria-expanded="true"] > div:hover {
+background: none !important;
 }
 li[aria-expanded="true"]{
   border-radius: 6px !important;

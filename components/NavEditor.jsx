@@ -205,34 +205,48 @@ const NavEditor = () => {
                           Create Control Profile
                         </Link> */}
 
-                        <Button type='gameActions' onClick={signOut} className='h-[24px] flex'>
-                          <p className='self-center w-full'> Sign Out</p>
+                        <Button unstyled type='default-white' onClick={signOut} className='h-[24px] flex default-white '>
+                          <p className='self-center w-fit default-white-text'> Sign Out</p>
+                          <Link href='/profile' className='self-center'>
+                            <Image
+                              src={session?.user.image}
+                              width={26}
+                              height={26}
+                              className='rounded-[100px]'
+                              alt='profile'
+                            />
+                          </Link>
                         </Button>
 
-                        <Link href='/profile'>
-                          <Image
-                            src={session?.user.image}
-                            width={37}
-                            height={37}
-                            className='rounded-full'
-                            alt='profile'
-                          />
-                        </Link>
+
                       </div>
                     ) : (
                       <>
                         {providers &&
                           Object.values(providers).map((provider) => (
-                            <button
-                              type='button'
+                            <Button
+                              unstyled
+                              type='default-white'
                               key={provider.name}
                               onClick={() => {
                                 signIn(provider.id);
-                              }}
-                              className='black_btn'
-                            >
-                              Sign in
-                            </button>
+                              }}                              className='h-[24px] flex default-white '>
+                              <p className='self-center w-full'>
+                                Sign in
+                              </p>
+                        
+                            </Button>
+
+                            // <button
+                            //   type='button'
+                            //   key={provider.name}
+                            //   onClick={() => {
+                            //     signIn(provider.id);
+                            //   }}
+                            //   className='black_btn'
+                            // >
+                            //   Sign in
+                            // </button>
                           ))}
                       </>
                     )}
