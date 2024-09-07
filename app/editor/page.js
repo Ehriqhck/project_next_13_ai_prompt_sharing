@@ -11,12 +11,12 @@ import ZAxisIcon from '@public/assets/icons/actions/gameCategory/ZAxisIcon.jsx'
 import RotateYIcon from '@public/assets/icons/actions/gameCategory/RotateYIcon.jsx'
 import RotateXIcon from '@public/assets/icons/actions/gameCategory/RotateXIcon.jsx'
 import ChevronsRight from '@public/assets/icons/actions/gameCategory/ChevronsRight.jsx'
-
+import { getCookie, getCookies, setCookie } from 'cookies-next'
+import uploadForm from 'components/uploadForm.jsx'
 import React from 'react'
 import Device_VKB_GLADIATOR_NXT_EVO_LEFT from '@components/Device_VKB_GLADIATOR_NXT_EVO_LEFT.jsx'
 import Device_VKB_GLADIATOR_NXT_EVO_RIGHT from '@components/Device_VKB_GLADIATOR_NXT_EVO_RIGHT.jsx'
 import Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK from '@components/Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK.jsx'
-
 import InputEditor from './InputEditor'
 import InputViewer from './InputViewer'
 import { useState, useContext, useEffect } from 'react'
@@ -29,7 +29,11 @@ import {
   SelectedInputTableInputContext
 } from '@components/Provider'
 import clsx from 'clsx'
+import { FileUpload } from 'primereact/fileupload'
 const page = () => {
+  const [name, setName] = useState('')
+  const [selectedFile, setSelectedFile] = useState(null)
+
   const { showViewerPanel, setshowViewerPanel } = useContext(
     ShowViewerPanelContext
   )
@@ -219,6 +223,27 @@ const page = () => {
     }
   }
 
+  const onSubmit = async event => {
+    event.preventDefault()
+
+    const fileInput = document.getElementById('fileUpload') // Replace with your HTML element ID
+    const file = fileInput.files[0]
+    console.log(file)
+
+    const formData = new FormData()
+    formData.append('file', file)
+
+    fetch('/api/upload', {
+      method: 'POST',
+      body: formData
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+      })
+      .catch(error => console.error(error))
+  }
+
   return (
     <section id='InputViewerPanel' className='editor-container  '>
       <div className={viewerPanelVisibility}>
@@ -256,9 +281,29 @@ const page = () => {
         </div>
       </div>
       <div className=' flex flex-row gap-[16px]'>
-        
         <div className='flex  self-center align-middle justify-center'>
-          <ChevronsRight width='30px' />
+          <ChevronsRight width='30px' id='fileinput' />
+          <form onSubmit={onSubmit}>
+            <input type='file' id='fileUpload' name='filename' />
+            <input type='submit' />
+          </form>
+          {/* <FileUpload
+            mode='basic'
+            // name='demo[]'
+            url='/api/upload'
+            maxFileSize={1000000}
+            // onUpload={onUpload}
+          /> */}
+          AS
+          {/* <div className='w-[10px] h-[10px]'>
+        <label for="testFile">Choose a profile picture:</label>
+      <input type="file" name='testFile' onChange={handleFileUpload} />
+    </div>         */}
+          <Button onClick={() => console.log(getCookies())}>asdasd</Button>
+          <Button onClick={() => setCookie('testBite', 'ASLKDJASLKDJLAKSDJ')}>
+            asdasd
+          </Button>
+          {/* <fileUpload/> */}
         </div>
         <div id='InputEditorPanel' className={editorPanelVisibility}>
           <InputEditor />

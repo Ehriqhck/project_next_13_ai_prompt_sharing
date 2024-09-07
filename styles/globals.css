@@ -1610,7 +1610,7 @@ button[type='device_switcher']:enabled:focus {
 }
 
 .selected-input:hover {
-  filter: invert(13%) sepia(32%) saturate(1434%) hue-rotate(126deg) brightness(104%) contrast(103%) !important;
+  filter:sepia(254%) saturate(229%) hue-rotate(106deg)  !important;
 background-color: #003029;
 cursor: pointer;
 }
