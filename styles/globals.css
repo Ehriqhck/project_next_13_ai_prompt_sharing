@@ -1779,6 +1779,7 @@ width: 100%;
   text-align: center;
 }
 
+
 .corner-test::before {
   content: '';
   position: absolute;
