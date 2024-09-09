@@ -1,3 +1,4 @@
+'use client'
 import PillSwitch from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/PillSwitch.jsx'
 import RedButton from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/RedButton.jsx'
 import ChipSwitch from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/ChipSwitch.jsx'
@@ -154,6 +155,9 @@ import QuestionMark from '@components/generic/Icons/QuestionIcon.svg'
 // }
 
 export const Utils = {
+  createNewMappingProfileFromXml (profileName, deviceList, description, xml) {
+    
+  },
   getGameActionIcon (key) {
     switch (key) {
       // Reset Icon
@@ -3369,7 +3373,11 @@ export const Utils = {
       case 'Hat_Stick':
         return (
           <div className={this.cornerStyle(corners)}>
-            <Hat className={'testCircle ' + this.cornerStyle(corners)} width={width} height={height} />
+            <Hat
+              className={'testCircle ' + this.cornerStyle(corners)}
+              width={width}
+              height={height}
+            />
           </div>
         )
 
@@ -3378,7 +3386,11 @@ export const Utils = {
       case 'Pill_Stick':
         return (
           <div className={this.cornerStyle(corners)}>
-            <PillSwitch className={'testCircle ' + this.cornerStyle(corners)} width={width} height={height} />
+            <PillSwitch
+              className={'testCircle ' + this.cornerStyle(corners)}
+              width={width}
+              height={height}
+            />
           </div>
         )
 
@@ -3387,7 +3399,11 @@ export const Utils = {
       case 'Red_Button':
         return (
           <div className={this.cornerStyle(corners)}>
-            <RedButton className={'testCircle ' + this.cornerStyle(corners)} width={width} height={height} />
+            <RedButton
+              className={'testCircle ' + this.cornerStyle(corners)}
+              width={width}
+              height={height}
+            />
           </div>
         )
         break
@@ -3395,7 +3411,11 @@ export const Utils = {
       case 'Chip_Stick':
         return (
           <div className={this.cornerStyle(corners)}>
-            <ChipSwitch className={'testCircle ' + this.cornerStyle(corners)} width={width} height={height} />
+            <ChipSwitch
+              className={'testCircle ' + this.cornerStyle(corners)}
+              width={width}
+              height={height}
+            />
           </div>
         )
 
@@ -3460,13 +3480,21 @@ export const Utils = {
     switch (slotName) {
       case 'top':
         return (
-          <InputUpIcon className={'testCircle ' + this.cornerStyle(corners)} width={width} height={height} />
+          <InputUpIcon
+            className={'testCircle ' + this.cornerStyle(corners)}
+            width={width}
+            height={height}
+          />
         )
         break
 
       case 'bottom':
         return (
-          <InputDownIcon className={'testCircle ' + this.cornerStyle(corners)} width={width} height={height} />
+          <InputDownIcon
+            className={'testCircle ' + this.cornerStyle(corners)}
+            width={width}
+            height={height}
+          />
         )
         break
 
@@ -3507,29 +3535,49 @@ export const Utils = {
     switch (slotName) {
       case 'TWIST X':
         return (
-          <RotateXIcon className={'testCircle ' + this.cornerStyle(corners)} width={width} height={height} />
+          <RotateXIcon
+            className={'testCircle ' + this.cornerStyle(corners)}
+            width={width}
+            height={height}
+          />
         )
         break
 
       case 'TRANSLATE X':
         return (
-          <XAxisIcon className={'testCircle ' + this.cornerStyle(corners)} width={width} height={height} />
+          <XAxisIcon
+            className={'testCircle ' + this.cornerStyle(corners)}
+            width={width}
+            height={height}
+          />
         )
         break
 
       case 'TWIST Y':
         return (
-          <RotateYIcon className={'testCircle ' + this.cornerStyle(corners)} width={width} height={height} />
+          <RotateYIcon
+            className={'testCircle ' + this.cornerStyle(corners)}
+            width={width}
+            height={height}
+          />
         )
         break
 
       case 'Translate Y':
         return (
-          <YAxisIcon className={'testCircle ' + this.cornerStyle(corners)} width={width} height={height} />
+          <YAxisIcon
+            className={'testCircle ' + this.cornerStyle(corners)}
+            width={width}
+            height={height}
+          />
         )
       case 'TRANSLATE Z':
         return (
-          <ZAxisIcon className={'testCircle ' + this.cornerStyle(corners)} width={width} height={height} />
+          <ZAxisIcon
+            className={'testCircle ' + this.cornerStyle(corners)}
+            width={width}
+            height={height}
+          />
         )
         break
 
@@ -3589,7 +3637,7 @@ export const Utils = {
         break
       case 'VKB_GLADIATOR_NXT_EVO_RIGHT':
         return (
-          <div className={'w-fit ' + this.cornerStyle(corner)} >
+          <div className={'w-fit ' + this.cornerStyle(corner)}>
             <img
               src='/assets/VKB/VKB_GLADIATOR_NEXT_EVO_RIGHT_icon.webp'
               width={width}
