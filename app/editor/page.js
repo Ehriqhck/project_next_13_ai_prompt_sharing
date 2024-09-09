@@ -19,6 +19,7 @@ import Device_VKB_GLADIATOR_NXT_EVO_RIGHT from '@components/Device_VKB_GLADIATOR
 import Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK from '@components/Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK.jsx'
 import InputEditor from './InputEditor'
 import InputViewer from './InputViewer'
+
 import { useState, useContext, useEffect } from 'react'
 import {
   ShowEditorPanelContext,
@@ -29,9 +30,14 @@ import {
   SelectedInputTableInputContext
 } from '@components/Provider'
 import clsx from 'clsx'
+import stringify from 'xml-stringify'
 import { FileUpload } from 'primereact/fileupload'
 const page = () => {
   const [name, setName] = useState('')
+  const [rawXml, setRawXml] = useState()
+
+  const [parsedXml, setParsedXml] = useState()
+
   const [selectedFile, setSelectedFile] = useState(null)
 
   const { showViewerPanel, setshowViewerPanel } = useContext(
@@ -223,26 +229,63 @@ const page = () => {
     }
   }
 
+  const onUpload = async event => {
+    event.preventDefault()
+    const fileInput = document.getElementById('fileUpload')
+    const file = fileInput.files[0]
+
+    const formData = new FormData()
+
+    formData.append('file', file)
+    try {
+      // const { dataSWR, error } = useSWR('/api/deviceProfiles', fetcher)
+
+      setIsLoading(true)
+      const response = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData
+      })
+      const data = await response.json()
+      // const data = TEMP_PROFILE;
+      console.log('DATA BELOW vvvv')
+      console.log(data)
+
+      setParsedXml(data)
+      // sessionStorage.setItem('loadedProfiles', JSON.stringify(loadedProfiles))
+    } catch (error) {
+      console.log(error)
+    } finally {
+      // console.log(accountProfiles);
+      setIsLoading(false)
+    }
+  }
+
   const onSubmit = async event => {
     event.preventDefault()
 
-    const fileInput = document.getElementById('fileUpload') // Replace with your HTML element ID
+    const fileInput = document.getElementById('fileUpload')
     const file = fileInput.files[0]
-    console.log(file)
 
     const formData = new FormData()
+
+    let data = {}
     formData.append('file', file)
 
     fetch('/api/upload', {
       method: 'POST',
       body: formData
     })
-      .then(response => response.json())
+      .then(response => {
+        data = response.json()
+        setParsedXml(data)
+        console.log(data, parsedXml)
+      })
       .then(data => {
-        console.log(data)
+        console.log(data.json)
       })
       .catch(error => console.error(error))
   }
+  console.log(parsedXml)
 
   return (
     <section id='InputViewerPanel' className='editor-container  '>
@@ -283,7 +326,7 @@ const page = () => {
       <div className=' flex flex-row gap-[16px]'>
         <div className='flex  self-center align-middle justify-center'>
           <ChevronsRight width='30px' id='fileinput' />
-          <form onSubmit={onSubmit}>
+          <form onSubmit={onUpload}>
             <input type='file' id='fileUpload' name='filename' />
             <input type='submit' />
           </form>
@@ -299,7 +342,7 @@ const page = () => {
         <label for="testFile">Choose a profile picture:</label>
       <input type="file" name='testFile' onChange={handleFileUpload} />
     </div>         */}
-          <Button onClick={() => console.log(getCookies())}>asdasd</Button>
+          <Button onClick={() => console.log(parsedXml)}>asdasd</Button>
           <Button onClick={() => setCookie('testBite', 'ASLKDJASLKDJLAKSDJ')}>
             asdasd
           </Button>

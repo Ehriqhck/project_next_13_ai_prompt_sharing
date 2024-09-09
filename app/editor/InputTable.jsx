@@ -82,10 +82,17 @@ export default function InputTable() {
 
                 let index = 0;
                 const bindNum = children.forEach(child => {
-                    if (child.data.layers[0] !== undefined) {
-                        index += 1;
-
+                    try {
+                        if (child.data.layers[0] !== undefined) {
+                            index += 1;
+    
+                        }
+                    } catch (error) {
+                        console.log(error);
+                        
+                        
                     }
+             
                 }
                 );
                 return (index);

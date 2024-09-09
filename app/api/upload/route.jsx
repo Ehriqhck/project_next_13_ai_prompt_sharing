@@ -55,20 +55,25 @@ import { NextResponse } from "next/server";
 import path from "path";
 import { writeFile } from "fs/promises";
 import { setCookie, getCookies } from 'cookies-next'
+import stringify from 'xml-stringify';
 
 // Define the POST handler for the file upload
 export const POST = async (req, res) => {
+    const { XMLParser, XMLBuilder, XMLValidator } = require('fast-xml-parser')
+    const parser = new XMLParser({
+        ignoreAttributes: false,
+        attributeNamePrefix: "",
+        // attributesGroupName: "@_"
+
+    });
+
     // Parse the incoming form data
     const formData = await req.formData();
-console.log("TEST CONSOLE");
-setCookie('wow', 'ddasdads')
+    console.log("TEST CONSOLE");
     // Get the file from the form data
     const file = formData.get("file");
-console.log(file, JSON.stringify(file));
 
-    // Check if a file is received
     if (!file) {
-        // If no file is received, return a JSON response with an error and a 400 status code
         return NextResponse.json({ error: "No files received." }, { status: 400 });
     }
 
@@ -79,19 +84,21 @@ console.log(file, JSON.stringify(file));
     const filename = file.name.replaceAll(" ", "_");
     console.log(filename);
     try {
-        setCookie('test', JSON.stringify(file.name))
-        setCookie('testA', "ROUTE SUCCESS")
+        let result = parser.parse(buffer, {
+            ignoreAttributes: false,
+        });
+        console.log('RESULTT', result, JSON.stringify(result),
+         );
 
         // Write the file to the specified directory (public/assets) with the modified filename
         // await writeFile(
         //     path.join(process.cwd(), "public/assets/" + filename),
         //     buffer
         // );
+        // return NextResponse.json(result);
+        return new Response(JSON.stringify(result), { status: 200 })
 
-        // Return a JSON response with a success message and a 201 status code
-        return NextResponse.json({ Message: "Success", status: 201 });
     } catch (error) {
-        // If an error occurs during file writing, log the error and return a JSON response with a failure message and a 500 status code
         console.log("Error occurred ", error);
         return NextResponse.json({ Message: "Failed", status: 500 });
     }
