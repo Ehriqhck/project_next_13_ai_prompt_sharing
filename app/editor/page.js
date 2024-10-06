@@ -16,7 +16,7 @@ import uploadForm from 'components/uploadForm.jsx'
 import React from 'react'
 import Device_VKB_GLADIATOR_NXT_EVO_LEFT from '@components/Device_VKB_GLADIATOR_NXT_EVO_LEFT.jsx'
 import Device_VKB_GLADIATOR_NXT_EVO_RIGHT from '@components/Device_VKB_GLADIATOR_NXT_EVO_RIGHT.jsx'
-import Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK from '@components/Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK.jsx'
+import Device_VKB_T_RUDDER_MK5 from '@components/Device_VKB_T_RUDDER_MK5.jsx'
 import InputEditor from './InputEditor'
 import InputViewer from './InputViewer'
 
@@ -220,6 +220,14 @@ const page = () => {
           />
         )
         break
+        case 'Device_VKB_T_RUDDER_MK5':
+          return (
+            <Device_VKB_T_RUDDER_MK5
+              className='min-w-[330px]'
+              // view={sessionStorage.getItem('deviceViewOrientation')}
+            />
+          )
+          break
       default:
         return (
           // <>{selected}</>
@@ -320,12 +328,21 @@ const page = () => {
             />
           </div>
 
-          <div className='device-container '>{currentSelectedEditorDevice}</div>
+          <div className='device-container '>
+            
+            {/* {currentSelectedEditorDevice} */}
+            <Device_VKB_T_RUDDER_MK5
+              className='min-w-[630px]'
+              // view={sessionStorage.getItem('deviceViewOrientation')}
+            />
+            
+            </div>
         </div>
       </div>
       <div className=' flex flex-row gap-[16px]'>
         <div className='flex  self-center align-middle justify-center'>
           <ChevronsRight width='30px' id='fileinput' />
+    
           <form onSubmit={onUpload}>
             <input type='file' id='fileUpload' name='filename' />
             <input type='submit' />
