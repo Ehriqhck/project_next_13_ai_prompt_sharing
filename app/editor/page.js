@@ -92,8 +92,8 @@ const page = () => {
       console.log(error)
     } finally {
       console.log('selectedEditorDevice VVV')
-      console.log(sessionStorage.getItem('selectedEditorDevice'))
-      console.log(sessionStorage.getItem('deviceViewOrientation'))
+      // console.log(sessionStorage.getItem('selectedEditorDevice'))
+      // console.log(sessionStorage.getItem('deviceViewOrientation'))
 
       setIsLoading(false)
     }

@@ -5,9 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
-import Spacer from "components/generic/Spacer.jsx"
 import { Context, SelectedDeviceContext, SelectedEditorDeviceContext } from '@components/Provider.jsx'
-import { Dock } from 'primereact/dock';
 import { Button } from 'primereact/button';
 import { usePathname } from 'next/navigation'
 import { Utils } from '@app/editor/utils.js'
@@ -74,7 +72,6 @@ const NavEditor = () => {
   }, []);
 
 
-  JSON.parse(sessionStorage.getItem("selectedProfile"))
 
 
   useEffect(() => {

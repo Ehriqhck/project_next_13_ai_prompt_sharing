@@ -1,14 +1,12 @@
 "use client"
 import React from 'react'
-import NavEditor from 'components/NavEditor.jsx'
-import { Button } from 'primereact/button';
+
 import { useContext, useState, useEffect } from 'react'
 import { Context } from '@components/Provider.jsx'
 import DataTableProfileCards from '@app/editor/profile-select/DataTableProfileCards.jsx'
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 import { SelectedEditorDeviceContext } from '@components/Provider';
-const fetcher = (...args) => fetch(...args).then(res => res.json())
-import useSWR from 'swr'
+// const fetcher = (...args) => fetch(...args).then(res => res.json())
 import { FileUpload } from 'primereact/fileupload';
 
 const page = () => {
@@ -783,7 +781,7 @@ const page = () => {
             template: (item) => itemRenderer(item, 2)
         }
     ]);
-    console.log(JSON.parse(sessionStorage.getItem('loadedProfile')));
+    // console.log(JSON.parse(sessionStorage.getItem('loadedProfile')));
     useEffect(() => {
 
         const fetchDeviceProfiles = async () => {

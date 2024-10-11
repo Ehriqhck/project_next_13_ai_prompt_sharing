@@ -38,7 +38,7 @@ const InputViewer = ({ selectedButton }) => {
     const [press, setPress] = useState();
 
     console.log("Selected BUTTON: " + selectedButton);
-    const sessionProfiles = JSON.parse(sessionStorage.getItem('selectedProfile'))
+    // const sessionProfiles = JSON.parse(sessionStorage.getItem('selectedProfile'))
 
     useEffect(() => {
         console.log("/EDITOR :" + profileContext);
