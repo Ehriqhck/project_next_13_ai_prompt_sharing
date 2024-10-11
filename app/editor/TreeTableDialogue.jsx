@@ -44,9 +44,9 @@ import ThreeIcon from '@public/assets/icons/actions/gameCategory/ThreeIcon.jsx'
 import IncreaseIcon from '@public/assets/icons/actions/gameCategory/IncreaseIcon.jsx'
 import DecreaseIcon from '@public/assets/icons/actions/gameCategory/DecreaseIcon.jsx'
 import FractureIcon from '@public/assets/icons/actions/gameCategory/FractureIcon.jsx'
-import DisintegrateIcon from '@public/assets/icons/actions/gameCategory/disintegrateIcon.jsx'
-import NudgeIcon from '@public/assets/icons/actions/gameCategory/nudgeIcon.jsx'
-import AngleIcon from '@public/assets/icons/actions/gameCategory/angleIcon.jsx'
+import DisintegrateIcon from '@public/assets/icons/actions/gameCategory/DisintegrateIcon.jsx'
+import NudgeIcon from '@public/assets/icons/actions/gameCategory/NudgeIcon.jsx'
+import AngleIcon from '@public/assets/icons/actions/gameCategory/AngleIcon.jsx'
 import FocusedBeamIcon from '@public/assets/icons/actions/gameCategory/FocusedBeamIcon.jsx'
 import TractorBeamIcon from '@public/assets/icons/actions/gameCategory/TractorBeamIcon.jsx'
 import LeftwardIcon from '@public/assets/icons/actions/gameCategory/LeftwardIcon.jsx'
@@ -121,7 +121,7 @@ import ApertureIcon from '@public/assets/icons/actions/gameCategory/ApertureIcon
 import ChevronsRight from '@public/assets/icons/actions/gameCategory/ChevronsRight.jsx'
 import ModLayerSelector from '@components/actionSelector/ModLayerSelector';
 import { SelectContext, SelectedActionContext, EditorPanelTitleContext, TreeTableDialogueSelectionContext, TreeTableDialogueVisibilityContext } from '@components/Provider';
-import BindIcon from '@public/assets/icons/generic/bindicon.jsx'
+import BindIcon from '@public/assets/icons/generic/Bindicon.jsx'
 
 import { Utils } from '@app/editor/utils.js'
 
