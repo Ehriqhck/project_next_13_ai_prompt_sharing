@@ -3,7 +3,8 @@ import NoSsr from '../../../components/NoSsr';
 import React from 'react'
 import { DataTable } from 'primereact/datatable';
 import { useState, useEffect, useContext } from 'react';
-import { Button, Column } from 'primereact/button';
+import { Button } from 'primereact/button';
+import { Column } from 'primereact/column';
 import { Context } from '@components/Provider.jsx'
 import { parse } from 'postcss';
 import { FilterMatchMode, FilterOperator } from 'primereact/api';
