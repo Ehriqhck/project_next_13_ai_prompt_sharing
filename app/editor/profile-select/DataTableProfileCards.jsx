@@ -1,4 +1,5 @@
 "use client";
+import NoSsr from '../../../components/NoSsr';
 import React from 'react'
 import { DataTable } from 'primereact/datatable';
 import { useState, useEffect, useContext } from 'react';
@@ -78,7 +79,7 @@ const DataTableProfileCards = (props) => {
         rating: 5
     }]);
 
-  
+
 
     useEffect(() => {
 
@@ -107,7 +108,6 @@ const DataTableProfileCards = (props) => {
     const imageBodyTemplate = (profile) => {
 
         return (
-
             <Button onClick={(e) => {
                 try {
                     setLoading(true);
@@ -158,7 +158,6 @@ const DataTableProfileCards = (props) => {
                     </div>
                 </div>
             </Button>
-
         )
     };
 
@@ -176,116 +175,120 @@ const DataTableProfileCards = (props) => {
         }
     }
     return (
-        <div className='flex flex-row  control-profile-selector'>
-            <div className='radial-outline'>
-                <p> SAVED PROFILES</p>
+        <NoSsr>
 
-                <DataTable
-                    className='min-w-[345px] '
-                    filterDisplay="row" type='profile card'
-                    value={devices} rows={3} paginator={true} selectionMode='single' paginatorTemplate={paginatorBodyTemplate}>
-                    <Column field="name" filter filterPlaceholder='search' body={imageBodyTemplate}></Column>
+            <div className='flex flex-row  control-profile-selector'>
+                <div className='radial-outline'>
+                    <p> SAVED PROFILES</p>
 
-                </DataTable>
-            </div>
+                    <DataTable
+                        className='min-w-[345px] '
+                        filterDisplay="row" type='profile card'
+                        value={devices} rows={3} paginator={true} selectionMode='single' paginatorTemplate={paginatorBodyTemplate}>
+                        <Column field="name" filter filterPlaceholder='search' body={imageBodyTemplate}></Column>
 
-            <div className='ml-[36px] flex flex-col'>
-                <div className='min-w-[600px] flex flex-col p-[16px] min-h-[385px] panel-white  gap-[16px]'>
-                    <p className="font-['Exo_2'] text-[24px] leading-[24px] font-medium"> Title </p>
-
-                    <div>
-                        <div className='flex flex-row gap-[36px]'>
-                            <div className='flex flex-col gap-[4px] '>
-                                <p className="font-['Exo_2'] text-[10pt] font-medium "> LAST MODIFIED </p>
-                                <p className="font-['Exo_2'] text-[10pt] font-light capitalize ">{selectedPreview.dateModified} </p>
-                            </div>
-                            <div className='flex flex-col gap-[4px] '>
-                                <p className="font-['Exo_2'] text-[10pt] font-medium  "> DATE CREATED </p>
-                                <p className="font-['Exo_2'] text-[10pt] font-light capitalize "> {selectedPreview.dateCreated} </p>
-                            </div>
-                            <div className='flex flex-col gap-[4px] '>
-                                <p className="font-['Exo_2'] text-[10pt] font-medium "> GAME VERSION </p>
-                                <p className="font-['Exo_2'] text-[10pt] font-light capitalize "> {selectedPreview.gameVersion} </p>
-                            </div>
-
-                        </div>
-                        <div className='flex flex-col gap-[4px] mt-[16px]'>
-                            <p className="font-['Exo_2'] text-[10pt] font-medium "> PROFILE DEVICES </p>
-
-
-                            <p className="font-['Exo_2'] text-[10pt] font-light capitalize ">{Object.keys(selectedPreview.deviceList)} </p>
-
-
-                        </div>
-                    </div>
-
+                    </DataTable>
                 </div>
-                <div className='flex flex-col gap-[3px] mt-[16px]'>
-                    <div>
+
+                <div className='ml-[36px] flex flex-col'>
+                    <div className='min-w-[600px] flex flex-col p-[16px] min-h-[385px] panel-white  gap-[16px]'>
+                        <p className="font-['Exo_2'] text-[24px] leading-[24px] font-medium"> Title </p>
+
                         <div>
-                            <p className="font-['Exo_2'] text-[10pt] font-medium">SELECTED PROFILE </p>
-                            <Button unstyled onClick={(e) => {
-                                // console.log("ASDAKSDHKASJ" + e.devices[0])
-                                console.log(e);
-                            }}
-                                className='flex flex-col min-w-[250px] control-profile-card-bg  w-[345px] p-[8px] gap-[8px] '>
-                                <div className='flex w-full'>
-                                    <p className='ml-[8px] ml-[0px] control-profile-card-title'>{selectedPreview.profileName} </p>
+                            <div className='flex flex-row gap-[36px]'>
+                                <div className='flex flex-col gap-[4px] '>
+                                    <p className="font-['Exo_2'] text-[10pt] font-medium "> LAST MODIFIED </p>
+                                    <p className="font-['Exo_2'] text-[10pt] font-light capitalize ">{selectedPreview.dateModified} </p>
+                                </div>
+                                <div className='flex flex-col gap-[4px] '>
+                                    <p className="font-['Exo_2'] text-[10pt] font-medium  "> DATE CREATED </p>
+                                    <p className="font-['Exo_2'] text-[10pt] font-light capitalize "> {selectedPreview.dateCreated} </p>
+                                </div>
+                                <div className='flex flex-col gap-[4px] '>
+                                    <p className="font-['Exo_2'] text-[10pt] font-medium "> GAME VERSION </p>
+                                    <p className="font-['Exo_2'] text-[10pt] font-light capitalize "> {selectedPreview.gameVersion} </p>
                                 </div>
 
-                                <div className='flex flex-row justify-between mb-[4px]'>
-                                    <div className='flex flex-row mr-[64px] h-full justify-center gap-[4px]'>
-                                        <p className='flex control-profile-card-device-number justify-self-end  self-end'>{selectedPreview.deviceAmount}</p>
-                                        <p className='flex control-profile-card-device self-end '>DEVICES</p>
-                                    </div>
+                            </div>
+                            <div className='flex flex-col gap-[4px] mt-[16px]'>
+                                <p className="font-['Exo_2'] text-[10pt] font-medium "> PROFILE DEVICES </p>
 
-                                    <div className='flex flex-col  justify-between '>
-                                        <p className='control-profile-card-body whitespace-nowrap'>LAST MODIFIED</p>
-                                        <p className='control-profile-card-body whitespace-nowrap'> {selectedPreview.dateLastModified}</p>
-                                    </div>
-                                    <FileUpload
-                                        mode="basic"
-                                        name="demoTest"
-                                        url="/api/upload"
-                                        accept=""
-                                        maxFileSize={1000000}
-                                         />
-                                </div>
-                            </Button>
+
+                                <p className="font-['Exo_2'] text-[10pt] font-light capitalize ">{Object.keys(selectedPreview.deviceList)} </p>
+
+
+                            </div>
                         </div>
-                        <Link href="/editor">
 
-                            <Button onClick={(e) => {
-                                // console.log("ASDAKSDHKASJ" + e.devices[0])
-                                setprofileContext(selectedPreview);
-                                console.log(profileContext?.buttons);
-                                setSelectedEditorDevice(Object.keys(selectedPreview.deviceList)[0]);
-                                setSelectedEditorDeviceViewOrientation('Front');
-                                setSelectedEditorDevice(Object.keys(selectedPreview.deviceList)[0]);
-                                setTreeTableDialogueVisibility(false);
+                    </div>
+                    <div className='flex flex-col gap-[3px] mt-[16px]'>
+                        <div>
+                            <div>
+                                <p className="font-['Exo_2'] text-[10pt] font-medium">SELECTED PROFILE </p>
+                                <Button unstyled onClick={(e) => {
+                                    // console.log("ASDAKSDHKASJ" + e.devices[0])
+                                    console.log(e);
+                                }}
+                                    className='flex flex-col min-w-[250px] control-profile-card-bg  w-[345px] p-[8px] gap-[8px] '>
+                                    <div className='flex w-full'>
+                                        <p className='ml-[8px] ml-[0px] control-profile-card-title'>{selectedPreview.profileName} </p>
+                                    </div>
 
-                                // sessionStorage.setItem('selectedEditorInputTableInput', 'buttons');
-                                sessionStorage.setItem('inputTableFilter', 'buttons');
-                                sessionStorage.setItem("dialogueVisibility", "false")
-                                sessionStorage.setItem('loadedProfile', JSON.stringify(selectedPreview));
-                                // setSelectedInputTableInput('Front');
-                                sessionStorage.setItem('selectedEditorInputTableInput', "Front");
+                                    <div className='flex flex-row justify-between mb-[4px]'>
+                                        <div className='flex flex-row mr-[64px] h-full justify-center gap-[4px]'>
+                                            <p className='flex control-profile-card-device-number justify-self-end  self-end'>{selectedPreview.deviceAmount}</p>
+                                            <p className='flex control-profile-card-device self-end '>DEVICES</p>
+                                        </div>
 
-                                sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Front");
-                                sessionStorage.setItem('selectedEditorDevice', Object.keys(selectedPreview.deviceList)[0]);
-                                console.log("LOADING DEVICE:");
-                                // SessionDeviceInputs.getTreeTableNodes().then((data) => {
-                                //     sessionStorage.setItem('cache_ButtonInputTableData', JSON.stringify(data))
-                                //     setNodes(data)
-                                // });
-                                console.log(Object.keys(selectedPreview.deviceList)[0]);
-                            }}>
-                            </Button>
-                        </Link>
+                                        <div className='flex flex-col  justify-between '>
+                                            <p className='control-profile-card-body whitespace-nowrap'>LAST MODIFIED</p>
+                                            <p className='control-profile-card-body whitespace-nowrap'> {selectedPreview.dateLastModified}</p>
+                                        </div>
+                                        <FileUpload
+                                            mode="basic"
+                                            name="demoTest"
+                                            url="/api/upload"
+                                            accept=""
+                                            maxFileSize={1000000}
+                                        />
+                                    </div>
+                                </Button>
+                            </div>
+                            <Link href="/editor">
+
+                                <Button onClick={(e) => {
+                                    // console.log("ASDAKSDHKASJ" + e.devices[0])
+                                    setprofileContext(selectedPreview);
+                                    console.log(profileContext?.buttons);
+                                    setSelectedEditorDevice(Object.keys(selectedPreview.deviceList)[0]);
+                                    setSelectedEditorDeviceViewOrientation('Front');
+                                    setSelectedEditorDevice(Object.keys(selectedPreview.deviceList)[0]);
+                                    setTreeTableDialogueVisibility(false);
+
+                                    // sessionStorage.setItem('selectedEditorInputTableInput', 'buttons');
+                                    sessionStorage.setItem('inputTableFilter', 'buttons');
+                                    sessionStorage.setItem("dialogueVisibility", "false")
+                                    sessionStorage.setItem('loadedProfile', JSON.stringify(selectedPreview));
+                                    // setSelectedInputTableInput('Front');
+                                    sessionStorage.setItem('selectedEditorInputTableInput', "Front");
+
+                                    sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Front");
+                                    sessionStorage.setItem('selectedEditorDevice', Object.keys(selectedPreview.deviceList)[0]);
+                                    console.log("LOADING DEVICE:");
+                                    // SessionDeviceInputs.getTreeTableNodes().then((data) => {
+                                    //     sessionStorage.setItem('cache_ButtonInputTableData', JSON.stringify(data))
+                                    //     setNodes(data)
+                                    // });
+                                    console.log(Object.keys(selectedPreview.deviceList)[0]);
+                                }}>
+                                </Button>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </NoSsr>
+
     )
 }
 
