@@ -37,7 +37,7 @@ import KeyIcon from '@public/assets/icons/actions/gameCategory/KeyIcon.jsx'
 import GroundVehicleIcon from '@public/assets/icons/actions/gameCategory/GroundVehicleIcon.jsx'
 import PlusIcon from '@public/assets/icons/actions/gameCategory/PlusIcon.jsx'
 import MoveIcon from '@public/assets/icons/actions/gameCategory/MoveIcon.jsx'
-import LandingIcon from '@public/assets/icons/actions/gameCategory/LandingIcon.jsx'
+// import LandingIcon from '@public/assets/icons/actions/gameCategory/LandingIcon.jsx'
 import SpeedometerIcon from '@public/assets/icons/actions/gameCategory/SpeedometerIcon.jsx'
 import WifiIcon from '@public/assets/icons/actions/gameCategory/WifiIcon.jsx'
 import TurretIcon from '@public/assets/icons/actions/gameCategory/TurretIcon.jsx'
@@ -621,7 +621,7 @@ export const Utils = {
       case 'v_toggle_landing_system':
         return (
           <div className='w-[25px] self-center'>
-            <LandingIcon />
+            {/* <LandingIcon/> */}
           </div>
         )
       // Quantum Icon
