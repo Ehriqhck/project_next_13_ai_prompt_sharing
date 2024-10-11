@@ -1,5 +1,5 @@
 'use client'
-import dynamic from 'next/dynamic'
+import  NoSSR from '@components/NoSsr.jsx'
 import { Button } from 'primereact/button'
 import { TabMenu } from 'primereact/tabmenu'
 import CubeFrontIcon from '@public/assets/icons/actions/gameCategory/CubeFrontIcon.jsx'
