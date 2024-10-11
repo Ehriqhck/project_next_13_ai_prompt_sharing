@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-
+import NoSsr from '../../../components/NoSsr'
 import { useContext, useState, useEffect } from 'react'
 import { Context } from '@components/Provider.jsx'
 import DataTableProfileCards from '@app/editor/profile-select/DataTableProfileCards.jsx'
@@ -863,16 +863,18 @@ const page = () => {
         setActionUpdate(!actionUpdate);
     };
 
-const onUpload = () => {
-    console.log();
-}
+    const onUpload = () => {
+        console.log();
+    }
 
     return (
-        <section>
-<FileUpload mode="basic" name="uploadTEST" url="/api/upload" accept="image/*" maxFileSize={1000000} onUpload={onUpload} auto chooseLabel="Browse" />
+        <NoSsr>
+            <section>
+                <FileUpload mode="basic" name="uploadTEST" url="/api/upload" accept="image/*" maxFileSize={1000000} onUpload={onUpload} auto chooseLabel="Browse" />
 
-            <DataTableProfileCards context={accountProfiles} />
-        </section>
+                <DataTableProfileCards context={accountProfiles} />
+            </section>
+        </NoSsr>
     )
 }
 
