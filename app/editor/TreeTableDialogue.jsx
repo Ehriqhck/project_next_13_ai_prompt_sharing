@@ -121,7 +121,7 @@ import ApertureIcon from '@public/assets/icons/actions/gameCategory/ApertureIcon
 import ChevronsRight from '@public/assets/icons/actions/gameCategory/ChevronsRight.jsx'
 import ModLayerSelector from '@components/actionSelector/ModLayerSelector';
 import { SelectContext, SelectedActionContext, EditorPanelTitleContext, TreeTableDialogueSelectionContext, TreeTableDialogueVisibilityContext } from '@components/Provider';
-import BindIcon from '@public/assets/icons/generic/Bindicon.jsx'
+import BindIcon from '@public/assets/icons/generic/BindIcon.jsx'
 
 import { Utils } from '@app/editor/utils.js'
 
