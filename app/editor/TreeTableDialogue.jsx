@@ -25,7 +25,7 @@ import KeyIcon from '@public/assets/icons/actions/gameCategory/KeyIcon.jsx'
 import GroundVehicleIcon from '@public/assets/icons/actions/gameCategory/GroundVehicleIcon.jsx'
 import PlusIcon from '@public/assets/icons/actions/gameCategory/PlusIcon.jsx'
 import MoveIcon from '@public/assets/icons/actions/gameCategory/MoveIcon.jsx'
-import LandingIcon from '@components/generic/Icons/LandingIcon.jsx'
+// import LandingIcon from '@components/generic/Icons/LandingIcon.jsx'
 import SpeedometerIcon from '@public/assets/icons/actions/gameCategory/SpeedometerIcon.jsx'
 import WifiIcon from '@public/assets/icons/actions/gameCategory/WifiIcon.jsx'
 import TurretIcon from '@public/assets/icons/actions/gameCategory/TurretIcon.jsx'
@@ -1138,7 +1138,7 @@ export default function TreeTableDialogue(props) {
 
                 return (
                     <div className='w-[25px] self-center'>
-                        <LandingIcon />
+                        {/* <LandingIcon /> */}
                     </div>
                 )
             // Quantum Icon
