@@ -1,4 +1,5 @@
 'use client'
+import dynamic from 'next/dynamic'
 import { Button } from 'primereact/button'
 import { TabMenu } from 'primereact/tabmenu'
 import CubeFrontIcon from '@public/assets/icons/actions/gameCategory/CubeFrontIcon.jsx'
@@ -198,6 +199,12 @@ const page = () => {
   ]
 
   const getSelectedEditorDevice = selectedDevice => {
+
+    const getView = () => {
+      if (typeof window == "undefined") {
+        return 'front'
+      }
+    }
     switch (sessionStorage.getItem('selectedEditorDevice')) {
       case 'VKB_GLADIATOR_NXT_EVO_RIGHT':
         return (
@@ -293,6 +300,8 @@ const page = () => {
   console.log(parsedXml)
 
   return (
+    <NoSSR>
+
     <section id='InputViewerPanel' className='editor-container  '>
       <div className={viewerPanelVisibility}>
         <InputViewer />
@@ -367,6 +376,8 @@ const page = () => {
         </div>
       </div>
     </section>
+    </ NoSSR>
+
   )
 }
 
