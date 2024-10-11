@@ -5,7 +5,6 @@ import ActionList from '@components/ActionList.jsx'
 import clsx from 'clsx';
 
 import { Dialog } from 'primereact/dialog';
-import GameActionTable from 'app/editor/GameActionTable.jsx'
 import React, { useState, useEffect, useContext } from 'react';
 import BindButton from './BindButton';
 import { TreeTable } from 'primereact/treetable';
