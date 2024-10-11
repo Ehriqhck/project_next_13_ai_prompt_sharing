@@ -1,24 +1,26 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  paths: {
+    '@/': ['./']
+  },
   experimental: {
     appDir: true,
-    serverComponentsExternalPackages: ["mongoose", 'axios'],
+    serverComponentsExternalPackages: ['mongoose', 'axios']
   },
   images: {
-    domains: ['lh3.googleusercontent.com'],
+    domains: ['lh3.googleusercontent.com']
   },
   env: {
-    NEXTAUTH_SECRET:"say_lalisa_love_me_lalisa_love_me_hey"
-
+    NEXTAUTH_SECRET: 'say_lalisa_love_me_lalisa_love_me_hey'
   },
-  webpack(config) {
+  webpack (config) {
     config.experiments = {
       ...config.experiments,
-      topLevelAwait: true,
+      topLevelAwait: true
     }
     // Grab the existing rule that handles SVG imports
-    const fileLoaderRule = config.module.rules.find((rule) =>
-      rule.test?.test?.('.svg'),
+    const fileLoaderRule = config.module.rules.find(rule =>
+      rule.test?.test?.('.svg')
     )
 
     config.module.rules.push(
@@ -26,14 +28,14 @@ const nextConfig = {
       {
         ...fileLoaderRule,
         test: /\.svg$/i,
-        resourceQuery: /url/, // *.svg?url
+        resourceQuery: /url/ // *.svg?url
       },
       // Convert all other *.svg imports to React components
       {
         test: /\.svg$/i,
         issuer: /\.[jt]sx?$/,
         resourceQuery: { not: /url/ }, // exclude if *.svg?url
-        use: ['@svgr/webpack'],
+        use: ['@svgr/webpack']
       }
     )
 
@@ -42,8 +44,6 @@ const nextConfig = {
 
     return config
   }
-
-
 }
 
 module.exports = nextConfig
