@@ -3,7 +3,6 @@ import { Button } from 'primereact/button'
 import { TabMenu } from 'primereact/tabmenu'
 import CubeFrontIcon from '@public/assets/icons/actions/gameCategory/CubeFrontIcon.jsx'
 import CubeBackIcon from '@public/assets/icons/actions/gameCategory/CubeBackIcon.jsx'
-import RotateIcon from '@public/assets/icons/actions/gameCategory/RotateIcon.jsx'
 import EyeIcon from '@public/assets/icons/actions/gameCategory/EyeIcon.jsx'
 import XAxisIcon from '@public/assets/icons/actions/gameCategory/XAxisIcon.jsx'
 import YAxisIcon from '@public/assets/icons/actions/gameCategory/YAxisIcon.jsx'
@@ -12,7 +11,6 @@ import RotateYIcon from '@public/assets/icons/actions/gameCategory/RotateYIcon.j
 import RotateXIcon from '@public/assets/icons/actions/gameCategory/RotateXIcon.jsx'
 import ChevronsRight from '@public/assets/icons/actions/gameCategory/ChevronsRight.jsx'
 import { getCookie, getCookies, setCookie } from 'cookies-next'
-import uploadForm from 'components/uploadForm.jsx'
 import React from 'react'
 import Device_VKB_GLADIATOR_NXT_EVO_LEFT from '@components/Device_VKB_GLADIATOR_NXT_EVO_LEFT.jsx'
 import Device_VKB_GLADIATOR_NXT_EVO_RIGHT from '@components/Device_VKB_GLADIATOR_NXT_EVO_RIGHT.jsx'
@@ -30,8 +28,7 @@ import {
   SelectedInputTableInputContext
 } from '@components/Provider'
 import clsx from 'clsx'
-import stringify from 'xml-stringify'
-import { FileUpload } from 'primereact/fileupload'
+
 const page = () => {
   const [name, setName] = useState('')
   const [rawXml, setRawXml] = useState()

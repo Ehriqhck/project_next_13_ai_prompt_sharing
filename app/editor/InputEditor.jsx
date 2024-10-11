@@ -1,20 +1,13 @@
 'use client'
-import CloseButton from 'public/assets/icons/generic/button_close.svg'
-import IconLegend from '@components/generic/IconLegend';
+
 import React from 'react'
-import ActionTable from '@app/editor/ActionTable'
 import InputTable from '@app/editor/InputTable'
-import { Context, SelectedEditorActionTableTargetContext, SelectContext, SelectedEditorActionContext, EditorPanelTitleContext, SelectedEditorDeviceContext, SelectedInputTableInputContext } from '@components/Provider';
-import LayerChip from '@components/generic/LayerChip';
-import ModLayerSelector from '@components/actionSelector/ModLayerSelector.js';
-import BindButton from '@app/editor/BindButton.jsx'
-import PanelSwitchButtonMobile from './PanelSwitchButtonMobile.js';
+import { Context, SelectContext, SelectedEditorActionContext, EditorPanelTitleContext, SelectedEditorDeviceContext, SelectedInputTableInputContext } from '@components/Provider';
+
 import { Utils } from '@app/editor/utils.js'
-import GameActionTable from '@app/editor/GameActionTable.jsx'
-import TreeTableDialogue from '@app/editor/TreeTableDialogue.jsx'
-import { createContext, useContext, useState } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
+
+import {  useContext, useState } from 'react';
+
 
 
 const Editor = ({ show }) => {
