@@ -109,56 +109,58 @@ const DataTableProfileCards = (props) => {
     const imageBodyTemplate = (profile) => {
 
         return (
-            <Button onClick={(e) => {
-                try {
-                    setLoading(true);
-                    console.log(Object.entries(profile?.savedDevices).length);
-                    setSelectedPreview({
-                        deviceAmount: profile.deviceAmount,
-                        profileName: profile.profileName,
-                        deviceList: profile?.savedDevices,
-                        dateModified: profile.dateModified,
-                        dateCreated: profile.dateCreated,
-                        gameVersion: profile.gameVersion
-                    });
-                    console.log("new selection");
-                    console.log(JSON.parse(sessionStorage.getItem('loadedProfile')));
-                    console.log(selectedPreview);
-                    setSelectedEditorDeviceViewOrientation('Front');
-                    setprofileContext(selectedPreview);
+            <NoSsr>
+                <Button onClick={(e) => {
+                    try {
+                        setLoading(true);
+                        console.log(Object.entries(profile?.savedDevices).length);
+                        setSelectedPreview({
+                            deviceAmount: profile.deviceAmount,
+                            profileName: profile.profileName,
+                            deviceList: profile?.savedDevices,
+                            dateModified: profile.dateModified,
+                            dateCreated: profile.dateCreated,
+                            gameVersion: profile.gameVersion
+                        });
+                        console.log("new selection");
+                        console.log(JSON.parse(sessionStorage.getItem('loadedProfile')));
+                        console.log(selectedPreview);
+                        setSelectedEditorDeviceViewOrientation('Front');
+                        setprofileContext(selectedPreview);
 
-                } catch (error) {
-                    console.log(error);
-                } finally {
+                    } catch (error) {
+                        console.log(error);
+                    } finally {
 
-                    setLoading(false)
+                        setLoading(false)
 
-                }
+                    }
 
 
-            }}
-                type='profile-card-button'
-                className='flex flex-col min-w-[250px]  w-[345px]  control-profile-card-bg  px-[16px] pb-[8px] pt-[14px] gap-[8px] '>
-                <div className='flex w-full'>
-                    <p className=' control-profile-card-title'>{profile.profileName} </p>
-                </div>
-
-                <div className='flex flex-row justify-between mb-[4px]  w-[100%]'>
-                    <div className='flex flex-row mr-[64px] h-full justify-center gap-[4px]'>
-                        <p className='flex control-profile-card-device-number justify-self-end  self-end'>
-                            {profile.deviceAmount}
-
-                        </p>
-
-                        <p className='flex control-profile-card-device self-end '>DEVICES</p>
+                }}
+                    type='profile-card-button'
+                    className='flex flex-col min-w-[250px]  w-[345px]  control-profile-card-bg  px-[16px] pb-[8px] pt-[14px] gap-[8px] '>
+                    <div className='flex w-full'>
+                        <p className=' control-profile-card-title'>{profile.profileName} </p>
                     </div>
 
-                    <div className='flex flex-col  justify-between gap-[2px] '>
-                        <p className='control-profile-card-body mb-[2px]'>LAST MODIFIED</p>
-                        <p className='control-profile-card-body'>July 3rd, 12:10AM {profile.dateLastModified}</p>
+                    <div className='flex flex-row justify-between mb-[4px]  w-[100%]'>
+                        <div className='flex flex-row mr-[64px] h-full justify-center gap-[4px]'>
+                            <p className='flex control-profile-card-device-number justify-self-end  self-end'>
+                                {profile.deviceAmount}
+
+                            </p>
+
+                            <p className='flex control-profile-card-device self-end '>DEVICES</p>
+                        </div>
+
+                        <div className='flex flex-col  justify-between gap-[2px] '>
+                            <p className='control-profile-card-body mb-[2px]'>LAST MODIFIED</p>
+                            <p className='control-profile-card-body'>July 3rd, 12:10AM {profile.dateLastModified}</p>
+                        </div>
                     </div>
-                </div>
-            </Button>
+                </Button>
+            </NoSsr>
         )
     };
 
