@@ -10,7 +10,10 @@ import { SelectedEditorDeviceContext } from '@components/Provider';
 // import { FileUpload } from 'primereact/fileupload';
 
 const page = () => {
-
+    const DataTableCardsNoSsr = dynamic(
+        () => import('app/editor/profile-select/DataTableProfileCards.jsx'),
+        { ssr: false }
+    )
     const TEMP_PROFILE = {
         "_id": { "$oid": "669d8e426876942f3d04d3b2" },
         "email": "rickierumbles@gmail.com",
@@ -871,8 +874,8 @@ const page = () => {
         <NoSsr>
             <section>
                 {/* <FileUpload mode="basic" name="uploadTEST" url="/api/upload" accept="image/*" maxFileSize={1000000} onUpload={onUpload} auto chooseLabel="Browse" /> */}
-
-                <DataTableProfileCards context={accountProfiles} />
+                <DataTableCardsNoSsr context={accountProfiles}> </DataTableCardsNoSsr>
+                {/* <DataTableProfileCards context={accountProfiles} /> */}
             </section>
         </NoSsr>
     )
