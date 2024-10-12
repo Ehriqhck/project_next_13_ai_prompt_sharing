@@ -97,7 +97,7 @@ const DataTableProfileCards = (props) => {
         }
 
 
-    },[isLoading])
+    },)
     useEffect(() => {
         sessionStorage.setItem("selectedProfile", JSON.stringify(selectedPreview))
 
