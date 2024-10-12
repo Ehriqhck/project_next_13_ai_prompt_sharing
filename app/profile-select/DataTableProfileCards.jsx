@@ -109,7 +109,6 @@ const DataTableProfileCards = (props) => {
     const imageBodyTemplate = (profile) => {
 
         return (
-            <NoSsr>
                 <Button onClick={(e) => {
                     try {
                         setLoading(true);
@@ -160,7 +159,6 @@ const DataTableProfileCards = (props) => {
                         </div>
                     </div>
                 </Button>
-            </NoSsr>
         )
     };
 
