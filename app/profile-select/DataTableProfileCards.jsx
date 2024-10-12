@@ -178,7 +178,6 @@ const DataTableProfileCards = (props) => {
         }
     }
     return (
-        <NoSsr>
 
             <div className='flex flex-row  control-profile-selector'>
                 <div className='radial-outline'>
@@ -284,7 +283,6 @@ const DataTableProfileCards = (props) => {
                     </div>
                 </div>
             </div>
-        </NoSsr>
 
     )
 }
