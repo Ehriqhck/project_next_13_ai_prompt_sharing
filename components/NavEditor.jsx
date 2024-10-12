@@ -1,5 +1,4 @@
 "use client";
-import NoSsr from './NoSsr';
 import { useContext } from 'react';
 import { TabMenu } from 'primereact/tabmenu';
 import Link from "next/link";
@@ -104,7 +103,7 @@ const NavEditor = () => {
   console.log(urlPath);
   switch (urlPath) {
 
-    case "/editor/profile-select":
+    case "/profile-select":
       return (
           <nav className=' w-full'>
 
