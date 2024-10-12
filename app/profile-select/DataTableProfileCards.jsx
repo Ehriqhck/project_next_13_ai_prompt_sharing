@@ -1,5 +1,5 @@
 "use client";
-import NoSsr from '../../../components/NoSsr';
+import NoSsr from '../../components/NoSsr';
 import React from 'react'
 import { DataTable } from 'primereact/datatable';
 import { useState, useEffect, useContext } from 'react';
@@ -99,7 +99,7 @@ const DataTableProfileCards = (props) => {
         }
 
 
-    })
+    },[])
     useEffect(() => {
         sessionStorage.setItem("selectedProfile", JSON.stringify(selectedPreview))
 
@@ -247,13 +247,7 @@ const DataTableProfileCards = (props) => {
                                             <p className='control-profile-card-body whitespace-nowrap'>LAST MODIFIED</p>
                                             <p className='control-profile-card-body whitespace-nowrap'> {selectedPreview.dateLastModified}</p>
                                         </div>
-                                        <FileUpload
-                                            mode="basic"
-                                            name="demoTest"
-                                            url="/api/upload"
-                                            accept=""
-                                            maxFileSize={1000000}
-                                        />
+                                        
                                     </div>
                                 </Button>
                             </div>

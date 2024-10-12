@@ -1,9 +1,10 @@
 "use client"
 import React from 'react'
-import NoSsr from '../../../components/NoSsr'
+import NoSsr from '../../components/NoSsr'
+import dynamic from 'next/dynamic'
 import { useContext, useState, useEffect } from 'react'
 import { Context } from '@components/Provider.jsx'
-import DataTableProfileCards from '@app/editor/profile-select/DataTableProfileCards.jsx'
+import DataTableProfileCards from '@app/profile-select/DataTableProfileCards.jsx'
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 import { SelectedEditorDeviceContext } from '@components/Provider';
 // const fetcher = (...args) => fetch(...args).then(res => res.json())
@@ -11,7 +12,7 @@ import { SelectedEditorDeviceContext } from '@components/Provider';
 
 const page = () => {
     const DataTableCardsNoSsr = dynamic(
-        () => import('app/editor/profile-select/DataTableProfileCards.jsx'),
+        () => import('app/profile-select/DataTableProfileCards.jsx'),
         { ssr: false }
     )
     const TEMP_PROFILE = {

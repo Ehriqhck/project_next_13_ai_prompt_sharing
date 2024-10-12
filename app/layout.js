@@ -7,7 +7,7 @@ import { useContext } from 'react';
 import Nav from '@components/Nav'
 import Provider from '@components/Provider'
 import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
-
+import NoSsr from '@components/NoSsr'
 export const metadata = {
   title: 'Control Mapper',
   description: ''
@@ -22,8 +22,10 @@ const RootLayout = ({ children }) => (
         </div>
 
         <main className='app'>
-          <NavEditor />
-          {children}
+          <NoSsr>
+                      {children}
+
+          </NoSsr>
         </main>
       </Provider>
     </body>
