@@ -776,63 +776,63 @@ const page = () => {
         },
        
     ]);
-    // useEffect(() => {
+    useEffect(() => {
 
        
 
-    //     fetchDeviceProfiles()
+        fetchDeviceProfiles()
 
-    // }, [isLoading]);
-    // const fetchDeviceProfiles = async () => {
-    //     try {
+    }, [isLoading]);
+    const fetchDeviceProfiles = async () => {
+        try {
 
-    //         // const { dataSWR, error } = useSWR('/api/deviceProfiles', fetcher)
-
-
-    //         setIsLoading(true);
-    //         const response = await fetch('/api/deviceProfiles', {
-    //             method: 'POST',
-    //             body: JSON.stringify({
-    //                 userId: session?.user.id
-    //             })
-    //         })
-    //         const data = await response.json()
-    //         // const data = TEMP_PROFILE;
-    //         console.log("DATA BELOW vvvv");
-    //         console.log(data);
-    //         const loadedProfiles = Object.keys(data?.deviceProfiles).map((device) => {
-    //             return ({
-    //                 "profileName": data?.deviceProfiles[device]?.profileName,
-    //                 "dateModified": data?.deviceProfiles[device]?.dateModified,
-    //                 "dateCreated": data?.deviceProfiles[device]?.dateCreated,
-    //                 "savedDevices": data?.deviceProfiles[device]?.savedDevices,
-    //                 "deviceAmount": data?.deviceProfiles[device]?.deviceAmount,
-    //                 "gameVersion": data?.deviceProfiles[device]?.gameVersion,
-    //             })
-    //         })
-    //         setAccountProfiles(loadedProfiles);
-    //         sessionStorage.setItem('loadedProfiles', JSON.stringify(loadedProfiles))
-    //         setProfiles(data?.deviceProfiles)
+            // const { dataSWR, error } = useSWR('/api/deviceProfiles', fetcher)
 
 
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    //     finally {
-    //         console.log(accountProfiles);
-    //         setIsLoading(false);
-    //     }
-    //     // setProfileName(data?.deviceProfiles?.TEST_PROFILE_1?.saved['VKB_GLADIATOR_EVO'].profileName)
+            setIsLoading(true);
+            const response = await fetch('/api/deviceProfiles', {
+                method: 'POST',
+                body: JSON.stringify({
+                    userId: session?.user.id
+                })
+            })
+            const data = await response.json()
+            // const data = TEMP_PROFILE;
+            console.log("DATA BELOW vvvv");
+            console.log(data);
+            const loadedProfiles = Object.keys(data?.deviceProfiles).map((device) => {
+                return ({
+                    "profileName": data?.deviceProfiles[device]?.profileName,
+                    "dateModified": data?.deviceProfiles[device]?.dateModified,
+                    "dateCreated": data?.deviceProfiles[device]?.dateCreated,
+                    "savedDevices": data?.deviceProfiles[device]?.savedDevices,
+                    "deviceAmount": data?.deviceProfiles[device]?.deviceAmount,
+                    "gameVersion": data?.deviceProfiles[device]?.gameVersion,
+                })
+            })
+            setAccountProfiles(loadedProfiles);
+            sessionStorage.setItem('loadedProfiles', JSON.stringify(loadedProfiles))
+            setProfiles(data?.deviceProfiles)
 
-    //     // setProfiles(Object.keys(data?.deviceProfiles).map(key => (
-    //     //     {
-    //     //         name: key,
-    //     //         devices: Object.keys(data[key]?.saved)?.length,
-    //     //         dateLastModified: data[key].dateModified,
-    //     //         dateCreated: data[key].dateCreated,
-    //     //     }
-    //     // )))
-    // }
+
+        } catch (error) {
+            console.log(error);
+        }
+        finally {
+            console.log(accountProfiles);
+            setIsLoading(false);
+        }
+        // setProfileName(data?.deviceProfiles?.TEST_PROFILE_1?.saved['VKB_GLADIATOR_EVO'].profileName)
+
+        // setProfiles(Object.keys(data?.deviceProfiles).map(key => (
+        //     {
+        //         name: key,
+        //         devices: Object.keys(data[key]?.saved)?.length,
+        //         dateLastModified: data[key].dateModified,
+        //         dateCreated: data[key].dateCreated,
+        //     }
+        // )))
+    }
 
     // const profileUpload = async () => {
     //     // console.log(selectedAction);
