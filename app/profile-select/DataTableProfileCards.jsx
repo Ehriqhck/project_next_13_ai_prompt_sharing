@@ -8,8 +8,6 @@ import { Column } from 'primereact/column';
 import { Context } from '@components/Provider.jsx'
 import { parse } from 'postcss';
 import { FilterMatchMode, FilterOperator } from 'primereact/api';
-import { log } from 'util';
-import { err } from '@iconfu/svg-inject';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation'
 import { SelectedEditorDeviceContext, SelectedEditorDeviceViewOrientationContext, TreeTableDialogueSelectionContext, TreeTableDialogueVisibilityContext, SelectedInputTableInputContext } from '@components/Provider';
@@ -99,7 +97,7 @@ const DataTableProfileCards = (props) => {
         }
 
 
-    },[])
+    },[isLoading])
     useEffect(() => {
         sessionStorage.setItem("selectedProfile", JSON.stringify(selectedPreview))
 
@@ -226,7 +224,7 @@ const DataTableProfileCards = (props) => {
                             <div>
                                 <p className="font-['Exo_2'] text-[10pt] font-medium">SELECTED PROFILE </p>
                                 <Button unstyled onClick={(e) => {
-                                    // console.log("ASDAKSDHKASJ" + e.devices[0])
+                                    console.log("ASDAKSDHKASJ" + e.devices[0])
                                     console.log(e);
                                 }}
                                     className='flex flex-col min-w-[250px] control-profile-card-bg  w-[345px] p-[8px] gap-[8px] '>
@@ -244,7 +242,13 @@ const DataTableProfileCards = (props) => {
                                             <p className='control-profile-card-body whitespace-nowrap'>LAST MODIFIED</p>
                                             <p className='control-profile-card-body whitespace-nowrap'> {selectedPreview.dateLastModified}</p>
                                         </div>
-                                        
+                                        <FileUpload
+                                            mode="basic"
+                                            name="demoTest"
+                                            url="/api/upload"
+                                            accept=""
+                                            maxFileSize={1000000}
+                                        />
                                     </div>
                                 </Button>
                             </div>
