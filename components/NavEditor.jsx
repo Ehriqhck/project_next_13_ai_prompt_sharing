@@ -106,7 +106,6 @@ const NavEditor = () => {
 
     case "/editor/profile-select":
       return (
-        <NoSsr>
           <nav className=' w-full'>
 
             <div className='flex flex-col'>
@@ -172,7 +171,6 @@ const NavEditor = () => {
             </div>
 
           </nav>
-        </NoSsr>
       )
       break;
 
@@ -301,7 +299,6 @@ const NavEditor = () => {
       break;
     default:
       return (
-        <NoSsr>
           <nav className='nav flex-between w-full mb-[12px] pt-3'>
             <div className="flex flex-row gap-[30px] title-left">
               <div className="flex flex-col">
@@ -366,7 +363,6 @@ const NavEditor = () => {
               )}
             </div>
           </nav>
-        </NoSsr>
       )
 
   }
