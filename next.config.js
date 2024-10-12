@@ -5,7 +5,7 @@ const nextConfig = {
   },
   experimental: {
     appDir: true,
-    serverComponentsExternalPackages: ['mongoose', 'axios']
+    serverComponentsExternalPackages: ['mongoose', 'axios', 'kerberos', 'mongodb-js/zstd']
   },
   images: {
     domains: ['lh3.googleusercontent.com']
@@ -18,6 +18,7 @@ const nextConfig = {
       ...config.experiments,
       topLevelAwait: true
     }
+    
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find(rule =>
       rule.test?.test?.('.svg')
@@ -36,12 +37,24 @@ const nextConfig = {
         issuer: /\.[jt]sx?$/,
         resourceQuery: { not: /url/ }, // exclude if *.svg?url
         use: ['@svgr/webpack']
-      }
+      },
+      {        exclude: /node_modules\/(?!@aws-sdk\/).*/,
+    }
     )
 
     // Modify the file loader rule to ignore *.svg, since we have it handled now.
     fileLoaderRule.exclude = /\.svg$/i
 
+    Object.assign(config.resolve.alias, {
+      '@mongodb-js/zstd': false,
+      '@aws-sdk/credential-providers': false,
+      'snappy': false,
+      'aws4': false,
+      'mongodb-client-encryption': false,
+      'kerberos': false,
+      'supports-color': false
+    });
+   
     return config
   }
 }
