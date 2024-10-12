@@ -7,7 +7,7 @@ import DataTableProfileCards from '@app/editor/profile-select/DataTableProfileCa
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 import { SelectedEditorDeviceContext } from '@components/Provider';
 // const fetcher = (...args) => fetch(...args).then(res => res.json())
-import { FileUpload } from 'primereact/fileupload';
+// import { FileUpload } from 'primereact/fileupload';
 
 const page = () => {
 
@@ -840,37 +840,37 @@ const page = () => {
 
     }, [isLoading]);
 
-    const profileUpload = async () => {
-        // console.log(selectedAction);
+    // const profileUpload = async () => {
+    //     // console.log(selectedAction);
 
-        const response = await fetch("/api/deviceProfiles/bindButton", {
-            method: "PATCH",
-            body: JSON.stringify({
-                userId: session?.user.id,
-                selectedInput: selectedEditorInput,
-                selectedAction: selectedAction.key,
-                selectedLayer: selectedLayer
-            })
-        }
+    //     const response = await fetch("/api/deviceProfiles/bindButton", {
+    //         method: "PATCH",
+    //         body: JSON.stringify({
+    //             userId: session?.user.id,
+    //             selectedInput: selectedEditorInput,
+    //             selectedAction: selectedAction.key,
+    //             selectedLayer: selectedLayer
+    //         })
+    //     }
 
 
-        );
+    //     );
 
-        const data = await response.json();
+    //     const data = await response.json();
 
-        setprofileContext(data);
+    //     setprofileContext(data);
 
-        setActionUpdate(!actionUpdate);
-    };
+    //     setActionUpdate(!actionUpdate);
+    // };
 
-    const onUpload = () => {
-        console.log();
-    }
+    // const onUpload = () => {
+    //     console.log();
+    // }
 
     return (
         <NoSsr>
             <section>
-                <FileUpload mode="basic" name="uploadTEST" url="/api/upload" accept="image/*" maxFileSize={1000000} onUpload={onUpload} auto chooseLabel="Browse" />
+                {/* <FileUpload mode="basic" name="uploadTEST" url="/api/upload" accept="image/*" maxFileSize={1000000} onUpload={onUpload} auto chooseLabel="Browse" /> */}
 
                 <DataTableProfileCards context={accountProfiles} />
             </section>
