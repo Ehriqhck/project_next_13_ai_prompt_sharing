@@ -298,31 +298,28 @@ const NavEditor = () => {
       break;
     default:
       return (
-          <nav className='nav flex-between w-full mb-[12px] pt-3'>
-            <div className="flex flex-row gap-[30px] title-left">
+        <nav className=' w-full'>
+
+        <div className='flex flex-col'>
+
+          <div className='nav  w-full mb-[-1px] pt-3 flex flex-between flex-row'>
+            <div className="flex flex-row gap-[28px] title-left">
               <div className="flex flex-col">
-                <div className="flex flex-row">
-                  <p className="text-base">// CURRENT PROFILE</p>
-                  <div> </div>
-                </div>
-                <p className="text-profile-title slant">"PROFILE NAME"</p>
+                <p className="title-text">HOME</p>
               </div>
-
-              {/* <Spacer className=""/> */}
               <div className="spacer" />
-
               <div className="flex flex-col">
-                <div className="flex flex-row">
-                  <p className="text-base">// CURRENT DEVICE</p>
-                  <div> </div>
-                </div>
-                <p className="text-profile-title slant">VKB GLADIATOR NXT EVO</p>
+                <p className="title-text">EDITOR</p>
               </div>
             </div>
-
-
+            <div className="flex flex-col">
+              <div className="flex flex-row">
+                <p className="text-base">// CURRENT PROFILE</p>
+              </div>
+              <p className="text-profile-title slant">{profileName}</p>
+            </div>
             {/* Desktop Navigation */}
-            <div className='sm:flex '>
+            <div className='flex '>
               {session?.user ? (
                 <div className='flex gap-3 md:gap-5'>
                   <Link href='/create-control-profile' className='black_btn hidden'>
@@ -361,7 +358,11 @@ const NavEditor = () => {
                 </>
               )}
             </div>
-          </nav>
+          </div >
+
+        </div>
+
+      </nav>
       )
 
   }

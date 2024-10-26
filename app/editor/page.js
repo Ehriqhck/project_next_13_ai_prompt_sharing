@@ -336,11 +336,11 @@ const page = () => {
 
           <div className='device-container '>
             
-            {/* {currentSelectedEditorDevice} */}
-            <Device_VKB_T_RUDDER_MK5
+            {currentSelectedEditorDevice}
+            {/* <Device_VKB_T_RUDDER_MK5
               className='min-w-[630px]'
               // view={sessionStorage.getItem('deviceViewOrientation')}
-            />
+            /> */}
             
             </div>
         </div>
@@ -349,10 +349,11 @@ const page = () => {
         <div className='flex  self-center align-middle justify-center'>
           <ChevronsRight width='30px' id='fileinput' />
     
-          <form onSubmit={onUpload}>
+          {/* <form onSubmit={onUpload}>
             <input type='file' id='fileUpload' name='filename' />
             <input type='submit' />
-          </form>
+          </form> */}
+
           {/* <FileUpload
             mode='basic'
             // name='demo[]'
@@ -360,15 +361,15 @@ const page = () => {
             maxFileSize={1000000}
             // onUpload={onUpload}
           /> */}
-          AS
+          
           {/* <div className='w-[10px] h-[10px]'>
         <label for="testFile">Choose a profile picture:</label>
       <input type="file" name='testFile' onChange={handleFileUpload} />
     </div>         */}
-          <Button onClick={() => console.log(parsedXml)}>asdasd</Button>
+          {/* <Button onClick={() => console.log(parsedXml)}>asdasd</Button>
           <Button onClick={() => setCookie('testBite', 'ASLKDJASLKDJLAKSDJ')}>
             asdasd
-          </Button>
+          </Button> */}
           {/* <fileUpload/> */}
         </div>
         <div id='InputEditorPanel' className={editorPanelVisibility}>

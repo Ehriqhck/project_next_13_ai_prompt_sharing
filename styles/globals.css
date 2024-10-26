@@ -7,6 +7,8 @@
 @tailwind components;
 @tailwind utilities;
 @import 'primereact/resources/primereact.min.css';
+@import '@splidejs/splide/css';
+
 /* 
   Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
 */
@@ -21,6 +23,16 @@ a > img[alt='profile'] {
   outline: solid 1px #c8c8c887
 }
 
+.my-slider-progress {
+  background: #ccc;
+}
+
+.my-slider-progress-bar {
+  background: greenyellow;
+  height: 2px;
+  transition: width 400ms ease;
+  width: 0;
+}
 .default-white {
   justify-content: center;
   height: 41px;
@@ -3696,6 +3708,13 @@ button[type='device_switcher']:enabled:focus {
    color: #CEFCFF !important;
    align-self: center !important;
    width: 100 !important; 
+}
+
+.h1 {
+  font-family: 'inter';
+  font-size: 48px;
+  color: #DAF0EA;
+  
 }
 
 .app {
