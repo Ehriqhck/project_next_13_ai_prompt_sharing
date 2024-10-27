@@ -4312,7 +4312,7 @@ export default function TreeTableDialogue(props) {
 
                             <div className='flex flex-row justify-between w-full '>
                                 {/* {getCategoryHeader(node)} */}
-                                <Button type="gameActions"  unstyled className='flex flex-col gap-[8px] w-full '>
+                                <Button type="gameActions"  unstyled className='flex flex-col gap-[8px] w-full  '>
 
                                     <div className='flex flex-col  p-[8px] gap-[4px] w-full  '>
                                         <div className='flex flex-col gap-[4px] pt-[8px] pb-[8px]'>
@@ -4396,8 +4396,8 @@ export default function TreeTableDialogue(props) {
 
                         <div className="panel-gameAction flex self-center flex-col
                          justify-content-center gap-[3px]  justify-center radial-outline">
-                            <div>
-                                <Button type='gameActions' unstyled
+                            <div className='flex '>
+                                <Button type='default' unstyled className='my-[8px] mb-2px '
                                     onClick={() => {
 
                                         setVisible(false)

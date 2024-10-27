@@ -152,8 +152,9 @@ const InputViewer = ({ selectedButton }) => {
     }
 
     return (
-        <div className='panel-viewer'>
-            <PanelSwitchButtonMobile whatPanel='viewer' />
+        <div className='panel-viewer'> 
+        
+            {/* <PanelSwitchButtonMobile whatPanel='viewer' /> */}
             <div className="test2">
                 {getInputTop(top)
                 }
@@ -168,7 +169,7 @@ const InputViewer = ({ selectedButton }) => {
                     {/* <Left inputName_id={inputName} action_id={action} /> */}
                     {getInputLeft(left)}
 
-                    <div className=' '>{Utils.getInputIcon(selectedViewerInput, '54px','', true)} </div>
+                    <div className=' mt-[4px]'>{Utils.getInputIcon(selectedViewerInput, '54px','54px', true)} </div>
                     {/* <CircleSwitch className="" /> */}
                     {/* <Hat></Hat> */}
                     {getInputRight(right)}

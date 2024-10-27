@@ -38,7 +38,7 @@ const Editor = ({ show }) => {
 
 
     <div className='panel-default ' id="editorPanel">
-      <div class="panel-title ">
+      <div class="panel-title mt-[-7px] ">
         <div className='flex flex-row '>
 
           <span class="text-legend-heading px-[5px] "> BIND EDITOR PANEL</span>

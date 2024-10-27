@@ -30,6 +30,15 @@ const Editor = ({ show }) => {
   // const [isOpen, setIsOpen] = useState(false);
   return (
     <div className='test '>
+      <div class="panel-title mt-[-15px]">
+        <div className='flex flex-row '>
+
+          <span class="text-legend-heading px-[5px] "> INPUT VIEWER PANEL</span>
+          {/* <p className='text-legend-heading'> {treeTableDialogueSelection.label} </p> */}
+
+
+        </div>
+      </div>
       <div className='flex space-between flex-row  w-full'>
         {/* <button>
           <CloseButton className='button1' />
@@ -46,9 +55,9 @@ const Editor = ({ show }) => {
 
         {/* <p className='text-base ml-[0px]'></p> */}
         <p className='title-colon '> :</p>
-        <p className='text-input-title corner-test '>{viewerPanelTitle}</p>
+        <p className='text-input-title corner-test '>{selectedViewerInput}</p>
       </div>
-      <InputTableMobile onInputSelect={selectedViewerInput} />
+      {/* <InputTableMobile onInputSelect={selectedViewerInput} /> */}
 
       {/* <div className='flex flex-col gap-[7px]'>
         <p className='text-base self-start'>// MODIFIER LAYERS</p>
