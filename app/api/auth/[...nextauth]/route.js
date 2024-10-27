@@ -1,19 +1,6 @@
 import NextAuth from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
-
-import User from '@models/user'
-import { connectToDB } from '@utils/database'
-const globalContext = {
-  TEST_PROFILE_1: {
-    profileName: 'TEST PROFILE 1',
-    dateModified: 'yesterday',
-    dateCreated: 'today',
-    savedDevices: {
-      VKB_GLADIATOR_NXT_EVO_RIGHT: {
-        instance: '',
-        type: 'joystick',
-        buttons: {
-          // X_Axis: {
+     // X_Axis: {
           //   press: {
           //     name: 'TWIST X',
           //     actionName: 'rotx',
@@ -203,22 +190,35 @@ const globalContext = {
           //     }
           //   }
           // },
-          Front: {
-            Circle_Stick: {
-              top: {
-                name: 'CIRCLE SWITCH UP',
-                actionName: 'button6',
-                inputType: 'discreet',
-                layers: [
+import User from '@models/user'
+import { connectToDB } from '@utils/database'
+const globalContext = {
+  TEST_PROFILE_1: { // -> A profile of saved devices and their respective buttons inputs & mapped keybinds
+    profileName: 'TEST PROFILE 1', // -> Name of profile
+    dateModified: 'yesterday',
+    dateCreated: 'today',
+    savedDevices: { // -> List of saved devices
+      VKB_GLADIATOR_NXT_EVO_RIGHT: { // Device
+        instance: '0', // -> Specifies which device instance this device is saved to in-game
+        type: 'joystick', // -> Type of device: joystick (flighticks), rudders, or control panel
+        buttons: { // -> All the buttons on this flightstick
+          Front: {// -> Buttons on the front face of the flightstick
+            Circle_Stick: { // -> Contains all the 'Circle Stick' inputs on the flightstick
+              top: { // -> 'Tells the left-side input viewer panel component where to render its child inputs'
+                name: 'CIRCLE SWITCH UP', // -> Semantic name of the input
+                actionName: 'button6', // -> OEM-given name of the input
+                inputType: 'discreet', // -> Type of input: toggle (binary),
+                                       //    continuous (e.g. a slider), or Staged (two-stage triggers)
+                layers: [ // -> Keybind layers for the 'Circle Switch Up' input; layer[0] is first keybind layer and so on
                   {
-                    key: 'v_weapon_manual_gimbal_cycle_source',
-                    label:
+                    key: 'v_weapon_manual_gimbal_cycle_source', // -> Keybind name from mappings.XML
+                    label: // -> Keybind Name from in-game menu
                       'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
-                    data: {
-                      actionmapName: 'spaceship_weapons',
-                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
-                      category: 'Vehicles / Weapons',
-                      inputType: 'Toggle'
+                    data: { // Extra stuff to help parse these keybinds for my app
+                      actionmapName: 'spaceship_weapons', // -> This keybind's category attribute from mappings.XML
+                      category: 'Vehicles / Weapons', // -> In-game name of this keybind's parent category
+                      name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)', // -> Keybind name to be ultimately shown 
+                      inputType: 'Toggle' // -> type of input accepted by this keybind
                     }
                   },
                   {
@@ -325,6 +325,7 @@ const globalContext = {
                   }
                 ]
               },
+              
               left: {
                 name: 'CIRCLE SWITCH LEFT',
                 actionName: 'button9',

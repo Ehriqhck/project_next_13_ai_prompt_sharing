@@ -168,7 +168,7 @@ const InputViewer = ({ selectedButton }) => {
                     {/* <Left inputName_id={inputName} action_id={action} /> */}
                     {getInputLeft(left)}
 
-                    <div className='w-[70px]'>{Utils.getInputIcon(selectedViewerInput)} </div>
+                    <div className=' '>{Utils.getInputIcon(selectedViewerInput, '54px','', true)} </div>
                     {/* <CircleSwitch className="" /> */}
                     {/* <Hat></Hat> */}
                     {getInputRight(right)}
