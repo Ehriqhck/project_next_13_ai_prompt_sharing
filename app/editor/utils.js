@@ -155,9 +155,7 @@ import QuestionMark from '@components/generic/Icons/QuestionIcon.svg'
 // }
 
 export const Utils = {
-  createNewMappingProfileFromXml (profileName, deviceList, description, xml) {
-    
-  },
+  createNewMappingProfileFromXml (profileName, deviceList, description, xml) {},
   getGameActionIcon (key) {
     switch (key) {
       // Reset Icon
@@ -620,9 +618,7 @@ export const Utils = {
       case 'v_retract_landing_system':
       case 'v_toggle_landing_system':
         return (
-          <div className='w-[25px] self-center'>
-            {/* <LandingIcon/> */}
-          </div>
+          <div className='w-[25px] self-center'>{/* <LandingIcon/> */}</div>
         )
       // Quantum Icon
       case 'v_toggle_quantum_mode':
@@ -3641,6 +3637,18 @@ export const Utils = {
             <img
               src='/assets/VKB/VKB_GLADIATOR_NEXT_EVO_RIGHT_icon.webp'
               width={width}
+              height={height}
+            />
+          </div>
+        )
+
+        break
+      case 'VKB_TRUDDER':
+        return (
+          <div className={'w-fit ' + this.cornerStyle(corner)}>
+            <img
+              src='/assets/VKB/VKB_T_RUDDER_icon.webp'
+              width='70px'
               height={height}
             />
           </div>

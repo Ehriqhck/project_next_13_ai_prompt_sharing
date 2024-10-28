@@ -16,27 +16,34 @@ import { useContext, useState } from 'react'
 import PanelSwitchButtonMobile from '@app/editor/PanelSwitchButtonMobile.js'
 import { Utils } from '@app/editor/utils.js'
 
-
 const Editor = ({ show }) => {
   const { selectedViewerInput, setSelectedViewerInput } =
     useContext(SelectContext)
   const { viewerPanelTitle, setViewerPanelTitle } = useContext(
     ViewerPanelTitleContext
   )
-
+  const parseTitle = (title) => {
+    try {
+      var str = title
+      str.split('_').join(' ')
+      return str
+    } catch (error) {
+      return error
+    }
+  }
   // setSelectedViewerInput("Circle Switch");
   // console.log('selectedViewerInput: ' + selectedViewerInput)
   // console.log("SelectContext: " + SelectContext);
   // const [isOpen, setIsOpen] = useState(false);
   return (
     <div className='test '>
-      <div class="panel-title mt-[-15px]">
+      <div class='panel-title mt-[-15px]'>
         <div className='flex flex-row '>
-
-          <span class="text-legend-heading px-[5px] "> INPUT VIEWER PANEL</span>
+          <span class='text-legend-heading px-[5px] '>
+            {' '}
+            BUTTON INPUT VIEWER PANEL
+          </span>
           {/* <p className='text-legend-heading'> {treeTableDialogueSelection.label} </p> */}
-
-
         </div>
       </div>
       <div className='flex space-between flex-row  w-full'>
@@ -55,7 +62,9 @@ const Editor = ({ show }) => {
 
         {/* <p className='text-base ml-[0px]'></p> */}
         <p className='title-colon '> :</p>
-        <p className='text-input-title corner-test '>{selectedViewerInput}</p>
+        <p className='text-input-title corner-test uppercase '>
+          {(viewerPanelTitle)}
+        </p>
       </div>
       {/* <InputTableMobile onInputSelect={selectedViewerInput} /> */}
 

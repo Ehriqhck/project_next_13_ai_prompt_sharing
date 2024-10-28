@@ -86,7 +86,7 @@ const DeviceAxisSelector = () => {
     );
     return (
         <TabMenu unstyled
-            className=''
+            className='flex flex-row w-full '
             type="device_orientation"
             model={itemsDeviceAxis}
             activeIndex={activeIndexDeviceAxis}

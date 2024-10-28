@@ -42,10 +42,17 @@ const NavEditor = () => {
 
     return (deviceString.split('_').join(' '));
   }
+  const deviceNameGetter = (device) => {
+    if (device === 'VKB TRUDDER') {
+      return ("VKB T-RUDDERS")
+    } else {
+      return device;
+    }
+  }
   const itemRenderer = (item, itemIndex) => (
     <Button
       type="device_switcher"
-      className="navdMenu-item "
+      className="navdMenu-item  "
       onClick={() => {
         setActiveIndex(itemIndex);
         setSelectedEditorDevice(item.name);
@@ -54,8 +61,8 @@ const NavEditor = () => {
       }
     >
 
-      <span className="navMenu-text small-text flex">{parseDeviceString(item.name)}</span>
-      <div>
+      <span className="navMenu-text small-text flex mr-[8px]">{deviceNameGetter(parseDeviceString(item.name))}</span>
+      <div className='mr-[4px] py-[8px]'>
         {
           Utils.getSelectedDeviceIcon(item.name, "30px")
 
@@ -105,71 +112,71 @@ const NavEditor = () => {
 
     case "/profile-select":
       return (
-          <nav className=' w-full'>
+        <nav className=' w-full'>
 
-            <div className='flex flex-col'>
+          <div className='flex flex-col'>
 
-              <div className='nav  w-full mb-[-1px] pt-3 flex flex-between flex-row'>
-                <div className="flex flex-row gap-[28px] title-left">
-                  <div className="flex flex-col">
-                    <p className="title-text">HOME</p>
-                  </div>
-                  <div className="spacer" />
-                  <div className="flex flex-col">
-                    <p className="title-text">EDITOR</p>
-                  </div>
-                </div>
+            <div className='nav  w-full mb-[-1px] pt-3 flex flex-between flex-row'>
+              <div className="flex flex-row gap-[28px] title-left">
                 <div className="flex flex-col">
-                  <div className="flex flex-row">
-                    <p className="text-base">// CURRENT PROFILE</p>
+                  <p className="title-text">HOME</p>
+                </div>
+                <div className="spacer" />
+                <div className="flex flex-col">
+                  <p className="title-text">EDITOR</p>
+                </div>
+              </div>
+              <div className="flex flex-col">
+                <div className="flex flex-row">
+                  <p className="text-base">// CURRENT PROFILE</p>
+                </div>
+                <p className="text-profile-title slant">{profileName}</p>
+              </div>
+              {/* Desktop Navigation */}
+              <div className='flex '>
+                {session?.user ? (
+                  <div className='flex gap-3 md:gap-5'>
+                    <Link href='/create-control-profile' className='black_btn hidden'>
+                      Create Control Profile
+                    </Link>
+
+                    <button type='button' onClick={signOut} className='outline_btn'>
+                      Sign Out
+                    </button>
+
+                    <Link href='/profile'>
+                      <Image
+                        src={session?.user.image}
+                        width={37}
+                        height={37}
+                        className='rounded-full'
+                        alt='profile'
+                      />
+                    </Link>
                   </div>
-                  <p className="text-profile-title slant">{profileName}</p>
-                </div>
-                {/* Desktop Navigation */}
-                <div className='flex '>
-                  {session?.user ? (
-                    <div className='flex gap-3 md:gap-5'>
-                      <Link href='/create-control-profile' className='black_btn hidden'>
-                        Create Control Profile
-                      </Link>
+                ) : (
+                  <>
+                    {providers &&
+                      Object.values(providers).map((provider) => (
+                        <button
+                          type='button'
+                          key={provider.name}
+                          onClick={() => {
+                            signIn(provider.id);
+                          }}
+                          className='black_btn'
+                        >
+                          Sign in
+                        </button>
+                      ))}
+                  </>
+                )}
+              </div>
+            </div >
 
-                      <button type='button' onClick={signOut} className='outline_btn'>
-                        Sign Out
-                      </button>
+          </div>
 
-                      <Link href='/profile'>
-                        <Image
-                          src={session?.user.image}
-                          width={37}
-                          height={37}
-                          className='rounded-full'
-                          alt='profile'
-                        />
-                      </Link>
-                    </div>
-                  ) : (
-                    <>
-                      {providers &&
-                        Object.values(providers).map((provider) => (
-                          <button
-                            type='button'
-                            key={provider.name}
-                            onClick={() => {
-                              signIn(provider.id);
-                            }}
-                            className='black_btn'
-                          >
-                            Sign in
-                          </button>
-                        ))}
-                    </>
-                  )}
-                </div>
-              </div >
-
-            </div>
-
-          </nav>
+        </nav>
       )
       break;
 
@@ -300,69 +307,69 @@ const NavEditor = () => {
       return (
         <nav className=' w-full'>
 
-        <div className='flex flex-col'>
+          <div className='flex flex-col'>
 
-          <div className='nav  w-full mb-[-1px] pt-3 flex flex-between flex-row'>
-            <div className="flex flex-row gap-[28px] title-left">
-              <div className="flex flex-col">
-                <p className="title-text">HOME</p>
-              </div>
-              <div className="spacer" />
-              <div className="flex flex-col">
-                <p className="title-text">EDITOR</p>
-              </div>
-            </div>
-            <div className="flex flex-col">
-              <div className="flex flex-row">
-                <p className="text-base">// CURRENT PROFILE</p>
-              </div>
-              <p className="text-profile-title slant">{profileName}</p>
-            </div>
-            {/* Desktop Navigation */}
-            <div className='flex '>
-              {session?.user ? (
-                <div className='flex gap-3 md:gap-5'>
-                  <Link href='/create-control-profile' className='black_btn hidden'>
-                    Create Control Profile
-                  </Link>
-
-                  <button type='button' onClick={signOut} className='outline_btn'>
-                    Sign Out
-                  </button>
-
-                  <Link href='/profile'>
-                    <Image
-                      src={session?.user.image}
-                      width={37}
-                      height={37}
-                      className='rounded-full'
-                      alt='profile'
-                    />
-                  </Link>
+            <div className='nav  w-full mb-[-1px] pt-3 flex flex-between flex-row'>
+              <div className="flex flex-row gap-[28px] title-left">
+                <div className="flex flex-col">
+                  <p className="title-text">HOME</p>
                 </div>
-              ) : (
-                <>
-                  {providers &&
-                    Object.values(providers).map((provider) => (
-                      <button
-                        type='button'
-                        key={provider.name}
-                        onClick={() => {
-                          signIn(provider.id);
-                        }}
-                        className='black_btn'
-                      >
-                        Sign in
-                      </button>
-                    ))}
-                </>
-              )}
-            </div>
-          </div >
+                <div className="spacer" />
+                <div className="flex flex-col">
+                  <p className="title-text">EDITOR</p>
+                </div>
+              </div>
+              <div className="flex flex-col">
+                <div className="flex flex-row">
+                  <p className="text-base">// CURRENT PROFILE</p>
+                </div>
+                <p className="text-profile-title slant">{profileName}</p>
+              </div>
+              {/* Desktop Navigation */}
+              <div className='flex '>
+                {session?.user ? (
+                  <div className='flex gap-3 md:gap-5'>
+                    <Link href='/create-control-profile' className='black_btn hidden'>
+                      Create Control Profile
+                    </Link>
 
-        </div>
+                    <button type='button' onClick={signOut} className='outline_btn'>
+                      Sign Out
+                    </button>
 
-      </nav>
+                    <Link href='/profile'>
+                      <Image
+                        src={session?.user.image}
+                        width={37}
+                        height={37}
+                        className='rounded-full'
+                        alt='profile'
+                      />
+                    </Link>
+                  </div>
+                ) : (
+                  <>
+                    {providers &&
+                      Object.values(providers).map((provider) => (
+                        <button
+                          type='button'
+                          key={provider.name}
+                          onClick={() => {
+                            signIn(provider.id);
+                          }}
+                          className='black_btn'
+                        >
+                          Sign in
+                        </button>
+                      ))}
+                  </>
+                )}
+              </div>
+            </div >
+
+          </div>
+
+        </nav>
       )
 
   }

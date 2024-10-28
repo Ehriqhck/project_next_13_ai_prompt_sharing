@@ -255,10 +255,10 @@ export default function InputTable() {
 
     return (
         <div className="flex w-full flex-col gap-[8px] pb-[8px] w-[100%] content-center self-center">
-            <div className='flex flex-col corner-viewChanger'>
+            <div className='flex flex-col w-full corner-viewChanger  '>
                 <div className='flex flex-row gap-[3px] ml-[4px] mt-[-8px] mb-[4px] self-center align-middle'>
                     {/* <EyeIcon width="14px" /> */}
-                    <p className=' small-text w-full flex   align-middle justify-center self-center'> SHOW INPUTS </p>
+                    <p className=' small-text w-full flex    align-baseline justify-start self-start'> SHOW INPUTS </p>
                 </div>
                 <DeviceAxisSelector></DeviceAxisSelector>
 

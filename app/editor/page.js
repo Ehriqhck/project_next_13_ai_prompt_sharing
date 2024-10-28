@@ -1,5 +1,5 @@
 'use client'
-import  NoSSR from '@components/NoSsr.jsx'
+import NoSSR from '@components/NoSsr.jsx'
 import { Button } from 'primereact/button'
 import { TabMenu } from 'primereact/tabmenu'
 import CubeFrontIcon from '@public/assets/icons/actions/gameCategory/CubeFrontIcon.jsx'
@@ -199,9 +199,8 @@ const page = () => {
   ]
 
   const getSelectedEditorDevice = selectedDevice => {
-
     const getView = () => {
-      if (typeof window == "undefined") {
+      if (typeof window == 'undefined') {
         return 'front'
       }
     }
@@ -224,18 +223,18 @@ const page = () => {
           />
         )
         break
-        case 'Device_VKB_T_RUDDER_MK5':
-          return (
-            <Device_VKB_T_RUDDER_MK5
-              className='min-w-[330px]'
-              // view={sessionStorage.getItem('deviceViewOrientation')}
-            />
-          )
-          break
+      case 'VKB_TRUDDER':
+        return (
+          <Device_VKB_T_RUDDER_MK5
+            className='min-w-[330px] h-[400px]  pt-[128px]'
+            // view={sessionStorage.getItem('deviceViewOrientation')}
+          />
+        )
+        break
       default:
         return (
           // <>{selected}</>
-          <></>
+          <>{sessionStorage.getItem('selectedEditorDevice')}</>
         )
         break
     }
@@ -301,84 +300,80 @@ const page = () => {
 
   return (
     <NoSSR>
+      <section id='InputViewerPanel' className='editor-container  '>
+        <div className={viewerPanelVisibility}>
+          <InputViewer />
+        </div>
 
-    <section id='InputViewerPanel' className='editor-container  '>
-      <div className={viewerPanelVisibility}>
-        <InputViewer />
-      </div>
-
-      <div className='flex flex-col gap-0 corner-deviceView h-fit'>
-        <div className='flex flex-col w-full z-[4]'>
-          <div className='flex flex-col mt-[8px] self-center'>
-            <div className='flex flex-row gap-[3px] ml-[4px]'>
-              <EyeIcon width='14px' />
-              <p className=' small-text w-full flex justify-start'>
-                {' '}
-                DEVICE VIEW{' '}
-              </p>
-            </div>
-            {/* <TabMenu unstyled
+        <div className='flex flex-col gap-0 corner-deviceView '>
+          <div className='flex flex-col w-full z-[4] h-full '>
+            <div className='flex flex-col mt-[8px]  align-top  ml-[32px] self-start'>
+              <div className='flex flex-row gap-[3px] ml-[4px]'>
+                <EyeIcon width='14px' />
+                <p className=' small-text w-full flex justify-start'>
+                  {' '}
+                  DEVICE VIEW{' '}
+                </p>
+              </div>
+              {/* <TabMenu unstyled
               className='corner-viewChanger'
               type="device_orientation"
               model={itemsDeviceAxis}
               activeIndex={activeIndexDeviceAxis}
               onTabChange={(e) => setActiveIndexactiveIndexDeviceAxis(e.index)}
             /> */}
-            <TabMenu
-              unstyled
-              className='corner-viewChanger'
-              type='device_orientation'
-              model={itemsDeviceView}
-              activeIndex={activeIndexDeviceView}
-              onTabChange={e => setActiveIndexactiveIndexDeviceView(e.index)}
-            />
-          </div>
+              <TabMenu
+                unstyled
+                className='corner-viewChanger'
+                type='device_orientation'
+                model={itemsDeviceView}
+                activeIndex={activeIndexDeviceView}
+                onTabChange={e => setActiveIndexactiveIndexDeviceView(e.index)}
+              />
+            </div>
 
-          <div className='device-container '>
-            
-            {currentSelectedEditorDevice}
-            {/* <Device_VKB_T_RUDDER_MK5
+            <div className='device-container '>
+              {currentSelectedEditorDevice}
+              {/* <Device_VKB_T_RUDDER_MK5
               className='min-w-[630px]'
               // view={sessionStorage.getItem('deviceViewOrientation')}
             /> */}
-            
             </div>
+          </div>
         </div>
-      </div>
-      <div className=' flex flex-row gap-[16px]'>
-        <div className='flex  self-center align-middle justify-center'>
-          <ChevronsRight width='30px' id='fileinput' />
-    
-          {/* <form onSubmit={onUpload}>
+        <div className=' flex flex-row gap-[16px]'>
+          <div className='flex  self-center align-middle justify-center'>
+            <ChevronsRight width='30px' id='fileinput' />
+
+            {/* <form onSubmit={onUpload}>
             <input type='file' id='fileUpload' name='filename' />
             <input type='submit' />
           </form> */}
 
-          {/* <FileUpload
+            {/* <FileUpload
             mode='basic'
             // name='demo[]'
             url='/api/upload'
             maxFileSize={1000000}
             // onUpload={onUpload}
           /> */}
-          
-          {/* <div className='w-[10px] h-[10px]'>
+
+            {/* <div className='w-[10px] h-[10px]'>
         <label for="testFile">Choose a profile picture:</label>
       <input type="file" name='testFile' onChange={handleFileUpload} />
     </div>         */}
-          {/* <Button onClick={() => console.log(parsedXml)}>asdasd</Button>
+            {/* <Button onClick={() => console.log(parsedXml)}>asdasd</Button>
           <Button onClick={() => setCookie('testBite', 'ASLKDJASLKDJLAKSDJ')}>
             asdasd
           </Button> */}
-          {/* <fileUpload/> */}
+            {/* <fileUpload/> */}
+          </div>
+          <div id='InputEditorPanel' className={editorPanelVisibility}>
+            <InputEditor />
+          </div>
         </div>
-        <div id='InputEditorPanel' className={editorPanelVisibility}>
-          <InputEditor />
-        </div>
-      </div>
-    </section>
-    </ NoSSR>
-
+      </section>
+    </NoSSR>
   )
 }
 

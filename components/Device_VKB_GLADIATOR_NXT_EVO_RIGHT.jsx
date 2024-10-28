@@ -4,7 +4,7 @@ import InputPopover from '@components/generic/InputPopover.jsx'
 //Device_VKB_SpaceEvo_RIGHT
 import { OverlayPanel } from 'primereact/overlaypanel';
 import { useContext } from 'react';
-import { SelectContext, EditorPanelTitleContext, SelectedEditorDeviceViewOrientationContext } from '@components/Provider.jsx'
+import { SelectContext, EditorPanelTitleContext, ViewerPanelTitleContext, SelectedEditorDeviceViewOrientationContext } from '@components/Provider.jsx'
 import React from 'react'
 import { Button } from 'primereact/button';
 import EditIcon from '@components/generic/Icons/EditIcon.svg'
@@ -14,6 +14,7 @@ const Device_VKB_GLADIATOR_NXT_EVO_RIGHT = (props) => {
   const { selectedViewerInput, setSelectedViewerInput } = useContext(SelectContext)
   const { editorPanelTitle, setEditorPanelTitle } = useContext(EditorPanelTitleContext)
   const { selectedEditorDeviceViewOrientation, setSelectedEditorDeviceViewOrientation } = useContext(SelectedEditorDeviceViewOrientationContext);
+  const { viewerPanelTitle, setViewerPanelTitle } = useContext(ViewerPanelTitleContext)
 
   switch (selectedEditorDeviceViewOrientation) {
     case "Back":
@@ -907,6 +908,7 @@ const Device_VKB_GLADIATOR_NXT_EVO_RIGHT = (props) => {
                     setSelectedEditorDeviceViewOrientation('Back');
                     setSelectedViewerInput('Pinky_Button');
                     setEditorPanelTitle('Pinky Button');
+                    setViewerPanelTitle('Pinky Button');
 
                     console.log("Pinky_Button")
 
@@ -939,6 +941,7 @@ const Device_VKB_GLADIATOR_NXT_EVO_RIGHT = (props) => {
                     setSelectedViewerInput('Side_Index_Button');
                     setEditorPanelTitle('Side Index Button');
                     setSelectedEditorDeviceViewOrientation('Back');
+                    setViewerPanelTitle('Side Index Button');
 
                     console.log("Side_Index_Button")
 
@@ -978,6 +981,7 @@ const Device_VKB_GLADIATOR_NXT_EVO_RIGHT = (props) => {
 
                     setSelectedViewerInput('Primary_Trigger');
                     setEditorPanelTitle('Primary Trigger');
+                    setViewerPanelTitle('Primary Trigger');
 
                     console.log("Primary_Trigger")
 
@@ -1028,6 +1032,7 @@ const Device_VKB_GLADIATOR_NXT_EVO_RIGHT = (props) => {
                     setSelectedViewerInput('Secondary_Trigger');
                     setEditorPanelTitle('Secondary Trigger');
                     setSelectedEditorDeviceViewOrientation('Back');
+                    setViewerPanelTitle('Secondary Trigger');
 
                     console.log("Secondary_Trigger")
 
@@ -1950,6 +1955,7 @@ const Device_VKB_GLADIATOR_NXT_EVO_RIGHT = (props) => {
 
                     setSelectedViewerInput('Red_Button');
                     setSelectedEditorDeviceViewOrientation('Front');
+                    setViewerPanelTitle('Red Button');
 
                     setEditorPanelTitle('Red Button');
                     console.log("Red_Button")
@@ -1975,6 +1981,7 @@ const Device_VKB_GLADIATOR_NXT_EVO_RIGHT = (props) => {
 
                     setSelectedViewerInput('Circle_Stick');
                     setEditorPanelTitle('Circle Stick');
+                    setViewerPanelTitle('Circle Stick');
 
                   }}
                 >
@@ -2307,6 +2314,7 @@ const Device_VKB_GLADIATOR_NXT_EVO_RIGHT = (props) => {
 
                     setSelectedViewerInput('Hat_Stick');
                     setEditorPanelTitle('Hat Stick');
+                    setViewerPanelTitle('Hat Stick');
 
 
                     console.log("setSelectedViewerInput Input 1")
@@ -2356,6 +2364,7 @@ const Device_VKB_GLADIATOR_NXT_EVO_RIGHT = (props) => {
                     setSelectedViewerInput('Pill_Stick');
                     setEditorPanelTitle('Pill Switch');
                     setSelectedEditorDeviceViewOrientation('Front');
+                    setViewerPanelTitle('Pill Switch');
 
 
                     console.log("Pill_Stick")

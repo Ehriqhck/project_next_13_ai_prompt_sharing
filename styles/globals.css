@@ -2004,7 +2004,6 @@ width: 100%;
   position: relative;
   /*Irrelevant code*/
   height: fit-content;
-  width: fit-content;
   padding: 8px 6px 8px 6px;
   box-sizing: border-box;
   margin: 5px;
@@ -3204,13 +3203,29 @@ div[type='device_orientation']{
   flex-direction: row !important ;
   justify-content: center ;
   justify-self: center ;
+  width: 100%;
 }
 div[type='device_orientation'] > ul {
   display: flex ;
   flex-direction: row ;
   justify-content: center ;
   justify-self: center ;
+  width: 100%;
+
 }
+div[type='device_orientation'] > ul > li {
+
+  width: 100%;
+
+}
+
+div[type='device_orientation'] > ul > li > button[type='device_axis']{
+
+  width: 100% !important;
+ display: flex;
+ justify-content: center;
+}
+
 .gradient-border-mask {
   display: block;
   position: relative;

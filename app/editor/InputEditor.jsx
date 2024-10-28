@@ -57,7 +57,6 @@ const Editor = ({ show }) => {
             '40px', '', true)}
         </div>
 
-        {/* <p className='text-base ml-[0px]'></p> */}
         <p className='title-colon text-input-title  '> :</p>
         <p className='text-input-title corner-test text-input-title '>{editorPanelTitle.toUpperCase()}</p>
       </div>
