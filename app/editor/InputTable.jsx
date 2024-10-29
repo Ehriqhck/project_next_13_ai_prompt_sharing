@@ -21,6 +21,9 @@ import { TreeTableDialogueSelectionContext, TreeTableDialogueVisibilityContext, 
 import DeviceAxisSelector from '@app/editor/DeviceAxisSelector.jsx'
 import AxisDataTable from '@app/editor/AxisDataTable.jsx'
 import TreeTableDialogue from './TreeTableDialogue';
+import { IconField } from "primereact/iconfield";
+import { InputIcon } from "primereact/inputicon";
+
 import SearchIcon from '@components/generic/Icons/SearchIcon';
 export default function InputTable() {
     const [visible, setVisible] = useState(false);
@@ -34,6 +37,7 @@ export default function InputTable() {
     const { selectedInputTableInput, setSelectedInputTableInput } = useContext(SelectedInputTableInputContext);
     const { treeTableDialogueVisibility, setTreeTableDialogueVisibility } = useContext(TreeTableDialogueVisibilityContext)
     const [isLoading, setIsLoading] = useState(false);
+    const [searchValue, setSearchValue] = useState('');
 
     const { profileContext, setprofileContext } = useContext(Context);
     const { treeTableDialogueSelection, setTreeTableDialogueSelection } = useContext(TreeTableDialogueSelectionContext)
@@ -84,14 +88,14 @@ export default function InputTable() {
                     try {
                         if (child.data.layers[0] !== undefined) {
                             index += 1;
-    
+
                         }
                     } catch (error) {
                         console.log(error);
-                        
-                        
+
+
                     }
-             
+
                 }
                 );
                 return (index);
@@ -252,13 +256,53 @@ export default function InputTable() {
             </span>;
         }
     }
+    const filterTemplate = () => {
 
+        return (
+            <div>
+                 <IconField iconPosition="left">
+                <InputIcon>
+                    <svg width="14" height="14" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g mask="url(#mask0_2642_713)">
+                            <path
+                                fillRule="evenodd"
+                                clipRule="evenodd"
+                                d="..."
+                                fill="var(--primary-color)"
+                            />
+                        </g>
+                        <path d="..." fill="var(--primary-color)" />
+                        <path d="..." fill="var(--primary-color)" />
+                        <path
+                            fillRule="evenodd"
+                            clipRule="evenodd"
+                            d="..."
+                            fill="var(--primary-color)"
+                        />
+                        <path d="..." fill="var(--primary-color)" />
+                        <path d="..." fill="var(--primary-color)" />
+                        <path fillRule="evenodd" clipRule="evenodd" d="..." fill="var(--primary-color)" />
+                        <path d="..." fill="var(--primary-color)" />
+                        <path d="..." fill="var(--primary-color)" />
+                        <path d="..." fill="var(--primary-color)" />
+                        <path d="..." fill="var(--primary-color)" />
+                    </svg>
+                </InputIcon>
+                <InputText placeholder="Search"  value={searchValue} onChange={(e) => setSearchValue(e.target.value)} />
+            </IconField>
+            <InputText placeholder="Search"  value={searchValue} onChange={(e) => setSearchValue(e.target.value)} />
+
+            
+            </div>
+           
+        )
+    }
     return (
         <div className="flex w-full flex-col gap-[8px] pb-[8px] w-[100%] content-center self-center">
             <div className='flex flex-col w-full corner-viewChanger  '>
                 <div className='flex flex-row gap-[3px] ml-[4px] mt-[-8px] mb-[4px] self-center align-middle'>
                     {/* <EyeIcon width="14px" /> */}
-                    <p className=' small-text w-full flex    align-baseline justify-start self-start'> SHOW INPUTS </p>
+                    <p className=' small-text w-full flex  mt-[-4px] pb-[2px]  align-baseline uppercase justify-start self-start'> Input Type Selection </p>
                 </div>
                 <DeviceAxisSelector></DeviceAxisSelector>
 
@@ -283,6 +327,7 @@ export default function InputTable() {
                 <AxisDataTable />
             </div>
             <div className={buttonTableClassName}>
+                {searchValue}
                 <Tree
                     togglerTemplate={togglerTemplate}
                     selectionMode="single" selectionKeys={selectedKey}
@@ -299,7 +344,8 @@ export default function InputTable() {
                     // }}
                     nodeTemplate={nodeTemplate}
                     value={JSON.parse(sessionStorage.getItem('cache_ButtonInputTableData'))}
-                    filter filterBy='label' filterMode="strict" filterPlaceholder="Lenient Filter"
+                   filter={true} filterBy={'name'} filterValue={searchValue} filterMode='lenient'
+                    filterPlaceholder='"HAT STICK UP"'
                     className=""
                 />
                 <div className='hidden'>
