@@ -6,7 +6,7 @@ import { Context, SelectContext, SelectedEditorActionContext, EditorPanelTitleCo
 
 import { Utils } from '@app/editor/utils.js'
 
-import {  useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 
 
 
@@ -47,7 +47,7 @@ const Editor = ({ show }) => {
 
         </div>
       </div>
-    
+
 
       <div className='flex flex-row pt-[24px] mb-[12px]'>
         <div className='flex'>
@@ -58,7 +58,9 @@ const Editor = ({ show }) => {
         </div>
 
         <p className='title-colon text-input-title  '> :</p>
-        <p className='text-input-title corner-test text-input-title '>{editorPanelTitle.toUpperCase()}</p>
+        <p className=' corner-test   self-center'>
+          {Utils.getEditorPanelDeviceTitle(sessionStorage.getItem('selectedEditorDevice') ) }
+          </p>
       </div>
 
 

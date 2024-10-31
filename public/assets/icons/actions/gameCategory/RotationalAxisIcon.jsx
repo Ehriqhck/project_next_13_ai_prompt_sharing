@@ -7,7 +7,7 @@ const RotationalAxisIcon = (props) => (
     fill="none"
     viewBox="0 0 17 18"
 
-    {...props}
+
   >
     <path
       fill="#fff"

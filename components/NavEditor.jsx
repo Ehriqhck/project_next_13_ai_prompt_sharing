@@ -78,7 +78,23 @@ const NavEditor = () => {
     })();
   }, []);
 
+  const getProfileName = () => {
+    try {
+      return (
+        <p className='nowrap'>
+          {JSON.parse(sessionStorage.getItem('loadedProfile')).profileName}
+        </p>
 
+      )
+    } catch (error) {
+      console.log("EERROROROROR");
+
+      console.log(JSON.parse(sessionStorage.getItem('loadedProfile')))
+
+      return ("error")
+
+    }
+  }
 
 
   useEffect(() => {
@@ -192,18 +208,8 @@ const NavEditor = () => {
               <div className='flex-between  mb-[5px] pt-3 pb-[8px] w-full'>
 
                 <div className="flex flex-row gap-[30px] title-left ">
-                  <div className="flex flex-col">
-                    <div className="flex flex-row">
-                      <p className="text-base">// CURRENT PROFILE</p>
-                      <div> </div>
-                    </div>
-                    <p className="text-profile-title slant">"PROFILE NAME"</p>
-                  </div>
-
-                  {/* <Spacer className=""/> */}
-                  <div className="spacer" />
-                  {/* Desktop Navigation */}
-                  <div className=' '>
+          
+                <div className=' self-center flex'>
                     {session?.user ? (
                       <div className='flex gap-3 md:gap-5'>
                         {/* <Link href='/create-control-profile' className='black_btn hidden'>
@@ -256,6 +262,16 @@ const NavEditor = () => {
                       </>
                     )}
                   </div>
+                  <div className="spacer" />
+
+                  <div className="flex flex-col self-center">
+                    <div className="flex flex-row">
+                      <p className="text-base">// CURRENT PROFILE</p>
+                      <div> </div>
+                    </div>
+                    <p className="text-profile-title slant">{getProfileName()}</p>
+                  </div>
+                
 
                   <div className="flex flex-col">
                     <div className="flex flex-row">

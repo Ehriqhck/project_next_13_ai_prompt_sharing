@@ -1710,11 +1710,15 @@ button[type='device_switcher']:enabled:focus {
 }
 
 .selected-input:hover {
-  filter:sepia(254%) saturate(229%) hue-rotate(106deg)  !important;
+  filter:invert(0%) sepia(57%) saturate(500%) hue-rotate(300deg) brightness(92%) contrast(97%);
 background-color: #003029;
 cursor: pointer;
 }
-
+.selected-input:focus {
+  filter:invert(0%) sepia(57%) saturate(500%) hue-rotate(300deg) brightness(92%) contrast(97%);
+  background-color: #003029;
+outline: none ;
+}
 #bindButton {
 background: linear-gradient(90deg, #05201bbe 20%, rgb(0, 54, 51) 100%);
 border: 1px dashed #00ffc8c1;
@@ -2060,7 +2064,7 @@ width: 100%;
   color: #cefcff;
   filter: drop-shadow(0px 4px 35px #00f0ff);
   font-family: 'Exo 2';
-  font-size: 24px;
+  font-size: 22px;
   font-style: italic;
   font-weight: 400;
   letter-spacing: 0.01em;
