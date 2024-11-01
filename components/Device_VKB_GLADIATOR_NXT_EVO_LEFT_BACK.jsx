@@ -19,10 +19,10 @@ const Device_VKB_SpaceEvo = (props) => {
   return (
     <>
 
-      <InputPopover InputId={"secondaryTrigger_Device_VKB_GLADIATOR_NXT_EVO_LEFT_BACK"} InputName={"SECONDARY TRIGGER"} TargetId={"#secondaryTrigger_Device_VKB_GLADIATOR_NXT_EVO_LEFT_BACK"} />
+      {/* <InputPopover InputId={"secondaryTrigger_Device_VKB_GLADIATOR_NXT_EVO_LEFT_BACK"} InputName={"SECONDARY TRIGGER"} TargetId={"#secondaryTrigger_Device_VKB_GLADIATOR_NXT_EVO_LEFT_BACK"} />
       <InputPopover InputId={"primaryTrigger_Device_VKB_GLADIATOR_NXT_EVO_LEFT_BACK"} InputName={"PRIMARY TRIGGER"} TargetId={"#primaryTrigger_Device_VKB_GLADIATOR_NXT_EVO_LEFT_BACK"} />
       <InputPopover InputId={"pinkyButton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT"} InputName={"PINKY BUTTON"} TargetId={"#pinkyButton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT"} />
-      <InputPopover InputId={"sideIndexButton_Device_VKB_GLADIATOR_NXT_EVO_LEFT_BACK"} InputName={"SIDE INDEX BUTTON"} TargetId={"#sideIndexButton_Device_VKB_GLADIATOR_NXT_EVO_LEFT_BACK"} />
+      <InputPopover InputId={"sideIndexButton_Device_VKB_GLADIATOR_NXT_EVO_LEFT_BACK"} InputName={"SIDE INDEX BUTTON"} TargetId={"#sideIndexButton_Device_VKB_GLADIATOR_NXT_EVO_LEFT_BACK"} /> */}
 
       <div>
 
