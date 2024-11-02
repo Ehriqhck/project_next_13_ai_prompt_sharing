@@ -302,7 +302,7 @@ const page = () => {
     <NoSSR>
       <section id='InputViewerPanel' className='editor-container  '>
         <div className={viewerPanelVisibility}>
-          <InputViewer />
+          {/* <InputViewer /> */}
         </div>
 
         <div className='flex flex-col gap-0 corner-deviceView '>

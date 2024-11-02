@@ -13,17 +13,20 @@ const InputPopover = ({ InputName, InputId, TargetId }) => {
 
     return (
         <Tooltip
-            className='panel-default input-tooltip'
+            className=' input-tooltip  '
+            tooltipOptions={{ autoHide: true }}
 
+            // data-tooltip-id={InputId}
+            // id={InputId}
             anchorSelect={TargetId}
             clickable={true}
         // mouseTrackLeft={0}
         // position="top"
         >
 
-            <div className='flex flex-col   '>
-
-                <div className=' flex flex-row'>
+            <div className='flex flex-col default small-text py-[16px] px-[12px] '>
+                <p>{InputName}</p>
+                {/* <div className=' flex flex-row'>
                     <button onClick={() => {
                         setSelectedViewerInput(InputId)
                         setViewerPanelTitle(InputName)
@@ -64,7 +67,7 @@ const InputPopover = ({ InputName, InputId, TargetId }) => {
                             </p>
                         </div>
                     </button>
-                </div>
+                </div> */}
             </div>
 
         </Tooltip>

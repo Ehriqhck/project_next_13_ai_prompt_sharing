@@ -3527,7 +3527,7 @@ export const Utils = {
         break
     }
   },
-  getInputAxisIcons (slotName, width, height, corners) {
+  getInputAxisIcons (slotName, width, height, corners, parentDevice) {
     switch (slotName) {
       case 'TWIST X':
         return (
@@ -3539,7 +3539,9 @@ export const Utils = {
         )
         break
 
-      case 'TRANSLATE X':
+      case 'Translate X':
+        case 'ROTATE X':
+
         return (
           <XAxisIcon
             className={'testCircle ' + this.cornerStyle(corners)}
@@ -3567,7 +3569,7 @@ export const Utils = {
             height={height}
           />
         )
-      case 'TRANSLATE Z':
+      case 'ROTATE Z':
         return (
           <ZAxisIcon
             className={'testCircle ' + this.cornerStyle(corners)}
@@ -3578,7 +3580,7 @@ export const Utils = {
         break
 
       default:
-        return <></>
+        return <>{this.getSelectedDeviceIcon(parentDevice,  width, height,)} </>
         break
     }
   },

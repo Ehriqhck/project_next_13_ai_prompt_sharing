@@ -7,7 +7,6 @@
 @tailwind components;
 @tailwind utilities;
 @import 'primereact/resources/primereact.min.css';
-@import '@splidejs/splide/css';
 
 /* 
   Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
@@ -1680,6 +1679,7 @@ button[type='device_switcher']:enabled:focus {
   box-shadow: 0px 0px 30px 0px #00ffbb33, inset -13px -15px 30px 0px #00ffbb33 !important;
   background: rgba(255, 255, 255, 0.16);
   color: #ffffff;
+  z-index: 100 !important;
  }
 .InputTableMobile {
   display:none;
@@ -1719,6 +1719,19 @@ cursor: pointer;
   background-color: #003029;
 outline: none ;
 }
+
+#rudderPedals_Device_VKB_T_RUDDER:hover {
+  filter:invert(0%) sepia(57%) saturate(500%) hue-rotate(300deg) brightness(92%) contrast(97%);
+background-color: #003029;
+cursor: pointer;
+
+}
+#rudderPedals_Device_VKB_T_RUDDER:focus {
+  filter:invert(0%) sepia(57%) saturate(500%) hue-rotate(300deg) brightness(92%) contrast(97%);
+  background-color: #003029;
+outline: none ;
+}
+
 #bindButton {
 background: linear-gradient(90deg, #05201bbe 20%, rgb(0, 54, 51) 100%);
 border: 1px dashed #00ffc8c1;
@@ -1728,25 +1741,31 @@ width: 100%;
 
 }
 
+.pinkytarget {
+}
 
-
+div[role='tooltip'] {
+  z-index: 2000 !important;
+}
+.p-tooltip-arrow {
+  background: rgb(31 255 237) !important;
+  box-shadow: 0px -1px 20px 1px #00c4ff;
+}
 .input-tooltip {
   /* background: radial-gradient(
-    644.7% 114.87% at 22.25% 28.07%,
-    rgb(10 24 39 / 53%) 0%,
-    rgba(73, 162, 214, 0.26) 100%
-  ) !important   ; */
-  background: radial-gradient(
-    644.7% 114.87% at 22.25% 28.07%,
-    rgb(10 24 39 / 83%) 0%,
-    rgb(73 162 214 / 59%) 100%
-  ) !important;
-  box-shadow: 0px -20px 20px 0px #011016 inset, -2px -2px 25px 0px #031b19 !important;
-
+  644.7% 114.87% at 22.25% 28.07%,
+  rgb(10 24 39 / 53%) 0%,
+  rgba(73, 162, 214, 0.26) 100%
+) !important; */
+  outline: 1px solid #00fffa73 !important;
+  background: radial-gradient(644.7% 114.87% at 22.25% 28.07%, rgb(10 24 39 / 83%) 0%, rgb(0 45 27 / 74%) 100%) !important;
+  box-shadow: 0px -20px 14px 0px #0d1f33bf inset, 0px 3px 10px 0px #14789dc2 !important;
   padding: unset !important;
-  border-radius: 30px !important;
+  border-radius: 8px !important;
   background-blend-mode: multiply !important;
+  -webkit-backdrop-filter: saturate(1%), blur(10px);
   backdrop-filter: saturate(1%), blur(10px);
+  z-index: 100 !important;
 }
 
 .input-tooltip:before {
@@ -1804,8 +1823,9 @@ width: 100%;
   background: rgb(0, 255, 170) !important;
 } */
 .react-tooltip-arrow {
-  background: rgb(0 255 224) !important;
-  box-shadow: 1px 1px 30px 8px #00c4ff;
+  background: rgb(31 255 237) !important;
+  box-shadow: 0px -1px 20px 1px #00c4ff;
+  z-index: 3000 !important;
 }
 #bindButton:hover {
   background: linear-gradient(90deg, #05201bbe 20%, rgb(0, 54, 51) 100%);
@@ -3719,7 +3739,7 @@ div[type="device_switcher"] > ul{
 button[type='device_switcher'] {
   border-radius: 6px !important; 
   background-color: #021519 !important;
-  position: relative !important;
+  /* position: relative !important; */
   background: 
     repeating-linear-gradient(-45deg, rgb(0, 14, 16), rgb(0, 9, 16, 0.3) 2px,  rgba(0, 0, 0, 0) 2px, rgba(0, 0, 0, 0) 2.83px),
    linear-gradient(151deg, rgba(0,34,41,0) 0%, rgba(0, 156, 191, 0.555) 100%) !important;

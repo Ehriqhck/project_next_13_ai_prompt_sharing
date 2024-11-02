@@ -1,6 +1,7 @@
 "use client";
 import { Tooltip } from 'react-tooltip'
 import InputPopover from '@components/generic/InputPopover.jsx'
+// import { Tooltip } from 'primereact/tooltip';
 //Device_VKB_SpaceEvo_RIGHT
 import { OverlayPanel } from 'primereact/overlaypanel';
 import { useContext } from 'react';
@@ -23,10 +24,24 @@ const Device_VKB_GLADIATOR_NXT_EVO_RIGHT = (props) => {
       return (
         <>
 
-          {/* <InputPopover InputId={"secondaryTrigger_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK"} InputName={"SECONDARY TRIGGER"} TargetId={"#secondaryTrigger_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK"} />
-          <InputPopover InputId={"primaryTrigger_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK"} InputName={"PRIMARY TRIGGER"} TargetId={"#primaryTrigger_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK"} />
-          <InputPopover InputId={"pinkyButton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT"} InputName={"PINKY BUTTON"} TargetId={"#pinkyButton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT"} />
-          <InputPopover InputId={"sideIndexButton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK"} InputName={"SIDE INDEX BUTTON"} TargetId={"#sideIndexButton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK"} /> */}
+          <Tooltip
+            className=' input-tooltip  '
+            id='pinkytarget'
+            target={'.pinkytarget'}
+            clickable={true}
+          >
+            <div className='flex flex-col default small-text py-[16px] px-[12px] '>
+              <p>PINKY BUTTON</p>
+
+            </div>
+
+          </Tooltip>
+
+          <InputPopover InputId={"21-22"} InputName={"SECONDARY TRIGGER"} TargetId={"#secondaryTrigger_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK"} />
+          <InputPopover InputId={"1-2"} InputName={"PRIMARY TRIGGER"} TargetId={"#primaryTrigger_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK"} />
+          <InputPopover
+            InputId={"5"} InputName={"PINKY BUTTON"} TargetId={"#pinkyButton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK"} />
+          <InputPopover InputId={"4"} InputName={"SIDE INDEX BUTTON"} TargetId={"#sideIndexButton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK"} />
 
           <div>
 
@@ -900,9 +915,13 @@ const Device_VKB_GLADIATOR_NXT_EVO_RIGHT = (props) => {
                     }}
                   />
                 </g>
-                <g id="pinkybutton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK"
-                  className=" selected-input corner-test" onClick={() => {
-                    sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Back" );
+                <g
+                  id='pinkybutton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK'
+                  className='selected-input pinkytarget'
+                  data-tooltip-id="pinkytarget"
+                  // data-tooltip-place="top"
+                  onClick={() => {
+                    sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Back");
                     sessionStorage.setItem('selectedEditorDeviceButton', 'Pinky_Button');
 
                     setSelectedEditorDeviceViewOrientation('Back');
@@ -911,9 +930,9 @@ const Device_VKB_GLADIATOR_NXT_EVO_RIGHT = (props) => {
                     setViewerPanelTitle('Pinky Button');
 
                     console.log("Pinky_Button")
-
                   }}
                 >
+
                   <path
                     d="m183.192 394.072 5.381-1.953 10.889 19.95s-2.551 5.378-3.728 6.608c-3.064.425-4.908.714-7.498 1.086-1.326.191-2.681-.253-3.593-1.234a21.793 21.793 0 0 1-3.544-5.11c-2.571-5.154-2.401-9.973-2.185-12.147.13-.545-.028-1.483.51-3.283.547-1.829 1.973-3.265 3.767-3.916Z"
                     style={{
@@ -933,14 +952,18 @@ const Device_VKB_GLADIATOR_NXT_EVO_RIGHT = (props) => {
                     transform="rotate(-16.23 191.882 405.45)"
                   />
                 </g>
-                <g id="sideIndexButton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK"
+
+
+                <g
+                  id="sideIndexButton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK"
+
                   className=" selected-input corner-test" onClick={() => {
-                    sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Back" );
+                    sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Back");
                     sessionStorage.setItem('selectedEditorDeviceButton', 'Side_Index_Button');
 
+                    setSelectedEditorDeviceViewOrientation('Back');
                     setSelectedViewerInput('Side_Index_Button');
                     setEditorPanelTitle('Side Index Button');
-                    setSelectedEditorDeviceViewOrientation('Back');
                     setViewerPanelTitle('Side Index Button');
 
                     console.log("Side_Index_Button")
@@ -975,7 +998,7 @@ const Device_VKB_GLADIATOR_NXT_EVO_RIGHT = (props) => {
                     clipPath: "url(#clippath-1)",
                   }}
                   className=" selected-input corner-test" onClick={() => {
-                    sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Back" );
+                    sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Back");
                     sessionStorage.setItem('selectedEditorDeviceButton', 'Primary_Trigger');
                     setSelectedEditorDeviceViewOrientation('Back');
 
@@ -1026,7 +1049,7 @@ const Device_VKB_GLADIATOR_NXT_EVO_RIGHT = (props) => {
                     clipPath: "url(#clippath-2)",
                   }}
                   className=" selected-input corner-test" onClick={() => {
-                    sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Back" );
+                    sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Back");
                     sessionStorage.setItem('selectedEditorDeviceButton', 'Secondary_Trigger');
 
                     setSelectedViewerInput('Secondary_Trigger');
@@ -1094,11 +1117,12 @@ const Device_VKB_GLADIATOR_NXT_EVO_RIGHT = (props) => {
           <div>
 
             <svg
+              {...props}
+
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
-              id="Layer_2"
+              id="Layer_1"
               viewBox="0 0 259 545.6"
-              {...props}
             >
               <defs>
                 <linearGradient
@@ -1950,7 +1974,7 @@ const Device_VKB_GLADIATOR_NXT_EVO_RIGHT = (props) => {
                 </g>
                 <g id="input4_Device_VKB_GLADIATOR_NXT_EVO_RIGHT"
                   className=" selected-input corner-test" onClick={() => {
-                    sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Front" );
+                    sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Front");
                     sessionStorage.setItem('selectedEditorDeviceButton', 'Red_Button');
 
                     setSelectedViewerInput('Red_Button');
@@ -1975,7 +1999,7 @@ const Device_VKB_GLADIATOR_NXT_EVO_RIGHT = (props) => {
                 </g>
                 <g id="input3_Device_VKB_GLADIATOR_NXT_EVO_RIGHT"
                   className="selected-input corner-test" onClick={() => {
-                    sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Front" );
+                    sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Front");
                     sessionStorage.setItem('selectedEditorDeviceButton', 'Circle_Stick');
                     setSelectedEditorDeviceViewOrientation('Front');
 
@@ -2270,7 +2294,21 @@ const Device_VKB_GLADIATOR_NXT_EVO_RIGHT = (props) => {
                     </g>
                   </g>
                 </g>
-                <g id="input5_Device_VKB_GLADIATOR_NXT_EVO_RIGHT">
+                <g id="input5_Device_VKB_GLADIATOR_NXT_EVO_RIGHT"
+                  className="selected-input corner-test" onClick={() => {
+                    sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Front");
+                    sessionStorage.setItem('selectedEditorDeviceButton', 'Chip_Stick');
+
+                    setSelectedEditorDeviceViewOrientation('Front');
+
+                    setSelectedViewerInput('Chip_Stick');
+                    setEditorPanelTitle('Chip Stick');
+                    setViewerPanelTitle('Chip Stick');
+
+
+                    console.log("setSelectedViewerInput Input 2")
+                  }}
+                  >
                   <path
                     d="m44.294 284.062 7.72-5.365 8.16 11.743-7.718 5.365z"
                     className="cls-58"
@@ -2306,8 +2344,8 @@ const Device_VKB_GLADIATOR_NXT_EVO_RIGHT = (props) => {
                   />
                 </g>
                 <g id="input2_Device_VKB_GLADIATOR_NXT_EVO_RIGHT"
-                  lassName="selected-input corner-test" onClick={() => {
-                    sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Front" );
+                  className="selected-input corner-test" onClick={() => {
+                    sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Front");
                     sessionStorage.setItem('selectedEditorDeviceButton', 'Hat_Stick');
 
                     setSelectedEditorDeviceViewOrientation('Front');
@@ -2317,7 +2355,7 @@ const Device_VKB_GLADIATOR_NXT_EVO_RIGHT = (props) => {
                     setViewerPanelTitle('Hat Stick');
 
 
-                    console.log("setSelectedViewerInput Input 1")
+                    console.log("setSelectedViewerInput Input 2")
                   }}
                 >
                   <path
@@ -2358,7 +2396,7 @@ const Device_VKB_GLADIATOR_NXT_EVO_RIGHT = (props) => {
                 <g
                   id="input1_Device_VKB_GLADIATOR_NXT_EVO_RIGHT"
                   className=" selected-input corner-test" onClick={() => {
-                    sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Front" );
+                    sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Front");
                     sessionStorage.setItem('selectedEditorDeviceButton', 'Pill_Stick');
 
                     setSelectedViewerInput('Pill_Stick');

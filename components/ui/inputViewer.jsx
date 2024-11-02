@@ -55,11 +55,30 @@ const InputViewer = ({ selectedButton }) => {
 
 
     const getDeviceProfiles = () => {
+        // if (JSON.parse(sessionStorage.getItem('selectedEditorDeviceAxisOnly'))) {
+        //     var topSlot, bottomSlot, rightSlot, pressSlot, leftSlot;
+        //     // loop through all buttons in array
+        //     JSON.parse(sessionStorage.getItem('loadedProfile'))?.deviceList[sessionStorage.getItem('selectedEditorDevice')]?.axis.forEach(ArrElement => {
+        //         if (ArrElement.buttonName === selectedViewerInput) {
+        //             switch (ArrElement.slotname) {
+        //                 case 'value':
 
+        //                     break;
+
+        //                 default:
+        //                     break;
+        //             }
+        //         }
+        //     });
+        //     setTop(JSON.parse(sessionStorage.getItem('loadedProfile'))?.deviceList[sessionStorage.getItem('selectedEditorDevice')]?.axis[sessionStorage.getItem("selectedEditorDeviceViewOrientation")][selectedViewerInput]?.["top"]);
+        //     // setbottom(JSON.parse(sessionStorage.getItem('loadedProfile'))?.deviceList[sessionStorage.getItem('selectedEditorDevice')]?.buttons[sessionStorage.getItem("selectedEditorDeviceViewOrientation")][selectedViewerInput]?.["bottom"]);
+        //     // setRight(JSON.parse(sessionStorage.getItem('loadedProfile'))?.deviceList[sessionStorage.getItem('selectedEditorDevice')]?.buttons[sessionStorage.getItem("selectedEditorDeviceViewOrientation")][selectedViewerInput]?.["right"]);
+        //     // setPress(JSON.parse(sessionStorage.getItem('loadedProfile'))?.deviceList[sessionStorage.getItem('selectedEditorDevice')]?.buttons[sessionStorage.getItem("selectedEditorDeviceViewOrientation")][selectedViewerInput]?.["press"]);
+        //     // setLeft(JSON.parse(sessionStorage.getItem('loadedProfile'))?.deviceList[sessionStorage.getItem('selectedEditorDevice')]?.buttons[sessionStorage.getItem("selectedEditorDeviceViewOrientation")][selectedViewerInput]?.["left"]);
+
+        // }
         console.log("FETCHED DEVICEPROFILES BEFORE: ");
-        console.log(JSON.parse(sessionStorage.getItem('loadedProfile'))?.deviceList[sessionStorage.getItem('selectedEditorDevice')].buttons[sessionStorage.getItem("selectedEditorDeviceViewOrientation")][sessionStorage.getItem("selectedEditorDeviceButton")]);
-        console.log(JSON.parse(sessionStorage.getItem('loadedProfile'))?.deviceList["VKB_GLADIATOR_NXT_EVO_RIGHT"]);
-        console.log(JSON.parse(sessionStorage.getItem('loadedProfile'))?.deviceList[sessionStorage.getItem('selectedEditorDevice')].buttons[sessionStorage.getItem("selectedEditorDeviceViewOrientation")][sessionStorage.getItem("selectedEditorDeviceButton")]);
+        console.log(JSON.parse(sessionStorage.getItem('loadedProfile'))?.deviceList[sessionStorage.getItem('selectedEditorDevice')]);
 
         console.log(JSON.parse(sessionStorage.getItem('loadedProfile')), sessionStorage.getItem('selectedEditorDevice'), sessionStorage.getItem("selectedEditorDeviceViewOrientation"), sessionStorage.getItem("selectedEditorDeviceButton"));
         if (sessionStorage.getItem("selectedEditorDeviceButton") == undefined) {
@@ -152,8 +171,8 @@ const InputViewer = ({ selectedButton }) => {
     }
 
     return (
-        <div className='panel-viewer'> 
-        
+        <div className='panel-viewer'>
+
             {/* <PanelSwitchButtonMobile whatPanel='viewer' /> */}
             <div className="test2">
                 {getInputTop(top)
@@ -169,7 +188,7 @@ const InputViewer = ({ selectedButton }) => {
                     {/* <Left inputName_id={inputName} action_id={action} /> */}
                     {getInputLeft(left)}
 
-                    <div className=' mt-[4px]'>{Utils.getInputIcon(selectedViewerInput, '54px','54px', true)} </div>
+                    <div className=' mt-[4px]'>{Utils.getInputIcon(selectedViewerInput, '54px', '54px', true)} </div>
                     {/* <CircleSwitch className="" /> */}
                     {/* <Hat></Hat> */}
                     {getInputRight(right)}

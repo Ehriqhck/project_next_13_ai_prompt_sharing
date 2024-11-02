@@ -4,7 +4,7 @@ import InputPopover from '@components/generic/InputPopover.jsx'
 //Device_VKB_SpaceEvo_RIGHT
 import { OverlayPanel } from 'primereact/overlaypanel';
 import { useContext } from 'react';
-import { SelectContext, EditorPanelTitleContext } from '@components/Provider.jsx'
+import { SelectContext, EditorPanelTitleContext, ViewerPanelTitleContext } from '@components/Provider.jsx'
 import React from 'react'
 import { Button } from 'primereact/button';
 import EditIcon from '@components/generic/Icons/EditIcon.svg'
@@ -13,6 +13,7 @@ import Spacer from '@components/generic/Spacer.jsx'
 const Device_VKB_T_RUDDER_MK5 = (props) => {
   const { selectedViewerInput, setSelectedViewerInput } = useContext(SelectContext)
   const { editorPanelTitle, setEditorPanelTitle } = useContext(EditorPanelTitleContext)
+  const { viewerPanelTitle, setViewerPanelTitle } = useContext(ViewerPanelTitleContext)
 
 
 
@@ -2523,16 +2524,21 @@ const Device_VKB_T_RUDDER_MK5 = (props) => {
                 }}
               />
             </g>
-            <g data-name="Device_VKB_T_RUDDER_MK5input0"
-              id="Device_VKB_T_RUDDER_MK5pinkybutton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK"
-              className=" selected-input corner-test" onClick={() => {
+            <g
+              id="rudderPedals_Device_VKB_T_RUDDER"
+              className="selected-input-pedals corner-test" onClick={() => {
                 sessionStorage.setItem('selectedEditorDeviceButton', 'Pedals');
+
+                //  setSelectedEditorDeviceViewOrientation('Front');
 
                 setSelectedViewerInput('Pedals');
                 setEditorPanelTitle('Pedals');
+                setViewerPanelTitle('Pedals');
 
-                console.log("Pinky_Button")
-              }}>
+
+                console.log("pedals")
+              }}
+            >
               <path
                 d="m214.52 254.36.91-.45v-1.56l-.14-9v-5.37l.14-6.14s.44-1.95.49-2.25-3.22-15.24-3.22-15.24-1.47-15.15-1.47-14.9 1.56-93.42 1.56-93.42V78.57l-.93-14.32-2.25-44.27-.59-16.91-.49-1.17H206l-2.85 41.44 2.85 86.53 1.9 115.99 6.61 8.52Z"
                 style={{
@@ -3239,9 +3245,10 @@ const Device_VKB_T_RUDDER_MK5 = (props) => {
               />
             </g>
             <g data-name="Device_VKB_T_RUDDER_MK5input0"
-              id="Device_VKB_T_RUDDER_MK5pinkybutton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK"
-              className=" selected-input corner-test" onClick={() => {
+              id="rudderPedals_Device_VKB_T_RUDDER"
+              className="selected-input-pedals corner-test" onClick={() => {
                 sessionStorage.setItem('selectedEditorDeviceButton', 'Pedals');
+                sessionStorage.setItem('selectedEditorDeviceSelectedButtonAxisOnly', 'true');
 
                 setSelectedViewerInput('Pedals');
                 setEditorPanelTitle('Pedals');
