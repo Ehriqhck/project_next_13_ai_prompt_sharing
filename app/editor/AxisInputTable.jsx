@@ -231,18 +231,28 @@ const AxisInputTable = () => {
 
         }
     }
+
+  
     const togglerTemplate = (node, options) => {
+        const updateInputViewer = () => {
+            sessionStorage.setItem('selectedEditorDeviceButton', node.label);
+        
+            setSelectedViewerInput('Pedals');
+            setViewerPanelTitle(node.label);
+        }
         const getSlotIcon = (node) => {
 
             if (!Object.hasOwn(node.data, 'slotName')) {
                 return <p className='text-GameAction-Category-Heading'> {node.label} asd</p>;
             } else {
                 return (
-                    <div className='flex corner-inputTableIcons'>
-                        {/* {Utils.getInputAxisIcons(node.data.slotName, "25px", "25px")} */}
-                        {Utils.getInputAxisIcons(node.axisType, "30px", "30px", null, sessionStorage.getItem('selectedEditorDevice'))}
+                    <button onClick={}>
+                        <div className='flex corner-inputTableIcons'>
+                            {/* {Utils.getInputAxisIcons(node.data.slotName, "25px", "25px")} */}
+                            {Utils.getInputAxisIcons(node.axisType, "30px", "30px", null, sessionStorage.getItem('selectedEditorDevice'))}
 
-                    </div>
+                        </div>
+                    </button>
                 )
             }
         }
@@ -289,7 +299,7 @@ const AxisInputTable = () => {
                 return (
                     <div className='flex corner-inputTableIcons'>
                         {Utils.getInputAxisIcons(node.data.axisType, "25px", "25px")}
-{/* {node.data.axisType} */}
+                        {/* {node.data.axisType} */}
                     </div>
                 )
             }
