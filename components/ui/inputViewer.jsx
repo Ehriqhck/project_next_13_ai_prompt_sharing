@@ -256,30 +256,28 @@ const InputViewer = ({ selectedButton }) => {
     }
     return (
         <div className='panel-viewer'>
-            {Utils.getInputViewerPanelAxisLayout("Main_Device_Axis")}
 
             {/* <PanelSwitchButtonMobile whatPanel='viewer' /> */}
             <div className="test2">
-                {getInputTop(top)
+            {Utils.getInputViewerPanelAxisLayout("Main_Device_Axis", profileContext, selectedViewerInput)}
+
+                {/* {getInputTop(top)
                 }
-                {/* <Up inputName_id={inputName} action_id={action} /> */}
-                {/* <Press inputName_id={inputName} action_id={action} /> */}
+         
                 <div className='input-down-press'>
                     {getInputPress(press)}
                     {getInputBottom(bottom)}
-
                 </div>
+                
                 <div className=' left-center-right'>
-                    {/* <Left inputName_id={inputName} action_id={action} /> */}
                     {getInputLeft(left)}
 
                     <div className=' mt-[4px]'>{Utils.getInputIcon(selectedViewerInput, '54px', '54px', true)} </div>
-                    {/* <CircleSwitch className="" /> */}
-                    {/* <Hat></Hat> */}
+              
                     {getInputRight(right)}
 
-                    {/* <Right inputName_id={inputName} action_id={action} /> */}
-                </div>
+                    <Right inputName_id={inputName} action_id={action} />
+                </div> */}
             </div>
         </div>
     )

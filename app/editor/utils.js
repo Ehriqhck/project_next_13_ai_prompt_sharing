@@ -137,6 +137,7 @@ import LayerIcon from 'public/assets/icons/generic/layer.svg'
 import ListIcon from 'public/assets/icons/actions/gameCategory/ListIcon.jsx'
 import CircleSwitch from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/CircleSwitch.jsx'
 import QuestionMark from '@components/generic/Icons/QuestionIcon.svg'
+import AxisRow from '@components/inputs/AxisRow.jsx'
 // export const fetchMappings = async ({ id }) => {
 //   console.log('USE EFFECT START')
 //   const response = await fetch(`/api/deviceProfiles`)
@@ -3540,8 +3541,7 @@ export const Utils = {
         break
 
       case 'Translate X':
-        case 'ROTATE X':
-
+      case 'ROTATE X':
         return (
           <XAxisIcon
             className={'testCircle ' + this.cornerStyle(corners)}
@@ -3580,7 +3580,7 @@ export const Utils = {
         break
 
       default:
-        return <>{this.getSelectedDeviceIcon(parentDevice,  width, height,)} </>
+        return <>{this.getSelectedDeviceIcon(parentDevice, width, height)} </>
         break
     }
   },
@@ -3626,7 +3626,10 @@ export const Utils = {
       case 'VKB_GLADIATOR_NXT_EVO_RIGHT':
         return (
           <div className='flex flex-col '>
-            <p className='flex text-input-title mr-[12px]'> VKB GLADIATOR NXT EVO RIGHT </p>
+            <p className='flex text-input-title mr-[12px]'>
+              {' '}
+              VKB GLADIATOR NXT EVO RIGHT{' '}
+            </p>
 
             <div className='pl-[4px] flex flex-row gap-[12px] w-full align-middle'>
               <div className='flex  self-center flex-row align-middle gap-[4px]'>
@@ -3653,11 +3656,98 @@ export const Utils = {
         )
         break
 
-        case 'VKB_GLADIATOR_NXT_EVO_LEFT':
-          return (
-            <div className='flex flex-col '>
-              <p className='flex text-input-title mr-[12px]'> VKB GLADIATOR NXT EVO LEFT </p>
-  
+      case 'VKB_GLADIATOR_NXT_EVO_LEFT':
+        return (
+          <div className='flex flex-col '>
+            <p className='flex text-input-title mr-[12px]'>
+              {' '}
+              VKB GLADIATOR NXT EVO LEFT{' '}
+            </p>
+
+            <div className='pl-[4px] flex flex-row gap-[12px] w-full align-middle'>
+              <div className='flex  self-center flex-row align-middle gap-[4px]'>
+                <RotationalAxisIcon width='18px'> </RotationalAxisIcon>
+                <div className=' flex flex-row self-center  gap-[4px]'>
+                  <p className='small-text  '> Rotational Axis: </p>
+                  <p className='small-text'> 3 </p>
+                </div>
+              </div>
+
+              <div className='flex flex-row self-center gap-[4px]'>
+                <ListIcon width='18px'> </ListIcon>
+                <div className=' flex flex-row self-center  gap-[4px]'>
+                  <p className='small-text  '> Buttons: </p>
+                  <p className='small-text'> 9 </p>
+                </div>
+              </div>
+            </div>
+
+            {/* <span className='small-text flex self-center'>{item.name}</span> */}
+
+            <p> </p>
+          </div>
+        )
+        break
+
+      case 'VKB_TRUDDER':
+        return (
+          <div className='flex flex-col '>
+            <p className='flex text-input-title mr-[12px]'> VKB T-RUDDERS </p>
+
+            <div className='pl-[4px] flex flex-row gap-[12px] w-full align-middle'>
+              <div className='flex  self-center flex-row align-middle gap-[4px]'>
+                <RotationalAxisIcon width='18px'> </RotationalAxisIcon>
+                <div className=' flex flex-row self-center  gap-[4px]'>
+                  <p className='small-text  '> Rotational Axis: </p>
+                  <p className='small-text'> 1 </p>
+                </div>
+              </div>
+
+              <div className='flex flex-row self-center gap-[4px]'>
+                <ListIcon width='18px'> </ListIcon>
+                <div className=' flex flex-row self-center  gap-[4px]'>
+                  <p className='small-text  '> Buttons: </p>
+                  <p className='small-text'> 0 </p>
+                </div>
+              </div>
+            </div>
+
+            {/* <span className='small-text flex self-center'>{item.name}</span> */}
+
+            <p> </p>
+          </div>
+        )
+      default:
+        return (
+          <p class='text-modifier text-layer1 default '>
+            {' '}
+            SELECT AN INPUT {DeviceName}{' '}
+          </p>
+        )
+        break
+    }
+  },
+  getInputViewerPanelAxisLayout (
+    LayoutType,
+    loadedProfile,
+    selectedViewerInput
+  ) {
+    switch (LayoutType) {
+      case 'Main_Device_Axis':
+        return (
+          <div className=' corner-inputTableIcons   self-start w-full flex-col '>
+              <p className='flex text-input-title mr-[12px] self-start py-[8px]'>
+                {' '}Y-Axis
+       
+              </p>
+              <AxisRow
+                layers={
+                  JSON.parse(sessionStorage.getItem('loadedProfile'))
+                    ?.deviceList[sessionStorage.getItem('selectedEditorDevice')]
+                    ?.axis['Main_Device_Axis']
+                }
+                name={sessionStorage.getItem('selectedEditorDevice')}
+              />
               <div className='pl-[4px] flex flex-row gap-[12px] w-full align-middle'>
                 <div className='flex  self-center flex-row align-middle gap-[4px]'>
                   <RotationalAxisIcon width='18px'> </RotationalAxisIcon>
@@ -3666,7 +3756,7 @@ export const Utils = {
                     <p className='small-text'> 3 </p>
                   </div>
                 </div>
-  
+
                 <div className='flex flex-row self-center gap-[4px]'>
                   <ListIcon width='18px'> </ListIcon>
                   <div className=' flex flex-row self-center  gap-[4px]'>
@@ -3675,59 +3765,21 @@ export const Utils = {
                   </div>
                 </div>
               </div>
-  
-              {/* <span className='small-text flex self-center'>{item.name}</span> */}
-  
+              
+
               <p> </p>
-            </div>
-          )
-          break
-  
-          case 'VKB_TRUDDER':
-            return (
-              <div className='flex flex-col '>
-                <p className='flex text-input-title mr-[12px]'> VKB T-RUDDERS </p>
-    
-                <div className='pl-[4px] flex flex-row gap-[12px] w-full align-middle'>
-                  <div className='flex  self-center flex-row align-middle gap-[4px]'>
-                    <RotationalAxisIcon width='18px'> </RotationalAxisIcon>
-                    <div className=' flex flex-row self-center  gap-[4px]'>
-                      <p className='small-text  '> Rotational Axis: </p>
-                      <p className='small-text'> 1 </p>
-                    </div>
-                  </div>
-    
-                  <div className='flex flex-row self-center gap-[4px]'>
-                    <ListIcon width='18px'> </ListIcon>
-                    <div className=' flex flex-row self-center  gap-[4px]'>
-                      <p className='small-text  '> Buttons: </p>
-                      <p className='small-text'> 0 </p>
-                    </div>
-                  </div>
-                </div>
-    
-                {/* <span className='small-text flex self-center'>{item.name}</span> */}
-    
-                <p> </p>
-              </div>
-            )
-      default:
-        return (
-          <p class='text-modifier text-layer1 default '> SELECT AN INPUT {DeviceName} </p>
+            {' '}
+          </div>
         )
-        break
-    }
-  },
-  getInputViewerPanelAxisLayout (LayoutType) {
-    switch (LayoutType) {
-      case 'Main_Device_axis':
-        return <p>MAIN DEVICE AXIS LAYOUT</p>
         break
 
       case 'VKB_GLADIATOR_NXT_EVO_RIGHT':
         return (
           <div className='flex flex-col '>
-            <p className='flex text-input-title mr-[12px]'> VKB GLADIATOR NXT EVO RIGHT </p>
+            <p className='flex text-input-title mr-[12px]'>
+              {' '}
+              VKB GLADIATOR NXT EVO RIGHT{' '}
+            </p>
 
             <div className='pl-[4px] flex flex-row gap-[12px] w-full align-middle'>
               <div className='flex  self-center flex-row align-middle gap-[4px]'>
@@ -3756,7 +3808,10 @@ export const Utils = {
 
       default:
         return (
-          <p class='text-modifier text-layer1 default '> SELECT AN INPUT {LayoutType} </p>
+          <p class='text-modifier text-layer1 default '>
+            {' '}
+            SELECT AN INPUT {LayoutType}{' '}
+          </p>
         )
         break
     }

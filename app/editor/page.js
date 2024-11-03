@@ -367,7 +367,12 @@ const page = () => {
             asdasd
           </Button> */}
           <button onClick={() => {sessionStorage.clear()}}>clear ss</button>
-            {/* <fileUpload/> */}
+            {/* <fileUpload/> */}     
+                 <button onClick={() => {console.log(JSON.parse(sessionStorage.getItem('loadedProfile'))
+                    ?.deviceList[sessionStorage.getItem('selectedEditorDevice')]
+                    ?.axis['Main_Device_Axis']);
+                 }}>check</button>
+
           </div>
           <div id='InputEditorPanel' className={editorPanelVisibility}>
             <InputEditor />
