@@ -27,6 +27,7 @@ export const ShowEditorPanelContext = createContext();
 
 export const Context = createContext();
 export const ActionUpdateContext = createContext();
+export const InputViewerInputType = createContext();
 
 
 const Provider = ({ children, session }) => {
@@ -51,6 +52,7 @@ const Provider = ({ children, session }) => {
   const [actionUpdate, setActionUpdate] = useState(false);
 
   const [profileContext, setprofileContext] = useState(false);
+  const [selectedInputType, setSelectedInputType ] = useState(false);
 
   return (
     <SessionProvider session={session}>
@@ -74,8 +76,11 @@ const Provider = ({ children, session }) => {
                                       <TreeTableDialogueSelectionContext.Provider value={{ treeTableDialogueSelection, setTreeTableDialogueSelection }}>
                                         <TreeTableDialogueVisibilityContext.Provider value={{ treeTableDialogueVisibility, setTreeTableDialogueVisibility }}>
                                           <SelectedModLayerContext.Provider value={{selectedModLayer, setSelectedModLayer }}>
+                                          <InputViewerInputType.Provider value={{selectedInputType, setSelectedInputType }}>
 
                                             {children}
+                                            </InputViewerInputType.Provider>
+
                                           </SelectedModLayerContext.Provider>
 
                                         </TreeTableDialogueVisibilityContext.Provider>
