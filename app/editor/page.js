@@ -366,6 +366,7 @@ const page = () => {
           <Button onClick={() => setCookie('testBite', 'ASLKDJASLKDJLAKSDJ')}>
             asdasd
           </Button> */}
+          <button onClick={() => {sessionStorage.clear()}}>clear ss</button>
             {/* <fileUpload/> */}
           </div>
           <div id='InputEditorPanel' className={editorPanelVisibility}>

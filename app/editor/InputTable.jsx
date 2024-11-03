@@ -18,7 +18,7 @@ import { classNames } from 'primereact/utils';
 import BindIcon from 'public/assets/icons/generic/bind.svg'
 import LayerIcon from 'public/assets/icons/generic/layer.svg'
 import RotationalAxisIcon from '@public/assets/icons/actions/gameCategory/RotationalAxisIcon.jsx'
-import { TreeTableDialogueSelectionContext, TreeTableDialogueVisibilityContext, SelectContext, SelectedActionContext, SelectedEditorDeviceContext, SelectedEditorDeviceViewOrientationContext, Context, SelectedInputTableInputContext } from '@components/Provider';
+import { TreeTableDialogueSelectionContext, TreeTableDialogueVisibilityContext, SelectContext, SelectedActionContext, SelectedEditorDeviceContext, SelectedEditorDeviceViewOrientationContext, Context, SelectedInputTableInputContext, InputViewerInputType } from '@components/Provider';
 import DeviceAxisSelector from '@app/editor/DeviceAxisSelector.jsx'
 import AxisInputTable from '@app/editor/AxisInputTable.jsx'
 import TreeTableDialogue from './TreeTableDialogue';

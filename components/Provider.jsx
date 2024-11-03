@@ -52,7 +52,7 @@ const Provider = ({ children, session }) => {
   const [actionUpdate, setActionUpdate] = useState(false);
 
   const [profileContext, setprofileContext] = useState(false);
-  const [selectedInputType, setSelectedInputType ] = useState(false);
+  const [inputViewerInputType, setInputViewerInputType ] = useState(false);
 
   return (
     <SessionProvider session={session}>
@@ -76,7 +76,7 @@ const Provider = ({ children, session }) => {
                                       <TreeTableDialogueSelectionContext.Provider value={{ treeTableDialogueSelection, setTreeTableDialogueSelection }}>
                                         <TreeTableDialogueVisibilityContext.Provider value={{ treeTableDialogueVisibility, setTreeTableDialogueVisibility }}>
                                           <SelectedModLayerContext.Provider value={{selectedModLayer, setSelectedModLayer }}>
-                                          <InputViewerInputType.Provider value={{selectedInputType, setSelectedInputType }}>
+                                          <InputViewerInputType.Provider value={{inputViewerInputType, setInputViewerInputType }}>
 
                                             {children}
                                             </InputViewerInputType.Provider>

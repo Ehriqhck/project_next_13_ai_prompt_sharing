@@ -3718,6 +3718,49 @@ export const Utils = {
         break
     }
   },
+  getInputViewerPanelAxisLayout (LayoutType) {
+    switch (LayoutType) {
+      case 'Main_Device_axis':
+        return <p>MAIN DEVICE AXIS LAYOUT</p>
+        break
+
+      case 'VKB_GLADIATOR_NXT_EVO_RIGHT':
+        return (
+          <div className='flex flex-col '>
+            <p className='flex text-input-title mr-[12px]'> VKB GLADIATOR NXT EVO RIGHT </p>
+
+            <div className='pl-[4px] flex flex-row gap-[12px] w-full align-middle'>
+              <div className='flex  self-center flex-row align-middle gap-[4px]'>
+                <RotationalAxisIcon width='18px'> </RotationalAxisIcon>
+                <div className=' flex flex-row self-center  gap-[4px]'>
+                  <p className='small-text  '> Rotational Axis: </p>
+                  <p className='small-text'> 3 </p>
+                </div>
+              </div>
+
+              <div className='flex flex-row self-center gap-[4px]'>
+                <ListIcon width='18px'> </ListIcon>
+                <div className=' flex flex-row self-center  gap-[4px]'>
+                  <p className='small-text  '> Buttons: </p>
+                  <p className='small-text'> 9 </p>
+                </div>
+              </div>
+            </div>
+
+            {/* <span className='small-text flex self-center'>{item.name}</span> */}
+
+            <p> </p>
+          </div>
+        )
+        break
+
+      default:
+        return (
+          <p class='text-modifier text-layer1 default '> SELECT AN INPUT {LayoutType} </p>
+        )
+        break
+    }
+  },
   getSelectedDeviceIcon (DeviceName, width, height, corner) {
     console.log('DEVICE PREVIEW ICON NAME ================')
     console.log(DeviceName)

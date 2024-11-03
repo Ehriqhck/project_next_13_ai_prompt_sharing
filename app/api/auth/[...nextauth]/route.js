@@ -1356,9 +1356,9 @@ const globalContext = {
           }
         },
         axis: {
-          Main_Joystick: { // -> Contains all the 'Circle Stick' inputs on the flightstick
-            press: { // -> 'Tells the left-side input viewer panel component where to render its child inputs'
-              name: 'ROTATE X', // -> Semantic name of the input
+          Main_Device_Axis: { // -> Contains all the 'Circle Stick' inputs on the flightstick
+            X: { // -> 'Tells the left-side input viewer panel component where to render its child inputs'
+              name: 'JOYSTICK ROTATE X', // -> Semantic name of the input
               actionName: 'x', // -> OEM-given name of the input
               axisType: 'ROTATE X', // -> Type of input: toggle (binary),
               //    continuous (e.g. a slider), or Staged (two-stage triggers)
@@ -1378,7 +1378,7 @@ const globalContext = {
               ]
             },
             top: { // -> 'Tells the left-side input viewer panel component where to render its child inputs'
-              name: 'TWIST Y', // -> Semantic name of the input
+              name: 'JOYSTICK TWIST Y', // -> Semantic name of the input
               actionName: 'x', // -> OEM-given name of the input
               axisType: 'TRANSLATE Y', // -> Type of input: toggle (binary),
               //    continuous (e.g. a slider), or Staged (two-stage triggers)
@@ -1398,7 +1398,7 @@ const globalContext = {
           
               ]
             },
-            left: { // -> 'Tells the left-side input viewer panel component where to render its child inputs'
+            Y: { // -> 'Tells the left-side input viewer panel component where to render its child inputs'
               name: 'ROTATE Z', // -> Semantic name of the input
               actionName: 'z', // -> OEM-given name of the input
               axisType: 'ROTATE Z', // -> Type of input: toggle (binary),
@@ -1419,7 +1419,27 @@ const globalContext = {
           
               ]
             },
-
+            Z: { // -> 'Tells the left-side input viewer panel component where to render its child inputs'
+              name: 'JOYSTICK ROTATE Z', // -> Semantic name of the input
+              actionName: 'z', // -> OEM-given name of the input
+              axisType: 'ROTATE Z', // -> Type of input: toggle (binary),
+              //    continuous (e.g. a slider), or Staged (two-stage triggers)
+              layers: [ // -> Keybind layers for the 'Circle Switch Up' input; layer[0] is first keybind layer and so on
+                {
+                  key: 'v_weapon_manual_gimbal_cycle_source', // -> Keybind name from mappings.XML
+                  label: // -> Keybind Name from in-game menu
+                    'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+                  data: { // Extra stuff to help parse these keybinds for my app
+                    actionmapName: 'spaceship_weapons', // -> This keybind's category attribute from mappings.XML
+                    category: 'Vehicles / Weapons', // -> In-game name of this keybind's parent category
+                    name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)', // -> Keybind name to be ultimately shown 
+                    inputType: 'Toggle' // -> type of input accepted by this keybind
+                  }
+                },
+                
+          
+              ]
+            },
           },
         },
         attachments: {
@@ -3033,9 +3053,9 @@ const globalContext = {
       VKB_TRUDDER: { // Device
         instance: '1', // -> Specifies which device instance this device is saved to in-game
         type: 'rudder', // -> Type of device: joystick (flighticks), rudders, or control panel
-        buttons: { // -> All the buttons on this flightstick
-          Pedals: { // -> Contains all the 'Circle Stick' inputs on the flightstick
-            press: { // -> 'Tells the left-side input viewer panel component where to render its child inputs'
+        axis: { // -> All the buttons on this flightstick
+          Main_Device_Axis: { // -> Contains all the 'Circle Stick' inputs on the flightstick
+            Y: { // -> 'Tells the left-side input viewer panel component where to render its child inputs'
               name: 'Pedals Press/Release', // -> Semantic name of the input
               actionName: 'y', // -> OEM-given name of the input
               axisType: 'TRANSLATE Y', // -> Type of input: toggle (binary),
@@ -3060,7 +3080,7 @@ const globalContext = {
         },
         axis: {
           Pedals: {
-            press: {
+            Y: {
               name: 'Pedals Press/Release',
               actionName: 'y',
               axisType: 'Translate Y',

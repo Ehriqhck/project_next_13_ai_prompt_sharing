@@ -59,8 +59,8 @@ const Editor = ({ show }) => {
 
         <p className='title-colon text-input-title  '> :</p>
         <p className=' corner-test   self-center'>
-          {Utils.getEditorPanelDeviceTitle(sessionStorage.getItem('selectedEditorDevice') ) }
-          </p>
+          {Utils.getEditorPanelDeviceTitle(sessionStorage.getItem('selectedEditorDevice'))}
+        </p>
       </div>
 
 

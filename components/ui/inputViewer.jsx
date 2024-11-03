@@ -30,41 +30,46 @@ const InputViewer = ({ selectedButton }) => {
     const { selectedEditorDeviceViewOrientation, setSelectedEditorDeviceViewOrientation } = useContext(SelectedEditorDeviceViewOrientationContext);
     const { selectedInputViewerInputType, setSelectedInputViewerInputType } = useContext(InputViewerInputType);
 
-
     const [top, setTop] = useState();
     const [bottom, setbottom] = useState();
     const [left, setLeft] = useState();
     const [right, setRight] = useState();
-
     const [press, setPress] = useState();
+
 
     console.log("Selected BUTTON: " + selectedButton);
     // const sessionProfiles = JSON.parse(sessionStorage.getItem('selectedProfile'))
 
     useEffect(() => {
+        console.log("VIEWER PANEL REFRESHING");
         console.log("/EDITOR :" + profileContext);
         console.log(profileContext);
+        // getDeviceButtonProfiles()
 
-        if (sessionStorage.getItem("selectedInputViewerInputType") === 'axis') {
+        if (sessionStorage.getItem("selectedInputViewerInputType") === 'Main_Device_Axis') {
+            console.log("VIEWER LAYOUT: MAIN DEVICE AXIS");
             getDeviceAxisProfiles()
+            sessionStorage.removeItem('selectedInputViewerInputType')
+        } else if (sessionStorage.getItem("selectedInputViewerInputType") === 'button') {
+            console.log("VIEWER LAYOUT: BUTTON");
 
-        } else
-            if (sessionStorage.getItem("selectedInputViewerInputType") === 'button') {
-                getDeviceButtonProfiles()
+            getDeviceButtonProfiles()
 
-            } else {
-                getDeviceButtonProfiles()
+        } else {
+            console.log("VIEWER LAYOUT: BUTTON");
 
-            }
+            getDeviceButtonProfiles()
 
-    }, [selectedViewerInput, selectedEditorInput, profileContext, selectedEditorDevice, selectedEditorDeviceViewOrientation, selectedInputViewerInputType])
+        }
+
+    }, [selectedViewerInput, selectedEditorInput, profileContext, selectedEditorDevice, selectedEditorDeviceViewOrientation, InputViewerInputType])
 
     const getDeviceAxisProfiles = () => {
 
-        console.log("FETCHED DEVICEPROFILES BEFORE: ");
-        console.log(JSON.parse(sessionStorage.getItem('loadedProfile'))?.deviceList[sessionStorage.getItem('selectedEditorDevice')]);
+        // console.log("FETCHED DEVICEPROFILES BEFORE: ");
+        // console.log(JSON.parse(sessionStorage.getItem('loadedProfile'))?.deviceList[sessionStorage.getItem('selectedEditorDevice')]);
 
-        console.log(JSON.parse(sessionStorage.getItem('loadedProfile')), sessionStorage.getItem('selectedEditorDevice'), sessionStorage.getItem("selectedEditorDeviceViewOrientation"), sessionStorage.getItem("selectedEditorDeviceButton"));
+        // console.log(JSON.parse(sessionStorage.getItem('loadedProfile')), sessionStorage.getItem('selectedEditorDevice'), sessionStorage.getItem("selectedEditorDeviceViewOrientation"), sessionStorage.getItem("selectedEditorDeviceButton"));
         if (sessionStorage.getItem("selectedEditorDeviceButton") == undefined) {
             console.log("UNDEFINED UNDEFINED UNDEFINEDUNDEFINEDUNDEFINEDUNDEFINEDUNDEFINEDUNDEFINED");
             return (undefined)
@@ -72,7 +77,7 @@ const InputViewer = ({ selectedButton }) => {
 
         else {
             try {
-                setTop(JSON.parse(sessionStorage.getItem('loadedProfile'))?.deviceList[sessionStorage.getItem('selectedEditorDevice')]?.axis[selectedViewerInput]?.["top"]);
+                setTop(JSON.parse(sessionStorage.getItem('loadedProfile'))?.deviceList[sessionStorage.getItem('selectedEditorDevice')]?.axis[selectedViewerInput]);
                 setbottom(JSON.parse(sessionStorage.getItem('loadedProfile'))?.deviceList[sessionStorage.getItem('selectedEditorDevice')]?.axis[selectedViewerInput]?.["bottom"]);
                 setRight(JSON.parse(sessionStorage.getItem('loadedProfile'))?.deviceList[sessionStorage.getItem('selectedEditorDevice')]?.axis[selectedViewerInput]?.["right"]);
                 setPress(JSON.parse(sessionStorage.getItem('loadedProfile'))?.deviceList[sessionStorage.getItem('selectedEditorDevice')]?.axis[selectedViewerInput]?.["press"]);
@@ -206,31 +211,15 @@ const InputViewer = ({ selectedButton }) => {
     }
     const renderViewerLayout = () => {
         switch (sessionStorage.getItem("selectedInputViewerInputType")) {
-            case "axis":
+            case "Main_Device_Axis":
                 return (
                     <div className='panel-viewer'>
                         {/* <PanelSwitchButtonMobile whatPanel='viewer' /> */}
                         <div className="test2">
-                            {getInputTop(top)
-                            }
+                            {Utils.getInputViewerPanelAxisLayout("Main_Device_Axis")}
                             {/* <Up inputName_id={inputName} action_id={action} /> */}
                             {/* <Press inputName_id={inputName} action_id={action} /> */}
-                            <div className='input-down-press'>
-                                {getInputPress(press)}
-                                {getInputBottom(bottom)}
 
-                            </div>
-                            <div className=' left-center-right'>
-                                {/* <Left inputName_id={inputName} action_id={action} /> */}
-                                {getInputLeft(left)}
-
-                                <div className=' mt-[4px]'>{Utils.getInputIcon(selectedViewerInput, '54px', '54px', true)} </div>
-                                {/* <CircleSwitch className="" /> */}
-                                {/* <Hat></Hat> */}
-                                {getInputRight(right)}
-
-                                {/* <Right inputName_id={inputName} action_id={action} /> */}
-                            </div>
                         </div>
                     </div>
                 )
@@ -267,6 +256,7 @@ const InputViewer = ({ selectedButton }) => {
     }
     return (
         <div className='panel-viewer'>
+            {Utils.getInputViewerPanelAxisLayout("Main_Device_Axis")}
 
             {/* <PanelSwitchButtonMobile whatPanel='viewer' /> */}
             <div className="test2">
