@@ -1,6 +1,6 @@
 import React from 'react'
 import { createContext, useContext, useState, useEffect } from 'react';
-import { SelectContext, TreeTableDialogueVisibilityContext, SelectedActionContext, TreeTableDialogueSelectionContext, SelectedEditorDeviceContext, SelectedEditorDeviceViewOrientationContext, Context, SelectedInputTableInputContext } from '@components/Provider';
+import { ViewerPanelTitleContext, InputViewerInputType, SelectContext, TreeTableDialogueVisibilityContext, SelectedActionContext, TreeTableDialogueSelectionContext, SelectedEditorDeviceContext, SelectedEditorDeviceViewOrientationContext, Context, SelectedInputTableInputContext } from '@components/Provider';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Button } from 'primereact/button';
@@ -29,11 +29,14 @@ const AxisInputTable = () => {
     const { treeTableDialogueVisibility, setTreeTableDialogueVisibility } = useContext(TreeTableDialogueVisibilityContext)
     const [isLoading, setIsLoading] = useState(false);
     const [searchValue, setSearchValue] = useState('');
+    const { selectedViewerInput, setSelectedViewerInput } = useContext(SelectContext)
+    const { viewerPanelTitle, setViewerPanelTitle } = useContext(ViewerPanelTitleContext)
 
     const { profileContext, setprofileContext } = useContext(Context);
     const [selectedInput, setSelectedInput] = useState("CONTEXT INPUT: DEFAULT");
     const { treeTableDialogueSelection, setTreeTableDialogueSelection } = useContext(TreeTableDialogueSelectionContext)
     const [globalFilterValue, setGlobalFilterValue] = useState('');
+    const { inputViewerInputType, setInputViewerInputType } = useContext(InputViewerInputType)
 
     const [filters, setFilters] = useState({
         global: { value: null, matchMode: FilterMatchMode.CONTAINS },
@@ -125,9 +128,6 @@ const AxisInputTable = () => {
                     // }
                     // console.log(node);
                     // setTreeTableDialogueSelection(transposeSelection)
-
-
-
                     // setTreeTableDialogueSelection(node)
 
                     // setTreeTableDialogueVisibility(true)
@@ -232,11 +232,12 @@ const AxisInputTable = () => {
         }
     }
 
-  
+
     const togglerTemplate = (node, options) => {
+
         const updateInputViewer = () => {
             sessionStorage.setItem('selectedEditorDeviceButton', node.label);
-        
+
             setSelectedViewerInput('Pedals');
             setViewerPanelTitle(node.label);
         }
@@ -246,38 +247,73 @@ const AxisInputTable = () => {
                 return <p className='text-GameAction-Category-Heading'> {node.label} asd</p>;
             } else {
                 return (
-                    <button onClick={}>
+                    <button >
                         <div className='flex corner-inputTableIcons'>
                             {/* {Utils.getInputAxisIcons(node.data.slotName, "25px", "25px")} */}
                             {Utils.getInputAxisIcons(node.axisType, "30px", "30px", null, sessionStorage.getItem('selectedEditorDevice'))}
 
                         </div>
+
                     </button>
                 )
             }
+        }
+        // if node is contains Main_Device_Axis
+        // if (node.label === 'Main_Device_Axis') {
+        //     sessionStorage.setItem("selectedInputViewerInputType", 'mainDeviceAxis')
+        //     setInputViewerInputType('mainDeviceAxis')
+        //     console.log('setInputViewerInputType: Main_Device_Axis');
+        // }
+        const setInputViewerLayout = (toggleNode) => {
+
+            console.log("setInputViewerLayout", toggleNode);
+            switch (toggleNode.label) {
+                case 'Main_Device_Axis':
+                    sessionStorage.setItem("selectedInputViewerInputType", 'Main_Device_Axis')
+                    setInputViewerInputType('mainDeviceAxis')
+                    console.log('setInputViewerInputType: mainDeviceAxis');
+
+                    setSelectedViewerInput('Main_Device_Axis');
+                    setViewerPanelTitle('Main Device Axis');
+                    break;
+
+                default:
+                    // sessionStorage.setItem("selectedInputViewerInputType", 'axis')
+                    // setSelectedViewerInput(toggleNode.label);
+
+                    // setInputViewerInputType('axis')
+
+
+                    break;
+            }
+
         }
 
         // if node is a button
         if (!Object.hasOwn(node.data, 'slotName')) {
 
             return (
-                <Button type="inputTable" className=" flex flex-row w-full  justify-between " tabIndex={-1} onClick={options.onClick}>
+                <button onClick={() => {
+                    console.log("TOGGLER NODE:", node);
 
-                    <div className='flex py-[2px] flex-row content-start w-full justify-between pr-[16px] self-start gap-[8px] '>
-                        <div className='flex flex-row   h-fit'>
-                            <div className='flex corner-inputTableIcons'>
-                                {/* {Utils.getInputAxisIcons(node.data.slotName, "25px", "25px")} */}
-                                {Utils.getInputAxisIcons(node.axisType, "30px", "30px", null, sessionStorage.getItem('selectedEditorDevice'))}
+                    setInputViewerLayout(node)
+                }}>
+                    <Button type="inputTable" className=" flex flex-row w-full  justify-between " tabIndex={-1} onClick={options.onClick} onClickCapture={setInputViewerLayout(node)}>
+                        <div className='flex py-[2px] flex-row content-start w-full justify-between pr-[16px] self-start gap-[8px] '>
+                            <div className='flex flex-row   h-fit'>
+                                <div className='flex corner-inputTableIcons'>
+                                    {/* {Utils.getInputAxisIcons(node.data.slotName, "25px", "25px")} */}
+                                    {Utils.getInputAxisIcons(node.axisType, "30px", "30px", null, sessionStorage.getItem('selectedEditorDevice'))}
 
-                            </div>                            <p className='text-legend-heading pl-[8px]'> {node.label} </p>
+                                </div>
+                                <p className='text-legend-heading pl-[8px]'> {node.label} </p>
+                            </div>
+                            {getIconLegend(node)}
+
 
                         </div>
-
-                        {getIconLegend(node)}
-
-
-                    </div>
-                </Button>
+                    </Button>
+                </button>
             );
         } else {
             return (
