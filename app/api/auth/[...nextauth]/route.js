@@ -3079,7 +3079,7 @@ const globalContext = {
 
         },
         axis: {
-          Pedals: {
+          Main_Device_Axis: {
             Y: {
               name: 'Pedals Press/Release',
               actionName: 'y',

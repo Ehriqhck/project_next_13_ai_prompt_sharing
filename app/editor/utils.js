@@ -3732,23 +3732,30 @@ export const Utils = {
     loadedProfile,
     selectedViewerInput
   ) {
+
+    
     switch (LayoutType) {
       case 'Main_Device_Axis':
         return (
-          <div className=' corner-inputTableIcons   self-start w-full flex-col '>
-              <p className='flex text-input-title mr-[12px] self-start py-[8px]'>
-                {' '}Y-Axis
-       
+          <div className='flex w-full flex-col gap-[16px]'>
+            <div className=' corner-inputTableIcons   self-start w-full flex-col  w-full'>
+              <p className='flex text-input-title mr-[12px] self-start py-[8px] ml-[8px]'>
+                {' '}
+                X-Axis 
               </p>
               <AxisRow
                 layers={
                   JSON.parse(sessionStorage.getItem('loadedProfile'))
                     ?.deviceList[sessionStorage.getItem('selectedEditorDevice')]
-                    ?.axis['Main_Device_Axis']
+                    ?.axis?.['Main_Device_Axis']?.['X']?.layers
                 }
-                name={sessionStorage.getItem('selectedEditorDevice')}
+                name={
+                  JSON.parse(sessionStorage.getItem('loadedProfile'))
+                    ?.deviceList[sessionStorage.getItem('selectedEditorDevice')]
+                    ?.axis?.['Main_Device_Axis']?.['X']?.name
+                }
               />
-              <div className='pl-[4px] flex flex-row gap-[12px] w-full align-middle'>
+              {/* <div className='pl-[4px] flex flex-row gap-[12px] w-full align-middle'>
                 <div className='flex  self-center flex-row align-middle gap-[4px]'>
                   <RotationalAxisIcon width='18px'> </RotationalAxisIcon>
                   <div className=' flex flex-row self-center  gap-[4px]'>
@@ -3764,11 +3771,44 @@ export const Utils = {
                     <p className='small-text'> 9 </p>
                   </div>
                 </div>
-              </div>
-              
-
-              <p> </p>
-            {' '}
+              </div> */}{' '}
+            </div>
+            <div className=' corner-inputTableIcons   self-start w-full flex-col  w-full'>
+              <p className='flex text-input-title mr-[12px] self-start py-[8px] ml-[8px]'>
+                {' '}
+                Y-Axis 
+              </p>
+              <AxisRow
+                layers={
+                  JSON.parse(sessionStorage.getItem('loadedProfile'))
+                    ?.deviceList[sessionStorage.getItem('selectedEditorDevice')]
+                    ?.axis?.['Main_Device_Axis']?.['Y']?.layers
+                }
+                name={
+                  JSON.parse(sessionStorage.getItem('loadedProfile'))
+                    ?.deviceList[sessionStorage.getItem('selectedEditorDevice')]
+                    ?.axis?.['Main_Device_Axis']?.['Y']?.name
+                }
+              />
+            </div>
+            <div className=' corner-inputTableIcons   self-start w-full flex-col  w-full'>
+              <p className='flex text-input-title mr-[12px] self-start py-[8px] ml-[8px]'>
+                {' '}
+                Z-Axis 
+              </p>
+              <AxisRow
+                layers={
+                  JSON.parse(sessionStorage.getItem('loadedProfile'))
+                    ?.deviceList[sessionStorage.getItem('selectedEditorDevice')]
+                    ?.axis?.['Main_Device_Axis']?.['Z']?.layers
+                }
+                name={
+                  JSON.parse(sessionStorage.getItem('loadedProfile'))
+                    ?.deviceList[sessionStorage.getItem('selectedEditorDevice')]
+                    ?.axis?.['Main_Device_Axis']?.['Z']?.name
+                }
+              />
+            </div>
           </div>
         )
         break
