@@ -62,6 +62,7 @@ const Home = () => {
       inventoryStatus: 'INSTOCK',
       rating: 5
     },
+    { name: 'aaaaaaaaaaaaa' }
   ]);
 
 
@@ -69,11 +70,14 @@ const Home = () => {
 
   const productTemplate = (product) => {
     return (
-      <div className="">
-        <img src={`https://primefaces.org/cdn/primereact/images/product/${product.image}`} alt={product.name} className="" />
-        <div>
-          {product.name}
+      <div className="flex w-full flex-col ">
+        {/* <img src={`https://primefaces.org/cdn/primereact/images/product/${product.image}`} alt={product.name} className="" /> */}
+        <div className=" flex flex-row gap-[4px]">
 
+          <p className="uppercase self-center ml-[12px] flex  text-[#CEFCFF] font-['Exo_2'] text-[15px] font-medium  tracking-[0.1em] carousel-active">
+            {product.name}
+
+          </p>
         </div>
       </div>
     );
@@ -83,7 +87,18 @@ const Home = () => {
   return (
     <div className="">
       <NoSsr>
-        <Carousel value={products} autoplayInterval={3000} numVisible={3} numScroll={1}  orientation="vertical" itemTemplate={productTemplate} />
+        <div className="flex flex-row gap-[4px]">
+          <p className=" flex flex-col    self-center justify-center align-middle
+          font-['exo_2']  text-[#CEFCFF] text-[15px] font-medium  tracking-[0.1em]
+          ">STOP</p>
+          <div className="spacer-noH h-[36px]" />
+
+          <Carousel value={products}
+            circular autoplayInterval={5000} numVisible={3} numScroll={1}
+            verticalViewPortHeight="80px" orientation="vertical" itemTemplate={productTemplate}
+            showIndicators={false} showNavigators={false}
+          />
+        </div>
       </NoSsr>
       <section className='w-full flex-center flex-col pt-[64px]' >
         <div className="flex w-full">
