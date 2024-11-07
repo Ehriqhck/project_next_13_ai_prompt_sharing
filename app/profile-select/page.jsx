@@ -15,6 +15,7 @@ const page = () => {
         () => import('app/profile-select/DataTableProfileCards.jsx'),
         { ssr: false }
     )
+
     const TEMP_PROFILE = {
         "_id": { "$oid": "669d8e426876942f3d04d3b2" },
         "email": "rickierumbles@gmail.com",
@@ -761,10 +762,10 @@ const page = () => {
             }
         }, "__v": { "$numberInt": "0" }
     }
+
     const { data: session, status } = useSession();
     const [providers, setProviders] = useState(null);
     const { selectedEditorDevice, setSelectedEditorDevice } = useContext(SelectedEditorDeviceContext);
-
     const [isLoading, setIsLoading] = useState(false)
     const { profileContext, setprofileContext } = useContext(Context);
     const [profiles, setProfiles] = useState()
@@ -774,16 +775,12 @@ const page = () => {
             image: 'amyelsner.png',
             template: (item) => itemRenderer(item, 0)
         },
-       
     ]);
-    useEffect(() => {
 
+    useEffect(() => {
         const fetchDeviceProfiles = async () => {
             try {
-    
                 // const { dataSWR, error } = useSWR('/api/deviceProfiles', fetcher)
-    
-    
                 setIsLoading(true);
                 const response = await fetch('/api/deviceProfiles', {
                     method: 'POST',
