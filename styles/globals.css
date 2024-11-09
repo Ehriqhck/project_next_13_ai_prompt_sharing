@@ -10,6 +10,31 @@
 /* :is(div[data-p-carousel-item-active='true'],div[data-p-carousel-item-end='true']), :is(div[data-p-carousel-item-active='true'],div[data-p-carousel-item-start='true']) {
   filter: opacity(0.39) !important;
 } */
+.hero-carousel {
+  padding: 4px 6px 4px 24px !important;
+  border-radius: 21px !important; 
+  background-color: #021519 !important;
+  position: relative !important;
+  background: 
+  repeating-linear-gradient(-45deg, rgb(0, 14, 16), rgb(0, 9, 16, 0.3) 2px, rgba(0, 0, 0, 0) 2px, rgba(0, 0, 0, 0) 2.83px), linear-gradient(179deg, rgba(0, 34, 41, 0) 0%, rgb(0 191 163 / 56%) 100%) !important;
+-moz-box-shadow: inset -2px -1px 25px 1px rgb(0 187 155 / 51%);
+box-shadow: inset -2px -1px 25px 1px rgb(0 187 155 / 51%);
+}
+
+.hero-carousel::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  cursor: pointer !important;
+  border-radius: 21px !important;
+  border: 1px solid transparent !important;
+  background: 
+  radial-gradient(ellipse at 85% 0%, #41ffbaa3, #04f1e34d, transparent) border-box, radial-gradient(ellipse at 0% 40%, #00bf9f, #00ebbc2e, transparent) border-box, radial-gradient(ellipse at 65% 100%, #28ffa770, #00eb9c38, transparent) border-box;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0) !important;
+  -webkit-mask-composite: destination-out !important;
+  mask-composite: exclude !important;
+}
+
 .p-carousel-item {
   filter: opacity(0.39) !important;
 }

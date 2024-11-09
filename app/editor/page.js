@@ -227,7 +227,7 @@ const page = () => {
         return (
           <Device_VKB_T_RUDDER_MK5
             className='min-w-[330px] h-[400px]  pt-[128px]'
-            // view={sessionStorage.getItem('deviceViewOrientation')}
+          // view={sessionStorage.getItem('deviceViewOrientation')}
           />
         )
         break
@@ -366,12 +366,13 @@ const page = () => {
           <Button onClick={() => setCookie('testBite', 'ASLKDJASLKDJLAKSDJ')}>
             asdasd
           </Button> */}
-          <button onClick={() => {sessionStorage.clear()}}>clear ss</button>
-            {/* <fileUpload/> */}     
-                 <button onClick={() => {console.log(JSON.parse(sessionStorage.getItem('loadedProfile'))
-                    ?.deviceList[sessionStorage.getItem('selectedEditorDevice')]
-                    ?.axis['Main_Device_Axis']);
-                 }}>check</button>
+            <button onClick={() => { sessionStorage.clear() }}>clear ss</button>
+            {/* <fileUpload/> */}
+            <button onClick={() => {
+              console.log(JSON.parse(sessionStorage.getItem('loadedProfile'))
+                ?.deviceList[sessionStorage.getItem('selectedEditorDevice')]
+                ?.axis['Main_Device_Axis']);
+            }}>check</button>
 
           </div>
           <div id='InputEditorPanel' className={editorPanelVisibility}>
