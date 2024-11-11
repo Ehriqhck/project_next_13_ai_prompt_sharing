@@ -12,6 +12,7 @@
     "@aws-sdk/credential-providers": "^3.670.0",
     "@iconfu/svg-inject": "^1.2.3",
     "@mongodb-js/zstd": "^1.2.2",
+    "@next/font": "^14.2.15",
     "@react-stately/data": "^3.10.1",
     "@reis/mongoose-to-json": "^3.0.0",
     "@splidejs/splide": "^4.1.4",
