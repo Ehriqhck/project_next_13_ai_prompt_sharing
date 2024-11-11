@@ -82,7 +82,7 @@ const NavEditor = () => {
     try {
       return (
         <p className='nowrap'>
-          {JSON.parse(sessionStorage.getItem('loadedProfile')).profileName}
+          {JSON.parse(sessionStorage.getItem('loadedProfile'))?.profileName}
         </p>
 
       )

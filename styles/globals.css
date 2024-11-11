@@ -17,8 +17,11 @@
 }
 .logo-gradient-white {
   -webkit-background-clip: text !important;
+  text-shadow: 0px 4px 42px rgb(0 255 204 / 36%);
+
   -webkit-text-fill-color: transparent;
-  background: linear-gradient(180deg, #fafafae8 40%, rgb(209 209 209 / 57%) 100%);
+  background: linear-gradient(180deg, #ffffff 27%, #4E6567 90%);
+  /* background: linear-gradient(180deg, #fafafa 0%, #4E6567 100%); */
 }
 .hero-carousel {
   padding: 4px 6px 4px 24px !important;

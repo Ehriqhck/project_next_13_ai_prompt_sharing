@@ -85,7 +85,12 @@ const Home = () => {
 
 
   return (
-    <div className="">
+    <div className="flex flex-col w-full px-[128px]">
+      <div className="flex flex-col w-fit"> 
+      <p className="font-varino logo-gradient-white text-[46px] self-center mb-[-8px]"> TRICHORD </p>
+      <p className='font-varino logo-gradient-white text-[20px] tracking-[1.1em] self-center'>EDITOR</p>
+      </div>
+    
       <NoSsr>
         <div className="flex flex-row gap-[4px] hero-carousel">
           <p className=" flex flex-col    self-center justify-center align-middle
@@ -104,7 +109,6 @@ const Home = () => {
           <h1 className='h1 '>
             <span className=' font-[200] text-left'> Input Mappings Done </span> <br /> <span className="font-[800]">Easy.</span>
           </h1>
-          <p className="font-varino "> TRICHORD EDITOR</p>
         </div>
 
 
@@ -119,10 +123,10 @@ const Home = () => {
                 <linearGradient id="paint0_linear_2417_486711" x1="68.2755" y1="100%" x2="68.2755" y2="0%" gradientUnits="userSpaceOnUse">
                   <stop stop-color="#00FFD1" >
                     <animate attributeName="stop-color"
-                      values="#00FFD1;#00876F;#00FFD1" dur="2s" repeatCount="indefinite"
+                      values="#00FFD1;#00876F;#00FFD1" dur="1.7s" repeatCount="indefinite"
                       calcMode="spline"
                       keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"
-                      begin='-1.0s'
+                      begin='-0.70s'
                     />
                   </stop>
                   <stop offset="1" stop-color="#00876F" />
@@ -136,10 +140,10 @@ const Home = () => {
                   <linearGradient id="paint0_linear_2417_4867" x1="68.2755" y1="100%" x2="68.2755" y2="0%" gradientUnits="userSpaceOnUse">
                     <stop stop-color="#00FFD1" >
                       <animate attributeName="stop-color"
-                        values="#00FFD1;#00876F;#00FFD1" dur="2s" repeatCount="indefinite"
+                        values="#00FFD1;#00876F;#00FFD1" dur="1.7s" repeatCount="indefinite"
                         calcMode="spline"
                         keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"
-                        begin='1s'
+                        begin='1.4s'
                       />
                     </stop>
                     <stop offset="1" stop-color="#00876F" />
