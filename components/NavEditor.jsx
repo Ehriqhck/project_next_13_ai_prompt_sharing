@@ -89,7 +89,6 @@ const NavEditor = () => {
     } catch (error) {
       console.log("EERROROROROR");
 
-      console.log(JSON.parse(sessionStorage.getItem('loadedProfile')))
 
       return ("error")
 
@@ -335,12 +334,12 @@ const NavEditor = () => {
                   <p className="title-text">EDITOR</p>
                 </div>
               </div>
-              <div className="flex flex-col">
+              {/* <div className="flex flex-col">
                 <div className="flex flex-row">
                   <p className="text-base">// CURRENT PROFILE</p>
                 </div>
                 <p className="text-profile-title slant">{profileName}</p>
-              </div>
+              </div> */}
               {/* Desktop Navigation */}
               <div className='flex '>
                 {session?.user ? (
