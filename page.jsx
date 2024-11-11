@@ -102,11 +102,11 @@ const Home = () => {
       <section className='w-full flex-center flex-col pt-[64px]' >
         <div className="flex w-full">
           <h1 className='h1 '>
-            <span className=' font-[200] text-left'> Input Mappings Done </span> <br /> <span className="font-[800]">Easy.</span>
+            <span className=' font-[200] text-left asd'> Input Mappings Done </span> <br /> <span className="font-[800]">Easy.</span>
           </h1>
-          <p className="font-varino "> TRICHORD EDITOR</p>
-        </div>
 
+        </div>
+        <p className="font-varino logo-gradient-white "> TRICHORD EDITOR asdasd</p>
 
         <div className="flex gap-[20px] flex-col">
           <p className=" flex flex-col    self-center justify-center align-middle

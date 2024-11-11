@@ -10,6 +10,16 @@
 /* :is(div[data-p-carousel-item-active='true'],div[data-p-carousel-item-end='true']), :is(div[data-p-carousel-item-active='true'],div[data-p-carousel-item-start='true']) {
   filter: opacity(0.39) !important;
 } */
+
+.font-varino {
+  font-family: 'varino';
+
+}
+.logo-gradient-white {
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(180deg, #fafafae8 40%, rgb(209 209 209 / 57%) 100%);
+}
 .hero-carousel {
   padding: 4px 6px 4px 24px !important;
   border-radius: 21px !important; 

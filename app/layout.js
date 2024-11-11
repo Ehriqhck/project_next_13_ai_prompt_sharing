@@ -24,7 +24,7 @@ const RootLayout = ({ children }) => (
         <div className='main'>
           <div className='gradient' />
         </div>
-        <main className='app'>
+        <main className={'app ' + varino.className }>
           <NavEditor />
 
           {children}
