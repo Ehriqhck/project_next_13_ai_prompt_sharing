@@ -13,7 +13,8 @@ module.exports = {
     extend: {
       fontFamily: {
         satoshi: ['Satoshi', 'sans-serif'],
-        inter: ['Inter', 'sans-serif']
+        inter: ['Inter', 'sans-serif'],
+        varino: ['var(--font-varino-normal)']
       },
       colors: {
         'primary-orange': '#FF5722'

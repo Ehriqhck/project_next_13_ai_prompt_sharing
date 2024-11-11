@@ -10,9 +10,16 @@
 /* :is(div[data-p-carousel-item-active='true'],div[data-p-carousel-item-end='true']), :is(div[data-p-carousel-item-active='true'],div[data-p-carousel-item-start='true']) {
   filter: opacity(0.39) !important;
 } */
-
+@font-face {
+  font-family: Varino;
+  src:
+       url('/assets/fonts/Varino-Normal.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  /* font-display: swap; */
+}
 .font-varino {
-  font-family: 'varino';
+  font-family: "varino", normal;
 
 }
 .logo-gradient-white {

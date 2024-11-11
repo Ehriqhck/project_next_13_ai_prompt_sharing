@@ -86,9 +86,9 @@ const Home = () => {
 
   return (
     <div className="flex flex-col w-full px-[128px]">
-      <div className="flex flex-col w-fit"> 
-      <p className="font-varino logo-gradient-white text-[46px] self-center mb-[-8px]"> TRICHORD </p>
-      <p className='font-varino logo-gradient-white text-[20px] tracking-[1.1em] self-center'>EDITOR</p>
+      <div className="flex flex-col w-fit font-['varino']"> 
+      <p className="logo-gradient-white text-[46px] self-center mb-[-8px]"> TRICHORD </p>
+      <p className=' logo-gradient-white text-[20px] tracking-[1.1em] self-center'>EDITOR</p>
       </div>
     
       <NoSsr>
@@ -152,8 +152,6 @@ const Home = () => {
               </svg>
             </div>
           </div>
-
-
         </div>
 
 

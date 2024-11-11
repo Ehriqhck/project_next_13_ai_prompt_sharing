@@ -15,7 +15,14 @@ export const metadata = {
   description: ''
 }
 
-const varino = localFont({ src: '../public/assets/fonts/Varino-Normal.otf' })
+const varino = localFont({ src:
+  [
+    {
+      path:  '../public/assets/fonts/Varino-Normal.otf',
+      weight: '400',
+      style: 'normal',
+    },
+  ] })
 
 const RootLayout = ({ children }) => (
   <html lang='en' className='dark'>
