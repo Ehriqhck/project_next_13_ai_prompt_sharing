@@ -12,6 +12,8 @@ import React from 'react'
 import { motion, AnimatePresence } from "framer-motion";
 import { Carousel } from "primereact/carousel";
 import { Button } from "primereact/button";
+import Image from 'next/image'
+
 const Home = () => {
   const [products, setProducts] = useState([
     {
@@ -85,7 +87,7 @@ const Home = () => {
 
 
   return (
-    <div className="flex flex-col w-full px-[128px]">
+    <div className="flex flex-col w-full px-[128px] hero-bg">
       <div className="flex flex-col w-fit font-['varino']"> 
       <p className="logo-gradient-white text-[46px] self-center mb-[-8px]"> TRICHORD </p>
       <p className=' logo-gradient-white text-[20px] tracking-[1.1em] self-center'>EDITOR</p>

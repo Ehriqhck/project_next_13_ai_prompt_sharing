@@ -18,6 +18,10 @@
   font-style: normal;
   /* font-display: swap; */
 }
+.hero-bg {
+  background-image: url("https://i.imgur.com/WBFTEVS.jpeg");
+
+}
 .font-varino {
   font-family: "varino", normal;
 
