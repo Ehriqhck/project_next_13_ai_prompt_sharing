@@ -320,12 +320,11 @@ const NavEditor = () => {
       break;
     default:
       return (
-        <nav className=' w-full'>
+        <nav className=' w-full h-[52px] rounded-none '>
 
-          <div className='flex flex-col'>
 
-            <div className='nav  w-full mb-[-1px] pt-3 flex flex-between flex-row'>
-              <div className="flex flex-row gap-[28px] title-left">
+            <div className='nav  w-full h-full mb-[-1px] pt-3 flex rounded-none flex-between flex-row'>
+              <div className="flex flex-row gap-[28px] title-left rounded-none">
                 <div className="flex flex-col">
                   <p className="title-text">HOME</p>
                 </div>
@@ -382,7 +381,6 @@ const NavEditor = () => {
               </div>
             </div >
 
-          </div>
 
         </nav>
       )
