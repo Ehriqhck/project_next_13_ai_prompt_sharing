@@ -199,7 +199,7 @@ const NavEditor = () => {
 
       return (
 
-        <div className=' flex flex-col  w-full mb-[16px]'>
+        <div className=' flex flex-col header-gradient  w-full mb-[16px]'>
 
           <div className=' flex flex-col  w-full'>
 
