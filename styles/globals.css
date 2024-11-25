@@ -13,7 +13,37 @@
  /* li[data-pc-section='indicator'].p-highlight > button {
 background: red !important;
  } */
-  
+ .corner-noPadding {
+  --b: 1px; /* thickness of the border */
+  --c: rgba(0, 247, 255, 0.4); /* color of the border */
+  --w: 24px; /* width of border */
+  --r: 5px; /* radius */
+
+  padding: var(--b); /* space for the border */
+  position: relative;
+  /*Irrelevant code*/
+
+  box-sizing: border-box;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.corner-noPadding::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--c, rgba(255, 0, 0, 0));
+  padding: var(--b);
+  border-radius: var(--r);
+  -webkit-mask: linear-gradient(0deg, #000 calc(2 * var(--b)), #0000 0) 50%
+      var(--b) / calc(100% - 2 * var(--w)) 100% repeat-y,
+    linear-gradient(-90deg, #000 calc(2 * var(--b)), #0000 0) var(--b) 50%/100%
+      calc(100% - 2 * var(--w)) repeat-x,
+    linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: destination-out;
+}
  li.p-carousel-indicator> button.p-link:focus {
 box-shadow: none !important;
 }
@@ -180,6 +210,14 @@ background: radial-gradient(circle farthest-corner at center center, #00992E 0%,
 
 }
 .logo-gradient-white {
+  -webkit-background-clip: text !important;
+  text-shadow: 0px 4px 42px rgb(0 255 204 / 36%);
+
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(180deg, #ffffff 27%, #4E6567 90%);
+  /* background: linear-gradient(180deg, #fafafa 0%, #4E6567 100%); */
+}
+.text-gradient-display {
   -webkit-background-clip: text !important;
   text-shadow: 0px 4px 42px rgb(0 255 204 / 36%);
 

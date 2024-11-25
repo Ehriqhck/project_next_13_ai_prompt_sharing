@@ -4162,11 +4162,7 @@ export default function TreeTableDialogue(props) {
                 break;
         }
     }
-    const filterTemplate = () => {
-        return (
-            <div>asdasd</div>
-        )
-    }
+
     const nodeTemplate = (node, options) => {
         let label = <p>{node.label}</p>;
 
@@ -4312,7 +4308,7 @@ export default function TreeTableDialogue(props) {
 
                             <div className='flex flex-row justify-between w-full '>
                                 {/* {getCategoryHeader(node)} */}
-                                <Button type="gameActions"  unstyled className='flex flex-col gap-[8px] w-full  '>
+                                <Button type="gameActions" unstyled className='flex flex-col gap-[8px] w-full  '>
 
                                     <div className='flex flex-col  p-[8px] gap-[4px] w-full  '>
                                         <div className='flex flex-col gap-[4px] pt-[8px] pb-[8px]'>
@@ -4376,88 +4372,159 @@ export default function TreeTableDialogue(props) {
 
 
     }
-    return (
-        <div className=" flex justify-content-center radial-outline">
-            <Button label="Login" icon="pi pi-user" onClick={() => setVisible(true)} />
-
-            <Dialog
-                visible={
-                    visible
-                }
-                id="gameActionDialogue"
-                modal = {true}
-                closable
-                unstyled
-                closeOnEscape
+    if (props.noDialogueOverlay) {
+        return (
 
 
-                content={() => (
-                    <div className='w-[100vw] h-[100vh]  justify-content-center self-center justify-center flex' >
+            <div className='w-full h-fit  justify-content-center self-center justify-center flex' >
 
-                        <div className="panel-gameAction flex self-center flex-col
-                         justify-content-center gap-[3px]  justify-center radial-outline">
-                            <div className='flex '>
-                                <Button type='default' unstyled className='my-[8px] mb-2px '
-                                    onClick={() => {
+                <div className="panel-gameAction flex  flex-col w-full
+       gap-[3px]   radial-outline">
+         
 
-                                        setVisible(false)
+                    <div className='flex w-full flex-row h-full self-center bind-panel-default  '>
+                        <div class="panel-title">
+                            <div className='flex flex-row'>
 
-                                    }} >
-                                    <p className='text-legend-heading px-[5px] '>
-                                        CANCEL & RETURN
-                                    </p>
-                                </Button>
+                                <span class="text-legend-heading px-[5px] "> 1. SELECT A GAME ACTION FOR SELECTED INPUT:</span>
+                                <p className='text-legend-heading'> {treeTableDialogueSelection.label} </p>
+
+
+                            </div>
+                        </div>
+                        <div className='corner-inputTableIcon gap-[12px] flex flex-row content-center align-middle '>
+
+
+
+                            <div className='corner-inputTableIcons flex w-full flex-col gap-[8px] h-full mt-[24px] self-center'>
+                                {selectedGameAction}
+
                             </div>
 
-                            <div className='flex w-full flex-row h-full self-center bind-panel-default  '>
-                                <div class="panel-title">
-                                    <div className='flex flex-row'>
+                        </div>
 
-                                        <span class="text-legend-heading px-[5px] "> 1. SELECT A GAME ACTION FOR SELECTED INPUT:</span>
-                                        <p className='text-legend-heading'> {treeTableDialogueSelection.label} </p>
+                    </div>
+                    <div className='flex flex-row h-full self-center bind-panel-default mb-[12px] mt-[8px]'>
+
+                        <div class="panel-title ">
+                            <div className='flex flex-row '>
+
+                                <span class="text-legend-heading px-[5px] "> 2. BIND GAME ACTION TO INPUT LAYER</span>
+
+                            </div>
+                        </div>
+                        <div className=' w-full flex flex-row gap-[8px] mt-[24px]'>
+
+                            {selection()}
+                        </div>
+
+                    </div>
+
+                    <Tree
+                        togglerTemplate={togglerTemplate}
+                        selectionMode="single" selectionKeys={selectedKey}
+                        onSelectionChange={(e) => {
+                        }}
+                        type="treeTableDialogue"
+                        unstyled
+                        onNodeClick={(e) => {
+                            setSelectedAction(e.node);
+                            // console.log(e.node.key);
+                        }}
+                        // onNodeClick={(e) => {
+                        //     console.log("WHAT IS NODE???:   " + e.data);
+                        // }}
+                        nodeTemplate={nodeTemplate} value={nodes} filter filterBy='label' filterMode="strict" filterPlaceholder="'Fire Weapon Group 1'"
+                        className="w-full min-w-[300px] h-[100%]" />
+                </div>
+            </div>
 
 
-                                    </div>
+
+        )
+    } else {
+        return (
+            <div className=" flex justify-content-center radial-outline">
+                <Button label="Login" icon="pi pi-user" onClick={() => setVisible(true)} />
+
+                <Dialog
+                    visible={
+                        visible
+                    }
+                    id="gameActionDialogue"
+                    modal={true}
+                    closable
+                    unstyled
+                    closeOnEscape
+
+
+                    content={() => (
+                        <div className='w-[100vw] h-[100vh]  justify-content-center self-center justify-center flex' >
+
+                            <div className="panel-gameAction flex self-center flex-col
+                         justify-content-center gap-[3px]  justify-center radial-outline">
+                                <div className='flex '>
+                                    <Button type='default' unstyled className='my-[8px] mb-2px '
+                                        onClick={() => {
+
+                                            setVisible(false)
+
+                                        }} >
+                                        <p className='text-legend-heading px-[5px] '>
+                                            CANCEL & RETURN
+                                        </p>
+                                    </Button>
                                 </div>
-                                <div className='corner-inputTableIcon gap-[12px] flex flex-row content-center align-middle '>
+
+                                <div className='flex w-full flex-row h-full self-center bind-panel-default  '>
+                                    <div class="panel-title">
+                                        <div className='flex flex-row'>
+
+                                            <span class="text-legend-heading px-[5px] "> 1. SELECT A GAME ACTION FOR SELECTED INPUT:</span>
+                                            <p className='text-legend-heading'> {treeTableDialogueSelection.label} </p>
 
 
-
-                                    <div className='corner-inputTableIcons flex w-full flex-col gap-[8px] h-full mt-[24px] self-center'>
-                                        {selectedGameAction}
-                                        {/* <ModLayerSelector /> */}
-
+                                        </div>
                                     </div>
+                                    <div className='corner-inputTableIcon gap-[12px] flex flex-row content-center align-middle '>
 
-                                    {/* <div className='panel-gameAction-sidebar h-full'>
+
+
+                                        <div className='corner-inputTableIcons flex w-full flex-col gap-[8px] h-full mt-[24px] self-center'>
+                                            {selectedGameAction}
+                                            {/* <ModLayerSelector /> */}
+
+                                        </div>
+
+                                        {/* <div className='panel-gameAction-sidebar h-full'>
                                         <BindButton />
                                     </div> */}
-                                </div>
-
-                            </div>
-                            <div className='flex flex-row h-full self-center bind-panel-default mb-[12px] mt-[8px]'>
-
-                                <div class="panel-title ">
-                                    <div className='flex flex-row '>
-
-                                        <span class="text-legend-heading px-[5px] "> 2. BIND GAME ACTION TO INPUT LAYER</span>
-                                        {/* <p className='text-legend-heading'> {treeTableDialogueSelection.label} </p> */}
-
-
                                     </div>
+
                                 </div>
-                                <div className=' w-full flex flex-row gap-[8px] mt-[24px]'>
+                                <div className='flex flex-row h-full self-center bind-panel-default mb-[12px] mt-[8px]'>
+
+                                    <div class="panel-title ">
+                                        <div className='flex flex-row '>
+
+                                            <span class="text-legend-heading px-[5px] "> 2. BIND GAME ACTION TO INPUT LAYER</span>
+                                            {/* <p className='text-legend-heading'> {treeTableDialogueSelection.label} </p> */}
+
+
+                                        </div>
+                                    </div>
+                                    <div className=' w-full flex flex-row gap-[8px] mt-[24px]'>
 
 
 
-                                    {selection()}
+                                        {selection()}
+                                    </div>
+
+
+
                                 </div>
 
-
-
-                            </div>
-
-                            {/* <Button label="hide" icon="pi pi-external-link"
+                                {/* <Button label="hide" icon="pi pi-external-link"
                                 onClick={() => {
 
                                     // console.log(JSON.parse(sessionStorage.getItem('cache_ButtonInputTableData')));
@@ -4467,28 +4534,29 @@ export default function TreeTableDialogue(props) {
 
                                 }} /> */}
 
-                            <Tree
-                                togglerTemplate={togglerTemplate}
-                                selectionMode="single" selectionKeys={selectedKey}
-                                onSelectionChange={(e) => {
-                                }}
-                                type="treeTableDialogue"
-                                unstyled
-                                onNodeClick={(e) => {
-                                    setSelectedAction(e.node);
-                                    // console.log(e.node.key);
-                                }}
-                                // onNodeClick={(e) => {
-                                //     console.log("WHAT IS NODE???:   " + e.data);
-                                // }}
-                                nodeTemplate={nodeTemplate} value={nodes} filter filterBy='label' filterMode="strict" filterPlaceholder="'Fire Weapon Group 1'"
-                                className="w-[800px] h-[100%]" />
+                                <Tree
+                                    togglerTemplate={togglerTemplate}
+                                    selectionMode="single" selectionKeys={selectedKey}
+                                    onSelectionChange={(e) => {
+                                    }}
+                                    type="treeTableDialogue"
+                                    unstyled
+                                    onNodeClick={(e) => {
+                                        setSelectedAction(e.node);
+                                        // console.log(e.node.key);
+                                    }}
+                                    // onNodeClick={(e) => {
+                                    //     console.log("WHAT IS NODE???:   " + e.data);
+                                    // }}
+                                    nodeTemplate={nodeTemplate} value={nodes} filter filterBy='label' filterMode="strict" filterPlaceholder="'Fire Weapon Group 1'"
+                                    className="w-[800px] h-[100%]" />
+                            </div>
                         </div>
-                    </div>
 
-                )}
-            ></Dialog>
-        </div>
+                    )}
+                ></Dialog>
+            </div>
 
-    )
+        )
+    }
 }

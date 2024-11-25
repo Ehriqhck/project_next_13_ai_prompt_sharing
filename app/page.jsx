@@ -17,7 +17,7 @@ import CommunityIcon from 'components/generic/Icons/CommunityIcon.jsx'
 import NewsIcon from 'components/generic/Icons/NewsIcon.jsx'
 import EnterIcon from 'components/generic/Icons/EnterIcon.jsx'
 import DiscordIcon from 'components/generic/Icons/Socials/DiscordIcon.jsx'
-
+import TreeTableDialogue from "./editor/TreeTableDialogue";
 import YoutubeIcon from 'components/generic/Icons/Socials/YoutubeIcon.jsx'
 
 const Home = () => {
@@ -118,7 +118,7 @@ const Home = () => {
           <div className=" flex flex-row gap-[4px]">
 
             <p className="uppercase self-center ml-[12px] flex  text-[#CEFCFF] font-['Exo_2'] text-[15px] font-medium  tracking-[0.1em] carousel-active">
-              {product.name}
+              Placeholder
 
             </p>
           </div>
@@ -130,7 +130,7 @@ const Home = () => {
   const carouselPrevIconTemplate = (product) => {
     return (
       <div className="flex mx-[16px] ">
-      asd
+        asd
       </div>
     );
   };
@@ -259,7 +259,7 @@ font-['exo_2']  text-[#00FFB9] text-[15px] font-bold  tracking-[0.2em]
 
 
       </div>
-      <div className=" w-full h-[1000px] flex flex-col px-[128px] justify-center 
+      <div className=" w-full h-fit flex flex-col px-[128px] pb-[128px]
       homepage-bg-gradient bg-multiply">
 
 
@@ -278,16 +278,23 @@ font-['exo_2']  text-[#00FFB9] text-[15px] font-bold  tracking-[0.2em]
             </div>
           </NoSsr>
           <div className="flex w-full">
-            <h1 className='h1 '>
-              <span className=' font-[200] text-left'> Input Mappings Done </span> <br /> <span className="font-[800]">Easy.</span>
-            </h1>
+
+            <div className="corner-noPadding w-full px-[16px] flex flex-col">
+              <h1 className='h1 '>
+                <span className=' font-[400] text-left text-gradient-display '> Input Mappings Done </span> <br /> <span className="font-[800] text-gradient-display">Easy.</span>
+              </h1>
+              <div className="p-[16px] w-full h-full">
+                <TreeTableDialogue noDialogueOverlay={true} />
+              </div>
+            </div>
+
           </div>
 
 
 
 
-
         </section>
+
       </div>
     </div>
   );
