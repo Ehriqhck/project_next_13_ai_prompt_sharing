@@ -369,9 +369,7 @@ const page = () => {
             <button onClick={() => { sessionStorage.clear() }}>clear ss</button>
             {/* <fileUpload/> */}
             <button onClick={() => {
-              console.log(JSON.parse(sessionStorage.getItem('loadedProfile'))
-                ?.deviceList[sessionStorage.getItem('selectedEditorDevice')]
-                ?.axis['Main_Device_Axis']);
+              console.log(JSON.parse(sessionStorage.getItem('cache_AxisInputTableData')));
             }}>check</button>
 
           </div>

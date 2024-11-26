@@ -43,7 +43,7 @@ const Device_VKB_GLADIATOR_NXT_EVO_RIGHT = (props) => {
             InputId={"5"} InputName={"PINKY BUTTON"} TargetId={"#pinkyButton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK"} />
           <InputPopover InputId={"4"} InputName={"SIDE INDEX BUTTON"} TargetId={"#sideIndexButton_Device_VKB_GLADIATOR_NXT_EVO_RIGHT_BACK"} />
 
-          <div>
+          <div className='z-99999999 '>
 
             <svg
               {...props}
@@ -1114,7 +1114,7 @@ const Device_VKB_GLADIATOR_NXT_EVO_RIGHT = (props) => {
           <InputPopover InputId={"Circle_Stick_Device_VKB_GLADIATOR_NXT_EVO_RIGHT"} InputName={"CIRCLE STICK"} TargetId={"#input3_Device_VKB_GLADIATOR_NXT_EVO_RIGHT"} />
           <InputPopover InputId={"Red_Button_Device_VKB_GLADIATOR_NXT_EVO_RIGHT"} InputName={"RED BUTTON"} TargetId={"#input4_Device_VKB_GLADIATOR_NXT_EVO_RIGHT"} />
 
-          <div>
+          <div className='z-99999999 align-middle self-center'>
 
             <svg
               {...props}

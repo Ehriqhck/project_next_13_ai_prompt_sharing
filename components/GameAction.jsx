@@ -83,7 +83,7 @@ const Action = ({ action_id, node, layer, input_direction, selectable }) => {
         if (selectable) {
    
             return (
-                <div className='flex flex-col gap-[2px] corner-inputTableIcons'>
+                <div className='flex flex-col gap-[8px] w-full'>
                     <LayerTag layerNumber={layer} input_direction={input_direction} selectable={true} />
 
                     <div

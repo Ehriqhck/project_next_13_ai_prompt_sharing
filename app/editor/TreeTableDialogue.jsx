@@ -157,6 +157,42 @@ export default function TreeTableDialogue(props) {
     ]);
     const [selectedNodeKey, setSelectedNodeKey] = useState(null);
     const [metaKey, setMetaKey] = useState(true);
+
+    const layers_placeholder = [
+        {
+            key: 'v_weapon_manual_gimbal_cycle_source',
+            label:
+                'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+            data: {
+                actionmapName: 'spaceship_weapons',
+                name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                category: 'Vehicles / Weapons',
+                inputType: 'Toggle'
+            }
+        },
+        {
+            key: 'v_weapon_manual_gimbal_cycle_source',
+            label:
+                'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+            data: {
+                actionmapName: 'spaceship_weapons',
+                name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                category: 'Vehicles / Weapons',
+                inputType: 'Toggle'
+            }
+        },
+        {
+            key: 'v_weapon_manual_gimbal_cycle_source',
+            label:
+                'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)',
+            data: {
+                actionmapName: 'spaceship_weapons',
+                name: 'Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)',
+                category: 'Vehicles / Weapons',
+                inputType: 'Toggle'
+            }
+        }
+    ];
     useEffect(() => {
 
 
@@ -4295,22 +4331,22 @@ export default function TreeTableDialogue(props) {
                         <div className='flex flex-row  w-full  self-start gap-[8px] '>
 
 
-                            <div className='flex flex-col ml-[2px]'>
+                            <div className='flex flex-col ml-[2px] w-full'>
 
                                 <ActionList
-                                    layers={treeTableDialogueSelection.data.layers}
-                                    input_direction="inputTable"
+                                    layers={layers_placeholder}
+                                    input_direction="dialogueModLayerButtons"
                                     selectable={true} />
                             </div>
                             <div className='flex w-[30px]'>
                                 <ChevronsRight width="30px" />
                             </div>
 
-                            <div className='flex flex-row justify-between w-full '>
+                            <div className='flex flex-row justify-between w-[200px] '>
                                 {/* {getCategoryHeader(node)} */}
-                                <Button type="gameActions" unstyled className='flex flex-col gap-[8px] w-full  '>
+                                <Button type="gameActions" unstyled className='flex flex-col gap-[8px] '>
 
-                                    <div className='flex flex-col  p-[8px] gap-[4px] w-full  '>
+                                    <div className='flex flex-col  p-[8px] gap-[4px] w-full h-full pb-[16px] px-[16px]  '>
                                         <div className='flex flex-col gap-[4px] pt-[8px] pb-[8px]'>
 
                                             {/* <SaveIcon width="30px" /> */}
@@ -4319,7 +4355,7 @@ export default function TreeTableDialogue(props) {
 
                                             </div>
                                             <p className='text-legend-heading'>
-                                                BIND & SAVE
+                                                SAVE BIND TO ROTATE X
                                             </p>
 
                                         </div>
@@ -4329,20 +4365,20 @@ export default function TreeTableDialogue(props) {
                                             </div>
 
                                         </div>
-                                        <div className=' flex flex-col h-full corner-inputTableIcons gap-[8px] '>
-                                            <p className='text-legend-heading'> {treeTableDialogueSelection.label} </p>
+                                        <div className=' flex flex-col h-full corner-inputTableIcons w-full gap-[8px] '>
+                                            {/* <p className='text-legend-heading'> ROTATE X </p> */}
 
-                                            <div className='flex flex-row'>
+                                            <div className='flex flex-row gap-[12px]'>
                                                 <div className='flex self-center '>
-                                                    {Utils.getSelectedDeviceIcon(sessionStorage.getItem('selectedEditorDevice'), '40px', false)}
+                                                    {Utils.getSelectedDeviceIcon("VKB_GLADIATOR_NXT_EVO_LEFT", '40px', '100%')}
                                                 </div>
                                                 <div className="spacer-default " />
-                                                <div className='flex flex-col  h-fit  w-fit py-[4px] pl-[4px] gap-[8px] self-center justify-center align-middle'>
+                                                <div className='flex flex-col  h-fit  w-fit py-[4px] pl-[4px] gap-[12px]  content-between justify-evenly self-center  align-middle'>
                                                     <div className='flex '>
-                                                        {Utils.getInputAxisIcons(treeTableDialogueSelection.label, "30px", "30px")}
+                                                        {Utils.getInputAxisIcons('ROTATE X', "30px", "30px")}
                                                     </div>
 
-                                                    {Utils.getInputIcon(treeTableDialogueSelection.data.buttonName, '32px', '32px', false)}
+                                                    {Utils.getInputIcon('Circle_Stick', '32px', '32px', false)}
                                                     {getSlotIcon(treeTableDialogueSelection, "32px", "32px", false)}
                                                 </div>
                                             </div>
@@ -4380,10 +4416,10 @@ export default function TreeTableDialogue(props) {
 
                 <div className="panel-gameAction flex  flex-col w-full
        gap-[3px]   radial-outline">
-         
+
 
                     <div className='flex w-full flex-row h-full self-center bind-panel-default  '>
-                        <div class="panel-title">
+                        <div class="panel-title mt-[-8px]">
                             <div className='flex flex-row'>
 
                                 <span class="text-legend-heading px-[5px] "> 1. SELECT A GAME ACTION FOR SELECTED INPUT:</span>
@@ -4406,7 +4442,7 @@ export default function TreeTableDialogue(props) {
                     </div>
                     <div className='flex flex-row h-full self-center bind-panel-default mb-[12px] mt-[8px]'>
 
-                        <div class="panel-title ">
+                        <div class="panel-title mt-[-8px]">
                             <div className='flex flex-row '>
 
                                 <span class="text-legend-heading px-[5px] "> 2. BIND GAME ACTION TO INPUT LAYER</span>
@@ -4477,7 +4513,7 @@ export default function TreeTableDialogue(props) {
                                 </div>
 
                                 <div className='flex w-full flex-row h-full self-center bind-panel-default  '>
-                                    <div class="panel-title">
+                                    <div class="panel-title mt-[-8px]">
                                         <div className='flex flex-row'>
 
                                             <span class="text-legend-heading px-[5px] "> 1. SELECT A GAME ACTION FOR SELECTED INPUT:</span>
@@ -4496,20 +4532,16 @@ export default function TreeTableDialogue(props) {
 
                                         </div>
 
-                                        {/* <div className='panel-gameAction-sidebar h-full'>
-                                        <BindButton />
-                                    </div> */}
+
                                     </div>
 
                                 </div>
                                 <div className='flex flex-row h-full self-center bind-panel-default mb-[12px] mt-[8px]'>
 
-                                    <div class="panel-title ">
+                                    <div class="panel-title mt-[-8px]">
                                         <div className='flex flex-row '>
 
                                             <span class="text-legend-heading px-[5px] "> 2. BIND GAME ACTION TO INPUT LAYER</span>
-                                            {/* <p className='text-legend-heading'> {treeTableDialogueSelection.label} </p> */}
-
 
                                         </div>
                                     </div>

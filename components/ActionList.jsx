@@ -13,6 +13,7 @@ const ActionList = ({ layers, input_direction, selectable }) => {
     "action-list-left": input_direction == "left",
     "action-list-right": input_direction == "right",
     "action-list-inputTable": input_direction == "inputTable",
+   "corner-dialogueModLayerButtons": input_direction == "dialogueModLayerButtons",
 
     "action-list": input_direction !== "left" || "right"
   });
@@ -42,7 +43,7 @@ const ActionList = ({ layers, input_direction, selectable }) => {
     }
 
     return (
-      <div className={'action-list-dialogue'}>
+      <div className={'action-list-dialogue w-full'}>
 
         {getSelectedInput(layers)}
       </div>

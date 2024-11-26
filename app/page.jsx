@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import InputEditor from './Editor/InputEditor'
 import Feed from "@components/Feed";
 // import GameVerDropdown from "@components/GameVerDropdown";
 // import HatUp from '@components/Device_VKB_SpaceEvo';
@@ -19,6 +20,8 @@ import EnterIcon from 'components/generic/Icons/EnterIcon.jsx'
 import DiscordIcon from 'components/generic/Icons/Socials/DiscordIcon.jsx'
 import TreeTableDialogue from "./editor/TreeTableDialogue";
 import YoutubeIcon from 'components/generic/Icons/Socials/YoutubeIcon.jsx'
+import { Utils } from "./editor/utils";
+import Device_VKB_GLADIATOR_NXT_EVO_RIGHT from '@components/Device_VKB_GLADIATOR_NXT_EVO_RIGHT.jsx'
 
 const Home = () => {
   const [products, setProducts] = useState([
@@ -259,9 +262,64 @@ font-['exo_2']  text-[#00FFB9] text-[15px] font-bold  tracking-[0.2em]
 
 
       </div>
-      <div className=" w-full h-fit flex flex-col px-[128px] pb-[128px]
+      <div className=" w-full h-fit flex flex-col  px-[128px] pb-[128px]
       homepage-bg-gradient bg-multiply">
 
+        <section className='w-full flex-center flex-col pt-[64px]' >
+          {/* <NoSsr>
+            <div className="flex flex-row gap-[4px] hero-carousel">
+              <p className=" flex flex-col    self-center justify-center align-middle
+          font-['exo_2']  text-[#CEFCFF] text-[15px] font-medium  tracking-[0.1em]
+          ">STOP</p>
+              <div className="spacer-noH h-[36px]" />
+              <Carousel value={products}
+                circular autoplayInterval={5000} numVisible={3} numScroll={1}
+                verticalViewPortHeight="80px" orientation="vertical" itemTemplate={productTemplate}
+                showIndicators={false} showNavigators={false}
+              />
+            </div>
+          </NoSsr> */}
+
+          <div className="flex w-full pt-[128px] flex-col corner-noPadding ">
+
+            <div className=" w-full px-[16px] flex flex-col pb-[36px]  ">
+
+              <h1 className=' w-full  flex flex-col justify-center self-center gap-[0px] mt-[32px]'>
+                <div className="flex flex-col">
+                  <span className="font-[400]  h1 text-gradient-display  self-center w-full  justify-center text-center">Device-Input Selection.</span>
+
+                  {/* <p className="font-[500] h1 text-gradient-display">Now </p> */}
+                  <span className="font-[800] h1 tracking-[0.035em] text-gradient-display  self-center w-full  justify-center text-center"> Now Visually Interactive.</span>
+
+                </div>
+
+                <div className=" self-center w-full  whitespace-nowrap justify-center flex flex-wrap gap-[12px] mt-[32px] font-[500]
+                text-left text-gradient-display font-['Exo_2'] tracking-[0.075em] uppercase text-[24px] mb-[24px] ">
+                  <span className=' text-gradient-display'> Semantic Labelling </span>
+                  <div className="spacer " />
+                  <span className=' text-gradient-display'> Input Search </span>
+                  <div className="spacer " />
+                  <span className=' text-gradient-display'> Axis vs. Button Filters </span>
+
+                </div>
+
+              </h1>
+              <div className="p-[16px] w-full h-full self-center content-center justify-items-center align-middle  justify-center device_svg_z z-99999999 flex flex-row gap-[42px]">
+                <Device_VKB_GLADIATOR_NXT_EVO_RIGHT
+                  className='min-w-[300px] w-[180px] device-shadow self-start align-middle flex justify-center'
+                  view='Front'
+                />
+                <InputEditor isExample={true} />
+
+              </div>
+            </div>
+
+          </div>
+
+
+
+
+        </section>
 
         <section className='w-full flex-center flex-col pt-[64px]' >
           <NoSsr>
@@ -277,11 +335,25 @@ font-['exo_2']  text-[#00FFB9] text-[15px] font-bold  tracking-[0.2em]
               />
             </div>
           </NoSsr>
-          <div className="flex w-full">
 
-            <div className="corner-noPadding w-full px-[16px] flex flex-col">
-              <h1 className='h1 '>
-                <span className=' font-[400] text-left text-gradient-display '> Input Mappings Done </span> <br /> <span className="font-[800] text-gradient-display">Easy.</span>
+          <div className="flex w-full pt-[128px] flex-col corner-noPadding ">
+
+            <div className=" w-full px-[16px] flex flex-col pb-[36px] ">
+
+              <h1 className='h1 w-full  flex flex-col justify-center self-center gap-[16px] mt-[32px]'>
+                <span className="font-[800] text-gradient-display  self-center w-full tracking-[0.035em] justify-center text-center">500+ Keybinds Supported</span>
+
+                <div className="h2 self-center w-full  whitespace-nowrap justify-center flex flex-wrap gap-[12px] mt-[8px] font-[500] text-left 
+                text-gradient-display font-['Exo_2'] tracking-[0.075em] uppercase text-[24px] mb-[24px]">
+                  <span className=' text-gradient-display'> Bespoke Iconography </span>
+                  <div className="spacer " />
+                  <span className=' text-gradient-display'> Updated Per-Patch </span>
+                  <div className="spacer " />
+                  <span className=' text-gradient-display'> Semantic Search </span>
+                  <div className="spacer " />
+                  <span className=' text-gradient-display'>  Modifier Layers </span>
+                </div>
+
               </h1>
               <div className="p-[16px] w-full h-full">
                 <TreeTableDialogue noDialogueOverlay={true} />

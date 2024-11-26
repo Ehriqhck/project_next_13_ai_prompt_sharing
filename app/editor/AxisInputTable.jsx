@@ -16,7 +16,104 @@ import { SessionDeviceAxisInputs } from './SessionDeviceAxisInputs';
 import { Tree } from 'primereact/tree';
 import BindIcon from 'public/assets/icons/generic/bind.svg'
 
-const AxisInputTable = () => {
+const AxisInputTable = (props) => {
+    const exampleData = [
+        {
+            "key": "axisVKB_GLADIATOR_NXT_EVO_RIGHTMain_Device_Axis",
+            "label": "Main_Device_Axis",
+            "data": {},
+            "children": [
+                {
+                    "key": "childXVKB_GLADIATOR_NXT_EVO_RIGHTJOYSTICK ROTATE X",
+                    "label": "JOYSTICK ROTATE X",
+                    "data": {
+                        "buttonName": "Main_Device_Axis",
+                        "axisType": "ROTATE X",
+                        "slotName": "X",
+                        "layers": [
+                            {
+                                "key": "v_weapon_manual_gimbal_cycle_source",
+                                "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+                                "data": {
+                                    "actionmapName": "spaceship_weapons",
+                                    "category": "Vehicles / Weapons",
+                                    "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+                                    "inputType": "Toggle"
+                                }
+                            }
+                        ],
+                        "category": "temp"
+                    }
+                },
+                {
+                    "key": "childtopVKB_GLADIATOR_NXT_EVO_RIGHTJOYSTICK TWIST Y",
+                    "label": "JOYSTICK TWIST Y",
+                    "data": {
+                        "buttonName": "Main_Device_Axis",
+                        "axisType": "TRANSLATE Y",
+                        "slotName": "top",
+                        "layers": [
+                            {
+                                "key": "v_weapon_manual_gimbal_cycle_source",
+                                "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+                                "data": {
+                                    "actionmapName": "spaceship_weapons",
+                                    "category": "Vehicles / Weapons",
+                                    "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+                                    "inputType": "Toggle"
+                                }
+                            }
+                        ],
+                        "category": "temp"
+                    }
+                },
+                {
+                    "key": "childYVKB_GLADIATOR_NXT_EVO_RIGHTROTATE Z",
+                    "label": "ROTATE Z",
+                    "data": {
+                        "buttonName": "Main_Device_Axis",
+                        "axisType": "ROTATE Z",
+                        "slotName": "Y",
+                        "layers": [
+                            {
+                                "key": "v_weapon_manual_gimbal_cycle_source",
+                                "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+                                "data": {
+                                    "actionmapName": "spaceship_weapons",
+                                    "category": "Vehicles / Weapons",
+                                    "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+                                    "inputType": "Toggle"
+                                }
+                            }
+                        ],
+                        "category": "temp"
+                    }
+                },
+                {
+                    "key": "childZVKB_GLADIATOR_NXT_EVO_RIGHTJOYSTICK ROTATE Z",
+                    "label": "JOYSTICK ROTATE Z",
+                    "data": {
+                        "buttonName": "Main_Device_Axis",
+                        "axisType": "ROTATE Z",
+                        "slotName": "Z",
+                        "layers": [
+                            {
+                                "key": "v_weapon_manual_gimbal_cycle_source",
+                                "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+                                "data": {
+                                    "actionmapName": "spaceship_weapons",
+                                    "category": "Vehicles / Weapons",
+                                    "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+                                    "inputType": "Toggle"
+                                }
+                            }
+                        ],
+                        "category": "temp"
+                    }
+                }
+            ]
+        }
+    ];
     const [visible, setVisible] = useState(false);
     const [nodes, setNodes] = useState([]);
     const [globalFilter, setGlobalFilter] = useState('');
@@ -241,23 +338,23 @@ const AxisInputTable = () => {
             setSelectedViewerInput('Pedals');
             setViewerPanelTitle(node.label);
         }
-        const getSlotIcon = (node) => {
+        // const getSlotIcon = (node) => {
 
-            if (!Object.hasOwn(node.data, 'slotName')) {
-                return <p className='text-GameAction-Category-Heading'> {node.label} asd</p>;
-            } else {
-                return (
-                    <button >
-                        <div className='flex corner-inputTableIcons'>
-                            {/* {Utils.getInputAxisIcons(node.data.slotName, "25px", "25px")} */}
-                            {Utils.getInputAxisIcons(node.axisType, "30px", "30px", null, sessionStorage.getItem('selectedEditorDevice'))}
+        //     if (!Object.hasOwn(node.data, 'slotName')) {
+        //         return <p className='text-GameAction-Category-Heading'> {node.label} asd</p>;
+        //     } else {
+        //         return (
+        //             <button >
+        //                 <div className='flex corner-inputTableIcons'>
+        //                     {/* {Utils.getInputAxisIcons(node.data.slotName, "25px", "25px")} */}
+        //                     {Utils.getInputAxisIcons(node.axisType, "30px", "30px", null, sessionStorage.getItem('selectedEditorDevice'))}
 
-                        </div>
+        //                 </div>
 
-                    </button>
-                )
-            }
-        }
+        //             </button>
+        //         )
+        //     }
+        // }
         // if node is contains Main_Device_Axis
         // if (node.label === 'Main_Device_Axis') {
         //     sessionStorage.setItem("selectedInputViewerInputType", 'mainDeviceAxis')
@@ -291,19 +388,49 @@ const AxisInputTable = () => {
 
         // if node is a button
         if (!Object.hasOwn(node.data, 'slotName')) {
+            if (props.isExample) {
+                return (
+                    <button onClick={() => {
+                        console.log("TOGGLER NODE:", node);
 
+                        setInputViewerLayout(node)
+                    }} className='mb-[12px]'>
+                        <Button type="inputTable" className=" flex flex-row w-full  justify-between " tabIndex={-1} onClick={options.onClick} onClickCapture={setInputViewerLayout(node)}>
+                            <div className='flex py-[2px] flex-row content-start w-full justify-between pr-[16px] self-start gap-[8px] '>
+                                <div className='flex flex-row   h-fit'>
+                                    <div className='flex corner-inputTableIcons'>
+                                        {/* {Utils.getInputAxisIcons(node.data.slotName, "25px", "25px")} */}
+                                        {(props.isExample)
+                                            ? Utils.getSelectedDeviceIcon('VKB_GLADIATOR_NXT_EVO_RIGHT', '42px', '100%', false)
+                                            : Utils.getInputAxisIcons(node.axisType, "30px", "30px", null, sessionStorage.getItem('selectedEditorDevice'))
+                                        }
+
+                                    </div>
+                                    <p className='text-legend-heading pl-[8px]'> {node.label} </p>
+                                </div>
+                                {getIconLegend(node)}
+
+
+                            </div>
+                        </Button>
+                    </button>
+                );
+            }
             return (
                 <button onClick={() => {
                     console.log("TOGGLER NODE:", node);
 
                     setInputViewerLayout(node)
-                }}>
+                }} className='mb-[12px]'>
                     <Button type="inputTable" className=" flex flex-row w-full  justify-between " tabIndex={-1} onClick={options.onClick} onClickCapture={setInputViewerLayout(node)}>
                         <div className='flex py-[2px] flex-row content-start w-full justify-between pr-[16px] self-start gap-[8px] '>
                             <div className='flex flex-row   h-fit'>
                                 <div className='flex corner-inputTableIcons'>
                                     {/* {Utils.getInputAxisIcons(node.data.slotName, "25px", "25px")} */}
-                                    {Utils.getInputAxisIcons(node.axisType, "30px", "30px", null, sessionStorage.getItem('selectedEditorDevice'))}
+                                    {(props.isExample)
+                                        ? Utils.getInputAxisIcons(node.axisType, "30px", "30px", null, Utils.getSelectedDeviceIcon('VKB_GLADIATOR_NXT_EVO_RIGHT'), 'auto', '30px', false)
+                                        : Utils.getInputAxisIcons(node.axisType, "30px", "30px", null, sessionStorage.getItem('selectedEditorDevice'))
+                                    }
 
                                 </div>
                                 <p className='text-legend-heading pl-[8px]'> {node.label} </p>
@@ -350,7 +477,7 @@ const AxisInputTable = () => {
                     setTreeTableDialogueSelection(node)
                     console.log(treeTableDialogueVisibility);
 
-                }}>
+                }} className='mb-[12px]'>
                     <Button type="inputTable" className=" flex flex-col   " tabIndex={-1} onClick={options.onClick}>
 
 
@@ -395,28 +522,59 @@ const AxisInputTable = () => {
             </span>;
         }
     }
-    return (
-        <Tree
-            togglerTemplate={togglerTemplate}
-            selectionMode="single" selectionKeys={selectedKey}
-            onSelectionChange={(e) => {
-            }}
-            type="inputTable"
-            unstyled
-            onNodeClick={(e) => {
-                setSelectedAction(e.node);
-                // console.log(e.node.key);
-            }}
-            // onNodeClick={(e) => {
-            //     console.log("WHAT IS NODE???:   " + e.data);
-            // }}
-            nodeTemplate={nodeTemplate}
-            value={JSON.parse(sessionStorage.getItem('cache_AxisInputTableData'))}
-            filter={true} filterBy={'name'} filterValue={searchValue} filterMode='lenient'
-            filterPlaceholder='"Pedal Press/Release"'
-            className=""
-        />
-    )
+    if (props.isExample) {
+        return (
+            <div type='axisTable_example'>
+
+                <Tree
+                    togglerTemplate={togglerTemplate}
+                    selectionMode="single" selectionKeys={selectedKey}
+                    onSelectionChange={(e) => {
+                    }}
+                    type="inputTable"
+                    unstyled
+                    onNodeClick={(e) => {
+                        setSelectedAction(e.node);
+                        // console.log(e.node.key);
+                    }}
+                    // onNodeClick={(e) => {
+                    //     console.log("WHAT IS NODE???:   " + e.data);
+                    // }}
+                    nodeTemplate={nodeTemplate}
+                    value={exampleData}
+                    filter={true}  filterValue={searchValue} filterMode='lenient'
+                    filterPlaceholder='"Pedal Press/Release"'
+                    className=""
+                />
+            </div>
+
+        )
+
+    } else {
+        return (
+            <Tree
+                togglerTemplate={togglerTemplate}
+                selectionMode="single" selectionKeys={selectedKey}
+                onSelectionChange={(e) => {
+                }}
+                type="inputTable"
+                unstyled
+                onNodeClick={(e) => {
+                    setSelectedAction(e.node);
+                    // console.log(e.node.key);
+                }}
+                // onNodeClick={(e) => {
+                //     console.log("WHAT IS NODE???:   " + e.data);
+                // }}
+                nodeTemplate={nodeTemplate}
+                value={JSON.parse(sessionStorage.getItem('cache_AxisInputTableData'))}
+                filter={true}  filterValue={searchValue} filterMode='lenient'
+                filterPlaceholder='"Pedal Press/Release"'
+                className=""
+            />
+        )
+    }
+
 }
 
 export default AxisInputTable
