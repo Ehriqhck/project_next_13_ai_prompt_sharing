@@ -309,7 +309,10 @@ font-['exo_2']  text-[#00FFB9] text-[15px] font-bold  tracking-[0.2em]
                   className='min-w-[300px] w-[180px] device-shadow self-start align-middle flex justify-center'
                   view='Front'
                 />
+                <NoSsr>
                 <InputEditor isExample={true} />
+
+                   </NoSsr>
 
               </div>
             </div>
