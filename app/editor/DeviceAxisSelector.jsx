@@ -11,13 +11,19 @@ import { useState, useContext, useEffect } from 'react';
 import { SelectedEditorDeviceViewOrientationContext, SelectedInputTableInputContext } from '@components/Provider'
 import RotationalAxisIcon from '@public/assets/icons/actions/gameCategory/RotationalAxisIcon.jsx'
 
-const DeviceAxisSelector = () => {
+const DeviceAxisSelector = (props) => {
     const { selectedEditorDeviceViewOrientation, setSelectedEditorDeviceViewOrientation } = useContext(SelectedEditorDeviceViewOrientationContext);
     const { selectedInputTableInput, setSelectedInputTableInput } = useContext(SelectedInputTableInputContext);
 
-    const [activeIndexDeviceAxis, setActiveIndexactiveIndexDeviceAxis] = useState(0);
+    const [activeIndexDeviceAxis, setActiveIndexactiveIndexDeviceAxis] = useState('buttons');
 
+ useEffect(() => {
+    setSelectedInputTableInput('buttons');
+    sessionStorage.setItem('inputTableFilter', 'buttons');
+ 
 
+ }, [])
+ 
     const getDeviceAxis = (item) => {
         // if (item.name == "Y AXIS") {
         //     return (<RotateYIcon width="24px"></RotateYIcon>);

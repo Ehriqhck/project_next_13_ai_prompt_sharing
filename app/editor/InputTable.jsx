@@ -1878,7 +1878,9 @@ export default function InputTable(props) {
     });
     const axisTableClassName = clsx({
         'show': sessionStorage.getItem('inputTableFilter') == 'axis',
-        'hidden': sessionStorage.getItem('inputTableFilter') == 'buttons',
+        'hidden': sessionStorage.getItem('inputTableFilter') == 'buttons' || undefined || null,
+
+        
 
     });
     const getIconLegend = (node) => {
