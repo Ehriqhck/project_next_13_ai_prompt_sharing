@@ -21,7 +21,7 @@ import DiscordIcon from 'components/generic/Icons/Socials/DiscordIcon.jsx'
 import TreeTableDialogue from "./editor/TreeTableDialogue";
 import YoutubeIcon from 'components/generic/Icons/Socials/YoutubeIcon.jsx'
 import { Utils } from "./editor/utils";
-import Device_VKB_GLADIATOR_NXT_EVO_RIGHT from '@components/Device_VKB_GLADIATOR_NXT_EVO_RIGHT.jsx'
+import Device_VKB_GLADIATOR_NXT_EVO_RIGHT from '@components/Device_VKB_GLADIATOR_NXT_EVO_RIGHT_EXAMPLE.jsx'
 
 const Home = () => {
   const [products, setProducts] = useState([
