@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import InputEditor from './Editor/InputEditor'
+import InputEditor from './editor/InputEditor'
 import Feed from "@components/Feed";
 // import GameVerDropdown from "@components/GameVerDropdown";
 // import HatUp from '@components/Device_VKB_SpaceEvo';
