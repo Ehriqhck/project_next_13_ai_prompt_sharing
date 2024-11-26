@@ -27,7 +27,7 @@ import { InputIcon } from "primereact/inputicon";
 
 import SearchIcon from '@components/generic/Icons/SearchIcon';
 export default function InputTable(props) {
-    const exampleTableData = [
+    const [exampleTableData, setExampleData] = useState([
         {
             "key": "buttonVKB_GLADIATOR_NXT_EVO_RIGHTCircle_Stick",
             "label": "Circle_Stick",
@@ -924,7 +924,905 @@ export default function InputTable(props) {
                 }
             ]
         }
-    ];
+    ])
+    // const exampleTableData = [
+    //     {
+    //         "key": "buttonVKB_GLADIATOR_NXT_EVO_RIGHTCircle_Stick",
+    //         "label": "Circle_Stick",
+    //         "data": {},
+    //         "children": [
+    //             {
+    //                 "key": "childtopVKB_GLADIATOR_NXT_EVO_RIGHTCIRCLE SWITCH UP",
+    //                 "label": "CIRCLE SWITCH UP",
+    //                 "data": {
+    //                     "buttonName": "Circle_Stick",
+    //                     "slotName": "top",
+    //                     "layers": [
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         }
+    //                     ],
+    //                     "category": "temp"
+    //                 }
+    //             },
+    //             {
+    //                 "key": "childbottomVKB_GLADIATOR_NXT_EVO_RIGHTCIRCLE SWITCH DOWN",
+    //                 "label": "CIRCLE SWITCH DOWN",
+    //                 "data": {
+    //                     "buttonName": "Circle_Stick",
+    //                     "slotName": "bottom",
+    //                     "layers": [
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         }
+    //                     ],
+    //                     "category": "temp"
+    //                 }
+    //             },
+    //             {
+    //                 "key": "childpressVKB_GLADIATOR_NXT_EVO_RIGHTCIRCLE SWITCH PRESS",
+    //                 "label": "CIRCLE SWITCH PRESS",
+    //                 "data": {
+    //                     "buttonName": "Circle_Stick",
+    //                     "slotName": "press",
+    //                     "layers": [
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         }
+    //                     ],
+    //                     "category": "temp"
+    //                 }
+    //             },
+    //             {
+    //                 "key": "childleftVKB_GLADIATOR_NXT_EVO_RIGHTCIRCLE SWITCH LEFT",
+    //                 "label": "CIRCLE SWITCH LEFT",
+    //                 "data": {
+    //                     "buttonName": "Circle_Stick",
+    //                     "slotName": "left",
+    //                     "layers": [
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         }
+    //                     ],
+    //                     "category": "temp"
+    //                 }
+    //             },
+    //             {
+    //                 "key": "childrightVKB_GLADIATOR_NXT_EVO_RIGHTCIRCLE SWITCH RIGHT",
+    //                 "label": "CIRCLE SWITCH RIGHT",
+    //                 "data": {
+    //                     "buttonName": "Circle_Stick",
+    //                     "slotName": "right",
+    //                     "layers": [
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         }
+    //                     ],
+    //                     "category": "temp"
+    //                 }
+    //             }
+    //         ]
+    //     },
+    //     {
+    //         "key": "buttonVKB_GLADIATOR_NXT_EVO_RIGHTHat_Stick",
+    //         "label": "Hat_Stick",
+    //         "data": {},
+    //         "children": [
+    //             {
+    //                 "key": "childtopVKB_GLADIATOR_NXT_EVO_RIGHTHAT SWITCH UP",
+    //                 "label": "HAT SWITCH UP",
+    //                 "data": {
+    //                     "buttonName": "Hat_Stick",
+    //                     "slotName": "top",
+    //                     "layers": [
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         }
+    //                     ],
+    //                     "category": "temp"
+    //                 }
+    //             },
+    //             {
+    //                 "key": "childbottomVKB_GLADIATOR_NXT_EVO_RIGHTHAT SWITCH DOWN",
+    //                 "label": "HAT SWITCH DOWN",
+    //                 "data": {
+    //                     "buttonName": "Hat_Stick",
+    //                     "slotName": "bottom",
+    //                     "layers": [
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         }
+    //                     ],
+    //                     "category": "temp"
+    //                 }
+    //             },
+    //             {
+    //                 "key": "childpressVKB_GLADIATOR_NXT_EVO_RIGHTHAT SWITCH PRESS",
+    //                 "label": "HAT SWITCH PRESS",
+    //                 "data": {
+    //                     "buttonName": "Hat_Stick",
+    //                     "slotName": "press",
+    //                     "layers": [
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         }
+    //                     ],
+    //                     "category": "temp"
+    //                 }
+    //             },
+    //             {
+    //                 "key": "childleftVKB_GLADIATOR_NXT_EVO_RIGHTHAT SWITCH LEFT",
+    //                 "label": "HAT SWITCH LEFT",
+    //                 "data": {
+    //                     "buttonName": "Hat_Stick",
+    //                     "slotName": "left",
+    //                     "layers": [
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         }
+    //                     ],
+    //                     "category": "temp"
+    //                 }
+    //             },
+    //             {
+    //                 "key": "childrightVKB_GLADIATOR_NXT_EVO_RIGHTHAT SWITCH RIGHT",
+    //                 "label": "HAT SWITCH RIGHT",
+    //                 "data": {
+    //                     "buttonName": "Hat_Stick",
+    //                     "slotName": "right",
+    //                     "layers": [
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         }
+    //                     ],
+    //                     "category": "temp"
+    //                 }
+    //             }
+    //         ]
+    //     },
+    //     {
+    //         "key": "buttonVKB_GLADIATOR_NXT_EVO_RIGHTPill_Stick",
+    //         "label": "Pill_Stick",
+    //         "data": {},
+    //         "children": [
+    //             {
+    //                 "key": "childtopVKB_GLADIATOR_NXT_EVO_RIGHTPILL SWITCH UP",
+    //                 "label": "PILL SWITCH UP",
+    //                 "data": {
+    //                     "buttonName": "Pill_Stick",
+    //                     "slotName": "top",
+    //                     "layers": [
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         }
+    //                     ],
+    //                     "category": "temp"
+    //                 }
+    //             },
+    //             {
+    //                 "key": "childbottomVKB_GLADIATOR_NXT_EVO_RIGHTPILL SWITCH DOWN",
+    //                 "label": "PILL SWITCH DOWN",
+    //                 "data": {
+    //                     "buttonName": "Pill_Stick",
+    //                     "slotName": "bottom",
+    //                     "layers": [
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         }
+    //                     ],
+    //                     "category": "temp"
+    //                 }
+    //             },
+    //             {
+    //                 "key": "childpressVKB_GLADIATOR_NXT_EVO_RIGHTPILL SWITCH PRESS",
+    //                 "label": "PILL SWITCH PRESS",
+    //                 "data": {
+    //                     "buttonName": "Pill_Stick",
+    //                     "slotName": "press",
+    //                     "layers": [
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         }
+    //                     ],
+    //                     "category": "temp"
+    //                 }
+    //             },
+    //             {
+    //                 "key": "childleftVKB_GLADIATOR_NXT_EVO_RIGHTPILL SWITCH LEFT",
+    //                 "label": "PILL SWITCH LEFT",
+    //                 "data": {
+    //                     "buttonName": "Pill_Stick",
+    //                     "slotName": "left",
+    //                     "layers": [
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         }
+    //                     ],
+    //                     "category": "temp"
+    //                 }
+    //             },
+    //             {
+    //                 "key": "childrightVKB_GLADIATOR_NXT_EVO_RIGHTPILL SWITCH RIGHT",
+    //                 "label": "PILL SWITCH RIGHT",
+    //                 "data": {
+    //                     "buttonName": "Pill_Stick",
+    //                     "slotName": "right",
+    //                     "layers": [
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         }
+    //                     ],
+    //                     "category": "temp"
+    //                 }
+    //             }
+    //         ]
+    //     },
+    //     {
+    //         "key": "buttonVKB_GLADIATOR_NXT_EVO_RIGHTRed_Button",
+    //         "label": "Red_Button",
+    //         "data": {},
+    //         "children": [
+    //             {
+    //                 "key": "childpressVKB_GLADIATOR_NXT_EVO_RIGHTRED BUTTON PRESS",
+    //                 "label": "RED BUTTON PRESS",
+    //                 "data": {
+    //                     "buttonName": "Red_Button",
+    //                     "slotName": "press",
+    //                     "layers": [
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         }
+    //                     ],
+    //                     "category": "temp"
+    //                 }
+    //             }
+    //         ]
+    //     },
+    //     {
+    //         "key": "buttonVKB_GLADIATOR_NXT_EVO_RIGHTChip_Stick",
+    //         "label": "Chip_Stick",
+    //         "data": {},
+    //         "children": [
+    //             {
+    //                 "key": "childtopVKB_GLADIATOR_NXT_EVO_RIGHTCHIP SWITCH UP",
+    //                 "label": "CHIP SWITCH UP",
+    //                 "data": {
+    //                     "buttonName": "Chip_Stick",
+    //                     "slotName": "top",
+    //                     "layers": [
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         }
+    //                     ],
+    //                     "category": "temp"
+    //                 }
+    //             },
+    //             {
+    //                 "key": "childbottomVKB_GLADIATOR_NXT_EVO_RIGHTCHIP SWITCH DOWN",
+    //                 "label": "CHIP SWITCH DOWN",
+    //                 "data": {
+    //                     "buttonName": "Chip_Stick",
+    //                     "slotName": "bottom",
+    //                     "layers": [
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         }
+    //                     ],
+    //                     "category": "temp"
+    //                 }
+    //             },
+    //             {
+    //                 "key": "childpressVKB_GLADIATOR_NXT_EVO_RIGHTCHIP SWITCH PRESS",
+    //                 "label": "CHIP SWITCH PRESS",
+    //                 "data": {
+    //                     "buttonName": "Chip_Stick",
+    //                     "slotName": "press",
+    //                     "layers": [
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         }
+    //                     ],
+    //                     "category": "temp"
+    //                 }
+    //             },
+    //             {
+    //                 "key": "childleftVKB_GLADIATOR_NXT_EVO_RIGHTCHIP SWITCH LEFT",
+    //                 "label": "CHIP SWITCH LEFT",
+    //                 "data": {
+    //                     "buttonName": "Chip_Stick",
+    //                     "slotName": "left",
+    //                     "layers": [
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         }
+    //                     ],
+    //                     "category": "temp"
+    //                 }
+    //             },
+    //             {
+    //                 "key": "childrightVKB_GLADIATOR_NXT_EVO_RIGHTCHIP SWITCH RIGHT",
+    //                 "label": "CHIP SWITCH RIGHT",
+    //                 "data": {
+    //                     "buttonName": "Chip_Stick",
+    //                     "slotName": "right",
+    //                     "layers": [
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         },
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         }
+    //                     ],
+    //                     "category": "temp"
+    //                 }
+    //             }
+    //         ]
+    //     }
+    // ];
     const [visible, setVisible] = useState(false);
     const [nodes, setNodes] = useState([]);
     const [globalFilter, setGlobalFilter] = useState('');

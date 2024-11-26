@@ -17,7 +17,7 @@ import { Tree } from 'primereact/tree';
 import BindIcon from 'public/assets/icons/generic/bind.svg'
 
 const AxisInputTable = (props) => {
-    const exampleData = [
+    const [exampleData, setExampleData] = useState([
         {
             "key": "axisVKB_GLADIATOR_NXT_EVO_RIGHTMain_Device_Axis",
             "label": "Main_Device_Axis",
@@ -113,7 +113,104 @@ const AxisInputTable = (props) => {
                 }
             ]
         }
-    ];
+    ])
+    // const exampleData = [
+    //     {
+    //         "key": "axisVKB_GLADIATOR_NXT_EVO_RIGHTMain_Device_Axis",
+    //         "label": "Main_Device_Axis",
+    //         "data": {},
+    //         "children": [
+    //             {
+    //                 "key": "childXVKB_GLADIATOR_NXT_EVO_RIGHTJOYSTICK ROTATE X",
+    //                 "label": "JOYSTICK ROTATE X",
+    //                 "data": {
+    //                     "buttonName": "Main_Device_Axis",
+    //                     "axisType": "ROTATE X",
+    //                     "slotName": "X",
+    //                     "layers": [
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         }
+    //                     ],
+    //                     "category": "temp"
+    //                 }
+    //             },
+    //             {
+    //                 "key": "childtopVKB_GLADIATOR_NXT_EVO_RIGHTJOYSTICK TWIST Y",
+    //                 "label": "JOYSTICK TWIST Y",
+    //                 "data": {
+    //                     "buttonName": "Main_Device_Axis",
+    //                     "axisType": "TRANSLATE Y",
+    //                     "slotName": "top",
+    //                     "layers": [
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         }
+    //                     ],
+    //                     "category": "temp"
+    //                 }
+    //             },
+    //             {
+    //                 "key": "childYVKB_GLADIATOR_NXT_EVO_RIGHTROTATE Z",
+    //                 "label": "ROTATE Z",
+    //                 "data": {
+    //                     "buttonName": "Main_Device_Axis",
+    //                     "axisType": "ROTATE Z",
+    //                     "slotName": "Y",
+    //                     "layers": [
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         }
+    //                     ],
+    //                     "category": "temp"
+    //                 }
+    //             },
+    //             {
+    //                 "key": "childZVKB_GLADIATOR_NXT_EVO_RIGHTJOYSTICK ROTATE Z",
+    //                 "label": "JOYSTICK ROTATE Z",
+    //                 "data": {
+    //                     "buttonName": "Main_Device_Axis",
+    //                     "axisType": "ROTATE Z",
+    //                     "slotName": "Z",
+    //                     "layers": [
+    //                         {
+    //                             "key": "v_weapon_manual_gimbal_cycle_source",
+    //                             "label": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold) (Toggle)",
+    //                             "data": {
+    //                                 "actionmapName": "spaceship_weapons",
+    //                                 "category": "Vehicles / Weapons",
+    //                                 "name": "Manual Gimbal Mode - Swap VJoy / Look Direction (Toggle, Hold)",
+    //                                 "inputType": "Toggle"
+    //                             }
+    //                         }
+    //                     ],
+    //                     "category": "temp"
+    //                 }
+    //             }
+    //         ]
+    //     }
+    // ];
     const [visible, setVisible] = useState(false);
     const [nodes, setNodes] = useState([]);
     const [globalFilter, setGlobalFilter] = useState('');
