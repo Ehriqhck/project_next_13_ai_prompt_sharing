@@ -25,7 +25,7 @@ background: red !important;
 
   box-sizing: border-box;
   display: inline-flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   text-align: center;
 }
@@ -225,6 +225,31 @@ background: radial-gradient(circle farthest-corner at center center, #00992E 0%,
   background: linear-gradient(180deg, #ffffff 27%, #4E6567 90%);
   /* background: linear-gradient(180deg, #fafafa 0%, #4E6567 100%); */
 }
+.shadow-display {
+  text-shadow: 0px 0px 11px rgba(0, 255, 204, 0.253);
+}
+.stepper-step {
+  border-radius: 50% !important; 
+  background-color: #021519 !important;
+  position: relative !important;
+  background: 
+  repeating-linear-gradient(-45deg, rgb(0, 14, 16), rgb(0, 9, 16, 0.3) 2px, rgba(0, 0, 0, 0) 2px, rgba(0, 0, 0, 0) 2.83px), linear-gradient(179deg, rgba(0, 34, 41, 0) 0%, rgb(0 191 163 / 56%) 100%) !important;
+-moz-box-shadow: inset -2px -1px 25px 1px rgb(0 187 155 / 51%);
+box-shadow: inset -2px -1px 25px 1px rgb(0 187 155 / 51%);
+}
+.stepper-step::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: 50% !important;
+  border: 1px solid transparent !important;
+  background: 
+  radial-gradient(ellipse at 85% 0%, #41ffbaa3, #04f1e34d, transparent) border-box, radial-gradient(ellipse at 0% 40%, #00bf9f, #00ebbc2e, transparent) border-box, radial-gradient(ellipse at 65% 100%, #28ffa770, #00eb9c38, transparent) border-box;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0) !important;
+  -webkit-mask-composite: destination-out !important;
+  mask-composite: exclude !important;
+}
+
 .hero-carousel {
   padding: 4px 6px 4px 24px !important;
   border-radius: 21px !important; 
@@ -3382,7 +3407,14 @@ transition: filter 0.3s;
   gap: 0.875rem;
   border-radius: 10px;
 }
-
+.bg-panel-white {
+  border: 1px solid rgb(0 54 56 / 58%);
+  fill: #01151A;
+ background:repeating-linear-gradient(-45deg, rgb(12 118 12 / 0%), rgb(7 27 24 / 30%) 2px, rgba(0, 0, 0, 0) 2px, rgba(0, 0, 0, 0) 2.83px), linear-gradient(151deg, rgb(0 34 41 / 0%) 50%, rgb(110 116 113 / 0%) 100%), radial-gradient(644.7% 114.87% at 22.25% 28.07%, rgb(0 163 255 / 0%) 0%, rgb(56 148 143 / 44%) 180%);
+  /* background: #01151ae8; */
+  align-items: flex-start;
+  border-radius: 10px;
+}
 .panel-white {
   border: 1px solid rgba(172, 167, 150, 0.178);
   fill: #01151A;

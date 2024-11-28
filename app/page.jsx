@@ -264,7 +264,186 @@ font-['exo_2']  text-[#00FFB9] text-[15px] font-bold  tracking-[0.2em]
       </div>
       <div className=" w-full h-fit flex flex-col  px-[128px] pb-[128px]
       homepage-bg-gradient bg-multiply">
+        <section className='w-full flex-center flex-col pt-[64px]' >
 
+
+          <div className="flex w-full pt-[36px] flex-col  ">
+
+            <div className=" w-full px-[16px] flex flex-col pb-[36px] ">
+
+              <h1 className='h1 w-full  flex flex-col justify-center self-center '>
+                <span className="justify-center  text-start flex flex-col">
+                  <h1 className="font-[800] text-gradient-display  self-center w-full tracking-[0.035em] ">
+                    Three Step Process
+                  </h1>
+                </span>
+
+                <div className="h2 self-start w-full  whitespace-nowrap justify-start flex flex-wrap gap-[12px] mt-[8px] font-[500] text-left 
+      text-gradient-display font-['Exo_2'] tracking-[0.075em] uppercase text-[24px] mb-[24px]">
+                  <span className='font-["inter"] text-gradient-display font-[400] '> Save hours of setup time </span>
+                  <div className="spacer " />
+                  <span className='font-["inter"] text-gradient-display font-[400] '> For New & Veteran Pilots </span>
+
+                </div>
+              </h1>
+
+    
+
+              <section className="flex flex-col ">
+                <div className="flex flex-row  mt-[36px] gap-[24px]">
+                  <div className="flex ">
+                    <div className="p-[16px] w-[70px] h-[70px] stepper-step flex  ">
+                      <p className=" font-['exo_2'] self-center justify-center
+     text-center w-full flex text-[36px]  font-[700] text-[#cefff4] text-gradient-display shadow-display">
+                        1
+                      </p>
+                    </div>
+                  </div>
+                  <div className=" flex flex-col w-full mt-[15px] mr-[64px]">
+                    <span className="font-[600] text-gradient-display font-['Exo_2'] tracking-[0.075em] uppercase text-[24px] h-fit self-start  mb-[30px] ">
+                      Upload Your Mappings.XML File
+                    </span>
+                    <div className="bg-panel-white flex flex-col w-full p-[16px] ">
+                      <span className=" font-['Exo_2'] tracking-[0.035em]  capitalize text-[16px] h-fit self-start">
+                        <div className="flex flex-row ">
+                          <h3 className="font-[200] text-[14px] opacity-[70%] ">
+                            The MAPPINGS.XML file is located in 'StarCitizen\LIVE\USER\Client\0\Controls\Mappings'
+                          </h3>
+                        </div>
+                      </span>
+                      <div className="flex flex-row mt-[8px] ml-[8px]">
+
+                        <div className="flex spacer-noH h-[100px] w-[1px]  " />
+                        <div className="flex flex-col py-[8px] text-[#CEFCFF]">
+                          <span className=" font-['Exo_2'] tracking-[0.035em]  capitalize text-[16px] h-fit self-start">
+                            <div className="flex flex-col ml-[8px] gap-[4px] font-[300]">
+                              {/* <div className="spacer " /> */}
+                              <h3 className=" ">
+                                The editor will automatically recognize & load Any supported flightsticks, control panels, rudders, and other hardware peripherals':
+                              </h3>
+                              <span className="ml-[8px]">
+                                <h3 className="] ">
+                                  &#8226;  Mapped Keybinds
+                                </h3>
+
+                                <h3 className=" ">
+                                  &#8226;  Joystick Instance Order
+                                </h3>
+                              </span>
+
+
+                            </div>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex flex-row  mt-[36px] gap-[24px]">
+                  <div className="flex ">
+                    <div className="p-[16px] w-[70px] h-[70px] stepper-step flex  ">
+                      <p className=" font-['exo_2'] self-center justify-center
+     text-center w-full flex text-[36px]  font-[700] text-[#cefff4] text-gradient-display shadow-display">
+                        2
+                      </p>
+                    </div>
+                  </div>
+                  <div className=" flex flex-col w-full mt-[15px] mr-[64px]">
+                    <span className="font-[600] text-gradient-display font-['Exo_2'] tracking-[0.075em] uppercase text-[24px] h-fit self-start  mb-[30px] ">
+                      Start Editing!
+                    </span>
+                    {/* <div className="bg-panel-white flex flex-col w-full p-[16px] ">
+                    <span className=" font-['Exo_2'] tracking-[0.035em]  capitalize text-[16px] h-fit self-start">
+                      <div className="flex flex-row ">
+                        <h3 className="font-[200] text-[14px] opacity-[70%] ">
+                          The MAPPINGS.XML file is located in 'StarCitizen\LIVE\USER\Client\0\Controls\Mappings'
+                        </h3>
+                      </div>
+                    </span>
+                    <div className="flex flex-row mt-[8px] ml-[8px]">
+
+                      <div className="flex spacer-noH h-[100px] w-[1px]  " />
+                      <div className="flex flex-col py-[8px] text-[#CEFCFF]">
+                        <span className=" font-['Exo_2'] tracking-[0.035em]  capitalize text-[16px] h-fit self-start">
+                          <div className="flex flex-col ml-[8px] gap-[4px] font-[300]">
+                            <h3 className=" ">
+                              The editor will automatically recognize & load Any supported flightsticks, control panels, rudders, and other hardware peripherals':
+                            </h3>
+                            <span className="ml-[8px]">
+                              <h3 className="] ">
+                                &#8226;  Mapped Keybinds
+                              </h3>
+
+                              <h3 className=" ">
+                                &#8226;  Joystick Instance Order
+                              </h3>
+                            </span>
+
+
+                          </div>
+                        </span>
+                      </div>
+                    </div>
+                  </div> */}
+                  </div>
+                </div>
+                <div className="flex flex-row  mt-[36px] gap-[24px]">
+                  <div className="flex ">
+                    <div className="p-[16px] w-[70px] h-[70px] stepper-step flex  ">
+                      <p className=" font-['exo_2'] self-center justify-center
+     text-center w-full flex text-[36px]  font-[700] text-[#cefff4] text-gradient-display shadow-display">
+                        3
+                      </p>
+                    </div>
+                  </div>
+                  <div className=" flex flex-col w-full mt-[15px] mr-[64px]">
+                    <span className="font-[600] text-gradient-display font-['Exo_2'] tracking-[0.075em] uppercase text-[24px] h-fit self-start  mb-[30px] ">
+                      Download & Replace Customized Mappings.xml
+                    </span>
+                    <div className="bg-panel-white flex flex-col w-full p-[16px] ">
+                      <span className=" font-['Exo_2'] tracking-[0.035em]  capitalize text-[16px] h-fit self-start">
+                        <div className="flex flex-row ">
+                          <h3 className="font-[200] text-[14px] opacity-[70%] ">
+                            The MAPPINGS.XML file is located in 'StarCitizen\LIVE\USER\Client\0\Controls\Mappings'
+                          </h3>
+                        </div>
+                      </span>
+                      <div className="flex flex-row mt-[8px] ml-[8px]">
+
+                        <div className="flex spacer-noH h-[100px] w-[1px]  " />
+                        <div className="flex flex-col py-[8px] text-[#CEFCFF]">
+                          <span className=" font-['Exo_2'] tracking-[0.035em]  capitalize text-[16px] h-fit self-start">
+                            <div className="flex flex-col ml-[8px] gap-[4px] font-[300]">
+                              <h3 className=" ">
+                                The editor will automatically recognize & load Any supported flightsticks, control panels, rudders, and other hardware peripherals':
+                              </h3>
+                              <span className="ml-[8px]">
+                                <h3 className="] ">
+                                  &#8226;  Mapped Keybinds
+                                </h3>
+
+                                <h3 className=" ">
+                                  &#8226;  Joystick Instance Order
+                                </h3>
+                              </span>
+
+
+                            </div>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+          </div>
+
+
+
+
+        </section>
         <section className='w-full flex-center flex-col pt-[64px]' >
           {/* <NoSsr>
             <div className="flex flex-row gap-[4px] hero-carousel">
@@ -310,9 +489,9 @@ font-['exo_2']  text-[#00FFB9] text-[15px] font-bold  tracking-[0.2em]
                   view='Front'
                 />
                 <NoSsr>
-                <InputEditor isExample={true} />
+                  <InputEditor isExample={true} />
 
-                   </NoSsr>
+                </NoSsr>
 
               </div>
             </div>
