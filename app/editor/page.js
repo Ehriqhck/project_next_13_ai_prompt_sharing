@@ -26,11 +26,16 @@ import {
   SelectedEditorDeviceContext,
   SelectedEditorDeviceViewOrientationContext,
   SelectContext,
-  SelectedInputTableInputContext
+  SelectedInputTableInputContext,
+  InputViewerInputTypeContext
 } from '@components/Provider'
 import clsx from 'clsx'
 
 const page = () => {
+  const { inputViewerInputType, setInputViewerInputType } = useContext(
+    InputViewerInputTypeContext
+  )
+
   const [name, setName] = useState('')
   const [rawXml, setRawXml] = useState()
 
@@ -71,7 +76,7 @@ const page = () => {
     hidden: !showViewerPanel,
     show: showViewerPanel
   })
-
+  const [test, setTest] = useState('no type')
   const [activeIndexDeviceView, setActiveIndexactiveIndexDeviceView] =
     useState(0)
 
@@ -85,7 +90,7 @@ const page = () => {
   useEffect(() => {
     try {
       setIsLoading(true)
-
+      setTest(inputViewerInputType)
       setCurrentSelectedEditorDevice(
         getSelectedEditorDevice(sessionStorage.getItem('selectedEditorDevice'))
       )
@@ -101,7 +106,9 @@ const page = () => {
   }, [
     selectedEditorDevice,
     selectedEditorDeviceViewOrientation,
-    SelectedEditorDeviceViewOrientationContext
+    SelectedEditorDeviceViewOrientationContext,
+    selectedViewerInput,
+    inputViewerInputType
   ])
 
   const deviceViewRenderer = (item, itemIndex) => (
@@ -227,7 +234,7 @@ const page = () => {
         return (
           <Device_VKB_T_RUDDER_MK5
             className='min-w-[330px] h-[400px]  pt-[128px]'
-          // view={sessionStorage.getItem('deviceViewOrientation')}
+            // view={sessionStorage.getItem('deviceViewOrientation')}
           />
         )
         break
@@ -296,7 +303,7 @@ const page = () => {
       })
       .catch(error => console.error(error))
   }
-  console.log(parsedXml)
+  // console.log(parsedXml)
 
   return (
     <NoSSR>
@@ -366,12 +373,40 @@ const page = () => {
           <Button onClick={() => setCookie('testBite', 'ASLKDJASLKDJLAKSDJ')}>
             asdasd
           </Button> */}
-            <button onClick={() => { sessionStorage.clear() }}>clear ss</button>
-            {/* <fileUpload/> */}
-            <button onClick={() => {
-              console.log(JSON.parse(sessionStorage.getItem('cache_AxisInputTableData')));
-            }}>check</button>
+            <div className='flex flex-col gap-[4px] hidden'>
+              {inputViewerInputType}
+              {test}
+              <button
+                onClick={() => {
+                  sessionStorage.clear()
+                }}
+              >
+                clear ss
+              </button>
+              {/* <fileUpload/> */}
+              <button
+                onClick={() => {
+                  console.log(sessionStorage.getItem('inputViewerInputType'))
+                }}
+              >
+                check ss
+              </button>
+              <button
+                onClick={() => {
+                  console.log(inputViewerInputType)
+                }}
+              >
+                check state
+              </button>
 
+              <button
+                onClick={() => {
+                  setInputViewerInputType('asdasd')
+                }}
+              >
+                set input test
+              </button>
+            </div>
           </div>
           <div id='InputEditorPanel' className={editorPanelVisibility}>
             <InputEditor />

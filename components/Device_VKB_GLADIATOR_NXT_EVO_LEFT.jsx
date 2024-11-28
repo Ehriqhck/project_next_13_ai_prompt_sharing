@@ -4,7 +4,7 @@ import InputPopover from '@components/generic/InputPopover.jsx'
 
 import { OverlayPanel } from 'primereact/overlaypanel';
 import { useContext } from 'react';
-import { SelectContext, EditorPanelTitleContext, SelectedEditorDeviceViewOrientationContext, ViewerPanelTitleContext } from '@components/Provider.jsx'
+import { SelectContext, EditorPanelTitleContext,InputViewerInputTypeContext, SelectedEditorDeviceViewOrientationContext, ViewerPanelTitleContext } from '@components/Provider.jsx'
 import React from 'react'
 import { Button } from 'primereact/button';
 import EditIcon from '@components/generic/Icons/EditIcon.svg'
@@ -14,6 +14,7 @@ const Device_VKB_SpaceEvo = (props) => {
   const { selectedViewerInput, setSelectedViewerInput } = useContext(SelectContext)
   const { editorPanelTitle, setEditorPanelTitle } = useContext(EditorPanelTitleContext)
   const { viewerPanelTitle, setViewerPanelTitle } = useContext(ViewerPanelTitleContext)
+  const { inputViewerInputType, setInputViewerInputType } = useContext(InputViewerInputTypeContext);
 
   const { selectedEditorDeviceViewOrientation, setSelectedEditorDeviceViewOrientation } = useContext(SelectedEditorDeviceViewOrientationContext);
 
@@ -760,6 +761,9 @@ const Device_VKB_SpaceEvo = (props) => {
                 </g>
                 <g id="input4_Device_VKB_GLADIATOR_NXT_EVO_LEFT"
                     className=" selected-input corner-test" onClick={() => {
+  setInputViewerInputType('Device_Button_Inputs');
+  sessionStorage.setItem('inputViewerInputType', 'Device_Button_Inputs');
+           
                       sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Front");
                       sessionStorage.setItem('selectedEditorDeviceButton', 'Red_Button');
   
@@ -784,6 +788,8 @@ const Device_VKB_SpaceEvo = (props) => {
                 </g>
                 <g id="input3_Device_VKB_GLADIATOR_NXT_EVO_LEFT"
                   className="selected-input corner-test" onClick={() => {
+  setInputViewerInputType('Device_Button_Inputs');
+  sessionStorage.setItem('inputViewerInputType', 'Device_Button_Inputs');
                     sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Front");
                     sessionStorage.setItem('selectedEditorDeviceButton', 'Circle_Stick');
                     setSelectedEditorDeviceViewOrientation('Front');
@@ -999,6 +1005,8 @@ const Device_VKB_SpaceEvo = (props) => {
                 <g
                   id="input5_Device_VKB_GLADIATOR_NXT_EVO_LEFT"
                   className="selected-input corner-test" onClick={() => {
+  setInputViewerInputType('Device_Button_Inputs');
+  sessionStorage.setItem('inputViewerInputType', 'Device_Button_Inputs');
                     sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Front");
                     sessionStorage.setItem('selectedEditorDeviceButton', 'Chip_Stick');
 
@@ -1056,6 +1064,8 @@ const Device_VKB_SpaceEvo = (props) => {
                   />
                 </g>
                 <g id="input2_Device_VKB_GLADIATOR_NXT_EVO_LEFT" className="selected-input corner-test" onClick={() => {
+  setInputViewerInputType('Device_Button_Inputs');
+  sessionStorage.setItem('inputViewerInputType', 'Device_Button_Inputs');
                   setSelectedViewerInput('Hat_Stick');
                   setEditorPanelTitle('Hat Stick');
                   setViewerPanelTitle('Hat Stick');
@@ -1095,6 +1105,8 @@ const Device_VKB_SpaceEvo = (props) => {
                   />
                 </g>
                 <g id="input1_Device_VKB_GLADIATOR_NXT_EVO_LEFT" className="selected-input corner-test" onClick={() => {
+  setInputViewerInputType('Device_Button_Inputs');
+  sessionStorage.setItem('inputViewerInputType', 'Device_Button_Inputs');
                   sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Front");
                   sessionStorage.setItem('selectedEditorDeviceButton', 'Pill_Stick');
 
@@ -2149,6 +2161,8 @@ const Device_VKB_SpaceEvo = (props) => {
                   data-tooltip-id="pinkytarget"
                   // data-tooltip-place="top"
                   onClick={() => {
+  setInputViewerInputType('Device_Button_Inputs');
+  sessionStorage.setItem('inputViewerInputType', 'Device_Button_Inputs');
                     sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Back");
                     sessionStorage.setItem('selectedEditorDeviceButton', 'Pinky_Button');
 
@@ -2181,6 +2195,8 @@ const Device_VKB_SpaceEvo = (props) => {
                 </g>
                 <g id="sideIndexButton_Device_VKB_GLADIATOR_NXT_EVO_LEFT_BACK"
                   className=" selected-input corner-test" onClick={() => {
+  setInputViewerInputType('Device_Button_Inputs');
+  sessionStorage.setItem('inputViewerInputType', 'Device_Button_Inputs');
                     sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Back");
                     sessionStorage.setItem('selectedEditorDeviceButton', 'Side_Index_Button');
 
@@ -2221,6 +2237,8 @@ const Device_VKB_SpaceEvo = (props) => {
                     clipPath: "url(#clippath-1)",
                   }}
                   className=" selected-input corner-test" onClick={() => {
+  setInputViewerInputType('Device_Button_Inputs');
+  sessionStorage.setItem('inputViewerInputType', 'Device_Button_Inputs');
                     sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Back");
                     sessionStorage.setItem('selectedEditorDeviceButton', 'Primary_Trigger');
                     setSelectedEditorDeviceViewOrientation('Back');
@@ -2272,6 +2290,8 @@ const Device_VKB_SpaceEvo = (props) => {
                     clipPath: "url(#clippath-2)",
                   }}
                   className=" selected-input corner-test" onClick={() => {
+  setInputViewerInputType('Device_Button_Inputs');
+  sessionStorage.setItem('inputViewerInputType', 'Device_Button_Inputs');
                     sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Back");
                     sessionStorage.setItem('selectedEditorDeviceButton', 'Secondary_Trigger');
 

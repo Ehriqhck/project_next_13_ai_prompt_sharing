@@ -10,7 +10,7 @@ import { parse } from 'postcss';
 import { FilterMatchMode, FilterOperator } from 'primereact/api';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation'
-import { SelectedEditorDeviceContext, SelectedEditorDeviceViewOrientationContext, TreeTableDialogueSelectionContext, TreeTableDialogueVisibilityContext, SelectedInputTableInputContext } from '@components/Provider';
+import { SelectedEditorDeviceContext, SelectedEditorDeviceViewOrientationContext,InputViewerInputTypeContext, TreeTableDialogueSelectionContext, TreeTableDialogueVisibilityContext, SelectedInputTableInputContext } from '@components/Provider';
 import { SessionDeviceInputs } from '@app/editor/SessionDeviceInputs.js';
 import useSWR from 'swr'
 import { FileUpload } from 'primereact/fileupload';
@@ -25,6 +25,8 @@ const DataTableProfileCards = (props) => {
     const { treeTableDialogueVisibility, setTreeTableDialogueVisibility } = useContext(TreeTableDialogueVisibilityContext)
 
     const { selectedEditorDeviceViewOrientation, setSelectedEditorDeviceViewOrientation } = useContext(SelectedEditorDeviceViewOrientationContext);
+    const { inputViewerInputType, setInputViewerInputType } = useContext(InputViewerInputTypeContext);
+
     const [context, setContext] = useState({
     })
     const [isLoading, setIsLoading] = useState(false)
@@ -262,16 +264,17 @@ const DataTableProfileCards = (props) => {
                                     setSelectedEditorDeviceViewOrientation('Front');
                                     setSelectedEditorDevice(Object.keys(selectedPreview.deviceList)[0]);
                                     setTreeTableDialogueVisibility(false);
-
+                                    setInputViewerInputType('Device_Button_Inputs');
                                     // sessionStorage.setItem('selectedEditorInputTableInput', 'buttons');
                                     sessionStorage.setItem('inputTableFilter', 'buttons');
                                     sessionStorage.setItem("dialogueVisibility", "false")
                                     sessionStorage.setItem('loadedProfile', JSON.stringify(selectedPreview));
                                     // setSelectedInputTableInput('Front');
                                     sessionStorage.setItem('selectedEditorInputTableInput', "Front");
-
                                     sessionStorage.setItem('selectedEditorDeviceViewOrientation', "Front");
                                     sessionStorage.setItem('selectedEditorDevice', Object.keys(selectedPreview.deviceList)[0]);
+                                    sessionStorage.setItem('inputViewerInputType', "Device_Button_Inputs");
+
                                     console.log("LOADING DEVICE:");
                                     // SessionDeviceInputs.getTreeTableNodes().then((data) => {
                                     //     sessionStorage.setItem('cache_ButtonInputTableData', JSON.stringify(data))

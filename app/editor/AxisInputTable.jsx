@@ -1,6 +1,6 @@
 import React from 'react'
 import { createContext, useContext, useState, useEffect } from 'react';
-import { ViewerPanelTitleContext, InputViewerInputType, SelectContext, TreeTableDialogueVisibilityContext, SelectedActionContext, TreeTableDialogueSelectionContext, SelectedEditorDeviceContext, SelectedEditorDeviceViewOrientationContext, Context, SelectedInputTableInputContext } from '@components/Provider';
+import { ViewerPanelTitleContext, InputViewerInputTypeContext, SelectContext, TreeTableDialogueVisibilityContext, SelectedActionContext, TreeTableDialogueSelectionContext, SelectedEditorDeviceContext, SelectedEditorDeviceViewOrientationContext, Context, SelectedInputTableInputContext } from '@components/Provider';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Button } from 'primereact/button';
@@ -230,7 +230,7 @@ const AxisInputTable = (props) => {
     const [selectedInput, setSelectedInput] = useState("CONTEXT INPUT: DEFAULT");
     const { treeTableDialogueSelection, setTreeTableDialogueSelection } = useContext(TreeTableDialogueSelectionContext)
     const [globalFilterValue, setGlobalFilterValue] = useState('');
-    const { inputViewerInputType, setInputViewerInputType } = useContext(InputViewerInputType)
+    // const { inputViewerInputType, setInputViewerInputType } = useContext(InputViewerInputTypeContext)
 
     const [filters, setFilters] = useState({
         global: { value: null, matchMode: FilterMatchMode.CONTAINS },
@@ -458,30 +458,30 @@ const AxisInputTable = (props) => {
         //     setInputViewerInputType('mainDeviceAxis')
         //     console.log('setInputViewerInputType: Main_Device_Axis');
         // }
-        const setInputViewerLayout = (toggleNode) => {
+        // const setInputViewerLayout = (toggleNode) => {
 
-            console.log("setInputViewerLayout", toggleNode);
-            switch (toggleNode.label) {
-                case 'Main_Device_Axis':
-                    sessionStorage.setItem("selectedInputViewerInputType", 'Main_Device_Axis')
-                    setInputViewerInputType('mainDeviceAxis')
-                    console.log('setInputViewerInputType: mainDeviceAxis');
+        //     console.log("setInputViewerLayout", toggleNode);
+        //     switch (toggleNode.label) {
+        //         case 'Main_Device_Axis':
+        //             sessionStorage.setItem("selectedInputViewerInputType", 'Main_Device_Axis')
+        //             setInputViewerInputType('mainDeviceAxis')
+        //             console.log('setInputViewerInputType: mainDeviceAxis');
 
-                    setSelectedViewerInput('Main_Device_Axis');
-                    setViewerPanelTitle('Main Device Axis');
-                    break;
+        //             setSelectedViewerInput('Main_Device_Axis');
+        //             setViewerPanelTitle('Main Device Axis');
+        //             break;
 
-                default:
-                    // sessionStorage.setItem("selectedInputViewerInputType", 'axis')
-                    // setSelectedViewerInput(toggleNode.label);
+        //         default:
+        //             // sessionStorage.setItem("selectedInputViewerInputType", 'axis')
+        //             // setSelectedViewerInput(toggleNode.label);
 
-                    // setInputViewerInputType('axis')
+        //             // setInputViewerInputType('axis')
 
 
-                    break;
-            }
+        //             break;
+        //     }
 
-        }
+        // }
 
         // if node is a button
         if (!Object.hasOwn(node.data, 'slotName')) {
@@ -492,7 +492,9 @@ const AxisInputTable = (props) => {
 
                         setInputViewerLayout(node)
                     }} className='mb-[12px]'>
-                        <Button type="inputTable" className=" flex flex-row w-full  justify-between " tabIndex={-1} onClick={options.onClick} onClickCapture={setInputViewerLayout(node)}>
+                        <Button type="inputTable" className=" flex flex-row w-full  justify-between " tabIndex={-1} onClick={options.onClick}
+                        //  onClickCapture={setInputViewerLayout(node)  }
+                         >
                             <div className='flex py-[2px] flex-row content-start w-full justify-between pr-[16px] self-start gap-[8px] '>
                                 <div className='flex flex-row   h-fit'>
                                     <div className='flex corner-inputTableIcons'>

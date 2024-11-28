@@ -3813,7 +3813,7 @@ export const Utils = {
         )
         break
 
-      case 'VKB_GLADIATOR_NXT_EVO_RIGHT':
+      case 'Device_Button_Inputs':
         return (
           <div className='flex flex-col '>
             <p className='flex text-input-title mr-[12px]'>

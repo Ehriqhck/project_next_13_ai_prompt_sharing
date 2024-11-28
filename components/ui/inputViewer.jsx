@@ -8,7 +8,7 @@ import Down from '@components/inputs/Down';
 import Left from '@components/inputs/Left';
 import Right from '@components/inputs/Right';
 import { useContext, useState, useEffect } from 'react';
-import { Context, SelectContext, SelectedEditorActionContext, ActionUpdateContext, SelectedEditorDeviceContext, SelectedEditorDeviceViewOrientationContext, InputViewerInputType } from '@components/Provider.jsx'
+import { Context, SelectContext, SelectedEditorActionContext, ActionUpdateContext, SelectedEditorDeviceContext, SelectedEditorDeviceViewOrientationContext, InputViewerInputTypeContext } from '@components/Provider.jsx'
 import CircleSwitch from '@components/generic/Icons/VKB/GLADIATOR_SPACE_EVO/CircleSwitch.jsx';
 
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
@@ -28,7 +28,7 @@ const InputViewer = ({ selectedButton }) => {
     const { profileContext, setprofileContext } = useContext(Context);
     const { selectedEditorDevice, setSelectedEditorDevice } = useContext(SelectedEditorDeviceContext);
     const { selectedEditorDeviceViewOrientation, setSelectedEditorDeviceViewOrientation } = useContext(SelectedEditorDeviceViewOrientationContext);
-    const { selectedInputViewerInputType, setSelectedInputViewerInputType } = useContext(InputViewerInputType);
+    const { inputViewerInputType, setInputViewerInputType } = useContext(InputViewerInputTypeContext);
 
     const [top, setTop] = useState();
     const [bottom, setbottom] = useState();
@@ -36,21 +36,21 @@ const InputViewer = ({ selectedButton }) => {
     const [right, setRight] = useState();
     const [press, setPress] = useState();
 
-
+    const [first, setfirst] = useState('uninitialized')
     console.log("Selected BUTTON: " + selectedButton);
     // const sessionProfiles = JSON.parse(sessionStorage.getItem('selectedProfile'))
 
     useEffect(() => {
-        console.log("VIEWER PANEL REFRESHING");
-        console.log("/EDITOR :" + profileContext);
-        console.log(profileContext);
+        // console.log("VIEWER PANEL REFRESHING");
+        // console.log("/EDITOR :" + profileContext);
+        // console.log(profileContext);
         // getDeviceButtonProfiles()
 
-        if (sessionStorage.getItem("selectedInputViewerInputType") === 'Main_Device_Axis') {
+        if (sessionStorage.getItem("inputViewerInputType") === 'Main_Device_Axis') {
             console.log("VIEWER LAYOUT: MAIN DEVICE AXIS");
             getDeviceAxisProfiles()
-            sessionStorage.removeItem('selectedInputViewerInputType')
-        } else if (sessionStorage.getItem("selectedInputViewerInputType") === 'button') {
+            sessionStorage.removeItem('inputViewerInputType')
+        } else if (sessionStorage.getItem("inputViewerInputType") === 'Device_Button_Inputs') {
             console.log("VIEWER LAYOUT: BUTTON");
 
             getDeviceButtonProfiles()
@@ -62,7 +62,13 @@ const InputViewer = ({ selectedButton }) => {
 
         }
 
-    }, [selectedViewerInput, selectedEditorInput, profileContext, selectedEditorDevice, selectedEditorDeviceViewOrientation, InputViewerInputType])
+    }, [inputViewerInputType, selectedViewerInput, selectedEditorInput, profileContext, selectedEditorDevice, selectedEditorDeviceViewOrientation])
+    useEffect(() => {
+        console.log('REFRESHING inputViewerInputType', inputViewerInputType);
+        setfirst(inputViewerInputType)
+
+
+    }, [inputViewerInputType])
 
     const getDeviceAxisProfiles = () => {
 
@@ -210,23 +216,18 @@ const InputViewer = ({ selectedButton }) => {
         }
     }
     const renderViewerLayout = () => {
-        switch (sessionStorage.getItem("selectedInputViewerInputType")) {
+        switch (inputViewerInputType) {
             case "Main_Device_Axis":
                 return (
-                    <div className='panel-viewer'>
-                        {/* <PanelSwitchButtonMobile whatPanel='viewer' /> */}
+
                         <div className="test2">
-                            {Utils.getInputViewerPanelAxisLayout("Main_Device_Axis")}
-                            {/* <Up inputName_id={inputName} action_id={action} /> */}
-                            {/* <Press inputName_id={inputName} action_id={action} /> */}
+                            {Utils.getInputViewerPanelAxisLayout("Main_Device_Axis", profileContext, selectedViewerInput)}
 
                         </div>
-                    </div>
                 )
                 break;
-            case "button":
+            case "Device_Button_Inputs":
                 return (
-                    <div className='panel-viewer'>
 
                         <div className="test2">
                             {getInputTop(top)
@@ -246,41 +247,27 @@ const InputViewer = ({ selectedButton }) => {
 
                             </div>
                         </div>
-                    </div>
                 )
 
                 break;
             default:
+                return (<>inputViewerInputType</>)
                 break;
         }
     }
     return (
         <div className='panel-viewer'>
-
+            {/* {inputViewerInputType} */}
             {/* <PanelSwitchButtonMobile whatPanel='viewer' /> */}
             <div className="test2">
-            {Utils.getInputViewerPanelAxisLayout("Main_Device_Axis", profileContext, selectedViewerInput)}
-
-                {/* {getInputTop(top)
-                }
-         
-                <div className='input-down-press'>
-                    {getInputPress(press)}
-                    {getInputBottom(bottom)}
-                </div>
-                
-                <div className=' left-center-right'>
-                    {getInputLeft(left)}
-
-                    <div className=' mt-[4px]'>{Utils.getInputIcon(selectedViewerInput, '54px', '54px', true)} </div>
-              
-                    {getInputRight(right)}
-
-                    <Right inputName_id={inputName} action_id={action} />
-                </div> */}
+                {/* {Utils.getInputViewerPanelAxisLayout("Main_Device_Axis", profileContext, selectedViewerInput)} */}
+                {renderViewerLayout()}
             </div>
+
         </div>
+
     )
+
 }
 
 export default InputViewer

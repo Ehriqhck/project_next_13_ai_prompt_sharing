@@ -8,22 +8,25 @@ import ZAxisIcon from '@public/assets/icons/actions/gameCategory/ZAxisIcon.jsx';
 import RotateYIcon from '@public/assets/icons/actions/gameCategory/RotateYIcon.jsx';
 import RotateXIcon from '@public/assets/icons/actions/gameCategory/RotateXIcon.jsx';
 import { useState, useContext, useEffect } from 'react';
-import { SelectedEditorDeviceViewOrientationContext, SelectedInputTableInputContext } from '@components/Provider'
+import { SelectedEditorDeviceViewOrientationContext, SelectedInputTableInputContext, InputViewerInputTypeContext } from '@components/Provider'
 import RotationalAxisIcon from '@public/assets/icons/actions/gameCategory/RotationalAxisIcon.jsx'
 
 const DeviceAxisSelector = (props) => {
     const { selectedEditorDeviceViewOrientation, setSelectedEditorDeviceViewOrientation } = useContext(SelectedEditorDeviceViewOrientationContext);
     const { selectedInputTableInput, setSelectedInputTableInput } = useContext(SelectedInputTableInputContext);
+    const { inputViewerInputType, setInputViewerInputType } = useContext(InputViewerInputTypeContext);
 
     const [activeIndexDeviceAxis, setActiveIndexactiveIndexDeviceAxis] = useState('buttons');
 
- useEffect(() => {
-    setSelectedInputTableInput('buttons');
-    sessionStorage.setItem('inputTableFilter', 'buttons');
- 
+    useEffect(() => {
+        setSelectedInputTableInput('buttons');
+        sessionStorage.setItem('inputTableFilter', 'buttons');
+        // sessionStorage.setItem('inputViewerInputType', "Device_Button_Inputs");
+        // setInputViewerInputType('Device_Button_Inputs');
 
- }, [])
- 
+
+    }, [])
+
     const getDeviceAxis = (item) => {
         // if (item.name == "Y AXIS") {
         //     return (<RotateYIcon width="24px"></RotateYIcon>);
@@ -63,12 +66,13 @@ const DeviceAxisSelector = (props) => {
         {
             name: 'DEVICE MAIN AXIS INPUTS',
             inputId: "Axis",
+            type: 'Main_Device_Axis',
             template: (item) => deviceAxisRenderer(item, 0)
         },
         {
             name: 'DEVICE BUTTON INPUTS',
             inputId: "buttons",
-
+            type: 'Device_Button_Inputs',
             template: (item) => deviceAxisRenderer(item, 1)
         },
         // {
@@ -91,12 +95,20 @@ const DeviceAxisSelector = (props) => {
         <Button type="device_axis" className='mx-[4px] flex gap-[4px]'
             onClick={() => {
                 console.log("SETTING INPUTTABLE INPUT TO:");
-                console.log(item.inputId);
+                console.log(item.type);
                 setSelectedInputTableInput(item.inputId);
                 sessionStorage.setItem('inputTableFilter', item.inputId);
-
                 // setSelectedEditorDeviceViewOrientation(item.name)
                 setActiveIndexactiveIndexDeviceAxis(itemIndex)
+                if (itemIndex == 0) {
+                    setInputViewerInputType('Main_Device_Axis');
+                    sessionStorage.setItem('inputViewerInputType', 'Main_Device_Axis');
+
+                } else {
+                    setInputViewerInputType('Device_Button_Inputs');
+                    sessionStorage.setItem('inputViewerInputType', 'Device_Button_Inputs');
+
+                }
             }}
 
 
@@ -104,7 +116,7 @@ const DeviceAxisSelector = (props) => {
             {getDeviceAxis(item)}
 
 
-            <span className="small-text flex self-center">{item.name}</span>
+            <span className="small-text flex self-center">{item.type}</span>
         </Button>
     );
     return (
