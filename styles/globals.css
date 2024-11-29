@@ -13,6 +13,67 @@
  /* li[data-pc-section='indicator'].p-highlight > button {
 background: red !important;
  } */
+.stickyNav {
+  position: sticky;
+  top: 0px;
+  z-index: 99;
+}
+.framer-top1 {
+  place-content: center flex-start;
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: column;
+  gap: 0px;
+  height: 900vh;
+  overflow: visible;
+  padding: 80px 0px 0px;
+  position: relative;
+  width: 100%;
+}
+.framer-top2 {
+  place-content: center space-around;
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: column;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0px;
+  position: sticky;
+  top: 0px;
+  width: 100%;
+  will-change: transform;
+}
+.framer-top3 {
+  place-content: center space-around;
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: column;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0px;
+  position: sticky;
+  top: 0px;
+  width: 100%;
+  will-change: transform;
+}
+.pin {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+.pin-section {
+  display: flex;
+  position: sticky;
+  top: 0;
+}
  .corner-noPadding {
   --b: 1px; /* thickness of the border */
   --c: rgba(0, 247, 255, 0.4); /* color of the border */
@@ -1263,7 +1324,7 @@ button[type='device_axis']:enabled:hover:before {
   transition: background 0.3s !important;
 }
 .device_svg_z {
-  z-index: 100;
+  z-index: 21;
 
 }
 .device-shadow {
@@ -3627,18 +3688,20 @@ body > main > nav > div:nth-child(2) > ul > li:last-child{
 
 .nav {
   background-image: linear-gradient(0deg, rgb(0 255 209 / 5%) 0%, rgba(0, 0, 0, 0) 100%);
-  background-color:  #001B21;
+  background-color:  #011b2b96;
   padding: 0 100px 0 100px;
   height: fit-content -1px;
+  backdrop-filter: blur(10px);
   /* border: 1px solid rgba(0, 240, 255, 0.2); */
   /* outline:  1px solid rgba(0, 238, 255, 0.184); */
   /* border:  double ; */
   border-image:radial-gradient(hsl(169.18deg 100% 60%), #00d3ff26) 1;
   border-width: 0px 0px 1px 0px;
   /* background: radial-gradient(at center top,#00eeff1f, #ffffff00 ) border-box; */
-  position: unset !important;
 
-  
+  position: sticky;
+  top: 0px;
+  z-index: 99;
   }
 
 li[data-pc-section="inkbar"] {

@@ -2,6 +2,8 @@
 import NoSSR from '@components/NoSsr.jsx'
 import { Button } from 'primereact/button'
 import { TabMenu } from 'primereact/tabmenu'
+import { FileUpload } from 'primereact/fileupload';
+
 import CubeFrontIcon from '@public/assets/icons/actions/gameCategory/CubeFrontIcon.jsx'
 import CubeBackIcon from '@public/assets/icons/actions/gameCategory/CubeBackIcon.jsx'
 import EyeIcon from '@public/assets/icons/actions/gameCategory/EyeIcon.jsx'
@@ -30,6 +32,7 @@ import {
   InputViewerInputTypeContext
 } from '@components/Provider'
 import clsx from 'clsx'
+import { Utils } from './utils';
 
 const page = () => {
   const { inputViewerInputType, setInputViewerInputType } = useContext(
@@ -267,7 +270,7 @@ const page = () => {
       // const data = TEMP_PROFILE;
       console.log('DATA BELOW vvvv')
       console.log(data)
-
+Utils.loadParsedMappingsXML(data);
       setParsedXml(data)
       // sessionStorage.setItem('loadedProfiles', JSON.stringify(loadedProfiles))
     } catch (error) {
@@ -352,25 +355,19 @@ const page = () => {
           <div className='flex  self-center align-middle justify-center'>
             <ChevronsRight width='30px' id='fileinput' />
 
-            {/* <form onSubmit={onUpload}>
+            <form onSubmit={onUpload}>
             <input type='file' id='fileUpload' name='filename' />
             <input type='submit' />
-          </form> */}
+          </form>
 
-            {/* <FileUpload
-            mode='basic'
-            // name='demo[]'
-            url='/api/upload'
-            maxFileSize={1000000}
-            // onUpload={onUpload}
-          /> */}
+      
 
             {/* <div className='w-[10px] h-[10px]'>
         <label for="testFile">Choose a profile picture:</label>
       <input type="file" name='testFile' onChange={handleFileUpload} />
     </div>         */}
-            {/* <Button onClick={() => console.log(parsedXml)}>asdasd</Button>
-          <Button onClick={() => setCookie('testBite', 'ASLKDJASLKDJLAKSDJ')}>
+            <Button onClick={() => Utils.detectDevices()}>asdasd</Button>
+          {/* <Button onClick={() => setCookie('testBite', 'ASLKDJASLKDJLAKSDJ')}>
             asdasd
           </Button> */}
             <div className='flex flex-col gap-[4px] hidden'>

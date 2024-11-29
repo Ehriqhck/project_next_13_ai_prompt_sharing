@@ -320,7 +320,7 @@ const NavEditor = () => {
       break;
     default:
       return (
-        <nav className=' w-full h-[52px] rounded-none '>
+        <nav className=' w-full h-[52px] rounded-none stickyNav '>
 
 
             <div className='nav  w-full h-full mb-[-1px] pt-3 flex rounded-none flex-between flex-row'>

@@ -157,6 +157,814 @@ import AxisRow from '@components/inputs/AxisRow.jsx'
 
 export const Utils = {
   createNewMappingProfileFromXml (profileName, deviceList, description, xml) {},
+
+  loadParsedMappingsXML (parsedXML) {
+    const actionMapData = {}
+    console.log(actionMapData.ActionMaps)
+    const profileName = actionMapData.ActionMaps.profileName
+    this.detectDevices(actionMapData.ActionMaps.options)
+    var buildProfile = {
+      deviceProfiles: {
+        TESTPROFILE1: {
+          profileName: profileName,
+          dateModified: '',
+          dateCreated: '',
+          savedDevices: {}
+        }
+      }
+    }
+  },
+  detectDevices (placeholder) {
+    const actionMapData = {
+      ActionMaps: {
+        CustomisationUIHeader: {
+          devices: {
+            keyboard: {
+              instance: '1'
+            },
+            mouse: {
+              instance: '1'
+            },
+            gamepad: {
+              instance: '1'
+            },
+            joystick: [
+              {
+                instance: '1'
+              },
+              {
+                instance: '3'
+              },
+              {
+                instance: '2'
+              },
+              {
+                instance: '5'
+              },
+              {
+                instance: '4'
+              },
+              {
+                instance: '6'
+              }
+            ]
+          },
+          categories: {
+            category: [
+              {
+                label: '@ui_CCSeatGeneral'
+              },
+              {
+                label: '@ui_CCSpaceFlight'
+              },
+              {
+                label: '@ui_CGLightControllerDesc'
+              },
+              {
+                label: '@ui_CGOpticalTracking'
+              },
+              {
+                label: '@ui_CGInteraction'
+              }
+            ]
+          },
+          label: 'VPC-1',
+          description: '',
+          image: ''
+        },
+        options: [
+          {
+            type: 'keyboard',
+            instance: '1',
+            Product: 'Keyboard  {6F1D2B61-D5A0-11CF-BFC7-444553540000}'
+          },
+          {
+            flight_view: {
+              exponent: '1'
+            },
+            type: 'gamepad',
+            instance: '1',
+            Product: 'Controller (Gamepad)'
+          },
+          {
+            flight_move_strafe_vertical: {
+              invert: '1'
+            },
+            type: 'joystick',
+            instance: '1',
+            Product:
+              'Controller (Wooting 60HE (ARM))  {131031E3-0000-0000-0000-504944564944}'
+          },
+          {
+            flight_move_strafe_vertical: {
+              invert: '1'
+            },
+            type: 'joystick',
+            instance: '2',
+            Product: 'VKBsim T-Rudder   {011F231D-0000-0000-0000-504944564944}'
+          },
+          {
+            flight_move_strafe_vertical: {
+              invert: '1'
+            },
+            flight_move_strafe_lateral: {
+              invert: '1'
+            },
+            type: 'joystick',
+            instance: '3',
+            Product:
+              'LEFT VPC Stick WarBRD-D  {83F33344-0000-0000-0000-504944564944}'
+          },
+          {
+            type: 'joystick',
+            instance: '4',
+            Product:
+              'Controller (Wooting 60HE (ARM))  {131031E3-0000-0000-0000-504944564944}'
+          },
+          {
+            type: 'joystick',
+            instance: '5',
+            Product:
+              'Controller (Wooting 60HE (ARM))  {131031E3-0000-0000-0000-504944564944}'
+          },
+          {
+            flight_move_strafe_vertical: {
+              invert: '1'
+            },
+            type: 'joystick',
+            instance: '6',
+            Product:
+              'Controller (Wooting 60HE (ARM))  {131031E3-0000-0000-0000-504944564944}'
+          }
+        ],
+        modifiers: '',
+        actionmap: [
+          {
+            action: [
+              {
+                rebind: {
+                  input: 'js3_button9'
+                },
+                name: 'v_set_quantum_mode'
+              },
+              {
+                rebind: {
+                  input: 'js4_button11'
+                },
+                name: 'v_toggle_quantum_mode'
+              }
+            ],
+            name: 'seat_general'
+          },
+          {
+            action: [
+              {
+                rebind: {
+                  input: 'js3_button23'
+                },
+                name: 'v_flightready'
+              },
+              {
+                rebind: {
+                  input: 'js4_button18'
+                },
+                name: 'v_open_all_doors'
+              }
+            ],
+            name: 'spaceship_general'
+          },
+          {
+            action: [
+              {
+                rebind: {
+                  input: 'js3_button3'
+                },
+                name: 'v_afterburner'
+              },
+              {
+                rebind: {
+                  input: 'js3_button25'
+                },
+                name: 'v_atc_request'
+              },
+              {
+                rebind: {
+                  input: 'js3_button13'
+                },
+                name: 'v_ifcs_toggle_vector_decoupling'
+              },
+              {
+                rebind: {
+                  input: 'js3_x'
+                },
+                name: 'v_roll'
+              },
+              {
+                rebind: {
+                  input: 'js3_'
+                },
+                name: 'v_speed_range_abs'
+              },
+              {
+                rebind: {
+                  input: 'js3_'
+                },
+                name: 'v_speed_range_rel'
+              },
+              {
+                rebind: {
+                  input: 'js3_roty'
+                },
+                name: 'v_strafe_lateral'
+              },
+              {
+                rebind: {
+                  input: 'js4_'
+                },
+                name: 'v_strafe_left'
+              },
+              {
+                rebind: {
+                  input: 'js2_rotx'
+                },
+                name: 'v_strafe_longitudinal'
+              },
+              {
+                rebind: {
+                  input: 'js1_'
+                },
+                name: 'v_strafe_right'
+              },
+              {
+                rebind: {
+                  input: 'js3_rotx'
+                },
+                name: 'v_strafe_vertical'
+              },
+              {
+                rebind: {
+                  input: 'js4_button20'
+                },
+                name: 'v_toggle_landing_system'
+              }
+            ],
+            name: 'spaceship_movement'
+          },
+          {
+            action: {
+              rebind: {
+                input: 'js3_button11'
+              },
+              name: 'v_toggle_qdrive_engagement'
+            },
+            name: 'spaceship_quantum'
+          },
+          {
+            action: [
+              {
+                rebind: {
+                  input: 'js4_button10'
+                },
+                name: 'v_target_cycle_hostile_reset'
+              },
+              {
+                rebind: {
+                  input: 'js4_button6'
+                },
+                name: 'v_target_cycle_in_view_fwd'
+              },
+              {
+                rebind: {
+                  input: 'js4_'
+                },
+                name: 'v_target_cycle_in_view_reset'
+              }
+            ],
+            name: 'spaceship_targeting_advanced'
+          },
+          {
+            action: [
+              {
+                rebind: {
+                  input: 'js3_'
+                },
+                name: 'v_weapon_countermeasure_decoy_launch'
+              },
+              {
+                rebind: {
+                  input: 'js3_button4'
+                },
+                name: 'v_weapon_countermeasure_decoy_launch_panic'
+              },
+              {
+                rebind: {
+                  input: 'js1_'
+                },
+                name: 'v_weapon_countermeasure_noise_launch'
+              }
+            ],
+            name: 'spaceship_defensive'
+          },
+          {
+            action: [
+              {
+                rebind: {
+                  input: 'kb1_mouse4'
+                },
+                name: 'v_capacitor_assignment_shield_combined_increase_max'
+              },
+              {
+                rebind: {
+                  input: 'kb1_mouse5'
+                },
+                name: 'v_capacitor_assignment_weapon_combined_increase_max'
+              }
+            ],
+            name: 'vehicle_capacitor_assignment'
+          },
+          {
+            action: {
+              rebind: {
+                input: 'js3_button24'
+              },
+              name: 'v_lights'
+            },
+            name: 'lights_controller'
+          },
+          {
+            action: {
+              rebind: {
+                input: 'js3_button12'
+              },
+              name: 'headtrack_recenter_device'
+            },
+            name: 'player_input_optical_tracking'
+          },
+          {
+            action: {
+              rebind: {
+                input: 'js4_button4'
+              },
+              name: 'pc_interaction_mode'
+            },
+            name: 'player_choice'
+          }
+        ],
+        version: '1',
+        optionsVersion: '2',
+        rebindVersion: '2',
+        profileName: 'VPC-1'
+      }
+    }
+    actionMapData.ActionMaps.options.map(device => {
+      // console.log(device)
+
+      const words = (device['Product'] + '').replace(/\s+/g, ' ').trim()
+      const deviceInstance = device['instance'] + ''
+      const serial = (words + '').lastIndexOf(' ')
+      const deviceName = (words + '').substring(0, serial)
+      console.log(serial, deviceName)
+
+      switch (deviceName) {
+        case 'VKBsim T-Rudder':
+          console.log('DETECTED: VKBsim T-Rudder')
+          this.detectKeybinds(actionMapData.ActionMaps.actionmap,deviceInstance, "js" );
+
+          return {
+            VKB_TRUDDER: {
+              instance: deviceInstance,
+              type: 'rudder',
+              axis: {
+                Main_Device_Axis: {
+                  Y: {
+                    name: 'Pedals Press/Release',
+                    actionName: 'y',
+                    axisType: 'Translate Y',
+                    layers: []
+                  }
+                }
+              }
+            }
+          }
+          break
+        case 'LEFT VPC Stick WarBRD-D':
+          console.log('DETECTED: LEFT VPC Stick WarBRD-D')
+          this.detectKeybinds(actionMapData.ActionMaps.actionmap,deviceInstance, "js" );
+
+          return ({
+            VKB_GLADIATOR_NXT_EVO_RIGHT: {
+              instance: device,
+              type: 'joystick',
+              buttons: {
+                Front: {
+                  Circle_Stick: {
+                    top: {
+                      name: 'CIRCLE SWITCH UP',
+                      actionName: 'button6',
+                      inputType: 'discreet',
+                      layers: [
+              
+                      ]
+                    },
+                    bottom: {
+                      name: 'CIRCLE SWITCH DOWN',
+                      actionName: 'button8',
+                      inputType: 'discreet',
+                      layers: [
+             
+                      ]
+                    },
+                    press: {
+                      name: 'CIRCLE SWITCH PRESS',
+                      actionName: 'button10',
+                      inputType: 'discreet',
+                      layers: [
+               
+                      ]
+                    },
+                    left: {
+                      name: 'CIRCLE SWITCH LEFT',
+                      actionName: 'button9',
+                      inputType: 'discreet',
+                      layers: [
+           
+                      ]
+                    },
+                    right: {
+                      name: 'CIRCLE SWITCH RIGHT',
+                      actionName: 'button7',
+                      inputType: 'discreet',
+                      layers: [
+             
+                      ]
+                    }
+                  },
+                  Hat_Stick: {
+                    top: {
+                      name: 'HAT SWITCH UP',
+                      actionName: 'hat1_up',
+                      inputType: 'discreet',
+                      layers: [
+               
+                      ]
+                    },
+                    bottom: {
+                      name: 'HAT SWITCH DOWN',
+                      actionName: 'hat1_down',
+                      inputType: 'discreet',
+                      layers: [
+                 
+                      ]
+                    },
+                    press: {
+                      name: 'HAT SWITCH PRESS',
+                      actionName: 'hat1_up',
+                      inputType: 'discreet',
+                      layers: [
+            
+                      ]
+                    },
+                    left: {
+                      name: 'HAT SWITCH LEFT',
+                      actionName: 'hat1_left',
+                      inputType: 'discreet',
+                      layers: [
+           
+                      ]
+                    },
+                    right: {
+                      name: 'HAT SWITCH RIGHT',
+                      layers: [
+      
+                      ]
+                    }
+                  },
+                  Pill_Stick: {
+                    top: {
+                      name: 'PILL SWITCH UP',
+                      actionName: 'button11',
+                      inputType: 'discreet',
+                      layers: [
+             
+                      ]
+                    },
+                    bottom: {
+                      name: 'PILL SWITCH DOWN',
+                      actionName: 'button13',
+                      inputType: 'discreet',
+                      layers: [
+             
+                      ]
+                    },
+                    press: {
+                      name: 'PILL SWITCH PRESS',
+                      actionName: 'button15',
+                      inputType: 'discreet',
+                      layers: [
+           
+          
+                      ]
+                    },
+                    left: {
+                      name: 'PILL SWITCH LEFT',
+                      actionName: 'button14',
+                      inputType: 'discreet',
+                      layers: [
+            
+             
+                      ]
+                    },
+                    right: {
+                      name: 'PILL SWITCH RIGHT',
+                      actionName: 'button12',
+                      inputType: 'discreet',
+                      layers: [
+         
+             
+           
+                      ]
+                    }
+                  },
+                  Red_Button: {
+                    press: {
+                      name: 'RED BUTTON PRESS',
+                      actionName: 'button3',
+                      inputType: 'discreet',
+                      layers: [
+           
+         
+                      ]
+                    }
+                  },
+                  Chip_Stick: {
+                    top: {
+                      name: 'CHIP SWITCH UP',
+                      actionName: 'button16',
+                      inputType: 'discreet',
+                      layers: [
+         
+            
+            
+                      ]
+                    },
+                    bottom: {
+                      name: 'CHIP SWITCH DOWN',
+                      actionName: 'button18',
+                      inputType: 'discreet',
+                      layers: [
+            
+            
+                
+                      ]
+                    },
+                    press: {
+                      name: 'CHIP SWITCH PRESS',
+                      actionName: 'button20',
+                      inputType: 'discreet',
+                      layers: [
+        
+            
+            
+                      ]
+                    },
+                    left: {
+                      name: 'CHIP SWITCH LEFT',
+                      actionName: 'button19',
+                      inputType: 'discreet',
+                      layers: [
+            
+             
+         
+                      ]
+                    },
+                    right: {
+                      name: 'CHIP SWITCH RIGHT',
+                      actionName: 'button17',
+                      inputType: 'discreet',
+                      layers: [
+            
+          
+              
+                      ]
+                    }
+                  }
+                },
+                Back: {
+                  Primary_Trigger: {
+                    press: {
+                      name: 'PRIMARY TRIGGER PRESS LIGHT',
+                      actionName: 'button1',
+                      inputType: 'discreet',
+                      layers: [
+               
+                        
+                      ]
+                    },
+                    bottom: {
+                      name: 'PRIMARY TRIGGER PRESS FULL  ',
+                      actionName: 'button2',
+                      inputType: 'discreet',
+                      layers: [
+                      ]
+                    }
+                  },
+                  Secondary_Trigger: {
+                    press: {
+                      actionName: 'button22',
+                      inputType: 'discreet',
+                      name: 'SECONDARY TRIGGER PRESS DOWN',
+                      layers: [
+         
+           
+                      ]
+                    },
+                    top: {
+                      actionName: 'button21',
+                      inputType: 'discreet',
+                      name: 'SECONDARY TRIGGER PRESS UP',
+                      layers: [
+             
+              
+           
+                      ]
+                    }
+                  },
+                  Pinky_Button: {
+                    actionName: 'button5',
+                    inputType: 'discreet',
+                    press: {
+                      name: 'PINKY BUTTON PRESS',
+                      layers: [
+               
+                
+                       
+                      ]
+                    }
+                  },
+                  Side_Index_Button: {
+                    press: {
+                      actionName: 'button4',
+                      inputType: 'discreet',
+                      name: 'Side Index Button',
+                      layers: [
+                       
+                      
+                      ]
+                    }
+                  }
+                }
+              },
+              axis: {
+                Main_Device_Axis: {
+                  X: {
+                    name: 'JOYSTICK ROTATE X',
+                    actionName: 'x',
+                    axisType: 'ROTATE X',
+                    layers: [
+                    
+                    ]
+                  },
+                  top: {
+                    name: 'JOYSTICK TWIST Y',
+                    actionName: 'x',
+                    axisType: 'TRANSLATE Y',
+                    layers: [
+                    
+                      
+                    ]
+                  },
+                  Y: {
+                    name: 'ROTATE Z',
+                    actionName: 'z',
+                    axisType: 'ROTATE Z',
+                    layers: [
+                    
+                    ]
+                  },
+                  Z: {
+                    name: 'JOYSTICK ROTATE Z',
+                    actionName: 'z',
+                    axisType: 'ROTATE Z',
+                    layers: [
+                    
+                    ]
+                  }
+                }
+              },
+              attachments: {
+                base: {
+                  buttons: {
+                    Function_Button_2: {
+                      press: {
+                        actionName: 'button28',
+                        inputType: 'discreet',
+                        name: 'F2',
+                        layers: [
+                     
+                        ]
+                      }
+                    },
+                    Function_Button_1: {
+                      press: {
+                        actionName: 'button27',
+                        inputType: 'discreet',
+                        name: 'F1',
+                        layers: [
+                   
+                        ]
+                      }
+                    },
+                    Function_Button_3: {
+                      press: {
+                        actionName: 'button29',
+                        inputType: 'discreet',
+                        name: 'F3',
+                        layers: [
+                         
+                        ]
+                      }
+                    },
+                    Slider_Switch: {
+                      press: {
+                        actionName: 'button24',
+                        inputType: 'discreet',
+                        name: 'Slider Switch Down',
+                        layers: [
+                         
+                        ]
+                      },
+                      top: {
+                        name: 'Slider Switch Up',
+                        actionName: 'button23',
+                        inputType: 'discreet',
+                        layers: [
+                        
+                        ]
+                      }
+                    },
+                    Slider: {
+                      press: {
+                        actionName: 'z',
+                        inputType: 'analogue',
+                        name: 'Slider Axis Up/Down',
+                        layers: [
+                        
+                        ]
+                      }
+                    },
+                    Clicky_Roller_Switch: {
+                      press: {
+                        actionName: 'button26',
+                        inputType: 'discreet',
+                        name: 'Clicky Roller Switch Down',
+                        layers: [
+                       
+                        ]
+                      },
+                      top: {
+                        name: 'Clicky Roller Switch Up',
+                        actionName: 'button25',
+                        inputType: 'discreet',
+                        layers: [
+                         
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          })
+          break
+        default:
+          break
+      }
+      return ''
+    })
+
+  },
+
+  detectKeybinds (actionmapXML, instance, deviceTypeAbbreviation) {
+    const inputPrefix = deviceTypeAbbreviation + '' + instance +'_';
+    var parsedActionmaps = {};
+    actionmapXML.map((actionMap, index) => {
+      actionMap.map((action) => {
+        if ((action.rebind.input + '').substring(0, ((inputPrefix +'').length - 1)) === inputPrefix) {
+          switch ((action.rebind.input + '').split('_')[1]) {
+            case 'button6':
+              // add action.name keybind to parsed profile
+              break;
+           
+            default:
+              break;
+           }
+        }
+       
+      })
+        return ('')
+    })
+
+  },
   getGameActionIcon (key) {
     switch (key) {
       // Reset Icon
@@ -3732,8 +4540,6 @@ export const Utils = {
     loadedProfile,
     selectedViewerInput
   ) {
-
-    
     switch (LayoutType) {
       case 'Main_Device_Axis':
         return (
@@ -3741,7 +4547,7 @@ export const Utils = {
             <div className=' corner-inputTableIcons   self-start w-full flex-col  w-full'>
               <p className='flex text-input-title mr-[12px] self-start py-[8px] ml-[8px]'>
                 {' '}
-                X-Axis 
+                X-Axis
               </p>
               <AxisRow
                 layers={
@@ -3776,7 +4582,7 @@ export const Utils = {
             <div className=' corner-inputTableIcons   self-start w-full flex-col  w-full'>
               <p className='flex text-input-title mr-[12px] self-start py-[8px] ml-[8px]'>
                 {' '}
-                Y-Axis 
+                Y-Axis
               </p>
               <AxisRow
                 layers={
@@ -3794,7 +4600,7 @@ export const Utils = {
             <div className=' corner-inputTableIcons   self-start w-full flex-col  w-full'>
               <p className='flex text-input-title mr-[12px] self-start py-[8px] ml-[8px]'>
                 {' '}
-                Z-Axis 
+                Z-Axis
               </p>
               <AxisRow
                 layers={

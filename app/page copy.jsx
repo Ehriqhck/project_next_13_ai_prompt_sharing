@@ -294,7 +294,7 @@ font-['exo_2']  text-[#00FFB9] text-[15px] font-bold  tracking-[0.2em]
       >
         <motion.section 
         ref={scrollRef}
-        className="flex flex-col  place-items-start ">
+        className="flex flex-col  place-items-start h-[100vh]  overflow-hidden">
           <motion.div
 
               className='w-full  inline-block flex-center flex-col pt-[64px] '
@@ -304,7 +304,7 @@ font-['exo_2']  text-[#00FFB9] text-[15px] font-bold  tracking-[0.2em]
             transition={{duration: 3}}
             style={{marginBottom: scrollYProgress}}
           >
-         
+            {asd}
             <div className="flex w-full pt-[36px] flex-col  ">
 
               <div className=" w-full px-[16px] flex flex-col pb-[36px] ">
@@ -486,7 +486,7 @@ font-['exo_2']  text-[#00FFB9] text-[15px] font-bold  tracking-[0.2em]
                   </div>
 
                 </h1>
-                <div className="p-[16px] w-full h-full self-center content-center justify-items-center align-middle  justify-center device_svg_z z-20 flex flex-row gap-[42px]">
+                <div className="p-[16px] w-full h-full self-center content-center justify-items-center align-middle  justify-center device_svg_z z-99999999 flex flex-row gap-[42px]">
                   <Device_VKB_GLADIATOR_NXT_EVO_RIGHT
                     className='min-w-[300px] w-[180px] device-shadow self-start align-middle flex justify-center'
                     view='Front'
