@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 
 const SmoothScroll = ({ children }) => {
     const { scrollYProgress } = useScroll();
-    const smoothProgress = useSpring(scrollYProgress, { mass: 0.1 })
+    const smoothProgress = useSpring(scrollYProgress, { mass: 0.05 })
     const contentRef = useRef(null);
     const [contentHeight, setContentHeight] = useState(0);
 
@@ -33,7 +33,7 @@ const SmoothScroll = ({ children }) => {
         />
 
         <motion.div
-            className="scrollBody flex flex-col" style={{ y }}
+            className="scrollBody  w-full" style={{ y }}
 
             ref={contentRef}
         >

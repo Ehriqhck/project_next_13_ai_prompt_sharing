@@ -18,6 +18,15 @@ background: red !important;
   top: 0px;
   z-index: 99;
 }
+.scrollBody {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
 .framer-top1 {
   place-content: center flex-start;
   align-items: center;
@@ -75,18 +84,18 @@ background: red !important;
   top: 0;
 }
  .corner-noPadding {
+
   --b: 1px; /* thickness of the border */
   --c: rgba(0, 247, 255, 0.4); /* color of the border */
   --w: 24px; /* width of border */
   --r: 5px; /* radius */
-
   padding: var(--b); /* space for the border */
   position: relative;
-  /*Irrelevant code*/
 
+
+  /*Irrelevant code*/
   box-sizing: border-box;
   display: inline-flex;
-  /* justify-content: center; */
   align-items: center;
   text-align: center;
 }
@@ -98,12 +107,17 @@ background: red !important;
   background: var(--c, rgba(255, 0, 0, 0));
   padding: var(--b);
   border-radius: var(--r);
-  -webkit-mask: linear-gradient(0deg, #000 calc(2 * var(--b)), #0000 0) 50%
+
+  -webkit-mask: 
+  
+  linear-gradient(0deg, #000 calc(2 * var(--b)), #0000 0) 50%
       var(--b) / calc(100% - 2 * var(--w)) 100% repeat-y,
-    linear-gradient(-90deg, #000 calc(2 * var(--b)), #0000 0) var(--b) 50%/100%
+  linear-gradient(-90deg, #000 calc(2 * var(--b)), #0000 0) var(--b) 50%/100%
       calc(100% - 2 * var(--w)) repeat-x,
-    linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+
   -webkit-mask-composite: destination-out;
+
 }
  li.p-carousel-indicator> button.p-link:focus {
 box-shadow: none !important;
@@ -148,11 +162,21 @@ button[aria-label='Next Page']:focus, button[aria-label='Previous Page']:focus  
 box-shadow: none !important;
 }
 .homepage-bg-gradient {
-  background-image: linear-gradient(180deg, rgb(3 27 33) 0%, rgba(4, 29, 35, 0.37) 60%, rgba(4, 29, 35, 0) 78%, rgba(4, 29, 35, 1) 100%), linear-gradient(180deg, rgba(0, 34, 41, 0) 0%, rgba(4, 25, 29, 1) 100%);
+  background-image: linear-gradient(180deg, rgb(8 21 25) 0%, rgb(2 35 44 / 76%) 20%, rgba(4, 29, 35, 0) 78%, rgba(4, 29, 35, 1) 100%), linear-gradient(180deg, rgba(0, 34, 41, 0) 0%, rgba(4, 25, 29, 1) 100%);
+}
+.lamp-bg-gradient {
+  background-image: linear-gradient(180deg, rgb(8 21 25) 0%, rgb(2 35 44 / 0%) 12%, rgba(4, 29, 35, 0) 78%, rgba(4, 29, 35, 1) 100%);
+}
+.lamp-lightbar {
+  background:linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,240,255,1) 45%, rgba(0,240,255,1) 55%, rgba(0,0,0,0) 100%);
 
 }
-
-
+.lamp-top {
+  background-image: linear-gradient(180deg, rgb(12 21 25) 0%, rgb(11 21 25) 12%, rgb(4 29 35 / 98%) 78%, rgb(9 24 31 / 75%) 100%);
+}
+.lamp-bottom {
+  background-image: linear-gradient(180deg, rgb(12 21 25) 0%, rgb(11 21 25) 12%, rgb(4 29 35 / 98%) 78%, rgb(9 24 31 / 75%) 100%);
+}
 section {
   display: flex !important;
   flex-direction: row;}
@@ -312,9 +336,10 @@ box-shadow: inset -2px -1px 25px 1px rgb(0 187 155 / 51%);
 }
 
 .hero-carousel {
-  padding: 4px 6px 4px 24px !important;
-  border-radius: 21px !important; 
+  padding: 12px 6px 12px 24px !important;
+  border-radius: 27px !important;
   background-color: #021519 !important;
+  width: 100%;
   position: relative !important;
   background: 
   repeating-linear-gradient(-45deg, rgb(0, 14, 16), rgb(0, 9, 16, 0.3) 2px, rgba(0, 0, 0, 0) 2px, rgba(0, 0, 0, 0) 2.83px), linear-gradient(179deg, rgba(0, 34, 41, 0) 0%, rgb(0 191 163 / 56%) 100%) !important;
@@ -327,7 +352,7 @@ div.hero-carousel::before {
   position: absolute !important;
   inset: 0 !important;
   cursor: pointer !important;
-  border-radius: 21px !important;
+  border-radius: 27px !important;
   border: 1px solid transparent !important;
   background: 
   radial-gradient(ellipse at 85% 0%, #41ffbaa3, #04f1e34d, transparent) border-box, radial-gradient(ellipse at 0% 40%, #00bf9f, #00ebbc2e, transparent) border-box, radial-gradient(ellipse at 65% 100%, #28ffa770, #00eb9c38, transparent) border-box;
@@ -335,7 +360,9 @@ div.hero-carousel::before {
   -webkit-mask-composite: destination-out !important;
   mask-composite: exclude !important;
 }
-
+.hero-carousel > div[role='region']{
+  width: 100%;
+}
 div.p-carousel-vertical > * > *> * > * > div.p-carousel-item {
   filter: opacity(0.39) !important;
 }
@@ -2572,6 +2599,7 @@ width: 100%;
   margin: 0 5px 0 0;
 
 }
+
 .spacer-noH {
   transform: rotate(0deg);
   width: 1px;

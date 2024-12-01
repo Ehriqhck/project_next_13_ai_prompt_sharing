@@ -953,6 +953,9 @@ export const Utils = {
           switch ((action.rebind.input + '').split('_')[1]) {
             case 'button6':
               // add action.name keybind to parsed profile
+              array.forEach(element => {
+                
+              });
               break;
            
             default:

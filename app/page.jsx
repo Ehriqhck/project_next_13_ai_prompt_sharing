@@ -23,12 +23,41 @@ import { Utils } from "./editor/utils";
 import Device_VKB_GLADIATOR_NXT_EVO_RIGHT from '@components/Device_VKB_GLADIATOR_NXT_EVO_RIGHT_EXAMPLE.jsx'
 import { motion, useScroll, useAnimate, useInView } from 'framer-motion';
 import SmoothScroll from '@components/generic/SmoothScroll.jsx'
+import { AnimatedGroup } from '@/components/fancy/AnimatedGroup.jsx';
+import { InView } from '@/components/fancy/InView.jsx';
+import { HeroHighlight, Highlight } from '@/components/fancy/HeroHighlight';
+import { Lamp } from '@/components/fancy/Lamp';
+
 const Home = () => {
   const [products, setProducts] = useState([
     {
       id: '1000',
       code: 'f230fh0g3',
-      name: 'Bamboo Watch',
+      name: 'Having to manually backup your keybinds',
+      description: 'Product Description',
+      image: 'bamboo-watch.jpg',
+      price: 65,
+      category: 'Accessories',
+      quantity: 24,
+      inventoryStatus: 'INSTOCK',
+      rating: 5
+    },
+    {
+      id: '1000',
+      code: 'f230fh0g3',
+      name: 'Using console commands to adjust device intances',
+      description: 'Product Description',
+      image: 'bamboo-watch.jpg',
+      price: 65,
+      category: 'Accessories',
+      quantity: 24,
+      inventoryStatus: 'INSTOCK',
+      rating: 5
+    },
+    {
+      id: '1000',
+      code: 'f230fh0g3',
+      name: 'Using console commands to adjust device intances',
       description: 'Product Description',
       image: 'bamboo-watch.jpg',
       price: 65,
@@ -40,7 +69,7 @@ const Home = () => {
     {
       id: '1001',
       code: 'nvklal433',
-      name: 'Black Watch',
+      name: 'Triple-checking whether if you missed a crucial keybind',
       description: 'Product Description',
       image: 'black-watch.jpg',
       price: 72,
@@ -52,7 +81,7 @@ const Home = () => {
     {
       id: '1002',
       code: 'zz21cz3c1',
-      name: 'Blue Band',
+      name: 'Wondering where \'input 36\' is on your flightstick',
       description: 'Product Description',
       image: 'blue-band.jpg',
       price: 79,
@@ -64,7 +93,7 @@ const Home = () => {
     {
       id: '1003',
       code: '244wgerg2',
-      name: 'Blue T-Shirt',
+      name: 'Endlessly Scrolling through hundreds of keybinds',
       description: 'Product Description',
       image: 'blue-t-shirt.jpg',
       price: 29,
@@ -73,7 +102,7 @@ const Home = () => {
       inventoryStatus: 'INSTOCK',
       rating: 5
     },
-    { name: 'aaaaaaaaaaaaa' }
+    { name: 'Alt-tabbing between menus & mapping diagrams' }
   ]);
   const responsiveOptions = [
     {
@@ -97,14 +126,11 @@ const Home = () => {
       numScroll: 1
     }
   ];
-  const [scope, animate] = useAnimate()
-  const isInView = useInView(scope)
 
-  useEffect(() => {
-    if (isInView) {
-      // animate(scope.current, { opacity: 1 })
-    }
-  }, [isInView])
+  // useEffect(() => {
+  //   if (isInView) {
+  //   }
+  // }, [isInView])
 
   const productTemplate = (product) => {
     return (
@@ -112,7 +138,7 @@ const Home = () => {
         {/* <img src={`https://primefaces.org/cdn/primereact/images/product/${product.image}`} alt={product.name} className="" /> */}
         <div className=" flex flex-row gap-[4px]">
 
-          <p className="uppercase self-center ml-[12px] flex  text-[#CEFCFF] font-['Exo_2'] text-[15px] font-medium  tracking-[0.1em] carousel-active">
+          <p className="uppercase whitespace-nowrap self-center ml-[12px] flex  text-[#CEFCFF] font-['Exo_2'] text-[18px] font-[400]  tracking-[0.1em] carousel-active">
             {product.name}
 
           </p>
@@ -287,24 +313,96 @@ font-['exo_2']  text-[#00FFB9] text-[15px] font-bold  tracking-[0.2em]
 
       </div>
 
+        <InView
+          variants={{
+            hidden: { opacity: 0, y: 100, filter: 'blur(4px)' },
+            visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
+          }}
+          viewOptions={{ margin: '0px 0px -200px 0px' }}
+          transition={{ duration: 0.3, ease: 'easeInOut' }}
+        >
+
+        </InView>
+        {/* <AnimatedGroup
+          className='grid h-full grid-cols-2 gap-8 p-12 md:grid-cols-3 lg:grid-cols-4'
+          variants={{
+            container: {
+              visible: {
+                transition: {
+                  staggerChildren: 0.5,
+                },
+              },
+            },
+            item: {
+              hidden: {
+                opacity: 0,
+                filter: 'blur(12px)',
+                y: -60,
+                rotateX: 90,
+              },
+              visible: {
+                opacity: 1,
+                filter: 'blur(0px)',
+                y: 0,
+                rotateX: 0,
+                transition: {
+                  type: 'spring',
+                  bounce: 0.3,
+                  duration: 1,
+                },
+              },
+            },
+          }}
+        >
+          <div key={1}>
+            <img
+              src='/national_geographic_logo.svg'
+              alt='Apple Music logo'
+              className='h-auto w-full'
+            />
+          </div>
+          <div key={2}>
+            <img src='/sony_logo.svg' alt='Chrome logo' className='h-auto w-full' />
+          </div>
+          <div key={3}>
+            <img
+              src='/strava_logo.svg'
+              alt='Strava logo'
+              className='h-auto w-full'
+            />
+          </div>
+          <div key={4}>
+            <img
+              src='/nintendo_logo.svg'
+              alt='Nintendo logo'
+              className='h-auto w-full'
+            />
+          </div>
+        </AnimatedGroup> */}
+
+        
+        <HeroHighlight>
+<Lamp>
+  
+</Lamp>
       <motion.div
 
         className=" w-full flex flex-col  px-[128px] pb-[128px]
-      homepage-bg-gradient bg-multiply   "
+       "
       >
-        <motion.section 
-        ref={scrollRef}
-        className="flex flex-col  place-items-start ">
+        <motion.section
+          ref={scrollRef}
+          className="flex flex-col  place-items-start ">
           <motion.div
 
-              className='w-full  inline-block flex-center flex-col pt-[64px] '
-              
+            className='w-full  inline-block flex-center flex-col pt-[64px] '
+
             // initial={{ opacity: 0 }} 
             // animate={{ opacity: 1, top:'100%'}}
-            transition={{duration: 3}}
-            style={{marginBottom: scrollYProgress}}
+            transition={{ duration: 3 }}
+            style={{ marginBottom: scrollYProgress }}
           >
-         
+
             <div className="flex w-full pt-[36px] flex-col  ">
 
               <div className=" w-full px-[16px] flex flex-col pb-[36px] ">
@@ -327,8 +425,38 @@ font-['exo_2']  text-[#00FFB9] text-[15px] font-bold  tracking-[0.2em]
 
 
 
-                <section className="flex flex-col ">
-                  <div className="flex flex-row  mt-[36px] gap-[24px]">
+                <AnimatedGroup className="flex flex-col 
+                "
+                  variants={{
+                    container: {
+                      visible: {
+                        transition: {
+                          staggerChildren: 0.5,
+                        },
+                      },
+                    },
+                    item: {
+                      hidden: {
+                        opacity: 0,
+                        filter: 'blur(12px)',
+                        y: -60,
+                        rotateX: 90,
+                      },
+                      visible: {
+                        opacity: 1,
+                        filter: 'blur(0px)',
+                        y: 0,
+                        rotateX: 0,
+                        transition: {
+                          type: 'spring',
+                          bounce: 0.3,
+                          duration: 1,
+                        },
+                      },
+                    },
+                  }}
+                >
+                  <div key={1} className="flex flex-row  mt-[36px] gap-[24px]">
                     <div className="flex ">
                       <div className="p-[16px] w-[70px] h-[70px] stepper-step flex  ">
                         <p className=" font-['exo_2'] self-center justify-center
@@ -377,7 +505,7 @@ font-['exo_2']  text-[#00FFB9] text-[15px] font-bold  tracking-[0.2em]
                       </div>
                     </div>
                   </div>
-                  <div className="flex flex-row  mt-[36px] gap-[24px]">
+                  <div key={2} className="flex flex-row  mt-[36px] gap-[24px]">
                     <div className="flex ">
                       <div className="p-[16px] w-[70px] h-[70px] stepper-step flex  ">
                         <p className=" font-['exo_2'] self-center justify-center
@@ -390,10 +518,10 @@ font-['exo_2']  text-[#00FFB9] text-[15px] font-bold  tracking-[0.2em]
                       <span className="font-[600] text-gradient-display font-['Exo_2'] tracking-[0.075em] uppercase text-[24px] h-fit self-start  mb-[30px] ">
                         Start Editing!
                       </span>
-        
+
                     </div>
                   </div>
-                  <div className="flex flex-row  mt-[36px] gap-[24px]">
+                  <div key={3} className="flex flex-row  mt-[36px] gap-[24px]">
                     <div className="flex ">
                       <div className="p-[16px] w-[70px] h-[70px] stepper-step flex  ">
                         <p className=" font-['exo_2'] self-center justify-center
@@ -441,7 +569,7 @@ font-['exo_2']  text-[#00FFB9] text-[15px] font-bold  tracking-[0.2em]
                       </div>
                     </div>
                   </div>
-                </section>
+                </AnimatedGroup>
               </div>
 
             </div>
@@ -486,7 +614,7 @@ font-['exo_2']  text-[#00FFB9] text-[15px] font-bold  tracking-[0.2em]
                   </div>
 
                 </h1>
-                <div className="p-[16px] w-full h-full self-center content-center justify-items-center align-middle  justify-center device_svg_z z-20 flex flex-row gap-[42px]">
+                <div className="p-[16px] w-full h-full self-center content-center justify-items-center align-middle  justify-center device_svg_z z-19 flex flex-row gap-[42px]">
                   <Device_VKB_GLADIATOR_NXT_EVO_RIGHT
                     className='min-w-[300px] w-[180px] device-shadow self-start align-middle flex justify-center'
                     view='Front'
@@ -509,8 +637,8 @@ font-['exo_2']  text-[#00FFB9] text-[15px] font-bold  tracking-[0.2em]
           <section className='w-full flex-center flex-col pt-[64px]' >
             <NoSsr>
               <div className="flex flex-row gap-[4px] hero-carousel">
-                <p className=" flex flex-col    self-center justify-center align-middle
-          font-['exo_2']  text-[#CEFCFF] text-[15px] font-medium  tracking-[0.1em]
+                <p className=" flex flex-col   font-[400]  self-center justify-center align-middle
+          font-['exo_2']  text-[#CEFCFF] text-[22px]  tracking-[0.1em]
           ">STOP</p>
                 <div className="spacer-noH h-[36px]" />
                 <Carousel value={products}
@@ -553,6 +681,7 @@ font-['exo_2']  text-[#00FFB9] text-[15px] font-bold  tracking-[0.2em]
           </section>
         </motion.section>
       </motion.div>
+      </HeroHighlight>
 
     </motion.div>
 
