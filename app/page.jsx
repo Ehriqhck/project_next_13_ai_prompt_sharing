@@ -229,7 +229,7 @@ const Home = () => {
   return (
 
     <motion.div
-      className="flex flex-col w-full text-[#DAF0EA]  "
+      className="flex flex-col w-full text-[#DAF0EA]  overflow-x-hidden"
 
     >
       
@@ -451,7 +451,7 @@ const Home = () => {
                       </div>
                     </span>
                     <NoSsr>
-                      <div className="flex flex-row gap-[4px] hero-carousel justify-center mt-[64px] w-full ">
+                      <div className="flex flex-row gap-[4px] hero-carousel justify-center self-center mt-[64px] max-w-[1000px] w-full ">
                         <p className=" flex flex-col   font-[400]  self-center justify-center align-middle
 font-['exo_2']  text-[#CEFCFF] text-[22px]  tracking-[0.1em]
 ">STOP</p>
