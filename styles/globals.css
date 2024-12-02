@@ -13,6 +13,12 @@
  /* li[data-pc-section='indicator'].p-highlight > button {
 background: red !important;
  } */
+
+ .vds-video-layout {
+  --video-bg: black;
+  --video-border-radius: 10px;
+  /* --video-border: 1px solid rgb(255 255 255 / 0.1); */
+ }
 .stickyNav {
   position: sticky;
   top: 0px;
@@ -296,15 +302,14 @@ background: radial-gradient(circle farthest-corner at center center, #00992E 0%,
 }
 .logo-gradient-white {
   -webkit-background-clip: text !important;
-  text-shadow: 0px 4px 42px rgb(0 255 204 / 36%);
-
+  text-shadow: 0px 4px 62px rgb(0 206 251 / 41%);
   -webkit-text-fill-color: transparent;
-  background: linear-gradient(180deg, #ffffff 27%, #4E6567 90%);
+  background: linear-gradient(180deg, #eefbff 37%, #7e7e7e87 95%);
   /* background: linear-gradient(180deg, #fafafa 0%, #4E6567 100%); */
 }
 .text-gradient-display {
   -webkit-background-clip: text !important;
-  text-shadow: 0px 4px 42px rgb(0 255 204 / 36%);
+  text-shadow: 0px 4px 42px rgba(0, 238, 255, 0.336);
 
   -webkit-text-fill-color: transparent;
   background: linear-gradient(180deg, #ffffff 27%, #4E6567 90%);
@@ -434,9 +439,9 @@ div[data-pc-section='mask']:has(div[id='gameActionDialogue']){
   display: flex;
   flex-direction: row;
   gap: 5px;
-  border-radius: 16px;
+  border-radius: 8px;
   border: 1px #ffffffbc solid;
-  padding: 8px;
+  padding: 8px 12px 8px 12px;
   font-family: "Exo";
   font-size: 15px;
 font-weight: 500;

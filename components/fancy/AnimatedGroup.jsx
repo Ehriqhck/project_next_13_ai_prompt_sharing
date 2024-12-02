@@ -151,6 +151,7 @@ function AnimatedGroup({
     preset,
     transition,
     viewOptions,
+    classnames
 }) {
     const [scope, animate] = useAnimate()
     const ref = useRef(null);
@@ -160,10 +161,13 @@ function AnimatedGroup({
             console.log('IN VIEW');
 
             animate(scope.current, {
+                delay: 1,
                 opacity: 0.2, transition: {
-                    staggerChildren: 0.1,
+                    staggerChildren: 0.2,
                 }
             })
+
+        } else {
 
         }
     }, [isInView])
@@ -179,14 +183,19 @@ function AnimatedGroup({
 
         <InView
         viewOptions={{ once: true, margin: '0px 0px -250px 0px' }}
+        style={{display: 'flex', flexDirection: 'column'}}
+        styling='flex flex-col h-full space-between'
         variants={{
+            viewport:{ amount: 0.8 },
+
           hidden: {
             opacity: 0,
           },
           visible: {
             opacity: 1,
             transition: {
-              staggerChildren: 0.09,
+              staggerChildren: 0.2,
+              
             },
           },
         }}
@@ -194,8 +203,8 @@ function AnimatedGroup({
 
                 {React.Children.map(children, (child, index) => (
                     <motion.div key={index} variants={itemVariants}
-                        viewport={{ amount: 0.5 }}
-
+                        viewport={{ amount: 0.8 }}
+                        className={'h-full flex' + ' ' + className}
                     >
                         {child}
                     </motion.div>

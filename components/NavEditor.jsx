@@ -320,7 +320,7 @@ const NavEditor = () => {
       break;
     default:
       return (
-        <nav className=' w-full h-[52px] rounded-none stickyNav '>
+        <nav className=' w-full h-[64px] rounded-none stickyNav '>
 
 
             <div className='nav  w-full h-full mb-[-1px] pt-3 flex rounded-none flex-between flex-row'>
@@ -333,52 +333,61 @@ const NavEditor = () => {
                   <p className="title-text">EDITOR</p>
                 </div>
               </div>
-              {/* <div className="flex flex-col">
-                <div className="flex flex-row">
-                  <p className="text-base">// CURRENT PROFILE</p>
-                </div>
-                <p className="text-profile-title slant">{profileName}</p>
-              </div> */}
+    
               {/* Desktop Navigation */}
-              <div className='flex '>
-                {session?.user ? (
-                  <div className='flex gap-3 md:gap-5'>
-                    <Link href='/create-control-profile' className='black_btn hidden'>
-                      Create Control Profile
-                    </Link>
+              <div className=' self-center flex'>
+                    {session?.user ? (
+                      <div className='flex gap-3 md:gap-5'>
+                        {/* <Link href='/create-control-profile' className='black_btn hidden'>
+                          Create Control Profile
+                        </Link> */}
 
-                    <button type='button' onClick={signOut} className='outline_btn'>
-                      Sign Out
-                    </button>
+                        <Button unstyled type='default-white' onClick={signOut} className='h-[24px] flex default-white '>
+                          <p className='self-center w-fit default-white-text'> Sign Out</p>
+                          <Link href='/profile' className='self-center'>
+                            <Image
+                              src={session?.user.image}
+                              width={26}
+                              height={26}
+                              className='rounded-[100px]'
+                              alt='profile'
+                            />
+                          </Link>
+                        </Button>
 
-                    <Link href='/profile'>
-                      <Image
-                        src={session?.user.image}
-                        width={37}
-                        height={37}
-                        className='rounded-full'
-                        alt='profile'
-                      />
-                    </Link>
+
+                      </div>
+                    ) : (
+                      <>
+                        {providers &&
+                          Object.values(providers).map((provider) => (
+                            <Button
+                              unstyled
+                              type='default-white'
+                              key={provider.name}
+                              onClick={() => {
+                                signIn(provider.id);
+                              }} className='h-[24px] flex default-white '>
+                              <p className='self-center w-full'>
+                                Sign in
+                              </p>
+
+                            </Button>
+
+                            // <button
+                            //   type='button'
+                            //   key={provider.name}
+                            //   onClick={() => {
+                            //     signIn(provider.id);
+                            //   }}
+                            //   className='black_btn'
+                            // >
+                            //   Sign in
+                            // </button>
+                          ))}
+                      </>
+                    )}
                   </div>
-                ) : (
-                  <>
-                    {providers &&
-                      Object.values(providers).map((provider) => (
-                        <button
-                          type='button'
-                          key={provider.name}
-                          onClick={() => {
-                            signIn(provider.id);
-                          }}
-                          className='black_btn'
-                        >
-                          Sign in
-                        </button>
-                      ))}
-                  </>
-                )}
-              </div>
             </div >
 
 

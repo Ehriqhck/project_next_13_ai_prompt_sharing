@@ -37,7 +37,7 @@ export function InView({
   children,
   variants = defaultVariants,
   transition,
-  viewOptions,
+  viewOptions, styling
 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, viewOptions);
@@ -49,8 +49,8 @@ export function InView({
       animate={isInView ? 'visible' : 'hidden'}
       variants={variants}
       transition={transition}
-      viewport={{ amount: 0.5 }}
-
+      viewport={{ amount: 0.8 }}
+className={styling + ''}
     >
       {children}
     </motion.div>

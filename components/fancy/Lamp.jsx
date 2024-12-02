@@ -7,14 +7,14 @@ export function Lamp() {
   return (
     (<LampContainer>
       <motion.h1
-        initial={{ opacity: 0.5, y: 100 }}
+        initial={{ opacity: 0.5, y: 0 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{
           delay: 0.3,
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className="mt-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl">
+        className="mt-0 bg-gradient-to-br  from-slate-300 to-slate-500  bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl">
         Build lamps <br /> the right way
       </motion.h1>
     </LampContainer>)
@@ -28,7 +28,7 @@ export const LampContainer = ({
   return (
     (<div
       className={cn(
-        "relative flex min-h-screen flex-col overflow-hidden lamp-bg-gradient w-full rounded-md z-0",
+        "relative flex min-h-screen  flex-col overflow-hidden lamp-bg-gradient w-full rounded-md z-0",
         className
       )}>
       <div
@@ -72,10 +72,10 @@ export const LampContainer = ({
         <div
           className="absolute top-1/2 z-50 h-48 w-full bg-transparent opacity-10 backdrop-blur-md"></div>
         <div
-          className="absolute inset-auto z-50 h-0 w-[28rem] -translate-y-1/2 rounded-full bg-cyan-500 opacity-50 blur-3xl"></div>
+          className="absolute inset-auto z-50 h-0 w-[28rem] -translate-y-[1/2] rounded-full bg-cyan-500 opacity-50 blur-3xl"></div>
       
         <motion.div
-          initial={{ width: "10%" }}
+          initial={{ width: "15rem" }}
           whileInView={{ width: "80%" }}
           transition={{
             delay: 0.3,
@@ -84,7 +84,8 @@ export const LampContainer = ({
           }}
           className="absolute inset-auto z-50 h-0.5 w-[30rem] -translate-y-[7rem] lamp-lightbar "></motion.div>
 
-     
+        <div
+          className="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] "></div>
       </div>
       <div className="relative z-50 flex -translate-y-80 flex-col items-center px-5">
         {children}
