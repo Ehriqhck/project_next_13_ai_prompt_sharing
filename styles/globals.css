@@ -456,6 +456,8 @@ div[data-pc-section='mask']:has(div[id='gameActionDialogue']){
   height: 2px;
   transition: width 400ms ease;
   width: 0;
+.deleteme {
+  
 }
 .default-white {
   justify-content: center;
