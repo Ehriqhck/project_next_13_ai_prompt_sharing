@@ -33,7 +33,7 @@ export const HeroHighlight = ({
       <div
         className="flex  inset-0 bg-dot-thick-neutral-300 dark:bg-dot-thick-neutral-900  pointer-events-none" />
       <motion.div
-        className="pointer-events-none bg-dot-thick-indigo-500 dark:bg-dot-thick-[#006e62]   absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-40"
+        className="pointer-events-none bg-dot-thick-indigo-500 dark:bg-dot-thick-[#006e62]   absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-70"
         style={{
           WebkitMaskImage: useMotionTemplate`
             radial-gradient(
