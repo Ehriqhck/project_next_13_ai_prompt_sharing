@@ -32,6 +32,8 @@ import { MediaPlayer, MediaProvider } from '@vidstack/react';
 import { defaultLayoutIcons, DefaultVideoLayout } from '@vidstack/react/player/layouts/default';
 import '@vidstack/react/player/styles/default/theme.css';
 import '@vidstack/react/player/styles/default/layouts/video.css';
+import ScrollProgressBasic1 from '@components/fancy/ScrollProgressBasic1.jsx'
+import { ScrollProgress } from '@components/fancy/ScrollProgress.jsx';
 
 const Home = () => {
 
@@ -213,9 +215,26 @@ const Home = () => {
     );
   };
 
+  const navRef1 = useRef(null);
+  const navRef2 = useRef(null);
+  const navRef3 = useRef(null);
+  // const { scrollYProgressCircle } = useScroll({ container: navRef1 });
 
+  const { scrollYProgress: scrollYProgressNav1 } = useScroll({
+    target: navRef1,
+    offset: ["end end", "start start"]
+  });
 
-  const { scrollYProgress } = useScroll();
+  const { scrollYProgress: scrollYProgressNav2 } = useScroll({
+    target: navRef2,
+    offset: ["end end", "start start"]
+  });
+
+  const { scrollYProgress: scrollYProgressNav3 } = useScroll({
+    target: navRef3,
+    offset: ["end end", "start start"]
+  });
+
   const scrollRef = useRef(null)
   const variants = {
     active: {
@@ -226,18 +245,63 @@ const Home = () => {
       transition: { duration: 2 }
     }
   }
+  const containerRef = useRef(null);
+
+  const dummyContent = Array.from({ length: 10 }, (_, i) => (
+    <p key={i} className='pb-4 font-mono text-sm text-zinc-500'>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam
+      lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra
+      nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget
+      libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut
+      porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies
+      a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </p>
+  ));
+
+
   return (
 
     <motion.div
       className="flex flex-col w-full text-[#DAF0EA]  overflow-x-hidden"
 
     >
-      
+      <div
+        className='h-[350px] w-[80px] fixed overflow-auto px-8 pb-16 pt-16 z-50'
+      >
+        <div className='pointer-events-none absolute bottom-0 left-0 h-12 w-full bg-white to-transparent backdrop-blur-xl [-webkit-mask-image:linear-gradient(to_top,white,transparent)] dark:bg-neutral-900' />
+        <div className='pointer-events-none absolute left-0 top-0 w-full'>
+          <div className='absolute left-0 top-0 h-1 w-full bg-[#E6F4FE] dark:bg-[#111927]' />
+
+          <ScrollProgress
+            containerRef={containerRef}
+            className='absolute top-0 bg-[#0090FF]'
+          />
+        </div>
+        {dummyContent}
+      </div>
+      <div className="flex fixed top-[90px] right-[0px]  z-50 w-fit   pr-[4px] pl-[8px] base bg-panel-white">
+        <div className="flex flex-row items-center  uppercase font-['Exo_2'] tracking-[0]
+         text-[12px] h-fit self-start place-items-start">
+          <p className="">How it Works</p>
+
+          <svg width="25px" height="25px" viewBox="0 0 100 100" className="-rotate-90 opacity-90">
+            <circle cx="50" cy="50" r="30" pathLength="1" className="  z-50" />
+            <motion.circle
+              cx="50"
+              cy="50"
+              r="30"
+              pathLength="1"
+              className="indicator"
+              style={{ pathLength: scrollYProgressNav1 }}
+            />
+          </svg>
+        </div>
+      </div>
       <div className="flex flex-col w-full ">
-      <video autoPlay loop muted id='hero-bg-video'
-       className=" h-[100vh] w-[100vw] object-cover hero-bg"
-        src="https://files.vidstack.io/sprite-fight/720p.mp4">
-         </video>
+        <video autoPlay loop muted id='hero-bg-video'
+          className=" h-[100vh] w-[100vw] object-cover hero-bg"
+          src="https://files.vidstack.io/sprite-fight/720p.mp4">
+        </video>
 
         <div className="  bg-multiply  h-[100vh] w-[100vw] flex flex-col px-[128px] hero-bg   content-between">
           <AnimatedGroup className="flex flex-col content-between  h-full
@@ -415,7 +479,8 @@ const Home = () => {
 
 
       <HeroHighlight>
-      <div className="homepage-bg-gradient-seam h-[192px]  w-screen mb-[-32px]"></div>
+        <div
+          className="homepage-bg-gradient-seam h-[192px]  w-screen mb-[-32px]"></div>
 
         <motion.div
 
@@ -424,6 +489,7 @@ const Home = () => {
         >
           <motion.section
             ref={scrollRef}
+
             className="flex flex-col w-full  place-items-start ">
             <motion.div
 
@@ -432,13 +498,13 @@ const Home = () => {
               // initial={{ opacity: 0 }} 
               // animate={{ opacity: 1, top:'100%'}}
               transition={{ duration: 3 }}
-              style={{ marginBottom: scrollYProgress }}
+              style={{ marginBottom: scrollYProgressNav1 }}
             >
 
 
               <div className=" w-full px-[16px] flex flex-col pb-[36px] ">
 
-                <AnimatedGroup className="flex flex-col corner-noPadding mt-[16px] mb-[10vh]  mb-[256px] "
+                <AnimatedGroup className="flex flex-col corner-noPadding mt-[16px] mb-[10vh]   mb-[256px]  "
                   variants={groupVariant}
                   classnames='self-center w-full'
                 >
@@ -508,7 +574,8 @@ font-['exo_2']  text-[#00FFB9] text-[15px] font-bold  tracking-[0.2em]
                 </AnimatedGroup>
 
                 {/* vvvv 3 STEP PROCESS vvvv */}
-                <section className="corner-noPadding flex flex-col">
+                <div className="corner-noPadding flex flex-col"
+                >
                   <AnimatedGroup className="flex flex-col  pt-[64px]  "
                     variants={groupVariant}
                     classnames='self-center '
@@ -702,13 +769,15 @@ font-['exo_2']  text-[#00FFB9] text-[15px] font-bold  tracking-[0.2em]
                       </div>
                     </div>
                   </AnimatedGroup>
-                </section>
+                </div>
                 {/*vvvv  chevron vvvv*/}
                 <AnimatedGroup className="flex flex-col  "
                   variants={chevronVariant}
                   classnames='self-center w-full'
                 >
-                  <div className="flex flex-col self-center mt-[8vh] mb-[96px]">
+                  <div className="flex flex-col self-center mt-[8vh] mb-[96px]"
+                    ref={navRef1}
+                  >
                     <svg width="136" height="57" viewBox="0 0 136 57" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M1.54346 1.7751C2.63335 0.412741 4.60867 0.163294 6.00302 1.21193L66.6828 46.847C67.7574 47.6551 69.2384 47.6496 70.307 46.8334L129.993 1.24451C131.387 0.179974 133.375 0.423594 134.471 1.79305V1.79305C135.589 3.19113 135.356 5.23252 133.95 6.34161L71.6379 55.5114C71.2215 55.8329 70.7268 56.0879 70.1822 56.262C69.6376 56.436 69.0538 56.5256 68.4641 56.5256C67.8745 56.5256 67.2907 56.436 66.746 56.262C66.2014 56.0879 65.7067 55.8329 65.2903 55.5114L2.08187 6.33809C0.661629 5.23321 0.419386 3.1802 1.54346 1.7751V1.7751Z" fill="url(#paint0_linear_2417_486711)" />
                       <defs>

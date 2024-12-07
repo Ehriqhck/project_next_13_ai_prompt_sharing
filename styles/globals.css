@@ -407,6 +407,22 @@ div.p-carousel-items-container{
 padding-left: 72px !important; */
 
 }
+#progress {
+  z-index: 50;
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  transform: rotate(-90deg);
+}
+.indicator {
+  stroke: #00ffb9;
+}
+circle {
+  stroke-dashoffset: 0;
+  stroke-width: 8px;
+  fill: none;
+}
+
 
 div.p-carousel-item {
  width:180px !important;
