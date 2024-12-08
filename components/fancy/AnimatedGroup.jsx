@@ -34,7 +34,6 @@ import { InView } from './InView';
 
 const defaultContainerVariants = {
     hidden: { opacity: 0 },
-    viewport: { amount: 0.5 },
     opacity: 1,
     transition: {
         staggerChildren: 0.1,
@@ -186,7 +185,7 @@ function AnimatedGroup({
         style={{display: 'flex', flexDirection: 'column'}}
         styling='flex flex-col h-full space-between'
         variants={{
-            viewport:{ amount: 0.8 },
+         
 
           hidden: {
             opacity: 0,
@@ -203,7 +202,7 @@ function AnimatedGroup({
 
                 {React.Children.map(children, (child, index) => (
                     <motion.div key={index} variants={itemVariants}
-                        viewport={{ amount: 0.8 }}
+             
                         className={'h-full flex' + ' ' + className}
                     >
                         {child}

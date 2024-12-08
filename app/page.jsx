@@ -218,21 +218,50 @@ const Home = () => {
   const navRef1 = useRef(null);
   const navRef2 = useRef(null);
   const navRef3 = useRef(null);
+  const navRef4 = useRef(null);
+  const navRef5 = useRef(null);
+
   // const { scrollYProgressCircle } = useScroll({ container: navRef1 });
 
   const { scrollYProgress: scrollYProgressNav1 } = useScroll({
     target: navRef1,
-    offset: ["end end", "start start"]
+    offset: ["start start", "120vh"],
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
   });
 
   const { scrollYProgress: scrollYProgressNav2 } = useScroll({
     target: navRef2,
-    offset: ["end end", "start start"]
+    offset: ["start start", "end 0.5"],
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
   });
 
   const { scrollYProgress: scrollYProgressNav3 } = useScroll({
     target: navRef3,
-    offset: ["end end", "start start"]
+    offset: ["0 1", "end 0.5"],
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+  const { scrollYProgress: scrollYProgressNav4 } = useScroll({
+    target: navRef4,
+    // offset: ["start start", "end end"]
+    offset: ["0 1", "start start",],
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+
+  });
+
+  const { scrollYProgress: scrollYProgressNav5 } = useScroll({
+    target: navRef5,
+    offset: ["end end", "start end"],
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
   });
 
   const scrollRef = useRef(null)
@@ -265,26 +294,16 @@ const Home = () => {
       className="flex flex-col w-full text-[#DAF0EA]  overflow-x-hidden"
 
     >
-      <div
-        className='h-[350px] w-[80px] fixed overflow-auto px-8 pb-16 pt-16 z-50'
-      >
-        <div className='pointer-events-none absolute bottom-0 left-0 h-12 w-full bg-white to-transparent backdrop-blur-xl [-webkit-mask-image:linear-gradient(to_top,white,transparent)] dark:bg-neutral-900' />
-        <div className='pointer-events-none absolute left-0 top-0 w-full'>
-          <div className='absolute left-0 top-0 h-1 w-full bg-[#E6F4FE] dark:bg-[#111927]' />
 
-          <ScrollProgress
-            containerRef={containerRef}
-            className='absolute top-0 bg-[#0090FF]'
-          />
-        </div>
-        {dummyContent}
-      </div>
-      <div className="flex fixed top-[90px] right-[0px]  z-50 w-fit   pr-[4px] pl-[8px] base bg-panel-white">
-        <div className="flex flex-row items-center  uppercase font-['Exo_2'] tracking-[0]
-         text-[12px] h-fit self-start place-items-start">
-          <p className="">How it Works</p>
+      <div className=" uppercase font-['Exo_2'] tracking-[0]
+         text-[12px] text-[#cefcff96] h-fit self-end  flex gap-[4px] flex-col justify-items-end py-[4px] px-[2px] fixed 
+         top-[8vh] right-[10px]  z-50 w-fit   pr-[4px] pl-[8px] 
+         base ">
 
-          <svg width="25px" height="25px" viewBox="0 0 100 100" className="-rotate-90 opacity-90">
+        <div className="flex flex-row gap-[2px] items-center  uppercase  h-fit self-end place-items-end">
+          <p className=""> <a href="#Home">Home</a></p>
+
+          <svg width="20px" height="20px" viewBox="0 0 100 100" className="-rotate-90 opacity-90">
             <circle cx="50" cy="50" r="30" pathLength="1" className="  z-50" />
             <motion.circle
               cx="50"
@@ -293,17 +312,96 @@ const Home = () => {
               pathLength="1"
               className="indicator"
               style={{ pathLength: scrollYProgressNav1 }}
+            />        <motion.circle
+              cx="50"
+              cy="50"
+              r="30"
+              pathLength="1"
+              className="indicatorBg"
+
+            />
+          </svg>
+        </div>
+
+        <div className="flex flex-row gap-[2px] items-center   h-fit self-end place-items-start">
+          <p className=""> <a href="#HowItWorks">How it Works </a></p>
+
+          <svg width="20px" height="20px" viewBox="0 0 100 100" className="-rotate-90 opacity-90">
+            <circle cx="50" cy="50" r="30" pathLength="1" className="  z-50" />
+            <motion.circle
+              cx="50"
+              cy="50"
+              r="30"
+              pathLength="1"
+              className="indicator"
+              style={{ pathLength: scrollYProgressNav2 }}
+            />
+            <motion.circle
+              cx="50"
+              cy="50"
+              r="30"
+              pathLength="1"
+              className="indicatorBg"
+
+            />
+          </svg>
+        </div>
+        <div className="flex flex-row gap-[2px] items-center   h-fit self-end place-items-start">
+          <p className=""><a href="#500Keybinds">500+ Keybinds</a></p>
+
+          <svg width="20px" height="20px" viewBox="0 0 100 100" className="-rotate-90 opacity-90">
+            <circle cx="50" cy="50" r="30" pathLength="1" className="  z-50" />
+            <motion.circle
+              cx="50"
+              cy="50"
+              r="30"
+              pathLength="1"
+              className="indicator"
+              style={{ pathLength: scrollYProgressNav3 }}
+            />
+            <motion.circle
+              cx="50"
+              cy="50"
+              r="30"
+              pathLength="1"
+              className="indicatorBg"
+
+            />
+          </svg>
+        </div>
+        <div className="flex flex-row gap-[2px] h-fit self-end items-center ">
+          <p className=""> <a href="#DeviceInputs">Device Inputs</a></p>
+
+          <svg width="20px" height="20px" viewBox="0 0 100 100" className="-rotate-90 opacity-90">
+            <circle cx="50" cy="50" r="30" pathLength="1" className="  z-50" />
+            <motion.circle
+              cx="50"
+              cy="50"
+              r="30"
+              pathLength="1"
+              className="indicator"
+              style={{ pathLength: scrollYProgressNav4 }}
+            />        <motion.circle
+              cx="50"
+              cy="50"
+              r="30"
+              pathLength="1"
+              className="indicatorBg"
+
             />
           </svg>
         </div>
       </div>
-      <div className="flex flex-col w-full ">
+      <div className="flex flex-col w-full "
+      >
         <video autoPlay loop muted id='hero-bg-video'
           className=" h-[100vh] w-[100vw] object-cover hero-bg"
           src="https://files.vidstack.io/sprite-fight/720p.mp4">
         </video>
 
-        <div className="  bg-multiply  h-[100vh] w-[100vw] flex flex-col px-[128px] hero-bg   content-between">
+        <div
+id="Home"
+          className="  bg-multiply  h-[100vh] w-[100vw] flex flex-col px-[128px] hero-bg   content-between">
           <AnimatedGroup className="flex flex-col content-between  h-full
                 "
             variants={{
@@ -338,7 +436,10 @@ const Home = () => {
               },
             }}
           >
-            <div key={1} className="flex flex-col w-fit font-['varino'] mt-[12vh] self-start mb-[128px]">
+            <div
+              ref={navRef1}
+
+              key={1} className="flex flex-col w-fit font-['varino'] mt-[12vh] self-start mb-[128px]">
               <p className="logo-gradient-white text-[54px] self-center mb-[-8px]"> TRICHORD </p>
               <div className=" px-[36px] logo-gradient-white text-[27px] self-center flex flex-row  w-full place-content-between">
                 <p>E</p> <p>D</p> <p>I</p> <p>T</p> <p>O</p> <p>R</p>
@@ -420,63 +521,6 @@ const Home = () => {
 
       </div>
 
-      {/* <AnimatedGroup
-          className='grid h-full grid-cols-2 gap-8 p-12 md:grid-cols-3 lg:grid-cols-4'
-          variants={{
-            container: {
-              visible: {
-                transition: {
-                  staggerChildren: 0.5,
-                },
-              },
-            },
-            item: {
-              hidden: {
-                opacity: 0,
-                filter: 'blur(12px)',
-                y: -60,
-                rotateX: 90,
-              },
-              visible: {
-                opacity: 1,
-                filter: 'blur(0px)',
-                y: 0,
-                rotateX: 0,
-                transition: {
-                  type: 'spring',
-                  bounce: 0.3,
-                  duration: 1,
-                },
-              },
-            },
-          }}
-        >
-          <div key={1}>
-            <img
-              src='/national_geographic_logo.svg'
-              alt='Apple Music logo'
-              className='h-auto w-full'
-            />
-          </div>
-          <div key={2}>
-            <img src='/sony_logo.svg' alt='Chrome logo' className='h-auto w-full' />
-          </div>
-          <div key={3}>
-            <img
-              src='/strava_logo.svg'
-              alt='Strava logo'
-              className='h-auto w-full'
-            />
-          </div>
-          <div key={4}>
-            <img
-              src='/nintendo_logo.svg'
-              alt='Nintendo logo'
-              className='h-auto w-full'
-            />
-          </div>
-        </AnimatedGroup> */}
-
 
       <HeroHighlight>
         <div
@@ -484,7 +528,7 @@ const Home = () => {
 
         <motion.div
 
-          className=" w-full flex flex-col  px-[64px] pb-[128px]
+          className=" w-full flex flex-col  px-[128px] pb-[128px]
        "
         >
           <motion.section
@@ -492,23 +536,23 @@ const Home = () => {
 
             className="flex flex-col w-full  place-items-start ">
             <motion.div
-
               className='w-full  inline-block flex-center flex-col pt-[0px] '
-
               // initial={{ opacity: 0 }} 
               // animate={{ opacity: 1, top:'100%'}}
               transition={{ duration: 3 }}
               style={{ marginBottom: scrollYProgressNav1 }}
             >
 
-
               <div className=" w-full px-[16px] flex flex-col pb-[36px] ">
 
                 <AnimatedGroup className="flex flex-col corner-noPadding mt-[16px] mb-[10vh]   mb-[256px]  "
                   variants={groupVariant}
+
                   classnames='self-center w-full'
                 >
-                  <div key={1} className="flex justify-center self-center flex-col w-full font-['varino'] pb-[128px] pt-[64px] px-[64px]">
+                  <div
+
+                    key={1} className="flex justify-center self-center flex-col w-full font-['varino'] pb-[128px] pt-[64px] px-[64px]">
                     <span className="w-fit self-center">
                       <p className="logo-gradient-white text-[96px] self-center mb-[-8px]"> TRICHORD </p>
                       <div className=" px-[36px] logo-gradient-white text-[27px] self-center flex flex-row  w-full place-content-between">
@@ -574,9 +618,9 @@ font-['exo_2']  text-[#00FFB9] text-[15px] font-bold  tracking-[0.2em]
                 </AnimatedGroup>
 
                 {/* vvvv 3 STEP PROCESS vvvv */}
-                <div className="corner-noPadding flex flex-col"
-                >
-                  <AnimatedGroup className="flex flex-col  pt-[64px]  "
+                <div className="corner-noPadding flex flex-col h-fit "
+                  ref={navRef2} id='HowItWorks'  >
+                  <AnimatedGroup className="flex flex-col   pt-[64px]  "
                     variants={groupVariant}
                     classnames='self-center '
                   >
@@ -775,8 +819,7 @@ font-['exo_2']  text-[#00FFB9] text-[15px] font-bold  tracking-[0.2em]
                   variants={chevronVariant}
                   classnames='self-center w-full'
                 >
-                  <div className="flex flex-col self-center mt-[8vh] mb-[96px]"
-                    ref={navRef1}
+                  <div className="flex flex-col self-center mt-[8vh] mb-[96px]" 
                   >
                     <svg width="136" height="57" viewBox="0 0 136 57" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M1.54346 1.7751C2.63335 0.412741 4.60867 0.163294 6.00302 1.21193L66.6828 46.847C67.7574 47.6551 69.2384 47.6496 70.307 46.8334L129.993 1.24451C131.387 0.179974 133.375 0.423594 134.471 1.79305V1.79305C135.589 3.19113 135.356 5.23252 133.95 6.34161L71.6379 55.5114C71.2215 55.8329 70.7268 56.0879 70.1822 56.262C69.6376 56.436 69.0538 56.5256 68.4641 56.5256C67.8745 56.5256 67.2907 56.436 66.746 56.262C66.2014 56.0879 65.7067 55.8329 65.2903 55.5114L2.08187 6.33809C0.661629 5.23321 0.419386 3.1802 1.54346 1.7751V1.7751Z" fill="url(#paint0_linear_2417_486711)" />
@@ -819,7 +862,7 @@ font-['exo_2']  text-[#00FFB9] text-[15px] font-bold  tracking-[0.2em]
                   variants={chevronVariant}
                   classnames='self-center w-full'
                 >
-                  <section className='w-full flex-center flex-col ' >
+                  <section id='500Keybinds' ref={navRef3} className='w-full flex-center flex-col ' >
 
 
                     <div className="flex w-full pt-[128px] flex-col corner-noPadding ">
@@ -905,7 +948,7 @@ font-['exo_2']  text-[#00FFB9] text-[15px] font-bold  tracking-[0.2em]
                 >
                   <section className='w-full flex-center flex-col pt-[64px] mb-[96px]' >
 
-                    <div className="flex w-full pt-[128px] flex-col corner-noPadding   ">
+                    <div ref={navRef4} id='DeviceInputs' className="flex w-full pt-[128px] flex-col corner-noPadding   ">
 
                       <div className=" w-full px-[16px] flex flex-col pb-[96px]  ">
 

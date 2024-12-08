@@ -415,7 +415,10 @@ padding-left: 72px !important; */
   transform: rotate(-90deg);
 }
 .indicator {
-  stroke: #00ffb9;
+  stroke: #00ffbbd7;
+}
+.indicatorBg {
+  stroke: #00ffbb2d;
 }
 circle {
   stroke-dashoffset: 0;
@@ -1266,6 +1269,7 @@ transition: filter 0.3s;
 
 html{
   min-width: 555px;
+  scroll-behavior: smooth;
 }
 ::-webkit-scrollbar {
   width: 14px;
